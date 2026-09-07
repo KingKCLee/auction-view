@@ -4,14 +4,14 @@
   "historyMonth": 4,
   "historyPage": 1,
   "runCount": 10,
-  "lastRun": "2026-09-07T04:56:11.690Z",
-  "lastError": "history notice 2026-07 offset 0: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
+  "lastRun": "2026-09-07T06:04:36.785Z",
+  "lastError": null,
   "historyNoticeIndex": 0,
   "priorityIndex": {
     "2026-09": 2
   },
   "noticeHistoryYear": 2026,
-  "noticeHistoryMonth": 7,
+  "noticeHistoryMonth": 4,
   "noticeHistoryOffset": 0,
   "recentNoticeKeys": [
     "B000210_1001_20260908||B000210|B000210|2026-09-08|20260908|1001|1001||||",
@@ -19,5 +19,11 @@
     "B000210_1012_20260910||B000210|B000210|2026-09-10|20260910|1012|1012||||",
     "B000210_1021_20260915||B000210|B000210|2026-09-15|20260915|1021|1021||||"
   ],
-  "collector": "sale-notice"
+  "collector": "sale-notice",
+  "historyFailureCounts": {
+    "2026-07": 0,
+    "2026-06": 0,
+    "2026-05": 0
+  },
+  "deferredHistoryMonths": []
 }
