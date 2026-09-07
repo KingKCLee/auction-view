@@ -43,6 +43,8 @@ jobs:
           node-version: '22'
       - name: Install collector
         run: npm install --no-audit --no-fund
+      - name: Install Chromium for official browser fallback
+        run: npx playwright install chromium
       - name: Sweep next nationwide court batch
         run: node -r ./fast-court-preload.js current-court-sweep.js
       - name: Safe fallback to official sale-notice discovery
