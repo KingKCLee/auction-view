@@ -1,30 +1,26 @@
-name: Collect and Publish Auction View
+name: Collect Auction View
 
 on:
   push:
     branches: [main]
     paths-ignore:
       - 'data/**'
+      - 'docs/**'
   schedule:
     - cron: '17 */6 * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
   group: auction-view
   cancel-in-progress: true
 
 jobs:
-  collect-and-deploy:
+  collect:
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -43,35 +39,21 @@ jobs:
         continue-on-error: true
         run: npm run collect
 
-      - name: Commit updated public data
+      - name: Prepare branch-published site
+        run: |
+          rm -rf docs
+          mkdir -p docs/data
+          cp index.html progress.html styles.css app.js progress.js docs/
+          cp data/auctions.json data/stats.json docs/data/
+          touch docs/.nojekyll
+
+      - name: Commit updated public data and site
         run: |
           git config user.name "court-auction-bot"
           git config user.email "court-auction-bot@users.noreply.github.com"
-          git add data/auctions.json data/stats.json data/state.json
+          git add data/auctions.json data/stats.json data/state.json docs
           if ! git diff --cached --quiet; then
             git commit -m "data: automated auction sync $(date -u +'%Y-%m-%dT%H:%MZ')"
             git pull --rebase origin main
             git push origin HEAD:main
           fi
-
-      - name: Prepare public site
-        run: |
-          rm -rf _site
-          mkdir -p _site/data
-          cp index.html progress.html styles.css app.js progress.js _site/
-          cp data/auctions.json data/stats.json _site/data/
-          touch _site/.nojekyll
-
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
-      - name: Upload site
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-
-      - name: Deploy site
-        id: deployment
-        uses: actions/deploy-pages@v4
