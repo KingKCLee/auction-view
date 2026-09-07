@@ -49,7 +49,14 @@ async function postDetail(body){
   if(!r.ok)throw new Error(`detail HTTP ${r.status}`);
   return data;
 }
-async function getItemDetail(row){return postDetail({dma_srchGdsDtlSrch:{csNo:String(row.caseNumber),cortOfcCd:String(row.courtCode||''),dspslGdsSeq:Number(row.itemNumber||1),pgmId:'PGJ151F01',srchInfo:searchWindow(row)}});}
+async function getItemDetail(row){
+  const body={dma_srchGdsDtlSrch:{csNo:String(row.caseNumber),cortOfcCd:String(row.courtCode||''),dspslGdsSeq:Number(row.itemNumber||1),pgmId:'PGJ151F01',srchInfo:searchWindow(row)}};
+  let last=null;
+  for(let i=0;i<3;i++){
+    try{return await postDetail(body)}catch(e){last=e;cookie='';if(i<2)await sleep(4500+(i*2500)+Math.floor(Math.random()*1500));}
+  }
+  throw last||new Error('detail fetch failed');
+}
 function ext(buf){if(buf.length>=8&&buf.subarray(0,8).toString('hex')==='89504e470d0a1a0a')return'png';if(buf.length>=3&&buf.subarray(0,3).toString('hex')==='ffd8ff')return'jpg';if(buf.length>=6&&['GIF87a','GIF89a'].includes(buf.subarray(0,6).toString('ascii')))return'gif';return null;}
 function savePhotos(row,detail){const pics=detail?.data?.dma_result?.csPicLst||[];if(!Array.isArray(pics)||!pics.length)return [];const dir=path.join(PHOTO_ROOT,safe(row.caseNumber),safe(row.itemNumber));fs.mkdirSync(dir,{recursive:true});const urls=[];let seq=0;for(const p of pics){if(!p?.picFile)continue;let buf;try{buf=Buffer.from(String(p.picFile).replace(/^data:[^;]+;base64,/,''),'base64')}catch{continue}if(buf.length<100)continue;const e=ext(buf);if(!e)continue;const h=sha(buf);const n=String(p.cortAuctnPicSeq||p.pageSeq||++seq).padStart(2,'0');const file=`${n}_${h.slice(0,10)}.${e}`;const fp=path.join(dir,file);if(!fs.existsSync(fp))fs.writeFileSync(fp,buf);urls.push(`photos/${encodeURIComponent(safe(row.caseNumber))}/${encodeURIComponent(safe(row.itemNumber))}/${encodeURIComponent(file)}`);}return [...new Set(urls)];}
 function buildCourtPhotoCoverage(rows){const m=new Map();for(const r of rows){const c=String(r.courtCode||'');if(!c)continue;if(!m.has(c))m.set(c,0);if((r.photoUrls?.length||0)>0)m.set(c,m.get(c)+1)}return m;}
