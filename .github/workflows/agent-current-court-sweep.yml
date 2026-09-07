@@ -7,6 +7,8 @@ on:
       - '.github/workflows/agent-current-court-sweep.yml'
       - 'current-court-sweep.js'
       - 'fast-court-preload.js'
+      - 'sale-notice-discovery.js'
+      - 'package.json'
   schedule:
     - cron: '*/5 * * * *'
   workflow_dispatch:
@@ -36,6 +38,15 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Sweep next nationwide court batch
         run: node -r ./fast-court-preload.js current-court-sweep.js
+      - name: Safe fallback to official sale-notice discovery
+        run: |
+          need_fallback=$(node -e "const s=require('./data/stats.json'); const x=s.currentCourtSweep||{}; process.stdout.write(String(Number(x.successfulNotices||0)===0 && Number(x.deferredCount||0)>0))")
+          if [ "$need_fallback" = "true" ]; then
+            echo "current court route stalled; trying official sale-notice discovery"
+            timeout 90s npm run collect:once || echo "official fallback deferred to next cycle"
+          else
+            echo "current court route healthy; fallback not needed"
+          fi
       - name: Publish this batch immediately
         run: |
           rm -rf docs
