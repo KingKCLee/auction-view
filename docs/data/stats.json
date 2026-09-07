@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-09-07T00:28:50.209Z",
+  "generatedAt": "2026-09-07T01:33:09.411Z",
   "court": "인천지방법원",
   "region": "인천광역시",
-  "itemCount": 6,
+  "itemCount": 271,
   "winningCount": 0,
-  "photoCount": 0,
+  "photoCount": 61,
   "documentCount": 0,
   "eventCount": 21,
   "queuedJobs": 0,
-  "errorJobs": 1,
+  "errorJobs": 0,
   "coverage": {
-    "base_info": 6,
-    "schedule": 6,
+    "base_info": 271,
+    "schedule": 1,
     "winning_price": 0,
-    "photos": 0,
+    "photos": 5,
     "status_report": 0,
     "sale_statement": 0,
     "appraisal_summary": 0,
@@ -27,33 +27,40 @@
     "fromYear": 1990,
     "startYear": 2026,
     "totalMonths": 441,
-    "completedMonths": 1,
-    "percent": 0.23,
+    "completedMonths": 2,
+    "percent": 0.45,
     "cursor": {
       "year": 2026,
-      "month": 8,
+      "month": 7,
       "noticeIndex": 0
     }
   },
   "latestRun": {
     "run_type": "public-collector",
-    "started_at": "2026-09-07T00:28:50.209Z",
-    "finished_at": "2026-09-07T00:28:50.209Z",
-    "status": "partial",
-    "items_found": 0,
-    "items_saved": 0,
+    "started_at": "2026-09-07T01:32:44.886Z",
+    "finished_at": "2026-09-07T01:32:44.887Z",
+    "status": "done",
+    "items_found": 288,
+    "items_saved": 288,
     "photos_saved": 0,
     "documents_saved": 0,
-    "error_text": "history 2026-08: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed"
+    "error_text": null
   },
   "runs": [
     {
       "run_type": "public-collector",
-      "started_at": "2026-09-07T00:28:50.209Z",
-      "status": "partial",
-      "items_found": 0,
-      "items_saved": 0,
-      "error_text": "history 2026-08: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed"
+      "started_at": "2026-09-07T01:32:44.886Z",
+      "status": "done",
+      "items_found": 288,
+      "items_saved": 288,
+      "error_text": null
     }
-  ]
+  ],
+  "latestPhotoRun": {
+    "checked": 6,
+    "success": 6,
+    "photosSaved": 61,
+    "error": null,
+    "finishedAt": "2026-09-07T01:33:09.411Z"
+  }
 }
