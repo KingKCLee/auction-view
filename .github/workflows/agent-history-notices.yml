@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/agent-history-notices.yml'
+      - 'sale-notice-history-worker.js'
+      - 'package.json'
   schedule:
     - cron: '8,28,48 * * * *'
   workflow_dispatch:
@@ -19,7 +21,7 @@ concurrency:
 jobs:
   backfill:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 12
     env:
       HISTORY_NOTICE_BATCH: '5'
     steps:
@@ -31,7 +33,9 @@ jobs:
           node-version: '22'
       - name: Install collector
         run: npm install --no-audit --no-fund
-      - name: Backfill historical auction notices and skip stalled months automatically
+      - name: Install Chromium fallback
+        run: npx playwright install chromium
+      - name: Backfill historical auction notices with automatic transport fallback
         run: npm run history:notices
       - name: Publish refreshed data
         run: |
