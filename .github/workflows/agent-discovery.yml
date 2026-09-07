@@ -6,7 +6,8 @@ on:
     paths:
       - '.github/workflows/agent-discovery.yml'
   schedule:
-    - cron: '0,15,30,45 * * * *'
+    # Offset from quarter-hour peaks to reduce GitHub cron delay.
+    - cron: '3,18,33,48 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -20,6 +21,9 @@ jobs:
   discovery:
     runs-on: ubuntu-latest
     timeout-minutes: 12
+    env:
+      DISCOVERY_STEPS: '3'
+      FAILS_BEFORE_DEFER: '2'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -29,7 +33,7 @@ jobs:
           node-version: '22'
       - name: Install collector
         run: npm install --no-audit --no-fund
-      - name: Collect newest notices and advance history
+      - name: Collect newest notices and advance history without blocking on one failed month
         run: npm run collect
       - name: Publish refreshed data
         run: |
