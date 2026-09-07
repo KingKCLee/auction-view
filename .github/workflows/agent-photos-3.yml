@@ -1,15 +1,6 @@
 name: Auction Agent - Photos 3
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/agent-photos-3.yml'
-      - 'photo-enrich.js'
-      - 'retry-worker.js'
-      - 'package.json'
-  schedule:
-    - cron: '12,27,42,57 * * * *'
   workflow_dispatch:
 
 permissions:
