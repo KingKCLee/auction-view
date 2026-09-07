@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T06:13:19.572Z",
+  "generatedAt": "2026-09-07T06:16:20.341Z",
   "court": "전국 법원",
   "region": "전국",
   "itemCount": 737,
@@ -32,11 +32,11 @@
     "fromYear": 1990,
     "startYear": 2026,
     "totalMonths": 441,
-    "completedMonths": 10,
-    "percent": 2.27,
+    "completedMonths": 11,
+    "percent": 2.49,
     "cursor": {
       "year": 2025,
-      "month": 10,
+      "month": 9,
       "noticeOffset": 0
     },
     "deferredMonths": [],
@@ -44,8 +44,8 @@
   },
   "latestRun": {
     "run_type": "sale-notice-discovery",
-    "started_at": "2026-09-07T06:13:12.840Z",
-    "finished_at": "2026-09-07T06:13:12.841Z",
+    "started_at": "2026-09-07T06:16:15.261Z",
+    "finished_at": "2026-09-07T06:16:15.262Z",
     "status": "done",
     "items_found": 242,
     "items_saved": 242,
@@ -56,6 +56,19 @@
     "error_text": null
   },
   "runs": [
+    {
+      "run_type": "sale-notice-discovery",
+      "started_at": "2026-09-07T06:16:15.261Z",
+      "finished_at": "2026-09-07T06:16:15.262Z",
+      "status": "done",
+      "items_found": 242,
+      "items_saved": 242,
+      "priority_items": 242,
+      "history_items": 0,
+      "notices_checked": 2,
+      "transport": "official-sale-notice-http",
+      "error_text": null
+    },
     {
       "run_type": "sale-notice-discovery",
       "started_at": "2026-09-07T06:13:12.840Z",
@@ -243,12 +256,13 @@
   "collectorTransport": "official-sale-notice-http",
   "discoverySupervisor": {
     "mode": "non-blocking-history",
-    "maxSteps": 3,
+    "maxSteps": 1,
     "failsBeforeDefer": 2,
     "deferredCount": 0,
-    "updatedAt": "2026-09-07T06:13:12.849Z"
+    "updatedAt": "2026-09-07T06:16:15.270Z"
   },
   "latestHistoryPropertyRun": {
+    "courtCode": "B000240",
     "from": "2026-08-01",
     "to": "2026-08-31",
     "returned": 0,
@@ -265,6 +279,6 @@
     "errorCode": "UPSTREAM_ERROR",
     "httpStatus": 400,
     "source": "대한민국 법원경매정보 물건검색",
-    "finishedAt": "2026-09-07T06:13:19.572Z"
+    "finishedAt": "2026-09-07T06:16:20.341Z"
   }
 }
