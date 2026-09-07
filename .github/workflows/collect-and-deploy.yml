@@ -1,23 +1,14 @@
-name: Collect Auction View
+name: Full Auction Sync (manual)
 
 on:
-  push:
-    branches: [main]
-    paths-ignore:
-      - 'data/**'
-      - 'docs/**'
-      - 'photos/**'
-      - '*.txt'
-  schedule:
-    - cron: '17,47 * * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: auction-view
-  cancel-in-progress: true
+  group: court-auction-global
+  cancel-in-progress: false
 
 jobs:
   collect:
@@ -63,7 +54,7 @@ jobs:
           git add data/auctions.json data/stats.json data/state.json docs
           if [ -d photos ]; then git add photos; fi
           if ! git diff --cached --quiet; then
-            git commit -m "data: automated auction sync $(date -u +'%Y-%m-%dT%H:%MZ')"
+            git commit -m "data: manual full auction sync $(date -u +'%Y-%m-%dT%H:%MZ')"
             git pull --rebase origin main
             git push origin HEAD:main
           fi
