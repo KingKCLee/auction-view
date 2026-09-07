@@ -8,6 +8,7 @@ on:
       - 'current-court-sweep.js'
       - 'fast-court-preload.js'
       - 'sale-notice-discovery.js'
+      - 'property-history-discovery-v2.js'
       - 'package.json'
   schedule:
     - cron: '*/5 * * * *'
@@ -43,9 +44,18 @@ jobs:
           need_fallback=$(node -e "const s=require('./data/stats.json'); const x=s.currentCourtSweep||{}; process.stdout.write(String(Number(x.successfulNotices||0)===0 && Number(x.deferredCount||0)>0))")
           if [ "$need_fallback" = "true" ]; then
             echo "current court route stalled; trying official sale-notice discovery"
-            timeout 90s npm run collect:once || echo "official fallback deferred to next cycle"
+            timeout 90s npm run collect:once || echo "official sale-notice fallback deferred to next cycle"
           else
             echo "current court route healthy; fallback not needed"
+          fi
+      - name: Safe fallback to official property search
+        run: |
+          need_property=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; const r=s.latestRun||{}; process.stdout.write(String(Number(c.successfulNotices||0)===0 && Number(r.items_found||0)===0))")
+          if [ "$need_property" = "true" ]; then
+            echo "sale-notice routes yielded zero; trying official property-search history route"
+            timeout 90s npm run history:property || echo "official property-search fallback deferred to next cycle"
+          else
+            echo "an official notice route returned data; property-search fallback not needed"
           fi
       - name: Publish this batch immediately
         run: |
