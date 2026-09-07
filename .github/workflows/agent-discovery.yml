@@ -36,7 +36,7 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Install Chromium for official property-search fallback
         run: npx playwright install chromium
-      - name: Collect current notices plus historical Incheon property-search page
+      - name: Collect and publish accurate unique-growth metrics
         run: npm run collect
       - name: Publish refreshed data
         run: |
