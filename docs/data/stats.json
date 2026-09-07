@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T10:19:56.841Z",
+  "generatedAt": "2026-09-07T10:32:29.740Z",
   "court": "전국 법원",
   "region": "전국",
   "itemCount": 2264,
@@ -351,21 +351,22 @@
     ],
     "cursor": {
       "month": "2026-09",
-      "courtIndex": 7
+      "courtIndex": 11
     },
     "courtCount": 60,
     "courtsScanned": 4,
-    "lastCourt": "B214807",
+    "lastCourt": "B000250",
     "processedNotices": 0,
     "successfulNotices": 0,
     "newUniqueItems": 0,
+    "deferredCount": 4,
     "cycle": 0,
-    "lastError": "B214807 2026-09: no transport",
+    "lastError": "B000250 2026-09: no transport",
     "transport": [
-      "B000214:failed",
-      "B000214:failed",
-      "B214807:failed",
-      "B214807:failed"
+      "B214804:failed",
+      "B000240:failed",
+      "B000241:failed",
+      "B000250:failed"
     ],
     "attempts": [
       "normal-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed",
@@ -379,7 +380,7 @@
     ],
     "courtSource": "official-court-codes",
     "source": "대한민국 법원경매정보 매각공고(전국 최신 법원별)",
-    "finishedAt": "2026-09-07T10:19:56.841Z"
+    "finishedAt": "2026-09-07T10:32:29.740Z"
   },
   "photoCourtCount": 1
 }

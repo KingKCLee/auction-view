@@ -90,11 +90,21 @@
     "2026-09|B000213|0": 0,
     "2026-09|B000213|1": 0,
     "search|2026-09|B000214": 2,
-    "search|2026-09|B214807": 2
+    "search|2026-09|B214807": 2,
+    "search|2026-09|B214804": 1,
+    "search|2026-09|B000240": 1,
+    "search|2026-09|B000241": 1,
+    "search|2026-09|B000250": 1
   },
   "currentSweepMonthSlot": 0,
-  "currentSweepCourtIndex": 7,
-  "currentSweepLastRun": "2026-09-07T10:19:56.841Z",
-  "currentSweepLastError": "B214807 2026-09: no transport",
-  "saleNoticeBackfillVersion": 2
+  "currentSweepCourtIndex": 11,
+  "currentSweepLastRun": "2026-09-07T10:32:29.740Z",
+  "currentSweepLastError": "B000250 2026-09: no transport",
+  "saleNoticeBackfillVersion": 2,
+  "currentSweepDeferred": [
+    "2026-09|B214804",
+    "2026-09|B000240",
+    "2026-09|B000241",
+    "2026-09|B000250"
+  ]
 }
