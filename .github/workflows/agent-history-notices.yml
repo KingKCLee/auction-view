@@ -6,6 +6,8 @@ on:
     paths:
       - '.github/workflows/agent-history-notices.yml'
       - 'sale-notice-history-worker.js'
+      - 'basic-info-enrich.js'
+      - 'validate-basic-info.js'
       - 'package.json'
   schedule:
     - cron: '8,18,28,38,48,58 * * * *'
@@ -25,6 +27,7 @@ jobs:
     env:
       HISTORY_COURTS_PER_RUN: '3'
       HISTORY_NOTICES_PER_COURT: '2'
+      BASIC_INFO_CASES: '4'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -38,6 +41,10 @@ jobs:
         run: npx playwright install chromium
       - name: Backfill historical auction notices court by court
         run: npm run history:notices
+      - name: Repair real basic-information coverage
+        run: timeout 120s npm run basic || echo "basic-info enrichment deferred to next cycle"
+      - name: Verify basic information integrity
+        run: npm run basic:validate
       - name: Publish refreshed data
         run: |
           rm -rf docs
