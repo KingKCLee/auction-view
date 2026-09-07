@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-07T20:36:39.240Z",
+  "generatedAt": "2026-09-07T22:18:08.709Z",
   "court": "전국 법원",
   "region": "전국",
-  "itemCount": 5695,
+  "itemCount": 6621,
   "winningCount": 0,
   "photoCount": 407,
   "documentCount": 22,
@@ -15,7 +15,7 @@
     "to": "2026-10"
   },
   "coverage": {
-    "base_info": 5312,
+    "base_info": 6242,
     "schedule": 1,
     "winning_price": 0,
     "photos": 27,
@@ -359,42 +359,42 @@
     ],
     "cursor": {
       "month": "2026-09",
-      "courtIndex": 43
+      "courtIndex": 45
     },
     "courtCount": 60,
     "courtsScanned": 4,
-    "lastCourt": "B000414",
-    "processedNotices": 7,
-    "successfulNotices": 7,
-    "newUniqueItems": 919,
+    "lastCourt": "B000420",
+    "processedNotices": 10,
+    "successfulNotices": 10,
+    "newUniqueItems": 926,
     "deferredCount": 20,
     "cycle": 0,
     "lastError": null,
     "transport": [
-      "B000320:http",
-      "B000410:http",
-      "B000412:http",
-      "B000414:http"
+      "B000411:http",
+      "B000411:http",
+      "B000411:http",
+      "B000420:http"
     ],
     "attempts": [],
     "courtSource": "official-court-codes",
     "source": "대한민국 법원경매정보 매각공고(전국 최신 법원별)",
-    "finishedAt": "2026-09-07T20:34:02.784Z"
+    "finishedAt": "2026-09-07T22:17:56.602Z"
   },
   "photoCourtCount": 1,
   "basicInfoQuality": {
-    "ready": 5312,
-    "addressCount": 5312,
-    "priceCount": 5292,
-    "missing": 383,
+    "ready": 6242,
+    "addressCount": 6242,
+    "priceCount": 6218,
+    "missing": 379,
     "definition": "주소 + (용도/감정가/최저가/매각기일 중 1개 이상)",
-    "updatedAt": "2026-09-07T20:36:39.240Z"
+    "updatedAt": "2026-09-07T22:18:08.709Z"
   },
   "latestBasicInfoRun": {
     "checkedCases": 4,
     "successfulCases": 4,
     "itemsImproved": 4,
-    "remaining": 383,
+    "remaining": 379,
     "transport": [
       "B000240:http",
       "B000240:http",
@@ -404,6 +404,6 @@
     "attempts": [],
     "lastError": null,
     "source": "대한민국 법원경매정보 사건검색",
-    "finishedAt": "2026-09-07T20:36:39.240Z"
+    "finishedAt": "2026-09-07T22:18:08.709Z"
   }
 }
