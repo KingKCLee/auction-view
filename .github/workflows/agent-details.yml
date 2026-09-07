@@ -1,4 +1,4 @@
-name: Auction Agent - Details
+name: Auction Agent - Details 1
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
     paths:
       - '.github/workflows/agent-details.yml'
   schedule:
-    - cron: '5,20,35,50 * * * *'
+    - cron: '2,17,32,47 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -20,6 +20,10 @@ jobs:
   details:
     runs-on: ubuntu-latest
     timeout-minutes: 12
+    env:
+      SHARD_COUNT: '3'
+      SHARD_INDEX: '0'
+      BATCH_SIZE: '4'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -43,7 +47,7 @@ jobs:
           git config user.email "court-auction-bot@users.noreply.github.com"
           git add data/auctions.json data/stats.json data/state.json docs
           if ! git diff --cached --quiet; then
-            git commit -m "data: detail agent $(date -u +'%Y-%m-%dT%H:%MZ')"
+            git commit -m "data: detail shard1 $(date -u +'%Y-%m-%dT%H:%MZ')"
             git pull --rebase origin main
             git push origin HEAD:main
           fi
