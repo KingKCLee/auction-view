@@ -8,7 +8,7 @@ on:
       - 'sale-notice-history-worker.js'
       - 'package.json'
   schedule:
-    - cron: '8,28,48 * * * *'
+    - cron: '8,18,28,38,48,58 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -21,9 +21,10 @@ concurrency:
 jobs:
   backfill:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 14
     env:
-      HISTORY_NOTICE_BATCH: '5'
+      HISTORY_COURTS_PER_RUN: '3'
+      HISTORY_NOTICES_PER_COURT: '2'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -35,7 +36,7 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Install Chromium fallback
         run: npx playwright install chromium
-      - name: Backfill historical auction notices with automatic transport fallback
+      - name: Backfill historical auction notices court by court
         run: npm run history:notices
       - name: Publish refreshed data
         run: |
@@ -49,7 +50,7 @@ jobs:
           git config user.email "court-auction-bot@users.noreply.github.com"
           git add data/auctions.json data/stats.json data/state.json docs
           if ! git diff --cached --quiet; then
-            git commit -m "data: historical notice backfill $(date -u +'%Y-%m-%dT%H:%MZ')"
+            git commit -m "data: historical court backfill $(date -u +'%Y-%m-%dT%H:%MZ')"
             git pull --rebase origin main
             git push origin HEAD:main
           fi
