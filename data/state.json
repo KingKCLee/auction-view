@@ -40,5 +40,14 @@
   "propertyHistoryPage": 1,
   "propertyHistoryLastRun": "2026-09-07T06:18:46.623Z",
   "propertyHistoryLastError": "Court Auction request failed for /pgj/pgjsearch/searchControllerMain.on",
-  "lastMetricItemCount": 737
+  "lastMetricItemCount": 737,
+  "saleNoticeDeferred": [],
+  "saleNoticeFailures": {
+    "2026-08": 1
+  },
+  "saleNoticeBackfillYear": 2026,
+  "saleNoticeBackfillMonth": 8,
+  "saleNoticeBackfillOffset": 0,
+  "saleNoticeBackfillLastRun": "2026-09-07T06:26:14.971Z",
+  "saleNoticeBackfillLastError": "search 2026-08: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed"
 }
