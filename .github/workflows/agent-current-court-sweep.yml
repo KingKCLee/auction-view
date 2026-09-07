@@ -7,6 +7,7 @@ on:
       - '.github/workflows/agent-current-court-sweep.yml'
       - 'current-court-sweep.js'
       - 'basic-info-enrich.js'
+      - 'validate-basic-info.js'
       - 'fast-court-preload.js'
       - 'sale-notice-discovery.js'
       - 'property-history-discovery-v2.js'
@@ -20,7 +21,7 @@ permissions:
 
 concurrency:
   group: court-auction-global
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   current-sweep:
@@ -64,6 +65,8 @@ jobs:
           fi
       - name: Fill missing real basic information
         run: timeout 120s npm run basic || echo "basic-info enrichment deferred to next cycle"
+      - name: Verify basic information integrity
+        run: npm run basic:validate
       - name: Decide whether a different runner should rescue this cycle
         id: health
         run: |
@@ -109,6 +112,8 @@ jobs:
         run: node -r ./fast-court-preload.js current-court-sweep.js
       - name: Fill missing real basic information on macOS
         run: npm run basic || true
+      - name: Verify basic information integrity on macOS
+        run: npm run basic:validate
       - name: Publish rescued batch immediately
         run: |
           rm -rf docs
