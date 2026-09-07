@@ -37,7 +37,12 @@ jobs:
       - name: Install Chromium fallback
         run: npx playwright install chromium
       - name: Sweep current and next-month notices court by court
-        run: npm run sweep:current
+        run: |
+          for i in 1 2 3; do
+            echo "nationwide sweep pass $i/3"
+            npm run sweep:current
+            if [ "$i" != "3" ]; then sleep 20; fi
+          done
       - name: Publish refreshed data
         run: |
           rm -rf docs
