@@ -6,7 +6,7 @@ on:
     paths:
       - '.github/workflows/agent-current-court-sweep.yml'
       - 'current-court-sweep.js'
-      - 'package.json'
+      - 'fast-court-preload.js'
   schedule:
     - cron: '1,6,11,16,21,26,31,36,41,46,51,56 * * * *'
   workflow_dispatch:
@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 14
     env:
-      CURRENT_SWEEP_COURTS: '4'
+      CURRENT_SWEEP_COURTS: '8'
       CURRENT_SWEEP_NOTICES: '3'
     steps:
       - uses: actions/checkout@v4
@@ -34,14 +34,12 @@ jobs:
           node-version: '22'
       - name: Install collector
         run: npm install --no-audit --no-fund
-      - name: Install Chromium fallback
-        run: npx playwright install chromium
       - name: Sweep current and next-month notices court by court
         run: |
           for i in 1 2 3; do
-            echo "nationwide sweep pass $i/3"
-            npm run sweep:current
-            if [ "$i" != "3" ]; then sleep 20; fi
+            echo "nationwide fast sweep pass $i/3"
+            node -r ./fast-court-preload.js current-court-sweep.js
+            if [ "$i" != "3" ]; then sleep 12; fi
           done
       - name: Publish refreshed data
         run: |
