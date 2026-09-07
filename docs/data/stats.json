@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-07T07:18:15.613Z",
+  "generatedAt": "2026-09-07T07:27:47.015Z",
   "court": "전국 법원",
   "region": "전국",
-  "itemCount": 737,
+  "itemCount": 1159,
   "winningCount": 0,
   "photoCount": 407,
   "documentCount": 22,
@@ -15,7 +15,7 @@
     "to": "2026-10"
   },
   "coverage": {
-    "base_info": 737,
+    "base_info": 1159,
     "schedule": 1,
     "winning_price": 0,
     "photos": 27,
@@ -338,5 +338,33 @@
     "courtSource": "official-court-codes",
     "source": "대한민국 법원경매정보 매각공고(법원별)",
     "finishedAt": "2026-09-07T07:12:01.174Z"
+  },
+  "currentCourtSweep": {
+    "months": [
+      "2026-09",
+      "2026-10"
+    ],
+    "cursor": {
+      "month": "2026-09",
+      "courtIndex": 2
+    },
+    "courtCount": 60,
+    "courtsScanned": 4,
+    "lastCourt": "B000211",
+    "processedNotices": 8,
+    "successfulNotices": 8,
+    "newUniqueItems": 422,
+    "cycle": 0,
+    "lastError": null,
+    "transport": [
+      "B000210:http",
+      "B000210:http",
+      "B000211:http",
+      "B000211:http"
+    ],
+    "attempts": [],
+    "courtSource": "official-court-codes",
+    "source": "대한민국 법원경매정보 매각공고(전국 최신 법원별)",
+    "finishedAt": "2026-09-07T07:27:47.015Z"
   }
 }
