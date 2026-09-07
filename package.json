@@ -1,16 +1,16 @@
 {
   "name": "auction-view",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "private": true,
   "type": "commonjs",
   "scripts": {
-    "collect": "node retry-worker.js collect",
+    "collect": "node discovery-supervisor.js",
     "details": "node retry-worker.js details",
     "photos": "node retry-worker.js photos",
     "collect:once": "node sale-notice-discovery.js",
     "details:once": "node detail-enrich.js",
     "photos:once": "node photo-enrich.js",
-    "sync": "node retry-worker.js collect && node retry-worker.js details && node retry-worker.js photos"
+    "sync": "node discovery-supervisor.js && node retry-worker.js details && node retry-worker.js photos"
   },
   "dependencies": {
     "court-auction-notice-search": "latest",
