@@ -33,7 +33,7 @@ jobs:
           node-version: '22'
       - name: Install collector
         run: npm install --no-audit --no-fund
-      - name: Collect newest notices and advance history without blocking on one failed month
+      - name: Collect current notices plus historical property-search page
         run: npm run collect
       - name: Publish refreshed data
         run: |
