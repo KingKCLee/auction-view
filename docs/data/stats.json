@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-09-07T01:37:31.390Z",
+  "generatedAt": "2026-09-07T01:55:46.044Z",
   "court": "인천지방법원",
   "region": "인천광역시",
   "itemCount": 271,
   "winningCount": 0,
-  "photoCount": 61,
+  "photoCount": 110,
   "documentCount": 0,
   "eventCount": 21,
   "queuedJobs": 0,
-  "errorJobs": 1,
+  "errorJobs": 0,
   "coverage": {
     "base_info": 271,
     "schedule": 1,
     "winning_price": 0,
-    "photos": 5,
+    "photos": 9,
     "status_report": 0,
     "sale_statement": 0,
     "appraisal_summary": 0,
@@ -27,40 +27,40 @@
     "fromYear": 1990,
     "startYear": 2026,
     "totalMonths": 441,
-    "completedMonths": 2,
-    "percent": 0.45,
+    "completedMonths": 3,
+    "percent": 0.68,
     "cursor": {
       "year": 2026,
-      "month": 7,
+      "month": 6,
       "noticeIndex": 0
     }
   },
   "latestRun": {
     "run_type": "public-collector",
-    "started_at": "2026-09-07T01:36:26.332Z",
-    "finished_at": "2026-09-07T01:36:26.333Z",
-    "status": "partial",
-    "items_found": 0,
-    "items_saved": 0,
+    "started_at": "2026-09-07T01:55:17.512Z",
+    "finished_at": "2026-09-07T01:55:17.512Z",
+    "status": "done",
+    "items_found": 288,
+    "items_saved": 288,
     "photos_saved": 0,
     "documents_saved": 0,
-    "error_text": "history 2026-07: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed"
+    "error_text": null
   },
   "runs": [
     {
       "run_type": "public-collector",
-      "started_at": "2026-09-07T01:36:26.332Z",
-      "status": "partial",
-      "items_found": 0,
-      "items_saved": 0,
-      "error_text": "history 2026-07: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed"
+      "started_at": "2026-09-07T01:55:17.512Z",
+      "status": "done",
+      "items_found": 288,
+      "items_saved": 288,
+      "error_text": null
     }
   ],
   "latestPhotoRun": {
     "checked": 6,
-    "success": 0,
-    "photosSaved": 0,
-    "error": "2024타경17160: fetch failed",
-    "finishedAt": "2026-09-07T01:37:31.390Z"
+    "success": 4,
+    "photosSaved": 49,
+    "error": "2024타경16174</br>2025타경508884</br>2025타경513679</br>(중복): court HTTP 500",
+    "finishedAt": "2026-09-07T01:55:46.044Z"
   }
 }
