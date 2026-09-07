@@ -64,10 +64,14 @@ function merge(oldRow,newRow){
  return out;
 }
 
-function prevMonth(y,m){return m===1?[y-1,12]:[y,m-1]}
+function shiftMonth(y,m,delta){
+ const d=new Date(Date.UTC(y,m-1+delta,1));
+ return [d.getUTCFullYear(),d.getUTCMonth()+1];
+}
+function prevMonth(y,m){return shiftMonth(y,m,-1)}
 function ym(y,m){return `${y}-${String(m).padStart(2,'0')}`}
-function nextMonth(d){return new Date(Date.UTC(d.getUTCFullYear(),d.getUTCMonth()+1,1))}
-function monthOf(d){return `${d.getUTCFullYear()}-${String(d.getUTCMonth()+1).padStart(2,'0')}`}
+function monthOf(d){return ym(d.getUTCFullYear(),d.getUTCMonth()+1)}
+function noticeDate(n){return Date.parse(n?.saleDate||n?.auctionDate||n?.dspslDxdyYmd||'')||0}
 async function retry(fn,n=2){let e;for(let i=0;i<n;i++){try{return await fn()}catch(err){e=err;await new Promise(r=>setTimeout(r,1500*(i+1)))}}throw e}
 
 async function importNotice(lib,notice,map){
@@ -85,25 +89,34 @@ async function main(){
  const lib=require('court-auction-notice-search');
  const existing=read(AUCTIONS,[]);const map=new Map(existing.map(x=>[x.id,x]));
  const now=new Date();
- const defaultState={historyYear:now.getUTCFullYear(),historyMonth:Math.max(1,now.getUTCMonth()),historyNoticeIndex:0,runCount:0,lastRun:null,lastError:null};
+ const cy=now.getUTCFullYear(),cm=now.getUTCMonth()+1;
+ const [hy,hm]=shiftMonth(cy,cm,-2);
+ const defaultState={historyYear:hy,historyMonth:hm,historyNoticeIndex:0,priorityIndex:{},runCount:0,lastRun:null,lastError:null};
  const state={...defaultState,...read(STATE,{})};
- let currentFound=0,historyFound=0,lastError=null;
+ state.priorityIndex=state.priorityIndex||{};
+ let priorityFound=0,historyFound=0,lastError=null;
 
- // 현재 월 + 다음 월: 매 실행마다 소량 순환 수집
- for(const month of [monthOf(now),monthOf(nextMonth(now))]){
+ // 1순위: 최신 진행물건/최근 결과. 지난달 → 이번달 → 다음달을 매 실행마다 새로 확인.
+ // 월별 공고를 순환(cursor)시켜 새 공고가 들어와도 계속 최신 구간을 재점검한다.
+ const priorityMonths=[shiftMonth(cy,cm,0),shiftMonth(cy,cm,1),shiftMonth(cy,cm,-1)];
+ for(const [y,m] of priorityMonths){
+  const month=ym(y,m);
   try{
    const res=await retry(()=>lib.searchSaleNotices({date:month,courtCode:COURT_CODE,bidType:'date'}),2);
-   const list=res?.items||[];
-   for(const notice of list.slice(0,2))currentFound+=await importNotice(lib,notice,map);
-  }catch(e){lastError=`current ${month}: ${e.message||e}`;console.error(lastError)}
+   const list=[...(res?.items||[])].sort((a,b)=>noticeDate(b)-noticeDate(a));
+   if(!list.length)continue;
+   const idx=Number(state.priorityIndex[month]||0)%list.length;
+   priorityFound+=await importNotice(lib,list[idx],map);
+   state.priorityIndex[month]=(idx+1)%list.length;
+  }catch(e){lastError=`priority ${month}: ${e.message||e}`;console.error(lastError)}
  }
 
- // 과거자료: 1990년까지 한 달씩 역방향. 한 실행에 공고 최대 2건.
+ // 2순위: 최신 구간을 계속 갱신하면서, 남는 호출로 과거를 월 단위 역순 백필.
  if(state.historyYear>=FROM_YEAR){
   const month=ym(state.historyYear,state.historyMonth);
   try{
    const res=await retry(()=>lib.searchSaleNotices({date:month,courtCode:COURT_CODE,bidType:'date'}),2);
-   const list=res?.items||[];
+   const list=[...(res?.items||[])].sort((a,b)=>noticeDate(b)-noticeDate(a));
    let processed=0;
    if(!list.length){const [y,m]=prevMonth(state.historyYear,state.historyMonth);state.historyYear=y;state.historyMonth=m;state.historyNoticeIndex=0}
    else{
@@ -115,14 +128,15 @@ async function main(){
   }catch(e){lastError=`history ${month}: ${e.message||e}`;console.error(lastError)}
  }
 
- const rows=[...map.values()].sort((a,b)=>String(a.saleDate||'9999').localeCompare(String(b.saleDate||'9999'))||String(a.caseNumber).localeCompare(String(b.caseNumber)));
+ // 조회 화면도 최신 매각기일이 위에 오도록 내림차순 저장.
+ const rows=[...map.values()].sort((a,b)=>String(b.saleDate||'0000').localeCompare(String(a.saleDate||'0000'))||String(b.caseNumber).localeCompare(String(a.caseNumber)));
  write(AUCTIONS,rows);
  state.runCount=Number(state.runCount||0)+1;state.lastRun=new Date().toISOString();state.lastError=lastError;write(STATE,state);
- const startY=now.getUTCFullYear(),startM=now.getUTCMonth()+1,totalMonths=(startY-FROM_YEAR)*12+startM;
- const completed=Math.max(0,(startY-state.historyYear)*12+(startM-state.historyMonth));
+ const totalMonths=(cy-FROM_YEAR)*12+cm;
+ const completed=Math.max(0,(cy-state.historyYear)*12+(cm-state.historyMonth)-1);
  const coverageKeys=['base_info','schedule','winning_price','photos','status_report','sale_statement','appraisal_summary','appraisal_pdf','transactions','building_registry','land_use','rights'];
  const coverage={};for(const k of coverageKeys)coverage[k]=rows.filter(x=>Number(x.coverage?.[k]||0)===1).length;
- const stats={generatedAt:new Date().toISOString(),court:COURT_NAME,region:REGION,itemCount:rows.length,winningCount:rows.filter(x=>x.winningPrice).length,photoCount:rows.reduce((a,x)=>a+Number(x.photoCount||0),0),documentCount:rows.reduce((a,x)=>a+Number(x.documentCount||0),0),eventCount:rows.reduce((a,x)=>a+Number(x.eventCount||0),0),queuedJobs:0,errorJobs:lastError?1:0,coverage,history:{fromYear:FROM_YEAR,startYear:startY,totalMonths,completedMonths:completed,percent:Math.min(100,Math.round(completed/Math.max(1,totalMonths)*10000)/100),cursor:{year:state.historyYear,month:state.historyMonth,noticeIndex:state.historyNoticeIndex}},latestRun:{run_type:'public-collector',started_at:state.lastRun,finished_at:new Date().toISOString(),status:lastError?'partial':'done',items_found:currentFound+historyFound,items_saved:currentFound+historyFound,photos_saved:0,documents_saved:0,error_text:lastError},runs:[{run_type:'public-collector',started_at:state.lastRun,status:lastError?'partial':'done',items_found:currentFound+historyFound,items_saved:currentFound+historyFound,error_text:lastError}]};
+ const stats={generatedAt:new Date().toISOString(),court:COURT_NAME,region:REGION,itemCount:rows.length,winningCount:rows.filter(x=>x.winningPrice).length,photoCount:rows.reduce((a,x)=>a+Number(x.photoCount||0),0),documentCount:rows.reduce((a,x)=>a+Number(x.documentCount||0),0),eventCount:rows.reduce((a,x)=>a+Number(x.eventCount||0),0),queuedJobs:0,errorJobs:lastError?1:0,collectionOrder:'latest-first',priorityMonths:priorityMonths.map(([y,m])=>ym(y,m)),coverage,history:{fromYear:FROM_YEAR,startYear:cy,totalMonths,completedMonths:completed,percent:Math.min(100,Math.round(completed/Math.max(1,totalMonths)*10000)/100),cursor:{year:state.historyYear,month:state.historyMonth,noticeIndex:state.historyNoticeIndex}},latestRun:{run_type:'public-collector',started_at:state.lastRun,finished_at:new Date().toISOString(),status:lastError?'partial':'done',items_found:priorityFound+historyFound,items_saved:priorityFound+historyFound,priority_items:priorityFound,history_items:historyFound,photos_saved:0,documents_saved:0,error_text:lastError},runs:[{run_type:'public-collector',started_at:state.lastRun,status:lastError?'partial':'done',items_found:priorityFound+historyFound,priority_items:priorityFound,history_items:historyFound,error_text:lastError}]};
  write(STATS,stats);console.log(JSON.stringify(stats,null,2));
 }
 main().catch(e=>{console.error(e);process.exitCode=1});
