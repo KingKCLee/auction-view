@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/workflows/agent-current-court-sweep.yml'
       - 'current-court-sweep.js'
+      - 'court-browser-fallback.js'
       - 'basic-info-enrich.js'
       - 'validate-basic-info.js'
       - 'fast-court-preload.js'
