@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T01:33:09.411Z",
+  "generatedAt": "2026-09-07T01:37:31.390Z",
   "court": "인천지방법원",
   "region": "인천광역시",
   "itemCount": 271,
@@ -8,7 +8,7 @@
   "documentCount": 0,
   "eventCount": 21,
   "queuedJobs": 0,
-  "errorJobs": 0,
+  "errorJobs": 1,
   "coverage": {
     "base_info": 271,
     "schedule": 1,
@@ -37,30 +37,30 @@
   },
   "latestRun": {
     "run_type": "public-collector",
-    "started_at": "2026-09-07T01:32:44.886Z",
-    "finished_at": "2026-09-07T01:32:44.887Z",
-    "status": "done",
-    "items_found": 288,
-    "items_saved": 288,
+    "started_at": "2026-09-07T01:36:26.332Z",
+    "finished_at": "2026-09-07T01:36:26.333Z",
+    "status": "partial",
+    "items_found": 0,
+    "items_saved": 0,
     "photos_saved": 0,
     "documents_saved": 0,
-    "error_text": null
+    "error_text": "history 2026-07: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed"
   },
   "runs": [
     {
       "run_type": "public-collector",
-      "started_at": "2026-09-07T01:32:44.886Z",
-      "status": "done",
-      "items_found": 288,
-      "items_saved": 288,
-      "error_text": null
+      "started_at": "2026-09-07T01:36:26.332Z",
+      "status": "partial",
+      "items_found": 0,
+      "items_saved": 0,
+      "error_text": "history 2026-07: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed"
     }
   ],
   "latestPhotoRun": {
     "checked": 6,
-    "success": 6,
-    "photosSaved": 61,
-    "error": null,
-    "finishedAt": "2026-09-07T01:33:09.411Z"
+    "success": 0,
+    "photosSaved": 0,
+    "error": "2024타경17160: fetch failed",
+    "finishedAt": "2026-09-07T01:37:31.390Z"
   }
 }
