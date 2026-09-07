@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T06:26:14.971Z",
+  "generatedAt": "2026-09-07T06:29:57.551Z",
   "court": "전국 법원",
   "region": "전국",
   "itemCount": 737,
@@ -318,15 +318,17 @@
   "saleNoticeBackfill": {
     "cursor": {
       "year": 2026,
-      "month": 8,
+      "month": 7,
       "offset": 0
     },
     "processedNotices": 0,
     "successfulNotices": 0,
     "newUniqueItems": 0,
     "deferredCount": 0,
-    "lastError": "search 2026-08: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
+    "lastError": null,
+    "transport": "http",
+    "attempts": [],
     "source": "대한민국 법원경매정보 매각공고",
-    "finishedAt": "2026-09-07T06:26:14.971Z"
+    "finishedAt": "2026-09-07T06:29:57.551Z"
   }
 }
