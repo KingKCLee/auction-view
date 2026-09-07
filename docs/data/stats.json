@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T07:12:01.174Z",
+  "generatedAt": "2026-09-07T07:13:41.680Z",
   "court": "전국 법원",
   "region": "전국",
   "itemCount": 737,
@@ -300,11 +300,11 @@
     },
     "transport": "failed",
     "status": "partial",
-    "error": "Court Auction request failed for /pgj/pgjsearch/searchControllerMain.on",
-    "errorCode": "UPSTREAM_ERROR",
-    "httpStatus": 400,
+    "error": "Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml&pgjId=151F00: fetch failed",
+    "errorCode": "NETWORK_ERROR",
+    "httpStatus": null,
     "source": "대한민국 법원경매정보 물건검색",
-    "finishedAt": "2026-09-07T06:18:46.636Z"
+    "finishedAt": "2026-09-07T07:13:41.680Z"
   },
   "lastCollectorCycle": {
     "itemCount": 737,
