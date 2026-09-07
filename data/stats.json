@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T13:11:41.801Z",
+  "generatedAt": "2026-09-07T13:31:13.242Z",
   "court": "전국 법원",
   "region": "전국",
   "itemCount": 2827,
@@ -331,23 +331,27 @@
       "month": 8,
       "courtIndex": 3
     },
-    "courtCount": 60,
-    "courtsScanned": 3,
-    "lastCourt": "B000215",
+    "courtCount": 9,
+    "courtsScanned": 1,
+    "lastCourt": "B000212",
     "processedNotices": 0,
     "successfulNotices": 0,
     "newUniqueItems": 0,
     "deferredCount": 0,
-    "lastError": null,
+    "lastError": "B000212 2026-08: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\", waiting until \"domcontentloaded\"\n",
     "transport": [
-      "B000210:http",
-      "B000211:http",
-      "B000215:http"
+      "B000212:failed"
     ],
-    "attempts": [],
-    "courtSource": "official-court-codes",
+    "attempts": [
+      "normal-court-codes:NETWORK_ERROR:Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
+      "direct-court-codes:NETWORK_ERROR:Court Auction network error for /pgj/pgjComm/selectCortOfcCdLst.on: fetch failed",
+      "normal-http:NETWORK_ERROR:Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
+      "direct-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed",
+      "browser:NETWORK_ERROR:Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\", waiting until \"domcontentloaded\"\n"
+    ],
+    "courtSource": "existing-db-court-codes",
     "source": "대한민국 법원경매정보 매각공고(법원별)",
-    "finishedAt": "2026-09-07T07:30:25.392Z"
+    "finishedAt": "2026-09-07T13:31:13.242Z"
   },
   "currentCourtSweep": {
     "months": [
