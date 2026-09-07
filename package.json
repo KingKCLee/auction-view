@@ -1,13 +1,13 @@
 {
   "name": "auction-view",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "private": true,
   "type": "commonjs",
   "scripts": {
-    "collect": "node browser-discovery.js",
+    "collect": "node sale-notice-discovery.js",
     "details": "node detail-enrich.js",
     "photos": "node photo-enrich.js",
-    "sync": "node browser-discovery.js && node detail-enrich.js && node photo-enrich.js"
+    "sync": "node sale-notice-discovery.js && node detail-enrich.js && node photo-enrich.js"
   },
   "dependencies": {
     "court-auction-notice-search": "latest",
