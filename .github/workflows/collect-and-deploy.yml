@@ -7,6 +7,7 @@ on:
       - 'data/**'
       - 'docs/**'
       - 'photos/**'
+      - '*.txt'
   schedule:
     - cron: '17 */6 * * *'
   workflow_dispatch:
@@ -57,7 +58,8 @@ jobs:
         run: |
           git config user.name "court-auction-bot"
           git config user.email "court-auction-bot@users.noreply.github.com"
-          git add data/auctions.json data/stats.json data/state.json photos docs
+          git add data/auctions.json data/stats.json data/state.json docs
+          if [ -d photos ]; then git add photos; fi
           if ! git diff --cached --quiet; then
             git commit -m "data: automated auction sync $(date -u +'%Y-%m-%dT%H:%MZ')"
             git pull --rebase origin main
