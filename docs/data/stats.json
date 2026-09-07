@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-07T02:17:44.681Z",
+  "generatedAt": "2026-09-07T02:41:44.425Z",
   "court": "전국 법원",
   "region": "전국",
   "itemCount": 409,
   "winningCount": 0,
-  "photoCount": 260,
-  "documentCount": 8,
+  "photoCount": 325,
+  "documentCount": 16,
   "eventCount": 21,
   "queuedJobs": 0,
   "errorJobs": 1,
@@ -18,10 +18,10 @@
     "base_info": 409,
     "schedule": 1,
     "winning_price": 0,
-    "photos": 21,
-    "status_report": 4,
-    "sale_statement": 4,
-    "appraisal_summary": 4,
+    "photos": 26,
+    "status_report": 8,
+    "sale_statement": 8,
+    "appraisal_summary": 8,
     "appraisal_pdf": 0,
     "transactions": 0,
     "building_registry": 0,
@@ -42,43 +42,43 @@
   },
   "latestRun": {
     "run_type": "public-collector",
-    "started_at": "2026-09-07T02:15:55.706Z",
-    "finished_at": "2026-09-07T02:15:55.706Z",
+    "started_at": "2026-09-07T02:40:44.681Z",
+    "finished_at": "2026-09-07T02:40:44.681Z",
     "status": "partial",
     "items_found": 0,
     "items_saved": 0,
     "priority_items": 0,
     "history_items": 0,
-    "error_text": "history 2026-04 page 1: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml&pgjId=151F00: fetch failed"
+    "error_text": "history 2026-04 page 1: Court Auction request failed for /pgj/pgjsearch/searchControllerMain.on"
   },
   "runs": [
     {
       "run_type": "public-collector",
-      "started_at": "2026-09-07T02:15:55.706Z",
+      "started_at": "2026-09-07T02:40:44.681Z",
       "status": "partial",
       "items_found": 0,
       "priority_items": 0,
       "history_items": 0,
-      "error_text": "history 2026-04 page 1: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml&pgjId=151F00: fetch failed"
+      "error_text": "history 2026-04 page 1: Court Auction request failed for /pgj/pgjsearch/searchControllerMain.on"
     }
   ],
   "latestDetailRun": {
     "checked": 4,
-    "success": 0,
+    "success": 4,
     "eventsAdded": 0,
-    "docsAdded": 0,
+    "docsAdded": 8,
     "source": "대한민국 법원경매정보",
     "order": "latest-first",
-    "error": "2026타경503553: fetch failed",
-    "finishedAt": "2026-09-07T02:16:39.634Z"
+    "error": null,
+    "finishedAt": "2026-09-07T02:41:16.193Z"
   },
   "latestPhotoRun": {
     "checked": 6,
-    "success": 0,
-    "photosSaved": 0,
+    "success": 5,
+    "photosSaved": 65,
     "source": "대한민국 법원경매정보",
     "order": "latest-first",
-    "error": "2026타경503385: fetch failed",
-    "finishedAt": "2026-09-07T02:17:44.681Z"
+    "error": "2026타경503435: fetch failed",
+    "finishedAt": "2026-09-07T02:41:44.425Z"
   }
 }

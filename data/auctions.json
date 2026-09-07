@@ -6616,15 +6616,15 @@
     "longitude": null,
     "eventCount": 0,
     "photoCount": 11,
-    "documentCount": 0,
+    "documentCount": 2,
     "coverage": {
       "base_info": 1,
       "schedule": 0,
       "winning_price": 0,
       "photos": 1,
-      "status_report": 0,
-      "sale_statement": 0,
-      "appraisal_summary": 0,
+      "status_report": 1,
+      "sale_statement": 1,
+      "appraisal_summary": 1,
       "appraisal_pdf": 0,
       "transactions": 0,
       "building_registry": 0,
@@ -6632,8 +6632,56 @@
       "rights": 0
     },
     "events": [],
-    "components": [],
-    "documents": [],
+    "components": [
+      {
+        "type": "OBJECT",
+        "sequence": "1",
+        "address": "",
+        "structure": "",
+        "area": null,
+        "appraisedPrice": null,
+        "note": ""
+      },
+      {
+        "type": "LAND",
+        "sequence": "1",
+        "address": "",
+        "structure": "",
+        "area": null,
+        "appraisedPrice": null,
+        "note": ""
+      },
+      {
+        "type": "BUILDING",
+        "sequence": "1",
+        "address": "",
+        "structure": "",
+        "area": null,
+        "appraisedPrice": null,
+        "note": ""
+      },
+      {
+        "type": "EXTRA_BUILDING",
+        "sequence": "1",
+        "address": "",
+        "structure": "",
+        "area": null,
+        "appraisedPrice": null,
+        "note": ""
+      }
+    ],
+    "documents": [
+      {
+        "type": "매각물건명세서",
+        "source": "대한민국 법원경매정보",
+        "available": true
+      },
+      {
+        "type": "현황조사서",
+        "source": "대한민국 법원경매정보",
+        "available": true
+      }
+    ],
     "firstSeenAt": "2026-09-07T01:32:43.410Z",
     "lastSeenAt": "2026-09-07T01:55:14.913Z",
     "source": "대한민국 법원경매정보 공개조회",
@@ -6652,7 +6700,16 @@
     ],
     "photoSource": "대한민국 법원경매정보",
     "photoCheckedAt": "2026-09-07T02:06:25.195Z",
-    "detailCheckedAt": "2026-09-07T02:16:06.979Z"
+    "detailCheckedAt": "2026-09-07T02:40:52.888Z",
+    "caseType": "부동산강제경매",
+    "appraisalSummary": "본건은 인천광역시 남동구 구월동 소재 &amp;quot;모래내시장&amp;quot;남동측 인근에 위치하며, 본건 주위는 공동주택, 근린생활시설 등이 소재하는 지역임.\n본건까지 차량 출입이 가능하고, 인근에 버스정류장이 소재하는 등 제반 교통상황은 보통임.\n철근콘크리트조 슬래브지붕 4층 건물 내 제3층 제303호로서, (사용승인일: 1994.09.06) 외벽 : 벽돌 붙임 마감 등 창호 : 샷시창호 등 임.\n본건은 다세대주택(폐문부재로 내부확인 못함)로 이용중인것으로 탐문 조사됨.\n위생 및 급배수 설비, 난방 설비 등이 구비되어 있음.    \n2필지 일단 세장형의 토지로서, 현황 &amp;quot;다세대주택&amp;quot; 건부지로 이용중임.\n본건은 북측으로 노폭 약 6미터 내외의 포장도로와 접함.\n2필지 공히 제2종일반주거지역(제2종일반주거지역(남동구)) 가축사육제한구역(2013-03-08)((문의:남동구환경보전과 032-453-2343))&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 과밀억제권역&lt;수도권정비계획법&gt; 토지거래계약에관한허가구역(2025-08-21)((외국인 등에 한함, 대상: 단독, 다가구, 아파트, 연립, 다세대(지정기간: 2025. 08. 26. ~ 2026. 08. 25.))) 임.\n없    음.\n임대관계 : 미 상 임. 기    타 : 없    음.",
+    "appraisalDate": null,
+    "appraisalAgency": "",
+    "claimAmount": 74500000,
+    "landArea": null,
+    "buildingArea": null,
+    "saleStatementAvailable": true,
+    "statusReportAvailable": true
   },
   {
     "id": "B000240|2026타경503618|1",
@@ -6676,15 +6733,15 @@
     "longitude": null,
     "eventCount": 0,
     "photoCount": 14,
-    "documentCount": 0,
+    "documentCount": 2,
     "coverage": {
       "base_info": 1,
       "schedule": 0,
       "winning_price": 0,
       "photos": 1,
-      "status_report": 0,
-      "sale_statement": 0,
-      "appraisal_summary": 0,
+      "status_report": 1,
+      "sale_statement": 1,
+      "appraisal_summary": 1,
       "appraisal_pdf": 0,
       "transactions": 0,
       "building_registry": 0,
@@ -6692,8 +6749,56 @@
       "rights": 0
     },
     "events": [],
-    "components": [],
-    "documents": [],
+    "components": [
+      {
+        "type": "OBJECT",
+        "sequence": "1",
+        "address": "",
+        "structure": "",
+        "area": null,
+        "appraisedPrice": null,
+        "note": ""
+      },
+      {
+        "type": "LAND",
+        "sequence": "1",
+        "address": "",
+        "structure": "",
+        "area": null,
+        "appraisedPrice": null,
+        "note": ""
+      },
+      {
+        "type": "BUILDING",
+        "sequence": "1",
+        "address": "",
+        "structure": "",
+        "area": null,
+        "appraisedPrice": null,
+        "note": ""
+      },
+      {
+        "type": "EXTRA_BUILDING",
+        "sequence": "1",
+        "address": "",
+        "structure": "",
+        "area": null,
+        "appraisedPrice": null,
+        "note": ""
+      }
+    ],
+    "documents": [
+      {
+        "type": "매각물건명세서",
+        "source": "대한민국 법원경매정보",
+        "available": true
+      },
+      {
+        "type": "현황조사서",
+        "source": "대한민국 법원경매정보",
+        "available": true
+      }
+    ],
     "firstSeenAt": "2026-09-07T01:32:43.410Z",
     "lastSeenAt": "2026-09-07T01:55:14.913Z",
     "source": "대한민국 법원경매정보 공개조회",
@@ -6715,7 +6820,16 @@
     ],
     "photoSource": "대한민국 법원경매정보",
     "photoCheckedAt": "2026-09-07T02:06:27.574Z",
-    "detailCheckedAt": "2026-09-07T02:16:18.057Z"
+    "detailCheckedAt": "2026-09-07T02:41:00.395Z",
+    "caseType": "부동산강제경매",
+    "appraisalSummary": "본건은 인천광역시 서구 가정동 소재 &amp;apos;인천서구 문화회관&amp;apos; 북측 인근에 위치하고 있으며, 주위는 다세대주택, 아파트, 상가점포 등이 혼재하고 있는 지역임.\n본건 주변까지 차량접근이 가능하며, 인근에 버스정류장, 전철역(가정중앙시장역)이 소재하는 등 전반적인 교통여건은 무난한 편임.\n조적조 슬래브지붕 지하1층~지상3층 건물 내 제3층 제302호로서 - 외벽 : 몰탈 위 페인팅 - 창호 : 새시조 등 마감임.\n다세대주택으로 이용 중임.\n위생 및 급배수설비, 난방설비 등을 갖추었음.\n완경사 지대의 토지를 자체지반 대체로 평탄하게 조성한 세장형의 토지로서 현황 다세대주택 건부지로 이용 중임.\n본건 남동측으로 노폭 약 6m 내외의 도로에 접하고 있음.\n제2종일반주거지역, 지구단위계획구역(2023-12-26)(가정3지구), 소로2류(폭 8m~10m)(소로2류(8m~10m))(접합), 가축사육제한구역(2025-05-20), 상대보호구역(인천서부교육청 평생교육과 문의 560-6659), 과밀억제권역, 토지거래계약에 관한 허가구역(토지거래허가구역(외국인 등의 주택용도 취득에 한함)(2025.8.26.~2026.8.25.))임.\n특이사항 없음.\n- 임대관계 미상임. - 본건은 현장조사 시 이해관계인 협조부재 등으로 인하여 내부구조를 확인하지 못하였으며, 건축물대장 상 등재된 현황도면, 외관목측, 주변탐문, 동 유형 공동주택 일반현황 등을 참작하여 평가하였는 바, 입찰 시 내부구조 등은 별도 확인하시기 바람.",
+    "appraisalDate": null,
+    "appraisalAgency": "",
+    "claimAmount": 60000000,
+    "landArea": null,
+    "buildingArea": null,
+    "saleStatementAvailable": true,
+    "statusReportAvailable": true
   },
   {
     "id": "B000240|2026타경503617|1",
@@ -6739,15 +6853,15 @@
     "longitude": null,
     "eventCount": 0,
     "photoCount": 12,
-    "documentCount": 0,
+    "documentCount": 2,
     "coverage": {
       "base_info": 1,
       "schedule": 0,
       "winning_price": 0,
       "photos": 1,
-      "status_report": 0,
-      "sale_statement": 0,
-      "appraisal_summary": 0,
+      "status_report": 1,
+      "sale_statement": 1,
+      "appraisal_summary": 1,
       "appraisal_pdf": 0,
       "transactions": 0,
       "building_registry": 0,
@@ -6755,8 +6869,56 @@
       "rights": 0
     },
     "events": [],
-    "components": [],
-    "documents": [],
+    "components": [
+      {
+        "type": "OBJECT",
+        "sequence": "1",
+        "address": "",
+        "structure": "",
+        "area": null,
+        "appraisedPrice": null,
+        "note": ""
+      },
+      {
+        "type": "LAND",
+        "sequence": "1",
+        "address": "",
+        "structure": "",
+        "area": null,
+        "appraisedPrice": null,
+        "note": ""
+      },
+      {
+        "type": "BUILDING",
+        "sequence": "1",
+        "address": "",
+        "structure": "",
+        "area": null,
+        "appraisedPrice": null,
+        "note": ""
+      },
+      {
+        "type": "EXTRA_BUILDING",
+        "sequence": "1",
+        "address": "",
+        "structure": "",
+        "area": null,
+        "appraisedPrice": null,
+        "note": ""
+      }
+    ],
+    "documents": [
+      {
+        "type": "매각물건명세서",
+        "source": "대한민국 법원경매정보",
+        "available": true
+      },
+      {
+        "type": "현황조사서",
+        "source": "대한민국 법원경매정보",
+        "available": true
+      }
+    ],
     "firstSeenAt": "2026-09-07T01:32:43.410Z",
     "lastSeenAt": "2026-09-07T01:55:14.913Z",
     "source": "대한민국 법원경매정보 공개조회",
@@ -6776,7 +6938,16 @@
     ],
     "photoSource": "대한민국 법원경매정보",
     "photoCheckedAt": "2026-09-07T02:10:24.098Z",
-    "detailCheckedAt": "2026-09-07T02:16:28.787Z"
+    "detailCheckedAt": "2026-09-07T02:41:08.565Z",
+    "caseType": "부동산강제경매",
+    "appraisalSummary": "대상물건은 인천광역시 서구 검암동 소재하며, 서인천고등학교 남측 인근에 위치합니다. 대상물건 주위는 소규모 다세대주택이 다수 밀집해 있으며 일부 근린생활시설등이 소재하는 지역입니다. 제반 주위환경은 보통 입니다.\n대상물건까지 차량 출입이 가능하며, 인근에 인천2호선 검바위역이 소재하는 등 제반 교통 여건은 보통시 됩니다.\n대상물건은 철근콘크리트구조 (철근)콘크리트지붕 지상 4층 건물 내 제2층 제202호로서, (사용승인일 : 2009.01.07) 외 벽 : 타일 붙임 마감 등 창 호 : 새시 창호 등입니다.\n대상물건은 기준시점 현재 &amp;apos;다세대주택&amp;apos;으로 이용 중입니다. 폐문 부재상태로서 내부를 확인하지 못 하였습니다.\n위생 및 급배수설비, 개별난방 설비, 필로티주차장 등이 되어있습니다.\n장방형 토지로서, &amp;apos;다세대주택&amp;apos;의 건부지로 이용 중입니다.\n동측 및 북측으로 폭 약 8미터의 도로에 각각 접합니다.\n제1종일반주거지역 , 지구단위계획구역(검암1지구) , 도로(접합), 가축사육제한구역(2025-05-20)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역(2025-12-03)(서인천고등학교[문의: 서부교육지원청 평생교육건강과(032-560-6662)])&lt;교육환경 보호에 관한 법률&gt;, 과밀억제권역&lt;수도권정비계획법&gt;, 토지거래계약에관한허가구역(토지거래허가구역(외국인 등의 주택용도 취득에 한함)(2025. 8. 26.~2026. 8. 25.))입니다.\n없습니다.\n임대관계 : 미상입니다. 기    타 : 해당사항 없습니다.",
+    "appraisalDate": null,
+    "appraisalAgency": "",
+    "claimAmount": 130000000,
+    "landArea": null,
+    "buildingArea": null,
+    "saleStatementAvailable": true,
+    "statusReportAvailable": true
   },
   {
     "id": "B000240|2026타경503553|1",
@@ -6800,15 +6971,15 @@
     "longitude": null,
     "eventCount": 0,
     "photoCount": 11,
-    "documentCount": 0,
+    "documentCount": 2,
     "coverage": {
       "base_info": 1,
       "schedule": 0,
       "winning_price": 0,
       "photos": 1,
-      "status_report": 0,
-      "sale_statement": 0,
-      "appraisal_summary": 0,
+      "status_report": 1,
+      "sale_statement": 1,
+      "appraisal_summary": 1,
       "appraisal_pdf": 0,
       "transactions": 0,
       "building_registry": 0,
@@ -6816,8 +6987,56 @@
       "rights": 0
     },
     "events": [],
-    "components": [],
-    "documents": [],
+    "components": [
+      {
+        "type": "OBJECT",
+        "sequence": "1",
+        "address": "",
+        "structure": "",
+        "area": null,
+        "appraisedPrice": null,
+        "note": ""
+      },
+      {
+        "type": "LAND",
+        "sequence": "1",
+        "address": "",
+        "structure": "",
+        "area": null,
+        "appraisedPrice": null,
+        "note": ""
+      },
+      {
+        "type": "BUILDING",
+        "sequence": "1",
+        "address": "",
+        "structure": "",
+        "area": null,
+        "appraisedPrice": null,
+        "note": ""
+      },
+      {
+        "type": "EXTRA_BUILDING",
+        "sequence": "1",
+        "address": "",
+        "structure": "",
+        "area": null,
+        "appraisedPrice": null,
+        "note": ""
+      }
+    ],
+    "documents": [
+      {
+        "type": "매각물건명세서",
+        "source": "대한민국 법원경매정보",
+        "available": true
+      },
+      {
+        "type": "현황조사서",
+        "source": "대한민국 법원경매정보",
+        "available": true
+      }
+    ],
     "firstSeenAt": "2026-09-07T01:32:43.410Z",
     "lastSeenAt": "2026-09-07T01:55:14.913Z",
     "source": "대한민국 법원경매정보 공개조회",
@@ -6836,7 +7055,16 @@
     ],
     "photoSource": "대한민국 법원경매정보",
     "photoCheckedAt": "2026-09-07T02:10:28.180Z",
-    "detailCheckedAt": "2026-09-07T02:16:39.630Z"
+    "detailCheckedAt": "2026-09-07T02:41:16.190Z",
+    "caseType": "부동산강제경매",
+    "appraisalSummary": "본건은 인천광역시 서구 검암동 소재 &amp;apos;서인천고등학교&amp;apos; 남서측 인근에 위치하며, 주위는 공동주택(아파트, 다세대주택 등) 및 단독주택, 소규모 근린생활시설 등으로 형성되어 있음.\n본건까지 차량의 출입이 가능하고, 인근에 버스정류장, 지하철(인천지하철2호선 검바위역) 등이 소재하여 대중교통 이용편의도는 양호함.\n철근콘크리트구조 경사슬라브지붕 5층 건물내 3층 302호로서, 외벽 : 벽돌붙임마감, 드라이비트마감 등, 창호 : 새시 창호 등임.\n도시형생활주택-단지형다세대로 이용중임.\n위생 및 급배수설비, 난방설비, 도시가스설비, 승강기설비 등이 되어 있음.\n세장형 평지로서 주거용(다세대주택) 건부지로 이용중임.\n본건 북측 및 동측으로 각각 노폭 약10m 내외 및 약8m 내외의 도로와 접함.\n제2종일반주거지역, 지구단위계획구역(검암1지구), 도로(접합), 가축사육제한구역(2025-05-20)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역(2025-12-03)(서인천고등학교[문의: 서부교육지원청 평생교육건강과(032-560-6662)])&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역(인천서부교육청평생교육과문의560-6659)&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역(자세한 사항은 인천서부교육지원청에 문의 032-560-6659)&lt;교육환경 보호에 관한 법률&gt;, 과밀억제권역&lt;수도권정비계획법&gt;, 토지거래계약에관한허가구역(토지거래허가구역(외국인 등의 주택용도 취득에 한함)(2025. 8. 26.~2026. 8. 25.)).\n없음.\n임대관계는 미상임.",
+    "appraisalDate": null,
+    "appraisalAgency": "",
+    "claimAmount": 195000000,
+    "landArea": null,
+    "buildingArea": null,
+    "saleStatementAvailable": true,
+    "statusReportAvailable": true
   },
   {
     "id": "B000240|2026타경503547|1",
@@ -7102,13 +7330,13 @@
     "latitude": null,
     "longitude": null,
     "eventCount": 0,
-    "photoCount": 0,
+    "photoCount": 15,
     "documentCount": 0,
     "coverage": {
       "base_info": 1,
       "schedule": 0,
       "winning_price": 0,
-      "photos": 0,
+      "photos": 1,
       "status_report": 0,
       "sale_statement": 0,
       "appraisal_summary": 0,
@@ -7124,7 +7352,25 @@
     "firstSeenAt": "2026-09-07T01:32:43.410Z",
     "lastSeenAt": "2026-09-07T01:55:14.913Z",
     "source": "대한민국 법원경매정보 공개조회",
-    "photoCheckedAt": "2026-09-07T02:16:50.686Z"
+    "photoCheckedAt": "2026-09-07T02:41:23.394Z",
+    "photoUrls": [
+      "photos/2026%ED%83%80%EA%B2%BD503498/1/01_a1bbc02e2d.jpg",
+      "photos/2026%ED%83%80%EA%B2%BD503498/1/02_6987aceab1.jpg",
+      "photos/2026%ED%83%80%EA%B2%BD503498/1/03_efabc2134c.jpg",
+      "photos/2026%ED%83%80%EA%B2%BD503498/1/04_950784b408.jpg",
+      "photos/2026%ED%83%80%EA%B2%BD503498/1/05_7378a3fa06.jpg",
+      "photos/2026%ED%83%80%EA%B2%BD503498/1/06_d0cd73f820.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503498/1/07_49b1da7dd8.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503498/1/08_795f756ab8.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503498/1/09_421e1b170f.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503498/1/10_209a194243.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503498/1/11_0f7d41b629.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503498/1/12_3b86fa2b03.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503498/1/13_19fa142ee1.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503498/1/14_c340e3891e.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503498/1/15_94c4d3b7e4.gif"
+    ],
+    "photoSource": "대한민국 법원경매정보"
   },
   {
     "id": "B000240|2026타경503469|1",
@@ -7147,13 +7393,13 @@
     "latitude": null,
     "longitude": null,
     "eventCount": 0,
-    "photoCount": 0,
+    "photoCount": 15,
     "documentCount": 0,
     "coverage": {
       "base_info": 1,
       "schedule": 0,
       "winning_price": 0,
-      "photos": 0,
+      "photos": 1,
       "status_report": 0,
       "sale_statement": 0,
       "appraisal_summary": 0,
@@ -7169,7 +7415,25 @@
     "firstSeenAt": "2026-09-07T01:32:43.410Z",
     "lastSeenAt": "2026-09-07T01:55:14.913Z",
     "source": "대한민국 법원경매정보 공개조회",
-    "photoCheckedAt": "2026-09-07T02:17:01.554Z"
+    "photoCheckedAt": "2026-09-07T02:41:26.689Z",
+    "photoUrls": [
+      "photos/2026%ED%83%80%EA%B2%BD503469/1/11_d40284d047.jpg",
+      "photos/2026%ED%83%80%EA%B2%BD503469/1/12_f867f1d111.jpg",
+      "photos/2026%ED%83%80%EA%B2%BD503469/1/13_4aeb826ea9.jpg",
+      "photos/2026%ED%83%80%EA%B2%BD503469/1/14_eb0ce43794.jpg",
+      "photos/2026%ED%83%80%EA%B2%BD503469/1/15_6d2c7dba3b.jpg",
+      "photos/2026%ED%83%80%EA%B2%BD503469/1/01_1e580019ac.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503469/1/02_37f5efed7c.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503469/1/03_5294e33a93.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503469/1/04_29d012cbc7.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503469/1/05_09eca464cc.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503469/1/06_9a4271e712.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503469/1/07_7e2d531087.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503469/1/08_2844563723.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503469/1/09_ca6da0fed5.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503469/1/10_8d8d5db26f.gif"
+    ],
+    "photoSource": "대한민국 법원경매정보"
   },
   {
     "id": "B000240|2026타경503464|1",
@@ -7192,13 +7456,13 @@
     "latitude": null,
     "longitude": null,
     "eventCount": 0,
-    "photoCount": 0,
+    "photoCount": 12,
     "documentCount": 0,
     "coverage": {
       "base_info": 1,
       "schedule": 0,
       "winning_price": 0,
-      "photos": 0,
+      "photos": 1,
       "status_report": 0,
       "sale_statement": 0,
       "appraisal_summary": 0,
@@ -7214,7 +7478,22 @@
     "firstSeenAt": "2026-09-07T01:32:43.410Z",
     "lastSeenAt": "2026-09-07T01:55:14.913Z",
     "source": "대한민국 법원경매정보 공개조회",
-    "photoCheckedAt": "2026-09-07T02:17:12.088Z"
+    "photoCheckedAt": "2026-09-07T02:41:29.770Z",
+    "photoUrls": [
+      "photos/2026%ED%83%80%EA%B2%BD503464/1/01_ee82f5dece.jpg",
+      "photos/2026%ED%83%80%EA%B2%BD503464/1/02_0a4d85cbfe.jpg",
+      "photos/2026%ED%83%80%EA%B2%BD503464/1/03_892e382a15.jpg",
+      "photos/2026%ED%83%80%EA%B2%BD503464/1/04_53f11ba60b.jpg",
+      "photos/2026%ED%83%80%EA%B2%BD503464/1/05_1f24371155.jpg",
+      "photos/2026%ED%83%80%EA%B2%BD503464/1/06_80efb0bfce.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503464/1/07_3b058144f0.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503464/1/08_cbc6859829.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503464/1/09_c8e8fab0fe.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503464/1/10_d2b1920aa2.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503464/1/11_1d94bf976d.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503464/1/12_b1c160fcdb.gif"
+    ],
+    "photoSource": "대한민국 법원경매정보"
   },
   {
     "id": "B000240|2026타경503450|1",
@@ -7237,13 +7516,13 @@
     "latitude": null,
     "longitude": null,
     "eventCount": 0,
-    "photoCount": 0,
+    "photoCount": 15,
     "documentCount": 0,
     "coverage": {
       "base_info": 1,
       "schedule": 0,
       "winning_price": 0,
-      "photos": 0,
+      "photos": 1,
       "status_report": 0,
       "sale_statement": 0,
       "appraisal_summary": 0,
@@ -7259,7 +7538,25 @@
     "firstSeenAt": "2026-09-07T01:32:43.410Z",
     "lastSeenAt": "2026-09-07T01:55:14.913Z",
     "source": "대한민국 법원경매정보 공개조회",
-    "photoCheckedAt": "2026-09-07T02:17:22.594Z"
+    "photoCheckedAt": "2026-09-07T02:41:34.086Z",
+    "photoUrls": [
+      "photos/2026%ED%83%80%EA%B2%BD503450/1/01_13f9b82ac3.jpg",
+      "photos/2026%ED%83%80%EA%B2%BD503450/1/02_5a3a405a14.jpg",
+      "photos/2026%ED%83%80%EA%B2%BD503450/1/03_abd21e2c90.jpg",
+      "photos/2026%ED%83%80%EA%B2%BD503450/1/04_139ca7a956.jpg",
+      "photos/2026%ED%83%80%EA%B2%BD503450/1/05_aeb37daf57.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503450/1/06_43e917c887.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503450/1/07_b3a2ccdad9.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503450/1/08_c42a06afd5.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503450/1/09_a50182debf.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503450/1/10_48fc935d73.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503450/1/11_3b060fb7a1.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503450/1/12_6441e2602f.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503450/1/13_11c999c536.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503450/1/14_a52a2fd5e6.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503450/1/15_76088b1157.gif"
+    ],
+    "photoSource": "대한민국 법원경매정보"
   },
   {
     "id": "B000240|2026타경503435|1",
@@ -7304,7 +7601,7 @@
     "firstSeenAt": "2026-09-07T01:32:43.410Z",
     "lastSeenAt": "2026-09-07T01:55:14.913Z",
     "source": "대한민국 법원경매정보 공개조회",
-    "photoCheckedAt": "2026-09-07T02:17:33.623Z"
+    "photoCheckedAt": "2026-09-07T02:41:34.732Z"
   },
   {
     "id": "B000240|2026타경503385|1",
@@ -7327,13 +7624,13 @@
     "latitude": null,
     "longitude": null,
     "eventCount": 0,
-    "photoCount": 0,
+    "photoCount": 8,
     "documentCount": 0,
     "coverage": {
       "base_info": 1,
       "schedule": 0,
       "winning_price": 0,
-      "photos": 0,
+      "photos": 1,
       "status_report": 0,
       "sale_statement": 0,
       "appraisal_summary": 0,
@@ -7349,7 +7646,18 @@
     "firstSeenAt": "2026-09-07T01:32:43.410Z",
     "lastSeenAt": "2026-09-07T01:55:14.913Z",
     "source": "대한민국 법원경매정보 공개조회",
-    "photoCheckedAt": "2026-09-07T02:17:44.678Z"
+    "photoCheckedAt": "2026-09-07T02:41:44.423Z",
+    "photoUrls": [
+      "photos/2026%ED%83%80%EA%B2%BD503385/1/01_f5d0ca2abf.jpg",
+      "photos/2026%ED%83%80%EA%B2%BD503385/1/02_6d84f37540.jpg",
+      "photos/2026%ED%83%80%EA%B2%BD503385/1/03_ebd1296501.jpg",
+      "photos/2026%ED%83%80%EA%B2%BD503385/1/04_3b4858fb00.jpg",
+      "photos/2026%ED%83%80%EA%B2%BD503385/1/05_e9cced89d9.jpg",
+      "photos/2026%ED%83%80%EA%B2%BD503385/1/06_4284e12fe1.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503385/1/07_39d6484ed5.gif",
+      "photos/2026%ED%83%80%EA%B2%BD503385/1/08_5dfd76588f.gif"
+    ],
+    "photoSource": "대한민국 법원경매정보"
   },
   {
     "id": "B000240|2026타경503381|1",
