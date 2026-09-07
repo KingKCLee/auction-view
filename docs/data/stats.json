@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T22:18:08.709Z",
+  "generatedAt": "2026-09-07T22:46:18.760Z",
   "court": "전국 법원",
   "region": "전국",
   "itemCount": 6621,
@@ -15,7 +15,7 @@
     "to": "2026-10"
   },
   "coverage": {
-    "base_info": 6242,
+    "base_info": 6246,
     "schedule": 1,
     "winning_price": 0,
     "photos": 27,
@@ -332,25 +332,25 @@
     "cursor": {
       "year": 2026,
       "month": 8,
-      "courtIndex": 6
+      "courtIndex": 9
     },
     "courtCount": 60,
     "courtsScanned": 3,
-    "lastCourt": "B000214",
+    "lastCourt": "B000240",
     "processedNotices": 0,
     "successfulNotices": 0,
     "newUniqueItems": 0,
     "deferredCount": 0,
     "lastError": null,
     "transport": [
-      "B000212:http",
-      "B000213:http",
-      "B000214:http"
+      "B214807:http",
+      "B214804:http",
+      "B000240:http"
     ],
     "attempts": [],
     "courtSource": "official-court-codes",
     "source": "대한민국 법원경매정보 매각공고(법원별)",
-    "finishedAt": "2026-09-07T20:36:26.743Z"
+    "finishedAt": "2026-09-07T22:46:05.615Z"
   },
   "currentCourtSweep": {
     "months": [
@@ -383,18 +383,18 @@
   },
   "photoCourtCount": 1,
   "basicInfoQuality": {
-    "ready": 6242,
-    "addressCount": 6242,
+    "ready": 6246,
+    "addressCount": 6246,
     "priceCount": 6218,
-    "missing": 379,
+    "missing": 375,
     "definition": "주소 + (용도/감정가/최저가/매각기일 중 1개 이상)",
-    "updatedAt": "2026-09-07T22:18:08.709Z"
+    "updatedAt": "2026-09-07T22:46:18.760Z"
   },
   "latestBasicInfoRun": {
     "checkedCases": 4,
     "successfulCases": 4,
     "itemsImproved": 4,
-    "remaining": 379,
+    "remaining": 375,
     "transport": [
       "B000240:http",
       "B000240:http",
@@ -404,6 +404,6 @@
     "attempts": [],
     "lastError": null,
     "source": "대한민국 법원경매정보 사건검색",
-    "finishedAt": "2026-09-07T22:18:08.709Z"
+    "finishedAt": "2026-09-07T22:46:18.760Z"
   }
 }
