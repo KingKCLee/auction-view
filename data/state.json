@@ -4,7 +4,7 @@
   "historyMonth": 4,
   "historyPage": 1,
   "runCount": 10,
-  "lastRun": "2026-09-07T12:32:23.085Z",
+  "lastRun": "2026-09-07T18:31:14.353Z",
   "lastError": "history notice 2025-08 offset 0: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
   "historyNoticeIndex": 0,
   "priorityIndex": {
@@ -38,7 +38,7 @@
   "propertyHistoryYear": 2026,
   "propertyHistoryMonth": 8,
   "propertyHistoryPage": 1,
-  "propertyHistoryLastRun": "2026-09-07T12:32:33.829Z",
+  "propertyHistoryLastRun": "2026-09-07T18:31:25.120Z",
   "propertyHistoryLastError": "Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml&pgjId=151F00: fetch failed",
   "lastMetricItemCount": 737,
   "saleNoticeDeferred": [],
@@ -142,15 +142,18 @@
     "2026-09|B000281|0": 0,
     "2026-09|B000281|1": 0,
     "search|2026-09|B000282": 0,
-    "search|2026-09|B000283": 0,
+    "search|2026-09|B000283": 1,
     "2026-09|B000283|0": 0,
     "2026-09|B000283|1": 0,
-    "2026-09|B000283|2": 0
+    "2026-09|B000283|2": 0,
+    "search|2026-09|B000284": 1,
+    "search|2026-09|B000285": 1,
+    "search|2026-09|B000310": 1
   },
   "currentSweepMonthSlot": 0,
-  "currentSweepCourtIndex": 28,
-  "currentSweepLastRun": "2026-09-07T15:56:20.196Z",
-  "currentSweepLastError": null,
+  "currentSweepCourtIndex": 32,
+  "currentSweepLastRun": "2026-09-07T18:30:42.538Z",
+  "currentSweepLastError": "B000310 2026-09: no transport",
   "saleNoticeBackfillVersion": 2,
   "currentSweepDeferred": [
     "2026-09|B214804",
@@ -164,6 +167,10 @@
     "2026-09|B000254",
     "2026-09|B000260",
     "2026-09|B000261",
-    "2026-09|B000262"
+    "2026-09|B000262",
+    "2026-09|B000283",
+    "2026-09|B000284",
+    "2026-09|B000285",
+    "2026-09|B000310"
   ]
 }
