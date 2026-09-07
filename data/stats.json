@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-07T15:16:34.640Z",
+  "generatedAt": "2026-09-07T15:56:33.395Z",
   "court": "전국 법원",
   "region": "전국",
-  "itemCount": 3599,
+  "itemCount": 4135,
   "winningCount": 0,
   "photoCount": 407,
   "documentCount": 22,
@@ -15,7 +15,7 @@
     "to": "2026-10"
   },
   "coverage": {
-    "base_info": 3200,
+    "base_info": 3740,
     "schedule": 1,
     "winning_price": 0,
     "photos": 27,
@@ -360,42 +360,42 @@
     ],
     "cursor": {
       "month": "2026-09",
-      "courtIndex": 25
+      "courtIndex": 28
     },
     "courtCount": 60,
     "courtsScanned": 4,
-    "lastCourt": "B000280",
+    "lastCourt": "B000283",
     "processedNotices": 7,
     "successfulNotices": 7,
-    "newUniqueItems": 772,
+    "newUniqueItems": 536,
     "deferredCount": 12,
     "cycle": 0,
     "lastError": null,
     "transport": [
-      "B000271:http",
-      "B000272:http",
-      "B000273:http",
-      "B000280:http"
+      "B000280:http",
+      "B000281:http",
+      "B000282:http",
+      "B000283:http"
     ],
     "attempts": [],
     "courtSource": "official-court-codes",
     "source": "대한민국 법원경매정보 매각공고(전국 최신 법원별)",
-    "finishedAt": "2026-09-07T15:16:22.210Z"
+    "finishedAt": "2026-09-07T15:56:20.197Z"
   },
   "photoCourtCount": 1,
   "basicInfoQuality": {
-    "ready": 3200,
-    "addressCount": 3200,
-    "priceCount": 3196,
-    "missing": 399,
+    "ready": 3740,
+    "addressCount": 3740,
+    "priceCount": 3732,
+    "missing": 395,
     "definition": "주소 + (용도/감정가/최저가/매각기일 중 1개 이상)",
-    "updatedAt": "2026-09-07T15:16:34.640Z"
+    "updatedAt": "2026-09-07T15:56:33.395Z"
   },
   "latestBasicInfoRun": {
     "checkedCases": 4,
     "successfulCases": 4,
     "itemsImproved": 4,
-    "remaining": 399,
+    "remaining": 395,
     "transport": [
       "B000240:http",
       "B000240:http",
@@ -405,6 +405,6 @@
     "attempts": [],
     "lastError": null,
     "source": "대한민국 법원경매정보 사건검색",
-    "finishedAt": "2026-09-07T15:16:34.640Z"
+    "finishedAt": "2026-09-07T15:56:33.395Z"
   }
 }
