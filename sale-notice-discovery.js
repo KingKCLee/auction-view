@@ -1,0 +1,51 @@
+const fs=require('fs');
+const path=require('path');
+const lib=require('court-auction-notice-search');
+
+const FROM_YEAR=1990;
+const DATA_DIR=path.join(__dirname,'data');
+const AUCTIONS=path.join(DATA_DIR,'auctions.json');
+const STATS=path.join(DATA_DIR,'stats.json');
+const STATE=path.join(DATA_DIR,'state.json');
+fs.mkdirSync(DATA_DIR,{recursive:true});
+
+const read=(p,f)=>{try{return JSON.parse(fs.readFileSync(p,'utf8'))}catch{return f}};
+const write=(p,v)=>fs.writeFileSync(p,JSON.stringify(v,null,2));
+const text=v=>v==null?'':String(v);
+const int=v=>{if(v===null||v===undefined||v==='')return null;const n=Number(String(v).replace(/[^0-9.-]/g,''));return Number.isFinite(n)?Math.trunc(n):null};
+const date=v=>{if(!v)return null;const s=String(v).replace(/[^0-9]/g,'');return s.length>=8?`${s.slice(0,4)}-${s.slice(4,6)}-${s.slice(6,8)}`:String(v)};
+const ym=(y,m)=>`${y}-${String(m).padStart(2,'0')}`;
+const monthShift=(y,m,d)=>{const x=new Date(Date.UTC(y,m-1+d,1));return[x.getUTCFullYear(),x.getUTCMonth()+1]};
+const prevMonth=(y,m)=>monthShift(y,m,-1);
+const SIDO=['서울특별시','부산광역시','대구광역시','인천광역시','광주광역시','대전광역시','울산광역시','세종특별자치시','경기도','강원특별자치도','충청북도','충청남도','전북특별자치도','전라남도','경상북도','경상남도','제주특별자치도'];
+function inferRegion(address,courtName){const a=String(address||'').trim();let sido=SIDO.find(s=>a.startsWith(s))||'';if(!sido){for(const s of SIDO){const short=s.replace(/(특별자치도|특별자치시|특별시|광역시|도)$/,'');if(String(courtName||'').includes(short)){sido=s;break}}}const p=a.split(/\s+/);return{sido,sigungu:p.find((v,i)=>i>0&&/(시|군|구)$/.test(v))||''}}
+function noticeKey(n){const r=n?.raw||n||{};return [n?.noticeId,r.rletDspslPbancId,n?.courtCode,r.cortOfcCd,n?.saleDate,r.dspslDxdyYmd,n?.judgeDeptCode,r.jdbnCd,n?.bidStartDate,r.bidBgngYmd,n?.bidEndDate,r.bidEndYmd].map(text).join('|')}
+function normalizeItem(item,notice){const raw=item?.raw||{},nr=notice?.raw||{};const courtCode=text(item?.courtCode||notice?.courtCode||raw.cortOfcCd||nr.cortOfcCd);const courtName=text(item?.courtName||notice?.courtName||raw.cortSptNm||nr.cortSptNm||nr.jiwonNm);const caseNumber=text(item?.caseNumber||item?.displayCaseNumber||raw.srnSaNo||raw.userCsNo||raw.csNo);const itemNumber=text(item?.itemSeq||item?.itemNumber||raw.maemulSer||raw.mokmulSer||raw.mokmulNo||1);if(!courtCode||!caseNumber)return null;const address=text(item?.address||raw.userStPrint||raw.printSt||raw.realSt);const appraisedPrice=int(item?.appraisedPrice??raw.gamevalAmt??raw.gamPrice);const minimumPrice=int(item?.minimumSalePrice??raw.minmaePrice??raw.minimumPrice);const winningPrice=int(item?.winningPrice??raw.naksalAmt??raw.naksalPrice??raw.maeAmt);const rg=inferRegion(address,courtName);const saleDate=date(item?.saleDate||notice?.saleDate||raw.dspslDxdyYmd||nr.dspslDxdyYmd);const failedCount=int(item?.flbdCount??raw.yuchalCnt??raw.failedCount)||0;return {id:`${courtCode}|${caseNumber}|${itemNumber}`,courtCode,courtName,caseNumber,itemNumber,usage:text(item?.usage||raw.dspslUsgNm||raw.usageName),usageCodes:item?.usageCodes||null,address,regionSido:rg.sido,regionSigungu:rg.sigungu,regionCodes:item?.regionCodes||null,buildingName:text(item?.buildingName||raw.buldNm),propertyDescription:text(item?.propertyDescription||raw.gdsSpcfcCtt||item?.remarks),appraisedPrice,minimumPrice,failedCount,saleDate,decisionDate:date(raw.maegyuljGiil||raw.decisionDate),status:text(item?.progressStatusCode||item?.statusCode||raw.mulStatcd||raw.resState||raw.status),winningPrice,winningDate:date(item?.winningDate||raw.winningDate||raw.naksalYmd||raw.maeYmd),winningRatio:winningPrice&&appraisedPrice?Math.round(winningPrice/appraisedPrice*10000)/100:null,latitude:null,longitude:null,areaRange:item?.areaRange||null,buildingList:Array.isArray(item?.buildingList)?item.buildingList:[],areaList:Array.isArray(item?.areaList)?item.areaList:[],landCategoryList:Array.isArray(item?.landCategoryList)?item.landCategoryList:[],eventCount:0,photoCount:int(raw.picCnt||raw.photoCount)||0,documentCount:0,coverage:{base_info:1,schedule:0,winning_price:winningPrice?1:0,photos:(int(raw.picCnt||raw.photoCount)||0)>0?1:0,status_report:0,sale_statement:0,appraisal_summary:0,appraisal_pdf:0,transactions:0,building_registry:0,land_use:0,rights:0},events:[],components:[],documents:[],firstSeenAt:new Date().toISOString(),lastSeenAt:new Date().toISOString(),source:'대한민국 법원경매정보 매각공고'} }
+function merge(a,b){const o={...a,...b,firstSeenAt:a.firstSeenAt||b.firstSeenAt,lastSeenAt:new Date().toISOString()};for(const k of ['appraisedPrice','minimumPrice','winningPrice','winningDate','saleDate','decisionDate','address','usage','buildingName','propertyDescription','regionSido','regionSigungu'])if((b[k]===null||b[k]==='')&&a[k]!=null)o[k]=a[k];for(const k of ['photoUrls','events','components','documents','buildingList','areaList','landCategoryList'])if((!Array.isArray(b[k])||!b[k].length)&&Array.isArray(a[k]))o[k]=a[k];o.failedCount=Math.max(Number(a.failedCount||0),Number(b.failedCount||0));o.photoCount=Math.max(Number(a.photoCount||0),Number(b.photoCount||0));o.documentCount=Math.max(Number(a.documentCount||0),Number(b.documentCount||0));o.eventCount=Math.max(Number(a.eventCount||0),Number(b.eventCount||0));o.coverage={};for(const k of new Set([...Object.keys(a.coverage||{}),...Object.keys(b.coverage||{})]))o.coverage[k]=Math.max(Number(a.coverage?.[k]||0),Number(b.coverage?.[k]||0));return o}
+function importDetail(detail,notice,map){let n=0;for(const item of detail?.items||[]){const r=normalizeItem(item,notice);if(!r)continue;map.set(r.id,map.has(r.id)?merge(map.get(r.id),r):r);n++}return n}
+
+async function main(){
+ const rows=read(AUCTIONS,[]),map=new Map(rows.map(x=>[x.id,x])),stats=read(STATS,{}),oldState=read(STATE,{});
+ const now=new Date(),cy=now.getUTCFullYear(),cm=now.getUTCMonth()+1,[ny,nm]=monthShift(cy,cm,1),[py,pm]=prevMonth(cy,cm);
+ const state={...oldState,noticeHistoryYear:oldState.noticeHistoryYear||py,noticeHistoryMonth:oldState.noticeHistoryMonth||pm,noticeHistoryOffset:Number(oldState.noticeHistoryOffset||0),recentNoticeKeys:Array.isArray(oldState.recentNoticeKeys)?oldState.recentNoticeKeys:[]};
+ const client=new lib.CourtAuctionHttpClient({timeoutMs:30000,minDelayMs:2600,jitterMs:900,maxCallsPerSession:9});
+ let recentItems=0,historyItems=0,noticesChecked=0,lastError=null;const seen=new Set(state.recentNoticeKeys);
+ const recentNotices=[];
+ for(const [y,m] of [[ny,nm],[cy,cm]]){
+   try{const res=await lib.searchSaleNotices({date:ym(y,m),courtCode:'',bidType:'date',client,includeRaw:true});console.log(`[sale-notice] ${ym(y,m)} notices=${res?.items?.length||0}`);for(const n of res?.items||[])recentNotices.push(n)}catch(e){lastError=`recent notices ${ym(y,m)}: ${e.message||e}`;console.error(lastError)}
+ }
+ const fresh=recentNotices.filter(n=>!seen.has(noticeKey(n)));const recentQueue=(fresh.length?fresh:recentNotices.slice(0,2)).slice(0,4);
+ for(const n of recentQueue){try{const d=await lib.getSaleNoticeDetail(n,{client,includeRaw:true});const added=importDetail(d,n,map);recentItems+=added;noticesChecked++;const k=noticeKey(n);if(k)seen.add(k);console.log(`[sale-notice-detail] ${n.courtName||n.courtCode||''} ${n.saleDate||''} items=${added}`)}catch(e){lastError=`recent detail ${n.courtName||n.courtCode||''}: ${e.message||e}`;console.error(lastError)}}
+ state.recentNoticeKeys=[...seen].slice(-1000);
+ if(state.noticeHistoryYear>=FROM_YEAR){
+   const hy=state.noticeHistoryYear,hm=state.noticeHistoryMonth;
+   try{const res=await lib.searchSaleNotices({date:ym(hy,hm),courtCode:'',bidType:'date',client,includeRaw:true});const list=res?.items||[];console.log(`[sale-notice-history] ${ym(hy,hm)} notices=${list.length} offset=${state.noticeHistoryOffset}`);if(!list.length){[state.noticeHistoryYear,state.noticeHistoryMonth]=prevMonth(hy,hm);state.noticeHistoryOffset=0}else{const idx=Math.min(state.noticeHistoryOffset,list.length-1);const n=list[idx];const d=await lib.getSaleNoticeDetail(n,{client,includeRaw:true});historyItems+=importDetail(d,n,map);noticesChecked++;if(idx+1>=list.length){[state.noticeHistoryYear,state.noticeHistoryMonth]=prevMonth(hy,hm);state.noticeHistoryOffset=0}else state.noticeHistoryOffset=idx+1}}
+   catch(e){lastError=`history notice ${ym(hy,hm)} offset ${state.noticeHistoryOffset}: ${e.message||e}`;console.error(lastError)}
+ }
+ const out=[...map.values()].sort((a,b)=>String(b.saleDate||'0000').localeCompare(String(a.saleDate||'0000'))||String(b.caseNumber||'').localeCompare(String(a.caseNumber||'')));
+ write(AUCTIONS,out);state.lastRun=new Date().toISOString();state.lastError=lastError;state.collector='sale-notice';write(STATE,state);
+ const totalMonths=(cy-FROM_YEAR)*12+cm;const hY=state.noticeHistoryYear,hM=state.noticeHistoryMonth;const completed=Math.max(0,(cy-hY)*12+(cm-hM)-1);const keys=['base_info','schedule','winning_price','photos','status_report','sale_statement','appraisal_summary','appraisal_pdf','transactions','building_registry','land_use','rights'];const coverage={};for(const k of keys)coverage[k]=out.filter(x=>Number(x.coverage?.[k]||0)===1).length;
+ const latestRun={run_type:'sale-notice-discovery',started_at:state.lastRun,finished_at:new Date().toISOString(),status:lastError?'partial':'done',items_found:recentItems+historyItems,items_saved:recentItems+historyItems,priority_items:recentItems,history_items:historyItems,notices_checked:noticesChecked,transport:'official-sale-notice-http',error_text:lastError};
+ const next={...stats,generatedAt:new Date().toISOString(),court:'전국 법원',region:'전국',itemCount:out.length,winningCount:out.filter(x=>x.winningPrice).length,photoCount:out.reduce((a,x)=>a+Number(x.photoUrls?.length||x.photoCount||0),0),documentCount:out.reduce((a,x)=>a+Number(x.documentCount||0),0),eventCount:out.reduce((a,x)=>a+Number(x.eventCount||0),0),errorJobs:lastError?1:0,collectionOrder:'latest-first',collectorTransport:'official-sale-notice-http',latestWindow:{from:ym(cy,cm),to:ym(ny,nm)},coverage,history:{fromYear:FROM_YEAR,startYear:cy,totalMonths,completedMonths:completed,percent:Math.min(100,Math.round(completed/Math.max(1,totalMonths)*10000)/100),cursor:{year:hY,month:hM,noticeOffset:state.noticeHistoryOffset}},latestRun,runs:[latestRun,...(stats.runs||[])].slice(0,16)};write(STATS,next);console.log(JSON.stringify(latestRun,null,2));
+}
+main().catch(e=>{console.error(e);process.exitCode=1});
