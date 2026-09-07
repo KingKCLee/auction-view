@@ -1,6 +1,7 @@
 const fs=require('fs');
 const path=require('path');
 const lib=require('court-auction-notice-search');
+const {CourtBrowserFallbackClient}=require('./court-browser-fallback');
 
 const DATA=path.join(__dirname,'data','auctions.json');
 const STATS=path.join(__dirname,'data','stats.json');
@@ -18,7 +19,7 @@ function makeClient(direct=false){
   return c;
 }
 
-async function fetchCase(courtCode,caseNumber,normal,direct){
+async function fetchCase(courtCode,caseNumber,normal,direct,browser){
   const attempts=[];
   try{
     const r=await lib.getCaseByCaseNumber({courtCode,caseNumber,client:normal,includeRaw:true});
@@ -29,8 +30,13 @@ async function fetchCase(courtCode,caseNumber,normal,direct){
     const r=await lib.getCaseByCaseNumber({courtCode,caseNumber,client:direct,includeRaw:true});
     if(r?.found)return{r,transport:'direct-http',attempts};
     attempts.push('direct:not-found');
-    return{r,transport:'direct-http',attempts};
-  }catch(e){attempts.push(`direct:${e.code||''}:${e.message||e}`);return{r:null,transport:'failed',attempts,error:e}}
+  }catch(e){attempts.push(`direct:${e.code||''}:${e.message||e}`)}
+  try{
+    const r=await lib.getCaseByCaseNumber({courtCode,caseNumber,client:browser,includeRaw:true});
+    if(r?.found)return{r,transport:'browser-commit',attempts};
+    attempts.push('browser:not-found');
+    return{r,transport:'browser-commit',attempts};
+  }catch(e){attempts.push(`browser:${e.code||''}:${e.message||e}`);return{r:null,transport:'failed',attempts,error:e}}
 }
 
 function applyCase(group,result){
@@ -79,12 +85,12 @@ async function main(){
     return da-db;
   }).slice(0,MAX_CASES);
 
-  const normal=makeClient(false),direct=makeClient(true);
+  const normal=makeClient(false),direct=makeClient(true),browser=new CourtBrowserFallbackClient({timeoutMs:22000});
   let checked=0,success=0,itemsImproved=0,lastError=null;const transports=[],attempts=[];
   for(const [key,group] of ranked){
     const [courtCode,...rest]=key.split('|'),caseNumber=rest.join('|');
     checked++;
-    const got=await fetchCase(courtCode,caseNumber,normal,direct);
+    const got=await fetchCase(courtCode,caseNumber,normal,direct,browser);
     transports.push(`${courtCode}:${got.transport}`);attempts.push(...got.attempts);
     if(got.r?.found){success++;itemsImproved+=applyCase(group,got.r)}else{
       const now=new Date().toISOString();for(const row of group)row.basicInfoCheckedAt=now;
@@ -92,7 +98,7 @@ async function main(){
     }
     await sleep(1000+Math.floor(Math.random()*800));
   }
-  for(const c of [normal,direct])if(typeof c.close==='function')try{await c.close()}catch{}
+  for(const c of [normal,direct,browser])if(typeof c.close==='function')try{await c.close()}catch{}
 
   const ready=rows.filter(usable).length,addressCount=rows.filter(x=>txt(x.address)).length,priceCount=rows.filter(x=>Number(x.appraisedPrice)>0||Number(x.minimumPrice)>0).length;
   for(const row of rows)row.coverage={...(row.coverage||{}),base_info:usable(row)?1:0};
