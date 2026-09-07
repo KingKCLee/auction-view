@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T02:41:44.425Z",
+  "generatedAt": "2026-09-07T03:45:45.446Z",
   "court": "전국 법원",
   "region": "전국",
   "itemCount": 409,
@@ -41,17 +41,28 @@
     }
   },
   "latestRun": {
-    "run_type": "public-collector",
-    "started_at": "2026-09-07T02:40:44.681Z",
-    "finished_at": "2026-09-07T02:40:44.681Z",
+    "run_type": "browser-discovery",
+    "started_at": "2026-09-07T03:43:57.449Z",
+    "finished_at": "2026-09-07T03:43:57.450Z",
     "status": "partial",
     "items_found": 0,
     "items_saved": 0,
     "priority_items": 0,
     "history_items": 0,
-    "error_text": "history 2026-04 page 1: Court Auction request failed for /pgj/pgjsearch/searchControllerMain.on"
+    "transport": "chromium",
+    "error_text": "history 2026-04 page 1 browser: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml&pgjId=151F00: page.goto: Timeout 35000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml&pgjId=151F00\", waiting until \"domcontentloaded\"\n"
   },
   "runs": [
+    {
+      "run_type": "browser-discovery",
+      "started_at": "2026-09-07T03:43:57.449Z",
+      "status": "partial",
+      "items_found": 0,
+      "priority_items": 0,
+      "history_items": 0,
+      "transport": "chromium",
+      "error_text": "history 2026-04 page 1 browser: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml&pgjId=151F00: page.goto: Timeout 35000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml&pgjId=151F00\", waiting until \"domcontentloaded\"\n"
+    },
     {
       "run_type": "public-collector",
       "started_at": "2026-09-07T02:40:44.681Z",
@@ -64,21 +75,22 @@
   ],
   "latestDetailRun": {
     "checked": 4,
-    "success": 4,
+    "success": 0,
     "eventsAdded": 0,
-    "docsAdded": 8,
+    "docsAdded": 0,
     "source": "대한민국 법원경매정보",
     "order": "latest-first",
-    "error": null,
-    "finishedAt": "2026-09-07T02:41:16.193Z"
+    "error": "2026타경503506: fetch failed",
+    "finishedAt": "2026-09-07T03:44:40.719Z"
   },
   "latestPhotoRun": {
     "checked": 6,
-    "success": 5,
-    "photosSaved": 65,
+    "success": 0,
+    "photosSaved": 0,
     "source": "대한민국 법원경매정보",
     "order": "latest-first",
-    "error": "2026타경503435: fetch failed",
-    "finishedAt": "2026-09-07T02:41:44.425Z"
-  }
+    "error": "2026타경503316: fetch failed",
+    "finishedAt": "2026-09-07T03:45:45.447Z"
+  },
+  "collectorTransport": "chromium"
 }
