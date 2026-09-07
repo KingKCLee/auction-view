@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/workflows/agent-current-court-sweep.yml'
       - 'current-court-sweep.js'
+      - 'basic-info-enrich.js'
       - 'fast-court-preload.js'
       - 'sale-notice-discovery.js'
       - 'property-history-discovery-v2.js'
@@ -24,12 +25,13 @@ concurrency:
 jobs:
   current-sweep:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 10
     outputs:
       needs_rescue: ${{ steps.health.outputs.needs_rescue }}
     env:
       CURRENT_SWEEP_COURTS: '4'
       CURRENT_SWEEP_NOTICES: '3'
+      BASIC_INFO_CASES: '4'
       NODE_OPTIONS: '--dns-result-order=ipv4first'
     steps:
       - uses: actions/checkout@v4
@@ -60,6 +62,8 @@ jobs:
           else
             echo "an official notice route returned data; property-search fallback not needed"
           fi
+      - name: Fill missing real basic information
+        run: timeout 120s npm run basic || echo "basic-info enrichment deferred to next cycle"
       - name: Decide whether a different runner should rescue this cycle
         id: health
         run: |
@@ -86,10 +90,11 @@ jobs:
     needs: current-sweep
     if: needs.current-sweep.outputs.needs_rescue == 'true'
     runs-on: macos-latest
-    timeout-minutes: 6
+    timeout-minutes: 8
     env:
       CURRENT_SWEEP_COURTS: '4'
       CURRENT_SWEEP_NOTICES: '3'
+      BASIC_INFO_CASES: '4'
       NODE_OPTIONS: '--dns-result-order=ipv4first'
     steps:
       - uses: actions/checkout@v4
@@ -102,6 +107,8 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Retry the next nationwide court batch from macOS
         run: node -r ./fast-court-preload.js current-court-sweep.js
+      - name: Fill missing real basic information on macOS
+        run: npm run basic || true
       - name: Publish rescued batch immediately
         run: |
           rm -rf docs
