@@ -46,13 +46,14 @@
     "search|2026-08|B000210": 0,
     "search|2026-08|B000211": 0,
     "search|2026-08|B000215": 0,
-    "search|2026-08|B000212": 1
+    "search|2026-08|B000212": 1,
+    "search|2026-08|B000280": 1
   },
   "saleNoticeBackfillYear": 2026,
   "saleNoticeBackfillMonth": 8,
   "saleNoticeBackfillOffset": 0,
-  "saleNoticeBackfillLastRun": "2026-09-07T13:31:13.241Z",
-  "saleNoticeBackfillLastError": "B000212 2026-08: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\", waiting until \"domcontentloaded\"\n",
+  "saleNoticeBackfillLastRun": "2026-09-07T18:23:11.235Z",
+  "saleNoticeBackfillLastError": "B000280 2026-08: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\", waiting until \"domcontentloaded\"\n",
   "saleNoticeCourtOffsets": {
     "2026-08|B000210": -1,
     "2026-08|B000211": -1,

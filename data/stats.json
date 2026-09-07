@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T15:56:33.395Z",
+  "generatedAt": "2026-09-07T18:23:11.236Z",
   "court": "전국 법원",
   "region": "전국",
   "itemCount": 4135,
@@ -15,7 +15,7 @@
     "to": "2026-10"
   },
   "coverage": {
-    "base_info": 3740,
+    "base_info": 4135,
     "schedule": 1,
     "winning_price": 0,
     "photos": 27,
@@ -331,16 +331,16 @@
       "month": 8,
       "courtIndex": 3
     },
-    "courtCount": 9,
+    "courtCount": 15,
     "courtsScanned": 1,
-    "lastCourt": "B000212",
+    "lastCourt": "B000280",
     "processedNotices": 0,
     "successfulNotices": 0,
     "newUniqueItems": 0,
     "deferredCount": 0,
-    "lastError": "B000212 2026-08: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\", waiting until \"domcontentloaded\"\n",
+    "lastError": "B000280 2026-08: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\", waiting until \"domcontentloaded\"\n",
     "transport": [
-      "B000212:failed"
+      "B000280:failed"
     ],
     "attempts": [
       "normal-court-codes:NETWORK_ERROR:Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
@@ -351,7 +351,7 @@
     ],
     "courtSource": "existing-db-court-codes",
     "source": "대한민국 법원경매정보 매각공고(법원별)",
-    "finishedAt": "2026-09-07T13:31:13.242Z"
+    "finishedAt": "2026-09-07T18:23:11.236Z"
   },
   "currentCourtSweep": {
     "months": [
