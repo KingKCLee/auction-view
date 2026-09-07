@@ -1,6 +1,7 @@
 const fs=require('fs');
 const path=require('path');
 const crypto=require('crypto');
+const {chromium}=require('playwright');
 
 const BASE='https://www.courtauction.go.kr';
 const DATA=path.join(__dirname,'data','auctions.json');
@@ -10,6 +11,11 @@ const MAX_ITEMS=6;
 const MIN_DELAY=3200;
 let cookie='';
 let lastCall=0;
+
+// 검증용 공개 백업 경로. 장기 수집의 1순위는 법원 원문이다.
+const BOOTSTRAP_PUBLIC_PAGES={
+  '2025타경509565':'https://auctionlabs.co.kr/detail/944052/'
+};
 
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const safe=s=>String(s||'x').replace(/[\\/:*?"<>|\s]+/g,'_').slice(0,120);
@@ -60,28 +66,62 @@ function extAndMime(buf){
  return['bin','application/octet-stream'];
 }
 
+function saveBuffer(row,buf,seq){
+ if(!buf||buf.length<100)return null;
+ const [ext]=extAndMime(buf);
+ if(ext==='bin')return null;
+ const dir=path.join(PHOTO_ROOT,safe(row.caseNumber),safe(row.itemNumber));
+ fs.mkdirSync(dir,{recursive:true});
+ const h=sha(buf);
+ const file=`${String(seq).padStart(2,'0')}_${h.slice(0,10)}.${ext}`;
+ const fp=path.join(dir,file);
+ if(!fs.existsSync(fp))fs.writeFileSync(fp,buf);
+ return `photos/${encodeURIComponent(safe(row.caseNumber))}/${encodeURIComponent(safe(row.itemNumber))}/${encodeURIComponent(file)}`;
+}
+
 function savePhotos(row,detail){
  const pics=detail?.data?.dma_result?.csPicLst||[];
  if(!Array.isArray(pics)||!pics.length)return [];
- const dir=path.join(PHOTO_ROOT,safe(row.caseNumber),safe(row.itemNumber));
- fs.mkdirSync(dir,{recursive:true});
  const urls=[];
  let seq=0;
  for(const p of pics){
   if(!p?.picFile)continue;
   let buf;
   try{buf=Buffer.from(String(p.picFile).replace(/^data:[^;]+;base64,/,''),'base64')}catch{continue}
-  if(buf.length<100)continue;
-  const [ext,mime]=extAndMime(buf);
-  if(ext==='bin')continue;
-  const h=sha(buf);
-  const n=String(p.cortAuctnPicSeq||p.pageSeq||++seq).padStart(2,'0');
-  const file=`${n}_${h.slice(0,10)}.${ext}`;
-  const fp=path.join(dir,file);
-  if(!fs.existsSync(fp))fs.writeFileSync(fp,buf);
-  urls.push(`photos/${encodeURIComponent(safe(row.caseNumber))}/${encodeURIComponent(safe(row.itemNumber))}/${encodeURIComponent(file)}`);
+  const u=saveBuffer(row,buf,p.cortAuctnPicSeq||p.pageSeq||++seq);
+  if(u)urls.push(u);
  }
  return [...new Set(urls)];
+}
+
+async function publicBootstrapPhotos(row){
+ const pageUrl=BOOTSTRAP_PUBLIC_PAGES[row.caseNumber];
+ if(!pageUrl)return [];
+ let browser;
+ try{
+  browser=await chromium.launch({headless:true});
+  const page=await browser.newPage({locale:'ko-KR',userAgent:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/152 Safari/537.36'});
+  await page.goto(pageUrl,{waitUntil:'domcontentloaded',timeout:25000});
+  await page.waitForTimeout(2500);
+  const raw=await page.locator('img').evaluateAll(imgs=>imgs.flatMap(img=>Array.from(img.attributes).map(a=>a.value)).filter(Boolean));
+  const candidates=[...new Set(raw.flatMap(v=>String(v).split(/\s+/)).filter(v=>/B00024020250130509565[1-9]\.jpg/i.test(v)).map(v=>{try{return new URL(v,location.href).href}catch{return v}}))];
+  // evaluateAll 내부 location 변환이 브라우저 컨텍스트 밖에서 불가능한 경우를 보완
+  const absolute=candidates.map(v=>{try{return new URL(v,pageUrl).href}catch{return v}});
+  const out=[];
+  let seq=0;
+  for(const src of absolute){
+   try{
+    const res=await page.request.get(src,{headers:{referer:pageUrl},timeout:20000});
+    if(!res.ok())continue;
+    const u=saveBuffer(row,await res.body(),++seq);
+    if(u)out.push(u);
+   }catch{}
+  }
+  return [...new Set(out)];
+ }catch(e){
+  console.error(`bootstrap ${row.caseNumber}: ${e.message||e}`);
+  return [];
+ }finally{if(browser)await browser.close()}
 }
 
 async function main(){
@@ -98,17 +138,26 @@ async function main(){
  }).slice(0,MAX_ITEMS);
  let itemSuccess=0,saved=0,lastError=null;
  for(const row of ranked){
+  let urls=[];
   try{
    const detail=await getItemDetail(row);
-   const urls=savePhotos(row,detail);
-   if(urls.length){row.photoUrls=urls;row.photoCount=urls.length;row.coverage={...(row.coverage||{}),photos:1};saved+=urls.length}
-   row.photoCheckedAt=new Date().toISOString();
-   itemSuccess++;
-  }catch(e){lastError=`${row.caseNumber}: ${e.message||e}`;console.error(lastError);cookie='';}
+   urls=savePhotos(row,detail);
+   row.photoSource='court-detail';
+  }catch(e){
+   lastError=`${row.caseNumber}: ${e.message||e}`;
+   console.error(lastError);
+   cookie='';
+   urls=await publicBootstrapPhotos(row);
+   if(urls.length)row.photoSource='public-bootstrap';
+  }
+  if(urls.length){
+   row.photoUrls=urls;row.photoCount=urls.length;row.coverage={...(row.coverage||{}),photos:1};saved+=urls.length;itemSuccess++;
+  }
+  row.photoCheckedAt=new Date().toISOString();
  }
  write(DATA,rows);
  stats.generatedAt=new Date().toISOString();
- stats.photoCount=rows.reduce((n,x)=>n+Number(x.photoUrls?.length||x.photoCount||0),0);
+ stats.photoCount=rows.reduce((n,x)=>n+Number(x.photoUrls?.length||0),0);
  stats.coverage={...(stats.coverage||{}),photos:rows.filter(x=>(x.photoUrls?.length||0)>0).length};
  stats.latestPhotoRun={checked:ranked.length,success:itemSuccess,photosSaved:saved,error:lastError,finishedAt:new Date().toISOString()};
  write(STATS,stats);
