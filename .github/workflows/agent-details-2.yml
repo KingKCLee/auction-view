@@ -1,12 +1,6 @@
 name: Auction Agent - Details 2
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/agent-details-2.yml'
-  schedule:
-    - cron: '4,19,34,49 * * * *'
   workflow_dispatch:
 
 permissions:
