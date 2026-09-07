@@ -1,9 +1,16 @@
 {
   "name": "auction-view",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "type": "commonjs",
-  "scripts": {"collect":"node collect.js"},
-  "dependencies": {"court-auction-notice-search":"latest","playwright":"^1.57.0"},
-  "engines":{"node":">=22"}
+  "scripts": {
+    "collect": "node collect.js",
+    "photos": "node photo-enrich.js",
+    "sync": "node collect.js && node photo-enrich.js"
+  },
+  "dependencies": {
+    "court-auction-notice-search": "latest",
+    "playwright": "^1.57.0"
+  },
+  "engines": {"node": ">=22"}
 }
