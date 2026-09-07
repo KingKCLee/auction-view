@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-07T12:32:33.856Z",
+  "generatedAt": "2026-09-07T13:11:41.801Z",
   "court": "전국 법원",
   "region": "전국",
-  "itemCount": 2264,
+  "itemCount": 2827,
   "winningCount": 0,
   "photoCount": 407,
   "documentCount": 22,
@@ -15,7 +15,7 @@
     "to": "2026-10"
   },
   "coverage": {
-    "base_info": 2264,
+    "base_info": 2827,
     "schedule": 1,
     "winning_price": 0,
     "photos": 27,
@@ -356,36 +356,27 @@
     ],
     "cursor": {
       "month": "2026-09",
-      "courtIndex": 19
+      "courtIndex": 22
     },
     "courtCount": 60,
     "courtsScanned": 4,
-    "lastCourt": "B000262",
-    "processedNotices": 0,
-    "successfulNotices": 0,
-    "newUniqueItems": 0,
+    "lastCourt": "B000270",
+    "processedNotices": 7,
+    "successfulNotices": 7,
+    "newUniqueItems": 563,
     "deferredCount": 12,
     "cycle": 0,
-    "lastError": "B000262 2026-09: no transport",
+    "lastError": null,
     "transport": [
-      "B000254:failed",
-      "B000260:failed",
-      "B000261:failed",
-      "B000262:failed"
+      "B000263:http",
+      "B000264:http",
+      "B000270:http",
+      "B000270:http"
     ],
-    "attempts": [
-      "normal-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed",
-      "direct-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed",
-      "normal-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed",
-      "direct-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed",
-      "normal-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed",
-      "direct-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed",
-      "normal-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed",
-      "direct-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed"
-    ],
+    "attempts": [],
     "courtSource": "official-court-codes",
     "source": "대한민국 법원경매정보 매각공고(전국 최신 법원별)",
-    "finishedAt": "2026-09-07T12:31:51.325Z"
+    "finishedAt": "2026-09-07T13:11:41.801Z"
   },
   "photoCourtCount": 1
 }
