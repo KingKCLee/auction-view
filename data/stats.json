@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-07T02:06:27.576Z",
+  "generatedAt": "2026-09-07T02:10:44.561Z",
   "court": "인천지방법원",
   "region": "인천광역시",
-  "itemCount": 361,
+  "itemCount": 409,
   "winningCount": 0,
-  "photoCount": 186,
-  "documentCount": 0,
+  "photoCount": 260,
+  "documentCount": 8,
   "eventCount": 21,
   "queuedJobs": 0,
   "errorJobs": 0,
@@ -16,13 +16,13 @@
     "2026-08"
   ],
   "coverage": {
-    "base_info": 361,
+    "base_info": 409,
     "schedule": 1,
     "winning_price": 0,
-    "photos": 15,
-    "status_report": 0,
-    "sale_statement": 0,
-    "appraisal_summary": 0,
+    "photos": 21,
+    "status_report": 4,
+    "sale_statement": 4,
+    "appraisal_summary": 4,
     "appraisal_pdf": 0,
     "transactions": 0,
     "building_registry": 0,
@@ -33,22 +33,22 @@
     "fromYear": 1990,
     "startYear": 2026,
     "totalMonths": 441,
-    "completedMonths": 3,
-    "percent": 0.68,
+    "completedMonths": 4,
+    "percent": 0.91,
     "cursor": {
       "year": 2026,
-      "month": 5,
+      "month": 4,
       "noticeIndex": 0
     }
   },
   "latestRun": {
     "run_type": "public-collector",
-    "started_at": "2026-09-07T02:06:05.238Z",
-    "finished_at": "2026-09-07T02:06:05.238Z",
+    "started_at": "2026-09-07T02:09:41.972Z",
+    "finished_at": "2026-09-07T02:09:41.973Z",
     "status": "done",
-    "items_found": 131,
-    "items_saved": 131,
-    "priority_items": 131,
+    "items_found": 48,
+    "items_saved": 48,
+    "priority_items": 48,
     "history_items": 0,
     "photos_saved": 0,
     "documents_saved": 0,
@@ -57,21 +57,31 @@
   "runs": [
     {
       "run_type": "public-collector",
-      "started_at": "2026-09-07T02:06:05.238Z",
+      "started_at": "2026-09-07T02:09:41.972Z",
       "status": "done",
-      "items_found": 131,
-      "priority_items": 131,
+      "items_found": 48,
+      "priority_items": 48,
       "history_items": 0,
       "error_text": null
     }
   ],
-  "latestPhotoRun": {
-    "checked": 6,
-    "success": 6,
-    "photosSaved": 76,
+  "latestDetailRun": {
+    "checked": 4,
+    "success": 4,
+    "eventsAdded": 0,
+    "docsAdded": 8,
     "source": "대한민국 법원경매정보",
     "order": "latest-first",
     "error": null,
-    "finishedAt": "2026-09-07T02:06:27.577Z"
+    "finishedAt": "2026-09-07T02:10:16.133Z"
+  },
+  "latestPhotoRun": {
+    "checked": 6,
+    "success": 6,
+    "photosSaved": 74,
+    "source": "대한민국 법원경매정보",
+    "order": "latest-first",
+    "error": null,
+    "finishedAt": "2026-09-07T02:10:44.562Z"
   }
 }
