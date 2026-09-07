@@ -8,7 +8,7 @@ on:
       - 'current-court-sweep.js'
       - 'fast-court-preload.js'
   schedule:
-    - cron: '1,6,11,16,21,26,31,36,41,46,51,56 * * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 permissions:
