@@ -1,10 +1,11 @@
 {
   "name": "auction-view",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": true,
   "type": "commonjs",
   "scripts": {
     "collect": "node discovery-supervisor.js && node property-history-discovery-v2.js && node metrics-corrector.js",
+    "sweep:current": "node current-court-sweep.js",
     "details": "node retry-worker.js details",
     "photos": "node retry-worker.js photos",
     "collect:once": "node sale-notice-discovery.js",
@@ -12,7 +13,7 @@
     "history:property": "node property-history-discovery-v2.js",
     "details:once": "node detail-enrich.js",
     "photos:once": "node photo-enrich.js",
-    "sync": "node discovery-supervisor.js && node sale-notice-history-worker.js && node property-history-discovery-v2.js && node metrics-corrector.js && node retry-worker.js details && node retry-worker.js photos"
+    "sync": "node current-court-sweep.js && node discovery-supervisor.js && node sale-notice-history-worker.js && node property-history-discovery-v2.js && node metrics-corrector.js && node retry-worker.js details && node retry-worker.js photos"
   },
   "dependencies": {
     "court-auction-notice-search": "latest",
