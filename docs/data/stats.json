@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T08:45:41.198Z",
+  "generatedAt": "2026-09-07T10:19:56.841Z",
   "court": "전국 법원",
   "region": "전국",
   "itemCount": 2264,
@@ -351,26 +351,35 @@
     ],
     "cursor": {
       "month": "2026-09",
-      "courtIndex": 5
+      "courtIndex": 7
     },
     "courtCount": 60,
     "courtsScanned": 4,
-    "lastCourt": "B000213",
-    "processedNotices": 10,
-    "successfulNotices": 10,
-    "newUniqueItems": 1105,
+    "lastCourt": "B214807",
+    "processedNotices": 0,
+    "successfulNotices": 0,
+    "newUniqueItems": 0,
     "cycle": 0,
-    "lastError": null,
+    "lastError": "B214807 2026-09: no transport",
     "transport": [
-      "B000215:http",
-      "B000212:http",
-      "B000212:http",
-      "B000213:http"
+      "B000214:failed",
+      "B000214:failed",
+      "B214807:failed",
+      "B214807:failed"
     ],
-    "attempts": [],
+    "attempts": [
+      "normal-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed",
+      "direct-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed",
+      "normal-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed",
+      "direct-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed",
+      "normal-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed",
+      "direct-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed",
+      "normal-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed",
+      "direct-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed"
+    ],
     "courtSource": "official-court-codes",
     "source": "대한민국 법원경매정보 매각공고(전국 최신 법원별)",
-    "finishedAt": "2026-09-07T08:45:41.198Z"
+    "finishedAt": "2026-09-07T10:19:56.841Z"
   },
   "photoCourtCount": 1
 }
