@@ -53,8 +53,8 @@ function normalize(x){
   status:text(x.progressStatusCode||x.statusCode||r.mulStatcd||r.resState||r.status||r.progressStatusCode),
   winningPrice,winningDate:date(x.winningDate||r.winningDate||r.naksalYmd||r.maeYmd),
   winningRatio:(winningPrice&&appraisedPrice)?Math.round(winningPrice/appraisedPrice*10000)/100:null,
-  latitude:num(coords.lat??coords.latitude??coords.y??r.wgs84Ycordi||r.latitude),
-  longitude:num(coords.lng??coords.longitude??coords.x??r.wgs84Xcordi||r.longitude),
+  latitude:num(coords.lat??coords.latitude??coords.y??r.wgs84Ycordi??r.latitude),
+  longitude:num(coords.lng??coords.longitude??coords.x??r.wgs84Xcordi??r.longitude),
   areaRange:x.areaRange||null,buildingList:Array.isArray(x.buildingList)?x.buildingList:[],areaList:Array.isArray(x.areaList)?x.areaList:[],landCategoryList:Array.isArray(x.landCategoryList)?x.landCategoryList:[],
   eventCount:0,photoCount:int(r.picCnt||r.photoCount)||0,documentCount:0,
   coverage:{base_info:1,schedule:0,winning_price:winningPrice?1:0,photos:(int(r.picCnt||r.photoCount)||0)>0?1:0,status_report:0,sale_statement:0,appraisal_summary:0,appraisal_pdf:0,transactions:0,building_registry:0,land_use:0,rights:0},
@@ -82,7 +82,6 @@ async function main(){
  const state={latestPage:1,historyYear:hy,historyMonth:hm,historyPage:1,runCount:0,lastRun:null,lastError:null,...read(STATE,{})};
  let latestFound=0,historyFound=0,lastError=null;
 
- // 1순위: 전국 최신 진행/최근 결과를 매번 페이지1부터 갱신.
  const liveRange={from:day(addDays(now,-30)),to:day(addDays(now,90))};
  try{
   const firstPage=await retry(()=>lib.searchProperties({saleDate:liveRange,bidType:'date',page:1,pageSize:100,fallbackOnBlocked:true}),2);
@@ -92,7 +91,6 @@ async function main(){
   else state.latestPage=(firstPage?.items||[]).length>=100?2:1;
  }catch(e){lastError=`latest nationwide: ${e.message||e}`;console.error(lastError)}
 
- // 2순위: 최신 구간을 확보한 뒤 전국 과거를 월 단위로 1990년까지 역순 백필.
  if(state.historyYear>=FROM_YEAR){
   const range=monthRange(state.historyYear,state.historyMonth);const p=Math.max(1,Number(state.historyPage||1));
   try{
