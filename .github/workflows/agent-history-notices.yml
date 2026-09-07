@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/workflows/agent-history-notices.yml'
       - 'sale-notice-history-worker.js'
+      - 'court-browser-fallback.js'
       - 'basic-info-enrich.js'
       - 'validate-basic-info.js'
       - 'package.json'
