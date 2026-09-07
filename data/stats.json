@@ -1,19 +1,25 @@
 {
-  "generatedAt": "2026-09-07T01:55:46.044Z",
+  "generatedAt": "2026-09-07T02:06:27.576Z",
   "court": "인천지방법원",
   "region": "인천광역시",
-  "itemCount": 271,
+  "itemCount": 361,
   "winningCount": 0,
-  "photoCount": 110,
+  "photoCount": 186,
   "documentCount": 0,
   "eventCount": 21,
   "queuedJobs": 0,
   "errorJobs": 0,
+  "collectionOrder": "latest-first",
+  "priorityMonths": [
+    "2026-09",
+    "2026-10",
+    "2026-08"
+  ],
   "coverage": {
-    "base_info": 271,
+    "base_info": 361,
     "schedule": 1,
     "winning_price": 0,
-    "photos": 9,
+    "photos": 15,
     "status_report": 0,
     "sale_statement": 0,
     "appraisal_summary": 0,
@@ -31,17 +37,19 @@
     "percent": 0.68,
     "cursor": {
       "year": 2026,
-      "month": 6,
+      "month": 5,
       "noticeIndex": 0
     }
   },
   "latestRun": {
     "run_type": "public-collector",
-    "started_at": "2026-09-07T01:55:17.512Z",
-    "finished_at": "2026-09-07T01:55:17.512Z",
+    "started_at": "2026-09-07T02:06:05.238Z",
+    "finished_at": "2026-09-07T02:06:05.238Z",
     "status": "done",
-    "items_found": 288,
-    "items_saved": 288,
+    "items_found": 131,
+    "items_saved": 131,
+    "priority_items": 131,
+    "history_items": 0,
     "photos_saved": 0,
     "documents_saved": 0,
     "error_text": null
@@ -49,18 +57,21 @@
   "runs": [
     {
       "run_type": "public-collector",
-      "started_at": "2026-09-07T01:55:17.512Z",
+      "started_at": "2026-09-07T02:06:05.238Z",
       "status": "done",
-      "items_found": 288,
-      "items_saved": 288,
+      "items_found": 131,
+      "priority_items": 131,
+      "history_items": 0,
       "error_text": null
     }
   ],
   "latestPhotoRun": {
     "checked": 6,
-    "success": 4,
-    "photosSaved": 49,
-    "error": "2024타경16174</br>2025타경508884</br>2025타경513679</br>(중복): court HTTP 500",
-    "finishedAt": "2026-09-07T01:55:46.044Z"
+    "success": 6,
+    "photosSaved": 76,
+    "source": "대한민국 법원경매정보",
+    "order": "latest-first",
+    "error": null,
+    "finishedAt": "2026-09-07T02:06:27.577Z"
   }
 }
