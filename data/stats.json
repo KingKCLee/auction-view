@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T06:16:20.341Z",
+  "generatedAt": "2026-09-07T06:18:46.636Z",
   "court": "전국 법원",
   "region": "전국",
   "itemCount": 737,
@@ -32,30 +32,55 @@
     "fromYear": 1990,
     "startYear": 2026,
     "totalMonths": 441,
-    "completedMonths": 11,
-    "percent": 2.49,
+    "completedMonths": 0,
+    "percent": 0,
     "cursor": {
-      "year": 2025,
-      "month": 9,
-      "noticeOffset": 0
+      "year": 2026,
+      "month": 8,
+      "page": 1
     },
     "deferredMonths": [],
-    "deferredCount": 0
+    "deferredCount": 0,
+    "saleNoticeCursor": {
+      "year": 2025,
+      "month": 8,
+      "noticeOffset": 0
+    },
+    "blocked": true,
+    "blockReason": "Court Auction request failed for /pgj/pgjsearch/searchControllerMain.on",
+    "authoritativeSource": "property-search"
   },
   "latestRun": {
     "run_type": "sale-notice-discovery",
-    "started_at": "2026-09-07T06:16:15.261Z",
-    "finished_at": "2026-09-07T06:16:15.262Z",
+    "started_at": "2026-09-07T06:18:41.098Z",
+    "finished_at": "2026-09-07T06:18:41.099Z",
     "status": "done",
     "items_found": 242,
-    "items_saved": 242,
+    "items_saved": 0,
     "priority_items": 242,
     "history_items": 0,
     "notices_checked": 2,
     "transport": "official-sale-notice-http",
-    "error_text": null
+    "error_text": null,
+    "processedItems": 242,
+    "newUniqueItems": 0
   },
   "runs": [
+    {
+      "run_type": "sale-notice-discovery",
+      "started_at": "2026-09-07T06:18:41.098Z",
+      "finished_at": "2026-09-07T06:18:41.099Z",
+      "status": "done",
+      "items_found": 242,
+      "items_saved": 0,
+      "priority_items": 242,
+      "history_items": 0,
+      "notices_checked": 2,
+      "transport": "official-sale-notice-http",
+      "error_text": null,
+      "processedItems": 242,
+      "newUniqueItems": 0
+    },
     {
       "run_type": "sale-notice-discovery",
       "started_at": "2026-09-07T06:16:15.261Z",
@@ -259,7 +284,7 @@
     "maxSteps": 1,
     "failsBeforeDefer": 2,
     "deferredCount": 0,
-    "updatedAt": "2026-09-07T06:16:15.270Z"
+    "updatedAt": "2026-09-07T06:18:41.107Z"
   },
   "latestHistoryPropertyRun": {
     "courtCode": "B000240",
@@ -279,6 +304,15 @@
     "errorCode": "UPSTREAM_ERROR",
     "httpStatus": 400,
     "source": "대한민국 법원경매정보 물건검색",
-    "finishedAt": "2026-09-07T06:16:20.341Z"
+    "finishedAt": "2026-09-07T06:18:46.636Z"
+  },
+  "lastCollectorCycle": {
+    "itemCount": 737,
+    "newUniqueItems": 0,
+    "currentNoticeProcessed": 242,
+    "historicalReturned": 0,
+    "historicalNewUnique": 0,
+    "historicalStatus": "partial",
+    "finishedAt": "2026-09-07T06:18:46.683Z"
   }
 }
