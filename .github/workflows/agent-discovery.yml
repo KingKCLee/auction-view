@@ -22,8 +22,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 14
     env:
-      DISCOVERY_STEPS: '3'
+      DISCOVERY_STEPS: '1'
       FAILS_BEFORE_DEFER: '2'
+      HISTORY_COURT_CODE: 'B000240'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -35,7 +36,7 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Install Chromium for official property-search fallback
         run: npx playwright install chromium
-      - name: Collect current notices plus historical property-search page
+      - name: Collect current notices plus historical Incheon property-search page
         run: npm run collect
       - name: Publish refreshed data
         run: |
