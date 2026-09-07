@@ -1,0 +1,9 @@
+{
+  "name": "auction-view",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {"collect":"node collect.js"},
+  "dependencies": {"court-auction-notice-search":"latest","playwright":"^1.57.0"},
+  "engines":{"node":">=22"}
+}
