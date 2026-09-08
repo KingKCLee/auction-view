@@ -1,0 +1,945 @@
+{
+  "version": 1,
+  "worker": "laptop",
+  "createdAt": "2026-09-08T13:06:13.189Z",
+  "batchSize": 12,
+  "exitCode": 0,
+  "patches": [
+    {
+      "id": "B000270|2026타경50015|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 충청북도 진천군 진천읍 장관리 소재 &amp;quot;전원마을회관&amp;quot; 남서측 인근에 위치하며, 주위는 단독주택, 농경지 등이 소재하는 순수농촌지대로서 제반 주위환경은 보통임.\n일련번호 1), 2)  본건까지 차량 진출입이 가능하며, 인근에 노선 버스정류장 등이 소재하여 제반 교통상황은 보통임.\n일련번호 1) 인접지 및 도로와 등고평탄한 사다리형의 토지로서, 주거나지임.  일련번호 2) 인접지 및 도로와 등고평탄한 사다리형의 토지로서, 휴경지임.\n일련번호 1) 본건 북측 및 동측으로 폭 약 4m 내외의 포장도로와 접함.  일련번호 2) 본건 동측으로 폭 약 4m 내외의 포장도로와 접함.\n일련번호 1) :계획관리지역, 자연취락지구, 가축사육제한구역(2025-06-27)(일부제한구역 700m)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, &lt;추가기재&gt;건축법 제2조제1항제11호나목에 따른 도로(도로일부포함) 일련번호 2) :계획관리지역, 농림지역, 성장관리계획구역(2024-04-19)(관리형), 가축사육제한구역(2025-06-27)(일부제한구역 700m)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 농업보호구역&lt;농지법&gt;\n없 음.\n없 음.\n임대관계 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 63000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000270|2026타경50015|2",
+      "set": {
+        "caseType": "부동산임의경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 충청북도 진천군 진천읍 장관리 소재 &amp;quot;전원마을회관&amp;quot; 남서측 인근에 위치하며, 주위는 단독주택, 농경지 등이 소재하는 순수농촌지대로서 제반 주위환경은 보통임.\n일련번호 1), 2)  본건까지 차량 진출입이 가능하며, 인근에 노선 버스정류장 등이 소재하여 제반 교통상황은 보통임.\n일련번호 1) 인접지 및 도로와 등고평탄한 사다리형의 토지로서, 주거나지임.  일련번호 2) 인접지 및 도로와 등고평탄한 사다리형의 토지로서, 휴경지임.\n일련번호 1) 본건 북측 및 동측으로 폭 약 4m 내외의 포장도로와 접함.  일련번호 2) 본건 동측으로 폭 약 4m 내외의 포장도로와 접함.\n일련번호 1) :계획관리지역, 자연취락지구, 가축사육제한구역(2025-06-27)(일부제한구역 700m)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, &lt;추가기재&gt;건축법 제2조제1항제11호나목에 따른 도로(도로일부포함) 일련번호 2) :계획관리지역, 농림지역, 성장관리계획구역(2024-04-19)(관리형), 가축사육제한구역(2025-06-27)(일부제한구역 700m)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 농업보호구역&lt;농지법&gt;\n없 음.\n없 음.\n임대관계 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 63000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000270|2026타경50008|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은  충청북도 청주시 상당구 용암동 소재  &amp;quot;방서사거리&amp;quot;  서측 인근에 위치하며,   주위는 미성숙 상가지대로 주위환경은 보통시됨. \n본건까지 차량접근이 가능하며  시내버스 승강장, 배차시간 등 제반 대중  교통상황은 보통임. \n가장형 평지로 주상나지로 이용 중임. \n동측으로 왕복 2차선 포장도로에 접함. \n도시지역, 준주거지역, 특화경관지구, 주거용지, 지구단위계획구역, 보행자전용도로, 중로3류(폭12m-15m)(접함), 가축사육제한구역.   \n없   음. \n없   음. \n본건 경계에 설치된 펜스는 철거 및 이동이 수월하여 평가에서 제외하였으니,  경매 진행시 참고 바람.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 1947952876,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000270|2026타경50007|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 충청북도 청주시 서원구 남이면 팔봉리 소재&amp;quot;팔봉리 마을회관&amp;quot;남서측에 위치하며, 주위는 대체적으로 전원주택, 소규모공장, 농경지, 자연림 등이 혼재하는 지역으로서, 제반 입지여건 및 주위환경은 보통임.   \n본건 인근까지 차량 진출입이 가능하며, 인근에 간선도로와 연계되어 차량 접근성은 보통이나, 대중교통 이용여건은 노선 및 배차간격 등을 고려할 때, 보통시 됨. \n기호1- 부정형의 평지로서, 농경지 답으로 이용중임.  기호2- 완경사의 부정형 토지로서, 진입도로 및 경사지로 이용중임.  기호3- 부정형의 평지로서, 농경지 답으로 이용중임.  기호4- 부정형의 평지로서, 농경지 답으로 이용중임.  기호5- 부정형의 평지로서, 농경지 답으로 이용중임.\n기호1- 북서측으로 노폭 약 6M 내외의 도로와 접함.  기호2- 본건이 도로로 이용되며, 노폭 약 4M의 도로와 접함.  기호3- 공부상 맹지이나, 인접필지를 이용해 통행가능함.  기호4- 북서측으로 본건 기호2필지를 통해 노폭 약 4M의 도로와 접함.  기호5- 공부상 맹지이나, 인접필지를 이용해 통행가능함.\n기호1- 도시지역 , 보전녹지지역, 자연녹지지역, 가축사육제한구역(가축사육전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;  기호2- 도시지역 , 자연녹지지역, 가축사육제한구역(가축사육전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 소하천구역(팔봉천구역)&lt;소하천정비법&gt;  기호3- 도시지역 , 자연녹지지역, 가축사육제한구역(가축사육전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;  기호4- 도시지역 , 자연녹지지역, 가축사육제한구역(가축사육전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;  기호5- 도시지역 , 자연녹지지역, 가축사육제한구역(가축사육전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;\n-.\n기호2는 공부상 지목 &amp;quot;답&amp;quot;이나, 현황 &amp;quot;도로 및 경사지&amp;quot;로 이용중임.\n-.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 973453560,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "5",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000270|2026타경50007|2",
+      "set": {
+        "caseType": "부동산임의경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 충청북도 청주시 서원구 남이면 팔봉리 소재&amp;quot;팔봉리 마을회관&amp;quot;남서측에 위치하며, 주위는 대체적으로 전원주택, 소규모공장, 농경지, 자연림 등이 혼재하는 지역으로서, 제반 입지여건 및 주위환경은 보통임.   \n본건 인근까지 차량 진출입이 가능하며, 인근에 간선도로와 연계되어 차량 접근성은 보통이나, 대중교통 이용여건은 노선 및 배차간격 등을 고려할 때, 보통시 됨. \n기호1- 부정형의 평지로서, 농경지 답으로 이용중임.  기호2- 완경사의 부정형 토지로서, 진입도로 및 경사지로 이용중임.  기호3- 부정형의 평지로서, 농경지 답으로 이용중임.  기호4- 부정형의 평지로서, 농경지 답으로 이용중임.  기호5- 부정형의 평지로서, 농경지 답으로 이용중임.\n기호1- 북서측으로 노폭 약 6M 내외의 도로와 접함.  기호2- 본건이 도로로 이용되며, 노폭 약 4M의 도로와 접함.  기호3- 공부상 맹지이나, 인접필지를 이용해 통행가능함.  기호4- 북서측으로 본건 기호2필지를 통해 노폭 약 4M의 도로와 접함.  기호5- 공부상 맹지이나, 인접필지를 이용해 통행가능함.\n기호1- 도시지역 , 보전녹지지역, 자연녹지지역, 가축사육제한구역(가축사육전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;  기호2- 도시지역 , 자연녹지지역, 가축사육제한구역(가축사육전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 소하천구역(팔봉천구역)&lt;소하천정비법&gt;  기호3- 도시지역 , 자연녹지지역, 가축사육제한구역(가축사육전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;  기호4- 도시지역 , 자연녹지지역, 가축사육제한구역(가축사육전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;  기호5- 도시지역 , 자연녹지지역, 가축사육제한구역(가축사육전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;\n-.\n기호2는 공부상 지목 &amp;quot;답&amp;quot;이나, 현황 &amp;quot;도로 및 경사지&amp;quot;로 이용중임.\n-.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 973453560,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "4",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000411|2026타경47|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 경상남도 양산시 북정동 양산시립박물관 남서측 인근에 소재하며 주변은 구획정리로 조성된 주거지대로 소규모공동주택, 근린생활시설, 단독주택 등으로 형성되어 있음.\n차량 접근 용이하고  인근에 버스정류장이 소재함.\n철근콘크리트구조 (철근)콘크리트지붕 5층건내 4층으로 주요 마감은 외벽 : 타일, 드라이비트 내벽 : 벽지 창호 : 샷시 등이며 내부상세는 미상임. \n다세대주택.\n급배수 및 위생설비, 로비폰, 도시가스, 난방설비 등\n대체로 평탄하게 조성된 사다리형지로 다세대주택부지임.\n서측으로 왕복2차로에 접함.\n제2종일반주거지역, 중로3류(폭 12m~15m)(접합) 가축사육제한구역(모든축종 제한지역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 역사문화환경보존지역&lt;문화유산의 보존 및 활용에 관한 법률&gt; \n없음.\n임대관계미상임.   ",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 89962472,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000270|2026타경42|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 충청북도 청주시 청원구 율량동 소재 &amp;quot;상리교차로&amp;quot; 남동측 인근방향에 소재하는 토지로서,주변은 소규모 상가시설 및 주택시설이 소재하고 배후로 전답지 및 자연림이 소재하고 있음.\n본건까지 일반차량에 의한 접근이 가능하며, 남서향 방향으로 도보12분 정도의 거리에 노선버스정류장(율량LH9단지)이 소재하는 등 제반교통편익성은 보통임.\n기호 4는 사다리형, 기호5는 세장형의 토지로서 공히 도로등 부지로 이용중임. \n본건 토지 기호 4,5 가 도로부지로 이용되고 있음. \n1. 기호 4 도시지역 , 자연녹지지역 , 소로3류(폭 8m 미만)(저촉), 가축사육제한구역(가축사육전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, &lt;추가기재&gt;건축법 제2조제1항제11호나목에 따른 도로(도로일부포함)  2. 기호 5 도시지역 , 자연녹지지역,  가축사육제한구역(가축사육전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;\n없음. \n없음. \n미상임. \n본건은 충청북도 청주시 청원구 율량동 소재 &amp;quot;상리교차로&amp;quot; 남동측 인근방향에 소재하는 근린생활시설로서 주변은 소규모 상가시설 및 주택시설이 소재하고 배후로 전답지 및 자연림이 소재하고 있음. \n본건까지 일반차량에 의한 접근이 가능하며, 남서향 방향으로 도보12분 정도의 거리에 노선버스정류장(율량LH9단지)이 소재하는 등 제반교통편익성은 보통임. \n일반철골구조 (철근)콘크리트지붕 3층 제2종 근린생활시설로서  외벽: 장식벽돌, 몰탈위 페인팅 등 내벽: 인테리어 장식 바닥: 타일바닥 창호: 강화유리 등\n기호 1~3 공히 제2종 근린생활시설(일반음식점)으로 이용중임. (기호 2는 제201호와 연계, 기호 3은 제303호와 연계하여 사용중임)\n위생 및 급배수설비, 승강기, 기본전기 시설 등\n사다리형의 토지로서, 상업용부지로 이용중임. \n본건의 남측 방향으로 기호 4~5 도로를 통하여 공도에 접할 수 있음. \n도시지역 , 자연녹지지역 , 소로3류(폭 8m 미만)(저촉), 가축사육제한구역(가축사육전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;\n없음. \n미상임. ",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 1923584112,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "4",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "5",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "4",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "5",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "4",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "5",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "4",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "5",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000283|2026타경37|1",
+      "set": {
+        "caseType": "자동차임의경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "- 년    식: 2017년식. - 주행거리: 조사시점 현재 계기판상 주행거리는 104,919KM임.\n- 색상: 흰색임.\n - 본건 전반적인 관리상태는 보통임.\n- 디젤(경유) 차량임.\n- 자동차등록원부상 2025.07.16 ~ 2027.07.15임.\n- 보관장소: 충청남도 동남구 수신면 우각골길 21(천안시 수신면 장산리 725번지) 주차장 내. - 기      타: 자동변속기, 4륜, 에어컨, 후방감지기, 사제블랙박스, 하이패스, 루프박스 등 기본적인   옵션사양 갖추었음.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 6140000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000212|2026타경3463|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 서울특별시 강서구 방화동 소재 &amp;apos;방화중학교&amp;apos; 남측 인근에 위치하며, 주위는 공동주택, 근린생활시설 등이 혼재하는 지역으로서 주위환경은 보통임.\n본건까지 차량의 진출ㆍ입이 가능하며, 인근에 지하철 5호선 &amp;quot;송정역&amp;quot;, 지하철5호선ㆍ지하철 9호선ㆍ공항철도선ㆍ서해선 &amp;quot;김포공항역&amp;quot; 및 버스정류장 등이 소재하는 등 제반 교통여건은 양호한 편임.\n철근콘크리트구조 (철근)콘크리트지붕 지하3층 지상9층 건물내 제6층 제606호로서,  (사용승인 : 2013.03.11.)  - 외벽 : 석재붙임 마감 등, - 창호 : PVC 창호 등임.\n폐문부재로 내부확인은 불가하였으나, 관련공부상의 용도는 아파트임.\n도시가스에 의한 개별난방설비, 위생 및 급배수 설비, 승강기설비, 기계식 주차장설비 등이 설치된 것으로 탐문되며, 폐문부재로 내부 설비 등의 정상작동 여부의 확인은 불가하였으니 입찰시 유의하시기 바람.\n본건은 인접토지 대비 대체로 평탄한 부정형의 토지로서 현황 &amp;apos;아파트(도시형생활주택)&amp;apos; 건부지로 이용중임.\n본건 서측으로 폭 약 10미터, 동측 및 남측으로 폭 약 6미터 내외의 포장도로와 각각 접하고 있음.\n근린상업지역, 도시지역, 중요시설물보호지구(공항), 제1종지구단위계획구역, 도로(접합), 가축사육제한구역(지역경제과 확인 요망), 도시기타용도지역지구기타(가로구역별건축물최고높이:건축과문의), 수평표면구역(수평표면), 상대보호구역(2014-09-26)(학교환경위생정화구역(강서교육지원청에 반드시 확인 요망)), 대공방어협조구역(위탁고도:77-257m), 과밀억제권역, 토지거래계약에관한허가구역(대상자: 외국인 등. 용도: 단독 다가구 아파트 연립 다세대. 지정기간: 2025.8.26.~2026.8.25.), 토지거래계약에관한허가구역(용도:아파트 기간:2025.10.20.~2026.12.31)임.\n없음.\n폐문부재로 임대관계 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 110600013,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    }
+  ]
+}
