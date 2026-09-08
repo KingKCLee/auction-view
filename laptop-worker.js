@@ -1,29 +1,15 @@
 const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
+const { buildPatch } = require('./dual-collector-lib');
 
 const ROOT = __dirname;
 const DATA = path.join(ROOT, 'data', 'auctions.json');
 const STATS = path.join(ROOT, 'data', 'stats.json');
 const OUTDIR = path.join(ROOT, 'data', 'worker-deltas', process.env.WORKER_ID || 'laptop');
 const BATCH_SIZE = String(process.env.BATCH_SIZE || 12);
-const MEANINGFUL = new Set([
-  'caseType','usage','buildingName','events','eventCount','minimumPrice','saleDate','failedCount',
-  'winningPrice','winningDate','winningRatio','status','coverage','appraisalSummary','appraisalDate',
-  'appraisalAgency','claimAmount','components','address','landArea','buildingArea','saleStatementAvailable',
-  'statusReportAvailable','documents','documentCount'
-]);
 
 const writeJson = (p, v) => fs.writeFileSync(p, JSON.stringify(v, null, 2));
-const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
-
-function diffRow(before, after) {
-  const set = {};
-  for (const key of MEANINGFUL) {
-    if (!same(before?.[key], after?.[key])) set[key] = after?.[key] ?? null;
-  }
-  return Object.keys(set).length ? { id: after.id, set } : null;
-}
 
 function restore(file, content) {
   if (content == null) return;
@@ -49,7 +35,7 @@ function main() {
   let patches = [];
   try {
     const afterRows = JSON.parse(fs.readFileSync(DATA, 'utf8'));
-    patches = afterRows.map(r => diffRow(before.get(r.id) || {}, r)).filter(Boolean);
+    patches = afterRows.map(r => buildPatch(before.get(r.id) || {}, r)).filter(Boolean);
   } finally {
     restore(DATA, dataBackup);
     restore(STATS, statsBackup);
