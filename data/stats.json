@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-08T12:31:45.954Z",
+  "generatedAt": "2026-09-08T17:18:11.083Z",
   "court": "전국 법원",
   "region": "전국",
-  "itemCount": 9301,
+  "itemCount": 9824,
   "winningCount": 0,
   "photoCount": 407,
   "documentCount": 22,
@@ -15,7 +15,7 @@
     "to": "2026-10"
   },
   "coverage": {
-    "base_info": 8946,
+    "base_info": 9473,
     "schedule": 1,
     "winning_price": 0,
     "photos": 27,
@@ -40,9 +40,9 @@
       "page": 1
     },
     "saleNoticeCursor": {
-      "year": 2025,
+      "year": 2026,
       "month": 8,
-      "noticeOffset": 0
+      "page": 1
     },
     "blocked": true,
     "blockReason": "Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml&pgjId=151F00: fetch failed",
@@ -54,14 +54,14 @@
     "finished_at": "2026-09-07T19:34:08.471Z",
     "status": "partial",
     "items_found": 0,
-    "items_saved": 8564,
+    "items_saved": 523,
     "priority_items": 0,
     "history_items": 0,
     "notices_checked": 0,
     "transport": "official-sale-notice-http",
     "error_text": "history notice 2025-08 offset 0: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
     "processedItems": 0,
-    "newUniqueItems": 8564
+    "newUniqueItems": 523
   },
   "runs": [
     {
@@ -70,14 +70,14 @@
       "finished_at": "2026-09-07T19:34:08.471Z",
       "status": "partial",
       "items_found": 0,
-      "items_saved": 8564,
+      "items_saved": 523,
       "priority_items": 0,
       "history_items": 0,
       "notices_checked": 0,
       "transport": "official-sale-notice-http",
       "error_text": "history notice 2025-08 offset 0: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
       "processedItems": 0,
-      "newUniqueItems": 8564
+      "newUniqueItems": 523
     },
     {
       "run_type": "sale-notice-discovery",
@@ -331,13 +331,13 @@
     "finishedAt": "2026-09-07T19:34:19.222Z"
   },
   "lastCollectorCycle": {
-    "itemCount": 9301,
-    "newUniqueItems": 8564,
+    "itemCount": 9824,
+    "newUniqueItems": 523,
     "currentNoticeProcessed": 0,
     "historicalReturned": 0,
     "historicalNewUnique": 0,
     "historicalStatus": "partial",
-    "finishedAt": "2026-09-08T12:31:46.415Z"
+    "finishedAt": "2026-09-08T17:18:11.560Z"
   },
   "saleNoticeBackfill": {
     "version": 2,
@@ -371,42 +371,42 @@
     ],
     "cursor": {
       "month": "2026-09",
-      "courtIndex": 56
+      "courtIndex": 59
     },
     "courtCount": 60,
     "courtsScanned": 4,
-    "lastCourt": "B000520",
-    "processedNotices": 6,
-    "successfulNotices": 6,
-    "newUniqueItems": 725,
+    "lastCourt": "B000530",
+    "processedNotices": 5,
+    "successfulNotices": 5,
+    "newUniqueItems": 523,
     "deferredCount": 20,
     "cycle": 0,
     "lastError": null,
     "transport": [
-      "B000512:http",
-      "B000513:http",
-      "B000514:http",
-      "B000520:http"
+      "B000521:http",
+      "B000522:http",
+      "B000523:http",
+      "B000530:http"
     ],
     "attempts": [],
     "courtSource": "official-court-codes",
     "source": "대한민국 법원경매정보 매각공고(전국 최신 법원별)",
-    "finishedAt": "2026-09-08T12:31:33.203Z"
+    "finishedAt": "2026-09-08T17:17:57.576Z"
   },
   "photoCourtCount": 1,
   "basicInfoQuality": {
-    "ready": 8946,
-    "addressCount": 8946,
-    "priceCount": 8898,
-    "missing": 355,
+    "ready": 9473,
+    "addressCount": 9473,
+    "priceCount": 9421,
+    "missing": 351,
     "definition": "주소 + (용도/감정가/최저가/매각기일 중 1개 이상)",
-    "updatedAt": "2026-09-08T12:31:45.954Z"
+    "updatedAt": "2026-09-08T17:18:11.083Z"
   },
   "latestBasicInfoRun": {
     "checkedCases": 4,
     "successfulCases": 4,
     "itemsImproved": 4,
-    "remaining": 355,
+    "remaining": 351,
     "transport": [
       "B000240:http",
       "B000240:http",
@@ -416,6 +416,6 @@
     "attempts": [],
     "lastError": null,
     "source": "대한민국 법원경매정보 사건검색",
-    "finishedAt": "2026-09-08T12:31:45.954Z"
+    "finishedAt": "2026-09-08T17:18:11.083Z"
   }
 }
