@@ -11,6 +11,7 @@ while true; do
   node basic-info-enrich.js || true
   node discovery-supervisor.js || true
   node sale-notice-history-worker.js || true
+  node property-history-discovery-v2.js || true
   node metrics-corrector.js || true
 
   git add data/auctions.json data/stats.json data/state.json data/worker-deltas docs 2>/dev/null || true
