@@ -65,15 +65,18 @@ git clone https://github.com/KingKCLee/auction-view.git
 cd auction-view
 npm install
 npx playwright install --with-deps chromium
-chmod +x scripts/cloud-master.sh
-./scripts/cloud-master.sh
+CLOUD_JOB_MODE=master-once node cloud-job.js
 ```
+
+`scripts/cloud-master.sh`(상시 `while true` VM 루프)는 삭제되었습니다. 병합은
+`cloud-master-once.js` 원샷이 담당하며, 매 실행마다 GitHub 최신을 clone하고
+병합 결과가 직전 정본보다 축소되면 commit/push를 중단합니다.
 
 ## 처리 흐름
 
 1. cloud master가 최신/과거 기본정보를 canonical DB에 추가한다.
 2. laptop worker가 최신 canonical DB를 pull한다.
-3. laptop worker가 상세조회 12건을 처리한다.
+3. laptop worker가 상세조회 BATCH_SIZE(현재 24)건을 처리한다.
 4. laptop worker는 canonical JSON을 원상복구하고 변경된 필드만 data/worker-deltas/laptop/*.json으로 만든다.
 5. cloud master가 delta를 읽어 canonical DB에 병합한 뒤 delta 파일을 삭제한다.
 6. metrics-corrector가 통계를 다시 계산한다.

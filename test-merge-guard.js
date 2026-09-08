@@ -2,9 +2,10 @@
 //
 // Builds a throwaway bare repo as a stand-in for GitHub, then runs the real
 // cloud-master-once.js against it three ways:
-//   1. a delta that shrinks coverage      -> guard MUST fail, nothing pushed
-//   2. a delta that grows coverage        -> guard MUST pass, commit pushed
-//   3. evaluateGuard() on a shrunk row set -> itemCount drop MUST be reported
+//   1. a delta that shrinks coverage        -> guard MUST fail, nothing pushed
+//   2. a delta that grows coverage          -> guard MUST pass, commit pushed
+//   3. a merge step that deletes rows        -> guard MUST fail before the push
+//   4. evaluateGuard() on a shrunk row set   -> itemCount drop MUST be reported
 //
 // Run: node test-merge-guard.js
 
@@ -83,7 +84,7 @@ function seedOrigin(deltaPatches) {
   sh('git', ['push', ORIGIN, 'HEAD:main'], SEED);
 }
 
-function runMaster() {
+function runMaster(sourceDir = ROOT) {
   const r = spawnSync(process.execPath, [path.join(ROOT, 'cloud-master-once.js')], {
     cwd: ROOT,
     encoding: 'utf8',
@@ -92,13 +93,36 @@ function runMaster() {
       REPO_URL: ORIGIN,
       REPO_BRANCH: 'main',
       CLOUD_WORK_DIR: WORK,
-      CLOUD_SOURCE_DIR: ROOT,
+      CLOUD_SOURCE_DIR: sourceDir,
       GITHUB_TOKEN: '',
       GH_PAT: '',
       GITHUB_TOKEN_FILE: ''
     }
   });
   return { status: r.status, out: `${r.stdout || ''}${r.stderr || ''}` };
+}
+
+// A merge step that drops rows outright. Deltas are id-keyed patches and cannot
+// delete anything, so a row-count collapse can only come from a broken or hostile
+// merge script - which is exactly what the guard exists to stop. cloud-master-once
+// copies its merge scripts from CLOUD_SOURCE_DIR, so pointing that at a fixture
+// with a sabotaged apply-worker-deltas.js exercises the real end-to-end path.
+function sabotagedSourceDir(dropCount) {
+  const dir = path.join(TMP, `sabotage-${dropCount}`);
+  fs.mkdirSync(dir, { recursive: true });
+  for (const name of ['metrics-corrector.js', 'dual-collector-lib.js', 'merge-guard-lib.js']) {
+    fs.copyFileSync(path.join(ROOT, name), path.join(dir, name));
+  }
+  fs.writeFileSync(path.join(dir, 'apply-worker-deltas.js'), `
+const fs = require('fs');
+const path = require('path');
+const DATA = path.join(__dirname, 'data', 'auctions.json');
+const rows = JSON.parse(fs.readFileSync(DATA, 'utf8'));
+const kept = rows.slice(0, rows.length - ${dropCount});
+fs.writeFileSync(DATA, JSON.stringify(kept, null, 2));
+console.log('[sabotage] dropped ${dropCount} rows: ' + rows.length + ' -> ' + kept.length);
+`);
+  return dir;
 }
 
 const originRows = () => JSON.parse(sh('git', ['show', 'main:data/auctions.json'], ORIGIN));
@@ -157,15 +181,34 @@ check('test2 stats.coverage.sale_statement 0 -> 40', s2.coverage.sale_statement 
 check('test2 stats.documentCount recounted to 80', s2.documentCount === 80, String(s2.documentCount));
 
 // ---------------------------------------------------------------------------
-console.log('\n=== TEST 3 (deliberate failure): itemCount shrink is caught ===\n');
+console.log('\n=== TEST 3 (deliberate failure): itemCount shrink aborts the push end-to-end ===\n');
+
+seedOrigin(ROWS.slice(20).map(r => ({ id: r.id, set: { documentCount: 2 } })));
+
+const head3Before = originHead();
+const t3 = runMaster(sabotagedSourceDir(7));
+console.log(t3.out);
+
+check('test3 exit code is 3 (guard fail)', t3.status === 3, `got ${t3.status}`);
+check('test3 logs MERGE GUARD FAILED', /MERGE GUARD FAILED/.test(t3.out));
+check('test3 reports itemCount drop 40 -> 33', /itemCount: 40 -> 33 \(-7\)/.test(t3.out));
+check('test3 never reached the push (no push in log)', !/git push/.test(t3.out));
+check('test3 pushed nothing (origin HEAD unchanged)', originHead() === head3Before);
+check('test3 origin canonical still 40 rows', originRows().length === 40);
+check('test3 origin delta file preserved', originDeltaCount() === 1);
+check('test3 local checkout canonical restored to 40 rows',
+  JSON.parse(fs.readFileSync(path.join(WORK, 'data', 'auctions.json'), 'utf8')).length === 40);
+
+// ---------------------------------------------------------------------------
+console.log('\n=== TEST 4 (unit): evaluateGuard reports an itemCount drop ===\n');
 
 const full = snapshot(ROWS);
 const shrunk = snapshot(ROWS.slice(0, 35));
 const f3 = evaluateGuard(full, shrunk);
 console.log(JSON.stringify(f3, null, 2));
-check('test3 itemCount drop reported',
+check('test4 itemCount drop reported',
   f3.some(f => f.field === 'itemCount' && f.before === 40 && f.after === 35));
-check('test3 no failures when unchanged', evaluateGuard(full, full).length === 0);
+check('test4 no failures when unchanged', evaluateGuard(full, full).length === 0);
 
 // ---------------------------------------------------------------------------
 console.log(`\n=== ${failures ? `${failures} CHECK(S) FAILED` : 'ALL CHECKS PASSED'} ===`);
