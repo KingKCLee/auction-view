@@ -1,0 +1,922 @@
+{
+  "version": 1,
+  "worker": "laptop",
+  "createdAt": "2026-09-08T08:01:01.776Z",
+  "batchSize": 12,
+  "exitCode": 0,
+  "patches": [
+    {
+      "id": "B000270|2026타경50038|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "기호 1~6, 9~12)는 충청북도 진천군 진천읍 상계리 &amp;quot;상계리노인정&amp;quot; 북측 인근, 본건 기호 7)은 충청북도 진천군 진천읍 상계리 &amp;quot;상계리노인정&amp;quot; 서측 인근에 소재하며, 본건 주위는 농경지, 농가주택, 자연림 등이 혼재하는 지역임. \n기호 1,2,4~7,11,12)는 본건까지 차량접근 가능하며, 기호 3,9,10)은 인접필지를 통해 진출입 가능하고, 기호 1~6,9~12)는 남측으로, 기호 7)은 북측으로 버스정류장이 소재함. \n기호 1~6,9~12) 토지는 인접도로 및 인접필지 대비 완만한 경사를 이루는 부정형의 토지이고, 기호 7) 토지는 인접도로 대비 등고평탄한 부정형 토지이며, 기호 1)은 전 및 도로, 기호 2)는 현황 도로 등, 기호 3,4,6)는 전, 기호 5)는 전기타(동·식물관련시설 건부지) 및 도로, 기호 7)은 주상용 건부지, 기호 9~11)은 자연림, 기호 12)는 자연림 및 도로로 이용중임. \n기호 1,2) 본건이 현황 로폭 약 3M 내외의 포장도로로 이용중임. 기호 3,9,10) 맹지임, 기호 4) 남측으로 개설된 로폭 약 3M 내외의 포장도로에 접함. 기호 5) 남측으로 로폭 약 4M 내외의 포장도로에 접함과 동시에 본건이 현황 로폭 약 3M 내외의 포장도로로 이용중에 있음. 기호 6) 인접필지로 개설된 로폭 약 3M 내외의 포장도로에 접함. 기호 7) 동측으로 로폭 약 4M 내외의 포장도로에 접함. 기호 11) 동측으로 개설된 로폭 약 3M 내외의 포장도로에 접함. 기호 12) 본건 일부가 현황 로폭 약 3M 내외의 포장도로로 이용중임. \n기호 1~3,5,6) 생산관리지역(2020-05-15)(고시년도: 2025년 고시번호: 2025-326호지적재조사 완료에 의한 고시), 가축사육제한구역(2025-06-27)(일부제한구역 700m)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 역사문화환경보존지역(김유신탄생지 및 태실고시년도: 2025년 고시번호: 2025-326호지적재조사 완료에 의한 고시)&lt;문화유산의 보존 및 활용에 관한 법률&gt;,       기호 4) 보전관리지역(고시년도: 2025년 고시번호: 2025-326호지적재조사 완료에 의한 고시), 가축사육제한구역(2025-06-27)(일부제한구역 700m)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 역사문화환경보존지역(김유신탄생지 및 태실고시년도: 2025년 고시번호: 2025-326호지적재조사 완료에 의한 고시)&lt;문화유산의 보존 및 활용에 관한 법률&gt;, 영농여건불리농지(고시년도: 2025년 고시번호: 2025-326호지적재조사 완료에 의한 고시),  기호 7) 계획관리지역(고시년도: 2025년 고시번호: 2025-326호지적재조사 완료에 의한 고시), 자연취락지구(고시년도: 2025년 고시번호: 2025-326호지적재조사 완료에 의한 고시), 가축사육제한구역(2025-06-27)(일부제한구역 700m)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 역사문화환경보존지역(김유신탄생지 및 태실고시년도: 2025년 고시번호: 2025-326호지적재조사 완료에 의한 고시)&lt;문화유산의 보존 및 활용에 관한 법률&gt;,  기호 9~12) 보전관리지역(고시년도: 2025년 고시번호: 2025-326호지적재조사 완료에 의한 고시), 가축사육제한구역(2025-06-27)(일부제한구역 700m)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 역사문화환경보존지역(김유신탄생지 및 태실고시년도: 2025년 고시번호: 2025-326호지적재조사 완료에 의한 고시)&lt;문화유산의 보존 및 활용에 관한 법률&gt;, 준보전산지(고시년도: 2025년 고시번호: 2025-326호지적재조사 완료에 의한 고시)&lt;산지관리법&gt;임. \n별첨 &amp;quot;지적 및 건물개황도&amp;quot;, &amp;quot;사진용지&amp;quot; 참조. \n기호 1) 토지는 공부상 지목 &amp;quot;전&amp;quot;이나, 현황 일부 도로로 이용중임. 기호 2) 토지는 공부상 지목 &amp;quot;전&amp;quot;이나, 현황 도로 등임. 기호 5) 토지는 공부상 지목 &amp;quot;목장용지&amp;quot;이나, 현황 일부 도로로 이용중임. 기호 12) 토지는 공부상 지목 &amp;quot;임야&amp;quot;이나, 현황 일부 도로로 이용중임. \n미상임. \n기호 8-1) 블록조 및 경량철골조 스레트 및 판넬지붕 지상 2층 건으로, - 외벽 : 몰탈위페인팅 마감 등, - 내벽 : 벽지, 타일 마감 등, - 바닥 : 장판, 타일 마감 등,   - 창호 : 하이샷시 마감임.  기호 8-2) 세멘벽돌조 스레트지붕 지상 1층 건으로, - 벽체 : 몰탈위페인팅 마감 등, - 바닥 : 타일 마감 등, - 창호 : 하이샷시 마감임. \n기호 8-1) 단독주택 및 사무소로 이용중임. 기호 8-2) 근린생활시설로 이용중임. \n기호 8-1) 위생 및 급·배수설비, 난방설비 갖추어져 있음. 기호 8-2) 별도의 부대설비 없음. \n별첨 &amp;quot;지적 및 건물개황도&amp;quot; 및 &amp;quot;사진용지&amp;quot; 참조. \n없   음. \n미상임. ",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 1054019941,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "4",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "5",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "6",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "9",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "10",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "11",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "12",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "4",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "5",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "6",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "7",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "8",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "9",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "10",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "4",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "5",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "6",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "7",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "8",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "9",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "10",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "4",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "5",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "6",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "7",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "8",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "9",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "10",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000270|2026타경50038|2",
+      "set": {
+        "caseType": "부동산강제경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "기호 1~6, 9~12)는 충청북도 진천군 진천읍 상계리 &amp;quot;상계리노인정&amp;quot; 북측 인근, 본건 기호 7)은 충청북도 진천군 진천읍 상계리 &amp;quot;상계리노인정&amp;quot; 서측 인근에 소재하며, 본건 주위는 농경지, 농가주택, 자연림 등이 혼재하는 지역임. \n기호 1,2,4~7,11,12)는 본건까지 차량접근 가능하며, 기호 3,9,10)은 인접필지를 통해 진출입 가능하고, 기호 1~6,9~12)는 남측으로, 기호 7)은 북측으로 버스정류장이 소재함. \n기호 1~6,9~12) 토지는 인접도로 및 인접필지 대비 완만한 경사를 이루는 부정형의 토지이고, 기호 7) 토지는 인접도로 대비 등고평탄한 부정형 토지이며, 기호 1)은 전 및 도로, 기호 2)는 현황 도로 등, 기호 3,4,6)는 전, 기호 5)는 전기타(동·식물관련시설 건부지) 및 도로, 기호 7)은 주상용 건부지, 기호 9~11)은 자연림, 기호 12)는 자연림 및 도로로 이용중임. \n기호 1,2) 본건이 현황 로폭 약 3M 내외의 포장도로로 이용중임. 기호 3,9,10) 맹지임, 기호 4) 남측으로 개설된 로폭 약 3M 내외의 포장도로에 접함. 기호 5) 남측으로 로폭 약 4M 내외의 포장도로에 접함과 동시에 본건이 현황 로폭 약 3M 내외의 포장도로로 이용중에 있음. 기호 6) 인접필지로 개설된 로폭 약 3M 내외의 포장도로에 접함. 기호 7) 동측으로 로폭 약 4M 내외의 포장도로에 접함. 기호 11) 동측으로 개설된 로폭 약 3M 내외의 포장도로에 접함. 기호 12) 본건 일부가 현황 로폭 약 3M 내외의 포장도로로 이용중임. \n기호 1~3,5,6) 생산관리지역(2020-05-15)(고시년도: 2025년 고시번호: 2025-326호지적재조사 완료에 의한 고시), 가축사육제한구역(2025-06-27)(일부제한구역 700m)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 역사문화환경보존지역(김유신탄생지 및 태실고시년도: 2025년 고시번호: 2025-326호지적재조사 완료에 의한 고시)&lt;문화유산의 보존 및 활용에 관한 법률&gt;,       기호 4) 보전관리지역(고시년도: 2025년 고시번호: 2025-326호지적재조사 완료에 의한 고시), 가축사육제한구역(2025-06-27)(일부제한구역 700m)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 역사문화환경보존지역(김유신탄생지 및 태실고시년도: 2025년 고시번호: 2025-326호지적재조사 완료에 의한 고시)&lt;문화유산의 보존 및 활용에 관한 법률&gt;, 영농여건불리농지(고시년도: 2025년 고시번호: 2025-326호지적재조사 완료에 의한 고시),  기호 7) 계획관리지역(고시년도: 2025년 고시번호: 2025-326호지적재조사 완료에 의한 고시), 자연취락지구(고시년도: 2025년 고시번호: 2025-326호지적재조사 완료에 의한 고시), 가축사육제한구역(2025-06-27)(일부제한구역 700m)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 역사문화환경보존지역(김유신탄생지 및 태실고시년도: 2025년 고시번호: 2025-326호지적재조사 완료에 의한 고시)&lt;문화유산의 보존 및 활용에 관한 법률&gt;,  기호 9~12) 보전관리지역(고시년도: 2025년 고시번호: 2025-326호지적재조사 완료에 의한 고시), 가축사육제한구역(2025-06-27)(일부제한구역 700m)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 역사문화환경보존지역(김유신탄생지 및 태실고시년도: 2025년 고시번호: 2025-326호지적재조사 완료에 의한 고시)&lt;문화유산의 보존 및 활용에 관한 법률&gt;, 준보전산지(고시년도: 2025년 고시번호: 2025-326호지적재조사 완료에 의한 고시)&lt;산지관리법&gt;임. \n별첨 &amp;quot;지적 및 건물개황도&amp;quot;, &amp;quot;사진용지&amp;quot; 참조. \n기호 1) 토지는 공부상 지목 &amp;quot;전&amp;quot;이나, 현황 일부 도로로 이용중임. 기호 2) 토지는 공부상 지목 &amp;quot;전&amp;quot;이나, 현황 도로 등임. 기호 5) 토지는 공부상 지목 &amp;quot;목장용지&amp;quot;이나, 현황 일부 도로로 이용중임. 기호 12) 토지는 공부상 지목 &amp;quot;임야&amp;quot;이나, 현황 일부 도로로 이용중임. \n미상임. \n기호 8-1) 블록조 및 경량철골조 스레트 및 판넬지붕 지상 2층 건으로, - 외벽 : 몰탈위페인팅 마감 등, - 내벽 : 벽지, 타일 마감 등, - 바닥 : 장판, 타일 마감 등,   - 창호 : 하이샷시 마감임.  기호 8-2) 세멘벽돌조 스레트지붕 지상 1층 건으로, - 벽체 : 몰탈위페인팅 마감 등, - 바닥 : 타일 마감 등, - 창호 : 하이샷시 마감임. \n기호 8-1) 단독주택 및 사무소로 이용중임. 기호 8-2) 근린생활시설로 이용중임. \n기호 8-1) 위생 및 급·배수설비, 난방설비 갖추어져 있음. 기호 8-2) 별도의 부대설비 없음. \n별첨 &amp;quot;지적 및 건물개황도&amp;quot; 및 &amp;quot;사진용지&amp;quot; 참조. \n없   음. \n미상임. ",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 1054019941,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "7",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "8",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000270|2026타경50031|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "-\n-\n-\n-\n-\n-\n-\n-",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 54264945,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000270|2026타경48|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 충청북도 청주시 흥덕구 봉명동 소재 &amp;quot;봉명사거리&amp;quot; 북서측 인근에 위치하며, 주위는 공동주택 및 근린생활시설, 단독주택 등이 혼재하는 지역으로서 제반 주위환경은 대체적으로 보통임.\n본건까지 차량출입 가능하며, 인근에 간선도로와 연계되어 일반차량을 이용한 접근성은 보통 이며 대중교통 이용여건은 노선 및 배차간격 등을 고려시 보통임.\n철근콘크리트구조 철근콘크리트(평슬래브지붕) 25층 건물 내 제17층 제1701호로서  외 벽 : 돌붙임 및 몰탈위 페인트 마감 등임.  내 벽 : 벽지 및 일부 타일마감 등임.  창 호 : 새시창호 등임.\n공동주택(아파트(도시형생활주택))으로 이용중임.\n전기설비, 난방설비, 위생 및 급배수설비, 승강기설비 등이 구비되어 있음.  \n2필 일단의 가장형의 평지로서, 공동주택(아파트(도시형생활주택)) 건부지로 이용중임.\n남측으로 노폭 약 35미터 내외, 북측으로 노폭 약 8미터 내외, 서측으로 보행자 전용도로에 접함.\n1) 봉명동 1831번지  도시지역, 일반상업지역, 시가지경관지구(건축한계선3M(도로폭 15m이상 주된 도로변에 한함) ), 상업용지(건폐율 80%이하, 용적률 1000%이하, 높이 최저2층이상, 건축한계선 대로변 3m 이면도로변 1m), 지구단위계획구역(봉명지구), 대로1류(폭 35m~40m)(접합), 보행자전용도로 (접합), 소로2류(폭 8m~10m)(접합), 가축사육제한구역(가축사육전부제한구역)&lt;가축분뇨의 관 리 및 이용에 관한 법률&gt;, 중점경관관리구역(연락처: 청주시청 건축디자인과 043-201-2552) 임.   2) 봉명동 1830-1번지  도시지역, 일반상업지역, 시가지경관지구(건축한계선3M(도로폭 15m이상 주된 도로변에 한함) ), 상업용지(건폐율 80%이하, 용적률 1000%이하, 높이 최저2층이상, 건축한계선 대로변 3m  이면도로변 1m), 지구단위계획구역(봉명지구), 대로1류(폭 35m~40m)(접합), 가축사육제한구 역(가축사육전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 중점경관관리구역(연락처 : 청주시청 건축디자인과 043-201-2552)임.  \n--.\n- 임대관계 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 128899970,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000320|2026타경48|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 대구광역시 달성군 논공읍 금포리 소재 &amp;apos;금포2리마을회관&amp;apos; 북동측 근거리에 위치하며 부근은 소규모 공장 및 농경지 등이 혼재하는 지역임.\n본건까지 차량출입 가능하며 근거리에 버스승강장이 위치하여 제반교통사정 보통임.\n본건은 부정형 토지로서 &amp;apos;답&amp;apos;으로 이용중임.\n본건 토지는 세로에 접함.\n자연녹지지역, 가축사육제한구역, 농지법제8조의 규정이적용되는농지.\n없  음.\n없  음.\n1)임대관계:미상임. 2)기타;없  음.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 281238031,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000270|2026타경46|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 충청북도 청주시 상당구 용암동 소재 &lt;용암1동주민센터&gt; 동측 인근에 위치하며, 부근은 근린생활시설, 공공기관 등이 혼재하는 등 주위환경은 보통시 됨.\n본건까지 차량 진ㆍ출입 가능하며, 인근에 버스정류장이 소재하는 등 교통상황은 보통시 됨.\n기호(1-가) - 철근콘크리트구조 (철근)콘크리트지붕 10층 중 제9층 제906호로서,                (사용승인일 : 2008-06-30)   외 벽 : 드라이비트 및 돌붙임 마감 등,   내 벽 : 벽지도배 및 일부 타일 마감 등,   창 호 : 샷시창호 마감 등임.\n기호(1-가) : 오피스텔로 이용 중임.\n위생 및 급ㆍ배수설비, 난방설비, 승강기설비, 소방설비 등이 구비되어 있음.\n평탄한 정방형 토지로서, 오피스텔 건부지로 이용 중임.\n본건 남서측으로 왕복 4차선의 포장도로가 소재함.\n근린상업지역, 도시지역, 상업용지(상업용지, 건폐율 70%이하, 용적률 900%이하), 지구단위계획구역(용암1택지개발지구), 중로1류(폭 20m~25m)(접합), 가축사육제한구역(가축사육전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;.\n해당사항 없음.\n임대관계는 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 21085080,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000320|2026타경43|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "   본건 토지는 경상북도 성주군 대가면 옥성리 소재 &amp;apos;성주별고을 체육공원&amp;apos; 남서측 인근에    위치하고 있으며, 주위는 성주읍소재지 외곽의 순수농촌지역으로 전, 답 등의 농경지, 마    을 내 주택, 창고, 주변 임야 등으로 형성되어 있음.\n - 본건 토지까지 일반차량 접근 가능하며, 도보 약 7~8분 내외 거리에 시내버스정류장이 소    재하고 있음.   - 지역적 위치, 주변 도로상태, 접근의 용이성, 대중교통 여건 등을 고려할 때 전반적인 교    통상황은 보통임.\n   본건 토지 북측 일대보다는 다소 고지이나 남측으로는 완경사지대를 이루고 있으며, 본건    토지는 주변 일대보다 고지대에 2단 계단식으로 자체 대체로 평탄 및 일부 법면상태의 경    사지를 이루고 있는 부정형의 토지로서, 기준시점 현재 &amp;apos;잡종지 및 과수원&amp;apos;으로 이용되고    있음.\n   본건 토지 남측 경계부분 끝단부 일부분으로 약 5m 콘크리트포장도로와 접하고 있음.\n 「토지이용계획확인서」에 의거할 때 &amp;quot;계획관리지역 , 성장관리계획구역(주거유도형), 가축    사육제한구역(전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;&amp;quot;에 해당함.\n   별첨 &amp;apos;지적 및 건물개황도&amp;apos; 및 &amp;apos;사진용지&amp;apos;에서 보는 바와 같이 본건 토지에 제시외건물    (ㄱ)이 소재하고 있으며, 그 외 간이한 비닐하우스. 창고형비닐하우스, 컨테이너박스가    소재하고 있으나 자체 해체 및 철거, 이전 가능한 것인바 평가에서 제외하였음.     (ㄱ) 과수목 시설하우스: 파이프조 비닐덮개지붕 단층, 약 2,146㎡\n   의뢰목록(공부)상 본건 토지의 지목은 &amp;apos;전&amp;apos;이나 현황 &amp;apos;잡종지 및 과수원&amp;apos;임.\n ·임대관계: 미상임.  ·기타사항: -",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 265700653,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    }
+  ]
+}
