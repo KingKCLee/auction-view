@@ -1,12 +1,13 @@
 const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
-const { buildPatch } = require('./dual-collector-lib');
+const { buildPatch, applyPatch } = require('./dual-collector-lib');
 
 const ROOT = __dirname;
 const DATA = path.join(ROOT, 'data', 'auctions.json');
 const STATS = path.join(ROOT, 'data', 'stats.json');
-const OUTDIR = path.join(ROOT, 'data', 'worker-deltas', process.env.WORKER_ID || 'laptop');
+const DELTAS = path.join(ROOT, 'data', 'worker-deltas');
+const OUTDIR = path.join(DELTAS, process.env.WORKER_ID || 'laptop');
 const BATCH_SIZE = String(process.env.BATCH_SIZE || 12);
 
 const writeJson = (p, v) => fs.writeFileSync(p, JSON.stringify(v, null, 2));
@@ -16,13 +17,54 @@ function restore(file, content) {
   fs.writeFileSync(file, content);
 }
 
+function listDeltaFiles(dir) {
+  if (!fs.existsSync(dir)) return [];
+  const out = [];
+  for (const name of fs.readdirSync(dir)) {
+    const p = path.join(dir, name);
+    const st = fs.statSync(p);
+    if (st.isDirectory()) out.push(...listDeltaFiles(p));
+    else if (name.endsWith('.json')) out.push(p);
+  }
+  return out.sort();
+}
+
+function applyPendingDeltas(rows) {
+  const map = new Map(rows.map(r => [r.id, r]));
+  let files = 0, patches = 0;
+  for (const file of listDeltaFiles(DELTAS)) {
+    let payload;
+    try { payload = JSON.parse(fs.readFileSync(file, 'utf8')); }
+    catch { continue; }
+    files++;
+    for (const patch of payload.patches || []) {
+      const row = map.get(patch.id);
+      if (!row) continue;
+      applyPatch(row, patch);
+      patches++;
+    }
+  }
+  return { files, patches };
+}
+
 function main() {
   if (!fs.existsSync(DATA)) throw new Error('data/auctions.json not found');
   fs.mkdirSync(OUTDIR, { recursive: true });
 
   const dataBackup = fs.readFileSync(DATA);
   const statsBackup = fs.existsSync(STATS) ? fs.readFileSync(STATS) : null;
-  const beforeRows = JSON.parse(dataBackup.toString('utf8'));
+
+  // Build a temporary effective DB that already includes laptop patches waiting
+  // for the cloud master. This prevents the same 12 rows being queried again
+  // every cycle before those patches are merged into canonical auctions.json.
+  const effectiveRows = JSON.parse(dataBackup.toString('utf8'));
+  const pending = applyPendingDeltas(effectiveRows);
+  if (pending.patches) {
+    writeJson(DATA, effectiveRows);
+    console.log(`[laptop-worker] pending deltas applied locally: files=${pending.files} patches=${pending.patches}`);
+  }
+
+  const beforeRows = JSON.parse(fs.readFileSync(DATA, 'utf8'));
   const before = new Map(beforeRows.map(r => [r.id, r]));
 
   const env = { ...process.env, BATCH_SIZE, SHARD_COUNT: '1', SHARD_INDEX: '0' };
