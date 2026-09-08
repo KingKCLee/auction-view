@@ -25,6 +25,7 @@
     "gate:clear": "node court-gate.js --clear",
     "recovery:check": "node court-recovery-watch.js",
     "alert": "node collector-alert.js",
+    "simulate": "node simulate-collection.js",
     "test:dual": "node test-dual-collector.js",
     "sync": "node current-court-sweep.js && node basic-info-enrich.js && node validate-basic-info.js && node discovery-supervisor.js && node sale-notice-history-worker.js && node basic-info-enrich.js && node validate-basic-info.js && node property-history-discovery-v2.js && node metrics-corrector.js && node retry-worker.js details && node retry-worker.js photos"
   },
