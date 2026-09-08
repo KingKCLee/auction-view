@@ -1,71 +1,132 @@
-// Checks once whether the court block has lifted, using exactly one light request.
+// Checks once whether the court block has lifted. Not a bypass, not a retry loop.
 //
-// Not a bypass and not a retry loop: one call per invocation, through the gate,
-// and it never resumes collection. It reports, records, and stops. Resuming is a
-// human decision.
+// It probes the exact endpoint the collector needs, because the block is
+// endpoint-specific. Measured 2026-09-09 during the live block: the warmup HTML
+// answered 200 (2478 bytes) and getCourtCodes returned all 60 courts, while
+// selectAuctnCsSrchRslt.on returned ipcheck=false. Both of the cheaper probes
+// therefore reported "recovered" mid-block. Only a real case-detail call counts.
 //
-// Run it hourly (Task Scheduler / cron):
-//   node court-recovery-watch.js
-//
-// The gate is latched while blocked, so this script temporarily lifts the latch
-// for its own single probe and re-latches immediately if the court still refuses.
+// Run hourly via scripts/recovery-watch.ps1. On recovery it starts the collector
+// directly at its pre-block rate; it never speeds anything up.
 
 const fs = require('fs');
 const path = require('path');
-const { spawnSync } = require('child_process');
+const { spawn, spawnSync } = require('child_process');
 const gate = require('./court-gate');
-
-// The laptop collector takes BATCH_SIZE/LOOP_SLEEP_SECONDS defaults (24/60) from
-// scripts/laptop-collector.ps1, so resuming through the scheduled task restores
-// exactly the pre-block rate. Speeding up right after a block earns the next one.
-const AUTO_RESUME = /^(1|true|yes)$/i.test(process.env.AUTO_RESUME || '');
+const BASE = 'https://www.courtauction.go.kr';
+const DETAIL_PATH = '/pgj/pgj15B/selectAuctnCsSrchRslt.on';
+const DATA = path.join(__dirname, 'data', 'auctions.json');
+const VALID_CASE = /^\d{4}타경\d+$/;
+const KST_MS = 9 * 3600000;
+const kstDay = ms => new Date(ms + KST_MS).toISOString().slice(0, 10);
 
 const LOG = process.env.RECOVERY_LOG || path.join(__dirname, 'data', 'court-recovery.json');
-const PROBE_URL = 'https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml&pgjId=151F00';
+const AUTO_RESUME = /^(1|true|yes)$/i.test(process.env.AUTO_RESUME || '');
+const COLLECTOR = path.join(__dirname, 'scripts', 'laptop-collector.ps1');
 
 const readJson = (p, f) => { try { return JSON.parse(fs.readFileSync(p, 'utf8')); } catch { return f; } };
 const writeJson = (p, v) => { fs.mkdirSync(path.dirname(p), { recursive: true }); fs.writeFileSync(p, JSON.stringify(v, null, 2)); };
 
+function collectorRunning() {
+  const r = spawnSync('powershell.exe', ['-NoProfile', '-Command',
+    "@(Get-CimInstance Win32_Process -Filter \"Name='powershell.exe' OR Name='node.exe'\" | Where-Object { $_.CommandLine -match 'laptop-collector\\.ps1|laptop-worker|detail-enrich' }).Count"],
+    { encoding: 'utf8' });
+  return Number(String(r.stdout || '0').trim()) > 0;
+}
+
+function resumeCollector() {
+  if (collectorRunning()) return { started: false, why: 'a collector is already running' };
+  // Start it directly rather than through the scheduled task: enabling a task
+  // from inside a task needs rights this process does not have (0x80070005).
+  const child = spawn('powershell.exe',
+    ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', COLLECTOR],
+    { cwd: __dirname, detached: true, stdio: 'ignore', windowsHide: true });
+  child.unref();
+  return { started: true, pid: child.pid };
+}
+
 async function main() {
-  const before = gate.status();
   const startedAt = new Date().toISOString();
   const history = readJson(LOG, { checks: [] });
+  const latchedBefore = gate.status().blocked;
 
-  // One probe only. Lift the latch just for this call so the gate's own refusal
-  // does not make recovery undetectable, then restore it unless we succeed.
-  const latchedBefore = before.blocked;
+  // Lift the latch only for this one probe, so the gate's own refusal cannot make
+  // recovery undetectable. It goes straight back on unless the probe truly passes.
   if (latchedBefore) gate.clearLatch();
 
   let entry;
   try {
-    const { res, text } = await gate.request(PROBE_URL, {
+    // Pick a case whose 기일 is today or later: while the source still carries it,
+    // a healthy response has a populated dma_result. An empty one means either a
+    // block or that the case has aged out, so we also check the block marker.
+    const rows = readJson(DATA, []);
+    const subject = rows.find(r => VALID_CASE.test(String(r.caseNumber || '').trim())
+      && r.saleDate >= kstDay(Date.now()));
+    if (!subject) throw new Error('no live case in canonical to probe with');
+
+    const { res, text } = await gate.request(BASE + DETAIL_PATH, {
+      method: 'POST',
       headers: {
+        'content-type': 'application/json;charset=UTF-8',
+        accept: 'application/json,*/*',
         'user-agent': 'Mozilla/5.0',
-        accept: 'text/html,application/xhtml+xml,*/*',
-        'accept-language': 'ko-KR,ko;q=0.9'
-      }
+        'accept-language': 'ko-KR,ko;q=0.9',
+        referer: BASE + '/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml',
+        'sc-userid': 'SYSTEM',
+        'sc-pgmid': 'PGJ151F01'
+      },
+      body: JSON.stringify({
+        dma_srchGdsDtlSrch: {
+          csNo: String(subject.caseNumber),
+          cortOfcCd: String(subject.courtCode || ''),
+          dspslGdsSeq: Number(subject.itemNumber || 1),
+          pgmId: 'PGJ151F01'
+        }
+      })
     }, { owner: 'court-recovery-watch', timeoutMs: 20000 });
 
+    let keys = 0, blockedBody = false;
+    try {
+      const j = JSON.parse(text);
+      blockedBody = j?.data?.ipcheck === false;
+      keys = Object.keys(j?.data?.dma_result || {}).length;
+    } catch {}
+
     const nowBlocked = gate.status().blocked;
-    const ok = res.ok && !nowBlocked;
+    const ok = res.ok && !blockedBody && !nowBlocked && keys > 0;
     entry = {
       at: startedAt,
+      probe: DETAIL_PATH,
+      probedCase: subject.caseNumber,
       httpStatus: res.status,
-      bytes: text.length,
+      resultKeys: keys,
+      ipcheckFalse: blockedBody,
       recovered: ok,
-      stillBlocked: !!nowBlocked,
-      note: ok ? 'court answered normally - collection may be resumed ON INSTRUCTION' : 'still refused'
+      stillBlocked: !!nowBlocked || blockedBody,
+      note: ok ? 'case detail came back populated' : 'case detail still refused or empty'
     };
-    if (!ok && latchedBefore) gate.latch(latchedBefore.reason, 'court-recovery-watch');
-    if (!ok && !nowBlocked) gate.latch(`probe returned HTTP ${res.status}`, 'court-recovery-watch');
+    if (!ok && !gate.status().blocked) {
+      gate.latch(latchedBefore ? latchedBefore.reason : `probe returned ${keys} keys`, 'court-recovery-watch');
+    }
   } catch (e) {
     entry = {
       at: startedAt,
+      probe: DETAIL_PATH,
       recovered: false,
       error: `${e.code || ''}:${e.message || e}`.slice(0, 300),
-      note: 'still refused'
+      note: 'case detail still refused'
     };
-    if (latchedBefore && !gate.status().blocked) gate.latch(latchedBefore.reason, 'court-recovery-watch');
+    if (!gate.status().blocked) {
+      gate.latch(latchedBefore ? latchedBefore.reason : String(e.message || e), 'court-recovery-watch');
+    }
+  }
+
+  if (entry.recovered && AUTO_RESUME) {
+    const resumed = resumeCollector();
+    entry.resume = resumed;
+    console.log(`[recovery] auto-resume: ${JSON.stringify(resumed)} (BATCH_SIZE=24, no idle wait; the gate paces every request)`);
+  } else if (entry.recovered) {
+    entry.resume = { started: false, why: 'AUTO_RESUME is off' };
   }
 
   history.checks = [entry, ...(history.checks || [])].slice(0, 200);
@@ -74,23 +135,7 @@ async function main() {
   writeJson(LOG, history);
 
   console.log(JSON.stringify({ ...entry, gate: gate.status().blocked ? 'latched' : 'open' }, null, 2));
-
-  if (entry.recovered) {
-    console.log('\n[recovery] COURT IS ANSWERING AGAIN.');
-    if (AUTO_RESUME) {
-      const r = spawnSync('powershell.exe', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-Command',
-        "Enable-ScheduledTask -TaskName 'AuctionViewLaptopCollector'; Start-ScheduledTask -TaskName 'AuctionViewLaptopCollector'"],
-        { encoding: 'utf8' });
-      const ok = r.status === 0;
-      history.resumedAt = ok ? new Date().toISOString() : null;
-      history.resumeOutput = `${r.stdout || ''}${r.stderr || ''}`.trim().slice(0, 500);
-      writeJson(LOG, history);
-      console.log(`[recovery] auto-resume ${ok ? 'issued' : 'FAILED'} at BATCH_SIZE=24 / LOOP_SLEEP_SECONDS=60`);
-      if (!ok) console.error(history.resumeOutput);
-    } else {
-      console.log('[recovery] AUTO_RESUME is off; collection stays stopped.');
-    }
-  }
+  if (entry.recovered) console.log('\n[recovery] COURT IS ANSWERING AGAIN.');
   process.exitCode = entry.recovered ? 0 : 10;
 }
 
