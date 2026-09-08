@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/agent-current-court-sweep.yml'
+      - 'safe-canonical-reconcile.js'
   schedule:
     - cron: '7 * * * *'
   workflow_dispatch:
@@ -74,20 +75,31 @@ jobs:
           need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; const h=s.latestHistoryPropertyRun||{}; const r=s.latestRun||{}; process.stdout.write(String(Number(c.successfulNotices||0)===0 && Number(h.returned||0)===0 && Number(r.items_found||0)===0))")
           echo "needs_rescue=$need" >> "$GITHUB_OUTPUT"
 
-      - name: Publish only additive/enrichment result
+      - name: Reconcile with latest canonical and publish additively
         run: |
+          cp data/auctions.json /tmp/collector-auctions.json
+          cp data/stats.json /tmp/collector-stats.json
+          if [ -f data/state.json ]; then cp data/state.json /tmp/collector-state.json; else echo '{}' > /tmp/collector-state.json; fi
+
+          # Discard only this runner's canonical working-tree edits, update to the
+          # newest remote, then re-apply the collector snapshot by ID-union. This
+          # prevents a concurrent laptop/cloud publisher from erasing new cases.
+          git checkout -- data/auctions.json data/stats.json data/state.json docs 2>/dev/null || true
+          git pull --rebase origin main
+          node safe-canonical-reconcile.js /tmp/collector-auctions.json /tmp/collector-stats.json /tmp/collector-state.json
+
           rm -rf docs
           mkdir -p docs/data
           cp index.html progress.html styles.css app.js progress.js docs/
           cp data/auctions.json data/stats.json docs/data/
           if [ -d photos ]; then cp -R photos docs/photos; fi
           touch docs/.nojekyll
+
           git config user.name "court-auction-bot"
           git config user.email "court-auction-bot@users.noreply.github.com"
           git add data/auctions.json data/stats.json data/state.json docs data/worker-deltas 2>/dev/null || true
           if ! git diff --cached --quiet; then
-            git commit -m "data: hourly safe discovery fallback $(date -u +'%Y-%m-%dT%H:%MZ')"
-            git pull --rebase origin main
+            git commit -m "data: reconciled hourly discovery $(date -u +'%Y-%m-%dT%H:%MZ')"
             git push origin HEAD:main
           fi
 
@@ -126,19 +138,27 @@ jobs:
           npm run basic || true
           npm run basic:validate
           node metrics-corrector.js || true
-      - name: Publish rescued additive result
+      - name: Reconcile rescued result with latest canonical and publish
         run: |
+          cp data/auctions.json /tmp/collector-auctions.json
+          cp data/stats.json /tmp/collector-stats.json
+          if [ -f data/state.json ]; then cp data/state.json /tmp/collector-state.json; else echo '{}' > /tmp/collector-state.json; fi
+
+          git checkout -- data/auctions.json data/stats.json data/state.json docs 2>/dev/null || true
+          git pull --rebase origin main
+          node safe-canonical-reconcile.js /tmp/collector-auctions.json /tmp/collector-stats.json /tmp/collector-state.json
+
           rm -rf docs
           mkdir -p docs/data
           cp index.html progress.html styles.css app.js progress.js docs/
           cp data/auctions.json data/stats.json docs/data/
           if [ -d photos ]; then cp -R photos docs/photos; fi
           touch docs/.nojekyll
+
           git config user.name "court-auction-bot"
           git config user.email "court-auction-bot@users.noreply.github.com"
           git add data/auctions.json data/stats.json data/state.json docs data/worker-deltas 2>/dev/null || true
           if ! git diff --cached --quiet; then
-            git commit -m "data: macOS safe discovery rescue $(date -u +'%Y-%m-%dT%H:%MZ')"
-            git pull --rebase origin main
+            git commit -m "data: reconciled macOS rescue $(date -u +'%Y-%m-%dT%H:%MZ')"
             git push origin HEAD:main
           fi
