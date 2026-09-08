@@ -137,9 +137,29 @@ function noteCall() {
 }
 
 // Runs fn while holding the gate. Refuses if latched or if another holder exists.
+//
+// Reentrant within a process: a nested call does not try to retake the lock this
+// process already holds (that would deadlock), but it still waits for its pacing
+// slot and is counted, so a library call that fires warmup + request back to back
+// is paced request by request rather than as one burst.
 async function acquire(owner, fn) {
   assertNotBlocked();
   const label = owner || path.basename(process.argv[1] || 'unknown');
+
+  if (global.__COURT_GATE_OPEN__ > 0) {
+    await waitForSlot();
+    noteCall();
+    global.__COURT_GATE_OPEN__++;
+    try {
+      return await fn();
+    } catch (e) {
+      if (e.code !== 'COURT_BLOCKED' && BLOCK_PATTERN.test(String(e?.message || e))) latch(String(e.message || e), label);
+      throw e;
+    } finally {
+      global.__COURT_GATE_OPEN__--;
+    }
+  }
+
   const deadline = Date.now() + LOCK_WAIT_MS;
   let got = tryTakeLock(label);
   while (!got && Date.now() < deadline) {

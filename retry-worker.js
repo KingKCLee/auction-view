@@ -1,5 +1,6 @@
 const fs=require('fs');
 const {spawnSync}=require('child_process');
+const gate=require('./court-gate');
 
 const mode=process.argv[2];
 const cfg={
@@ -15,7 +16,10 @@ const readStats=()=>{try{return JSON.parse(fs.readFileSync('data/stats.json','ut
   const maxAttempts=3;
   for(let attempt=1;attempt<=maxAttempts;attempt++){
     console.log(`[retry-worker] ${mode} attempt ${attempt}/${maxAttempts}`);
+    if(gate.status().blocked){console.error('[retry-worker] court gate is latched; not starting '+cfg.script);process.exitCode=12;return}
     const r=spawnSync(process.execPath,[cfg.script],{stdio:'inherit',env:process.env});
+    // Retrying through a block is what extends a block.
+    if(gate.status().blocked){console.error('[retry-worker] gate latched during the run; stopping without retry');process.exitCode=12;return}
     const stats=readStats();
     const retry=Boolean(cfg.check(stats));
     if(r.status!==0&&!retry){process.exitCode=r.status||1;return}

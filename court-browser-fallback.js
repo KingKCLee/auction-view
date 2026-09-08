@@ -1,4 +1,5 @@
 const { chromium } = require('playwright');
+const gate = require('./court-gate');
 
 const BASE = 'https://www.courtauction.go.kr';
 const PATHS = {
@@ -43,6 +44,12 @@ class CourtBrowserFallbackClient {
     const target = WARM[endpointKey] || WARM.notices;
     if (this.warmed === target) return;
     await this.ensureBrowser();
+    // Browser navigation never passes through node's fetch, so it has to take the
+    // gate explicitly or it would be a second, unpaced path to the court.
+    return gate.acquire('browser-fallback:warmup', () => this._warmup(target));
+  }
+
+  async _warmup(target) {
 
     // The court page can keep loading resources indefinitely on cloud runners.
     // We only need a committed same-origin document and its cookies, not full DOM readiness.
@@ -68,6 +75,10 @@ class CourtBrowserFallbackClient {
     const path = PATHS[endpointKey];
     if (!path) throw new Error(`unknown court endpoint ${endpointKey}`);
     await this.warmup(endpointKey);
+    return gate.acquire(`browser-fallback:${endpointKey}`, () => this._postJson(endpointKey, path, body));
+  }
+
+  async _postJson(endpointKey, path, body) {
     const submissionid = SUBMISSION[endpointKey] || '';
     let response;
     try {
@@ -92,6 +103,7 @@ class CourtBrowserFallbackClient {
       throw err;
     }
 
+    gate.inspect(response.text, path);
     let json;
     try { json = JSON.parse(response.text); }
     catch (_) {

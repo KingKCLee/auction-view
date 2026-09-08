@@ -26,6 +26,16 @@ function main() {
   const prev = readJson(OUT, { lostIds: [], history: [] });
   const prevLost = new Set(prev.lostIds || []);
 
+  // laptop-worker truncates canonical to its candidate subset for the duration of
+  // a cycle. Counting then would invent thousands of losses, so a sharp drop is
+  // treated as "read too early" rather than as data.
+  const prevRows = Number(prev.canonicalRows || 0);
+  if (prevRows && rows.length < prevRows * 0.9) {
+    const partial = { at: new Date().toISOString(), today, skipped: 'canonical looks mid-cycle', sawRows: rows.length, expectedAtLeast: Math.round(prevRows * 0.9) };
+    console.log(JSON.stringify(partial, null, 2));
+    return;
+  }
+
   const captured = rows.filter(r => Number(r.winningPrice || 0) > 0);
   // 기일 already passed and we still have no result: the source cannot give it back.
   const lost = rows.filter(r => r.saleDate && r.saleDate < today && !Number(r.winningPrice || 0));

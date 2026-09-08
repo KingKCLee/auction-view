@@ -160,6 +160,91 @@ process.exit(patched.name === 'gatedFetch' ? 0 : 1);
 check('test3 enforcer installed the gated fetch', passthrough.status === 0, passthrough.out.trim());
 
 // ---------------------------------------------------------------------------
+console.log('\n=== TEST 4 (deliberate failure): the browser path must not bypass the gate ===\n');
+
+const GATE_JS = JSON.stringify(path.join(ROOT, 'court-gate.js'));
+const ENFORCE_JS = JSON.stringify(path.join(ROOT, 'court-gate-enforce.js'));
+const FALLBACK_JS = JSON.stringify(path.join(ROOT, 'court-browser-fallback.js'));
+// The temp scripts live outside the repo, so the package is required by path.
+const LIB_JS = JSON.stringify(path.join(ROOT, 'node_modules', 'court-auction-notice-search'));
+
+// The library reaches the court two ways - an HTTP client and a Playwright
+// client - and both funnel through postJson. Assert the enforcer gated both, and
+// that a latched gate refuses the Playwright one before any browser starts.
+const dir4 = gateDir('browser');
+const libGated = runNode(`
+const gate = require(${GATE_JS});
+const lib = require(${LIB_JS});
+const names = ['CourtAuctionHttpClient', 'CourtAuctionPlaywrightClient'];
+const gated = names.filter(n => lib[n] && lib[n].prototype.__courtGated__);
+console.log('gated clients: ' + gated.join(','));
+if (gated.length !== 2) { console.error('NOT ALL CLIENTS GATED'); process.exit(1); }
+gate.latch('test latch', 'test');
+(async () => {
+  const c = new lib.CourtAuctionPlaywrightClient({});
+  try {
+    await c.postJson('notices', {});
+    console.log('PLAYWRIGHT POST WENT OUT - MUST NOT HAPPEN');
+    process.exit(0);
+  } catch (e) {
+    console.error('playwright postJson refused: ' + e.code);
+    process.exit(e.code === 'COURT_BLOCKED' ? 5 : 1);
+  }
+})();
+`, { COURT_GATE_DIR: dir4, NODE_OPTIONS: '--require ' + ENFORCE_JS });
+
+console.log(libGated.out.trim());
+check('test4 both library clients are gated',
+  /gated clients: CourtAuctionHttpClient,CourtAuctionPlaywrightClient/.test(libGated.out));
+check('test4 playwright postJson refused while latched', libGated.status === 5, `got ${libGated.status}`);
+check('test4 refusal is COURT_BLOCKED', /COURT_BLOCKED/.test(libGated.out));
+check('test4 no browser request went out', !/WENT OUT/.test(libGated.out));
+
+// Our own browser fallback client must take the gate too.
+const dir5 = gateDir('browser-fallback');
+const fallbackGated = runNode(`
+const gate = require(${GATE_JS});
+const { CourtBrowserFallbackClient } = require(${FALLBACK_JS});
+gate.latch('test latch', 'test');
+(async () => {
+  const c = new CourtBrowserFallbackClient({ timeoutMs: 2000 });
+  try {
+    await c.postJson('notices', {});
+    console.log('BROWSER FALLBACK WENT OUT - MUST NOT HAPPEN');
+    process.exit(0);
+  } catch (e) {
+    console.error('browser fallback refused: ' + e.code);
+    process.exit(e.code === 'COURT_BLOCKED' ? 5 : 1);
+  }
+})();
+`, { COURT_GATE_DIR: dir5 });
+
+console.log(fallbackGated.out.trim());
+check('test4 browser fallback refused while latched', fallbackGated.status === 5, `got ${fallbackGated.status}`);
+check('test4 fallback never launched a browser', !/WENT OUT/.test(fallbackGated.out));
+
+// ---------------------------------------------------------------------------
+console.log('\n=== TEST 5: nesting must pace, not deadlock ===\n');
+
+const dir6 = gateDir('reentrant');
+const nested = runNode(`
+const gate = require(${GATE_JS});
+(async () => {
+  const t0 = Date.now();
+  await gate.acquire('outer', async () => {
+    await gate.acquire('inner', async () => { console.log('inner ran'); });
+  });
+  const ms = Date.now() - t0;
+  console.log('elapsed=' + ms);
+  process.exit(ms >= 3000 ? 0 : 3);
+})();
+`, { COURT_GATE_DIR: dir6 });
+
+console.log(nested.out.trim());
+check('test5 nested acquire did not deadlock', /inner ran/.test(nested.out));
+check('test5 nested call still paced (>=3s)', nested.status === 0, nested.out.trim());
+
+// ---------------------------------------------------------------------------
 console.log(`\n=== ${failures ? `${failures} CHECK(S) FAILED` : 'ALL CHECKS PASSED'} ===`);
 try { fs.rmSync(TMP, { recursive: true, force: true }); } catch {}
 process.exitCode = failures ? 1 : 0;

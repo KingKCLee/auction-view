@@ -8,9 +8,10 @@
 // untouched. Responses are sniffed for block markers so a 200 that says
 // ipcheck=false still latches the gate.
 //
-// Known gap, stated rather than papered over: Playwright drives a real browser,
-// whose traffic never passes through this fetch. Browser-based court access must
-// call courtGate.acquire() around the whole session - see court-browser-fallback.
+// Playwright drives a real browser, whose traffic never reaches this fetch. That
+// hole is closed further down by gating postJson/warmup on both of the library's
+// client classes - the single choke point every transport goes through - and
+// court-browser-fallback gates its own page.evaluate call the same way.
 
 const gate = require('./court-gate');
 
@@ -50,4 +51,36 @@ if (!global.__COURT_GATE_RAW_FETCH__) {
   if (process.env.COURT_GATE_VERBOSE) {
     console.error('[court-gate-enforce] global fetch is gated for ' + gate.COURT_HOST);
   }
+}
+
+// court-auction-notice-search reaches the court two ways: an HTTP client and a
+// Playwright client. Both funnel through postJson (and warmup), so gating those
+// two methods covers every exported search/detail function and both transports,
+// including the browser traffic that never touches global fetch.
+function gateClientClass(cls, label) {
+  if (!cls || !cls.prototype || cls.prototype.__courtGated__) return false;
+  for (const method of ['postJson', 'warmup']) {
+    const original = cls.prototype[method];
+    if (typeof original !== 'function') continue;
+    cls.prototype[method] = function gated(...args) {
+      return gate.acquire(`${label}.${method}`, async () => {
+        const out = await original.apply(this, args);
+        try { gate.inspect(out, `${label}.${method}`); } catch {}
+        return out;
+      });
+    };
+  }
+  cls.prototype.__courtGated__ = true;
+  return true;
+}
+
+try {
+  const lib = require('court-auction-notice-search');
+  const httpGated = gateClientClass(lib.CourtAuctionHttpClient, 'lib:http');
+  const pwGated = gateClientClass(lib.CourtAuctionPlaywrightClient, 'lib:playwright');
+  if (process.env.COURT_GATE_VERBOSE) {
+    console.error(`[court-gate-enforce] library clients gated: http=${httpGated} playwright=${pwGated}`);
+  }
+} catch (e) {
+  console.error('[court-gate-enforce] could not gate court-auction-notice-search: ' + (e.message || e));
 }
