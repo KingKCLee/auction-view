@@ -1,6 +1,8 @@
-name: Auction Agent - Nationwide Current Court Sweep (manual backup)
+name: Auction Agent - Nationwide Current Court Sweep
 
 on:
+  schedule:
+    - cron: '17 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -13,7 +15,7 @@ concurrency:
 jobs:
   current-sweep:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 18
     env:
       CURRENT_SWEEP_COURTS: '4'
       CURRENT_SWEEP_NOTICES: '3'
@@ -28,15 +30,39 @@ jobs:
           node-version: '22'
       - name: Install collector
         run: npm install --no-audit --no-fund
-      - name: Install Chromium
+      - name: Install Chromium for official browser fallback
         run: npx playwright install chromium
-      - name: Run one emergency current sweep
-        run: npm run sweep:current
-      - name: Fill missing basic information
-        run: npm run basic || true
-      - name: Verify basic information
+
+      - name: Merge safe laptop detail deltas first
+        run: npm run worker:apply || true
+
+      - name: Try official current sale-notice sweep
+        run: npm run sweep:current || true
+
+      - name: Fallback to official property search when notice sweep yields zero
+        run: |
+          need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; process.stdout.write(String(Number(c.successfulNotices||0)===0))")
+          if [ "$need" = "true" ]; then
+            timeout 120s npm run history:property || true
+          fi
+
+      - name: Fallback to official sale-notice discovery when both discovery paths yield zero
+        run: |
+          need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; const h=s.latestHistoryPropertyRun||{}; process.stdout.write(String(Number(c.successfulNotices||0)===0 && Number(h.returned||0)===0))")
+          if [ "$need" = "true" ]; then
+            timeout 120s npm run collect:once || true
+          fi
+
+      - name: Fill missing basic information through official case detail
+        run: timeout 120s npm run basic || true
+
+      - name: Verify basic information integrity
         run: npm run basic:validate
-      - name: Publish emergency batch
+
+      - name: Recalculate metrics without deleting existing data
+        run: node metrics-corrector.js || true
+
+      - name: Publish only additive/enrichment result
         run: |
           rm -rf docs
           mkdir -p docs/data
@@ -46,9 +72,9 @@ jobs:
           touch docs/.nojekyll
           git config user.name "court-auction-bot"
           git config user.email "court-auction-bot@users.noreply.github.com"
-          git add data/auctions.json data/stats.json data/state.json docs
+          git add data/auctions.json data/stats.json data/state.json docs data/worker-deltas 2>/dev/null || true
           if ! git diff --cached --quiet; then
-            git commit -m "data: manual emergency current sweep $(date -u +'%Y-%m-%dT%H:%MZ')"
+            git commit -m "data: hourly safe discovery fallback $(date -u +'%Y-%m-%dT%H:%MZ')"
             git pull --rebase origin main
             git push origin HEAD:main
           fi
