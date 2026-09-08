@@ -41,6 +41,12 @@ function main() {
     restore(STATS, statsBackup);
   }
 
+  if (!patches.length) {
+    console.log('[laptop-worker] patches=0; nothing to publish');
+    if (run.status) process.exitCode = run.status;
+    return;
+  }
+
   const stamp = new Date().toISOString().replace(/[:.]/g, '-');
   const payload = {
     version: 1,
@@ -53,7 +59,6 @@ function main() {
   const out = path.join(OUTDIR, `${stamp}-${process.pid}.json`);
   writeJson(out, payload);
   console.log(`[laptop-worker] patches=${patches.length} file=${path.relative(ROOT, out)}`);
-  if (run.status && patches.length === 0) process.exitCode = run.status;
 }
 
 main();
