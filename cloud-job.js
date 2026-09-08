@@ -40,6 +40,7 @@ async function main() {
   if (mode === 'probe') return probe();
   if (mode === 'apply-deltas') return runNode('apply-worker-deltas.js');
   if (mode === 'metrics') return runNode('metrics-corrector.js');
+  if (mode === 'master-once' || mode === 'cloud-master-once') return runNode('cloud-master-once.js');
   throw new Error(`Unknown CLOUD_JOB_MODE=${mode}`);
 }
 

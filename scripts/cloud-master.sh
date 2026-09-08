@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+# LEGACY (VM only). This is the always-on `while true` master loop.
+# Cloud Run Jobs use the one-shot cloud-master-once.js instead:
+#   CLOUD_JOB_MODE=master-once node cloud-job.js
+# Unlike this script, the one-shot works on a fresh clone under /tmp and refuses
+# to commit when the merge would shrink canonical. Do not run both at once.
 set -u
 cd "$(dirname "$0")/.."
 export CURRENT_SWEEP_COURTS="${CURRENT_SWEEP_COURTS:-4}"
