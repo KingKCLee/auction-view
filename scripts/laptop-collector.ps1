@@ -1,7 +1,8 @@
 $ErrorActionPreference = "Stop"
 Set-Location $PSScriptRoot\..
 $env:WORKER_ID = "laptop"
-if (-not $env:BATCH_SIZE) { $env:BATCH_SIZE = "12" }
+if (-not $env:BATCH_SIZE) { $env:BATCH_SIZE = "24" }
+if (-not $env:LOOP_SLEEP_SECONDS) { $env:LOOP_SLEEP_SECONDS = "60" }
 
 try {
   Start-Process -FilePath "node" -ArgumentList "collector-monitor.js" -WindowStyle Hidden
@@ -25,6 +26,6 @@ while ($true) {
   } catch {
     Write-Host "[laptop] $($_.Exception.Message)"
   }
-  Write-Host "[laptop] 5분 후 다음 회차 시작"
-  Start-Sleep -Seconds 300
+  Write-Host "[laptop] $($env:LOOP_SLEEP_SECONDS)초 후 다음 회차 시작"
+  Start-Sleep -Seconds ([int]$env:LOOP_SLEEP_SECONDS)
 }
