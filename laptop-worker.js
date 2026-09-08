@@ -63,6 +63,28 @@ function recentlyChecked(row) {
   return Date.now() - t < RECENT_SKIP_HOURS * 3600000;
 }
 
+// A case whose 기일 is today has no result to read in the morning - the auction
+// has not happened yet - and it is gone from the source tomorrow. So it must stay
+// re-checkable all day, which means neither the 12h recheck skip nor the
+// pending-delta skip may exclude it until the winning price is actually in hand.
+const KST_MS = 9 * 3600000;
+const kstDay = ms => new Date(ms + KST_MS).toISOString().slice(0, 10);
+const RECHECK_MIN_GAP_MS = Number(process.env.EXPIRING_RECHECK_MINUTES || 45) * 60000;
+
+function expiringUncaptured(row) {
+  const sd = String(row.saleDate || '');
+  if (!sd) return false;
+  const now = Date.now();
+  return (sd === kstDay(now) || sd === kstDay(now + 86400000)) && !Number(row.winningPrice || 0);
+}
+
+// Still leave a gap, so one stubborn case cannot be hammered every cycle.
+function recheckedTooRecently(row) {
+  const t = Date.parse(row.detailCheckedAt || '');
+  if (!Number.isFinite(t)) return false;
+  return Date.now() - t < RECHECK_MIN_GAP_MS;
+}
+
 function main() {
   const startedAt=new Date().toISOString();
   setStatus({phase:'preparing',message:'GitHub 최신 데이터와 대기 패치를 반영해 수집 후보를 고르는 중',startedAt,batchSize:Number(BATCH_SIZE),error:null});
@@ -79,15 +101,21 @@ function main() {
   }
 
   let invalid = 0, pendingSkipped = 0, recentSkipped = 0;
+  let expiringKept = 0;
   const candidates = effectiveRows.filter(row => {
     if (!VALID_CASE.test(String(row.caseNumber || '').trim())) { invalid++; return false; }
+    if (expiringUncaptured(row)) {
+      if (recheckedTooRecently(row)) { recentSkipped++; return false; }
+      expiringKept++;
+      return true;
+    }
     if (pending.seenIds.has(row.id)) { pendingSkipped++; return false; }
     if (recentlyChecked(row)) { recentSkipped++; return false; }
     return true;
   });
   writeJson(DATA, candidates);
-  console.log(`[laptop-worker] candidates=${candidates.length} skipped malformed=${invalid} pending=${pendingSkipped} recent=${recentSkipped}`);
-  setStatus({phase:'collecting_details',message:`법원 상세정보 ${Math.min(Number(BATCH_SIZE),candidates.length)}건을 조회 중`,candidates:candidates.length,skippedMalformed:invalid,pendingSkipped,recentSkipped,pendingFiles:pending.files,pendingPatches:pending.patches});
+  console.log(`[laptop-worker] candidates=${candidates.length} expiringKept=${expiringKept} skipped malformed=${invalid} pending=${pendingSkipped} recent=${recentSkipped}`);
+  setStatus({phase:'collecting_details',message:`법원 상세정보 ${Math.min(Number(BATCH_SIZE),candidates.length)}건을 조회 중`,candidates:candidates.length,expiringKept,skippedMalformed:invalid,pendingSkipped,recentSkipped,pendingFiles:pending.files,pendingPatches:pending.patches});
 
   const beforeRows = JSON.parse(fs.readFileSync(DATA, 'utf8'));
   const before = new Map(beforeRows.map(r => [r.id, r]));
