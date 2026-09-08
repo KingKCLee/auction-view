@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-08T19:58:56.539Z",
+  "generatedAt": "2026-09-08T21:24:45.092Z",
   "court": "전국 법원",
   "region": "전국",
   "itemCount": 9935,
   "winningCount": 0,
   "photoCount": 407,
-  "documentCount": 22,
+  "documentCount": 1936,
   "eventCount": 21,
   "queuedJobs": 0,
   "errorJobs": 1,
@@ -19,9 +19,9 @@
     "schedule": 1,
     "winning_price": 0,
     "photos": 27,
-    "status_report": 10,
-    "sale_statement": 12,
-    "appraisal_summary": 12,
+    "status_report": 1000,
+    "sale_statement": 936,
+    "appraisal_summary": 936,
     "appraisal_pdf": 0,
     "transactions": 0,
     "building_registry": 0,
@@ -54,14 +54,14 @@
     "finished_at": "2026-09-07T19:34:08.471Z",
     "status": "partial",
     "items_found": 0,
-    "items_saved": 111,
+    "items_saved": 0,
     "priority_items": 0,
     "history_items": 0,
     "notices_checked": 0,
     "transport": "official-sale-notice-http",
     "error_text": "history notice 2025-08 offset 0: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
     "processedItems": 0,
-    "newUniqueItems": 111
+    "newUniqueItems": 0
   },
   "runs": [
     {
@@ -70,14 +70,14 @@
       "finished_at": "2026-09-07T19:34:08.471Z",
       "status": "partial",
       "items_found": 0,
-      "items_saved": 111,
+      "items_saved": 0,
       "priority_items": 0,
       "history_items": 0,
       "notices_checked": 0,
       "transport": "official-sale-notice-http",
       "error_text": "history notice 2025-08 offset 0: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
       "processedItems": 0,
-      "newUniqueItems": 111
+      "newUniqueItems": 0
     },
     {
       "run_type": "sale-notice-discovery",
@@ -332,12 +332,12 @@
   },
   "lastCollectorCycle": {
     "itemCount": 9935,
-    "newUniqueItems": 111,
+    "newUniqueItems": 0,
     "currentNoticeProcessed": 0,
     "historicalReturned": 0,
     "historicalNewUnique": 0,
     "historicalStatus": "partial",
-    "finishedAt": "2026-09-08T19:58:56.927Z"
+    "finishedAt": "2026-09-08T21:24:44.468Z"
   },
   "saleNoticeBackfill": {
     "version": 2,
@@ -417,5 +417,6 @@
     "lastError": null,
     "source": "대한민국 법원경매정보 사건검색",
     "finishedAt": "2026-09-08T19:58:56.539Z"
-  }
+  },
+  "coverageSource": "canonical-recount"
 }
