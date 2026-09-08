@@ -83,17 +83,15 @@ const subject = tier0.find(sameDay) || tier0[0] || eligible[0];
 const soldResponse = {
   data: {
     dma_result: {
-      csBaseInfo: { csNm: '부동산강제경매', aeeWevlInstNm: '가나감정평가법인', clmAmt: '150,000,000' },
-      dspslGdsDxdyInfo: { dspslUsgNm: '아파트', dspslGdsSpcfcEcdocId: 'DOC-1', orvParam: 'X' },
+      csBaseInfo: { csNm: '부동산강제경매', clmAmt: 150000000, csProgStatCd: '02', ultmtDvsCd: null, csUltmtYmd: null },
+      dspslGdsDxdyInfo: { auctnGdsUsgCd: '01', aeeEvlAmt: 79000000, flbdNcnt: 1, dspslGdsSpcfcEcdocId: 'DOC-1', orvParam: 'X' },
+      // Exactly the shape a live response carries (measured 2026-09-09).
       gdsDspslDxdyLst: [
-        { dspslDxdyYmd: '20260825', dspslDxdyDvsNm: '매각기일', dspslDxdyRsltNm: '유찰', lwsDspslPrc: '420,000,000' },
-        {
-          dspslDxdyYmd: String(subject?.saleDate || TODAY).replace(/-/g, ''),
-          dspslDxdyDvsNm: '매각기일',
-          dspslDxdyRsltNm: '매각 (응찰 7명)',
-          lwsDspslPrc: '336,000,000',
-          sucBidPrc: '451,300,000'
-        }
+        { dxdyYmd: '20260701', dxdyHm: '1000', dxdyPlcNm: '법정동 121호 (경매법정)',
+          auctnDxdyKndCd: '01', auctnDxdyRsltCd: '002', tsLwsDspslPrc: 79000000, dspslAmt: null },
+        { dxdyYmd: String(subject?.saleDate || TODAY).replace(/-/g, ''), dxdyHm: '1000',
+          dxdyPlcNm: '법정동 121호 (경매법정)', auctnDxdyKndCd: '01', auctnDxdyRsltCd: '001',
+          tsLwsDspslPrc: 55300000, dspslAmt: 71310000, bidPrsnCnt: 7 }
       ],
       aeeWevlMnpntLst: [{ aeeWevlMnpntCtt: '남향, 도로접함' }]
     }
@@ -103,15 +101,10 @@ const soldResponse = {
 // Replay exactly what detail-enrich does with that payload.
 const asInt = v => { if (v == null || v === '') return null; const n = Number(String(v).replace(/[^0-9.-]/g, '')); return Number.isFinite(n) ? Math.trunc(n) : null; };
 const normDate = v => { const s = String(v || '').replace(/[^0-9]/g, ''); return s.length >= 8 ? `${s.slice(0, 4)}-${s.slice(4, 6)}-${s.slice(6, 8)}` : null; };
-const eventResult = e => String(e.dspslDxdyRsltNm || e.rsltCtt || '');
+const eventResult = e => String(e.auctnDxdyRsltCd || e.dspslDxdyRsltNm || '');
 const winningFrom = e => {
-  for (const k of ['winningPrice', 'bidPrice', 'salePrice', 'maePrc', 'maeAmt', 'sucBidPrc', 'dspslPrc', 'bidAmt', 'nakchalAmt', 'nakchalPrc', 'scsBidPrc']) {
+  for (const k of ['dspslAmt', 'winningPrice', 'sucBidPrc', 'dspslPrc']) {
     const n = asInt(e?.[k]); if (n && n > 0) return n;
-  }
-  const s = eventResult(e);
-  if (/매각|낙찰/.test(s)) {
-    const n = [...s.matchAll(/([0-9][0-9,]{4,})\s*원?/g)].map(m => asInt(m[1])).filter(Boolean);
-    if (n.length) return Math.max(...n);
   }
   return null;
 };
@@ -120,10 +113,13 @@ const beforeRow = JSON.parse(JSON.stringify(subject));
 const filled = JSON.parse(JSON.stringify(subject));
 const events = soldResponse.data.dma_result.gdsDspslDxdyLst;
 filled.events = events.map(e => ({
-  event_date: normDate(e.dspslDxdyYmd),
-  event_type: e.dspslDxdyDvsNm,
-  amount: asInt(e.lwsDspslPrc),
-  result_text: eventResult(e)
+  event_date: normDate(e.dxdyYmd),
+  event_time: String(e.dxdyHm || ''),
+  event_kind_code: String(e.auctnDxdyKndCd || ''),
+  place: String(e.dxdyPlcNm || ''),
+  amount: asInt(e.tsLwsDspslPrc),
+  winning_amount: asInt(e.dspslAmt),
+  result_code: eventResult(e)
 }));
 filled.eventCount = filled.events.length;
 filled.coverage = { ...(filled.coverage || {}), schedule: 1 };
@@ -131,7 +127,7 @@ for (const e of events) {
   const w = winningFrom(e);
   if (w) {
     filled.winningPrice = w;
-    filled.winningDate = normDate(e.dspslDxdyYmd);
+    filled.winningDate = normDate(e.dxdyYmd);
     filled.winningRatio = filled.appraisedPrice ? Math.round(w / filled.appraisedPrice * 10000) / 100 : null;
     filled.coverage.winning_price = 1;
     filled.status = '매각';
@@ -139,8 +135,9 @@ for (const e of events) {
     if (bc !== null) filled.bidderCount = bc;
   }
 }
-const lastEv = [...events].filter(e => normDate(e.dspslDxdyYmd)).sort((a, b) => normDate(a.dspslDxdyYmd).localeCompare(normDate(b.dspslDxdyYmd))).at(-1);
-if (lastEv) filled.saleResult = eventResult(lastEv);
+const soldEv = [...events].filter(e => Number(asInt(e.dspslAmt) || 0) > 0).at(-1);
+if (soldEv) filled.saleResult = eventResult(soldEv);
+filled.failedCount = Number(soldResponse.data.dma_result.dspslGdsDxdyInfo.flbdNcnt || 0);
 
 console.log('\n--- 2. what a 매각 response would fill in ---');
 console.log(`subject: ${subject.caseNumber} (기일 ${subject.saleDate}, 감정가 ${subject.appraisedPrice})`);
