@@ -15,6 +15,8 @@
     "history:property": "node property-history-discovery-v2.js",
     "details:once": "node detail-enrich.js",
     "photos:once": "node photo-enrich.js",
+    "worker:laptop": "node laptop-worker.js",
+    "worker:apply": "node apply-worker-deltas.js",
     "sync": "node current-court-sweep.js && node basic-info-enrich.js && node validate-basic-info.js && node discovery-supervisor.js && node sale-notice-history-worker.js && node basic-info-enrich.js && node validate-basic-info.js && node property-history-discovery-v2.js && node metrics-corrector.js && node retry-worker.js details && node retry-worker.js photos"
   },
   "dependencies": {
