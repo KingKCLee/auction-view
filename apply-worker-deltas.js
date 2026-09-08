@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { applyPatch } = require('./dual-collector-lib');
 
 const ROOT = __dirname;
 const DATA = path.join(ROOT, 'data', 'auctions.json');
@@ -7,13 +8,6 @@ const DELTAS = path.join(ROOT, 'data', 'worker-deltas');
 
 const readJson = p => JSON.parse(fs.readFileSync(p, 'utf8'));
 const writeJson = (p, v) => fs.writeFileSync(p, JSON.stringify(v, null, 2));
-
-function mergeValue(key, current, incoming) {
-  if (key === 'coverage' && current && incoming && typeof current === 'object' && typeof incoming === 'object') {
-    return { ...current, ...incoming };
-  }
-  return incoming;
-}
 
 function listDeltaFiles(dir) {
   if (!fs.existsSync(dir)) return [];
@@ -41,9 +35,7 @@ function main() {
     for (const patch of payload.patches || []) {
       const row = map.get(patch.id);
       if (!row) { missing++; continue; }
-      for (const [key, value] of Object.entries(patch.set || {})) {
-        row[key] = mergeValue(key, row[key], value);
-      }
+      applyPatch(row, patch);
       row.detailCheckedAt = payload.createdAt || new Date().toISOString();
       appliedPatches++;
     }
