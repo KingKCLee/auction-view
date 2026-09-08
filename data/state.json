@@ -38,8 +38,8 @@
   "propertyHistoryYear": 2026,
   "propertyHistoryMonth": 8,
   "propertyHistoryPage": 1,
-  "propertyHistoryLastRun": "2026-09-07T19:34:19.158Z",
-  "propertyHistoryLastError": "Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml&pgjId=151F00: fetch failed",
+  "propertyHistoryLastRun": "2026-09-08T23:44:16.931Z",
+  "propertyHistoryLastError": "Court Auction request failed for /pgj/pgjsearch/searchControllerMain.on",
   "lastMetricItemCount": 9935,
   "saleNoticeDeferred": [],
   "saleNoticeFailures": {
@@ -125,7 +125,11 @@
     "2026-09|B000530": -1,
     "2026-10|B000210": -1,
     "2026-10|B000211": -1,
-    "2026-10|B000215": -1
+    "2026-10|B000215": -1,
+    "2026-10|B000212": -1,
+    "2026-10|B000213": -1,
+    "2026-10|B000214": -1,
+    "2026-10|B214807": -1
   },
   "currentSweepFailures": {
     "search|2026-09|B000210": 0,
@@ -284,15 +288,15 @@
     "search|2026-10|B000210": 0,
     "search|2026-10|B000211": 0,
     "search|2026-10|B000215": 0,
-    "search|2026-10|B000412": 1,
-    "search|2026-10|B000510": 1,
-    "search|2026-10|B000421": 1,
-    "search|2026-10|B000511": 1
+    "search|2026-10|B000212": 0,
+    "search|2026-10|B000213": 0,
+    "search|2026-10|B000214": 0,
+    "search|2026-10|B214807": 0
   },
   "currentSweepMonthSlot": 1,
   "currentSweepCourtIndex": 7,
-  "currentSweepLastRun": "2026-09-08T23:41:46.782Z",
-  "currentSweepLastError": "B000511 2026-10: court gate held by pid 2607 (browser-fallback:warmup) since 2026-09-08T23:41:39.410Z",
+  "currentSweepLastRun": "2026-09-08T23:44:12.885Z",
+  "currentSweepLastError": null,
   "saleNoticeBackfillVersion": 2,
   "currentSweepDeferred": [
     "2026-09|B214804",

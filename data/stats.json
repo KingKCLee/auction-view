@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T23:43:25.005Z",
+  "generatedAt": "2026-09-08T23:44:33.662Z",
   "court": "전국 법원",
   "region": "전국",
   "itemCount": 9935,
@@ -15,7 +15,7 @@
     "to": "2026-10"
   },
   "coverage": {
-    "base_info": 9588,
+    "base_info": 9592,
     "schedule": 1,
     "winning_price": 0,
     "photos": 27,
@@ -45,7 +45,7 @@
       "page": 1
     },
     "blocked": true,
-    "blockReason": "Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml&pgjId=151F00: fetch failed",
+    "blockReason": "Court Auction request failed for /pgj/pgjsearch/searchControllerMain.on",
     "authoritativeSource": "property-search"
   },
   "latestRun": {
@@ -324,11 +324,11 @@
     },
     "transport": "failed",
     "status": "partial",
-    "error": "Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml&pgjId=151F00: fetch failed",
-    "errorCode": "NETWORK_ERROR",
-    "httpStatus": null,
+    "error": "Court Auction request failed for /pgj/pgjsearch/searchControllerMain.on",
+    "errorCode": "UPSTREAM_ERROR",
+    "httpStatus": 400,
     "source": "대한민국 법원경매정보 물건검색",
-    "finishedAt": "2026-09-07T19:34:19.222Z"
+    "finishedAt": "2026-09-08T23:44:17.027Z"
   },
   "lastCollectorCycle": {
     "itemCount": 9935,
@@ -337,7 +337,7 @@
     "historicalReturned": 0,
     "historicalNewUnique": 0,
     "historicalStatus": "partial",
-    "finishedAt": "2026-09-08T23:43:23.264Z"
+    "finishedAt": "2026-09-08T23:44:30.072Z"
   },
   "saleNoticeBackfill": {
     "version": 2,
@@ -373,56 +373,40 @@
       "month": "2026-10",
       "courtIndex": 7
     },
-    "courtCount": 37,
+    "courtCount": 60,
     "courtsScanned": 4,
-    "lastCourt": "B000511",
+    "lastCourt": "B214807",
     "processedNotices": 0,
     "successfulNotices": 0,
     "newUniqueItems": 0,
-    "deferredCount": 24,
+    "deferredCount": 20,
     "cycle": 0,
-    "lastError": "B000511 2026-10: court gate held by pid 2607 (browser-fallback:warmup) since 2026-09-08T23:41:39.410Z",
+    "lastError": null,
     "transport": [
-      "B000412:failed",
-      "B000510:failed",
-      "B000421:failed",
-      "B000511:failed"
+      "B000212:http",
+      "B000213:http",
+      "B000214:http",
+      "B214807:http"
     ],
-    "attempts": [
-      "normal-court-codes:NETWORK_ERROR:Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
-      "direct-court-codes:NETWORK_ERROR:Court Auction network error for /pgj/pgjComm/selectCortOfcCdLst.on: fetch failed",
-      "browser-court-codes:NETWORK_ERROR:browser warmup failed: page.goto: Timeout 22000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\", waiting until \"commit\"\n",
-      "normal-http:NETWORK_ERROR:Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
-      "direct-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed",
-      "browser-commit:NETWORK_ERROR:browser warmup failed: page.goto: Timeout 22000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\", waiting until \"commit\"\n",
-      "normal-http:NETWORK_ERROR:Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
-      "direct-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed",
-      "browser-commit:NETWORK_ERROR:browser warmup failed: page.goto: net::ERR_ABORTED at https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\", waiting until \"commit\"\n",
-      "normal-http:NETWORK_ERROR:Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
-      "direct-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed",
-      "browser-commit:NETWORK_ERROR:browser warmup failed: page.goto: Timeout 22000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\", waiting until \"commit\"\n",
-      "normal-http:NETWORK_ERROR:Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
-      "direct-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed",
-      "browser-commit:COURT_BUSY:court gate held by pid 2607 (browser-fallback:warmup) since 2026-09-08T23:41:39.410Z"
-    ],
-    "courtSource": "existing-db-court-codes",
+    "attempts": [],
+    "courtSource": "official-court-codes",
     "source": "대한민국 법원경매정보 매각공고(전국 최신 법원별)",
-    "finishedAt": "2026-09-08T23:41:46.785Z"
+    "finishedAt": "2026-09-08T23:44:12.891Z"
   },
   "photoCourtCount": 1,
   "basicInfoQuality": {
-    "ready": 9588,
-    "addressCount": 9588,
+    "ready": 9592,
+    "addressCount": 9592,
     "priceCount": 9532,
-    "missing": 347,
+    "missing": 343,
     "definition": "주소 + (용도/감정가/최저가/매각기일 중 1개 이상)",
-    "updatedAt": "2026-09-08T19:58:56.539Z"
+    "updatedAt": "2026-09-08T23:44:29.645Z"
   },
   "latestBasicInfoRun": {
     "checkedCases": 4,
     "successfulCases": 4,
     "itemsImproved": 4,
-    "remaining": 347,
+    "remaining": 343,
     "transport": [
       "B000240:http",
       "B000240:http",
@@ -432,7 +416,7 @@
     "attempts": [],
     "lastError": null,
     "source": "대한민국 법원경매정보 사건검색",
-    "finishedAt": "2026-09-08T19:58:56.539Z"
+    "finishedAt": "2026-09-08T23:44:29.645Z"
   },
   "coverageSource": "canonical-recount",
   "safeReconcile": {
@@ -442,6 +426,6 @@
     "retainedRemoteIds": 9935,
     "retainedCollectorIds": 9935,
     "addedVsRemote": 0,
-    "finishedAt": "2026-09-08T23:43:25.005Z"
+    "finishedAt": "2026-09-08T23:44:33.663Z"
   }
 }
