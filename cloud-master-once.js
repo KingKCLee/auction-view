@@ -10,7 +10,7 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 const { spawnSync } = require('child_process');
-const { snapshot, evaluateGuard, formatFailures, syncStatsCoverage } = require('./merge-guard-lib');
+const { snapshot, evaluateGuard, evaluateRecordLoss, formatFailures, syncStatsCoverage } = require('./merge-guard-lib');
 
 const REPO_SLUG = process.env.REPO_SLUG || 'KingKCLee/auction-view';
 const BRANCH = process.env.REPO_BRANCH || 'main';
@@ -166,7 +166,10 @@ function main() {
   const after = snapshot(afterRows);
   log(`[cloud-master] after  ${JSON.stringify(after)}`);
 
-  const failures = evaluateGuard(before, after, { tolerance: GUARD_TOLERANCE });
+  const failures = [
+    ...evaluateRecordLoss(baseRows, afterRows),
+    ...evaluateGuard(before, after, { tolerance: GUARD_TOLERANCE })
+  ];
   if (failures.length) {
     console.error('[cloud-master] MERGE GUARD FAILED - canonical would shrink; aborting commit/push');
     console.error(formatFailures(failures));

@@ -1,6 +1,7 @@
 const fs=require('fs');
 const path=require('path');
 
+const gate=require('./court-gate');
 const BASE='https://www.courtauction.go.kr';
 const DATA=path.join(__dirname,'data','auctions.json');
 const STATS=path.join(__dirname,'data','stats.json');
@@ -24,8 +25,8 @@ function addRecent(entry){try{const prev=read(STATUS)||{};const recent=[entry,..
 
 async function throttle(){const w=Math.max(0,MIN_DELAY-(Date.now()-lastCall))+Math.floor(Math.random()*700);if(w)await sleep(w);lastCall=Date.now()}
 async function timedFetch(url,opts={},ms=18000){const c=new AbortController();const t=setTimeout(()=>c.abort(),ms);try{return await fetch(url,{...opts,signal:c.signal})}finally{clearTimeout(t)}}
-async function warmup(){await throttle();const r=await timedFetch(BASE+'/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml&pgjId=151F00',{headers:{'user-agent':'Mozilla/5.0','accept':'text/html,application/xhtml+xml,*/*','accept-language':'ko-KR,ko;q=0.9'}},18000);const sc=r.headers.getSetCookie?r.headers.getSetCookie():[r.headers.get('set-cookie')].filter(Boolean);if(sc.length)cookie=sc.map(x=>x.split(';')[0]).join('; ');if(!r.ok)throw new Error('warmup HTTP '+r.status)}
-async function post(url,body,user='SYSTEM',pgmid='PGJ151F01'){if(!cookie)await warmup();await throttle();const r=await timedFetch(BASE+url,{method:'POST',headers:{'content-type':'application/json;charset=UTF-8','accept':'application/json,text/plain,*/*','user-agent':'Mozilla/5.0','accept-language':'ko-KR,ko;q=0.9','referer':BASE+'/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml','cookie':cookie,'sc-userid':user,'sc-pgmid':pgmid},body:JSON.stringify(body)},18000);const raw=await r.text();let j;try{j=JSON.parse(raw)}catch{throw new Error('non-json '+r.status)}if(j?.data?.ipcheck===false)throw new Error('BLOCKED by court site');if(!r.ok)throw new Error('HTTP '+r.status);return j}
+async function warmup(){return gate.acquire('detail-enrich:warmup',async()=>{const r=await timedFetch(BASE+'/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml&pgjId=151F00',{headers:{'user-agent':'Mozilla/5.0','accept':'text/html,application/xhtml+xml,*/*','accept-language':'ko-KR,ko;q=0.9'}},18000);const sc=r.headers.getSetCookie?r.headers.getSetCookie():[r.headers.get('set-cookie')].filter(Boolean);if(sc.length)cookie=sc.map(x=>x.split(';')[0]).join('; ');if(!r.ok)throw new Error('warmup HTTP '+r.status)})}
+async function post(url,body,user='SYSTEM',pgmid='PGJ151F01'){if(!cookie)await warmup();return gate.acquire('detail-enrich:'+url,async()=>{const r=await timedFetch(BASE+url,{method:'POST',headers:{'content-type':'application/json;charset=UTF-8','accept':'application/json,text/plain,*/*','user-agent':'Mozilla/5.0','accept-language':'ko-KR,ko;q=0.9','referer':BASE+'/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml','cookie':cookie,'sc-userid':user,'sc-pgmid':pgmid},body:JSON.stringify(body)},18000);const raw=await r.text();gate.inspect(raw,url);let j;try{j=JSON.parse(raw)}catch{throw new Error('non-json '+r.status)}if(j?.data?.ipcheck===false)throw new Error('BLOCKED by court site');if(!r.ok)throw new Error('HTTP '+r.status);return j})}
 async function detail(row){return post('/pgj/pgj15B/selectAuctnCsSrchRslt.on',{dma_srchGdsDtlSrch:{csNo:String(row.caseNumber),cortOfcCd:String(row.courtCode||''),dspslGdsSeq:Number(row.itemNumber||1),pgmId:'PGJ151F01'}})}
 async function statusReport(row){return post('/pgj/pgj15B/selectCurstExmndc.on',{dma_srchCurstExmn:{cortOfcCd:String(row.courtCode||''),csNo:String(row.caseNumber),auctnInfOriginDvsCd:'2'}},'NONUSER','PGJ15BP01')}
 function eventsOf(d){return d?.data?.dma_result?.gdsDspslDxdyLst||d?.data?.dma_result?.dspslDxdyLst||[]}
@@ -34,10 +35,35 @@ function eventDate(e){return normDate(e.dspslDxdyYmd||e.maeGiil||e.resDate)}
 function winningFrom(e){for(const k of ['winningPrice','bidPrice','salePrice','maePrc','maeAmt','sucBidPrc','dspslPrc','bidAmt','nakchalAmt','nakchalPrc','scsBidPrc']){const n=asInt(e?.[k]);if(n&&n>0)return n}const s=eventResult(e);if(/매각|낙찰/.test(s)){const n=[...s.matchAll(/([0-9][0-9,]{4,})\s*원?/g)].map(m=>asInt(m[1])).filter(Boolean);if(n.length)return Math.max(...n)}return null}
 function sanitizeEvents(list){return list.map(e=>({event_date:eventDate(e),event_type:txt(e.dspslDxdyDvsNm||e.dxdyDvsNm||e.resKind||'매각기일'),amount:asInt(e.lwsDspslPrc||e.minmaePrice||e.dspslPrc||e.resAmount),result_text:eventResult(e)})).filter(e=>e.event_date||e.result_text)}
 function components(r){const out=[];const groups=[['OBJECT',r.gdsDspslObjctLst],['LAND',r.rgltLandLstAll],['BUILDING',r.bldSdtrDtlLstAll],['EXTRA_BUILDING',r.gdsNotSugtBldLsstAll]];for(const [kind,list] of groups){for(const [i,x] of (Array.isArray(list)?list:[]).entries()){out.push({type:kind,sequence:String(first(x,['lstSeq','seq','mokmulSer','dspslObjctSeq'])??i+1),address:txt(first(x,['userStPrint','printSt','st','addr','ltno'])||''),structure:txt(first(x,['bldStrctNm','strctCtt','useCtt','userLstPrint','printCtt'])||''),area:Number(first(x,['area','bldArea','landArea','excluUseArea','calcArea']))||null,appraisedPrice:asInt(first(x,['aeeWevlAmt','gamevalAmt','appraisedPrice'])),note:txt(first(x,['rmk','note','bigo'])||'')})}}return out}
-function priority(row,today){const t=Date.parse(row.saleDate||'');const enriched=Number(row.coverage?.schedule||0)+Number(row.coverage?.appraisal_summary||0)+Number(row.coverage?.status_report||0)+Number(row.coverage?.sale_statement||0);if(!Number.isFinite(t))return[enriched,4,999999];const d=(t-today)/86400000;const bucket=d>=-14&&d<=60?0:d<-14&&d>=-120?1:d>60?2:3;return[enriched,bucket,Math.abs(d)]}
+// The source publishes a case only while its 기일 is today or later and drops it
+// the next day, and the winning price is decided on the day itself. So a case
+// whose 기일 is today or tomorrow and whose winningPrice we do not yet hold is the
+// only kind of row we can lose forever. Everything else can wait a cycle.
+// Single decision point: nothing else in this file reorders the queue.
+const KST_MS=9*3600000;
+const kstDay=ms=>new Date(ms+KST_MS).toISOString().slice(0,10);
+const COVERAGE_WANTED=['schedule','appraisal_summary','status_report','sale_statement','winning_price'];
+function missingCount(row){return COVERAGE_WANTED.filter(k=>Number(row.coverage?.[k]||0)!==1).length}
+function expiringUncaptured(row,nowMs){
+ const sd=String(row.saleDate||'');
+ if(!sd)return false;
+ return (sd===kstDay(nowMs)||sd===kstDay(nowMs+86400000))&&!Number(row.winningPrice||0);
+}
+function priority(row,today){
+ // TIER 0 - about to vanish from the source with no winning price recorded.
+ if(expiringUncaptured(row,today))return[0,String(row.saleDate)===kstDay(today)?0:1,-missingCount(row),0];
+ // TIER 1+ - the previous ordering: least-enriched first, then nearest 기일.
+ const t=Date.parse(row.saleDate||'');
+ const enriched=Number(row.coverage?.schedule||0)+Number(row.coverage?.appraisal_summary||0)+Number(row.coverage?.status_report||0)+Number(row.coverage?.sale_statement||0);
+ if(!Number.isFinite(t))return[1,enriched,4,999999];
+ const d=(t-today)/86400000;
+ const bucket=d>=-14&&d<=60?0:d<-14&&d>=-120?1:d>60?2:3;
+ return[1,enriched,bucket,Math.abs(d)];
+}
+function bidderCountFrom(e){for(const k of ['bidderCnt','bidCnt','응찰자수','bidPrsnCnt','dspslBidPrsnCnt','scsBidPrsnCnt','bidderCount']){const n=asInt(e?.[k]);if(n!==null&&n>=0)return n}const s=eventResult(e);const m=/(\d+)\s*명/.exec(s);return m?Number(m[1]):null}
 async function main(){
  const rows=read(DATA)||[];const stats=read(STATS)||{};if(!rows.length)return;
- const today=Date.now();const ranked=[...rows].filter(r=>shardOf(r)===SHARD_INDEX).sort((a,b)=>{const A=priority(a,today),B=priority(b,today);return A[0]-B[0]||A[1]-B[1]||A[2]-B[2]}).slice(0,MAX_ITEMS);
+ const today=Date.now();const ranked=[...rows].filter(r=>shardOf(r)===SHARD_INDEX).sort((a,b)=>{const A=priority(a,today),B=priority(b,today);for(let i=0;i<Math.max(A.length,B.length);i++){const d=(A[i]??0)-(B[i]??0);if(d)return d}return 0}).slice(0,MAX_ITEMS);
  setWorkerStatus({phase:'collecting_details',currentIndex:0,totalInBatch:ranked.length,currentCaseNumber:null,currentCourtName:null,currentAddress:null,batchSuccess:0,batchFailed:0});
  let done=0,lastError=null,eventsAdded=0,docsAdded=0;
  for(let idx=0;idx<ranked.length;idx++){
@@ -45,8 +71,12 @@ async function main(){
   setWorkerStatus({phase:'collecting_details',currentIndex:idx+1,totalInBatch:ranked.length,currentCaseNumber:row.caseNumber||'',currentCourtName:row.courtName||row.courtCode||'',currentAddress:row.address||'',message:`${idx+1}/${ranked.length} · ${row.courtName||''} ${row.caseNumber||''} 상세정보 조회 중`,batchSuccess:done,batchFailed:idx-done});
   try{
    const d=await detail(row);const r=d?.data?.dma_result||{};const base=r.csBaseInfo||{};const dx=r.dspslGdsDxdyInfo||{};
+   // An empty dma_result means the source has dropped this case: it is published
+   // only while its 기일 is today or later. Never delete the row - canonical is now
+   // the only copy - just record that the source no longer carries it.
+   if(!Object.keys(r).length){row.status='expired';row.expiredAt=row.expiredAt||new Date().toISOString();row.detailCheckedAt=new Date().toISOString();done++;addRecent({at:new Date().toISOString(),ok:true,caseNumber:row.caseNumber,courtName:row.courtName||row.courtCode||'',address:row.address||'',expired:true});setWorkerStatus({batchSuccess:done,batchFailed:(idx+1)-done,lastProcessedCase:row.caseNumber,lastProcessedOk:true});continue}
    row.caseType=txt(first(base,['csNm','csTypeNm','caseName','csType'])||row.caseType||'');row.usage=row.usage||txt(first(dx,['dspslUsgNm','usageName','gdsUsgNm'])||'');row.buildingName=row.buildingName||txt(first(dx,['buldNm','buildingName'])||'');
-   const ev=sanitizeEvents(eventsOf(d));if(ev.length){row.events=ev;row.eventCount=ev.length;row.coverage={...(row.coverage||{}),schedule:1};eventsAdded+=ev.length;row.failedCount=Math.max(Number(row.failedCount||0),ev.filter(x=>/유찰/.test(x.result_text)).length);const last=[...ev].filter(x=>x.event_date).sort((a,b)=>a.event_date.localeCompare(b.event_date)).at(-1);if(last?.amount)row.minimumPrice=last.amount;if(last?.event_date)row.saleDate=last.event_date;for(const e of eventsOf(d)){const w=winningFrom(e);if(w){row.winningPrice=w;row.winningDate=eventDate(e);row.winningRatio=row.appraisedPrice?Math.round(w/row.appraisedPrice*10000)/100:null;row.coverage.winning_price=1;row.status='매각'}}}
+   const ev=sanitizeEvents(eventsOf(d));if(ev.length){row.events=ev;row.eventCount=ev.length;row.coverage={...(row.coverage||{}),schedule:1};eventsAdded+=ev.length;row.failedCount=Math.max(Number(row.failedCount||0),ev.filter(x=>/유찰/.test(x.result_text)).length);const last=[...ev].filter(x=>x.event_date).sort((a,b)=>a.event_date.localeCompare(b.event_date)).at(-1);if(last?.amount)row.minimumPrice=last.amount;if(last?.event_date)row.saleDate=last.event_date;for(const e of eventsOf(d)){const w=winningFrom(e);if(w){row.winningPrice=w;row.winningDate=eventDate(e);row.winningRatio=row.appraisedPrice?Math.round(w/row.appraisedPrice*10000)/100:null;row.coverage.winning_price=1;row.status='매각';const bc=bidderCountFrom(e);if(bc!==null)row.bidderCount=bc}}const lastEv=[...eventsOf(d)].filter(e=>eventDate(e)).sort((a,b)=>String(eventDate(a)).localeCompare(String(eventDate(b)))).at(-1);if(lastEv){const rt=eventResult(lastEv);if(rt)row.saleResult=rt;if(!row.status&&/유찰/.test(rt))row.status='유찰'}}
    const appraisal=Array.isArray(r.aeeWevlMnpntLst)?r.aeeWevlMnpntLst:[];const summary=appraisal.map(x=>txt(first(x,['aeeWevlMnpntCtt','mnpntCtt','ctt','note','printCtt'])||'')).filter(Boolean).join('\n');if(summary){row.appraisalSummary=summary;row.coverage={...(row.coverage||{}),appraisal_summary:1}}
    row.appraisalDate=normDate(first(base,['aeeWevlYmd','gamevalYmd','pricePointYmd'])||first(dx,['aeeWevlYmd','gamevalYmd']));row.appraisalAgency=txt(first(base,['aeeWevlInstNm','gamevalInstNm','aeeWevlCorpNm'])||'');row.claimAmount=asInt(first(base,['clmAmt','claimAmt','chungAmt','reqAmt']));row.components=components(r);if(!row.address){const c=row.components.find(x=>x.address);if(c)row.address=c.address}row.landArea=row.components.filter(x=>x.type==='LAND').reduce((n,x)=>n+(Number(x.area)||0),0)||null;row.buildingArea=row.components.filter(x=>x.type==='BUILDING').reduce((n,x)=>n+(Number(x.area)||0),0)||null;
    const saleAvailable=!!(dx.dspslGdsSpcfcEcdocId&&dx.orvParam);if(saleAvailable){row.coverage={...(row.coverage||{}),sale_statement:1};row.saleStatementAvailable=true;docsAdded++}
@@ -58,4 +88,8 @@ async function main(){
  }
  write(DATA,rows);stats.generatedAt=new Date().toISOString();stats.winningCount=rows.filter(x=>x.winningPrice).length;stats.eventCount=rows.reduce((n,x)=>n+Number(x.eventCount||0),0);stats.documentCount=rows.reduce((n,x)=>n+Number(x.documentCount||0),0);stats.coverage={...(stats.coverage||{})};for(const k of ['schedule','winning_price','status_report','sale_statement','appraisal_summary'])stats.coverage[k]=rows.filter(x=>Number(x.coverage?.[k]||0)===1).length;stats.latestDetailRun={checked:ranked.length,success:done,eventsAdded,docsAdded,source:'대한민국 법원경매정보',order:'latest-first',shard:`${SHARD_INDEX+1}/${SHARD_COUNT}`,error:lastError,finishedAt:new Date().toISOString()};write(STATS,stats);setWorkerStatus({currentIndex:ranked.length,totalInBatch:ranked.length,batchSuccess:done,batchFailed:ranked.length-done,currentCaseNumber:null,currentCourtName:null,currentAddress:null});console.log(JSON.stringify(stats.latestDetailRun,null,2));
 }
-main().catch(e=>{console.error(e);setWorkerStatus({phase:'error',error:String(e?.message||e)});process.exitCode=1});
+// Only run when invoked directly. `require('./detail-enrich')` used to start a
+// full collection run as a side effect, which is how three court requests went
+// out during a stop order.
+if(require.main===module){main().catch(e=>{console.error(e);setWorkerStatus({phase:'error',error:String(e?.message||e)});process.exitCode=1})}
+module.exports={priority,expiringUncaptured,missingCount,bidderCountFrom,kstDay};

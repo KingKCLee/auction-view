@@ -42,9 +42,35 @@ function evaluateGuard(before, after, { tolerance = 0 } = {}) {
   return failures;
 }
 
+// The source deletes a case the day after its 기일, so canonical is the only
+// remaining record. Losing a row is therefore unrecoverable, and itemCount alone
+// does not catch it: rows can be swapped one-for-one and keep the count level.
+function findLostIds(beforeRows, afterRows, { limit = 20 } = {}) {
+  const after = new Set(afterRows.map(r => r.id));
+  const lost = [];
+  for (const r of beforeRows) {
+    if (!after.has(r.id)) lost.push(r.id);
+    if (lost.length > limit) break;
+  }
+  return lost;
+}
+
+function evaluateRecordLoss(beforeRows, afterRows) {
+  const lost = findLostIds(beforeRows, afterRows);
+  if (!lost.length) return [];
+  return [{
+    field: 'lostCaseRecords',
+    before: beforeRows.length,
+    after: afterRows.length,
+    delta: -lost.length,
+    sampleLostIds: lost.slice(0, 20)
+  }];
+}
+
 function formatFailures(failures) {
   return failures
-    .map(f => `  ${f.field}: ${f.before} -> ${f.after} (${f.delta})`)
+    .map(f => `  ${f.field}: ${f.before} -> ${f.after} (${f.delta})` +
+      (f.sampleLostIds ? `\n    lost ids: ${f.sampleLostIds.join(', ')}` : ''))
     .join('\n');
 }
 
@@ -65,4 +91,4 @@ function syncStatsCoverage(stats, rows) {
   return next;
 }
 
-module.exports = { COVERAGE_KEYS, GUARDED_TOTALS, snapshot, evaluateGuard, formatFailures, syncStatsCoverage };
+module.exports = { COVERAGE_KEYS, GUARDED_TOTALS, snapshot, evaluateGuard, evaluateRecordLoss, findLostIds, formatFailures, syncStatsCoverage };
