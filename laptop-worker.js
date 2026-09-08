@@ -101,9 +101,11 @@ function main() {
   }
 
   let invalid = 0, pendingSkipped = 0, recentSkipped = 0;
-  let expiringKept = 0;
+  let expiringKept = 0, expiredSkipped = 0;
   const candidates = effectiveRows.filter(row => {
     if (!VALID_CASE.test(String(row.caseNumber || '').trim())) { invalid++; return false; }
+    // The source has already dropped these; asking again only burns the budget.
+    if (row.status === 'expired') { expiredSkipped++; return false; }
     if (expiringUncaptured(row)) {
       if (recheckedTooRecently(row)) { recentSkipped++; return false; }
       expiringKept++;
@@ -114,8 +116,8 @@ function main() {
     return true;
   });
   writeJson(DATA, candidates);
-  console.log(`[laptop-worker] candidates=${candidates.length} expiringKept=${expiringKept} skipped malformed=${invalid} pending=${pendingSkipped} recent=${recentSkipped}`);
-  setStatus({phase:'collecting_details',message:`법원 상세정보 ${Math.min(Number(BATCH_SIZE),candidates.length)}건을 조회 중`,candidates:candidates.length,expiringKept,skippedMalformed:invalid,pendingSkipped,recentSkipped,pendingFiles:pending.files,pendingPatches:pending.patches});
+  console.log(`[laptop-worker] candidates=${candidates.length} expiringKept=${expiringKept} expired=${expiredSkipped} skipped malformed=${invalid} pending=${pendingSkipped} recent=${recentSkipped}`);
+  setStatus({phase:'collecting_details',message:`법원 상세정보 ${Math.min(Number(BATCH_SIZE),candidates.length)}건을 조회 중`,candidates:candidates.length,expiringKept,expiredSkipped,skippedMalformed:invalid,pendingSkipped,recentSkipped,pendingFiles:pending.files,pendingPatches:pending.patches});
 
   const beforeRows = JSON.parse(fs.readFileSync(DATA, 'utf8'));
   const before = new Map(beforeRows.map(r => [r.id, r]));
