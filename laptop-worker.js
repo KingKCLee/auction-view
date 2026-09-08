@@ -9,6 +9,8 @@ const STATS = path.join(ROOT, 'data', 'stats.json');
 const DELTAS = path.join(ROOT, 'data', 'worker-deltas');
 const OUTDIR = path.join(DELTAS, process.env.WORKER_ID || 'laptop');
 const BATCH_SIZE = String(process.env.BATCH_SIZE || 12);
+const RECENT_SKIP_HOURS = Number(process.env.DETAIL_RECHECK_HOURS || 12);
+const VALID_CASE = /^\d{4}타경\d+$/;
 
 const writeJson = (p, v) => fs.writeFileSync(p, JSON.stringify(v, null, 2));
 
@@ -31,6 +33,7 @@ function listDeltaFiles(dir) {
 
 function applyPendingDeltas(rows) {
   const map = new Map(rows.map(r => [r.id, r]));
+  const seenIds = new Set();
   let files = 0, patches = 0;
   for (const file of listDeltaFiles(DELTAS)) {
     let payload;
@@ -38,13 +41,20 @@ function applyPendingDeltas(rows) {
     catch { continue; }
     files++;
     for (const patch of payload.patches || []) {
+      if (patch?.id) seenIds.add(patch.id);
       const row = map.get(patch.id);
       if (!row) continue;
       applyPatch(row, patch);
       patches++;
     }
   }
-  return { files, patches };
+  return { files, patches, seenIds };
+}
+
+function recentlyChecked(row) {
+  const t = Date.parse(row.detailCheckedAt || '');
+  if (!Number.isFinite(t)) return false;
+  return Date.now() - t < RECENT_SKIP_HOURS * 3600000;
 }
 
 function main() {
@@ -54,15 +64,21 @@ function main() {
   const dataBackup = fs.readFileSync(DATA);
   const statsBackup = fs.existsSync(STATS) ? fs.readFileSync(STATS) : null;
 
-  // Build a temporary effective DB that already includes laptop patches waiting
-  // for the cloud master. This prevents the same 12 rows being queried again
-  // every cycle before those patches are merged into canonical auctions.json.
   const effectiveRows = JSON.parse(dataBackup.toString('utf8'));
   const pending = applyPendingDeltas(effectiveRows);
   if (pending.patches) {
-    writeJson(DATA, effectiveRows);
     console.log(`[laptop-worker] pending deltas applied locally: files=${pending.files} patches=${pending.patches}`);
   }
+
+  let invalid = 0, pendingSkipped = 0, recentSkipped = 0;
+  const candidates = effectiveRows.filter(row => {
+    if (!VALID_CASE.test(String(row.caseNumber || '').trim())) { invalid++; return false; }
+    if (pending.seenIds.has(row.id)) { pendingSkipped++; return false; }
+    if (recentlyChecked(row)) { recentSkipped++; return false; }
+    return true;
+  });
+  writeJson(DATA, candidates);
+  console.log(`[laptop-worker] candidates=${candidates.length} skipped malformed=${invalid} pending=${pendingSkipped} recent=${recentSkipped}`);
 
   const beforeRows = JSON.parse(fs.readFileSync(DATA, 'utf8'));
   const before = new Map(beforeRows.map(r => [r.id, r]));
