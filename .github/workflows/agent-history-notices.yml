@@ -1,17 +1,6 @@
-name: Auction Agent - Historical Notices
+name: Auction Agent - Historical Notices (manual backup)
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/agent-history-notices.yml'
-      - 'sale-notice-history-worker.js'
-      - 'court-browser-fallback.js'
-      - 'basic-info-enrich.js'
-      - 'validate-basic-info.js'
-      - 'package.json'
-  schedule:
-    - cron: '8 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -40,13 +29,13 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Install Chromium fallback
         run: npx playwright install chromium
-      - name: Backfill historical auction notices court by court
+      - name: Run one emergency history backfill
         run: npm run history:notices
-      - name: Repair real basic-information coverage
-        run: timeout 120s npm run basic || echo "basic-info enrichment deferred to next cycle"
-      - name: Verify basic information integrity
+      - name: Repair basic information
+        run: npm run basic || true
+      - name: Verify basic information
         run: npm run basic:validate
-      - name: Publish refreshed data
+      - name: Publish emergency history batch
         run: |
           rm -rf docs
           mkdir -p docs/data
@@ -58,7 +47,7 @@ jobs:
           git config user.email "court-auction-bot@users.noreply.github.com"
           git add data/auctions.json data/stats.json data/state.json docs
           if ! git diff --cached --quiet; then
-            git commit -m "data: historical court backfill $(date -u +'%Y-%m-%dT%H:%MZ')"
+            git commit -m "data: manual emergency history backfill $(date -u +'%Y-%m-%dT%H:%MZ')"
             git pull --rebase origin main
             git push origin HEAD:main
           fi
