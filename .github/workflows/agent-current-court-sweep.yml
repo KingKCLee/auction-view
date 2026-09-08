@@ -43,8 +43,11 @@ jobs:
       - name: Merge safe laptop detail deltas first
         run: npm run worker:apply || true
 
-      - name: Try official current sale-notice sweep
-        run: npm run sweep:current || true
+      - name: Try official current sale-notice sweep with bounded time
+        run: |
+          if ! timeout 150s npm run sweep:current; then
+            node -e "const fs=require('fs');const p='./data/stats.json';const s=JSON.parse(fs.readFileSync(p));s.currentCourtSweep={...(s.currentCourtSweep||{}),processedNotices:0,successfulNotices:0,newUniqueItems:0,lastError:'current sale-notice sweep timed out after 150s; switching official route',finishedAt:new Date().toISOString()};fs.writeFileSync(p,JSON.stringify(s,null,2));"
+          fi
 
       - name: Fallback to official property search when notice sweep yields zero
         run: |
@@ -81,9 +84,6 @@ jobs:
           cp data/stats.json /tmp/collector-stats.json
           if [ -f data/state.json ]; then cp data/state.json /tmp/collector-state.json; else echo '{}' > /tmp/collector-state.json; fi
 
-          # Discard only this runner's canonical working-tree edits, update to the
-          # newest remote, then re-apply the collector snapshot by ID-union. This
-          # prevents a concurrent laptop/cloud publisher from erasing new cases.
           git checkout -- data/auctions.json data/stats.json data/state.json docs 2>/dev/null || true
           git pull --rebase origin main
           node safe-canonical-reconcile.js /tmp/collector-auctions.json /tmp/collector-stats.json /tmp/collector-state.json
