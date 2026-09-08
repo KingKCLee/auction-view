@@ -1,0 +1,880 @@
+{
+  "version": 1,
+  "worker": "laptop",
+  "createdAt": "2026-09-08T07:07:54.041Z",
+  "batchSize": 12,
+  "exitCode": 0,
+  "patches": [
+    {
+      "id": "B000281|2026타경61|2",
+      "set": {
+        "caseType": "부동산임의경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 충청남도 예산군 예산읍 석양리 소재 &amp;apos;예산군립도서관&amp;apos; 북동측 근거리에 위치하며 부근은 전, 답 등 농경지가 소재하는 농경지대로 주위환경은 보통임.\n본건 및 본건 인근까지 차량진출입 가능하며 인근에 버스정류장이 소재하는 등 대중교통상황은 보통임.\n공히 부정형의 토지로 &amp;apos;답&amp;apos; 으로 이용중임.\n기호 1, 2: 북측으로 폭 약 3m 내외의 포장도로에 접함 기호 3: 지적상 맹지이나 인접토지(기호 2)를 통해 진출입 가능함.\n공히 도시지역, 자연녹지지역 가축사육제한구역(전부제한지역(도시지역))&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;임. \n없 음.\n없 음.\n구체적인 임대내역은 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 514617352,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000270|2026타경57|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 충청북도 괴산군 사리면 사담리 소재 &amp;quot;사리면사무소&amp;quot; 남서측 인근에 위치하며 주위는 주택,전,답 및 임야 등이 혼재하는 지역으로 주위환경은 보통임.\n일련번호(1,4)는 농로를 통해서 차량의 진출입이 가능하며 인근에 버스정류장이 소재하는 등 교통상황은 보통임. 일련번호(2,3,5,6)은 인접필지를 통한 진출이 가능하며 인근에 버스정류장이 소재하는 등 교통상황은 보통임.\n일련번호(1): 세장형의 토지로서 농경지 답으로 이용중임. 일련번호(2):부정형의 토지로서 토지 지상에 수백주의 수목이 규칙적으로 식재되어있음.  일련번호(3):부정형의 토지로서 묵전 등으로 이용중임. 일련번호(4): 부정형의 토지로서 전으로 이용중임. 일련번호(5): 부정형의 토지로서 자연림으로 이용중임. 일련번호(6): 부정형의 토지로서 자연림이며 일부 묘지가 있음.\n일련번호(1):북측으로 노폭 약 4m의 농로와 접함. 일련번호(2,3,5,6):맹지임. 일련번호(4):북측으로 노폭 약 4m의 농로를 통해 출입.\n일련번호(1) :농림지역, 가축사육제한구역(300M 이내 소,말,양(염소 등 산양포함),사슴 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 농업진흥구역&lt;농지법&gt; 일련번호(2) :보전관리지역(2022-04-11), 가축사육제한구역(300M 이내 소,말,양(염소 등 산양포함),사슴 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 비행안전제3구역(전술)&lt;군사기지 및 군사시설 보호법&gt;,영농여건불리농지 일련번호(3) :보전관리지역(2022-04-11), 가축사육제한구역(300M 이내 소,말,양(염소 등 산양포함),사슴 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 비행안전제3구역(전술)&lt;군사기지 및 군사시설 보호법&gt;,영농여건불리농지 일련번호(4) :계획관리지역(2021-08-06), 성장관리계획구역(주거형, 성장관리계획구역 관련 고시 : 괴산군 고시 제2024-11호),가축사육제한구역(300M 이내 소,말,양(염소 등 산양포함),사슴 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 비행안전제3구역(전술)&lt;군사기지 및 군사시설 보호법&gt; 일련번호(5) :보전관리지역(2022-04-11), 가축사육제한구역(300M 이내 소,말,양(염소 등 산양포함),사슴 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 가축사육제한구역(500M 이내 젖소 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 비행안전제3구역(전술)&lt;군사기지 및 군사시설 보호법&gt;, 준보전산지(2022-04-11)&lt;산지관리법&gt; 일련번호(6) :보전관리지역(2022-04-11), 가축사육제한구역(300M 이내 소,말,양(염소 등 산양포함),사슴 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 비행안전제3구역(전술)&lt;군사기지 및 군사시설 보호법&gt;, 준보전산지(2022-04-11)&lt;산지관리법&gt;임.\n일련번호(2) 토지에 여러 수종의 수목이 수백주 규칙적으로 식재되어있음.\n없음.\n임대관계 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 17066406,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000270|2026타경57|2",
+      "set": {
+        "caseType": "부동산강제경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 충청북도 괴산군 사리면 사담리 소재 &amp;quot;사리면사무소&amp;quot; 남서측 인근에 위치하며 주위는 주택,전,답 및 임야 등이 혼재하는 지역으로 주위환경은 보통임.\n일련번호(1,4)는 농로를 통해서 차량의 진출입이 가능하며 인근에 버스정류장이 소재하는 등 교통상황은 보통임. 일련번호(2,3,5,6)은 인접필지를 통한 진출이 가능하며 인근에 버스정류장이 소재하는 등 교통상황은 보통임.\n일련번호(1): 세장형의 토지로서 농경지 답으로 이용중임. 일련번호(2):부정형의 토지로서 토지 지상에 수백주의 수목이 규칙적으로 식재되어있음.  일련번호(3):부정형의 토지로서 묵전 등으로 이용중임. 일련번호(4): 부정형의 토지로서 전으로 이용중임. 일련번호(5): 부정형의 토지로서 자연림으로 이용중임. 일련번호(6): 부정형의 토지로서 자연림이며 일부 묘지가 있음.\n일련번호(1):북측으로 노폭 약 4m의 농로와 접함. 일련번호(2,3,5,6):맹지임. 일련번호(4):북측으로 노폭 약 4m의 농로를 통해 출입.\n일련번호(1) :농림지역, 가축사육제한구역(300M 이내 소,말,양(염소 등 산양포함),사슴 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 농업진흥구역&lt;농지법&gt; 일련번호(2) :보전관리지역(2022-04-11), 가축사육제한구역(300M 이내 소,말,양(염소 등 산양포함),사슴 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 비행안전제3구역(전술)&lt;군사기지 및 군사시설 보호법&gt;,영농여건불리농지 일련번호(3) :보전관리지역(2022-04-11), 가축사육제한구역(300M 이내 소,말,양(염소 등 산양포함),사슴 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 비행안전제3구역(전술)&lt;군사기지 및 군사시설 보호법&gt;,영농여건불리농지 일련번호(4) :계획관리지역(2021-08-06), 성장관리계획구역(주거형, 성장관리계획구역 관련 고시 : 괴산군 고시 제2024-11호),가축사육제한구역(300M 이내 소,말,양(염소 등 산양포함),사슴 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 비행안전제3구역(전술)&lt;군사기지 및 군사시설 보호법&gt; 일련번호(5) :보전관리지역(2022-04-11), 가축사육제한구역(300M 이내 소,말,양(염소 등 산양포함),사슴 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 가축사육제한구역(500M 이내 젖소 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 비행안전제3구역(전술)&lt;군사기지 및 군사시설 보호법&gt;, 준보전산지(2022-04-11)&lt;산지관리법&gt; 일련번호(6) :보전관리지역(2022-04-11), 가축사육제한구역(300M 이내 소,말,양(염소 등 산양포함),사슴 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 비행안전제3구역(전술)&lt;군사기지 및 군사시설 보호법&gt;, 준보전산지(2022-04-11)&lt;산지관리법&gt;임.\n일련번호(2) 토지에 여러 수종의 수목이 수백주 규칙적으로 식재되어있음.\n없음.\n임대관계 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 17066406,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "6",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000270|2026타경57|3",
+      "set": {
+        "caseType": "부동산강제경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 충청북도 괴산군 사리면 사담리 소재 &amp;quot;사리면사무소&amp;quot; 남서측 인근에 위치하며 주위는 주택,전,답 및 임야 등이 혼재하는 지역으로 주위환경은 보통임.\n일련번호(1,4)는 농로를 통해서 차량의 진출입이 가능하며 인근에 버스정류장이 소재하는 등 교통상황은 보통임. 일련번호(2,3,5,6)은 인접필지를 통한 진출이 가능하며 인근에 버스정류장이 소재하는 등 교통상황은 보통임.\n일련번호(1): 세장형의 토지로서 농경지 답으로 이용중임. 일련번호(2):부정형의 토지로서 토지 지상에 수백주의 수목이 규칙적으로 식재되어있음.  일련번호(3):부정형의 토지로서 묵전 등으로 이용중임. 일련번호(4): 부정형의 토지로서 전으로 이용중임. 일련번호(5): 부정형의 토지로서 자연림으로 이용중임. 일련번호(6): 부정형의 토지로서 자연림이며 일부 묘지가 있음.\n일련번호(1):북측으로 노폭 약 4m의 농로와 접함. 일련번호(2,3,5,6):맹지임. 일련번호(4):북측으로 노폭 약 4m의 농로를 통해 출입.\n일련번호(1) :농림지역, 가축사육제한구역(300M 이내 소,말,양(염소 등 산양포함),사슴 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 농업진흥구역&lt;농지법&gt; 일련번호(2) :보전관리지역(2022-04-11), 가축사육제한구역(300M 이내 소,말,양(염소 등 산양포함),사슴 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 비행안전제3구역(전술)&lt;군사기지 및 군사시설 보호법&gt;,영농여건불리농지 일련번호(3) :보전관리지역(2022-04-11), 가축사육제한구역(300M 이내 소,말,양(염소 등 산양포함),사슴 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 비행안전제3구역(전술)&lt;군사기지 및 군사시설 보호법&gt;,영농여건불리농지 일련번호(4) :계획관리지역(2021-08-06), 성장관리계획구역(주거형, 성장관리계획구역 관련 고시 : 괴산군 고시 제2024-11호),가축사육제한구역(300M 이내 소,말,양(염소 등 산양포함),사슴 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 비행안전제3구역(전술)&lt;군사기지 및 군사시설 보호법&gt; 일련번호(5) :보전관리지역(2022-04-11), 가축사육제한구역(300M 이내 소,말,양(염소 등 산양포함),사슴 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 가축사육제한구역(500M 이내 젖소 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 비행안전제3구역(전술)&lt;군사기지 및 군사시설 보호법&gt;, 준보전산지(2022-04-11)&lt;산지관리법&gt; 일련번호(6) :보전관리지역(2022-04-11), 가축사육제한구역(300M 이내 소,말,양(염소 등 산양포함),사슴 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 비행안전제3구역(전술)&lt;군사기지 및 군사시설 보호법&gt;, 준보전산지(2022-04-11)&lt;산지관리법&gt;임.\n일련번호(2) 토지에 여러 수종의 수목이 수백주 규칙적으로 식재되어있음.\n없음.\n임대관계 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 17066406,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "4",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000270|2026타경57|4",
+      "set": {
+        "caseType": "부동산강제경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 충청북도 괴산군 사리면 사담리 소재 &amp;quot;사리면사무소&amp;quot; 남서측 인근에 위치하며 주위는 주택,전,답 및 임야 등이 혼재하는 지역으로 주위환경은 보통임.\n일련번호(1,4)는 농로를 통해서 차량의 진출입이 가능하며 인근에 버스정류장이 소재하는 등 교통상황은 보통임. 일련번호(2,3,5,6)은 인접필지를 통한 진출이 가능하며 인근에 버스정류장이 소재하는 등 교통상황은 보통임.\n일련번호(1): 세장형의 토지로서 농경지 답으로 이용중임. 일련번호(2):부정형의 토지로서 토지 지상에 수백주의 수목이 규칙적으로 식재되어있음.  일련번호(3):부정형의 토지로서 묵전 등으로 이용중임. 일련번호(4): 부정형의 토지로서 전으로 이용중임. 일련번호(5): 부정형의 토지로서 자연림으로 이용중임. 일련번호(6): 부정형의 토지로서 자연림이며 일부 묘지가 있음.\n일련번호(1):북측으로 노폭 약 4m의 농로와 접함. 일련번호(2,3,5,6):맹지임. 일련번호(4):북측으로 노폭 약 4m의 농로를 통해 출입.\n일련번호(1) :농림지역, 가축사육제한구역(300M 이내 소,말,양(염소 등 산양포함),사슴 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 농업진흥구역&lt;농지법&gt; 일련번호(2) :보전관리지역(2022-04-11), 가축사육제한구역(300M 이내 소,말,양(염소 등 산양포함),사슴 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 비행안전제3구역(전술)&lt;군사기지 및 군사시설 보호법&gt;,영농여건불리농지 일련번호(3) :보전관리지역(2022-04-11), 가축사육제한구역(300M 이내 소,말,양(염소 등 산양포함),사슴 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 비행안전제3구역(전술)&lt;군사기지 및 군사시설 보호법&gt;,영농여건불리농지 일련번호(4) :계획관리지역(2021-08-06), 성장관리계획구역(주거형, 성장관리계획구역 관련 고시 : 괴산군 고시 제2024-11호),가축사육제한구역(300M 이내 소,말,양(염소 등 산양포함),사슴 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 비행안전제3구역(전술)&lt;군사기지 및 군사시설 보호법&gt; 일련번호(5) :보전관리지역(2022-04-11), 가축사육제한구역(300M 이내 소,말,양(염소 등 산양포함),사슴 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 가축사육제한구역(500M 이내 젖소 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 비행안전제3구역(전술)&lt;군사기지 및 군사시설 보호법&gt;, 준보전산지(2022-04-11)&lt;산지관리법&gt; 일련번호(6) :보전관리지역(2022-04-11), 가축사육제한구역(300M 이내 소,말,양(염소 등 산양포함),사슴 사육제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 비행안전제3구역(전술)&lt;군사기지 및 군사시설 보호법&gt;, 준보전산지(2022-04-11)&lt;산지관리법&gt;임.\n일련번호(2) 토지에 여러 수종의 수목이 수백주 규칙적으로 식재되어있음.\n없음.\n임대관계 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 17066406,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "5",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000281|2026타경57|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 충청남도 예산군 예산읍 관작리 소재, ‘관작리마을회관’ 남동측 근거리에 위치하며 부근은 답등 농경지와 임야 등으로 형성되어 있음\n서측 근거리에 버스정류장이 소재하는 등 교통상황 불편시 됨\n기호1,2,3이 자체기반 평탄작업 후 답으로 이용중임\n기호1,2,3 공히 서측으로 폭 약2미터 내외 농로에 접함\n기호1,2,3 : 도시지역, 자연녹지지역, 가축사육제한구역(전부제한지역(도시지역)).\n없음 \n없음\n임대관계 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 332067853,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000281|2026타경57|2",
+      "set": {
+        "caseType": "부동산임의경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 충청남도 예산군 예산읍 관작리 소재, ‘관작리마을회관’ 남동측 근거리에 위치하며 부근은 답등 농경지와 임야 등으로 형성되어 있음\n서측 근거리에 버스정류장이 소재하는 등 교통상황 불편시 됨\n기호1,2,3이 자체기반 평탄작업 후 답으로 이용중임\n기호1,2,3 공히 서측으로 폭 약2미터 내외 농로에 접함\n기호1,2,3 : 도시지역, 자연녹지지역, 가축사육제한구역(전부제한지역(도시지역)).\n없음 \n없음\n임대관계 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 332067853,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000281|2026타경57|3",
+      "set": {
+        "caseType": "부동산임의경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 충청남도 예산군 예산읍 관작리 소재, ‘관작리마을회관’ 남동측 근거리에 위치하며 부근은 답등 농경지와 임야 등으로 형성되어 있음\n서측 근거리에 버스정류장이 소재하는 등 교통상황 불편시 됨\n기호1,2,3이 자체기반 평탄작업 후 답으로 이용중임\n기호1,2,3 공히 서측으로 폭 약2미터 내외 농로에 접함\n기호1,2,3 : 도시지역, 자연녹지지역, 가축사육제한구역(전부제한지역(도시지역)).\n없음 \n없음\n임대관계 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 332067853,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000283|2026타경57|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 충청남도 천안시 서북구 성정동 소재 &amp;quot;성정 공원&amp;quot; 동측 인근에 위치하는 모아엘가워너비 제4층 제443호(전유면적 31.4140㎡)로서, 주위는 오피스텔, 상업시설 및 숙박시설 등으로 이루어진 상업지대로서 제반 주위환경은 보통임.\n본건 건물까지 차량의 접근이 가능하고 인근에 대중교통수단인 버스정류소가 소재하여 제반 교통여건은 보통임.\n철근콘크리트구조 (철근)콘크리트지붕 총층은 지하6층 지상12층 중 지상 제4층 제443호(사용승인일 : 2017.09.29.)로서    외 벽 : 외장석재붙임 등 마감  내 벽 : 벽지, 타일 및 인테리어 등 마감    바 닥 : 타일 등 마감  창 호 : 새시 창호 등 마감\n도시형생활주택(원룸형)으로 이용중임.\n위생 및 급배수설비, 전기설비, 승강기설비, 소화전설비, 난방설비 등이 되어있음.\n부정형 평지인 토지로서 주상용 건부지로 이용중임.\n본건 북측으로 대로 및 남측으로 소로에 접하며, 도로상태 및 주차여건은 보통시됨.\n도시지역(천안도시지역), 일반상업지역, 시가지경관지구(중심), 지구단위계획구역(북부2지구), 대로3류(폭 25m~30m)(접합), 소로1류(폭 10m~12m)(접합) 가축사육제한구역(타법에의한전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt; \n--\n1) 임대상황 : 미상임.  2) 기타 : --",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 111696997,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000270|2026타경50711|1",
+      "set": {
+        "caseType": "건설기계임의경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "- 연식 : 2023년식  - 운행시간 : 2,330.2Hr\n- 주황색\n- 보통 이하\n- 경유\n- 2025-11-12 ~ 2027-11-11\n--",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 25492478,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    }
+  ]
+}
