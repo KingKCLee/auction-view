@@ -14,6 +14,16 @@ try {
 
 while ($true) {
   try {
+    # laptop-worker truncates data/auctions.json to the candidate subset while it
+    # runs and restores it at the end. If a cycle was killed mid-run the file is
+    # left short, and `git pull --rebase` then refuses to run on the dirty tree
+    # forever. The laptop never authors canonical, only deltas, so discarding any
+    # local canonical edit here is always the correct recovery.
+    $dirty = git status --porcelain data/auctions.json data/stats.json
+    if ($dirty) {
+      Write-Host "[laptop] discarding leftover canonical edit before pull"
+      git checkout -- data/auctions.json data/stats.json
+    }
     git pull --rebase origin main
     node laptop-worker.js
     $delta = git status --porcelain data/worker-deltas

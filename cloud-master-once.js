@@ -85,13 +85,31 @@ function prepareCheckout() {
   git(['config', 'user.email', GIT_EMAIL]);
 }
 
+const MERGE_SCRIPTS = ['apply-worker-deltas.js', 'metrics-corrector.js', 'dual-collector-lib.js', 'merge-guard-lib.js'];
+
+const sameDir = () => path.resolve(SOURCE) === path.resolve(WORK);
+
 // The merge scripts live in the image, not necessarily in the checkout's history.
 // Copy the ones we need into the work dir so a stale checkout can't run old logic.
 function syncMergeScripts() {
-  if (path.resolve(SOURCE) === path.resolve(WORK)) return;
-  for (const name of ['apply-worker-deltas.js', 'metrics-corrector.js', 'dual-collector-lib.js', 'merge-guard-lib.js']) {
+  if (sameDir()) return;
+  for (const name of MERGE_SCRIPTS) {
     const from = path.join(SOURCE, name);
     if (fs.existsSync(from)) fs.copyFileSync(from, path.join(WORK, name));
+  }
+}
+
+// Undo those copies before staging. The image copies differ from the checked-out
+// ones at least in line endings, and any leftover diff makes `pull --rebase` bail
+// with "cannot pull with rebase: You have unstaged changes".
+function unsyncMergeScripts() {
+  if (sameDir()) return;
+  for (const name of MERGE_SCRIPTS) {
+    const target = path.join(WORK, name);
+    if (!fs.existsSync(target)) continue;
+    const tracked = git(['ls-files', '--error-unmatch', '--', name], { check: false }).status === 0;
+    if (tracked) git(['checkout', '--', name], { check: false });
+    else fs.rmSync(target, { force: true });
   }
 }
 
@@ -138,6 +156,7 @@ function main() {
 
   node('apply-worker-deltas.js');
   node('metrics-corrector.js', { check: false });
+  unsyncMergeScripts();
 
   const afterRows = readJson(DATA, null);
   if (!Array.isArray(afterRows)) {
@@ -178,6 +197,14 @@ function main() {
   }
 
   git(['commit', '-m', message]);
+
+  // `pull --rebase` refuses to run on a dirty tree, so make sure nothing is left.
+  const dirty = git(['status', '--porcelain'], { check: false }).out.trim();
+  if (dirty) {
+    console.error(`[cloud-master] work tree dirty after commit; aborting without push:\n${dirty}`);
+    process.exitCode = 5;
+    return;
+  }
 
   const rebase = git(['pull', '--rebase', 'origin', BRANCH], { check: false });
   if (rebase.status !== 0) {
