@@ -1,0 +1,591 @@
+{
+  "version": 1,
+  "worker": "laptop",
+  "createdAt": "2026-09-08T15:19:00.411Z",
+  "batchSize": 12,
+  "exitCode": 0,
+  "patches": [
+    {
+      "id": "B000420|2025타경653|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 경상남도 창원시 성산구 귀산동 '귀산마을회관' 동측 인근에 위치하며, 주위는 임야지대로 주위환경은 보통시 됨.\n본건 임야의 인근 도로여건을 고려시 열악함.\n본건 임야는 부정형 고지로 자연림상태임\n맹지임.\n도시지역 , 자연녹지지역,가축사육제한구역(일부제한 배출시설규모이상 사육제한)<가축분뇨의 관리 및 이용에 관한 법률>, 개발제한구역<개발제한구역의 지정 및 관리에 관한 특별조치법>, 통제보호구역(해군기지)<군사기지 및 군사시설 보호법>, 공익용산지<산지관리법>, 보전산지<산지관리법>\n없음.\n없음.\n1)임대관계 : 미상임.\r\n2)기    타 : 없음.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 20000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000420|2025타경643|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "기호(1,2,3): 본건은 창원시 의창구 동정동 소재 동정동경로당 서측 인근에 위치하며, 주위는 남해고속도로와 북면간국도 사이 개발제한구역내 농경지 등으로 형성되어 있음.\r\n(기호4): 본건은 창원시 의창구 북면 내곡리 소재 중리마을 북측 인근에 위치하며, 주위는 마을주변 임야, 과수원 등으로 형성되어 있음.\n기호(1,2,3): 본건까지 차량의 접근은 불가능하며, 남해고속도로 하부 통로박스를 통해 도보로 진입가능하며 전반적인 교통사정은 불편함.\r\n기호(4): 본건까지 차랑의 접근은 불가능하며, 인근까지 농기계 접근 가능한 농로가 있으나 전반적인 교통사정은 불편함.\n기호(1): 부정형으로 지세는 남동하향 경사지이며, 전으로 이용중임. \r\n기호(2): 부정형으로 지세는 남동하향 경사지이며, 전으로 이용중임.\r\n기호(3): 부정형으로 지세는 남동하향 경사지이며, 전(일부 대나무밭)으로 이용중임.  \r\n기호(4): 부정형으로 지세는 남하향 중경사지이며, 자연림 및 일부 과수원,묘지로 이용중임.\n기호(1,2,3,4): 지적도상 맹지임.\n기호(1) :자연녹지지역, 가축사육제한구역(전부제한)<가축분뇨의 관리 및 이용에 관한 법률>, 개발제한구역<개발제한구역의 지정 및 관리에 관한 특별조치법>\r\n기호(2) :자연녹지지역, 가축사육제한구역(전부제한)<가축분뇨의 관리 및 이용에 관한 법률>, 개발제한구역<개발제한구역의 지정 및 관리에 관한 특별조치법>\r\n기호(3) :자연녹지지역, 가축사육제한구역(전부제한)<가축분뇨의 관리 및 이용에 관한 법률>, 개발제한구역<개발제한구역의 지정 및 관리에 관한 특별조치법>\r\n기호(4) :자연녹지지역, 지구단위계획구역, 가축사육제한구역(그외지역 200m제한 조례참조)<가축분뇨의 관리 및 이용에 관한 법률>, 상대보호구역(중학교예정지)<교육환경 보호에 관한 법률>, 도시개발구역<도시개발법>, 배출시설설치제한지역(폐수)<물환경보전법>, 준보전산지<산지관리법>, 공장설립승인지역(1호)<수도법>\n기호(1): 본건 지상에 제시외건물(농막) 및 제시외수목(정원수 및 화초등)이 소재함.\r\n기호(3): 본건 지상일부에 제시외수목(대나무 자생)이 소재함.\r\n기호(4): 본건 지상 남측일부에 제시외수목(단감나무)이 소재하며 북측일부에 분묘2기 소재함.\n기호(2,3)은 공부상 '답'이나 현황은 '전' 임.\r\n기호(4)는 공부상 '임야' 이나 현황은 '임야 및 과수원'임.\n기호(1): 지상의 제시외건물은 현상 고려 평가하였음.\r\n기호(3): 지상의 제시외수목(대나무 자생)은 단독으로 경제적가치 희박하며 토지에 포함하여 평가하였음.\r\n기호(4): 지상의 제시외수목(단감나무: 약20주 R20~30 H2)는 현상을 고려 평가하고, 지상 분묘는 분묘 소재로 인한 토지에 미치는 제한의 정도를 감안한 토지가격을 감정평가명세표 '비고'란에 표기하였음. \r\n기호(4): 본건은 '창원내곡2지구 도시개발사업지구'에 편입되는 토지로서 2021.04.08 자 '도시개발구역 지정 및 개발계획 지형도면고시(창원시고시 제2021-83호)' 된 토지로서 이를 고려하여 평가하였음.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 256161095,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000420|2025타경643|2",
+      "set": {
+        "caseType": "부동산임의경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "기호(1,2,3): 본건은 창원시 의창구 동정동 소재 동정동경로당 서측 인근에 위치하며, 주위는 남해고속도로와 북면간국도 사이 개발제한구역내 농경지 등으로 형성되어 있음.\r\n(기호4): 본건은 창원시 의창구 북면 내곡리 소재 중리마을 북측 인근에 위치하며, 주위는 마을주변 임야, 과수원 등으로 형성되어 있음.\n기호(1,2,3): 본건까지 차량의 접근은 불가능하며, 남해고속도로 하부 통로박스를 통해 도보로 진입가능하며 전반적인 교통사정은 불편함.\r\n기호(4): 본건까지 차랑의 접근은 불가능하며, 인근까지 농기계 접근 가능한 농로가 있으나 전반적인 교통사정은 불편함.\n기호(1): 부정형으로 지세는 남동하향 경사지이며, 전으로 이용중임. \r\n기호(2): 부정형으로 지세는 남동하향 경사지이며, 전으로 이용중임.\r\n기호(3): 부정형으로 지세는 남동하향 경사지이며, 전(일부 대나무밭)으로 이용중임.  \r\n기호(4): 부정형으로 지세는 남하향 중경사지이며, 자연림 및 일부 과수원,묘지로 이용중임.\n기호(1,2,3,4): 지적도상 맹지임.\n기호(1) :자연녹지지역, 가축사육제한구역(전부제한)<가축분뇨의 관리 및 이용에 관한 법률>, 개발제한구역<개발제한구역의 지정 및 관리에 관한 특별조치법>\r\n기호(2) :자연녹지지역, 가축사육제한구역(전부제한)<가축분뇨의 관리 및 이용에 관한 법률>, 개발제한구역<개발제한구역의 지정 및 관리에 관한 특별조치법>\r\n기호(3) :자연녹지지역, 가축사육제한구역(전부제한)<가축분뇨의 관리 및 이용에 관한 법률>, 개발제한구역<개발제한구역의 지정 및 관리에 관한 특별조치법>\r\n기호(4) :자연녹지지역, 지구단위계획구역, 가축사육제한구역(그외지역 200m제한 조례참조)<가축분뇨의 관리 및 이용에 관한 법률>, 상대보호구역(중학교예정지)<교육환경 보호에 관한 법률>, 도시개발구역<도시개발법>, 배출시설설치제한지역(폐수)<물환경보전법>, 준보전산지<산지관리법>, 공장설립승인지역(1호)<수도법>\n기호(1): 본건 지상에 제시외건물(농막) 및 제시외수목(정원수 및 화초등)이 소재함.\r\n기호(3): 본건 지상일부에 제시외수목(대나무 자생)이 소재함.\r\n기호(4): 본건 지상 남측일부에 제시외수목(단감나무)이 소재하며 북측일부에 분묘2기 소재함.\n기호(2,3)은 공부상 '답'이나 현황은 '전' 임.\r\n기호(4)는 공부상 '임야' 이나 현황은 '임야 및 과수원'임.\n기호(1): 지상의 제시외건물은 현상 고려 평가하였음.\r\n기호(3): 지상의 제시외수목(대나무 자생)은 단독으로 경제적가치 희박하며 토지에 포함하여 평가하였음.\r\n기호(4): 지상의 제시외수목(단감나무: 약20주 R20~30 H2)는 현상을 고려 평가하고, 지상 분묘는 분묘 소재로 인한 토지에 미치는 제한의 정도를 감안한 토지가격을 감정평가명세표 '비고'란에 표기하였음. \r\n기호(4): 본건은 '창원내곡2지구 도시개발사업지구'에 편입되는 토지로서 2021.04.08 자 '도시개발구역 지정 및 개발계획 지형도면고시(창원시고시 제2021-83호)' 된 토지로서 이를 고려하여 평가하였음.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 256161095,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000420|2025타경643|3",
+      "set": {
+        "caseType": "부동산임의경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "기호(1,2,3): 본건은 창원시 의창구 동정동 소재 동정동경로당 서측 인근에 위치하며, 주위는 남해고속도로와 북면간국도 사이 개발제한구역내 농경지 등으로 형성되어 있음.\r\n(기호4): 본건은 창원시 의창구 북면 내곡리 소재 중리마을 북측 인근에 위치하며, 주위는 마을주변 임야, 과수원 등으로 형성되어 있음.\n기호(1,2,3): 본건까지 차량의 접근은 불가능하며, 남해고속도로 하부 통로박스를 통해 도보로 진입가능하며 전반적인 교통사정은 불편함.\r\n기호(4): 본건까지 차랑의 접근은 불가능하며, 인근까지 농기계 접근 가능한 농로가 있으나 전반적인 교통사정은 불편함.\n기호(1): 부정형으로 지세는 남동하향 경사지이며, 전으로 이용중임. \r\n기호(2): 부정형으로 지세는 남동하향 경사지이며, 전으로 이용중임.\r\n기호(3): 부정형으로 지세는 남동하향 경사지이며, 전(일부 대나무밭)으로 이용중임.  \r\n기호(4): 부정형으로 지세는 남하향 중경사지이며, 자연림 및 일부 과수원,묘지로 이용중임.\n기호(1,2,3,4): 지적도상 맹지임.\n기호(1) :자연녹지지역, 가축사육제한구역(전부제한)<가축분뇨의 관리 및 이용에 관한 법률>, 개발제한구역<개발제한구역의 지정 및 관리에 관한 특별조치법>\r\n기호(2) :자연녹지지역, 가축사육제한구역(전부제한)<가축분뇨의 관리 및 이용에 관한 법률>, 개발제한구역<개발제한구역의 지정 및 관리에 관한 특별조치법>\r\n기호(3) :자연녹지지역, 가축사육제한구역(전부제한)<가축분뇨의 관리 및 이용에 관한 법률>, 개발제한구역<개발제한구역의 지정 및 관리에 관한 특별조치법>\r\n기호(4) :자연녹지지역, 지구단위계획구역, 가축사육제한구역(그외지역 200m제한 조례참조)<가축분뇨의 관리 및 이용에 관한 법률>, 상대보호구역(중학교예정지)<교육환경 보호에 관한 법률>, 도시개발구역<도시개발법>, 배출시설설치제한지역(폐수)<물환경보전법>, 준보전산지<산지관리법>, 공장설립승인지역(1호)<수도법>\n기호(1): 본건 지상에 제시외건물(농막) 및 제시외수목(정원수 및 화초등)이 소재함.\r\n기호(3): 본건 지상일부에 제시외수목(대나무 자생)이 소재함.\r\n기호(4): 본건 지상 남측일부에 제시외수목(단감나무)이 소재하며 북측일부에 분묘2기 소재함.\n기호(2,3)은 공부상 '답'이나 현황은 '전' 임.\r\n기호(4)는 공부상 '임야' 이나 현황은 '임야 및 과수원'임.\n기호(1): 지상의 제시외건물은 현상 고려 평가하였음.\r\n기호(3): 지상의 제시외수목(대나무 자생)은 단독으로 경제적가치 희박하며 토지에 포함하여 평가하였음.\r\n기호(4): 지상의 제시외수목(단감나무: 약20주 R20~30 H2)는 현상을 고려 평가하고, 지상 분묘는 분묘 소재로 인한 토지에 미치는 제한의 정도를 감안한 토지가격을 감정평가명세표 '비고'란에 표기하였음. \r\n기호(4): 본건은 '창원내곡2지구 도시개발사업지구'에 편입되는 토지로서 2021.04.08 자 '도시개발구역 지정 및 개발계획 지형도면고시(창원시고시 제2021-83호)' 된 토지로서 이를 고려하여 평가하였음.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 256161095,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "4",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000283|2025타경642|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "대상물건은 충청남도 천안시 서북구 성거읍 소재 \"\"천안성거보금자리아파트\"\" 북측 인근에 위치하며, 주위는 농가주택, 농지와 한산한 공장 및 아파트 등으로 형성된 교외농촌지대입니다.\n기호1토지까지 제반차량 출입 가능하며, 노선버스정류장이 근거리에 소재하여 교통환경은 보통입니다.\n부정형의 대체로 평탄한 농지(전 상태; 단년생 농작물 등 생육중)이며, 기호 1토지는 일부가 현황 도로이고 일부는 도시계획시설 도로(중로)에 저촉되고 있습니다.\n기호 1토지의 남동측으로 소로한면(기호 2,3은 맹지)의 도로와 접하여 외부도로와 연계되고 있습니다.\n기호 1: 도시지역(천안도시지역) , 자연녹지지역 , 제1종일반주거지역 , 중로2류(폭 15m~20m)(250)(저촉), 가축사육제한구역(타법에의한전부제한구역)<가축분뇨의 관리 및 이용에 관한 법률>\r\n\r\n기호 2,3: 도시지역(천안도시지역) , 자연녹지지역, 가축사육제한구역(타법에의한전부제한구역)<가축분뇨의 관리 및 이용에 관한 법률>\n대상토지상에 별지 사진과 같이 단년생 농작물이 생육중이나 평가목적 등을 고려하여 이에 구애없이 토지를 평가하였습니다.\n특이사항 없습니다.\n임대관계는 미상입니다.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 471390392,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    },
+    {
+      "id": "B000283|2025타경629|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 0,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 충청남도 아산시 음봉면 월랑리 소재 연세요양원 북서측 근거리에 위치하며, 주변은 농가, 자연림으로 형성된 산림지대임.\n본건까지 차량의 접근은 곤란하고, 대중 교통상황은 보통 이하임.\n 사다리형 남향 완경사지대로 임지상에는 활잡목 등이 자생하는 자연림 상태임.\n임야도상 맹지임.\n농림지역, 가축사육제한구역(2021-07-22)(일부제한구역800), 보전산지, 임업용산지임.\n 없음,\n 없음,\n임대관계는 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 52116831,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2
+      }
+    }
+  ]
+}
