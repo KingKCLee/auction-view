@@ -6,6 +6,7 @@ const { buildPatch, applyPatch } = require('./dual-collector-lib');
 const ROOT = __dirname;
 const DATA = path.join(ROOT, 'data', 'auctions.json');
 const STATS = path.join(ROOT, 'data', 'stats.json');
+const STATUS = path.join(ROOT, 'data', 'laptop-status.json');
 const DELTAS = path.join(ROOT, 'data', 'worker-deltas');
 const OUTDIR = path.join(DELTAS, process.env.WORKER_ID || 'laptop');
 const BATCH_SIZE = String(process.env.BATCH_SIZE || 12);
@@ -13,6 +14,11 @@ const RECENT_SKIP_HOURS = Number(process.env.DETAIL_RECHECK_HOURS || 12);
 const VALID_CASE = /^\d{4}타경\d+$/;
 
 const writeJson = (p, v) => fs.writeFileSync(p, JSON.stringify(v, null, 2));
+const readJson = p => { try { return JSON.parse(fs.readFileSync(p, 'utf8')); } catch { return null; } };
+function setStatus(patch){
+  const prev=readJson(STATUS)||{};
+  writeJson(STATUS,{...prev,...patch,updatedAt:new Date().toISOString()});
+}
 
 function restore(file, content) {
   if (content == null) return;
@@ -58,6 +64,8 @@ function recentlyChecked(row) {
 }
 
 function main() {
+  const startedAt=new Date().toISOString();
+  setStatus({phase:'preparing',message:'GitHub 최신 데이터와 대기 패치를 반영해 수집 후보를 고르는 중',startedAt,batchSize:Number(BATCH_SIZE),error:null});
   if (!fs.existsSync(DATA)) throw new Error('data/auctions.json not found');
   fs.mkdirSync(OUTDIR, { recursive: true });
 
@@ -79,6 +87,7 @@ function main() {
   });
   writeJson(DATA, candidates);
   console.log(`[laptop-worker] candidates=${candidates.length} skipped malformed=${invalid} pending=${pendingSkipped} recent=${recentSkipped}`);
+  setStatus({phase:'collecting_details',message:`법원 상세정보 ${Math.min(Number(BATCH_SIZE),candidates.length)}건을 조회 중`,candidates:candidates.length,skippedMalformed:invalid,pendingSkipped,recentSkipped,pendingFiles:pending.files,pendingPatches:pending.patches});
 
   const beforeRows = JSON.parse(fs.readFileSync(DATA, 'utf8'));
   const before = new Map(beforeRows.map(r => [r.id, r]));
@@ -91,16 +100,20 @@ function main() {
   });
 
   let patches = [];
+  let lastRun = null;
   try {
     const afterRows = JSON.parse(fs.readFileSync(DATA, 'utf8'));
     patches = afterRows.map(r => buildPatch(before.get(r.id) || {}, r)).filter(Boolean);
+    lastRun = readJson(STATS)?.latestDetailRun || null;
   } finally {
     restore(DATA, dataBackup);
     restore(STATS, statsBackup);
   }
 
+  const finishedAt=new Date().toISOString();
   if (!patches.length) {
     console.log('[laptop-worker] patches=0; nothing to publish');
+    setStatus({phase:run.status?'error':'completed',message:run.status?'이번 회차 상세수집에서 오류 발생':'이번 회차 조회 완료 · 새로 바뀐 필드 없음',finishedAt,lastRun,lastPatchCount:0,error:run.status?`exit ${run.status}`:null});
     if (run.status) process.exitCode = run.status;
     return;
   }
@@ -117,6 +130,7 @@ function main() {
   const out = path.join(OUTDIR, `${stamp}-${process.pid}.json`);
   writeJson(out, payload);
   console.log(`[laptop-worker] patches=${patches.length} file=${path.relative(ROOT, out)}`);
+  setStatus({phase:run.status?'error':'completed',message:`이번 회차 완료 · ${patches.length}건 변경사항 생성`,finishedAt,lastRun,lastPatchCount:patches.length,lastPatchFile:path.relative(ROOT,out),error:run.status?`exit ${run.status}`:null});
 }
 
-main();
+try{main()}catch(e){setStatus({phase:'error',message:'노트북 수집기 실행 오류',error:String(e?.message||e),finishedAt:new Date().toISOString()});throw e;}
