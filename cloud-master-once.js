@@ -180,7 +180,19 @@ function main() {
   // stats.json coverage is otherwise written from truncated worker subsets.
   writeJson(STATS, syncStatsCoverage(readJson(STATS, {}), afterRows));
 
-  git(['add', '--', 'data/auctions.json', 'data/stats.json', 'data/state.json', 'data/worker-deltas']);
+  const paths = ['data/auctions.json', 'data/stats.json', 'data/state.json', 'data/worker-deltas'];
+  // docs/ is the GitHub Pages copy. Only the (now manual-only) Actions workflows
+  // used to refresh it, so the master job has to publish it or the site goes stale.
+  const docsData = path.join(WORK, 'docs', 'data');
+  if (fs.existsSync(path.join(WORK, 'docs'))) {
+    fs.mkdirSync(docsData, { recursive: true });
+    fs.copyFileSync(DATA, path.join(docsData, 'auctions.json'));
+    fs.copyFileSync(STATS, path.join(docsData, 'stats.json'));
+    paths.push('docs/data');
+    log('[cloud-master] refreshed docs/data for GitHub Pages');
+  }
+
+  git(['add', '--', ...paths]);
   const staged = git(['diff', '--cached', '--quiet'], { check: false });
   if (staged.status === 0) {
     log('[cloud-master] nothing staged; exiting without commit');
