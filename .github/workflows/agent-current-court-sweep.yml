@@ -1,6 +1,10 @@
 name: Auction Agent - Nationwide Current Court Sweep
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/agent-current-court-sweep.yml'
   schedule:
     - cron: '7 * * * *'
   workflow_dispatch:
