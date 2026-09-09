@@ -85,7 +85,7 @@ function prepareCheckout() {
   git(['config', 'user.email', GIT_EMAIL]);
 }
 
-const MERGE_SCRIPTS = ['apply-worker-deltas.js', 'metrics-corrector.js', 'dual-collector-lib.js', 'merge-guard-lib.js'];
+const MERGE_SCRIPTS = ['apply-worker-deltas.js', 'metrics-corrector.js', 'dual-collector-lib.js', 'merge-guard-lib.js', 'export-for-web.js', 'upload-web-export.js'];
 
 const sameDir = () => path.resolve(SOURCE) === path.resolve(WORK);
 
@@ -184,16 +184,9 @@ function main() {
   writeJson(STATS, syncStatsCoverage(readJson(STATS, {}), afterRows));
 
   const paths = ['data/auctions.json', 'data/stats.json', 'data/state.json', 'data/worker-deltas'];
-  // docs/ is the GitHub Pages copy. Only the (now manual-only) Actions workflows
-  // used to refresh it, so the master job has to publish it or the site goes stale.
-  const docsData = path.join(WORK, 'docs', 'data');
-  if (fs.existsSync(path.join(WORK, 'docs'))) {
-    fs.mkdirSync(docsData, { recursive: true });
-    fs.copyFileSync(DATA, path.join(docsData, 'auctions.json'));
-    fs.copyFileSync(STATS, path.join(docsData, 'stats.json'));
-    paths.push('docs/data');
-    log('[cloud-master] refreshed docs/data for GitHub Pages');
-  }
+  // docs/data used to get a 21MB copy of canonical on every merge, which is what
+  // was bloating the repository. The web now reads the small KV payloads through
+  // the Pages API instead, so nothing copies canonical into the repo any more.
 
   git(['add', '--', ...paths]);
   const staged = git(['diff', '--cached', '--quiet'], { check: false });
@@ -233,12 +226,27 @@ function main() {
   git(['push', 'origin', `HEAD:${BRANCH}`]);
   const sha = git(['rev-parse', 'HEAD'], { check: false }).out.trim();
 
+  // Refresh what the screens read. A failure here must not undo a good merge, so
+  // it is reported rather than thrown.
+  let webExport = null;
+  try {
+    node('export-for-web.js');
+    const canUpload = process.env.CLOUDFLARE_ACCOUNT_ID && process.env.CLOUDFLARE_API_TOKEN
+      && process.env.CLOUDFLARE_KV_NAMESPACE_ID;
+    if (canUpload) { node('upload-web-export.js'); webExport = 'exported and uploaded'; }
+    else { webExport = 'exported; upload skipped (no Cloudflare credentials in env)'; }
+  } catch (e) {
+    webExport = `failed: ${e.message || e}`;
+    console.error(`[cloud-master] web export ${webExport}`);
+  }
+
   console.log(JSON.stringify({
     mode: 'cloud-master-once',
     ok: true,
     committed: true,
     commit: sha,
     appliedDeltaFiles: pendingDeltaFiles,
+    webExport,
     before,
     after,
     startedAt,

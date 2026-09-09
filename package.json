@@ -26,6 +26,10 @@
     "recovery:check": "node court-recovery-watch.js",
     "alert": "node collector-alert.js",
     "simulate": "node simulate-collection.js",
+    "export:web": "node export-for-web.js",
+    "upload:web": "node upload-web-export.js",
+    "test:export": "node test-web-export.js",
+    "test:api": "node test-api.mjs",
     "test:dual": "node test-dual-collector.js",
     "sync": "node current-court-sweep.js && node basic-info-enrich.js && node validate-basic-info.js && node discovery-supervisor.js && node sale-notice-history-worker.js && node basic-info-enrich.js && node validate-basic-info.js && node property-history-discovery-v2.js && node metrics-corrector.js && node retry-worker.js details && node retry-worker.js photos"
   },

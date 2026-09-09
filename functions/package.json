@@ -1,0 +1,4 @@
+{
+  "type": "module",
+  "//": "The repo root is commonjs; Pages Functions are ES modules. This marker lets Node import them directly so test-api.mjs can exercise the real handlers."
+}

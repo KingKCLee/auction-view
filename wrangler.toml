@@ -1,0 +1,10 @@
+name = "auction-view"
+compatibility_date = "2026-01-01"
+pages_build_output_dir = "public"
+
+# The auction data the screens read. Create the namespace once with
+#   npx wrangler kv namespace create AUCTION_KV
+# and paste the id here (and a preview_id for `wrangler pages dev`).
+[[kv_namespaces]]
+binding = "AUCTION_KV"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"

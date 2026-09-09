@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>경매 물건 검색</title>
+<style>
+:root{--bg:#f7f7f8;--card:#fff;--line:#e3e3e8;--ink:#1b1b1f;--muted:#6b6b76;--accent:#1e5eff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI","Malgun Gothic",sans-serif}
+header{background:var(--card);border-bottom:1px solid var(--line);padding:14px 16px;position:sticky;top:0;z-index:5}
+h1{margin:0;font-size:17px}
+.sub{color:var(--muted);font-size:12px;margin-top:2px}
+.wrap{max-width:960px;margin:0 auto;padding:16px}
+.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px}
+select,input,button{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);min-width:0}
+button{background:var(--accent);color:#fff;border-color:var(--accent);cursor:pointer}
+button.ghost{background:#fff;color:var(--ink);border-color:var(--line)}
+.bar{display:flex;gap:8px;align-items:center;justify-content:space-between;margin:14px 0 8px;flex-wrap:wrap}
+.count{color:var(--muted);font-size:13px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:8px;cursor:pointer}
+.card:hover{border-color:var(--accent)}
+.card h3{margin:0 0 4px;font-size:14px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.addr{color:var(--muted);font-size:13px;margin:0 0 8px;word-break:keep-all}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:6px;font-size:13px}
+.grid span{color:var(--muted);display:block;font-size:11px}
+.tag{font-size:11px;padding:2px 6px;border-radius:999px;background:#eef2ff;color:var(--accent)}
+.tag.won{background:#e8f6ec;color:#1a7f37}
+.tag.fail{background:#fdecec;color:#b42318}
+dialog{border:none;border-radius:12px;padding:0;width:min(720px,94vw);max-height:88vh}
+dialog::backdrop{background:rgba(0,0,0,.45)}
+.dlg{padding:16px}
+.dlg h2{margin:0 0 2px;font-size:16px}
+.dlg table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0}
+.dlg td{padding:6px 4px;border-bottom:1px solid var(--line);vertical-align:top}
+.dlg td:first-child{color:var(--muted);width:34%}
+.pager{display:flex;gap:8px;justify-content:center;align-items:center;margin:14px 0}
+.msg{padding:24px;text-align:center;color:var(--muted)}
+.pill{display:inline-block;font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:1px 7px}
+</style>
+</head>
+<body>
+<header>
+  <h1>경매 물건 검색</h1>
+  <div class="sub">출처: 대한민국 법원경매정보 · <span id="gen">불러오는 중</span></div>
+</header>
+<div class="wrap">
+  <div class="filters">
+    <select id="sido"><option value="">시/도 전체</option></select>
+    <select id="sigungu"><option value="">시군구 전체</option></select>
+    <select id="usage"><option value="">용도 전체</option></select>
+    <input id="minPrice" inputmode="numeric" placeholder="최저가 하한(만원)">
+    <input id="maxPrice" inputmode="numeric" placeholder="최저가 상한(만원)">
+    <input id="q" placeholder="사건번호·소재지 검색">
+    <select id="sort">
+      <option value="saleDate">매각기일순</option>
+      <option value="minimumPrice">최저가순</option>
+      <option value="appraisedPrice">감정가순</option>
+      <option value="failedCount">유찰횟수순</option>
+    </select>
+    <button id="search">검색</button>
+  </div>
+  <div class="bar">
+    <div class="count" id="count">—</div>
+    <label class="count"><input type="checkbox" id="wonOnly"> 낙찰가 있는 물건만</label>
+  </div>
+  <div id="list"><div class="msg">불러오는 중…</div></div>
+  <div class="pager">
+    <button class="ghost" id="prev">이전</button>
+    <span class="count" id="page">1</span>
+    <button class="ghost" id="next">다음</button>
+  </div>
+</div>
+<dialog id="detail"><div class="dlg" id="detailBody"></div></dialog>
+<script>
+// Everything goes through the API. The 21MB canonical file is never fetched here.
+const API = '/api/auction';
+const $ = s => document.querySelector(s);
+const won = n => (n == null ? '-' : Number(n).toLocaleString('ko-KR') + '원');
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let page = 1, facets = null;
+
+async function loadFacets() {
+  try {
+    const r = await fetch(API + '/facets');
+    if (!r.ok) return;
+    facets = await r.json();
+    for (const s of facets.sido || []) $('#sido').add(new Option(s, s));
+    for (const u of facets.usage || []) $('#usage').add(new Option(u, u));
+  } catch (e) {}
+}
+
+$('#sido').addEventListener('change', () => {
+  const sel = $('#sigungu');
+  sel.length = 1;
+  const list = (facets && facets.sigungu && facets.sigungu[$('#sido').value]) || [];
+  for (const g of list) sel.add(new Option(g, g));
+});
+
+function params() {
+  const p = new URLSearchParams({ page: page, size: 20, sort: $('#sort').value });
+  const man = v => (v ? String(Number(v) * 10000) : '');
+  const add = (k, v) => { if (v) p.set(k, v); };
+  add('sido', $('#sido').value);
+  add('sigungu', $('#sigungu').value);
+  add('usage', $('#usage').value);
+  add('q', $('#q').value.trim());
+  add('minPrice', man($('#minPrice').value));
+  add('maxPrice', man($('#maxPrice').value));
+  if ($('#wonOnly').checked) p.set('hasWinning', '1');
+  return p;
+}
+
+function card(it) {
+  return '<div class="card" data-id="' + esc(it.id) + '">' +
+    '<h3>' + esc(it.caseNumber) +
+      '<span class="tag">' + esc(it.usage || '용도미상') + '</span>' +
+      (it.hasWinning ? '<span class="tag won">낙찰</span>' : '') +
+      (it.failedCount ? '<span class="tag fail">유찰 ' + it.failedCount + '회</span>' : '') +
+    '</h3>' +
+    '<p class="addr">' + esc(it.address || '-') + '</p>' +
+    '<div class="grid">' +
+      '<div><span>감정가</span>' + won(it.appraisedPrice) + '</div>' +
+      '<div><span>최저가</span>' + won(it.minimumPrice) + '</div>' +
+      '<div><span>매각기일</span>' + esc(it.saleDate || '-') + '</div>' +
+      '<div><span>법원</span>' + esc(it.courtName || '-') + '</div>' +
+    '</div></div>';
+}
+
+async function search() {
+  $('#list').innerHTML = '<div class="msg">불러오는 중…</div>';
+  try {
+    const r = await fetch(API + '/list?' + params());
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.error || r.status);
+    $('#gen').textContent = d.generatedAt ? '기준 ' + d.generatedAt.slice(0, 16).replace('T', ' ') + ' UTC' : '';
+    $('#count').textContent = d.total.toLocaleString('ko-KR') + '건 중 ' + d.items.length + '건 표시';
+    $('#page').textContent = d.page + ' / ' + d.totalPages;
+    $('#list').innerHTML = d.items.length
+      ? d.items.map(card).join('')
+      : '<div class="msg">조건에 맞는 물건이 없습니다.</div>';
+    document.querySelectorAll('.card').forEach(el =>
+      el.addEventListener('click', () => openDetail(el.dataset.id)));
+  } catch (e) {
+    $('#list').innerHTML = '<div class="msg">불러오지 못했습니다: ' + esc(e.message) + '</div>';
+  }
+}
+
+async function openDetail(id) {
+  const dlg = $('#detail');
+  $('#detailBody').innerHTML = '<div class="msg">불러오는 중…</div>';
+  dlg.showModal();
+  try {
+    const r = await fetch(API + '/' + encodeURIComponent(id));
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.error || r.status);
+    const row = (k, v) => '<tr><td>' + k + '</td><td>' + v + '</td></tr>';
+    const docs = (d.documents || []).map(x => esc(x.type)).join(', ') || '없음';
+    let html = '<h2>' + esc(d.caseNumber) + ' · 물건 ' + esc(d.itemNumber) + '</h2>' +
+      '<p class="addr">' + esc(d.address || '-') + '</p><table>' +
+      row('법원', esc(d.courtName || '-')) +
+      row('용도', esc(d.usage || '-')) +
+      row('감정가', won(d.appraisedPrice)) +
+      row('최저가', won(d.minimumPrice)) +
+      row('청구금액', won(d.claimAmount)) +
+      row('매각기일', esc(d.saleDate || '-')) +
+      row('유찰횟수', (d.failedCount || 0) + '회') +
+      (d.winningPrice ? row('낙찰가', '<b>' + won(d.winningPrice) + '</b>' +
+        (d.winningRatio ? ' (감정가 대비 ' + d.winningRatio + '%)' : '')) : '') +
+      (d.winningDate ? row('낙찰일', esc(d.winningDate)) : '') +
+      (d.bidderCount != null ? row('응찰자수', d.bidderCount + '명') : '') +
+      row('상태', esc(d.status || '진행중')) +
+      row('문서', esc(docs)) +
+      row('사진', (d.photoCount || 0) + '장') +
+      (d.appraisalAgency ? row('감정평가기관', esc(d.appraisalAgency)) : '') +
+      '</table>';
+    if (d.appraisalSummary) {
+      html += '<p class="addr">' + esc(d.appraisalSummary).replace(/\n/g, '<br>') + '</p>';
+    }
+    if ((d.events || []).length) {
+      html += '<h3 style="font-size:14px">기일 내역</h3><table>' + d.events.map(e =>
+        row(esc(e.event_date || '-'),
+          esc(e.event_kind_code || '') + ' ' + (e.amount ? won(e.amount) : '') +
+          (e.winning_amount ? ' <b>낙찰 ' + won(e.winning_amount) + '</b>' : ''))).join('') + '</table>';
+    }
+    html += '<p class="pill">출처: 대한민국 법원경매정보</p>' +
+      '<p><button class="ghost" id="closeDlg">닫기</button></p>';
+    $('#detailBody').innerHTML = html;
+    $('#closeDlg').addEventListener('click', () => dlg.close());
+  } catch (e) {
+    $('#detailBody').innerHTML = '<div class="msg">불러오지 못했습니다: ' + esc(e.message) + '</div>' +
+      '<p style="text-align:center"><button class="ghost" id="closeDlg">닫기</button></p>';
+    $('#closeDlg').addEventListener('click', () => dlg.close());
+  }
+}
+
+$('#search').addEventListener('click', () => { page = 1; search(); });
+$('#wonOnly').addEventListener('change', () => { page = 1; search(); });
+$('#q').addEventListener('keydown', e => { if (e.key === 'Enter') { page = 1; search(); } });
+$('#prev').addEventListener('click', () => { if (page > 1) { page--; search(); } });
+$('#next').addEventListener('click', () => { page++; search(); });
+loadFacets().then(search);
+</script>
+</body>
+</html>

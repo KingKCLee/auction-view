@@ -99,3 +99,104 @@ gcloud scheduler jobs create http auction-cloud-master-30m \
 
 `gcloud run jobs add-iam-policy-binding` fails if `auction-cloud-master` does not
 exist yet, so create and execute the job successfully before running any of this.
+
+---
+
+# Web API (the only contact point for any front end)
+
+Nothing client-side may read `data/auctions.json`. It is 21MB and a phone will
+stall or fail on it. Every screen — the ZibTok auction tab, the public search
+page here, the admin dashboard — goes through this API.
+
+## Shape of the data
+
+`export-for-web.js` turns canonical into small objects and `upload-web-export.js`
+puts them in a Cloudflare KV namespace bound as `AUCTION_KV`:
+
+| key | what | size today |
+|---|---|---|
+| `index:v1` | gzipped positional array of every card row + facets | 260KB |
+| `region:v1:<시도>` | same, one region only | 5–49KB |
+| `facets:v1` | 시/도, 시군구, 용도 lists | small |
+| `detail:v1:<id>` | one case, full record | ≤13KB |
+| `stats:v1` | progress numbers | ~1KB |
+
+`id` is the canonical row id, `"<courtCode>|<caseNumber>|<itemNumber>"`, so it
+must be percent-encoded in a URL.
+
+Nothing may exceed **512,000 bytes**. The exporter refuses to write an oversized
+object (exit 7), the uploader refuses to publish one (exit 7), and each endpoint
+refuses to return one (HTTP 500). The exporter also refuses to publish a canonical
+that looks mid-cycle truncated (exit 8).
+
+## Endpoints
+
+Base URL: `https://<project>.pages.dev/api/auction`
+
+### `GET /list`
+Query: `sido`, `sigungu`, `usage`, `minPrice`, `maxPrice` (won, against 최저가),
+`saleDateFrom`, `saleDateTo`, `hasWinning=1|0`, `q` (사건번호·소재지 substring),
+`sort=saleDate|minimumPrice|appraisedPrice|failedCount`, `order=asc|desc`,
+`page` (1-based), `size` (default 20, max 100).
+
+```json
+{
+  "generatedAt": "2026-09-09T02:00:00.000Z",
+  "page": 1, "size": 20, "total": 8279, "totalPages": 414,
+  "facets": { "sido": ["서울특별시"], "sigungu": {"서울특별시": ["관악구"]}, "usage": ["아파트"] },
+  "items": [{
+    "id": "B000210|2026타경93|1", "caseNumber": "2026타경93",
+    "courtName": "서울중앙지방법원", "address": "서울특별시 관악구 신림동 1655-15",
+    "sido": "서울특별시", "sigungu": "관악구", "usage": "아파트",
+    "appraisedPrice": 79000000, "minimumPrice": 55300000,
+    "saleDate": "2026-09-09", "failedCount": 1,
+    "hasWinning": 0, "photoCount": 0, "documentCount": 2
+  }]
+}
+```
+
+Card `address` is trimmed at the `[상세내역]` marker and capped at 120 characters;
+the full text is on the detail record.
+
+### `GET /:id`
+Percent-encoded id. Returns the full case: prices, 기일 내역 (`events`), 낙찰가
+(`winningPrice`, `winningDate`, `winningRatio`, `bidderCount`), documents, photos,
+`coverage`, and `status` (`expired` once the source has dropped the case).
+404 when the id is unknown.
+
+### `GET /stats`
+`itemCount`, per-asset `coverage` counts and percentages, `winningPriceCaptured`,
+`atRiskToday`, `permanentlyLost`, `expiredMarked`, `lastCloudMergeAt`,
+`lastLaptopRunAt`, `lastLaptopRun`.
+
+### `GET /facets`
+Just the filter options, for building dropdowns without fetching a list page.
+
+All responses send `access-control-allow-origin: *`, so ZibTok can call them
+directly from the browser.
+
+## Deploying
+
+```bash
+npx wrangler kv namespace create AUCTION_KV     # paste the id into wrangler.toml
+npx wrangler pages project create auction-view --production-branch main
+npm run export:web
+CLOUDFLARE_ACCOUNT_ID=... CLOUDFLARE_API_TOKEN=... CLOUDFLARE_KV_NAMESPACE_ID=... npm run upload:web
+npx wrangler pages deploy public --project-name auction-view
+```
+
+The Cloud Run master job runs `export-for-web.js` after each successful push and
+`upload-web-export.js` when `CLOUDFLARE_ACCOUNT_ID`, `CLOUDFLARE_API_TOKEN` and
+`CLOUDFLARE_KV_NAMESPACE_ID` are present; without them it exports and says so.
+
+The API token needs **Workers KV Storage: Edit** and **Cloudflare Pages: Edit** on
+this account only. Put it in Secret Manager next to the GitHub PAT, never in the
+repo.
+
+## Pages bundled here
+
+- `/` — public search: 지역·용도·가격대 filters, card list, case detail dialog.
+- `/admin` — progress dashboard: coverage bars, today's winning-price capture,
+  at-risk count, last merge and last laptop run.
+
+Both call the API only. Neither fetches canonical.

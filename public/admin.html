@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>수집 진도율</title>
+<style>
+:root{--bg:#0f1115;--card:#171a21;--line:#262b36;--ink:#e8eaf0;--muted:#8b93a7;--ok:#3ecf8e;--warn:#ffb020;--bad:#ff5c5c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI","Malgun Gothic",sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:20px}
+h1{font-size:18px;margin:0 0 2px}
+.sub{color:var(--muted);font-size:12px;margin-bottom:18px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:16px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.tile b{display:block;font-size:24px;line-height:1.2;margin-top:4px;font-variant-numeric:tabular-nums}
+.tile span{color:var(--muted);font-size:12px}
+.ok b{color:var(--ok)} .warn b{color:var(--warn)} .bad b{color:var(--bad)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:12px}
+.panel h2{font-size:14px;margin:0 0 10px}
+.row{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:13px}
+.row .name{width:130px;color:var(--muted);flex:none}
+.bar{flex:1;height:8px;background:#0b0d11;border-radius:999px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ok)}
+.val{width:120px;text-align:right;color:var(--muted);font-variant-numeric:tabular-nums;flex:none}
+table{width:100%;border-collapse:collapse;font-size:13px}
+td{padding:6px 4px;border-bottom:1px solid var(--line)}
+td:first-child{color:var(--muted);width:44%}
+.gate{padding:10px 14px;border-radius:8px;margin-bottom:14px;font-size:13px}
+.gate.ok{background:#12291f;color:var(--ok)} .gate.bad{background:#2a1416;color:var(--bad)}
+button{font:inherit;background:#222836;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px 12px;cursor:pointer}
+.msg{color:var(--muted);padding:20px;text-align:center}
+input{font:inherit;background:#0b0d11;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>수집 진도율</h1>
+  <div class="sub">대한민국 법원경매정보 수집 현황 · <span id="gen">불러오는 중</span></div>
+  <div id="gateBox"></div>
+  <div id="body"><div class="msg">불러오는 중…</div></div>
+  <p><button id="refresh">새로고침</button></p>
+</div>
+<script>
+// Read-only view of /api/auction/stats. No canonical file is ever fetched here.
+const API = '/api/auction';
+const $ = s => document.querySelector(s);
+const num = n => Number(n || 0).toLocaleString('ko-KR');
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const when = t => (t ? new Date(t).toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }) : '-');
+
+const COVERAGE_LABELS = {
+  base_info: '기본정보', sale_statement: '매각물건명세서', status_report: '현황조사서',
+  appraisal_summary: '감정평가요항', photos: '물건사진', winning_price: '낙찰가'
+};
+
+function tile(label, value, cls) {
+  return '<div class="tile ' + (cls || '') + '"><span>' + label + '</span><b>' + value + '</b></div>';
+}
+
+function coverageRow(key, c) {
+  const pct = Math.max(0, Math.min(100, Number(c.percent || 0)));
+  return '<div class="row"><div class="name">' + (COVERAGE_LABELS[key] || key) + '</div>' +
+    '<div class="bar"><i style="width:' + pct + '%"></i></div>' +
+    '<div class="val">' + num(c.count) + '건 · ' + pct + '%</div></div>';
+}
+
+async function load() {
+  $('#body').innerHTML = '<div class="msg">불러오는 중…</div>';
+  try {
+    const r = await fetch(API + '/stats');
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.error || r.status);
+    $('#gen').textContent = '기준 ' + when(d.generatedAt);
+
+    const atRisk = Number(d.atRiskToday || 0);
+    const lost = Number(d.permanentlyLost || 0);
+    const captured = Number(d.winningPriceCaptured || 0);
+
+    let html = '<div class="tiles">' +
+      tile('전체 사건 수', num(d.itemCount)) +
+      tile('오늘 낙찰가 확보', num(captured), captured > 0 ? 'ok' : 'warn') +
+      tile('오늘 위험 물건', num(atRisk), atRisk > 0 ? 'warn' : 'ok') +
+      tile('영구 손실 누적', num(lost), lost > 0 ? 'bad' : 'ok') +
+      tile('종국 표시', num(d.expiredMarked)) +
+      tile('보유 문서 수', num(d.documentCount)) +
+      '</div>';
+
+    html += '<div class="panel"><h2>자료 확보율</h2>' +
+      Object.entries(d.coverage || {}).map(([k, c]) => coverageRow(k, c)).join('') + '</div>';
+
+    const run = d.lastLaptopRun || {};
+    html += '<div class="panel"><h2>파이프라인</h2><table>' +
+      '<tr><td>최근 클라우드 병합</td><td>' + when(d.lastCloudMergeAt) + '</td></tr>' +
+      '<tr><td>노트북 마지막 성공</td><td>' + when(d.lastLaptopRunAt) + '</td></tr>' +
+      '<tr><td>마지막 회차 결과</td><td>조회 ' + num(run.checked) + ' · 성공 ' + num(run.success) +
+        ' · 문서 ' + num(run.docsAdded) + '</td></tr>' +
+      '<tr><td>마지막 회차 오류</td><td>' + (run.error ? esc(run.error) : '없음') + '</td></tr>' +
+      '</table></div>';
+
+    $('#body').innerHTML = html;
+
+    const riskMsg = atRisk > 0
+      ? '오늘 기일인 ' + num(atRisk) + '건이 아직 낙찰가 미확보입니다. 자정(KST)이 지나면 원천에서 사라집니다.'
+      : '오늘 기일 물건의 낙찰가를 모두 확보했습니다.';
+    $('#gateBox').innerHTML = '<div class="gate ' + (atRisk > 0 ? 'bad' : 'ok') + '">' + riskMsg + '</div>';
+  } catch (e) {
+    $('#body').innerHTML = '<div class="msg">불러오지 못했습니다: ' + esc(e.message) + '</div>';
+  }
+}
+
+$('#refresh').addEventListener('click', load);
+load();
+setInterval(load, 60000);
+</script>
+</body>
+</html>
