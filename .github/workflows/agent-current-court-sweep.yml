@@ -85,9 +85,18 @@ jobs:
           cp data/stats.json /tmp/collector-stats.json
           if [ -f data/state.json ]; then cp data/state.json /tmp/collector-state.json; else echo '{}' > /tmp/collector-state.json; fi
 
-          git checkout -- data/auctions.json data/stats.json data/state.json docs 2>/dev/null || true
+          # worker:apply intentionally deletes consumed delta files, leaving a dirty tree.
+          # Collector results are already preserved in /tmp, so restore a clean canonical
+          # checkout before rebasing. After reconcile, apply the latest canonical deltas
+          # once more so their deletions are committed and they cannot be replayed forever.
+          git reset --hard HEAD
+          git clean -fd
+          test -z "$(git status --porcelain)"
           git pull --rebase origin main
           node safe-canonical-reconcile.js /tmp/collector-auctions.json /tmp/collector-stats.json /tmp/collector-state.json
+          npm run worker:apply || true
+          npm run basic:validate
+          node metrics-corrector.js || true
 
           rm -rf docs
           mkdir -p docs/data
@@ -98,7 +107,7 @@ jobs:
 
           git config user.name "court-auction-bot"
           git config user.email "court-auction-bot@users.noreply.github.com"
-          git add data/auctions.json data/stats.json data/state.json docs data/worker-deltas 2>/dev/null || true
+          git add -A data/auctions.json data/stats.json data/state.json docs data/worker-deltas 2>/dev/null || true
           if ! git diff --cached --quiet; then
             git commit -m "data: reconciled hourly discovery $(date -u +'%Y-%m-%dT%H:%MZ')"
             git push origin HEAD:main
@@ -147,9 +156,14 @@ jobs:
           cp data/stats.json /tmp/collector-stats.json
           if [ -f data/state.json ]; then cp data/state.json /tmp/collector-state.json; else echo '{}' > /tmp/collector-state.json; fi
 
-          git checkout -- data/auctions.json data/stats.json data/state.json docs 2>/dev/null || true
+          git reset --hard HEAD
+          git clean -fd
+          test -z "$(git status --porcelain)"
           git pull --rebase origin main
           node safe-canonical-reconcile.js /tmp/collector-auctions.json /tmp/collector-stats.json /tmp/collector-state.json
+          npm run worker:apply || true
+          npm run basic:validate
+          node metrics-corrector.js || true
 
           rm -rf docs
           mkdir -p docs/data
@@ -160,7 +174,7 @@ jobs:
 
           git config user.name "court-auction-bot"
           git config user.email "court-auction-bot@users.noreply.github.com"
-          git add data/auctions.json data/stats.json data/state.json docs data/worker-deltas 2>/dev/null || true
+          git add -A data/auctions.json data/stats.json data/state.json docs data/worker-deltas 2>/dev/null || true
           if ! git diff --cached --quiet; then
             git commit -m "data: reconciled macOS rescue $(date -u +'%Y-%m-%dT%H:%MZ')"
             git push origin HEAD:main
