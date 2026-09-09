@@ -183,12 +183,24 @@ function main() {
   // stats.json coverage is otherwise written from truncated worker subsets.
   writeJson(STATS, syncStatsCoverage(readJson(STATS, {}), afterRows));
 
-  const paths = ['data/auctions.json', 'data/stats.json', 'data/state.json', 'data/worker-deltas'];
   // docs/data used to get a 21MB copy of canonical on every merge, which is what
-  // was bloating the repository. The web now reads the small KV payloads through
-  // the Pages API instead, so nothing copies canonical into the repo any more.
+  // was bloating the repository. The web reads the small KV payloads through the
+  // Pages API now, so nothing copies canonical into the repo any more.
+  const wanted = ['data/auctions.json', 'data/stats.json', 'data/state.json', 'data/worker-deltas'];
 
-  git(['add', '--', ...paths]);
+  // Stage each path on its own. A single `git add` over the whole list fails
+  // wholesale if one entry has become ignored or no longer exists, and that took
+  // the merge down for nine hours without anything else looking wrong: docs/data
+  // was removed from the repo and added to .gitignore while the running image
+  // still listed it, so `git add` exited 1 and the job died after a clean merge.
+  const paths = [];
+  for (const p of wanted) {
+    if (!fs.existsSync(path.join(WORK, p))) { log(`[cloud-master] skipping ${p}: not in the checkout`); continue; }
+    const r = git(['add', '--', p], { check: false });
+    if (r.status === 0) paths.push(p);
+    else log(`[cloud-master] skipping ${p}: git add exited ${r.status}`);
+  }
+  if (!paths.length) throw new Error('nothing could be staged; refusing to continue');
   const staged = git(['diff', '--cached', '--quiet'], { check: false });
   if (staged.status === 0) {
     log('[cloud-master] nothing staged; exiting without commit');
