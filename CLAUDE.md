@@ -18,8 +18,10 @@ Two consequences, both binding:
 
 1. **Canonical is the only copy.** Once the source drops a case, our
    `data/auctions.json` is the sole remaining record of it.
-2. **The winning price is decided on the 기일 and vanishes with it.** A case not
-   scraped on its sale date loses its result permanently.
+2. **The winning price is not in the case detail at all.** That endpoint carries
+   최저매각가 and a result code; `dspslAmt` on its 기일 events is always null. Prices
+   live in a different window - see below - and reach back over days, so there is
+   no same-day race to lose.
 
 ### Data preservation (never violate)
 
@@ -30,6 +32,35 @@ Two consequences, both binding:
   (`lostCaseRecords`), even when `itemCount` is unchanged — rows can be swapped
   one-for-one and keep the count level.
 - Back up canonical before emptying or overwriting it. Delta merges are id-based.
+
+### Winning prices come from 매각결과검색
+
+Measured 2026-09-09 after a day spent chasing them in the wrong place.
+
+```
+warmup  /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ158M00.xml&pgjId=158M00
+POST    /pgj/pgjsearch/selectDspslSchdRsltSrch.on     header sc-pgmid: PGJ158M02
+body    { dma_pageInfo:{pageNo,pageSize:'40',totalYn:'Y',...},
+          dma_srchGdsDtlSrchInfo:{statNum:'3',pgmId:'PGJ158M02',cortStDvs:'1',
+                                  cortOfcCd:'<법원>', ...} }
+→ data.dlt_srchResult[]  maeAmt=낙찰가  maeGiil=매각기일  gamevalAmt=감정가
+                         minmaePrice=최저가  yuchalCnt=유찰횟수  srnSaNo=사건번호
+```
+
+It answers for 기일 that have already passed, which the case detail cannot:
+
+```
+2025타경1833   기일 20260908  감정 51,005,255,120  낙찰 26,627,100,000
+2023타경111644 기일 20260903  감정    416,500,000  낙찰    431,000,000
+```
+
+`sale-result-collect.js` walks this. There is no date parameter - the server
+decides the window, reported as roughly the last seven days - so run it daily and
+the prices arrive without racing the clock.
+
+`pageSize` above 40 returns HTTP 400 with the site's generic **"사용에 불편을 드려서
+죄송합니다"**. That text means bad parameters, not an outage. Do not read it as a
+dead endpoint; it cost a day when 물건검색 returned it.
 
 ### Collection priority
 
@@ -106,13 +137,14 @@ and belong in `wrangler.toml` where deployments can find them.
 | `court-gate.js` / `court-gate-enforce.js` | the single door to the court |
 | `court-recovery-watch.js` | hourly one-request block check |
 | `measure-public-window.js` | measures how far the public window reaches |
+| `sale-result-collect.js` | winning prices from 매각결과검색, patches + additions |
 | `export-for-web.js` | canonical → the small payloads the web reads, size-capped |
 | `upload-web-export.js` | pushes those payloads into Cloudflare KV |
 | `functions/api/auction/*` | the API every screen goes through, at auction-view.pages.dev |
 | `public/` | admin progress dashboard, plus a reference search page |
 
 Tests: `npm run test:guard`, `test:gate`, `test:priority`, `test:export`,
-`test:api`, and `npm run simulate` for a dry run over canonical.
+`test:api`, `test:saleresult`, and `npm run simulate` for a dry run over canonical.
 
 ## Conventions
 
