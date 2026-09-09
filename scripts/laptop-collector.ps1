@@ -3,15 +3,19 @@ Set-Location $PSScriptRoot\..
 $env:WORKER_ID = "laptop"
 # Every node process started from here (and their children, since env is
 # inherited) goes through the gate. An un-gated court request throws instead of
-# going out, which is what stops a second caller from racing the first.
+# going out, which stops a second caller from racing the first.
 $env:NODE_OPTIONS = "--require ./court-gate-enforce.js"
 if (-not $env:BATCH_SIZE) { $env:BATCH_SIZE = "24" }
-# No idle wait between cycles. The safe rate is enforced per request by
-# court-gate.js (3.4s + jitter, shared across every process), so sleeping here
-# only adds dead time - and dead time is cases expiring unscraped.
+
+# Post-block safe pacing. The old 3.4s minimum could approach ~900 requests/hour.
+# Keep the shared gate materially below the previously stable ~691/hour rate.
+if (-not $env:COURT_MIN_INTERVAL_MS) { $env:COURT_MIN_INTERVAL_MS = "6000" }
+if (-not $env:COURT_JITTER_MS) { $env:COURT_JITTER_MS = "1200" }
+
+# No extra idle wait between cycles: court-gate.js now controls the actual request
+# rate across every child process. Errors still back off to avoid local spin.
 if (-not $env:LOOP_SLEEP_SECONDS) { $env:LOOP_SLEEP_SECONDS = "0" }
-# A cycle that fails fast would otherwise spin, so errors still back off.
-if (-not $env:ERROR_BACKOFF_SECONDS) { $env:ERROR_BACKOFF_SECONDS = "30" }
+if (-not $env:ERROR_BACKOFF_SECONDS) { $env:ERROR_BACKOFF_SECONDS = "60" }
 
 try {
   Start-Process -FilePath "node" -ArgumentList "collector-monitor.js" -WindowStyle Hidden
