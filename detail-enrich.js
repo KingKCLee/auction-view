@@ -53,21 +53,33 @@ const KST_MS=9*3600000;
 const kstDay=ms=>new Date(ms+KST_MS).toISOString().slice(0,10);
 const COVERAGE_WANTED=['schedule','appraisal_summary','status_report','sale_statement','winning_price'];
 function missingCount(row){return COVERAGE_WANTED.filter(k=>Number(row.coverage?.[k]||0)!==1).length}
+// Only today's 기일 vanishes tonight. Tomorrow's is still there tomorrow, so it
+// does not belong in the same tier: measured with both in tier 0, a full pass took
+// 8.2 hours over 1470 cases and today's 647 got revisited about once before
+// midnight. Today alone is a 1.9 hour pass and four revisits.
 function expiringUncaptured(row,nowMs){
  const sd=String(row.saleDate||'');
  if(!sd)return false;
- return (sd===kstDay(nowMs)||sd===kstDay(nowMs+86400000))&&!Number(row.winningPrice||0);
+ return sd===kstDay(nowMs)&&!Number(row.winningPrice||0);
+}
+// Tomorrow's: next in line, ahead of the general pool but behind tonight's losses.
+function expiringNext(row,nowMs){
+ const sd=String(row.saleDate||'');
+ if(!sd)return false;
+ return sd===kstDay(nowMs+86400000)&&!Number(row.winningPrice||0);
 }
 function priority(row,today){
- // TIER 0 - about to vanish from the source with no winning price recorded.
- if(expiringUncaptured(row,today))return[0,String(row.saleDate)===kstDay(today)?0:1,-missingCount(row),0];
- // TIER 1+ - the previous ordering: least-enriched first, then nearest 기일.
+ // TIER 0 - gone from the source tonight with no winning price recorded.
+ if(expiringUncaptured(row,today))return[0,-missingCount(row),0,0];
+ // TIER 1 - gone tomorrow night.
+ if(expiringNext(row,today))return[1,-missingCount(row),0,0];
+ // TIER 2+ - the previous ordering: least-enriched first, then nearest 기일.
  const t=Date.parse(row.saleDate||'');
  const enriched=Number(row.coverage?.schedule||0)+Number(row.coverage?.appraisal_summary||0)+Number(row.coverage?.status_report||0)+Number(row.coverage?.sale_statement||0);
- if(!Number.isFinite(t))return[1,enriched,4,999999];
+ if(!Number.isFinite(t))return[2,enriched,4,999999];
  const d=(t-today)/86400000;
  const bucket=d>=-14&&d<=60?0:d<-14&&d>=-120?1:d>60?2:3;
- return[1,enriched,bucket,Math.abs(d)];
+ return[2,enriched,bucket,Math.abs(d)];
 }
 function bidderCountFrom(e){for(const k of ['bidPrsnCnt','dspslBidPrsnCnt','scsBidPrsnCnt','bidderCnt','bidCnt','bidderCount']){const n=asInt(e?.[k]);if(n!==null&&n>=0)return n}return null}
 async function main(){
@@ -113,4 +125,4 @@ row.goodsStatusCode=txt(dx.auctnGdsStatCd||'');row.decisionDate=normDate(dx.dsps
 // full collection run as a side effect, which is how three court requests went
 // out during a stop order.
 if(require.main===module){main().catch(e=>{console.error(e);setWorkerStatus({phase:'error',error:String(e?.message||e)});process.exitCode=1})}
-module.exports={priority,expiringUncaptured,missingCount,bidderCountFrom,kstDay};
+module.exports={priority,expiringUncaptured,expiringNext,missingCount,bidderCountFrom,kstDay};

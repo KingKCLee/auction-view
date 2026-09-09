@@ -10,7 +10,7 @@
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
-const { priority, expiringUncaptured, kstDay } = require('./detail-enrich');
+const { priority, expiringUncaptured, expiringNext, kstDay } = require('./detail-enrich');
 const { evaluateRecordLoss, formatFailures } = require('./merge-guard-lib');
 
 let failures = 0;
@@ -56,8 +56,14 @@ console.log('order:', ordered.join(' > '));
 check('test1 today-expiring is first', ordered[0] === 'EXPIRING-TODAY', ordered[0]);
 check('test1 tomorrow-expiring is second', ordered[1] === 'EXPIRING-TOMORROW', ordered[1]);
 check('test1 the un-enriched far row lost its old first place', ordered.indexOf('EMPTY-FAR') > 1);
-check('test1 tier 0 marks only the two expiring rows',
-  pool.filter(r => expiringUncaptured(r, NOW)).map(r => r.id).join(',') === 'EXPIRING-TOMORROW,EXPIRING-TODAY');
+// Only tonight's losses are tier 0; tomorrow's sit in their own tier behind them.
+check('test1 tier 0 is today only',
+  pool.filter(r => expiringUncaptured(r, NOW)).map(r => r.id).join(',') === 'EXPIRING-TODAY');
+check('test1 tomorrow sits in tier 1',
+  pool.filter(r => expiringNext(r, NOW)).map(r => r.id).join(',') === 'EXPIRING-TOMORROW');
+check('test1 today outranks tomorrow by tier',
+  priority(expiringToday, NOW)[0] === 0 && priority(expiringTomorrow, NOW)[0] === 1,
+  `${priority(expiringToday, NOW)[0]} vs ${priority(expiringTomorrow, NOW)[0]}`);
 
 // ---------------------------------------------------------------------------
 console.log('\n=== TEST 2 (deliberate failure): a captured winningPrice must drop the row out of tier 0 ===\n');
