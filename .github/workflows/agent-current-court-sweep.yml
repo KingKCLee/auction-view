@@ -6,6 +6,9 @@ on:
     paths:
       - '.github/workflows/agent-current-court-sweep.yml'
       - 'safe-canonical-reconcile.js'
+      - 'laptop-worker.js'
+      - 'apply-worker-deltas.js'
+      - 'test-worker-additions.js'
   schedule:
     - cron: '7 * * * *'
   workflow_dispatch:
@@ -37,10 +40,12 @@ jobs:
           node-version: '22'
       - name: Install collector
         run: npm install --no-audit --no-fund
+      - name: Verify worker discovery addition guard
+        run: node test-worker-additions.js
       - name: Install Chromium for official browser fallback
         run: npx playwright install chromium
 
-      - name: Merge safe laptop detail deltas first
+      - name: Merge safe laptop detail and discovery deltas first
         run: npm run worker:apply || true
 
       - name: Try official current sale-notice sweep with bounded time
@@ -122,6 +127,8 @@ jobs:
           node-version: '22'
       - name: Install collector
         run: npm install --no-audit --no-fund
+      - name: Verify worker discovery addition guard
+        run: node test-worker-additions.js
       - name: Install Chromium for official browser fallback
         run: npx playwright install chromium
       - name: Retry official sale-notice sweep from a separate hosted network
