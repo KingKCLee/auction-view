@@ -1,16 +1,6 @@
-name: Auction Agent - Nationwide Current Court Sweep
+name: Auction Agent - Nationwide Current Court Sweep (manual backup)
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/agent-current-court-sweep.yml'
-      - 'safe-canonical-reconcile.js'
-      - 'laptop-worker.js'
-      - 'apply-worker-deltas.js'
-      - 'test-worker-additions.js'
-  schedule:
-    - cron: '7 * * * *'
   workflow_dispatch:
 
 permissions:
