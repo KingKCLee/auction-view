@@ -5,6 +5,13 @@ $env:WORKER_ID = "laptop"
 # inherited) goes through the gate. An un-gated court request throws instead of
 # going out, which stops a second caller from racing the first.
 $env:NODE_OPTIONS = "--require ./court-gate-enforce.js"
+# Request pacing after the 11:01 KST block of 2026-09-09. Measured that day:
+#   924 req/hour  -> blocked after 94 minutes
+#   691 req/hour  -> had run for days without a block
+# The court's limit tracks hourly volume, not the gap between calls, so the gap
+# is now 10s: about 360 req/hour, roughly half the rate that was known to survive.
+# Each item costs two requests (detail + statusReport), so this is ~180 items/hour.
+if (-not $env:COURT_MIN_INTERVAL_MS) { $env:COURT_MIN_INTERVAL_MS = "10000" }
 if (-not $env:BATCH_SIZE) { $env:BATCH_SIZE = "24" }
 
 # Post-block safe pacing. The old 3.4s minimum could approach ~900 requests/hour.

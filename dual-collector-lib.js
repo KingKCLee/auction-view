@@ -4,7 +4,8 @@ const MEANINGFUL_KEYS = new Set([
   'appraisalAgency','claimAmount','components','address','landArea','buildingArea','saleStatementAvailable',
   'statusReportAvailable','documents','documentCount','detailCheckedAt',
   'bidderCount','saleResult','expiredAt',
-  'caseProgressCode','caseClosedDivision','caseClosedDate','appraisedPrice','minimumPrice'
+  'caseProgressCode','caseClosedDivision','caseClosedDate','appraisedPrice','minimumPrice',
+  'goodsStatusCode','decisionDate'
 ]);
 
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
