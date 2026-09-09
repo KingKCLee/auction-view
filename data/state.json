@@ -4,20 +4,21 @@
   "historyMonth": 4,
   "historyPage": 1,
   "runCount": 10,
-  "lastRun": "2026-09-07T19:34:08.468Z",
-  "lastError": "history notice 2025-08 offset 0: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
+  "lastRun": "2026-09-09T08:27:24.498Z",
+  "lastError": null,
   "historyNoticeIndex": 0,
   "priorityIndex": {
     "2026-09": 2
   },
   "noticeHistoryYear": 2025,
-  "noticeHistoryMonth": 8,
+  "noticeHistoryMonth": 7,
   "noticeHistoryOffset": 0,
   "recentNoticeKeys": [
     "B000210_1001_20260908||B000210|B000210|2026-09-08|20260908|1001|1001||||",
     "B000210_1008_20260909||B000210|B000210|2026-09-09|20260909|1008|1008||||",
     "B000210_1012_20260910||B000210|B000210|2026-09-10|20260910|1012|1012||||",
-    "B000210_1021_20260915||B000210|B000210|2026-09-15|20260915|1021|1021||||"
+    "B000210_1021_20260915||B000210|B000210|2026-09-15|20260915|1021|1021||||",
+    "B000210_1004_20260922||B000210|B000210|2026-09-22|20260922|1004|1004||||"
   ],
   "collector": "sale-notice",
   "historyFailureCounts": {
@@ -40,7 +41,7 @@
   "propertyHistoryPage": 1,
   "propertyHistoryLastRun": "2026-09-08T23:44:16.931Z",
   "propertyHistoryLastError": "Court Auction request failed for /pgj/pgjsearch/searchControllerMain.on",
-  "lastMetricItemCount": 10667,
+  "lastMetricItemCount": 10752,
   "saleNoticeDeferred": [],
   "saleNoticeFailures": {
     "search|2026-08|B000210": 0,
@@ -59,12 +60,13 @@
     "search|2026-08|B000252": 0,
     "search|2026-08|B000253": 0,
     "search|2026-08|B250826": 0,
-    "search|2026-08|B000254": 0
+    "search|2026-08|B000254": 0,
+    "search|2026-08|B000260": 0
   },
   "saleNoticeBackfillYear": 2026,
   "saleNoticeBackfillMonth": 8,
   "saleNoticeBackfillOffset": 0,
-  "saleNoticeBackfillLastRun": "2026-09-09T07:23:13.054Z",
+  "saleNoticeBackfillLastRun": "2026-09-09T08:19:35.163Z",
   "saleNoticeBackfillLastError": null,
   "saleNoticeCourtOffsets": {
     "2026-08|B000210": -1,
@@ -82,9 +84,10 @@
     "2026-08|B000252": -1,
     "2026-08|B000253": -1,
     "2026-08|B250826": -1,
-    "2026-08|B000254": -1
+    "2026-08|B000254": -1,
+    "2026-08|B000260": -1
   },
-  "saleNoticeBackfillCourtIndex": 16,
+  "saleNoticeBackfillCourtIndex": 17,
   "currentSweepOffsets": {
     "2026-09|B000210": -1,
     "2026-09|B000211": -1,
