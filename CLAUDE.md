@@ -64,6 +64,30 @@ its whole session in `courtGate.acquire()`.
 retrying through it — retrying extends the block. `court-recovery-watch.js` checks
 once an hour with a single request and nothing else.
 
+## Secrets (violating this is treated as a top-severity incident)
+
+A token, PAT or secret string goes to Secret Manager or an untracked `.env` the
+moment it exists, and is **never written again** - not in a report, a log, a
+commit message, a comment, or terminal output. That includes the first eight
+characters: a prefix is still the secret, and it still ends up in a transcript
+that outlives the task.
+
+Refer to a secret by name only:
+
+    token: cloudflare-api-token   created: 2026-09-09   for: KV upload + Pages deploy
+
+not by any part of its value. When a command needs one, take it from the
+environment (`$CLOUDFLARE_API_TOKEN`) so the value never appears in the command
+line either, and pipe output through a redaction filter when a tool might echo it.
+
+If a secret does reach a report, a log or a chat, say so immediately and put that
+token on the revocation list in the same message. Rotating it is the only fix -
+scrubbing the file is not, because the value has already been read.
+
+Non-secrets that look like secrets: a KV namespace id, an account id and a
+project name are identifiers, not credentials. They are useless without a token
+and belong in `wrangler.toml` where deployments can find them.
+
 ## Layout
 
 | file | role |
