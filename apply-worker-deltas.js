@@ -28,11 +28,19 @@ function validAddition(row) {
     typeof row.caseNumber === 'string' && row.caseNumber;
 }
 
+function safeStateKey(key) {
+  return key.startsWith('currentSweep') ||
+    key.startsWith('saleNoticeBackfill') ||
+    key.startsWith('saleNoticeCourt') ||
+    key.startsWith('saleNoticeFailures') ||
+    key.startsWith('saleNoticeDeferred');
+}
+
 function mergeCurrentSweepState(target, patch) {
   if (!patch || typeof patch !== 'object') return 0;
   let changed = 0;
   for (const [key, value] of Object.entries(patch)) {
-    if (!key.startsWith('currentSweep')) continue;
+    if (!safeStateKey(key)) continue;
     target[key] = value;
     changed++;
   }
@@ -85,4 +93,4 @@ function main() {
 }
 
 if (require.main === module) main();
-module.exports = { validAddition, mergeCurrentSweepState, applyPayload };
+module.exports = { validAddition, safeStateKey, mergeCurrentSweepState, applyPayload };
