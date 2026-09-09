@@ -1,8 +1,10 @@
 # auction-view
 
 Court auction database built from 대한민국 법원경매정보 public data.
-Three parts only: Windows laptop (collection) / Google Cloud Run (merge + master) /
-GitHub (repository and data exchange). No Oracle, no Cloudflare.
+Windows laptop (collection) / Google Cloud Run (merge + master) / GitHub
+(repository and data exchange) / Cloudflare Pages + KV (the only thing any screen
+reads). No Oracle. Cloudflare was ruled out originally and brought back on
+2026-09-09 because ZibTok, which shows this data, runs on Cloudflare Pages.
 
 ## The rule that governs everything else
 
@@ -33,10 +35,14 @@ Two consequences, both binding:
 
 `detail-enrich.js` has **one** decision point, `priority()`:
 
-- **Tier 0** — `saleDate` is today or tomorrow (KST) **and** `winningPrice` is not
-  yet captured. These are the only rows that can be lost forever, so they come
-  before everything, most-incomplete first.
-- **Tier 1+** — the older ordering: least-enriched first, then nearest 기일.
+- **Tier 0** — `saleDate` is today (KST) **and** `winningPrice` is not yet
+  captured. These vanish tonight, so they come before everything else.
+- **Tier 1** — `saleDate` is tomorrow and no winning price. Next in line, but not
+  lost tonight, so it must not share tier 0: with both in it, a pass took 8.2
+  hours and today's cases were revisited about once before midnight.
+- **Tier 2+** — the older ordering: least-enriched first, then nearest 기일.
+
+A re-check of a tier-0 case skips the 현황조사서 request; it needs only the result.
 
 `collector-alert.js` records any case whose 기일 passed while still missing a
 winning price. That number rising means the pipeline is leaking.
@@ -100,8 +106,13 @@ and belong in `wrangler.toml` where deployments can find them.
 | `court-gate.js` / `court-gate-enforce.js` | the single door to the court |
 | `court-recovery-watch.js` | hourly one-request block check |
 | `measure-public-window.js` | measures how far the public window reaches |
+| `export-for-web.js` | canonical → the small payloads the web reads, size-capped |
+| `upload-web-export.js` | pushes those payloads into Cloudflare KV |
+| `functions/api/auction/*` | the API every screen goes through, at auction-view.pages.dev |
+| `public/` | admin progress dashboard, plus a reference search page |
 
-Tests: `npm run test:guard`, `npm run test:gate`, `npm run test:priority`.
+Tests: `npm run test:guard`, `test:gate`, `test:priority`, `test:export`,
+`test:api`, and `npm run simulate` for a dry run over canonical.
 
 ## Conventions
 
@@ -110,6 +121,7 @@ Tests: `npm run test:guard`, `npm run test:gate`, `npm run test:priority`.
 - Docker image `data/` is a build-time snapshot and is never the source of truth;
   the master job clones GitHub fresh every run.
 - GitHub Actions workflows are `workflow_dispatch` only. No cron — it cost money.
-- PATs live in Secret Manager, never in the image, source or repo.
+- PATs and API tokens live in Secret Manager, never in the image, source or repo.
+- No screen fetches `data/auctions.json`; it is 21MB. Everything reads the API.
 - Dates that matter are KST. A UTC date is a day behind for most of the Korean
   working day and moves the expiry boundary by one.
