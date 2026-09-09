@@ -1,0 +1,85 @@
+name: Auction Agent - Official Discovery Rescue
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/agent-discovery-rescue.yml'
+  schedule:
+    - cron: '37 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: court-auction-global
+  cancel-in-progress: false
+
+jobs:
+  rescue-discovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      HISTORY_COURTS_PER_RUN: '2'
+      HISTORY_NOTICES_PER_COURT: '1'
+      NODE_OPTIONS: '--dns-result-order=ipv4first'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install collector
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium for official browser fallback
+        run: npx playwright install chromium
+
+      - name: Preserve baseline and try official historical sale notices
+        run: |
+          cp data/auctions.json /tmp/before-auctions.json
+          timeout 150s npm run history:notices || true
+
+      - name: Try current official sale notices if history added nothing
+        run: |
+          added=$(node -e "const fs=require('fs');const a=JSON.parse(fs.readFileSync('/tmp/before-auctions.json'));const b=JSON.parse(fs.readFileSync('./data/auctions.json'));process.stdout.write(String(Math.max(0,b.length-a.length)))")
+          if [ "$added" = "0" ]; then
+            timeout 120s npm run collect:once || true
+          fi
+
+      - name: Fill a small basic-info batch through official case detail
+        run: BASIC_INFO_CASES=4 timeout 120s npm run basic || true
+      - name: Verify basic information integrity
+        run: npm run basic:validate
+      - name: Recalculate metrics
+        run: node metrics-corrector.js || true
+
+      - name: Reconcile additively with latest canonical and publish
+        run: |
+          cp data/auctions.json /tmp/rescue-auctions.json
+          cp data/stats.json /tmp/rescue-stats.json
+          if [ -f data/state.json ]; then cp data/state.json /tmp/rescue-state.json; else echo '{}' > /tmp/rescue-state.json; fi
+
+          git reset --hard HEAD
+          git clean -fd
+          git pull --rebase origin main
+          node safe-canonical-reconcile.js /tmp/rescue-auctions.json /tmp/rescue-stats.json /tmp/rescue-state.json
+          npm run worker:apply || true
+          npm run basic:validate
+          node metrics-corrector.js || true
+
+          rm -rf docs
+          mkdir -p docs/data
+          cp index.html progress.html styles.css app.js progress.js docs/
+          cp data/auctions.json data/stats.json docs/data/
+          if [ -d photos ]; then cp -R photos docs/photos; fi
+          touch docs/.nojekyll
+
+          git config user.name "court-auction-bot"
+          git config user.email "court-auction-bot@users.noreply.github.com"
+          git add -A data/auctions.json data/stats.json data/state.json docs data/worker-deltas 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "data: official discovery rescue $(date -u +'%Y-%m-%dT%H:%MZ')"
+            git push origin HEAD:main
+          fi
