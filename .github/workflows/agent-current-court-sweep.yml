@@ -25,6 +25,8 @@ jobs:
     env:
       CURRENT_SWEEP_COURTS: '4'
       CURRENT_SWEEP_NOTICES: '3'
+      HISTORY_COURTS_PER_RUN: '2'
+      HISTORY_NOTICES_PER_COURT: '2'
       BASIC_INFO_CASES: '4'
       NODE_OPTIONS: '--dns-result-order=ipv4first'
     steps:
@@ -50,16 +52,26 @@ jobs:
             node -e "const fs=require('fs');const p='./data/stats.json';const s=JSON.parse(fs.readFileSync(p));s.currentCourtSweep={...(s.currentCourtSweep||{}),processedNotices:0,successfulNotices:0,newUniqueItems:0,lastError:'current sale-notice sweep timed out after 150s; switching official route',finishedAt:new Date().toISOString()};fs.writeFileSync(p,JSON.stringify(s,null,2));"
           fi
 
-      - name: Fallback to official property search when notice sweep yields zero
+      - name: Advance official historical sale notices when unique discovery stalls
         run: |
-          need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; process.stdout.write(String(Number(c.successfulNotices||0)===0))")
+          need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; process.stdout.write(String(Number(c.newUniqueItems||0)===0))")
+          if [ "$need" = "true" ]; then
+            echo "current notices added no unique items; advancing official sale-notice backfill"
+            timeout 150s npm run history:notices || true
+          else
+            echo "current notices added unique items; historical backfill can wait"
+          fi
+
+      - name: Fallback to official property search when both notice routes add no unique items
+        run: |
+          need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; const b=s.saleNoticeBackfill||{}; process.stdout.write(String(Number(c.newUniqueItems||0)===0 && Number(b.newUniqueItems||0)===0))")
           if [ "$need" = "true" ]; then
             timeout 120s npm run history:property || true
           fi
 
-      - name: Fallback to official sale-notice discovery when both discovery paths yield zero
+      - name: Fallback to official sale-notice discovery when discovery remains empty
         run: |
-          need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; const h=s.latestHistoryPropertyRun||{}; process.stdout.write(String(Number(c.successfulNotices||0)===0 && Number(h.returned||0)===0))")
+          need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; const b=s.saleNoticeBackfill||{}; const h=s.latestHistoryPropertyRun||{}; process.stdout.write(String(Number(c.newUniqueItems||0)===0 && Number(b.newUniqueItems||0)===0 && Number(h.newUniqueItems||0)===0))")
           if [ "$need" = "true" ]; then
             timeout 120s npm run collect:once || true
           fi
@@ -76,7 +88,7 @@ jobs:
       - name: Decide whether a second hosted network should retry discovery
         id: health
         run: |
-          need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; const h=s.latestHistoryPropertyRun||{}; const r=s.latestRun||{}; process.stdout.write(String(Number(c.successfulNotices||0)===0 && Number(h.returned||0)===0 && Number(r.items_found||0)===0))")
+          need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; const b=s.saleNoticeBackfill||{}; const h=s.latestHistoryPropertyRun||{}; const r=s.latestRun||{}; process.stdout.write(String(Number(c.newUniqueItems||0)===0 && Number(b.newUniqueItems||0)===0 && Number(h.newUniqueItems||0)===0 && Number(r.newUniqueItems||r.items_saved||0)===0))")
           echo "needs_rescue=$need" >> "$GITHUB_OUTPUT"
 
       - name: Reconcile with latest canonical and publish additively
@@ -85,10 +97,6 @@ jobs:
           cp data/stats.json /tmp/collector-stats.json
           if [ -f data/state.json ]; then cp data/state.json /tmp/collector-state.json; else echo '{}' > /tmp/collector-state.json; fi
 
-          # worker:apply intentionally deletes consumed delta files, leaving a dirty tree.
-          # Collector results are already preserved in /tmp, so restore a clean canonical
-          # checkout before rebasing. After reconcile, apply the latest canonical deltas
-          # once more so their deletions are committed and they cannot be replayed forever.
           git reset --hard HEAD
           git clean -fd
           test -z "$(git status --porcelain)"
@@ -121,6 +129,8 @@ jobs:
     env:
       CURRENT_SWEEP_COURTS: '4'
       CURRENT_SWEEP_NOTICES: '3'
+      HISTORY_COURTS_PER_RUN: '2'
+      HISTORY_NOTICES_PER_COURT: '2'
       BASIC_INFO_CASES: '4'
       NODE_OPTIONS: '--dns-result-order=ipv4first'
     steps:
@@ -138,9 +148,15 @@ jobs:
         run: npx playwright install chromium
       - name: Retry official sale-notice sweep from a separate hosted network
         run: npm run sweep:current || true
-      - name: Retry official property search if notices still yield zero
+      - name: Advance official historical sale notices if current route is still stagnant
         run: |
-          need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; process.stdout.write(String(Number(c.successfulNotices||0)===0))")
+          need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; process.stdout.write(String(Number(c.newUniqueItems||0)===0))")
+          if [ "$need" = "true" ]; then
+            gtimeout 150s npm run history:notices || npm run history:notices || true
+          fi
+      - name: Retry official property search if both notice routes remain stagnant
+        run: |
+          need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; const b=s.saleNoticeBackfill||{}; process.stdout.write(String(Number(c.newUniqueItems||0)===0 && Number(b.newUniqueItems||0)===0))")
           if [ "$need" = "true" ]; then
             gtimeout 120s npm run history:property || npm run history:property || true
           fi
