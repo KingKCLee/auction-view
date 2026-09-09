@@ -25,6 +25,8 @@ jobs:
     env:
       HISTORY_COURTS_PER_RUN: '2'
       HISTORY_NOTICES_PER_COURT: '1'
+      CURRENT_SWEEP_COURTS: '4'
+      CURRENT_SWEEP_NOTICES: '2'
       NODE_OPTIONS: '--dns-result-order=ipv4first'
     steps:
       - uses: actions/checkout@v4
@@ -48,6 +50,13 @@ jobs:
           added=$(node -e "const fs=require('fs');const a=JSON.parse(fs.readFileSync('/tmp/before-auctions.json'));const b=JSON.parse(fs.readFileSync('./data/auctions.json'));process.stdout.write(String(Math.max(0,b.length-a.length)))")
           if [ "$added" = "0" ]; then
             timeout 120s npm run collect:once || true
+          fi
+
+      - name: Sweep other current courts if generic notice route is duplicate-only
+        run: |
+          added=$(node -e "const fs=require('fs');const a=JSON.parse(fs.readFileSync('/tmp/before-auctions.json'));const b=JSON.parse(fs.readFileSync('./data/auctions.json'));process.stdout.write(String(Math.max(0,b.length-a.length)))")
+          if [ "$added" = "0" ]; then
+            timeout 150s npm run sweep:current || true
           fi
 
       - name: Decide whether another official runner should take over discovery
@@ -104,6 +113,8 @@ jobs:
     env:
       HISTORY_COURTS_PER_RUN: '2'
       HISTORY_NOTICES_PER_COURT: '1'
+      CURRENT_SWEEP_COURTS: '4'
+      CURRENT_SWEEP_NOTICES: '2'
       NODE_OPTIONS: '--dns-result-order=ipv4first'
     steps:
       - uses: actions/checkout@v4
@@ -125,6 +136,12 @@ jobs:
           added=$(node -e "const fs=require('fs');const a=JSON.parse(fs.readFileSync('/tmp/before-auctions.json'));const b=JSON.parse(fs.readFileSync('./data/auctions.json'));process.stdout.write(String(Math.max(0,b.length-a.length)))")
           if [ "$added" = "0" ]; then
             npm run collect:once || true
+          fi
+      - name: Sweep other current courts from macOS if still duplicate-only
+        run: |
+          added=$(node -e "const fs=require('fs');const a=JSON.parse(fs.readFileSync('/tmp/before-auctions.json'));const b=JSON.parse(fs.readFileSync('./data/auctions.json'));process.stdout.write(String(Math.max(0,b.length-a.length)))")
+          if [ "$added" = "0" ]; then
+            npm run sweep:current || true
           fi
       - name: Fill basic information through official case detail on macOS
         run: BASIC_INFO_CASES=4 npm run basic || true
