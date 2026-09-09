@@ -2,10 +2,12 @@ const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
 const { buildPatch, applyPatch } = require('./dual-collector-lib');
+const gate = require('./court-gate');
 
 const ROOT = __dirname;
 const DATA = path.join(ROOT, 'data', 'auctions.json');
 const STATS = path.join(ROOT, 'data', 'stats.json');
+const STATE = path.join(ROOT, 'data', 'state.json');
 const STATUS = path.join(ROOT, 'data', 'laptop-status.json');
 const DELTAS = path.join(ROOT, 'data', 'worker-deltas');
 const OUTDIR = path.join(DELTAS, process.env.WORKER_ID || 'laptop');
@@ -21,7 +23,7 @@ function setStatus(patch){
 }
 
 function restore(file, content) {
-  if (content == null) return;
+  if (content == null) { try { fs.unlinkSync(file); } catch {} return; }
   fs.writeFileSync(file, content);
 }
 
@@ -40,12 +42,16 @@ function listDeltaFiles(dir) {
 function applyPendingDeltas(rows) {
   const map = new Map(rows.map(r => [r.id, r]));
   const seenIds = new Set();
-  let files = 0, patches = 0;
+  let files = 0, patches = 0, additions = 0;
   for (const file of listDeltaFiles(DELTAS)) {
     let payload;
     try { payload = JSON.parse(fs.readFileSync(file, 'utf8')); }
     catch { continue; }
     files++;
+    for (const add of payload.additions || []) {
+      if (!add?.id || map.has(add.id)) continue;
+      const row={...add}; rows.push(row); map.set(row.id,row); additions++;
+    }
     for (const patch of payload.patches || []) {
       if (patch?.id) seenIds.add(patch.id);
       const row = map.get(patch.id);
@@ -54,7 +60,7 @@ function applyPendingDeltas(rows) {
       patches++;
     }
   }
-  return { files, patches, seenIds };
+  return { files, patches, additions, seenIds };
 }
 
 function recentlyChecked(row) {
@@ -63,10 +69,6 @@ function recentlyChecked(row) {
   return Date.now() - t < RECENT_SKIP_HOURS * 3600000;
 }
 
-// A case whose 기일 is today has no result to read in the morning - the auction
-// has not happened yet - and it is gone from the source tomorrow. So it must stay
-// re-checkable all day, which means neither the 12h recheck skip nor the
-// pending-delta skip may exclude it until the winning price is actually in hand.
 const KST_MS = 9 * 3600000;
 const kstDay = ms => new Date(ms + KST_MS).toISOString().slice(0, 10);
 const RECHECK_MIN_GAP_MS = Number(process.env.EXPIRING_RECHECK_MINUTES || 45) * 60000;
@@ -78,11 +80,34 @@ function expiringUncaptured(row) {
   return (sd === kstDay(now) || sd === kstDay(now + 86400000)) && !Number(row.winningPrice || 0);
 }
 
-// Still leave a gap, so one stubborn case cannot be hammered every cycle.
 function recheckedTooRecently(row) {
   const t = Date.parse(row.detailCheckedAt || '');
   if (!Number.isFinite(t)) return false;
   return Date.now() - t < RECHECK_MIN_GAP_MS;
+}
+
+const SAFE_ADD_KEYS = [
+  'id','courtCode','courtName','caseNumber','itemNumber','usage','address','regionSido','regionSigungu',
+  'buildingName','appraisedPrice','minimumPrice','failedCount','saleDate','decisionDate','status',
+  'winningPrice','winningDate','winningRatio','photoCount','documentCount','eventCount','coverage',
+  'firstSeenAt','lastSeenAt','source'
+];
+function sanitizeAddition(row){
+  const out={}; for(const k of SAFE_ADD_KEYS) if(row[k]!==undefined) out[k]=row[k];
+  out.events=[]; out.components=[]; out.documents=[]; out.buildingList=[]; out.areaList=[]; out.landCategoryList=[];
+  return out;
+}
+function sweepStatePatch(state){
+  const out={}; for(const [k,v] of Object.entries(state||{})) if(k.startsWith('currentSweep')) out[k]=v;
+  return out;
+}
+function mergePatches(list){
+  const byId=new Map();
+  for(const p of list.filter(Boolean)){
+    const prev=byId.get(p.id)||{id:p.id,set:{}};
+    prev.set={...prev.set,...(p.set||{})}; byId.set(p.id,prev);
+  }
+  return [...byId.values()].filter(p=>Object.keys(p.set).length);
 }
 
 function main() {
@@ -93,18 +118,41 @@ function main() {
 
   const dataBackup = fs.readFileSync(DATA);
   const statsBackup = fs.existsSync(STATS) ? fs.readFileSync(STATS) : null;
+  const stateBackup = fs.existsSync(STATE) ? fs.readFileSync(STATE) : null;
+  const statsBefore = readJson(STATS)||{};
 
-  const effectiveRows = JSON.parse(dataBackup.toString('utf8'));
+  let effectiveRows = JSON.parse(dataBackup.toString('utf8'));
   const pending = applyPendingDeltas(effectiveRows);
-  if (pending.patches) {
-    console.log(`[laptop-worker] pending deltas applied locally: files=${pending.files} patches=${pending.patches}`);
+  if (pending.patches || pending.additions) {
+    console.log(`[laptop-worker] pending deltas applied locally: files=${pending.files} patches=${pending.patches} additions=${pending.additions}`);
+  }
+
+  let discoveryAdditions=[], discoveryPatches=[], statePatch={}, discoveryStatus='skipped';
+  const hostedStalled = Number(statsBefore?.lastCollectorCycle?.newUniqueItems||0)===0 &&
+    Number(statsBefore?.currentCourtSweep?.successfulNotices||0)===0;
+  if (hostedStalled && !gate.status().blocked) {
+    setStatus({phase:'discovering',message:'클라우드 신규수집 정체 감지 · 공식 매각공고를 노트북 경로에서 소량 재시도'});
+    const baseMap=new Map(effectiveRows.map(r=>[r.id,r]));
+    writeJson(DATA,effectiveRows);
+    const env={...process.env,CURRENT_SWEEP_COURTS:'2',CURRENT_SWEEP_NOTICES:'1'};
+    const d=spawnSync(process.execPath,['current-court-sweep.js'],{cwd:ROOT,stdio:'inherit',env,timeout:90000,killSignal:'SIGTERM'});
+    const after=readJson(DATA)||effectiveRows;
+    const afterState=readJson(STATE)||{};
+    discoveryAdditions=after.filter(r=>!baseMap.has(r.id)).map(sanitizeAddition);
+    discoveryPatches=after.filter(r=>baseMap.has(r.id)).map(r=>buildPatch(baseMap.get(r.id),r)).filter(Boolean);
+    statePatch=sweepStatePatch(afterState);
+    effectiveRows=after;
+    discoveryStatus=d.error?.code==='ETIMEDOUT'?'timeout':(d.status===0?'completed':`exit ${d.status}`);
+    console.log(`[laptop-worker] discovery=${discoveryStatus} additions=${discoveryAdditions.length} patches=${discoveryPatches.length}`);
+    restore(DATA,dataBackup); restore(STATS,statsBackup); restore(STATE,stateBackup);
+  } else if (hostedStalled) {
+    discoveryStatus='court-gate-blocked';
   }
 
   let invalid = 0, pendingSkipped = 0, recentSkipped = 0;
   let expiringKept = 0, expiredSkipped = 0;
   const candidates = effectiveRows.filter(row => {
     if (!VALID_CASE.test(String(row.caseNumber || '').trim())) { invalid++; return false; }
-    // The source has already dropped these; asking again only burns the budget.
     if (row.status === 'expired') { expiredSkipped++; return false; }
     if (expiringUncaptured(row)) {
       if (recheckedTooRecently(row)) { recentSkipped++; return false; }
@@ -117,50 +165,48 @@ function main() {
   });
   writeJson(DATA, candidates);
   console.log(`[laptop-worker] candidates=${candidates.length} expiringKept=${expiringKept} expired=${expiredSkipped} skipped malformed=${invalid} pending=${pendingSkipped} recent=${recentSkipped}`);
-  setStatus({phase:'collecting_details',message:`법원 상세정보 ${Math.min(Number(BATCH_SIZE),candidates.length)}건을 조회 중`,candidates:candidates.length,expiringKept,expiredSkipped,skippedMalformed:invalid,pendingSkipped,recentSkipped,pendingFiles:pending.files,pendingPatches:pending.patches});
+  setStatus({phase:'collecting_details',message:`법원 상세정보 ${Math.min(Number(BATCH_SIZE),candidates.length)}건을 조회 중`,candidates:candidates.length,expiringKept,expiredSkipped,skippedMalformed:invalid,pendingSkipped,recentSkipped,pendingFiles:pending.files,pendingPatches:pending.patches,discoveryStatus,discoveryAdditions:discoveryAdditions.length});
 
   const beforeRows = JSON.parse(fs.readFileSync(DATA, 'utf8'));
   const before = new Map(beforeRows.map(r => [r.id, r]));
-
   const env = { ...process.env, BATCH_SIZE, SHARD_COUNT: '1', SHARD_INDEX: '0' };
-  const run = spawnSync(process.execPath, ['retry-worker.js', 'details'], {
-    cwd: ROOT,
-    stdio: 'inherit',
-    env
-  });
+  const run = spawnSync(process.execPath, ['retry-worker.js', 'details'], { cwd: ROOT, stdio: 'inherit', env });
 
-  let patches = [];
+  let detailPatches = [];
   let lastRun = null;
   try {
     const afterRows = JSON.parse(fs.readFileSync(DATA, 'utf8'));
-    patches = afterRows.map(r => buildPatch(before.get(r.id) || {}, r)).filter(Boolean);
+    detailPatches = afterRows.map(r => buildPatch(before.get(r.id) || {}, r)).filter(Boolean);
     lastRun = readJson(STATS)?.latestDetailRun || null;
   } finally {
-    restore(DATA, dataBackup);
-    restore(STATS, statsBackup);
+    restore(DATA, dataBackup); restore(STATS, statsBackup); restore(STATE, stateBackup);
   }
 
+  const patches=mergePatches([...discoveryPatches,...detailPatches]);
   const finishedAt=new Date().toISOString();
-  if (!patches.length) {
-    console.log('[laptop-worker] patches=0; nothing to publish');
-    setStatus({phase:run.status?'error':'completed',message:run.status?'이번 회차 상세수집에서 오류 발생':'이번 회차 조회 완료 · 새로 바뀐 필드 없음',finishedAt,lastRun,lastPatchCount:0,error:run.status?`exit ${run.status}`:null});
+  if (!patches.length && !discoveryAdditions.length) {
+    console.log('[laptop-worker] no additions or patches; nothing to publish');
+    setStatus({phase:run.status?'error':'completed',message:run.status?'이번 회차 상세수집에서 오류 발생':'이번 회차 조회 완료 · 새로 바뀐 필드 없음',finishedAt,lastRun,lastPatchCount:0,discoveryStatus,error:run.status?`exit ${run.status}`:null});
     if (run.status) process.exitCode = run.status;
     return;
   }
 
   const stamp = new Date().toISOString().replace(/[:.]/g, '-');
   const payload = {
-    version: 1,
+    version: 2,
     worker: process.env.WORKER_ID || 'laptop',
     createdAt: new Date().toISOString(),
     batchSize: Number(BATCH_SIZE),
     exitCode: run.status ?? 0,
-    patches
+    discoveryStatus,
+    additions: discoveryAdditions,
+    patches,
+    statePatch
   };
   const out = path.join(OUTDIR, `${stamp}-${process.pid}.json`);
   writeJson(out, payload);
-  console.log(`[laptop-worker] patches=${patches.length} file=${path.relative(ROOT, out)}`);
-  setStatus({phase:run.status?'error':'completed',message:`이번 회차 완료 · ${patches.length}건 변경사항 생성`,finishedAt,lastRun,lastPatchCount:patches.length,lastPatchFile:path.relative(ROOT,out),error:run.status?`exit ${run.status}`:null});
+  console.log(`[laptop-worker] additions=${discoveryAdditions.length} patches=${patches.length} file=${path.relative(ROOT, out)}`);
+  setStatus({phase:run.status?'error':'completed',message:`이번 회차 완료 · 신규 ${discoveryAdditions.length}건 · 변경 ${patches.length}건`,finishedAt,lastRun,lastPatchCount:patches.length,lastAdditionCount:discoveryAdditions.length,lastPatchFile:path.relative(ROOT,out),discoveryStatus,error:run.status?`exit ${run.status}`:null});
 }
 
 try{main()}catch(e){setStatus({phase:'error',message:'노트북 수집기 실행 오류',error:String(e?.message||e),finishedAt:new Date().toISOString()});throw e;}
