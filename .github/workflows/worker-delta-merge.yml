@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'data/worker-deltas/**'
+      - '.github/workflows/worker-delta-merge.yml'
   workflow_dispatch:
 
 permissions:
