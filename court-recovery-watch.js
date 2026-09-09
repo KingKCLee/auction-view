@@ -50,9 +50,18 @@ async function main() {
   const history = readJson(LOG, { checks: [] });
   const latchedBefore = gate.status().blocked;
 
+  // Only meaningful while the gate is shut. Probing a healthy system just competes
+  // with the collector for the lock, and on 2026-09-09 the resulting COURT_BUSY was
+  // mistaken for a block and latched the gate mid-morning - stopping collection on
+  // the one day those winning prices were there to take.
+  if (!latchedBefore) {
+    console.log(JSON.stringify({ at: startedAt, skipped: 'gate is open; nothing to check' }, null, 2));
+    return;
+  }
+
   // Lift the latch only for this one probe, so the gate's own refusal cannot make
   // recovery undetectable. It goes straight back on unless the probe truly passes.
-  if (latchedBefore) gate.clearLatch();
+  gate.clearLatch();
 
   let entry;
   try {
@@ -105,20 +114,21 @@ async function main() {
       stillBlocked: !!nowBlocked || blockedBody,
       note: ok ? 'case detail came back populated' : 'case detail still refused or empty'
     };
-    if (!ok && !gate.status().blocked) {
-      gate.latch(latchedBefore ? latchedBefore.reason : `probe returned ${keys} keys`, 'court-recovery-watch');
-    }
+    // Only ever restore the latch that was already there. This probe never
+    // invents a new reason to shut the gate.
+    if (!ok && !gate.status().blocked) gate.latch(latchedBefore.reason, 'court-recovery-watch');
   } catch (e) {
+    // COURT_BUSY / COURT_UNGATED are our own plumbing, not the court refusing.
+    const localFault = e.code === 'COURT_BUSY' || e.code === 'COURT_UNGATED';
     entry = {
       at: startedAt,
       probe: DETAIL_PATH,
       recovered: false,
+      inconclusive: localFault || undefined,
       error: `${e.code || ''}:${e.message || e}`.slice(0, 300),
-      note: 'case detail still refused'
+      note: localFault ? 'could not test - the gate was in use' : 'case detail still refused'
     };
-    if (!gate.status().blocked) {
-      gate.latch(latchedBefore ? latchedBefore.reason : String(e.message || e), 'court-recovery-watch');
-    }
+    if (!gate.status().blocked) gate.latch(latchedBefore.reason, 'court-recovery-watch');
   }
 
   if (entry.recovered && AUTO_RESUME) {

@@ -245,6 +245,36 @@ check('test5 nested acquire did not deadlock', /inner ran/.test(nested.out));
 check('test5 nested call still paced (>=3s)', nested.status === 0, nested.out.trim());
 
 // ---------------------------------------------------------------------------
+console.log('\n=== TEST 6 (deliberate failure): a local fault must never latch the gate ===\n');
+
+const dir7 = gateDir('local-fault');
+const localFault = runNode(`
+const gate = require(${GATE_JS});
+gate.latch('court gate held by pid 123 (detail-enrich:/pgj/x)', 'test');
+console.log('after busy message: ' + JSON.stringify(gate.status().blocked));
+if (gate.status().blocked) { console.error('LATCHED ON A LOCAL FAULT'); process.exit(1); }
+gate.latch('ipcheck=false in court response', 'test');
+if (!gate.status().blocked) { console.error('FAILED TO LATCH ON A REAL BLOCK'); process.exit(2); }
+console.log('real block still latches: ' + gate.status().blocked.reason);
+process.exit(0);
+`, { COURT_GATE_DIR: dir7 });
+
+console.log(localFault.out.trim());
+check('test6 a COURT_BUSY message does not latch', localFault.status === 0, `got ${localFault.status}`);
+check('test6 a real block still latches', /ipcheck=false in court response/.test(localFault.out));
+
+// The recovery probe must do nothing while the gate is open, or it races the
+// collector for the lock and reads losing that race as a block.
+const dir8 = gateDir('recovery-noop');
+const noop = spawnSync(process.execPath, [path.join(ROOT, 'court-recovery-watch.js')], {
+  cwd: ROOT, encoding: 'utf8', env: { ...process.env, COURT_GATE_DIR: dir8 }
+});
+const noopOut = `${noop.stdout || ''}${noop.stderr || ''}`;
+console.log(noopOut.trim());
+check('test6 recovery watch is a no-op while the gate is open',
+  /nothing to check/.test(noopOut), noopOut.trim().slice(0, 120));
+
+// ---------------------------------------------------------------------------
 console.log(`\n=== ${failures ? `${failures} CHECK(S) FAILED` : 'ALL CHECKS PASSED'} ===`);
 try { fs.rmSync(TMP, { recursive: true, force: true }); } catch {}
 process.exitCode = failures ? 1 : 0;

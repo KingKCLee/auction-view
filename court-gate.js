@@ -64,7 +64,17 @@ function alive(pid) {
   try { process.kill(pid, 0); return true; } catch (e) { return e.code === 'EPERM'; }
 }
 
+// COURT_BUSY and COURT_UNGATED describe our own plumbing, never the court.
+// Latching on one shuts collection down for a reason the court never gave, which
+// is exactly what happened on 2026-09-09 when a recovery probe lost the lock race
+// against the collector and read that as a block.
+const LOCAL_FAULT = /court gate held by|ungated court request|court gate is latched/i;
+
 function latch(reason, where) {
+  if (LOCAL_FAULT.test(String(reason))) {
+    console.error(`[court-gate] refusing to latch on a local fault: ${String(reason).slice(0, 120)}`);
+    return null;
+  }
   const s = readState();
   s.blocked = { reason: String(reason).slice(0, 500), where: where || null, at: new Date().toISOString() };
   writeJson(STATE, s);
