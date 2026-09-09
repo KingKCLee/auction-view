@@ -1,7 +1,9 @@
-name: Auction Agent - Nationwide Current Court Sweep (manual backup)
+name: Auction Agent - Nationwide Current Court Sweep (safe backup)
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '17 * * * *'
 
 permissions:
   contents: write
