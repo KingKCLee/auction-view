@@ -119,15 +119,15 @@ jobs:
       - name: Try historical official sale notices from macOS
         run: |
           cp data/auctions.json /tmp/before-auctions.json
-          timeout 150s npm run history:notices || true
+          npm run history:notices || true
       - name: Try current official sale notices from macOS if history added nothing
         run: |
           added=$(node -e "const fs=require('fs');const a=JSON.parse(fs.readFileSync('/tmp/before-auctions.json'));const b=JSON.parse(fs.readFileSync('./data/auctions.json'));process.stdout.write(String(Math.max(0,b.length-a.length)))")
           if [ "$added" = "0" ]; then
-            timeout 120s npm run collect:once || true
+            npm run collect:once || true
           fi
       - name: Fill basic information through official case detail on macOS
-        run: BASIC_INFO_CASES=4 timeout 120s npm run basic || true
+        run: BASIC_INFO_CASES=4 npm run basic || true
       - name: Verify basic information integrity
         run: npm run basic:validate
       - name: Recalculate metrics
