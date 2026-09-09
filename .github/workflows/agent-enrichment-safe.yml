@@ -1,0 +1,78 @@
+name: Auction Agent - Safe Official Enrichment
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/agent-enrichment-safe.yml'
+      - 'basic-info-enrich.js'
+      - 'detail-enrich.js'
+      - 'validate-basic-info.js'
+      - 'metrics-corrector.js'
+      - 'package.json'
+  schedule:
+    - cron: '37 */3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: court-auction-global
+  cancel-in-progress: false
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      NODE_OPTIONS: '--dns-result-order=ipv4first'
+      BASIC_INFO_CASES: '8'
+      SHARD_COUNT: '3'
+      BATCH_SIZE: '2'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install collector
+        run: npm install --no-audit --no-fund
+
+      - name: Fill missing basic information through official case detail
+        run: timeout 150s npm run basic || true
+
+      - name: Enrich official detail shard 1
+        env:
+          SHARD_INDEX: '0'
+        run: timeout 150s npm run details:once || true
+      - name: Enrich official detail shard 2
+        env:
+          SHARD_INDEX: '1'
+        run: timeout 150s npm run details:once || true
+      - name: Enrich official detail shard 3
+        env:
+          SHARD_INDEX: '2'
+        run: timeout 150s npm run details:once || true
+
+      - name: Verify basic information integrity
+        run: npm run basic:validate
+      - name: Recalculate metrics
+        run: node metrics-corrector.js || true
+
+      - name: Publish only normalized data and derived metadata
+        run: |
+          rm -rf docs
+          mkdir -p docs/data
+          cp index.html progress.html styles.css app.js progress.js docs/
+          cp data/auctions.json data/stats.json docs/data/
+          touch docs/.nojekyll
+          git config user.name "court-auction-bot"
+          git config user.email "court-auction-bot@users.noreply.github.com"
+          git add data/auctions.json data/stats.json data/state.json docs
+          if ! git diff --cached --quiet; then
+            git commit -m "data: privacy-safe official enrichment $(date -u +'%Y-%m-%dT%H:%MZ')"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
