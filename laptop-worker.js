@@ -97,8 +97,11 @@ function sanitizeAddition(row){
   out.events=[]; out.components=[]; out.documents=[]; out.buildingList=[]; out.areaList=[]; out.landCategoryList=[];
   return out;
 }
-function sweepStatePatch(state){
-  const out={}; for(const [k,v] of Object.entries(state||{})) if(k.startsWith('currentSweep')) out[k]=v;
+function safeDiscoveryStatePatch(state){
+  const out={};
+  for(const [k,v] of Object.entries(state||{})){
+    if(k.startsWith('currentSweep') || k.startsWith('saleNoticeBackfill') || k.startsWith('saleNoticeCourt') || k.startsWith('saleNoticeFailures') || k.startsWith('saleNoticeDeferred')) out[k]=v;
+  }
   return out;
 }
 function mergePatches(list){
@@ -108,6 +111,21 @@ function mergePatches(list){
     prev.set={...prev.set,...(p.set||{})}; byId.set(p.id,prev);
   }
   return [...byId.values()].filter(p=>Object.keys(p.set).length);
+}
+
+function runDiscoveryWorker(script, effectiveRows, dataBackup, statsBackup, stateBackup, envPatch){
+  const baseMap=new Map(effectiveRows.map(r=>[r.id,r]));
+  writeJson(DATA,effectiveRows);
+  const env={...process.env,...envPatch};
+  const d=spawnSync(process.execPath,[script],{cwd:ROOT,stdio:'inherit',env,timeout:90000,killSignal:'SIGTERM'});
+  const after=readJson(DATA)||effectiveRows;
+  const afterState=readJson(STATE)||{};
+  const additions=after.filter(r=>!baseMap.has(r.id)).map(sanitizeAddition);
+  const patches=after.filter(r=>baseMap.has(r.id)).map(r=>buildPatch(baseMap.get(r.id),r)).filter(Boolean);
+  const statePatch=safeDiscoveryStatePatch(afterState);
+  const status=d.error?.code==='ETIMEDOUT'?'timeout':(d.status===0?'completed':`exit ${d.status}`);
+  restore(DATA,dataBackup); restore(STATS,statsBackup); restore(STATE,stateBackup);
+  return {after,additions,patches,statePatch,status};
 }
 
 function main() {
@@ -132,19 +150,25 @@ function main() {
     Number(statsBefore?.currentCourtSweep?.successfulNotices||0)===0;
   if (hostedStalled && !gate.status().blocked) {
     setStatus({phase:'discovering',message:'클라우드 신규수집 정체 감지 · 공식 매각공고를 노트북 경로에서 소량 재시도'});
-    const baseMap=new Map(effectiveRows.map(r=>[r.id,r]));
-    writeJson(DATA,effectiveRows);
-    const env={...process.env,CURRENT_SWEEP_COURTS:'2',CURRENT_SWEEP_NOTICES:'1'};
-    const d=spawnSync(process.execPath,['current-court-sweep.js'],{cwd:ROOT,stdio:'inherit',env,timeout:90000,killSignal:'SIGTERM'});
-    const after=readJson(DATA)||effectiveRows;
-    const afterState=readJson(STATE)||{};
-    discoveryAdditions=after.filter(r=>!baseMap.has(r.id)).map(sanitizeAddition);
-    discoveryPatches=after.filter(r=>baseMap.has(r.id)).map(r=>buildPatch(baseMap.get(r.id),r)).filter(Boolean);
-    statePatch=sweepStatePatch(afterState);
-    effectiveRows=after;
-    discoveryStatus=d.error?.code==='ETIMEDOUT'?'timeout':(d.status===0?'completed':`exit ${d.status}`);
-    console.log(`[laptop-worker] discovery=${discoveryStatus} additions=${discoveryAdditions.length} patches=${discoveryPatches.length}`);
-    restore(DATA,dataBackup); restore(STATS,statsBackup); restore(STATE,stateBackup);
+    const current=runDiscoveryWorker('current-court-sweep.js',effectiveRows,dataBackup,statsBackup,stateBackup,{CURRENT_SWEEP_COURTS:'2',CURRENT_SWEEP_NOTICES:'1'});
+    effectiveRows=current.after;
+    discoveryAdditions.push(...current.additions);
+    discoveryPatches.push(...current.patches);
+    statePatch={...statePatch,...current.statePatch};
+    discoveryStatus=`current:${current.status}`;
+    console.log(`[laptop-worker] current discovery=${current.status} additions=${current.additions.length} patches=${current.patches.length}`);
+
+    const historyBlocked = statsBefore?.history?.blocked === true || statsBefore?.latestHistoryPropertyRun?.status === 'partial';
+    if (current.additions.length===0 && historyBlocked) {
+      setStatus({phase:'discovering_history',message:'최신 공고에서 신규 0건 · 공식 과거 매각공고를 노트북 경로로 소량 백필'});
+      const history=runDiscoveryWorker('sale-notice-history-worker.js',effectiveRows,dataBackup,statsBackup,stateBackup,{HISTORY_COURTS_PER_RUN:'1',HISTORY_NOTICES_PER_COURT:'1'});
+      effectiveRows=history.after;
+      discoveryAdditions.push(...history.additions);
+      discoveryPatches.push(...history.patches);
+      statePatch={...statePatch,...history.statePatch};
+      discoveryStatus+=`|history:${history.status}`;
+      console.log(`[laptop-worker] history discovery=${history.status} additions=${history.additions.length} patches=${history.patches.length}`);
+    }
   } else if (hostedStalled) {
     discoveryStatus='court-gate-blocked';
   }
@@ -183,8 +207,9 @@ function main() {
   }
 
   const patches=mergePatches([...discoveryPatches,...detailPatches]);
+  const uniqueAdditions=[...new Map(discoveryAdditions.filter(x=>x?.id).map(x=>[x.id,x])).values()];
   const finishedAt=new Date().toISOString();
-  if (!patches.length && !discoveryAdditions.length) {
+  if (!patches.length && !uniqueAdditions.length) {
     console.log('[laptop-worker] no additions or patches; nothing to publish');
     setStatus({phase:run.status?'error':'completed',message:run.status?'이번 회차 상세수집에서 오류 발생':'이번 회차 조회 완료 · 새로 바뀐 필드 없음',finishedAt,lastRun,lastPatchCount:0,discoveryStatus,error:run.status?`exit ${run.status}`:null});
     if (run.status) process.exitCode = run.status;
@@ -199,14 +224,14 @@ function main() {
     batchSize: Number(BATCH_SIZE),
     exitCode: run.status ?? 0,
     discoveryStatus,
-    additions: discoveryAdditions,
+    additions: uniqueAdditions,
     patches,
     statePatch
   };
   const out = path.join(OUTDIR, `${stamp}-${process.pid}.json`);
   writeJson(out, payload);
-  console.log(`[laptop-worker] additions=${discoveryAdditions.length} patches=${patches.length} file=${path.relative(ROOT, out)}`);
-  setStatus({phase:run.status?'error':'completed',message:`이번 회차 완료 · 신규 ${discoveryAdditions.length}건 · 변경 ${patches.length}건`,finishedAt,lastRun,lastPatchCount:patches.length,lastAdditionCount:discoveryAdditions.length,lastPatchFile:path.relative(ROOT,out),discoveryStatus,error:run.status?`exit ${run.status}`:null});
+  console.log(`[laptop-worker] additions=${uniqueAdditions.length} patches=${patches.length} file=${path.relative(ROOT, out)}`);
+  setStatus({phase:run.status?'error':'completed',message:`이번 회차 완료 · 신규 ${uniqueAdditions.length}건 · 변경 ${patches.length}건`,finishedAt,lastRun,lastPatchCount:patches.length,lastAdditionCount:uniqueAdditions.length,lastPatchFile:path.relative(ROOT,out),discoveryStatus,error:run.status?`exit ${run.status}`:null});
 }
 
 try{main()}catch(e){setStatus({phase:'error',message:'노트북 수집기 실행 오류',error:String(e?.message||e),finishedAt:new Date().toISOString()});throw e;}
