@@ -100,7 +100,7 @@ function sanitizeAddition(row){
 function safeDiscoveryStatePatch(state){
   const out={};
   for(const [k,v] of Object.entries(state||{})){
-    if(k.startsWith('currentSweep') || k.startsWith('saleNoticeBackfill') || k.startsWith('saleNoticeCourt') || k.startsWith('saleNoticeFailures') || k.startsWith('saleNoticeDeferred')) out[k]=v;
+    if(k.startsWith('currentSweep') || k.startsWith('saleNoticeBackfill') || k.startsWith('saleNoticeCourt') || k.startsWith('saleNoticeFailures') || k.startsWith('saleNoticeDeferred') || k.startsWith('propertyHistory')) out[k]=v;
   }
   return out;
 }
@@ -146,8 +146,9 @@ function main() {
   }
 
   let discoveryAdditions=[], discoveryPatches=[], statePatch={}, discoveryStatus='skipped';
-  const hostedStalled = Number(statsBefore?.lastCollectorCycle?.newUniqueItems||0)===0 &&
-    Number(statsBefore?.currentCourtSweep?.successfulNotices||0)===0;
+  // Unique discovery is the success signal. A notice request can succeed while returning only duplicates,
+  // so successfulNotices must never suppress stall recovery.
+  const hostedStalled = Number(statsBefore?.lastCollectorCycle?.newUniqueItems||0)===0;
   if (hostedStalled && !gate.status().blocked) {
     setStatus({phase:'discovering',message:'클라우드 신규수집 정체 감지 · 공식 매각공고를 노트북 경로에서 소량 재시도'});
     const current=runDiscoveryWorker('current-court-sweep.js',effectiveRows,dataBackup,statsBackup,stateBackup,{CURRENT_SWEEP_COURTS:'2',CURRENT_SWEEP_NOTICES:'1'});
@@ -158,16 +159,30 @@ function main() {
     discoveryStatus=`current:${current.status}`;
     console.log(`[laptop-worker] current discovery=${current.status} additions=${current.additions.length} patches=${current.patches.length}`);
 
-    const historyBlocked = statsBefore?.history?.blocked === true || statsBefore?.latestHistoryPropertyRun?.status === 'partial';
-    if (current.additions.length===0 && historyBlocked) {
+    // Always advance historical sale notices after a duplicate-only current sweep. This route is
+    // independent of property-search health and is the safest first fallback for unique discovery.
+    if (current.additions.length===0) {
       setStatus({phase:'discovering_history',message:'최신 공고에서 신규 0건 · 공식 과거 매각공고를 노트북 경로로 소량 백필'});
-      const history=runDiscoveryWorker('sale-notice-history-worker.js',effectiveRows,dataBackup,statsBackup,stateBackup,{HISTORY_COURTS_PER_RUN:'1',HISTORY_NOTICES_PER_COURT:'1'});
+      const history=runDiscoveryWorker('sale-notice-history-worker.js',effectiveRows,dataBackup,statsBackup,stateBackup,{HISTORY_COURTS_PER_RUN:'2',HISTORY_NOTICES_PER_COURT:'1'});
       effectiveRows=history.after;
       discoveryAdditions.push(...history.additions);
       discoveryPatches.push(...history.patches);
       statePatch={...statePatch,...history.statePatch};
       discoveryStatus+=`|history:${history.status}`;
       console.log(`[laptop-worker] history discovery=${history.status} additions=${history.additions.length} patches=${history.patches.length}`);
+
+      // If both notice routes produce no unique rows, try the official property-search route once.
+      // No CAPTCHA handling or block evasion is attempted; normal court-gate rules still apply.
+      if (history.additions.length===0) {
+        setStatus({phase:'discovering_property',message:'매각공고 경로 신규 0건 · 공식 물건검색 과거 경로를 1회 시도'});
+        const property=runDiscoveryWorker('property-history-discovery-v2.js',effectiveRows,dataBackup,statsBackup,stateBackup,{HISTORY_COURT_CODE:process.env.HISTORY_COURT_CODE||'B000240'});
+        effectiveRows=property.after;
+        discoveryAdditions.push(...property.additions);
+        discoveryPatches.push(...property.patches);
+        statePatch={...statePatch,...property.statePatch};
+        discoveryStatus+=`|property:${property.status}`;
+        console.log(`[laptop-worker] property discovery=${property.status} additions=${property.additions.length} patches=${property.patches.length}`);
+      }
     }
   } else if (hostedStalled) {
     discoveryStatus='court-gate-blocked';
