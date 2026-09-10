@@ -133,7 +133,18 @@ function countDeltaFiles(dir) {
 function main() {
   const startedAt = new Date().toISOString();
   log(`[cloud-master] start ${startedAt} repo=${REPO_SLUG} branch=${BRANCH} work=${WORK} dryRun=${DRY_RUN}`);
-  if (!TOKEN) log('[cloud-master] no GITHUB_TOKEN/GH_PAT present; push will be attempted anonymously and is expected to fail');
+  // Without a credential the clone, the merge, the commit and the rebase all
+  // succeed - the repo is public - and only the last step fails, with
+  // "could not read Username for 'https://github.com'". That reads like a git
+  // problem and is actually a missing secret, so say so before doing the work.
+  if (!TOKEN && !process.env.REPO_URL && !DRY_RUN) {
+    console.error('[cloud-master] no GITHUB_TOKEN / GH_PAT / GITHUB_TOKEN_FILE in this environment.');
+    console.error('[cloud-master] Only the final push would fail, with "could not read Username".');
+    console.error('[cloud-master] Refusing to burn a full merge run. Re-bind the secret with:');
+    console.error('[cloud-master]   gcloud run jobs update auction-cloud-master --region asia-northeast1 --set-secrets GITHUB_TOKEN=github-pat:latest');
+    process.exitCode = 6;
+    return;
+  }
 
   prepareCheckout();
   syncMergeScripts();
@@ -226,16 +237,44 @@ function main() {
     return;
   }
 
-  const rebase = git(['pull', '--rebase', 'origin', BRANCH], { check: false });
-  if (rebase.status !== 0) {
-    // Never resolve a canonical conflict blindly; leave the remote untouched.
-    git(['rebase', '--abort'], { check: false });
-    console.error('[cloud-master] rebase onto origin failed; aborting without push');
-    process.exitCode = 4;
+  // Another writer can land a commit between the rebase and the push, and then
+  // the push is rejected as non-fast-forward. That is a race, not a fault: rebase
+  // again and retry. A credential failure is not retried - it cannot improve.
+  const CREDENTIAL_FAILURE = /could not read Username|Invalid username or token|Authentication failed|terminal prompts disabled|Support for password authentication|remote: Permission to .* denied|HTTP 403/i;
+  const PUSH_ATTEMPTS = Math.max(1, Number(process.env.PUSH_ATTEMPTS || 3));
+  let pushed = false;
+
+  for (let attempt = 1; attempt <= PUSH_ATTEMPTS; attempt++) {
+    const rebase = git(['pull', '--rebase', 'origin', BRANCH], { check: false });
+    if (rebase.status !== 0) {
+      // Never resolve a canonical conflict blindly; leave the remote untouched.
+      git(['rebase', '--abort'], { check: false });
+      console.error('[cloud-master] rebase onto origin failed; aborting without push');
+      process.exitCode = 4;
+      return;
+    }
+
+    const push = git(['push', 'origin', `HEAD:${BRANCH}`], { check: false });
+    if (push.status === 0) { pushed = true; break; }
+
+    if (CREDENTIAL_FAILURE.test(push.out)) {
+      console.error('[cloud-master] push rejected on credentials, not on a race.');
+      console.error('[cloud-master] The merge itself was fine; the job cannot authenticate to GitHub.');
+      console.error('[cloud-master] Check that the job still carries the secret:');
+      console.error('[cloud-master]   gcloud run jobs describe auction-cloud-master --region asia-northeast1');
+      process.exitCode = 6;
+      return;
+    }
+
+    console.error(`[cloud-master] push attempt ${attempt}/${PUSH_ATTEMPTS} rejected; rebasing and retrying`);
+  }
+
+  if (!pushed) {
+    console.error(`[cloud-master] push still rejected after ${PUSH_ATTEMPTS} attempts; remote left untouched`);
+    process.exitCode = 7;
     return;
   }
 
-  git(['push', 'origin', `HEAD:${BRANCH}`]);
   const sha = git(['rev-parse', 'HEAD'], { check: false }).out.trim();
 
   // Refresh what the screens read. A failure here must not undo a good merge, so

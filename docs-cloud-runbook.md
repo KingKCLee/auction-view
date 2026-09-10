@@ -29,6 +29,43 @@ bare repo and requires both deliberate-failure cases to fail.
 | 3 | merge guard failed - canonical would shrink, nothing pushed |
 | 4 | rebase onto origin failed - conflict left alone, nothing pushed |
 | 5 | work tree dirty after commit - nothing pushed |
+| 6 | no usable GitHub credential - nothing pushed (see below) |
+| 7 | push rejected as non-fast-forward after every retry - nothing pushed |
+
+## "could not read Username for https://github.com"
+
+This is not a git problem. The repository is public, so a run without a
+credential clones, merges, commits and rebases perfectly and fails only on the
+last line. Measured 2026-09-10: the message means `GITHUB_TOKEN` / `GH_PAT` /
+`GITHUB_TOKEN_FILE` reached the container **empty or not at all** - the secret is
+no longer bound to the job, its version was disabled, or the service account lost
+`secretmanager.secretAccessor`.
+
+An **expired or revoked** PAT looks different: `remote: Invalid username or
+token` or `remote: Permission to KingKCLee/auction-view.git denied`. Read the
+error text before rotating anything - rotating a healthy PAT does not fix an
+unbound secret.
+
+Since 2026-09-10 the job refuses to start a merge it cannot publish: with no
+credential it prints the missing variable names and exits 6 immediately, instead
+of doing 900 seconds of work and dying on the push.
+
+Order to check, cheapest first:
+
+1. `gcloud run jobs describe auction-cloud-master --region asia-northeast1` - is
+   `GITHUB_TOKEN` still listed with a `secretKeyRef`?
+2. `gcloud secrets versions list github-pat` - is the newest version `ENABLED`?
+3. `gcloud secrets get-iam-policy github-pat` - does the job's service account
+   still hold `roles/secretmanager.secretAccessor`?
+4. Only then, rotate the PAT.
+
+## Two writers, one branch
+
+The laptop, the GitHub Actions workflows and this job all push to `main`. A
+commit landing between this job's `pull --rebase` and its `push` makes the push
+non-fast-forward. That is a race, not a fault, so the push is retried after
+another rebase - `PUSH_ATTEMPTS` (default 3) - and only then gives up with exit
+7. A credential failure is never retried; it cannot improve on a second try.
 
 ## Build and deploy
 
