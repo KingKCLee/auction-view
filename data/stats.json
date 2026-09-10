@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-10T10:30:33.449Z",
+  "generatedAt": "2026-09-10T10:32:00.686Z",
   "court": "전국 법원",
   "region": "전국",
   "itemCount": 11973,
   "winningCount": 1794,
   "photoCount": 993,
-  "documentCount": 2624,
-  "eventCount": 3093,
+  "documentCount": 2627,
+  "eventCount": 3100,
   "queuedJobs": 0,
   "errorJobs": 0,
   "collectionOrder": "latest-first",
@@ -15,13 +15,13 @@
     "to": "2026-10"
   },
   "coverage": {
-    "base_info": 11642,
-    "schedule": 1436,
+    "base_info": 11650,
+    "schedule": 1439,
     "winning_price": 1794,
     "photos": 59,
     "status_report": 1482,
-    "sale_statement": 1096,
-    "appraisal_summary": 1097,
+    "sale_statement": 1099,
+    "appraisal_summary": 1100,
     "appraisal_pdf": 0,
     "transactions": 0,
     "building_registry": 0,
@@ -281,14 +281,14 @@
   ],
   "latestDetailRun": {
     "checked": 2,
-    "success": 0,
-    "eventsAdded": 0,
-    "docsAdded": 0,
+    "success": 2,
+    "eventsAdded": 2,
+    "docsAdded": 1,
     "source": "대한민국 법원경매정보",
     "order": "latest-first",
     "shard": "3/3",
-    "error": "2026타경50035: fetch failed",
-    "finishedAt": "2026-09-10T05:12:07.151Z"
+    "error": null,
+    "finishedAt": "2026-09-10T10:32:00.693Z"
   },
   "latestPhotoRun": {
     "checked": 6,
@@ -339,7 +339,7 @@
     "historicalReturned": 0,
     "historicalNewUnique": 0,
     "historicalStatus": "partial",
-    "finishedAt": "2026-09-10T10:30:32.108Z"
+    "finishedAt": "2026-09-10T10:32:01.184Z"
   },
   "saleNoticeBackfill": {
     "version": 2,
@@ -412,18 +412,18 @@
   },
   "photoCourtCount": 1,
   "basicInfoQuality": {
-    "ready": 11474,
-    "addressCount": 11474,
-    "priceCount": 11464,
-    "missing": 331,
+    "ready": 11650,
+    "addressCount": 11650,
+    "priceCount": 11737,
+    "missing": 323,
     "definition": "주소 + (용도/감정가/최저가/매각기일 중 1개 이상)",
-    "updatedAt": "2026-09-09T17:30:34.667Z"
+    "updatedAt": "2026-09-10T10:31:24.881Z"
   },
   "latestBasicInfoRun": {
     "checkedCases": 8,
     "successfulCases": 8,
     "itemsImproved": 8,
-    "remaining": 331,
+    "remaining": 323,
     "transport": [
       "B000240:http",
       "B000240:http",
@@ -437,7 +437,7 @@
     "attempts": [],
     "lastError": null,
     "source": "대한민국 법원경매정보 사건검색",
-    "finishedAt": "2026-09-09T17:30:34.667Z"
+    "finishedAt": "2026-09-10T10:31:24.881Z"
   },
   "coverageSource": "canonical-recount",
   "safeReconcile": {
