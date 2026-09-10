@@ -1,13 +1,8 @@
 name: Auction Agent - Official Discovery Rescue
 
 on:
+  # Manual only. No cron, no push trigger - see CLAUDE.md 'No cron'.
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/agent-discovery-rescue.yml'
-  schedule:
-    - cron: '37 * * * *'
 
 permissions:
   contents: write

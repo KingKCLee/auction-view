@@ -153,6 +153,13 @@ Tests: `npm run test:guard`, `test:gate`, `test:priority`, `test:export`,
 - Docker image `data/` is a build-time snapshot and is never the source of truth;
   the master job clones GitHub fresh every run.
 - GitHub Actions workflows are `workflow_dispatch` only. No cron — it cost money.
+  **cron 추가는 대표님 명시 승인 없이 하지 않는다.** 2026-09-09~09-10 사이 세 개
+  워크플로(`agent-current-court-sweep`, `agent-discovery-rescue`,
+  `agent-enrichment-safe`)에 cron이 다시 들어갔고, 그중 둘은 이 규칙에 따라
+  한 번 제거됐다가 되살아났다. 2026-09-10 전부 제거하고 `workflow_dispatch`만
+  남겼다. 자동 트리거가 필요하면 먼저 물어라 — `push:` 트리거도 cron과 같이
+  자동 실행이므로 여기에 포함된다. 예외는 `worker-delta-merge.yml` 하나로,
+  `data/worker-deltas/**` push에만 반응하며 델타 파이프라인의 일부다.
 - PATs and API tokens live in Secret Manager, never in the image, source or repo.
 - No screen fetches `data/auctions.json`; it is 21MB. Everything reads the API.
 - Dates that matter are KST. A UTC date is a day behind for most of the Korean
