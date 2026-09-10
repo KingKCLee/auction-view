@@ -6,6 +6,8 @@ on:
     paths:
       - '.github/workflows/agent-enrichment-safe.yml'
       - 'basic-info-enrich.js'
+      - 'court-browser-fallback.js'
+      - 'court-gate.js'
       - 'detail-enrich.js'
       - 'validate-basic-info.js'
       - 'metrics-corrector.js'
@@ -39,6 +41,8 @@ jobs:
           node-version: '22'
       - name: Install collector
         run: npm install --no-audit --no-fund
+      - name: Install Chromium for official browser fallback
+        run: npx playwright install chromium
 
       - name: Fill missing basic information through official case detail
         run: timeout 150s npm run basic || true
