@@ -88,7 +88,7 @@ jobs:
       - name: Decide whether a second hosted network should retry discovery
         id: health
         run: |
-          need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; const b=s.saleNoticeBackfill||{}; const h=s.latestHistoryPropertyRun||{}; const r=s.latestRun||{}; process.stdout.write(String(Number(c.newUniqueItems||0)===0 && Number(b.newUniqueItems||0)===0 && Number(h.newUniqueItems||0)===0 && Number(r.newUniqueItems||r.items_saved||0)===0))")
+          need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; const b=s.saleNoticeBackfill||{}; const h=s.latestHistoryPropertyRun||{}; process.stdout.write(String(Number(c.newUniqueItems||0)===0 && Number(b.newUniqueItems||0)===0 && Number(h.newUniqueItems||0)===0))")
           echo "needs_rescue=$need" >> "$GITHUB_OUTPUT"
 
       - name: Reconcile with latest canonical and publish additively
