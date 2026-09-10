@@ -14,6 +14,9 @@ const payload={
     saleNoticeCourtOffsets:{'2026-08|B0002':1},
     saleNoticeFailures:{'search|2026-08|B0002':0},
     saleNoticeDeferred:[],
+    propertyHistoryYear:2026,
+    propertyHistoryMonth:7,
+    propertyHistoryPage:2,
     unsafeSecret:'must-not-copy'
   }
 };
@@ -26,10 +29,13 @@ assert.strictEqual(added.minimumPrice,123,'patch must apply after addition in sa
 assert.strictEqual(state.currentSweepCourtIndex,7,'safe current discovery cursor must advance');
 assert.strictEqual(state.saleNoticeBackfillCourtIndex,4,'safe history court cursor must advance');
 assert.strictEqual(state.saleNoticeCourtOffsets['2026-08|B0002'],1,'safe history notice offset must advance');
+assert.strictEqual(state.propertyHistoryYear,2026,'safe property-history year must advance');
+assert.strictEqual(state.propertyHistoryMonth,7,'safe property-history month must advance');
+assert.strictEqual(state.propertyHistoryPage,2,'safe property-history page must advance');
 assert.strictEqual(state.unsafeSecret,undefined,'unsafe state must never be copied');
 assert.strictEqual(state.keep,'yes','existing state must survive');
 const r2=applyPayload(rows,state,payload);
 assert.strictEqual(r2.additions,0,'duplicate discovery must not add another row');
 assert.strictEqual(r2.duplicateAdditions,1,'duplicate must be counted');
 assert.strictEqual(rows.length,2,'duplicate replay must preserve row count');
-console.log('worker discovery/history addition guard: PASS');
+console.log('worker discovery/history/property cursor guard: PASS');
