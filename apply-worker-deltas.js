@@ -33,7 +33,8 @@ function safeStateKey(key) {
     key.startsWith('saleNoticeBackfill') ||
     key.startsWith('saleNoticeCourt') ||
     key.startsWith('saleNoticeFailures') ||
-    key.startsWith('saleNoticeDeferred');
+    key.startsWith('saleNoticeDeferred') ||
+    key.startsWith('propertyHistory');
 }
 
 function mergeCurrentSweepState(target, patch) {
