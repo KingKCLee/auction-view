@@ -25,7 +25,7 @@ jobs:
     env:
       CURRENT_SWEEP_COURTS: '4'
       CURRENT_SWEEP_NOTICES: '3'
-      HISTORY_COURTS_PER_RUN: '2'
+      HISTORY_COURTS_PER_RUN: '6'
       HISTORY_NOTICES_PER_COURT: '2'
       BASIC_INFO_CASES: '4'
       NODE_OPTIONS: '--dns-result-order=ipv4first'
@@ -129,7 +129,7 @@ jobs:
     env:
       CURRENT_SWEEP_COURTS: '4'
       CURRENT_SWEEP_NOTICES: '3'
-      HISTORY_COURTS_PER_RUN: '2'
+      HISTORY_COURTS_PER_RUN: '6'
       HISTORY_NOTICES_PER_COURT: '2'
       BASIC_INFO_CASES: '4'
       NODE_OPTIONS: '--dns-result-order=ipv4first'
@@ -152,13 +152,13 @@ jobs:
         run: |
           need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; process.stdout.write(String(Number(c.newUniqueItems||0)===0))")
           if [ "$need" = "true" ]; then
-            gtimeout 150s npm run history:notices || npm run history:notices || true
+            npm run history:notices || true
           fi
       - name: Retry official property search if both notice routes remain stagnant
         run: |
           need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; const b=s.saleNoticeBackfill||{}; process.stdout.write(String(Number(c.newUniqueItems||0)===0 && Number(b.newUniqueItems||0)===0))")
           if [ "$need" = "true" ]; then
-            gtimeout 120s npm run history:property || npm run history:property || true
+            npm run history:property || true
           fi
       - name: Merge worker deltas and verify basic info
         run: |
