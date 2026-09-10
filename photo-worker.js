@@ -50,9 +50,19 @@ function candidates(rows) {
     const t = Date.parse(r.photoCheckedAt || '');
     return Number.isFinite(t) && now - t < 6 * 3600 * 1000;
   };
+  // Measured 2026-09-10, the whole reason coverage sat at 0.5%: the inherited
+  // ordering was "least-covered court, then nearest 기일", and a plain string
+  // sort puts the OLDEST dates first. Those cases are gone - the source drops a
+  // case the day after its 기일 and answers 200 with an empty dma_result, so the
+  // pass spent its requests on rows that can never return a photo. Probed side
+  // by side: an expired case came back with no csPicLst at all, a case with a
+  // future 기일 came back with 28 photos. Only ask for what the source still has.
+  const today = new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
+
   return rows
     .filter(r => (r.photoUrls?.length || 0) === 0)
     .filter(r => r.status !== 'expired')
+    .filter(r => String(r.saleDate || '') >= today)
     .filter(r => !recent(r))
     .sort((a, b) => {
       const ca = Number(perCourt.get(String(a.courtCode || '')) || 0);

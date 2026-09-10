@@ -138,6 +138,8 @@ and belong in `wrangler.toml` where deployments can find them.
 | `court-recovery-watch.js` | hourly one-request block check |
 | `measure-public-window.js` | measures how far the public window reaches |
 | `sale-result-collect.js` | winning prices from 매각결과검색, patches + additions |
+| `photo-worker.js` / `photo-enrich.js` | photos, gated, against a scratch canonical, published as a delta |
+| `identity-watch.js` | who wrote to origin/main, and whether cron / AUTO_RESUME came back |
 | `export-for-web.js` | canonical → the small payloads the web reads, size-capped |
 | `upload-web-export.js` | pushes those payloads into Cloudflare KV |
 | `functions/api/auction/*` | the API every screen goes through, at auction-view.pages.dev |
@@ -149,7 +151,16 @@ Tests: `npm run test:guard`, `test:gate`, `test:priority`, `test:export`,
 ## Conventions
 
 - The laptop never pushes canonical; it publishes `data/worker-deltas/laptop/*.json`
-  only. Cloud master is the sole writer of `data/auctions.json`.
+  only. Cloud master is the sole writer of `data/auctions.json`. A second laptop
+  process must not edit `data/auctions.json` either: `photo-worker.js` runs
+  `photo-enrich.js` against a scratch copy for that reason.
+- Two collectors on one machine share **one** rate, not one each. Every court
+  process sets the same `COURT_MIN_INTERVAL_MS` and goes through the gate; the
+  gate holds its lock through its own pacing wait, so a second runner needs
+  `COURT_LOCK_WAIT_MS` set or it only ever sees `COURT_BUSY`.
+- Photos exist only while the case does. Ask only for rows whose `saleDate` is
+  today or later - an expired case answers 200 with an empty `dma_result` and no
+  `csPicLst`, and a pass aimed at old rows returns nothing however long it runs.
 - Docker image `data/` is a build-time snapshot and is never the source of truth;
   the master job clones GitHub fresh every run.
 - GitHub Actions workflows are `workflow_dispatch` only. No cron — it cost money.
