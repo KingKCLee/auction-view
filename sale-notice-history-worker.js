@@ -5,7 +5,7 @@ const {CourtBrowserFallbackClient}=require('./court-browser-fallback');
 
 const FROM_YEAR=1990;
 const BACKFILL_VERSION=2;
-const COURTS_PER_RUN=Number(process.env.HISTORY_COURTS_PER_RUN||3);
+const COURTS_PER_RUN=Number(process.env.HISTORY_COURTS_PER_RUN||6);
 const NOTICES_PER_COURT=Number(process.env.HISTORY_NOTICES_PER_COURT||2);
 const DATA=path.join(__dirname,'data','auctions.json');
 const STATS=path.join(__dirname,'data','stats.json');
