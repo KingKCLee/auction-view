@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-10T17:34:54.625Z",
+  "generatedAt": "2026-09-10T17:40:06.472Z",
   "court": "전국 법원",
   "region": "전국",
   "itemCount": 11973,
   "winningCount": 1794,
-  "photoCount": 1128,
+  "photoCount": 1242,
   "documentCount": 3207,
   "eventCount": 4058,
   "queuedJobs": 0,
@@ -18,7 +18,7 @@
     "base_info": 11650,
     "schedule": 1713,
     "winning_price": 1794,
-    "photos": 71,
+    "photos": 77,
     "status_report": 1760,
     "sale_statement": 1401,
     "appraisal_summary": 1402,
@@ -54,14 +54,14 @@
     "finished_at": "2026-09-09T08:27:24.506Z",
     "status": "done",
     "items_found": 102,
-    "items_saved": 168,
+    "items_saved": 0,
     "priority_items": 102,
     "history_items": 0,
     "notices_checked": 1,
     "transport": "official-sale-notice-http",
     "error_text": null,
     "processedItems": 102,
-    "newUniqueItems": 168
+    "newUniqueItems": 0
   },
   "runs": [
     {
@@ -70,14 +70,14 @@
       "finished_at": "2026-09-09T08:27:24.506Z",
       "status": "done",
       "items_found": 102,
-      "items_saved": 168,
+      "items_saved": 0,
       "priority_items": 102,
       "history_items": 0,
       "notices_checked": 1,
       "transport": "official-sale-notice-http",
       "error_text": null,
       "processedItems": 102,
-      "newUniqueItems": 168
+      "newUniqueItems": 0
     },
     {
       "run_type": "sale-notice-discovery",
@@ -334,12 +334,12 @@
   },
   "lastCollectorCycle": {
     "itemCount": 11973,
-    "newUniqueItems": 168,
+    "newUniqueItems": 0,
     "currentNoticeProcessed": 102,
     "historicalReturned": 0,
     "historicalNewUnique": 0,
     "historicalStatus": "partial",
-    "finishedAt": "2026-09-10T17:34:55.763Z"
+    "finishedAt": "2026-09-10T17:40:07.690Z"
   },
   "saleNoticeBackfill": {
     "version": 2,
@@ -442,11 +442,11 @@
   "coverageSource": "canonical-recount",
   "safeReconcile": {
     "remoteItems": 11973,
-    "collectorItems": 11805,
+    "collectorItems": 11973,
     "mergedItems": 11973,
     "retainedRemoteIds": 11973,
-    "retainedCollectorIds": 11805,
+    "retainedCollectorIds": 11973,
     "addedVsRemote": 0,
-    "finishedAt": "2026-09-10T17:34:54.625Z"
+    "finishedAt": "2026-09-10T17:40:06.472Z"
   }
 }
