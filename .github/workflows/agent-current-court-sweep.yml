@@ -1,7 +1,12 @@
 name: Auction Agent - Nationwide Current Court Sweep (safe backup)
 
 on:
-  # Manual only. No cron, no push trigger - see CLAUDE.md 'No cron'.
+  # No cron. The autonomous monitor may explicitly kick this safe backup by
+  # changing ops/collector-kick.txt; normal data commits do not retrigger it.
+  push:
+    branches: [main]
+    paths:
+      - 'ops/collector-kick.txt'
   workflow_dispatch:
 
 permissions:
