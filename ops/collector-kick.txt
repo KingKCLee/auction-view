@@ -1,2 +1,2 @@
-collector-kick 2026-09-11T05:28:06Z
-reason: canonical unique itemCount remains stagnant at 11973; run safe official fallback chain (current notices -> historical notices -> property search -> generic official notices -> case detail), preserve existing data
+collector-kick 2026-09-11T06:28:00Z
+reason: canonical unique itemCount remains stagnant at 11973; rerun safe official fallback chain after fixing timeout child-process leakage so each fallback can acquire the court gate
