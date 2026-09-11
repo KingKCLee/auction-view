@@ -44,12 +44,12 @@ jobs:
         run: npx playwright install chromium
 
       - name: Merge safe laptop detail and discovery deltas first
-        run: npm run worker:apply || true
+        run: node apply-worker-deltas.js || true
 
       - name: Try official current sale-notice sweep with bounded time
         run: |
-          if ! timeout 150s npm run sweep:current; then
-            node -e "const fs=require('fs');const p='./data/stats.json';const s=JSON.parse(fs.readFileSync(p));s.currentCourtSweep={...(s.currentCourtSweep||{}),processedNotices:0,successfulNotices:0,newUniqueItems:0,lastError:'current sale-notice sweep timed out after 150s; switching official route',finishedAt:new Date().toISOString()};fs.writeFileSync(p,JSON.stringify(s,null,2));"
+          if ! timeout -k 5s 150s node current-court-sweep.js; then
+            node -e "const fs=require('fs');const p='./data/stats.json';const s=JSON.parse(fs.readFileSync(p));s.currentCourtSweep={...(s.currentCourtSweep||{}),processedNotices:0,successfulNotices:0,newUniqueItems:0,lastError:'current sale-notice sweep timed out after 150s; process group terminated; switching official route',finishedAt:new Date().toISOString()};fs.writeFileSync(p,JSON.stringify(s,null,2));"
           fi
 
       - name: Advance official historical sale notices when unique discovery stalls
@@ -57,7 +57,7 @@ jobs:
           need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; process.stdout.write(String(Number(c.newUniqueItems||0)===0))")
           if [ "$need" = "true" ]; then
             echo "current notices added no unique items; advancing official sale-notice backfill"
-            timeout 150s npm run history:notices || true
+            timeout -k 5s 150s node sale-notice-history-worker.js || true
           else
             echo "current notices added unique items; historical backfill can wait"
           fi
@@ -66,21 +66,21 @@ jobs:
         run: |
           need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; const b=s.saleNoticeBackfill||{}; process.stdout.write(String(Number(c.newUniqueItems||0)===0 && Number(b.newUniqueItems||0)===0))")
           if [ "$need" = "true" ]; then
-            timeout 120s npm run history:property || true
+            timeout -k 5s 120s node property-history-discovery-v2.js || true
           fi
 
       - name: Fallback to official sale-notice discovery when discovery remains empty
         run: |
           need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; const b=s.saleNoticeBackfill||{}; const h=s.latestHistoryPropertyRun||{}; process.stdout.write(String(Number(c.newUniqueItems||0)===0 && Number(b.newUniqueItems||0)===0 && Number(h.newUniqueItems||0)===0))")
           if [ "$need" = "true" ]; then
-            timeout 120s npm run collect:once || true
+            timeout -k 5s 120s node sale-notice-discovery.js || true
           fi
 
       - name: Fill missing basic information through official case detail
-        run: timeout 120s npm run basic || true
+        run: timeout -k 5s 120s node basic-info-enrich.js || true
 
       - name: Verify basic information integrity
-        run: npm run basic:validate
+        run: node validate-basic-info.js
 
       - name: Recalculate metrics without deleting existing data
         run: node metrics-corrector.js || true
@@ -102,8 +102,8 @@ jobs:
           test -z "$(git status --porcelain)"
           git pull --rebase origin main
           node safe-canonical-reconcile.js /tmp/collector-auctions.json /tmp/collector-stats.json /tmp/collector-state.json
-          npm run worker:apply || true
-          npm run basic:validate
+          node apply-worker-deltas.js || true
+          node validate-basic-info.js
           node metrics-corrector.js || true
 
           rm -rf docs
@@ -147,24 +147,24 @@ jobs:
       - name: Install Chromium for official browser fallback
         run: npx playwright install chromium
       - name: Retry official sale-notice sweep from a separate hosted network
-        run: npm run sweep:current || true
+        run: node current-court-sweep.js || true
       - name: Advance official historical sale notices if current route is still stagnant
         run: |
           need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; process.stdout.write(String(Number(c.newUniqueItems||0)===0))")
           if [ "$need" = "true" ]; then
-            npm run history:notices || true
+            node sale-notice-history-worker.js || true
           fi
       - name: Retry official property search if both notice routes remain stagnant
         run: |
           need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; const b=s.saleNoticeBackfill||{}; process.stdout.write(String(Number(c.newUniqueItems||0)===0 && Number(b.newUniqueItems||0)===0))")
           if [ "$need" = "true" ]; then
-            npm run history:property || true
+            node property-history-discovery-v2.js || true
           fi
       - name: Merge worker deltas and verify basic info
         run: |
-          npm run worker:apply || true
-          npm run basic || true
-          npm run basic:validate
+          node apply-worker-deltas.js || true
+          node basic-info-enrich.js || true
+          node validate-basic-info.js
           node metrics-corrector.js || true
       - name: Reconcile rescued result with latest canonical and publish
         run: |
@@ -177,8 +177,8 @@ jobs:
           test -z "$(git status --porcelain)"
           git pull --rebase origin main
           node safe-canonical-reconcile.js /tmp/collector-auctions.json /tmp/collector-stats.json /tmp/collector-state.json
-          npm run worker:apply || true
-          npm run basic:validate
+          node apply-worker-deltas.js || true
+          node validate-basic-info.js
           node metrics-corrector.js || true
 
           rm -rf docs
