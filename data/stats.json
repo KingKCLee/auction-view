@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T17:22:20.630Z",
+  "generatedAt": "2026-09-11T17:28:51.717Z",
   "court": "전국 법원",
   "region": "전국",
   "itemCount": 11973,
@@ -15,7 +15,7 @@
     "to": "2026-10"
   },
   "coverage": {
-    "base_info": 11662,
+    "base_info": 11666,
     "schedule": 1714,
     "winning_price": 1794,
     "photos": 180,
@@ -36,12 +36,12 @@
     "percent": 0,
     "cursor": {
       "year": 2021,
-      "month": 7,
+      "month": 6,
       "page": 1
     },
     "saleNoticeCursor": {
       "year": 2021,
-      "month": 7,
+      "month": 6,
       "page": 1
     },
     "blocked": false,
@@ -50,8 +50,8 @@
   },
   "latestRun": {
     "run_type": "sale-notice-discovery",
-    "started_at": "2026-09-11T06:30:20.255Z",
-    "finished_at": "2026-09-11T06:30:20.266Z",
+    "started_at": "2026-09-11T17:28:35.463Z",
+    "finished_at": "2026-09-11T17:28:35.471Z",
     "status": "done",
     "items_found": 168,
     "items_saved": 0,
@@ -64,6 +64,21 @@
     "newUniqueItems": 0
   },
   "runs": [
+    {
+      "run_type": "sale-notice-discovery",
+      "started_at": "2026-09-11T17:28:35.463Z",
+      "finished_at": "2026-09-11T17:28:35.471Z",
+      "status": "done",
+      "items_found": 168,
+      "items_saved": 0,
+      "priority_items": 168,
+      "history_items": 0,
+      "notices_checked": 2,
+      "transport": "official-sale-notice-http",
+      "error_text": null,
+      "processedItems": 168,
+      "newUniqueItems": 0
+    },
     {
       "run_type": "sale-notice-discovery",
       "started_at": "2026-09-11T06:30:20.255Z",
@@ -268,19 +283,6 @@
       "notices_checked": 2,
       "transport": "official-sale-notice-http",
       "error_text": null
-    },
-    {
-      "run_type": "sale-notice-discovery",
-      "started_at": "2026-09-07T06:04:36.785Z",
-      "finished_at": "2026-09-07T06:04:36.786Z",
-      "status": "done",
-      "items_found": 242,
-      "items_saved": 242,
-      "priority_items": 242,
-      "history_items": 0,
-      "notices_checked": 2,
-      "transport": "official-sale-notice-http",
-      "error_text": null
     }
   ],
   "latestDetailRun": {
@@ -318,14 +320,14 @@
   },
   "latestHistoryPropertyRun": {
     "courtCode": "B000240",
-    "from": "2024-04-01",
-    "to": "2024-04-30",
+    "from": "2021-07-01",
+    "to": "2021-07-31",
     "returned": 0,
     "totalCount": 0,
     "newUniqueItems": 0,
     "nextCursor": {
-      "year": 2024,
-      "month": 3,
+      "year": 2021,
+      "month": 6,
       "page": 1
     },
     "transport": "property-search-http-or-browser",
@@ -335,7 +337,7 @@
     "httpStatus": null,
     "pageSize": 20,
     "source": "대한민국 법원경매정보 물건검색",
-    "finishedAt": "2026-09-11T07:39:19.883Z"
+    "finishedAt": "2026-09-11T17:28:21.495Z"
   },
   "lastCollectorCycle": {
     "itemCount": 11973,
@@ -344,7 +346,7 @@
     "historicalReturned": 0,
     "historicalNewUnique": 0,
     "historicalStatus": "done",
-    "finishedAt": "2026-09-11T17:22:22.000Z"
+    "finishedAt": "2026-09-11T17:28:52.631Z"
   },
   "saleNoticeBackfill": {
     "version": 2,
@@ -372,7 +374,7 @@
     "attempts": [],
     "courtSource": "official-court-codes",
     "source": "대한민국 법원경매정보 매각공고(법원별)",
-    "finishedAt": "2026-09-11T07:39:17.972Z"
+    "finishedAt": "2026-09-11T17:28:19.141Z"
   },
   "currentCourtSweep": {
     "months": [
@@ -401,22 +403,22 @@
     "attempts": [],
     "courtSource": "official-court-codes",
     "source": "대한민국 법원경매정보 매각공고(전국 최신 법원별)",
-    "finishedAt": "2026-09-11T07:39:01.423Z"
+    "finishedAt": "2026-09-11T17:28:01.488Z"
   },
   "photoCourtCount": 1,
   "basicInfoQuality": {
-    "ready": 11662,
-    "addressCount": 11662,
+    "ready": 11666,
+    "addressCount": 11666,
     "priceCount": 11737,
-    "missing": 311,
+    "missing": 307,
     "definition": "주소 + (용도/감정가/최저가/매각기일 중 1개 이상)",
-    "updatedAt": "2026-09-11T07:39:33.050Z"
+    "updatedAt": "2026-09-11T17:28:49.129Z"
   },
   "latestBasicInfoRun": {
     "checkedCases": 4,
     "successfulCases": 4,
     "itemsImproved": 4,
-    "remaining": 311,
+    "remaining": 307,
     "transport": [
       "B000240:http",
       "B000240:http",
@@ -426,7 +428,7 @@
     "attempts": [],
     "lastError": null,
     "source": "대한민국 법원경매정보 사건검색",
-    "finishedAt": "2026-09-11T07:39:33.050Z"
+    "finishedAt": "2026-09-11T17:28:49.129Z"
   },
   "coverageSource": "canonical-recount",
   "safeReconcile": {
@@ -436,6 +438,6 @@
     "retainedRemoteIds": 11973,
     "retainedCollectorIds": 11973,
     "addedVsRemote": 0,
-    "finishedAt": "2026-09-11T17:22:20.630Z"
+    "finishedAt": "2026-09-11T17:28:51.718Z"
   }
 }
