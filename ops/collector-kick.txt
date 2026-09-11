@@ -1,2 +1,2 @@
-collector-kick 2026-09-11T19:25:08Z
-reason: canonical unique itemCount remains stagnant at 11973 while recent sale-notice runs return only duplicates; trigger the safe official fallback chain again (current sale notices -> historical sale notices -> property search -> sale-notice discovery -> case detail validation), preserve canonical data additively, retry failed work through queues, and do not bypass CAPTCHA or access controls
+collector-kick 2026-09-11T20:24:53Z
+reason: canonical unique itemCount remains stagnant at 11973 while official current sale-notice and history/property routes are returning zero new unique items or network failures; trigger the safe official fallback chain again (current sale notices -> historical sale notices -> property search -> sale-notice discovery -> case detail validation), preserve canonical data additively, retry failed work through queues, and do not bypass CAPTCHA or access controls
