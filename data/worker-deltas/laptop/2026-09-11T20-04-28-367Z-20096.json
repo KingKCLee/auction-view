@@ -1,0 +1,3140 @@
+{
+  "version": 2,
+  "worker": "laptop",
+  "createdAt": "2026-09-11T20:04:28.367Z",
+  "batchSize": 24,
+  "exitCode": 0,
+  "discoveryStatus": "current:completed|history:completed|property:completed",
+  "additions": [],
+  "patches": [
+    {
+      "id": "B000422|2025타경692|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-08-10",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "제210호 경매법정",
+            "amount": 101725300,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "제210호 경매법정",
+            "amount": 71208000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "2층 210호 경매법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 3,
+        "failedCount": 1,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건 토지는 경상남도 고성군 하이면 덕명리 소재 &amp;apos;봉화골마을&amp;apos; 북측 인근에 소재하는 부동산(토지)으로서 주위는 단독주택, 농경지, 인근 자연림 등으로 이루어져있으며, 제반주위환경은 보통시 됨.\n본건까지 차량출입은 불가하며, 관내 제반 대중교통사정 등을 고려시 교통상황은 다소 불편시 됨.\n기호1,2 : 공히 급경사지 내 부정형 토지로서, 현황 &amp;apos;자연림&amp;apos; 상태임.\n기호1,2 : 공히 지적도상 맹지임.\n기호1 : 농림지역 , 보전관리지역, 가축사육제한구역(2025-07-11)(젖소 닭 메추리 개 돼지 오리 제한)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 역사문화환경보존지역&lt;문화유산의 보존 및 활용에 관한 법률&gt;, 임업용산지&lt;산지관리법&gt;, 준보전산지&lt;산지관리법&gt;, 토사채취허가제한지역&lt;산지관리법&gt;임.  기호2 : 농림지역, 가축사육제한구역(2025-07-11)(모든축종 사육제한)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 가축사육제한구역(2025-07-11)(젖소 닭 메추리 개 돼지 오리 제한)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 역사문화환경보존지역&lt;문화유산의 보존 및 활용에 관한 법률&gt;, 임업용산지&lt;산지관리법&gt;, 토사채취허가제한지역&lt;산지관리법&gt;임.\n-.\n-.\n임대관계 : 미상임.  기타 :   - 본건 토지들은 인접토지와의 지적상 경계가 불분명한바, 정확한 위치, 경계 등은 정밀측량등을 통해 재확인 하시기 바람.  - 본건 토지 기호 (1)은 두 개의 용도지역(농림지역, 보전관리지역)에 걸쳐 소재하나 주된 용도지역인 농림지역을 기준으로 평가하되 종된 용도지역을 감안하여 평가하였으니 경매진행시 참조하시기 바람.  - 본건 토지 지상에 소재하는 자연생 입목, 활잡목 등은 토지와 일체로 거래되는 관행에 따라 토지에 포함하여 평가하였으니 경매진행시 참고하시기 바람.  - 본건 토지 지상에 육안이나 위성사진상으로 식별되는 분묘는 없다고 판단되었으나, 임야의 면적이 크고 자연생 수목으로 인해 육안으로 식별하기 어려운 분묘가 소재할 가능성도 있는 바 경매진행시 참조하시기 바람.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 56544031,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-11T19:56:27.598Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000513|2025타경691|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-05-04",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(108호법정)",
+            "amount": 1833794600,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-06-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(108호법정)",
+            "amount": 1283656000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-03",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(108호법정)",
+            "amount": 1026925000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(108호법정)",
+            "amount": 821540000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "경매법정(108호법정)",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 5,
+        "failedCount": 3,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "기호1: 전라남도 여수시 공화동 소재 여수중학교 동측인근에 위치하며 주위는         기존상가지대임. 기호3: 전라남도 여수시 돌산읍 율림리 소재 율림보건진료소 북서측 인근에 위치하며         주위는 해안취락지대임. 기호5: 전라남도 여수시 돌산읍 율림리 소재 향일암 서측 인근에 위치하며 주위는         산간농경지대임.\n기호1: 본건까지 차량접근 가능하고 대중교통여건은 보통임. 기호3,5: 인근까지 차량접근 가능하고  대중교통여건은 보통임.\n기호1: 사다리형 평지로서 상업용건부지임. 기호3: 사다리형 평지로서 단독주택으로 이용중임. 기호5: 사다리형 완경사지로서 잡초, 잡목 우거진 휴경지임.\n기호1: 남서측으로 소로에, 북동측으로 세로(불)에 접함. 기호3: 지적상 맹지이나 협소한 관습로를 이용하여 출입함. 기호5: 맹지임.\n기호1: 일반상업지역, 방화지구, 도로(접합), 가축사육제한구역(전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역 (동초등학교)&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역 (여수고등학교)&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역(종고초등학교)&lt;교육환경 보호에 관한 법률&gt;임. 기호3: 계획관리지역, 자연취락지구, 가축사육제한구역(2019-05-23)(전부제한구역) &lt;가축분뇨의 관리 및 이용에 관한 법률&gt;임. 기호5: 자연환경보전지역, 가축사육제한구역(2019-05-23)(일부제한구역 2000m)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 공원자연보존지구&lt;자연공원법&gt;, 국립공원&lt;자연공원법&gt;, 역사문화환경보존지역&lt;전라남도문화재보호조례&gt;, 영농여건불리농지임.\n-기호1,3 지상에 지적 및 건물개황도에 도시한 바와 같이 제시외건물이 소재하여 개략적 실측면적으로 평가하오니 경매절차진행시 소유관계 및 일괄경매여부를 확인하시기 바람. -기호1 지상에 식재된 배롱나무, 사철나무, 동백나무, 남천 등 수목은 토지에 포함평가하되 그 가액을 구분하여 병기하였으니 경매절차 진행시 소유관계 및 일괄경매 여부를 확인하시기 바람.\n없음.\n임대관계 미상임.\n기호2 철근콘크리트 및 일반철골구조 슬래브 및 판넬지붕 4층 구조로서 외벽: 석재붙임, 드라이비트 마감 내벽: 벽지도배, 타일붙임 등 창호: 샷시창호임.  기호4 시멘트벽돌구조 슬레이트위 기와형강판지붕 단층 구조로서 외벽: 몰탈위 페인팅 내벽: 벽지도배 창호: 샷시창호임.\n기호2: 지하층 공실, 1층 주차장, 2층 음식점 및 주점, 3층 및 4층 호스텔로 이용중임. 기호4: 단독주택으로 이용중임.\n공히 급배수설비, 위생설비, 난방설비 등 되어 있음.\n-제시외건물 기호 ㄱ~ㄷ은 기호2 건물의 부합물 및 종물로 판단됨. -제시외건물 기호 ㄹ은 기호4 건물의 부합물 및 종물로 판단됨. \n-기호4 공부상 보건진료소이나 현황 단독주택으로 이용중임. -기호4 공부상 슬레이트지붕이나 현황 슬레이트위 기와형강판지붕임.\n임대관계 미상임.\n전라남도 여수시 안산동 소재 부영여자고등학교 북동측 인근에 위치하며 주위는 아파트단지, 근린생활시설, 학교 등이 입지한 주거지대임.\n단지내 차량출입 용이하고 대중교통여건은 보통임.\n철근콘크리트조 슬래브지붕 19층 건내 15층1508호(남향, 계단식)로서 외벽: 콘크리트벽체위 페인팅 내벽: 벽지도배, 타일붙임 등 창호: PVC샷시창호임. \n아파트로 이용중임.\n급배수설비, 위생설비, 난방설비, 소방설비, 도시가스설비, 공용승강기 등 되어 있음.\n장방형 평지로서 아파트건부지임.\n단지 북측으로 광대로에 접하고 단지 서측으로 폭 약 8m 도로에 접함.\n제2종일반주거지역 , 시가지경관지구(일반) , 소로2류(폭 8m~10m)(접합), 가축사육제한구역(전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 장애물제한표면구역&lt;공항시설법&gt;, 상대보호구역(미주유치원)&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역(부영여자고등학교)&lt;교육환경 보호에 관한 법률&gt;, 절대보호구역(미주유치원)&lt;교육환경 보호에 관한 법률&gt;임.\n없음.\n임대관계 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 1781194090,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-11T19:56:48.183Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000513|2025타경691|2",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-06-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(108호법정)",
+            "amount": 39867000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-03",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(108호법정)",
+            "amount": 27907000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(108호법정)",
+            "amount": 22326000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "경매법정(108호법정)",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 4,
+        "failedCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "기호1: 전라남도 여수시 공화동 소재 여수중학교 동측인근에 위치하며 주위는         기존상가지대임. 기호3: 전라남도 여수시 돌산읍 율림리 소재 율림보건진료소 북서측 인근에 위치하며         주위는 해안취락지대임. 기호5: 전라남도 여수시 돌산읍 율림리 소재 향일암 서측 인근에 위치하며 주위는         산간농경지대임.\n기호1: 본건까지 차량접근 가능하고 대중교통여건은 보통임. 기호3,5: 인근까지 차량접근 가능하고  대중교통여건은 보통임.\n기호1: 사다리형 평지로서 상업용건부지임. 기호3: 사다리형 평지로서 단독주택으로 이용중임. 기호5: 사다리형 완경사지로서 잡초, 잡목 우거진 휴경지임.\n기호1: 남서측으로 소로에, 북동측으로 세로(불)에 접함. 기호3: 지적상 맹지이나 협소한 관습로를 이용하여 출입함. 기호5: 맹지임.\n기호1: 일반상업지역, 방화지구, 도로(접합), 가축사육제한구역(전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역 (동초등학교)&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역 (여수고등학교)&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역(종고초등학교)&lt;교육환경 보호에 관한 법률&gt;임. 기호3: 계획관리지역, 자연취락지구, 가축사육제한구역(2019-05-23)(전부제한구역) &lt;가축분뇨의 관리 및 이용에 관한 법률&gt;임. 기호5: 자연환경보전지역, 가축사육제한구역(2019-05-23)(일부제한구역 2000m)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 공원자연보존지구&lt;자연공원법&gt;, 국립공원&lt;자연공원법&gt;, 역사문화환경보존지역&lt;전라남도문화재보호조례&gt;, 영농여건불리농지임.\n-기호1,3 지상에 지적 및 건물개황도에 도시한 바와 같이 제시외건물이 소재하여 개략적 실측면적으로 평가하오니 경매절차진행시 소유관계 및 일괄경매여부를 확인하시기 바람. -기호1 지상에 식재된 배롱나무, 사철나무, 동백나무, 남천 등 수목은 토지에 포함평가하되 그 가액을 구분하여 병기하였으니 경매절차 진행시 소유관계 및 일괄경매 여부를 확인하시기 바람.\n없음.\n임대관계 미상임.\n기호2 철근콘크리트 및 일반철골구조 슬래브 및 판넬지붕 4층 구조로서 외벽: 석재붙임, 드라이비트 마감 내벽: 벽지도배, 타일붙임 등 창호: 샷시창호임.  기호4 시멘트벽돌구조 슬레이트위 기와형강판지붕 단층 구조로서 외벽: 몰탈위 페인팅 내벽: 벽지도배 창호: 샷시창호임.\n기호2: 지하층 공실, 1층 주차장, 2층 음식점 및 주점, 3층 및 4층 호스텔로 이용중임. 기호4: 단독주택으로 이용중임.\n공히 급배수설비, 위생설비, 난방설비 등 되어 있음.\n-제시외건물 기호 ㄱ~ㄷ은 기호2 건물의 부합물 및 종물로 판단됨. -제시외건물 기호 ㄹ은 기호4 건물의 부합물 및 종물로 판단됨. \n-기호4 공부상 보건진료소이나 현황 단독주택으로 이용중임. -기호4 공부상 슬레이트지붕이나 현황 슬레이트위 기와형강판지붕임.\n임대관계 미상임.\n전라남도 여수시 안산동 소재 부영여자고등학교 북동측 인근에 위치하며 주위는 아파트단지, 근린생활시설, 학교 등이 입지한 주거지대임.\n단지내 차량출입 용이하고 대중교통여건은 보통임.\n철근콘크리트조 슬래브지붕 19층 건내 15층1508호(남향, 계단식)로서 외벽: 콘크리트벽체위 페인팅 내벽: 벽지도배, 타일붙임 등 창호: PVC샷시창호임. \n아파트로 이용중임.\n급배수설비, 위생설비, 난방설비, 소방설비, 도시가스설비, 공용승강기 등 되어 있음.\n장방형 평지로서 아파트건부지임.\n단지 북측으로 광대로에 접하고 단지 서측으로 폭 약 8m 도로에 접함.\n제2종일반주거지역 , 시가지경관지구(일반) , 소로2류(폭 8m~10m)(접합), 가축사육제한구역(전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 장애물제한표면구역&lt;공항시설법&gt;, 상대보호구역(미주유치원)&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역(부영여자고등학교)&lt;교육환경 보호에 관한 법률&gt;, 절대보호구역(미주유치원)&lt;교육환경 보호에 관한 법률&gt;임.\n없음.\n임대관계 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 1781194090,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "4",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-11T19:57:10.134Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000513|2025타경691|3",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-06-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(108호법정)",
+            "amount": 24157000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-03",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(108호법정)",
+            "amount": 16910000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(108호법정)",
+            "amount": 13528000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "경매법정(108호법정)",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 4,
+        "failedCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "기호1: 전라남도 여수시 공화동 소재 여수중학교 동측인근에 위치하며 주위는         기존상가지대임. 기호3: 전라남도 여수시 돌산읍 율림리 소재 율림보건진료소 북서측 인근에 위치하며         주위는 해안취락지대임. 기호5: 전라남도 여수시 돌산읍 율림리 소재 향일암 서측 인근에 위치하며 주위는         산간농경지대임.\n기호1: 본건까지 차량접근 가능하고 대중교통여건은 보통임. 기호3,5: 인근까지 차량접근 가능하고  대중교통여건은 보통임.\n기호1: 사다리형 평지로서 상업용건부지임. 기호3: 사다리형 평지로서 단독주택으로 이용중임. 기호5: 사다리형 완경사지로서 잡초, 잡목 우거진 휴경지임.\n기호1: 남서측으로 소로에, 북동측으로 세로(불)에 접함. 기호3: 지적상 맹지이나 협소한 관습로를 이용하여 출입함. 기호5: 맹지임.\n기호1: 일반상업지역, 방화지구, 도로(접합), 가축사육제한구역(전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역 (동초등학교)&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역 (여수고등학교)&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역(종고초등학교)&lt;교육환경 보호에 관한 법률&gt;임. 기호3: 계획관리지역, 자연취락지구, 가축사육제한구역(2019-05-23)(전부제한구역) &lt;가축분뇨의 관리 및 이용에 관한 법률&gt;임. 기호5: 자연환경보전지역, 가축사육제한구역(2019-05-23)(일부제한구역 2000m)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 공원자연보존지구&lt;자연공원법&gt;, 국립공원&lt;자연공원법&gt;, 역사문화환경보존지역&lt;전라남도문화재보호조례&gt;, 영농여건불리농지임.\n-기호1,3 지상에 지적 및 건물개황도에 도시한 바와 같이 제시외건물이 소재하여 개략적 실측면적으로 평가하오니 경매절차진행시 소유관계 및 일괄경매여부를 확인하시기 바람. -기호1 지상에 식재된 배롱나무, 사철나무, 동백나무, 남천 등 수목은 토지에 포함평가하되 그 가액을 구분하여 병기하였으니 경매절차 진행시 소유관계 및 일괄경매 여부를 확인하시기 바람.\n없음.\n임대관계 미상임.\n기호2 철근콘크리트 및 일반철골구조 슬래브 및 판넬지붕 4층 구조로서 외벽: 석재붙임, 드라이비트 마감 내벽: 벽지도배, 타일붙임 등 창호: 샷시창호임.  기호4 시멘트벽돌구조 슬레이트위 기와형강판지붕 단층 구조로서 외벽: 몰탈위 페인팅 내벽: 벽지도배 창호: 샷시창호임.\n기호2: 지하층 공실, 1층 주차장, 2층 음식점 및 주점, 3층 및 4층 호스텔로 이용중임. 기호4: 단독주택으로 이용중임.\n공히 급배수설비, 위생설비, 난방설비 등 되어 있음.\n-제시외건물 기호 ㄱ~ㄷ은 기호2 건물의 부합물 및 종물로 판단됨. -제시외건물 기호 ㄹ은 기호4 건물의 부합물 및 종물로 판단됨. \n-기호4 공부상 보건진료소이나 현황 단독주택으로 이용중임. -기호4 공부상 슬레이트지붕이나 현황 슬레이트위 기와형강판지붕임.\n임대관계 미상임.\n전라남도 여수시 안산동 소재 부영여자고등학교 북동측 인근에 위치하며 주위는 아파트단지, 근린생활시설, 학교 등이 입지한 주거지대임.\n단지내 차량출입 용이하고 대중교통여건은 보통임.\n철근콘크리트조 슬래브지붕 19층 건내 15층1508호(남향, 계단식)로서 외벽: 콘크리트벽체위 페인팅 내벽: 벽지도배, 타일붙임 등 창호: PVC샷시창호임. \n아파트로 이용중임.\n급배수설비, 위생설비, 난방설비, 소방설비, 도시가스설비, 공용승강기 등 되어 있음.\n장방형 평지로서 아파트건부지임.\n단지 북측으로 광대로에 접하고 단지 서측으로 폭 약 8m 도로에 접함.\n제2종일반주거지역 , 시가지경관지구(일반) , 소로2류(폭 8m~10m)(접합), 가축사육제한구역(전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 장애물제한표면구역&lt;공항시설법&gt;, 상대보호구역(미주유치원)&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역(부영여자고등학교)&lt;교육환경 보호에 관한 법률&gt;, 절대보호구역(미주유치원)&lt;교육환경 보호에 관한 법률&gt;임.\n없음.\n임대관계 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 1781194090,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "5",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-11T19:57:31.969Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000421|2025타경686|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-05-11",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "제101호 법정",
+            "amount": 44737000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-06-22",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "제101호 법정",
+            "amount": 31316000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-03",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "제101호 법정",
+            "amount": 21921000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "제101호 법정",
+            "amount": 15345000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "제101호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 5,
+        "failedCount": 3,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건 토지들은 경상남도 남해군 삼동면 봉화리 소재 '내산저수지' 북측 인근에 위치하며, 주위는 농촌취락 및 농경지대와 임야지대 등으로 형성되어 있음.\n기호(1),(2) 공히 차량 접근이 가능하며, 제반 교통사정은 보통임.\n기호(1) : 사다리형의 평지로, 현황 답으로 이용중임.\r\n기호(2) : 세장형에 가까운 평지로, 현황 답으로 이용중임.\n기호(1) : 남동측과 남측으로 노폭 약 3미터의 농로와 접함.\r\n기호(2) : 서측으로 노폭 약 3미터의 농로와 접함.\n기호(1) : 농림지역, 가축사육제한구역(2020-02-27)(닭 오리 메추리 개 돼지 제한)<가축분뇨의 관리 및 이용에 관한 법률>, 역사문화환경보존지역(300미터)<경상남도 문화재보호 조례>, 마을경관관리지역<남해군 경관 조례>, 농업진흥구역<농지법>.\r\n기호(2) : 농림지역, 가축사육제한구역(2020-02-27)(개 돼지 제한)<가축분뇨의 관리 및 이용에 관한 법률>, 가축사육제한구역(2020-02-27)(닭 오리 메추리 개 돼지 제한)<가축분뇨의 관리 및 이용에 관한 법률>, 역사문화환경보존지역(300미터)<경상남도 문화재보호 조례>, 마을경관관리지역<남해군 경관 조례>, 농업진흥구역<농지법>.\n없음.\n없음.\n1)임대관계 : 미상임.\r\n2)기    타 : 없음.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 59913651,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-11T19:57:53.870Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000421|2025타경686|2",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-05-11",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "제101호 법정",
+            "amount": 76649600,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-06-22",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "제101호 법정",
+            "amount": 53655000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-03",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "제101호 법정",
+            "amount": 37559000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "제101호 법정",
+            "amount": 26291000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "제101호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 5,
+        "failedCount": 3,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건 토지들은 경상남도 남해군 삼동면 봉화리 소재 '내산저수지' 북측 인근에 위치하며, 주위는 농촌취락 및 농경지대와 임야지대 등으로 형성되어 있음.\n기호(1),(2) 공히 차량 접근이 가능하며, 제반 교통사정은 보통임.\n기호(1) : 사다리형의 평지로, 현황 답으로 이용중임.\r\n기호(2) : 세장형에 가까운 평지로, 현황 답으로 이용중임.\n기호(1) : 남동측과 남측으로 노폭 약 3미터의 농로와 접함.\r\n기호(2) : 서측으로 노폭 약 3미터의 농로와 접함.\n기호(1) : 농림지역, 가축사육제한구역(2020-02-27)(닭 오리 메추리 개 돼지 제한)<가축분뇨의 관리 및 이용에 관한 법률>, 역사문화환경보존지역(300미터)<경상남도 문화재보호 조례>, 마을경관관리지역<남해군 경관 조례>, 농업진흥구역<농지법>.\r\n기호(2) : 농림지역, 가축사육제한구역(2020-02-27)(개 돼지 제한)<가축분뇨의 관리 및 이용에 관한 법률>, 가축사육제한구역(2020-02-27)(닭 오리 메추리 개 돼지 제한)<가축분뇨의 관리 및 이용에 관한 법률>, 역사문화환경보존지역(300미터)<경상남도 문화재보호 조례>, 마을경관관리지역<남해군 경관 조례>, 농업진흥구역<농지법>.\n없음.\n없음.\n1)임대관계 : 미상임.\r\n2)기    타 : 없음.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 59913651,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-11T19:58:15.047Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000513|2025타경686|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-05-04",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(108호법정)",
+            "amount": 83085600,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-06-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(108호법정)",
+            "amount": 58160000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-03",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(108호법정)",
+            "amount": 46528000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(108호법정)",
+            "amount": 37222000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "경매법정(108호법정)",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 5,
+        "failedCount": 3,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 전라남도 여수시 관문동 소재 &amp;apos;여수경찰서&amp;apos; 북서측 인근에 위치하며,  주위는 주택 및 점포, 근린시설 등이 소재한 기존주택지대임.\n본건까지 제 차량의 출입 가능하며, 인근에 버스정류장이 소재하는 등 전반적인 교통상황은 보통임. \n본건은 인접 도로 대비 대체로 등고 평탄하게 조성된 부정형의 토지이고 주거용 건부지로 이용중임.\n본건 서측으로 노폭 약 2미터 내외의 포장도로에 접함.\n기호(1) : 일반상업지역, 방화지구, 가축사육제한구역(전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 역사문화환경보존지역&lt;문화유산의 보존 및 활용에 관한 법률&gt;, 중점경관관리구역(2017-01-06)\n없음.\n없음.\n본건 토지 기호(1)은 현황 조사상 북측 일부에 인접 지상의 건물 일부가 점유 중인 것으로 추정됨.\n기호(2-가) : 시멘트벽돌조 스레이트위 칼라강판지붕 단층 건물로서,  외벽 : 몰탈위페인팅 등 마감. 내벽 : 벽지붙임 등 마감. 창호 : 하이새시창호 등 마감. \n단독주택으로 이용중임.\n기본적인 위생설비 및 급ㆍ배수설비, 난방설비 등이 되어있음.\n본건 건물에는 “지적개황도 및 건물개황도”와 같이 부합물 및 종물(기호㉠)이 소재함.\n없음.\n본건 기호(2-가)는 지적도 및 목측에 의한 현황조사상 본 건물 일부 및 부합물및종물 일부가 인접지상에 걸쳐 소재하는 것으로 판단됨.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 37742465,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-11T19:58:36.184Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000412|2025타경685|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-08-03",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "203호 법정",
+            "amount": 2323000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "203호 법정",
+            "amount": 1626100000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "203호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 3,
+        "failedCount": 1,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "    본건은 부산광역시 해운대구 우동 소재 지하철2호선 센텀시티역 남서측 인근에\r\n    위치하며 주위는 고층 아파트, 오피스텔, 각종근린생활시설, 공원, 백화점등으로\r\n    형성되어 있음.\n    본건에의 차량접근 가능하고 인근에 시내버스정류장 및 지하철2호선 센텀시티역이\r\n    소재하는등 대중교통사정은 비교적 편리시 됨.\n    철근콘크리트 및 철골철근콘크리트구조평지붕 51층 건물내 18층 1802호로서,\r\n     외벽: 복합판넬 및 석재붙임등,\r\n     내벽: 벽지마감등,\r\n     창호: 시스템창호등의 구조로 추정 됨.\n    업무시설(오피스텔)로서 현재는 주거용오피스텔 상태로 탐문조사 됨.\n    엘리베이터, 공동소화전, 화재경보 및 탐지설비, 급배수 및 위생설비, \r\n    난방설비등 되어있음.\r\n\r\n\n    인접지와 등고평탄한 세장형에 유사한 부정형의 토지를 건부지로 이용중임.\n    남서측 및 남동측으로 광대로에 접하고, 북서측으로 왕복4차선 및 북동측으로도\r\n    5~6차선 내외의 포장도로가 소재하고 있음.\n    중심상업지역, 방화지구, 지구단위계획구역, 도로(접합), 가축사육제한구역\r\n    <가축분뇨의 관리 및 이용에 관한 법률>, 일반산업단지(부산센텀시티지방산업단지)\r\n    <산업입지 및 개발에 관한 법률>, 지원시설구역(부산센텀시티일반산업단지관리기본계획)\r\n    <산업집적활성화 및 공장설립에 관한 법률>임.\n     -\n    ·임대관계: 미상\r\n    ·면적은 공부상의 면적을 기준으로 하였음.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 505494754,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-11T19:58:57.747Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000422|2025타경684|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-08-10",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "제210호 경매법정",
+            "amount": 98389450,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "제210호 경매법정",
+            "amount": 68873000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "2층 210호 경매법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 3,
+        "failedCount": 1,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 경상남도 통영시 도남동 소재 &amp;quot;남포초등학교&amp;quot; 동측 인근에 위치하는 토지로서, 주위는 근린생활시설, 단독주택, 농경지 및 자연림 등이 혼재하는 지역으로서, 제반 주위환경은 보통시 됩니다.\n본건까지 소형차량 접근 가능하며, 관내 대중교통 사정을 고려시 제반 교통상황은 보통시 됩니다.\n본건 토지는 평지에 위치한 세장형의 토지로서, &amp;quot;단독주택용 건부지&amp;quot;로 이용 중입니다.\n본건 토지의 북동측, 남서측 및 북서측으로 포장도로가 소재합니다.\n도시지역, 제2종일반주거지역, 준주거지역, 주거용지, 지구단위계획구역, 가축사육제한구역(교육환경보호구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역(2023-12-27)(남포초등학교(남포초등학교 병설유치원) 상대보호구역)&lt;교육환경 보호에 관한 법률&gt;, 절대보호구역(2023-12-27)(남포초등학교(남포초등학교 병설유치원)절대보호구역)&lt;교육환경 보호에 관한 법률&gt;, 중점경관관리구역(2024-07-02)\n본건 지상에 후첨 &amp;quot;지적 및 건물개황도&amp;quot;와 같이 제시외 건물이 소재하고 있으나, 감정평가목적을 고려하여 이에 구애됨이 없이 토지를 정상 감정평가하였으며, 제시외 건물이 경매대상에서 제외되어 토지에 영향을 미칠 경우 그 토지가액을 &amp;quot;토지건물감정평가명세표&amp;quot;상 비고란에 병기하였으니 경매 진행시 참고하시기 바랍니다.\n없습니다.\n○ 임대관계: 미상입니다. ○ 기    타 (1) 본건 토지는 둘 이상의 용도지역에 걸쳐 있는 토지로서, 종된 용도지역의 면적이 극히 과소하여 토지가치 형성에 미치는 영향이 미미하다고 판단되는 토지에 대해서는 주된 용도지역을 기준으로 감정평가하였습니다.  (2) 본건 지상에 소재하는 조경수 등은 토지와 일체로 거래되는 관행에 따라 토지에 포함하여 감정평가하였습니다.\n②) 블록조 슬래브지붕 단층 건으로서,     외벽: 적타일 및 모르타르위 페인팅 등 마감.     내벽: 벽지 및 일부 타일 등 마감.     창호: 새시창호입니다.\n②) &amp;quot;단독주택&amp;quot;으로 이용 중입니다.\n②) 제반 급배수설비, 위생설비, 난방설비 등이 되어 있습니다.\n본건 기호 ① 지상에 후첨 &amp;quot;지적 및 건물개황도&amp;quot;와 같이 제시외 건물이 소재하고 있어 구조, 사용자재, 시공정도 및 관리상태 등을 참작한 원가법을 적용하여 감정평가하되, 면적은 개략적으로 실측 사정하였고, 감가수정은 정액법을 적용하되 관찰감가법을 병용하였습니다.\n없습니다.\n○ 임대관계: 미상입니다. ○ 기    타: 없습니다.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 22772603,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-11T19:59:19.707Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000520|2025타경682|1",
+      "set": {
+        "status": "expired",
+        "detailCheckedAt": "2026-09-11T19:59:29.562Z",
+        "expiredAt": "2026-09-11T19:59:29.562Z"
+      }
+    },
+    {
+      "id": "B000513|2025타경681|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-05-04",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(108호법정)",
+            "amount": 55000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-06-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(108호법정)",
+            "amount": 38500000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-03",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(108호법정)",
+            "amount": 30800000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(108호법정)",
+            "amount": 24640000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "경매법정(108호법정)",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 5,
+        "failedCount": 3,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "   본건은 전라남도 고흥군 도양읍 봉암리 소재 &amp;quot;녹동초등학교&amp;quot; 남측 인근에 위치하며,     주위는 단독 및 공동주택, 학교, 근린생활시설 등이 소재하는 주거지대임\n   본건까지 차량 접근이 가능하며, 인근에 버스정류장이 소재하는 등 읍소재지내에    위치하여 전반적인 교통 사정은 보통인 편임.\n   철근콘크리트조 슬래브지붕 4층 건물 내 3층 301호(계단식, 남향)로서,     외벽 : 콘크리트위 페인팅 마감,    내벽 : 벽지도배 등 마감,    창호 : 새시창임.\n   다세대주택임.\n    위생설비 및 급.배수설비, 유류보일러에 의한 개별난방설비 등이 되어 있음.\n   장방형의 토지로서, 다세대주택 부지로 이용중임.\n   동측으로 왕복2차선, 북측으로 노폭 약 6미터 내외의 아스콘 포장도로에 접하고 있음.\n   제2종일반주거지역, 가축사육제한구역(제한구역(모든축종))&lt;가축분뇨의 관리 및 이용에    관한 법률&gt;, 전통상업보존구역&lt;고흥군 도시계획조례&gt;,     상대보호구역(2023-12-26)(녹동초등학교 상대보호구역)&lt;교육환경 보호에 관한 법률&gt;임.    \n   없음.\n   임대관계는 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 21146325,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-11T19:59:50.104Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000422|2025타경678|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "2층 210호 경매법정",
+            "amount": 91000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "2층 210호 경매법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 경상남도 거제시 장승포동 소재 &amp;apos;장승포초등학교&amp;apos; 서측 인근에 위치하며, 부근으로는 공동주택 및 로변상가 등이 혼재하는 지역으로서, 제반 주위환경은 보통입니다.\n본건까지 차량의 진출입은 용이하며, 제반 교통사정은 보통입니다.\n본건 건물은 철근콘크리트구조 (철근)콘크리트지붕 15층 건물 중 제2층 제201호 외 12개호로서,  외 벽 : 석재타일 및 몰탈위 페인트 등 마감 내 벽 : 벽지 및 타일 등 마감  창 호 : 새시창호임.\n공히 오피스텔(주거용)으로 이용 중입니다.\n제반 위생설비, 급,배수설비, 난방설비, 승강기, 각층 소화전 등이 시설되어져 있습니다.\n대지권의 토지는 부정형의 토지로서, 남측 하향한 완경사의 &amp;apos;주상용 건부지&amp;apos;로 이용 중입니다.\n대지권의 토지 북측으로 포장도로와 접합니다.\n일반상업지역 가축사육제한구역(모든축종 제한)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역(2019-08-09)(해성중학교)&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역(해성고등학교)&lt;교육환경 보호에 관한 법률&gt; 중점경관관리구역(2019-08-22)(장승포항항만시가지구역).\n없습니다.\n임대관계 : 미상임. 기      타 : 본건은 현장 조사 시 이해관계인의 부재 및 폐문 등으로 인하여 내부조사가 불가능하여 인근 주민의 탐문조사, 관련공부, 외부관찰 등을 통해 통상적인 상태를 기준으로 평가하였는바, 경매 진행 및 입찰시 참고하시기 바랍니다.  ",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 973557423,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-11T20:00:11.441Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000422|2025타경678|2",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "2층 210호 경매법정",
+            "amount": 89000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "2층 210호 경매법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 경상남도 거제시 장승포동 소재 &amp;apos;장승포초등학교&amp;apos; 서측 인근에 위치하며, 부근으로는 공동주택 및 로변상가 등이 혼재하는 지역으로서, 제반 주위환경은 보통입니다.\n본건까지 차량의 진출입은 용이하며, 제반 교통사정은 보통입니다.\n본건 건물은 철근콘크리트구조 (철근)콘크리트지붕 15층 건물 중 제2층 제201호 외 12개호로서,  외 벽 : 석재타일 및 몰탈위 페인트 등 마감 내 벽 : 벽지 및 타일 등 마감  창 호 : 새시창호임.\n공히 오피스텔(주거용)으로 이용 중입니다.\n제반 위생설비, 급,배수설비, 난방설비, 승강기, 각층 소화전 등이 시설되어져 있습니다.\n대지권의 토지는 부정형의 토지로서, 남측 하향한 완경사의 &amp;apos;주상용 건부지&amp;apos;로 이용 중입니다.\n대지권의 토지 북측으로 포장도로와 접합니다.\n일반상업지역 가축사육제한구역(모든축종 제한)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역(2019-08-09)(해성중학교)&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역(해성고등학교)&lt;교육환경 보호에 관한 법률&gt; 중점경관관리구역(2019-08-22)(장승포항항만시가지구역).\n없습니다.\n임대관계 : 미상임. 기      타 : 본건은 현장 조사 시 이해관계인의 부재 및 폐문 등으로 인하여 내부조사가 불가능하여 인근 주민의 탐문조사, 관련공부, 외부관찰 등을 통해 통상적인 상태를 기준으로 평가하였는바, 경매 진행 및 입찰시 참고하시기 바랍니다.  ",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 973557423,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-11T20:00:33.113Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000422|2025타경678|3",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "2층 210호 경매법정",
+            "amount": 89000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "2층 210호 경매법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 경상남도 거제시 장승포동 소재 &amp;apos;장승포초등학교&amp;apos; 서측 인근에 위치하며, 부근으로는 공동주택 및 로변상가 등이 혼재하는 지역으로서, 제반 주위환경은 보통입니다.\n본건까지 차량의 진출입은 용이하며, 제반 교통사정은 보통입니다.\n본건 건물은 철근콘크리트구조 (철근)콘크리트지붕 15층 건물 중 제2층 제201호 외 12개호로서,  외 벽 : 석재타일 및 몰탈위 페인트 등 마감 내 벽 : 벽지 및 타일 등 마감  창 호 : 새시창호임.\n공히 오피스텔(주거용)으로 이용 중입니다.\n제반 위생설비, 급,배수설비, 난방설비, 승강기, 각층 소화전 등이 시설되어져 있습니다.\n대지권의 토지는 부정형의 토지로서, 남측 하향한 완경사의 &amp;apos;주상용 건부지&amp;apos;로 이용 중입니다.\n대지권의 토지 북측으로 포장도로와 접합니다.\n일반상업지역 가축사육제한구역(모든축종 제한)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역(2019-08-09)(해성중학교)&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역(해성고등학교)&lt;교육환경 보호에 관한 법률&gt; 중점경관관리구역(2019-08-22)(장승포항항만시가지구역).\n없습니다.\n임대관계 : 미상임. 기      타 : 본건은 현장 조사 시 이해관계인의 부재 및 폐문 등으로 인하여 내부조사가 불가능하여 인근 주민의 탐문조사, 관련공부, 외부관찰 등을 통해 통상적인 상태를 기준으로 평가하였는바, 경매 진행 및 입찰시 참고하시기 바랍니다.  ",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 973557423,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-11T20:00:54.541Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000422|2025타경678|4",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "2층 210호 경매법정",
+            "amount": 109000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "2층 210호 경매법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 경상남도 거제시 장승포동 소재 &amp;apos;장승포초등학교&amp;apos; 서측 인근에 위치하며, 부근으로는 공동주택 및 로변상가 등이 혼재하는 지역으로서, 제반 주위환경은 보통입니다.\n본건까지 차량의 진출입은 용이하며, 제반 교통사정은 보통입니다.\n본건 건물은 철근콘크리트구조 (철근)콘크리트지붕 15층 건물 중 제2층 제201호 외 12개호로서,  외 벽 : 석재타일 및 몰탈위 페인트 등 마감 내 벽 : 벽지 및 타일 등 마감  창 호 : 새시창호임.\n공히 오피스텔(주거용)으로 이용 중입니다.\n제반 위생설비, 급,배수설비, 난방설비, 승강기, 각층 소화전 등이 시설되어져 있습니다.\n대지권의 토지는 부정형의 토지로서, 남측 하향한 완경사의 &amp;apos;주상용 건부지&amp;apos;로 이용 중입니다.\n대지권의 토지 북측으로 포장도로와 접합니다.\n일반상업지역 가축사육제한구역(모든축종 제한)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역(2019-08-09)(해성중학교)&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역(해성고등학교)&lt;교육환경 보호에 관한 법률&gt; 중점경관관리구역(2019-08-22)(장승포항항만시가지구역).\n없습니다.\n임대관계 : 미상임. 기      타 : 본건은 현장 조사 시 이해관계인의 부재 및 폐문 등으로 인하여 내부조사가 불가능하여 인근 주민의 탐문조사, 관련공부, 외부관찰 등을 통해 통상적인 상태를 기준으로 평가하였는바, 경매 진행 및 입찰시 참고하시기 바랍니다.  ",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 973557423,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "4",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-11T20:01:15.579Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000422|2025타경678|5",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "2층 210호 경매법정",
+            "amount": 107000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "2층 210호 경매법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 경상남도 거제시 장승포동 소재 &amp;apos;장승포초등학교&amp;apos; 서측 인근에 위치하며, 부근으로는 공동주택 및 로변상가 등이 혼재하는 지역으로서, 제반 주위환경은 보통입니다.\n본건까지 차량의 진출입은 용이하며, 제반 교통사정은 보통입니다.\n본건 건물은 철근콘크리트구조 (철근)콘크리트지붕 15층 건물 중 제2층 제201호 외 12개호로서,  외 벽 : 석재타일 및 몰탈위 페인트 등 마감 내 벽 : 벽지 및 타일 등 마감  창 호 : 새시창호임.\n공히 오피스텔(주거용)으로 이용 중입니다.\n제반 위생설비, 급,배수설비, 난방설비, 승강기, 각층 소화전 등이 시설되어져 있습니다.\n대지권의 토지는 부정형의 토지로서, 남측 하향한 완경사의 &amp;apos;주상용 건부지&amp;apos;로 이용 중입니다.\n대지권의 토지 북측으로 포장도로와 접합니다.\n일반상업지역 가축사육제한구역(모든축종 제한)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역(2019-08-09)(해성중학교)&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역(해성고등학교)&lt;교육환경 보호에 관한 법률&gt; 중점경관관리구역(2019-08-22)(장승포항항만시가지구역).\n없습니다.\n임대관계 : 미상임. 기      타 : 본건은 현장 조사 시 이해관계인의 부재 및 폐문 등으로 인하여 내부조사가 불가능하여 인근 주민의 탐문조사, 관련공부, 외부관찰 등을 통해 통상적인 상태를 기준으로 평가하였는바, 경매 진행 및 입찰시 참고하시기 바랍니다.  ",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 973557423,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "5",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-11T20:01:36.766Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000422|2025타경678|6",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "2층 210호 경매법정",
+            "amount": 93000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "2층 210호 경매법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 경상남도 거제시 장승포동 소재 &amp;apos;장승포초등학교&amp;apos; 서측 인근에 위치하며, 부근으로는 공동주택 및 로변상가 등이 혼재하는 지역으로서, 제반 주위환경은 보통입니다.\n본건까지 차량의 진출입은 용이하며, 제반 교통사정은 보통입니다.\n본건 건물은 철근콘크리트구조 (철근)콘크리트지붕 15층 건물 중 제2층 제201호 외 12개호로서,  외 벽 : 석재타일 및 몰탈위 페인트 등 마감 내 벽 : 벽지 및 타일 등 마감  창 호 : 새시창호임.\n공히 오피스텔(주거용)으로 이용 중입니다.\n제반 위생설비, 급,배수설비, 난방설비, 승강기, 각층 소화전 등이 시설되어져 있습니다.\n대지권의 토지는 부정형의 토지로서, 남측 하향한 완경사의 &amp;apos;주상용 건부지&amp;apos;로 이용 중입니다.\n대지권의 토지 북측으로 포장도로와 접합니다.\n일반상업지역 가축사육제한구역(모든축종 제한)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역(2019-08-09)(해성중학교)&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역(해성고등학교)&lt;교육환경 보호에 관한 법률&gt; 중점경관관리구역(2019-08-22)(장승포항항만시가지구역).\n없습니다.\n임대관계 : 미상임. 기      타 : 본건은 현장 조사 시 이해관계인의 부재 및 폐문 등으로 인하여 내부조사가 불가능하여 인근 주민의 탐문조사, 관련공부, 외부관찰 등을 통해 통상적인 상태를 기준으로 평가하였는바, 경매 진행 및 입찰시 참고하시기 바랍니다.  ",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 973557423,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "6",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-11T20:01:56.862Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000422|2025타경678|7",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "2층 210호 경매법정",
+            "amount": 95000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "2층 210호 경매법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 경상남도 거제시 장승포동 소재 &amp;apos;장승포초등학교&amp;apos; 서측 인근에 위치하며, 부근으로는 공동주택 및 로변상가 등이 혼재하는 지역으로서, 제반 주위환경은 보통입니다.\n본건까지 차량의 진출입은 용이하며, 제반 교통사정은 보통입니다.\n본건 건물은 철근콘크리트구조 (철근)콘크리트지붕 15층 건물 중 제2층 제201호 외 12개호로서,  외 벽 : 석재타일 및 몰탈위 페인트 등 마감 내 벽 : 벽지 및 타일 등 마감  창 호 : 새시창호임.\n공히 오피스텔(주거용)으로 이용 중입니다.\n제반 위생설비, 급,배수설비, 난방설비, 승강기, 각층 소화전 등이 시설되어져 있습니다.\n대지권의 토지는 부정형의 토지로서, 남측 하향한 완경사의 &amp;apos;주상용 건부지&amp;apos;로 이용 중입니다.\n대지권의 토지 북측으로 포장도로와 접합니다.\n일반상업지역 가축사육제한구역(모든축종 제한)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역(2019-08-09)(해성중학교)&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역(해성고등학교)&lt;교육환경 보호에 관한 법률&gt; 중점경관관리구역(2019-08-22)(장승포항항만시가지구역).\n없습니다.\n임대관계 : 미상임. 기      타 : 본건은 현장 조사 시 이해관계인의 부재 및 폐문 등으로 인하여 내부조사가 불가능하여 인근 주민의 탐문조사, 관련공부, 외부관찰 등을 통해 통상적인 상태를 기준으로 평가하였는바, 경매 진행 및 입찰시 참고하시기 바랍니다.  ",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 973557423,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "7",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-11T20:02:18.477Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000422|2025타경678|8",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "2층 210호 경매법정",
+            "amount": 95000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "2층 210호 경매법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 경상남도 거제시 장승포동 소재 &amp;apos;장승포초등학교&amp;apos; 서측 인근에 위치하며, 부근으로는 공동주택 및 로변상가 등이 혼재하는 지역으로서, 제반 주위환경은 보통입니다.\n본건까지 차량의 진출입은 용이하며, 제반 교통사정은 보통입니다.\n본건 건물은 철근콘크리트구조 (철근)콘크리트지붕 15층 건물 중 제2층 제201호 외 12개호로서,  외 벽 : 석재타일 및 몰탈위 페인트 등 마감 내 벽 : 벽지 및 타일 등 마감  창 호 : 새시창호임.\n공히 오피스텔(주거용)으로 이용 중입니다.\n제반 위생설비, 급,배수설비, 난방설비, 승강기, 각층 소화전 등이 시설되어져 있습니다.\n대지권의 토지는 부정형의 토지로서, 남측 하향한 완경사의 &amp;apos;주상용 건부지&amp;apos;로 이용 중입니다.\n대지권의 토지 북측으로 포장도로와 접합니다.\n일반상업지역 가축사육제한구역(모든축종 제한)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역(2019-08-09)(해성중학교)&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역(해성고등학교)&lt;교육환경 보호에 관한 법률&gt; 중점경관관리구역(2019-08-22)(장승포항항만시가지구역).\n없습니다.\n임대관계 : 미상임. 기      타 : 본건은 현장 조사 시 이해관계인의 부재 및 폐문 등으로 인하여 내부조사가 불가능하여 인근 주민의 탐문조사, 관련공부, 외부관찰 등을 통해 통상적인 상태를 기준으로 평가하였는바, 경매 진행 및 입찰시 참고하시기 바랍니다.  ",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 973557423,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "8",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-11T20:02:40.364Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000422|2025타경678|9",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "2층 210호 경매법정",
+            "amount": 78000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "2층 210호 경매법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 경상남도 거제시 장승포동 소재 &amp;apos;장승포초등학교&amp;apos; 서측 인근에 위치하며, 부근으로는 공동주택 및 로변상가 등이 혼재하는 지역으로서, 제반 주위환경은 보통입니다.\n본건까지 차량의 진출입은 용이하며, 제반 교통사정은 보통입니다.\n본건 건물은 철근콘크리트구조 (철근)콘크리트지붕 15층 건물 중 제2층 제201호 외 12개호로서,  외 벽 : 석재타일 및 몰탈위 페인트 등 마감 내 벽 : 벽지 및 타일 등 마감  창 호 : 새시창호임.\n공히 오피스텔(주거용)으로 이용 중입니다.\n제반 위생설비, 급,배수설비, 난방설비, 승강기, 각층 소화전 등이 시설되어져 있습니다.\n대지권의 토지는 부정형의 토지로서, 남측 하향한 완경사의 &amp;apos;주상용 건부지&amp;apos;로 이용 중입니다.\n대지권의 토지 북측으로 포장도로와 접합니다.\n일반상업지역 가축사육제한구역(모든축종 제한)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역(2019-08-09)(해성중학교)&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역(해성고등학교)&lt;교육환경 보호에 관한 법률&gt; 중점경관관리구역(2019-08-22)(장승포항항만시가지구역).\n없습니다.\n임대관계 : 미상임. 기      타 : 본건은 현장 조사 시 이해관계인의 부재 및 폐문 등으로 인하여 내부조사가 불가능하여 인근 주민의 탐문조사, 관련공부, 외부관찰 등을 통해 통상적인 상태를 기준으로 평가하였는바, 경매 진행 및 입찰시 참고하시기 바랍니다.  ",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 973557423,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "9",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-11T20:03:01.076Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000422|2025타경678|10",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "2층 210호 경매법정",
+            "amount": 61000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "2층 210호 경매법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 경상남도 거제시 장승포동 소재 &amp;apos;장승포초등학교&amp;apos; 서측 인근에 위치하며, 부근으로는 공동주택 및 로변상가 등이 혼재하는 지역으로서, 제반 주위환경은 보통입니다.\n본건까지 차량의 진출입은 용이하며, 제반 교통사정은 보통입니다.\n본건 건물은 철근콘크리트구조 (철근)콘크리트지붕 15층 건물 중 제2층 제201호 외 12개호로서,  외 벽 : 석재타일 및 몰탈위 페인트 등 마감 내 벽 : 벽지 및 타일 등 마감  창 호 : 새시창호임.\n공히 오피스텔(주거용)으로 이용 중입니다.\n제반 위생설비, 급,배수설비, 난방설비, 승강기, 각층 소화전 등이 시설되어져 있습니다.\n대지권의 토지는 부정형의 토지로서, 남측 하향한 완경사의 &amp;apos;주상용 건부지&amp;apos;로 이용 중입니다.\n대지권의 토지 북측으로 포장도로와 접합니다.\n일반상업지역 가축사육제한구역(모든축종 제한)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역(2019-08-09)(해성중학교)&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역(해성고등학교)&lt;교육환경 보호에 관한 법률&gt; 중점경관관리구역(2019-08-22)(장승포항항만시가지구역).\n없습니다.\n임대관계 : 미상임. 기      타 : 본건은 현장 조사 시 이해관계인의 부재 및 폐문 등으로 인하여 내부조사가 불가능하여 인근 주민의 탐문조사, 관련공부, 외부관찰 등을 통해 통상적인 상태를 기준으로 평가하였는바, 경매 진행 및 입찰시 참고하시기 바랍니다.  ",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 973557423,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "10",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-11T20:03:23.309Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000422|2025타경678|11",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "2층 210호 경매법정",
+            "amount": 106000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "2층 210호 경매법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 경상남도 거제시 장승포동 소재 &amp;apos;장승포초등학교&amp;apos; 서측 인근에 위치하며, 부근으로는 공동주택 및 로변상가 등이 혼재하는 지역으로서, 제반 주위환경은 보통입니다.\n본건까지 차량의 진출입은 용이하며, 제반 교통사정은 보통입니다.\n본건 건물은 철근콘크리트구조 (철근)콘크리트지붕 15층 건물 중 제2층 제201호 외 12개호로서,  외 벽 : 석재타일 및 몰탈위 페인트 등 마감 내 벽 : 벽지 및 타일 등 마감  창 호 : 새시창호임.\n공히 오피스텔(주거용)으로 이용 중입니다.\n제반 위생설비, 급,배수설비, 난방설비, 승강기, 각층 소화전 등이 시설되어져 있습니다.\n대지권의 토지는 부정형의 토지로서, 남측 하향한 완경사의 &amp;apos;주상용 건부지&amp;apos;로 이용 중입니다.\n대지권의 토지 북측으로 포장도로와 접합니다.\n일반상업지역 가축사육제한구역(모든축종 제한)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역(2019-08-09)(해성중학교)&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역(해성고등학교)&lt;교육환경 보호에 관한 법률&gt; 중점경관관리구역(2019-08-22)(장승포항항만시가지구역).\n없습니다.\n임대관계 : 미상임. 기      타 : 본건은 현장 조사 시 이해관계인의 부재 및 폐문 등으로 인하여 내부조사가 불가능하여 인근 주민의 탐문조사, 관련공부, 외부관찰 등을 통해 통상적인 상태를 기준으로 평가하였는바, 경매 진행 및 입찰시 참고하시기 바랍니다.  ",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 973557423,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "11",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-11T20:03:44.729Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000422|2025타경678|12",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "2층 210호 경매법정",
+            "amount": 82000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "2층 210호 경매법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 경상남도 거제시 장승포동 소재 &amp;apos;장승포초등학교&amp;apos; 서측 인근에 위치하며, 부근으로는 공동주택 및 로변상가 등이 혼재하는 지역으로서, 제반 주위환경은 보통입니다.\n본건까지 차량의 진출입은 용이하며, 제반 교통사정은 보통입니다.\n본건 건물은 철근콘크리트구조 (철근)콘크리트지붕 15층 건물 중 제2층 제201호 외 12개호로서,  외 벽 : 석재타일 및 몰탈위 페인트 등 마감 내 벽 : 벽지 및 타일 등 마감  창 호 : 새시창호임.\n공히 오피스텔(주거용)으로 이용 중입니다.\n제반 위생설비, 급,배수설비, 난방설비, 승강기, 각층 소화전 등이 시설되어져 있습니다.\n대지권의 토지는 부정형의 토지로서, 남측 하향한 완경사의 &amp;apos;주상용 건부지&amp;apos;로 이용 중입니다.\n대지권의 토지 북측으로 포장도로와 접합니다.\n일반상업지역 가축사육제한구역(모든축종 제한)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역(2019-08-09)(해성중학교)&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역(해성고등학교)&lt;교육환경 보호에 관한 법률&gt; 중점경관관리구역(2019-08-22)(장승포항항만시가지구역).\n없습니다.\n임대관계 : 미상임. 기      타 : 본건은 현장 조사 시 이해관계인의 부재 및 폐문 등으로 인하여 내부조사가 불가능하여 인근 주민의 탐문조사, 관련공부, 외부관찰 등을 통해 통상적인 상태를 기준으로 평가하였는바, 경매 진행 및 입찰시 참고하시기 바랍니다.  ",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 973557423,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "12",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-11T20:04:05.900Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000422|2025타경678|13",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "2층 210호 경매법정",
+            "amount": 82000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "2층 210호 경매법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 경상남도 거제시 장승포동 소재 &amp;apos;장승포초등학교&amp;apos; 서측 인근에 위치하며, 부근으로는 공동주택 및 로변상가 등이 혼재하는 지역으로서, 제반 주위환경은 보통입니다.\n본건까지 차량의 진출입은 용이하며, 제반 교통사정은 보통입니다.\n본건 건물은 철근콘크리트구조 (철근)콘크리트지붕 15층 건물 중 제2층 제201호 외 12개호로서,  외 벽 : 석재타일 및 몰탈위 페인트 등 마감 내 벽 : 벽지 및 타일 등 마감  창 호 : 새시창호임.\n공히 오피스텔(주거용)으로 이용 중입니다.\n제반 위생설비, 급,배수설비, 난방설비, 승강기, 각층 소화전 등이 시설되어져 있습니다.\n대지권의 토지는 부정형의 토지로서, 남측 하향한 완경사의 &amp;apos;주상용 건부지&amp;apos;로 이용 중입니다.\n대지권의 토지 북측으로 포장도로와 접합니다.\n일반상업지역 가축사육제한구역(모든축종 제한)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역(2019-08-09)(해성중학교)&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역(해성고등학교)&lt;교육환경 보호에 관한 법률&gt; 중점경관관리구역(2019-08-22)(장승포항항만시가지구역).\n없습니다.\n임대관계 : 미상임. 기      타 : 본건은 현장 조사 시 이해관계인의 부재 및 폐문 등으로 인하여 내부조사가 불가능하여 인근 주민의 탐문조사, 관련공부, 외부관찰 등을 통해 통상적인 상태를 기준으로 평가하였는바, 경매 진행 및 입찰시 참고하시기 바랍니다.  ",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 973557423,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "13",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-11T20:04:27.382Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    }
+  ],
+  "statePatch": {
+    "propertyHistoryFailureCount": 1,
+    "propertyHistoryYear": 2020,
+    "propertyHistoryMonth": 12,
+    "propertyHistoryPage": 1,
+    "propertyHistoryLastRun": "2026-09-11T19:55:56.427Z",
+    "propertyHistoryLastError": null,
+    "saleNoticeDeferred": [],
+    "saleNoticeFailures": {
+      "search|2026-08|B000210": 0,
+      "search|2026-08|B000211": 0,
+      "search|2026-08|B000215": 0,
+      "search|2026-08|B000212": 1,
+      "search|2026-08|B000280": 1,
+      "search|2026-08|B000213": 0,
+      "search|2026-08|B000214": 0,
+      "search|2026-08|B214807": 0,
+      "search|2026-08|B214804": 0,
+      "search|2026-08|B000240": 0,
+      "search|2026-08|B000241": 0,
+      "search|2026-08|B000250": 0,
+      "search|2026-08|B000251": 0,
+      "search|2026-08|B000252": 0,
+      "search|2026-08|B000253": 0,
+      "search|2026-08|B250826": 0,
+      "search|2026-08|B000254": 0,
+      "search|2026-08|B000260": 0
+    },
+    "saleNoticeBackfillYear": 2026,
+    "saleNoticeBackfillMonth": 8,
+    "saleNoticeBackfillOffset": 0,
+    "saleNoticeBackfillLastRun": "2026-09-09T08:32:07.978Z",
+    "saleNoticeBackfillLastError": "B000212 2026-08: court gate held by pid 9380 (rslt-probe) since 2026-09-09T08:32:03.243Z",
+    "saleNoticeCourtOffsets": {
+      "2026-08|B000210": -1,
+      "2026-08|B000211": -1,
+      "2026-08|B000215": -1,
+      "2026-08|B000212": -1,
+      "2026-08|B000213": -1,
+      "2026-08|B000214": -1,
+      "2026-08|B214807": -1,
+      "2026-08|B214804": -1,
+      "2026-08|B000240": -1,
+      "2026-08|B000241": -1,
+      "2026-08|B000250": -1,
+      "2026-08|B000251": -1,
+      "2026-08|B000252": -1,
+      "2026-08|B000253": -1,
+      "2026-08|B250826": -1,
+      "2026-08|B000254": -1,
+      "2026-08|B000260": -1
+    },
+    "saleNoticeBackfillCourtIndex": 17,
+    "currentSweepOffsets": {
+      "2026-09|B000210": -1,
+      "2026-09|B000211": -1,
+      "2026-09|B000215": -1,
+      "2026-09|B000212": -1,
+      "2026-09|B000213": -1,
+      "2026-09|B000263": -1,
+      "2026-09|B000264": -1,
+      "2026-09|B000270": -1,
+      "2026-09|B000271": -1,
+      "2026-09|B000272": -1,
+      "2026-09|B000273": -1,
+      "2026-09|B000280": -1,
+      "2026-09|B000281": -1,
+      "2026-09|B000282": -1,
+      "2026-09|B000283": 3,
+      "2026-09|B000315": -1,
+      "2026-09|B000316": -1,
+      "2026-09|B000317": -1,
+      "2026-09|B000320": -1,
+      "2026-09|B000410": -1,
+      "2026-09|B000412": -1,
+      "2026-09|B000414": -1,
+      "2026-09|B000411": -1,
+      "2026-09|B000420": -1,
+      "2026-09|B000431": -1,
+      "2026-09|B000421": -1,
+      "2026-09|B000422": -1,
+      "2026-09|B000423": -1,
+      "2026-09|B000424": -1,
+      "2026-09|B000510": -1,
+      "2026-09|B000511": -1,
+      "2026-09|B000512": -1,
+      "2026-09|B000513": -1,
+      "2026-09|B000514": -1,
+      "2026-09|B000520": -1,
+      "2026-09|B000521": -1,
+      "2026-09|B000522": -1,
+      "2026-09|B000523": -1,
+      "2026-09|B000530": -1,
+      "2026-10|B000210": -1,
+      "2026-10|B000211": -1,
+      "2026-10|B000215": -1,
+      "2026-10|B000212": -1,
+      "2026-10|B000213": -1,
+      "2026-10|B000214": -1,
+      "2026-10|B214807": -1
+    },
+    "currentSweepFailures": {
+      "search|2026-09|B000210": 0,
+      "2026-09|B000210|0": 0,
+      "2026-09|B000210|1": 0,
+      "2026-09|B000210|2": 0,
+      "2026-09|B000210|3": 0,
+      "search|2026-09|B000211": 0,
+      "2026-09|B000211|0": 0,
+      "2026-09|B000211|1": 0,
+      "2026-09|B000211|2": 0,
+      "2026-09|B000211|3": 0,
+      "search|2026-09|B000215": 0,
+      "2026-09|B000215|0": 0,
+      "2026-09|B000215|1": 0,
+      "search|2026-09|B000212": 0,
+      "2026-09|B000212|0": 0,
+      "2026-09|B000212|1": 0,
+      "2026-09|B000212|2": 0,
+      "2026-09|B000212|3": 0,
+      "2026-09|B000212|4": 0,
+      "2026-09|B000212|5": 0,
+      "search|2026-09|B000213": 0,
+      "2026-09|B000213|0": 0,
+      "2026-09|B000213|1": 0,
+      "search|2026-09|B000214": 2,
+      "search|2026-09|B214807": 2,
+      "search|2026-09|B214804": 1,
+      "search|2026-09|B000240": 1,
+      "search|2026-09|B000241": 1,
+      "search|2026-09|B000250": 1,
+      "search|2026-09|B000251": 1,
+      "search|2026-09|B000252": 1,
+      "search|2026-09|B000253": 1,
+      "search|2026-09|B250826": 1,
+      "search|2026-09|B000254": 1,
+      "search|2026-09|B000260": 1,
+      "search|2026-09|B000261": 1,
+      "search|2026-09|B000262": 1,
+      "search|2026-09|B000263": 0,
+      "2026-09|B000263|0": 0,
+      "search|2026-09|B000264": 0,
+      "2026-09|B000264|0": 0,
+      "2026-09|B000264|1": 0,
+      "search|2026-09|B000270": 0,
+      "2026-09|B000270|0": 0,
+      "2026-09|B000270|1": 0,
+      "2026-09|B000270|2": 0,
+      "2026-09|B000270|3": 0,
+      "search|2026-09|B000271": 0,
+      "2026-09|B000271|0": 0,
+      "search|2026-09|B000272": 0,
+      "2026-09|B000272|0": 0,
+      "search|2026-09|B000273": 0,
+      "2026-09|B000273|0": 0,
+      "2026-09|B000273|1": 0,
+      "search|2026-09|B000280": 0,
+      "2026-09|B000280|0": 0,
+      "2026-09|B000280|1": 0,
+      "2026-09|B000280|2": 0,
+      "2026-09|B000280|3": 0,
+      "2026-09|B000280|4": 0,
+      "search|2026-09|B000281": 0,
+      "2026-09|B000281|0": 0,
+      "2026-09|B000281|1": 0,
+      "search|2026-09|B000282": 0,
+      "search|2026-09|B000283": 1,
+      "2026-09|B000283|0": 0,
+      "2026-09|B000283|1": 0,
+      "2026-09|B000283|2": 0,
+      "search|2026-09|B000284": 1,
+      "search|2026-09|B000285": 1,
+      "search|2026-09|B000310": 1,
+      "search|2026-09|B000311": 1,
+      "search|2026-09|B000312": 1,
+      "search|2026-09|B000313": 1,
+      "search|2026-09|B000314": 1,
+      "search|2026-09|B000315": 0,
+      "2026-09|B000315|0": 0,
+      "search|2026-09|B000316": 0,
+      "2026-09|B000316|0": 0,
+      "2026-09|B000316|1": 0,
+      "search|2026-09|B000317": 0,
+      "2026-09|B000317|0": 0,
+      "2026-09|B000317|1": 0,
+      "search|2026-09|B000320": 0,
+      "2026-09|B000320|0": 0,
+      "2026-09|B000320|1": 0,
+      "2026-09|B000320|2": 0,
+      "2026-09|B000320|3": 0,
+      "search|2026-09|B000410": 0,
+      "2026-09|B000410|0": 0,
+      "2026-09|B000410|1": 0,
+      "search|2026-09|B000412": 0,
+      "2026-09|B000412|0": 0,
+      "2026-09|B000412|1": 0,
+      "2026-09|B000412|2": 0,
+      "search|2026-09|B000414": 0,
+      "2026-09|B000414|0": 0,
+      "search|2026-09|B000411": 0,
+      "2026-09|B000411|0": 0,
+      "2026-09|B000411|1": 0,
+      "2026-09|B000411|2": 0,
+      "2026-09|B000411|3": 0,
+      "2026-09|B000411|4": 0,
+      "2026-09|B000411|5": 0,
+      "2026-09|B000411|6": 0,
+      "search|2026-09|B000420": 0,
+      "2026-09|B000420|0": 0,
+      "2026-09|B000420|1": 0,
+      "2026-09|B000420|2": 0,
+      "search|2026-09|B000431": 0,
+      "2026-09|B000431|0": 0,
+      "2026-09|B000431|1": 0,
+      "search|2026-09|B000421": 0,
+      "2026-09|B000421|0": 0,
+      "2026-09|B000421|1": 0,
+      "2026-09|B000421|2": 0,
+      "search|2026-09|B000422": 0,
+      "2026-09|B000422|0": 0,
+      "2026-09|B000422|1": 0,
+      "search|2026-09|B000423": 0,
+      "2026-09|B000423|0": 0,
+      "search|2026-09|B000424": 0,
+      "search|2026-09|B000510": 0,
+      "2026-09|B000510|0": 0,
+      "2026-09|B000510|1": 0,
+      "2026-09|B000510|2": 0,
+      "2026-09|B000510|3": 0,
+      "2026-09|B000510|4": 0,
+      "2026-09|B000510|5": 0,
+      "search|2026-09|B000511": 0,
+      "2026-09|B000511|0": 0,
+      "2026-09|B000511|1": 0,
+      "2026-09|B000511|2": 0,
+      "search|2026-09|B000512": 0,
+      "2026-09|B000512|0": 0,
+      "2026-09|B000512|1": 0,
+      "search|2026-09|B000513": 0,
+      "2026-09|B000513|0": 0,
+      "search|2026-09|B000514": 0,
+      "2026-09|B000514|0": 0,
+      "search|2026-09|B000520": 0,
+      "2026-09|B000520|0": 0,
+      "2026-09|B000520|1": 0,
+      "search|2026-09|B000521": 0,
+      "2026-09|B000521|0": 0,
+      "search|2026-09|B000522": 0,
+      "2026-09|B000522|0": 0,
+      "search|2026-09|B000523": 0,
+      "search|2026-09|B000530": 0,
+      "2026-09|B000530|0": 0,
+      "2026-09|B000530|1": 0,
+      "2026-09|B000530|2": 0,
+      "2026-09|B000530|3": 0,
+      "search|2026-10|B000210": 0,
+      "search|2026-10|B000211": 0,
+      "search|2026-10|B000215": 0,
+      "search|2026-10|B000212": 0,
+      "search|2026-10|B000213": 0,
+      "search|2026-10|B000214": 0,
+      "search|2026-10|B214807": 0
+    },
+    "currentSweepMonthSlot": 1,
+    "currentSweepCourtIndex": 7,
+    "currentSweepLastRun": "2026-09-08T23:44:12.885Z",
+    "currentSweepLastError": null,
+    "saleNoticeBackfillVersion": 2,
+    "currentSweepDeferred": [
+      "2026-09|B214804",
+      "2026-09|B000240",
+      "2026-09|B000241",
+      "2026-09|B000250",
+      "2026-09|B000251",
+      "2026-09|B000252",
+      "2026-09|B000253",
+      "2026-09|B250826",
+      "2026-09|B000254",
+      "2026-09|B000260",
+      "2026-09|B000261",
+      "2026-09|B000262",
+      "2026-09|B000283",
+      "2026-09|B000284",
+      "2026-09|B000285",
+      "2026-09|B000310",
+      "2026-09|B000311",
+      "2026-09|B000312",
+      "2026-09|B000313",
+      "2026-09|B000314",
+      "2026-10|B000412",
+      "2026-10|B000510",
+      "2026-10|B000421",
+      "2026-10|B000511"
+    ]
+  }
+}
