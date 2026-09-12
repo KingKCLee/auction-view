@@ -1,2 +1,2 @@
-collector-kick 2026-09-12T04:24:30Z
-reason: canonical unique itemCount remains stagnant at 11973 after a successful duplicate-only official pass; advance the existing bounded official current-sale, historical-sale, and property-search cursors, preserve canonical data additively, retry deferred work, allow macOS rescue when all discovery routes add zero unique items, and do not bypass CAPTCHA or access controls
+collector-kick 2026-09-12T05:24:30Z
+reason: canonical unique itemCount remains stagnant at 11973 after the previous safe cursor advance and subsequent cloud-master merge; rerun the bounded additive official discovery chain in order: current sale notices, historical sale notices, property search, generic sale-notice discovery, then official case-detail enrichment; retry deferred work and allow the existing macOS rescue only when all discovery routes add zero unique items; preserve canonical data additively; do not bypass CAPTCHA or access controls
