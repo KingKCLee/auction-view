@@ -24,10 +24,15 @@ jobs:
     outputs:
       needs_rescue: ${{ steps.health.outputs.needs_rescue }}
     env:
-      CURRENT_SWEEP_COURTS: '4'
-      CURRENT_SWEEP_NOTICES: '3'
-      HISTORY_COURTS_PER_RUN: '6'
-      HISTORY_NOTICES_PER_COURT: '2'
+      # Hosted courtauction.go.kr connections have recently consumed most of the
+      # bounded step while rotating transports. One court per run guarantees that
+      # progress/state can be persisted instead of losing a four-court batch to
+      # the outer timeout. The hourly autonomous monitor advances the cursor on
+      # later runs.
+      CURRENT_SWEEP_COURTS: '1'
+      CURRENT_SWEEP_NOTICES: '2'
+      HISTORY_COURTS_PER_RUN: '1'
+      HISTORY_NOTICES_PER_COURT: '1'
       BASIC_INFO_CASES: '4'
       NODE_OPTIONS: '--dns-result-order=ipv4first'
     steps:
@@ -58,7 +63,7 @@ jobs:
           need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; process.stdout.write(String(Number(c.newUniqueItems||0)===0))")
           if [ "$need" = "true" ]; then
             echo "current notices added no unique items; advancing official sale-notice backfill"
-            timeout -k 5s 150s node sale-notice-history-worker.js || true
+            timeout -k 5s 120s node sale-notice-history-worker.js || true
           else
             echo "current notices added unique items; historical backfill can wait"
           fi
@@ -128,10 +133,10 @@ jobs:
     runs-on: macos-latest
     timeout-minutes: 15
     env:
-      CURRENT_SWEEP_COURTS: '4'
-      CURRENT_SWEEP_NOTICES: '3'
-      HISTORY_COURTS_PER_RUN: '6'
-      HISTORY_NOTICES_PER_COURT: '2'
+      CURRENT_SWEEP_COURTS: '1'
+      CURRENT_SWEEP_NOTICES: '2'
+      HISTORY_COURTS_PER_RUN: '1'
+      HISTORY_NOTICES_PER_COURT: '1'
       BASIC_INFO_CASES: '4'
       NODE_OPTIONS: '--dns-result-order=ipv4first'
     steps:
@@ -148,23 +153,23 @@ jobs:
       - name: Install Chromium for official browser fallback
         run: npx playwright install chromium
       - name: Retry official sale-notice sweep from a separate hosted network
-        run: node current-court-sweep.js || true
+        run: timeout -k 5s 120s node current-court-sweep.js || true
       - name: Advance official historical sale notices if current route is still stagnant
         run: |
           need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; process.stdout.write(String(Number(c.newUniqueItems||0)===0))")
           if [ "$need" = "true" ]; then
-            node sale-notice-history-worker.js || true
+            timeout -k 5s 120s node sale-notice-history-worker.js || true
           fi
       - name: Retry official property search if both notice routes remain stagnant
         run: |
           need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; const b=s.saleNoticeBackfill||{}; process.stdout.write(String(Number(c.newUniqueItems||0)===0 && Number(b.newUniqueItems||0)===0))")
           if [ "$need" = "true" ]; then
-            node property-history-discovery-v2.js || true
+            timeout -k 5s 120s node property-history-discovery-v2.js || true
           fi
       - name: Merge worker deltas and verify basic info
         run: |
           node apply-worker-deltas.js || true
-          node basic-info-enrich.js || true
+          timeout -k 5s 120s node basic-info-enrich.js || true
           node validate-basic-info.js
           node metrics-corrector.js || true
       - name: Reconcile rescued result with latest canonical and publish
