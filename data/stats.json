@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T19:31:08.224Z",
+  "generatedAt": "2026-09-12T19:35:13.919Z",
   "court": "전국 법원",
   "region": "전국",
   "itemCount": 11973,
@@ -50,8 +50,8 @@
   },
   "latestRun": {
     "run_type": "sale-notice-discovery",
-    "started_at": "2026-09-12T17:35:06.016Z",
-    "finished_at": "2026-09-12T17:35:06.028Z",
+    "started_at": "2026-09-12T19:33:05.630Z",
+    "finished_at": "2026-09-12T19:33:05.644Z",
     "status": "partial",
     "items_found": 0,
     "items_saved": 0,
@@ -64,6 +64,21 @@
     "newUniqueItems": 0
   },
   "runs": [
+    {
+      "run_type": "sale-notice-discovery",
+      "started_at": "2026-09-12T19:33:05.630Z",
+      "finished_at": "2026-09-12T19:33:05.644Z",
+      "status": "partial",
+      "items_found": 0,
+      "items_saved": 0,
+      "priority_items": 0,
+      "history_items": 0,
+      "notices_checked": 0,
+      "transport": "official-sale-notice-http",
+      "error_text": "history notice 2025-03 offset 0: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
+      "processedItems": 0,
+      "newUniqueItems": 0
+    },
     {
       "run_type": "sale-notice-discovery",
       "started_at": "2026-09-12T17:35:06.016Z",
@@ -282,19 +297,6 @@
       "error_text": null,
       "processedItems": 242,
       "newUniqueItems": 0
-    },
-    {
-      "run_type": "sale-notice-discovery",
-      "started_at": "2026-09-07T06:16:15.261Z",
-      "finished_at": "2026-09-07T06:16:15.262Z",
-      "status": "done",
-      "items_found": 242,
-      "items_saved": 242,
-      "priority_items": 242,
-      "history_items": 0,
-      "notices_checked": 2,
-      "transport": "official-sale-notice-http",
-      "error_text": null
     }
   ],
   "latestDetailRun": {
@@ -349,7 +351,7 @@
     "httpStatus": null,
     "pageSize": 20,
     "source": "대한민국 법원경매정보 물건검색",
-    "finishedAt": "2026-09-12T17:34:33.963Z"
+    "finishedAt": "2026-09-12T19:32:33.603Z"
   },
   "lastCollectorCycle": {
     "itemCount": 11973,
@@ -358,7 +360,7 @@
     "historicalReturned": 0,
     "historicalNewUnique": 0,
     "historicalStatus": "partial",
-    "finishedAt": "2026-09-12T19:31:06.692Z"
+    "finishedAt": "2026-09-12T19:35:15.128Z"
   },
   "saleNoticeBackfill": {
     "version": 2,
@@ -388,7 +390,7 @@
     ],
     "courtSource": "existing-db-court-codes",
     "source": "대한민국 법원경매정보 매각공고(법원별)",
-    "finishedAt": "2026-09-12T17:34:22.902Z"
+    "finishedAt": "2026-09-12T19:32:22.549Z"
   },
   "currentCourtSweep": {
     "months": [
@@ -421,7 +423,7 @@
     ],
     "courtSource": "existing-db-court-codes",
     "source": "대한민국 법원경매정보 매각공고(전국 최신 법원별)",
-    "finishedAt": "2026-09-12T17:32:30.826Z"
+    "finishedAt": "2026-09-12T19:30:30.146Z"
   },
   "photoCourtCount": 1,
   "basicInfoQuality": {
@@ -456,6 +458,6 @@
     "retainedRemoteIds": 11973,
     "retainedCollectorIds": 11973,
     "addedVsRemote": 0,
-    "finishedAt": "2026-09-12T19:25:51.539Z"
+    "finishedAt": "2026-09-12T19:35:13.919Z"
   }
 }
