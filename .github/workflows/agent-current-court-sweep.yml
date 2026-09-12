@@ -8,6 +8,8 @@ on:
     paths:
       - 'ops/collector-kick.txt'
       - '.github/workflows/agent-current-court-sweep.yml'
+      - 'cycle-health.js'
+      - 'test-cycle-health.js'
   workflow_dispatch:
 
 permissions:
@@ -24,11 +26,6 @@ jobs:
     outputs:
       needs_rescue: ${{ steps.health.outputs.needs_rescue }}
     env:
-      # Hosted courtauction.go.kr connections have recently consumed most of the
-      # bounded step while rotating transports. One court per run guarantees that
-      # progress/state can be persisted instead of losing a four-court batch to
-      # the outer timeout. The hourly autonomous monitor advances the cursor on
-      # later runs.
       CURRENT_SWEEP_COURTS: '1'
       CURRENT_SWEEP_NOTICES: '2'
       HISTORY_COURTS_PER_RUN: '1'
@@ -46,6 +43,8 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Verify worker discovery addition guard
         run: node test-worker-additions.js
+      - name: Verify current-cycle failover guard
+        run: node test-cycle-health.js
       - name: Install Chromium for official browser fallback
         run: npx playwright install chromium
 
@@ -60,7 +59,7 @@ jobs:
 
       - name: Advance official historical sale notices when unique discovery stalls
         run: |
-          need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; process.stdout.write(String(Number(c.newUniqueItems||0)===0))")
+          need=$(node cycle-health.js needsBackfill)
           if [ "$need" = "true" ]; then
             echo "current notices added no unique items; advancing official sale-notice backfill"
             timeout -k 5s 120s node sale-notice-history-worker.js || true
@@ -68,16 +67,16 @@ jobs:
             echo "current notices added unique items; historical backfill can wait"
           fi
 
-      - name: Fallback to official property search when both notice routes add no unique items
+      - name: Fallback to official property search when current-cycle notice routes add no unique items
         run: |
-          need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; const b=s.saleNoticeBackfill||{}; process.stdout.write(String(Number(c.newUniqueItems||0)===0 && Number(b.newUniqueItems||0)===0))")
+          need=$(node cycle-health.js needsProperty)
           if [ "$need" = "true" ]; then
             timeout -k 5s 120s node property-history-discovery-v2.js || true
           fi
 
-      - name: Fallback to official sale-notice discovery when discovery remains empty
+      - name: Fallback to official sale-notice discovery when current-cycle discovery remains empty
         run: |
-          need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; const b=s.saleNoticeBackfill||{}; const h=s.latestHistoryPropertyRun||{}; process.stdout.write(String(Number(c.newUniqueItems||0)===0 && Number(b.newUniqueItems||0)===0 && Number(h.newUniqueItems||0)===0))")
+          need=$(node cycle-health.js needsSaleDiscovery)
           if [ "$need" = "true" ]; then
             timeout -k 5s 120s node sale-notice-discovery.js || true
           fi
@@ -94,8 +93,9 @@ jobs:
       - name: Decide whether a second hosted network should retry discovery
         id: health
         run: |
-          need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; const b=s.saleNoticeBackfill||{}; const h=s.latestHistoryPropertyRun||{}; process.stdout.write(String(Number(c.newUniqueItems||0)===0 && Number(b.newUniqueItems||0)===0 && Number(h.newUniqueItems||0)===0))")
+          need=$(node cycle-health.js needsRescue)
           echo "needs_rescue=$need" >> "$GITHUB_OUTPUT"
+          node cycle-health.js json
 
       - name: Reconcile with latest canonical and publish additively
         run: |
@@ -148,23 +148,31 @@ jobs:
           node-version: '22'
       - name: Install collector
         run: npm install --no-audit --no-fund
-      - name: Verify worker discovery addition guard
-        run: node test-worker-additions.js
+      - name: Verify collector guards
+        run: |
+          node test-worker-additions.js
+          node test-cycle-health.js
       - name: Install Chromium for official browser fallback
         run: npx playwright install chromium
       - name: Retry official sale-notice sweep from a separate hosted network
         run: timeout -k 5s 120s node current-court-sweep.js || true
       - name: Advance official historical sale notices if current route is still stagnant
         run: |
-          need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; process.stdout.write(String(Number(c.newUniqueItems||0)===0))")
+          need=$(node cycle-health.js needsBackfill)
           if [ "$need" = "true" ]; then
             timeout -k 5s 120s node sale-notice-history-worker.js || true
           fi
-      - name: Retry official property search if both notice routes remain stagnant
+      - name: Retry official property search if current-cycle notice routes remain stagnant
         run: |
-          need=$(node -e "const s=require('./data/stats.json'); const c=s.currentCourtSweep||{}; const b=s.saleNoticeBackfill||{}; process.stdout.write(String(Number(c.newUniqueItems||0)===0 && Number(b.newUniqueItems||0)===0))")
+          need=$(node cycle-health.js needsProperty)
           if [ "$need" = "true" ]; then
             timeout -k 5s 120s node property-history-discovery-v2.js || true
+          fi
+      - name: Retry official sale-notice discovery if all current-cycle discovery is still empty
+        run: |
+          need=$(node cycle-health.js needsSaleDiscovery)
+          if [ "$need" = "true" ]; then
+            timeout -k 5s 120s node sale-notice-discovery.js || true
           fi
       - name: Merge worker deltas and verify basic info
         run: |
