@@ -1,0 +1,3572 @@
+{
+  "version": 2,
+  "worker": "laptop",
+  "createdAt": "2026-09-12T02:49:24.720Z",
+  "batchSize": 24,
+  "exitCode": 0,
+  "discoveryStatus": "current:completed|history:completed|property:completed",
+  "additions": [],
+  "patches": [
+    {
+      "id": "B000520|2025타경31773|2",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 55440000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "신청사 제101호법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "    본건은 전북특별자치도 진안군 용담면 송풍리 소재 &amp;quot;용담체련공원&amp;quot;북동측 인근에 위치     하며, 주위는 농경지, 야산 등이 소재하는 마을주변 농경지대입니다.\n    본건 토지 기호(1,2)는 농기계 출입가능하며, 기호(3,4)토지는 맹지인 토지로      인접토지를 통하여 출이가능합니다.\n    기호 (1) 가장형의 토지로서 지반 평탄한 전으로 이용중이며,     기호 (2) 사다리형의 토지로서 지반 평탄한 전으로 이용중이며,     기호(3,4) 부정형의 토지로서 인근지와 평탄한 답으로 이용중입니다.\n    기호(1)의 남동측 및 기호(2)의 북서측으로 폭 약2-3미터의 비포장 농로에 접합니다.\n    기호(1,2) : 계획관리지역(계획관리지역) 가축사육제한구역(2025-06-18)(상대제한구역                 500m[말,소(신고규모) 사육가능])&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;,                  배출시설설치제한지역&lt;물환경보전법&gt;      기호 (3) : 계획관리지역(계획관리지역) 가축사육제한구역(2025-06-18)(상대제한구역                 500m[말,소(신고규모) 사육가능])&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;,                 가축사육제한구역(2025-06-18)(절대금지구역[금강수변구역])&lt;가축분뇨의                 관리 및 이용에 관한 법률&gt;, (금강)수변구역(2024-07-05)&lt;금강수계 물관리                 및 주민지원 등에 관한 법률&gt;, 배출시설설치제한지역&lt;물환경보전법&gt;           기호(4) : 보전관리지역(보전관리지역) 가축사육제한구역(2025-06-18)(상대제한구역                200m[모든축종제한])&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 가축사육제한               구역(2025-06-18)(절대금지구역[금강수변구역])&lt;가축분뇨의 관리 및 이용에                관한 법률&gt;, (금강)수변구역(2024-07-05)&lt;금강수계 물관리 및 주민지원 등에               관한 법률&gt;, 배출시설설치제한지역&lt;물환경보전법&gt;\n    없습니다.\n    없습니다.\n    임대관계 : 미상입니다.     기    타 : -",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 42263490,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "4",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-12T02:41:38.564Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000520|2025타경31757|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 1375443000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "신청사 제101호법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건 일련번호 1~7)은 전북특별자치도 전주시 완산구 삼천동3가 소재 &amp;apos;모과동마을&amp;apos; 남서측 인근에 위치하며, 주위는 기존 주택, 소규모 근린생활시설 및 농경지 등이 혼재하는 지역으로서 주위환경은 보통입니다.\n본건까지 제 차량의 출입이 가능하며 인근에 버스정류장이 소재하는 등 전반적인 교통상황은 보통입니다.\n일련번호 1,2,3,7)은 사다리형 평지로서 주거나지 상태이며, 일련번호 4)는 자루형 평지로서 주거기타로 이용 중이고, 일련번호 5)는 부정형 평지로서 주거나지 상태이며, 일련번호 6)은 도로로 이용 중입니다.\n일련번호 1~5,7)은 단지 내부도로(노폭 약 9m)인 본건 일련번호 6)과 접하며, 단지 내부도로를 통해 동측으로 노폭 약 3m 내외의 포장도로와 접합니다.\n일련번호 1) 자연녹지지역, 가축사육제한구역(2023-01-13)(주거밀집지역)&lt;가축분뇨의 관리              및 이용에 관한 법률&gt;, 상대보호구역(전라복지대학(예정))&lt;교육환경 보호에              관한 법률&gt;, 건축법 제2조제1항제11호나목에 따른 도로(도로일부포함), 일련번호 2,3,5,6,7) 자연녹지지역, 가축사육제한구역(2023-01-13)(주거밀집지역)                     &lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역(전라복지대학                     (예정))&lt;교육환경 보호에 관한 법률&gt;, 일련번호 4) 자연녹지지역, 가축사육제한구역(2023-01-13)(주거밀집지역)&lt;가축분뇨의              관리 및 이용에 관한 법률&gt;, 상대보호구역(기전대부설유치원)&lt;교육환경 보호에             관한 법률&gt;, 상대보호구역(전라복지대학(예정))&lt;교육환경 보호에 관한 법률&gt;.\n본건 일련번호 4의 지상에 등기사항전부증명서에 미등기 상태이나, 일반건축물대장에 근린생활시설로 용도지정된 건물이 등재되어 있으나, 기준시점 현재 현황 멸실상태입니다.  \n본건 일련번호 1~3,5,7)은 공부상 지목이 &amp;apos;답&amp;apos;이나, 관할구청 탐문결과 건축신고 이후 토목공사가 완료된 토지로서 이를 감안하여 감정평가하였습니다.\n임대관계는 미상입니다.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 950000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "4",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "5",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "6",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "7",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "4",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "5",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "6",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "7",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "4",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "5",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "6",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "7",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "4",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "5",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "6",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "7",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-12T02:41:59.980Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000520|2025타경31751|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 7052000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "신청사 제101호법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 전북특별자치도 진안군 부귀면 수항리 소재 &amp;quot;대동마을&amp;quot; 북동측 약400미터 거리에 위 치하며, 주위는 산간부 농촌마을, 농경지가 혼재하는 상황이나 본건부터 북부는 고도300-450 m의 산간부로 형성되어 있음.\n남측 근거리에 49번국도(귀상로)가 진행하며 &amp;quot;두암사거리&amp;quot;에서 출입이 가능한 상황이고,  남측으로 버스승강장 소재 도로(대동길)가 진행하나 본건의 출입을 위하여는 서측 인근에 형 성된 임도를 통하여 접근함.\n부정형의 토지로서 급경사(평균30도 이상) 지형의 자연림 및 묘역(약10%)임.\n맹지이나 북측 묘역까지 조성된 폭 약3미터의 포장임도를 통하고, 비포장 폭 약2미터의 출입 도로로 연결하고 있음.\n농림지역(농림지역), 생산관리지역(생산관리지역), 가축사육제한구역(2025-06-18)(상대제한 구역 200m[모든축종제한])&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 배출시설설치제한지역&lt;물 환경보전법&gt;, 임업용산지(보전산지)&lt;산지관리법&gt;임.\n묘역에는 철조망울타리, 분묘2기, 상석2개 등이 소재하고 자연림에는 소나무 등 자생목이 울 창함.\n없음.\n- 임대관계 : 미상임. - 기    타 : 대상토지는 지목 &amp;apos;임야&amp;apos;로서 용도는 자연림이며, 북부 경계지대(약10%)에는 묘 역으로 조성하여 분묘2기가 소재하고, 남동향 급경사 부정형으로서 지상에는 소나무 및 잡목 등이 자생하는 바 지상수목은 관행상 임지에 포함하여 평가하고, 분묘는 상황에 따라 처리조 건이 상이하여 이에 구애없이 현상을 감안하여 평가하였으며, 대상토지는 1필토지중 일부지 분(1/2)에 관한 감정으로서 지분위치 확인되지 아니하여 전체를 기준으로 해당지분률을 적용 하여 평가하였음. 본건은 농림지역 및 생산관리지역 2개용도지역에 소재하나 대부분 농림지역에 속하며 생산관 리지역은 남동측 경계선을 따라 약4%정도가 해당하는 것으로 관측되므로 전체에 미치는 영향 이 미미한 것으로 판단되는 바 이에 구애없이 평가하였음.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 34758898,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-12T02:42:21.434Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000520|2025타경31740|1",
+      "set": {
+        "caseType": "공유물분할을위한경매",
+        "events": [
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 206568000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "신청사 제101호법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 전북특별자치도 완주군 용진읍 운곡리 소재 &amp;quot;완주군청&amp;quot; 동측 근거리에 위치하며 주위는 농경지 및 자연림 혼재하는 근교 농경지대임.\n본건까지 차량접근 가능함.\n부정형, 전기타\n북측으로 비포장 농로 있음.\n도시지역, 보전녹지지역, 자연녹지지역 가축사육제한구역(2024-12-30)(상대제한지역  모든축종 제한)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;\n지상에 제시외건물 ㉠ 및 제시외수목 있음.\n--\n지상에 철거 용이한 비닐하우스 있음.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 0,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-12T02:42:41.935Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000520|2025타경31726|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-07-27",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 347000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 242900000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "신청사 제101호법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 3,
+        "failedCount": 1,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 전북특별자치도 전주시 덕진구 장동 소재 &amp;quot;전북혁신도시 대방디엠시티 아파트&amp;quot; 단지 내에 위치하며, 부근은 노선을 따라 각종 근린생활시설이 소재하고 후면으로 아파트단지 등이 주로 소재하는 택지개발지역으로 제반 주위환경은 보통임. \n본건까지 제 차량접근이 가능하고, 이근에 버스정류장이 소재하는 등 제반 교통상황은 무난한편임.\n철근콘크리트구조 평슬래브지붕 2층건 중 제1층 제에이-119호로서,   - 외 벽 : 몰탈 위 석재붙임 등 마감.  - 내 벽 : 몰탈 위 페인팅 등 마감.  - 창 호 : 샷시창호 등임.\n공부 상 &amp;apos;근린생활시설&amp;apos;로 등재되어있으며, 현황 공실임.\n시스템에어콘설비, 공조설비, 소방설비 등이 설치되어 있으며, 공용으로 위생 및 급·배수설비, 승강기설비 등이 구비되어 있음.\n대체로 가장형의 평지로서, 주상복합 건부지로 이용중임.\n본건 서측으로 인도를 포함하여 약 40M정도, 남측으로 인도를 포함하여 폭 약 30M정도, 북측으로 인도를 포함하여 약 25M정도의 포장도로에 접하며, 동시에 동측으로 보행자전용 도로가 개설되어 있음. \n중심상업지역(중심상업지역) , 지구단위계획구역(전북전주·완주혁신도시) , 대로1류(폭 35m~40m)(대1-1)(접합) , 대로3류(폭 25m~30m)(대3-3)(접합) , 중로1류(폭 20m~25m)(중1-12)(접합) , 중로1류(폭 20m~25m)(중1-19)(접합), 가축사육제한구역(주거밀집지역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상업구역(2020-11-17)&lt;연구개발특구의 육성에 관한특별법&gt;, 연구개발특구&lt;연구개발특구의 육성에 관한특별법&gt;\n--\n- 임대관계 : 미상임. - 기    타 : --",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 216880000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-12T02:43:02.491Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000520|2025타경31720|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-07-27",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 320000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 224000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "신청사 제101호법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 3,
+        "failedCount": 1,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 전북특별자치도 전주시 덕진구 만성동 소재 &amp;quot;전주지방법원&amp;quot; 서측 인근에 소재하며, 부근은 만성도시개발구역으로 법원 및 검찰청 중심으로 하여 관련 사무실이 주로 소재하는 지역임.\n본건까지 제 차량접근이 가능하고, 인근에 버스정류장이 소재하는 등 제반 교통상황은 보통임.\n철근콘크리트구조 슬래브지붕 3층 중 제2층 제202호, 제203호 및 제205호로서,  - 외 벽 : 몰탈 위 돌붙임, 강화유리 등 마감.  - 내 벽 : 몰탈 위 돌붙임, 타일붙임, 페인팅 등 마감.  - 바 닥 : 데코타일 마감.  - 창 호 : 샷시창호임.\n기호 1-가, 2-나, 3-다) 3개호 모두 근린생활시설이나 현황 공실상태임.\n승강기설비, 소방설비, CCTV설비, 위생 및 급·배수설비, 지하주차장 등이 구비되어 있음.  \n대체로 가장형의 평지로, 현황 상업용 건부지로 이용중임.\n본건 북측으로 왕복4차선의 포장도로에 접하며, 본건 동측으로 폭 약 10M정도의 보행자 전용도로가 있음.\n제2종일반주거지역(2018-02-26), 지구단위계획구역(2024-11-12), 소로1류(폭 10m~12m)(접합), 중로1류(폭 20m~25m)(접합), 가축사육제한구역(주거밀집지역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역(2017-04-05)(전주성현유치원)&lt;교육환경 보호에 관한 법률&gt; \n--\n- 임대관계 : 미상임. - 기    타 : --",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 344000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-12T02:43:23.919Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000520|2025타경31720|2",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-07-27",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 320000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 224000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "신청사 제101호법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 3,
+        "failedCount": 1,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 전북특별자치도 전주시 덕진구 만성동 소재 &amp;quot;전주지방법원&amp;quot; 서측 인근에 소재하며, 부근은 만성도시개발구역으로 법원 및 검찰청 중심으로 하여 관련 사무실이 주로 소재하는 지역임.\n본건까지 제 차량접근이 가능하고, 인근에 버스정류장이 소재하는 등 제반 교통상황은 보통임.\n철근콘크리트구조 슬래브지붕 3층 중 제2층 제202호, 제203호 및 제205호로서,  - 외 벽 : 몰탈 위 돌붙임, 강화유리 등 마감.  - 내 벽 : 몰탈 위 돌붙임, 타일붙임, 페인팅 등 마감.  - 바 닥 : 데코타일 마감.  - 창 호 : 샷시창호임.\n기호 1-가, 2-나, 3-다) 3개호 모두 근린생활시설이나 현황 공실상태임.\n승강기설비, 소방설비, CCTV설비, 위생 및 급·배수설비, 지하주차장 등이 구비되어 있음.  \n대체로 가장형의 평지로, 현황 상업용 건부지로 이용중임.\n본건 북측으로 왕복4차선의 포장도로에 접하며, 본건 동측으로 폭 약 10M정도의 보행자 전용도로가 있음.\n제2종일반주거지역(2018-02-26), 지구단위계획구역(2024-11-12), 소로1류(폭 10m~12m)(접합), 중로1류(폭 20m~25m)(접합), 가축사육제한구역(주거밀집지역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역(2017-04-05)(전주성현유치원)&lt;교육환경 보호에 관한 법률&gt; \n--\n- 임대관계 : 미상임. - 기    타 : --",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 344000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-12T02:43:45.591Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000520|2025타경31720|3",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-07-27",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 207000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 144900000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "신청사 제101호법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 3,
+        "failedCount": 1,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 전북특별자치도 전주시 덕진구 만성동 소재 &amp;quot;전주지방법원&amp;quot; 서측 인근에 소재하며, 부근은 만성도시개발구역으로 법원 및 검찰청 중심으로 하여 관련 사무실이 주로 소재하는 지역임.\n본건까지 제 차량접근이 가능하고, 인근에 버스정류장이 소재하는 등 제반 교통상황은 보통임.\n철근콘크리트구조 슬래브지붕 3층 중 제2층 제202호, 제203호 및 제205호로서,  - 외 벽 : 몰탈 위 돌붙임, 강화유리 등 마감.  - 내 벽 : 몰탈 위 돌붙임, 타일붙임, 페인팅 등 마감.  - 바 닥 : 데코타일 마감.  - 창 호 : 샷시창호임.\n기호 1-가, 2-나, 3-다) 3개호 모두 근린생활시설이나 현황 공실상태임.\n승강기설비, 소방설비, CCTV설비, 위생 및 급·배수설비, 지하주차장 등이 구비되어 있음.  \n대체로 가장형의 평지로, 현황 상업용 건부지로 이용중임.\n본건 북측으로 왕복4차선의 포장도로에 접하며, 본건 동측으로 폭 약 10M정도의 보행자 전용도로가 있음.\n제2종일반주거지역(2018-02-26), 지구단위계획구역(2024-11-12), 소로1류(폭 10m~12m)(접합), 중로1류(폭 20m~25m)(접합), 가축사육제한구역(주거밀집지역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역(2017-04-05)(전주성현유치원)&lt;교육환경 보호에 관한 법률&gt; \n--\n- 임대관계 : 미상임. - 기    타 : --",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 344000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-12T02:44:07.188Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000520|2025타경31714|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-07-27",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 25234000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 17664000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "신청사 제101호법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 3,
+        "failedCount": 1,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "    본건은 전북특별자치도 무주군 부남면 장안리 소재‘장안마을’인근에 위치하며,     일련번호 1)은 장안마을 내, 일련번호 2~8)은 남측 근거리에 위치하며, 부근은     자연부락과 농경지 및 야산이 혼재하는 지역입니다.\n    일련번호 2~6,8)은 소형차량 접근 가능하며, 버스승강장은 인근 및 근거리에 소재     하여 대중교통사정은 보통입니다.\n    일련번호 1)은 사다리형의 대체로 평지이며, 전으로 이용중이고,     일련번호 2,4,8)은 부정형의 완경사지로 전으로 이용중이며,     일련번호 4,8)의 일부가 묘지로 이용중이며,     일련번호 3,5,6,7)은 부정형의 대체로 평지로, 농경지로 이용중이며,     일련번호 7)의 일부가 하천으로 이용중입니다. \n    일련번호 1,5)는 지적상 맹지로 인접지를 통하여 출입하며,     일련번호 2,4,8)은 지적상 맹지이나 관습상의 도로롤 통하여 출입하고,     일련번호 3,6)은 동측의 도로를 이용하여 출입하며,     일련번호 5,7)은 같이 이용중인 인접지를 통하여 출입합니다.\n    일련번호 1): 생산관리지역, 가축사육제한구역(상대제한지역 모든축종제한지역)     &lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 배출시설설치제한지역&lt;물환경보전법&gt;      일련번호 2,4,8): 보전관리지역, 가축사육제한구역(상대제한지역 모든축종제한지역)     &lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 배출시설설치제한지역&lt;물환경보전법&gt;      일련번호 3,7): 농림지역, 가축사육제한구역(닭 오리 개 돼지 제한지역)&lt;가축분뇨의     관리 및 이용에 관한 법률&gt;, 농업보호구역&lt;농지법&gt;, 배출시설설치제한지역&lt;물환경     보전법&gt;, 하천구역(안창천)&lt;하천법&gt;      일련번호 5,6): 농림지역, 가축사육제한구역(닭 오리 개 돼지 제한지역)&lt;가축분뇨     의 관리 및 이용에 관한 법률&gt;, 농업보호구역&lt;농지법&gt;, 접도구역&lt;도로법&gt;, 배출시     설설치제한지역&lt;물환경보전법&gt;, 하천구역(안창천)&lt;하천법&gt;\n    일련번호 4,8)지상에 별첨 &amp;apos;사진용지&amp;apos;와 같이 연고자 미상의 분묘가 소재합니다.\n    일련번호 4,8)의 공부상 지목이 전이나 현황 일부 &amp;apos;묘지&amp;apos;이며, 일련번호 7)의 공부상     지목이 &amp;apos;답&amp;apos;이나 현황 일부 &amp;apos;하천&amp;apos;입니다.\n    임대관계: 미상입니다.     기    타: 일련번호 2)지상에 철거가 용이한 농업용 비닐하우스가 소재합니다.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 153039730,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-12T02:44:28.661Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000520|2025타경31714|2",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-07-27",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 178376100,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 124863000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "신청사 제101호법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 3,
+        "failedCount": 1,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "    본건은 전북특별자치도 무주군 부남면 장안리 소재‘장안마을’인근에 위치하며,     일련번호 1)은 장안마을 내, 일련번호 2~8)은 남측 근거리에 위치하며, 부근은     자연부락과 농경지 및 야산이 혼재하는 지역입니다.\n    일련번호 2~6,8)은 소형차량 접근 가능하며, 버스승강장은 인근 및 근거리에 소재     하여 대중교통사정은 보통입니다.\n    일련번호 1)은 사다리형의 대체로 평지이며, 전으로 이용중이고,     일련번호 2,4,8)은 부정형의 완경사지로 전으로 이용중이며,     일련번호 4,8)의 일부가 묘지로 이용중이며,     일련번호 3,5,6,7)은 부정형의 대체로 평지로, 농경지로 이용중이며,     일련번호 7)의 일부가 하천으로 이용중입니다. \n    일련번호 1,5)는 지적상 맹지로 인접지를 통하여 출입하며,     일련번호 2,4,8)은 지적상 맹지이나 관습상의 도로롤 통하여 출입하고,     일련번호 3,6)은 동측의 도로를 이용하여 출입하며,     일련번호 5,7)은 같이 이용중인 인접지를 통하여 출입합니다.\n    일련번호 1): 생산관리지역, 가축사육제한구역(상대제한지역 모든축종제한지역)     &lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 배출시설설치제한지역&lt;물환경보전법&gt;      일련번호 2,4,8): 보전관리지역, 가축사육제한구역(상대제한지역 모든축종제한지역)     &lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 배출시설설치제한지역&lt;물환경보전법&gt;      일련번호 3,7): 농림지역, 가축사육제한구역(닭 오리 개 돼지 제한지역)&lt;가축분뇨의     관리 및 이용에 관한 법률&gt;, 농업보호구역&lt;농지법&gt;, 배출시설설치제한지역&lt;물환경     보전법&gt;, 하천구역(안창천)&lt;하천법&gt;      일련번호 5,6): 농림지역, 가축사육제한구역(닭 오리 개 돼지 제한지역)&lt;가축분뇨     의 관리 및 이용에 관한 법률&gt;, 농업보호구역&lt;농지법&gt;, 접도구역&lt;도로법&gt;, 배출시     설설치제한지역&lt;물환경보전법&gt;, 하천구역(안창천)&lt;하천법&gt;\n    일련번호 4,8)지상에 별첨 &amp;apos;사진용지&amp;apos;와 같이 연고자 미상의 분묘가 소재합니다.\n    일련번호 4,8)의 공부상 지목이 전이나 현황 일부 &amp;apos;묘지&amp;apos;이며, 일련번호 7)의 공부상     지목이 &amp;apos;답&amp;apos;이나 현황 일부 &amp;apos;하천&amp;apos;입니다.\n    임대관계: 미상입니다.     기    타: 일련번호 2)지상에 철거가 용이한 농업용 비닐하우스가 소재합니다.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 153039730,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "4",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "8",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-12T02:44:49.738Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000520|2025타경31714|3",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-07-27",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 47364900,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 33155000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "신청사 제101호법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 3,
+        "failedCount": 1,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "    본건은 전북특별자치도 무주군 부남면 장안리 소재‘장안마을’인근에 위치하며,     일련번호 1)은 장안마을 내, 일련번호 2~8)은 남측 근거리에 위치하며, 부근은     자연부락과 농경지 및 야산이 혼재하는 지역입니다.\n    일련번호 2~6,8)은 소형차량 접근 가능하며, 버스승강장은 인근 및 근거리에 소재     하여 대중교통사정은 보통입니다.\n    일련번호 1)은 사다리형의 대체로 평지이며, 전으로 이용중이고,     일련번호 2,4,8)은 부정형의 완경사지로 전으로 이용중이며,     일련번호 4,8)의 일부가 묘지로 이용중이며,     일련번호 3,5,6,7)은 부정형의 대체로 평지로, 농경지로 이용중이며,     일련번호 7)의 일부가 하천으로 이용중입니다. \n    일련번호 1,5)는 지적상 맹지로 인접지를 통하여 출입하며,     일련번호 2,4,8)은 지적상 맹지이나 관습상의 도로롤 통하여 출입하고,     일련번호 3,6)은 동측의 도로를 이용하여 출입하며,     일련번호 5,7)은 같이 이용중인 인접지를 통하여 출입합니다.\n    일련번호 1): 생산관리지역, 가축사육제한구역(상대제한지역 모든축종제한지역)     &lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 배출시설설치제한지역&lt;물환경보전법&gt;      일련번호 2,4,8): 보전관리지역, 가축사육제한구역(상대제한지역 모든축종제한지역)     &lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 배출시설설치제한지역&lt;물환경보전법&gt;      일련번호 3,7): 농림지역, 가축사육제한구역(닭 오리 개 돼지 제한지역)&lt;가축분뇨의     관리 및 이용에 관한 법률&gt;, 농업보호구역&lt;농지법&gt;, 배출시설설치제한지역&lt;물환경     보전법&gt;, 하천구역(안창천)&lt;하천법&gt;      일련번호 5,6): 농림지역, 가축사육제한구역(닭 오리 개 돼지 제한지역)&lt;가축분뇨     의 관리 및 이용에 관한 법률&gt;, 농업보호구역&lt;농지법&gt;, 접도구역&lt;도로법&gt;, 배출시     설설치제한지역&lt;물환경보전법&gt;, 하천구역(안창천)&lt;하천법&gt;\n    일련번호 4,8)지상에 별첨 &amp;apos;사진용지&amp;apos;와 같이 연고자 미상의 분묘가 소재합니다.\n    일련번호 4,8)의 공부상 지목이 전이나 현황 일부 &amp;apos;묘지&amp;apos;이며, 일련번호 7)의 공부상     지목이 &amp;apos;답&amp;apos;이나 현황 일부 &amp;apos;하천&amp;apos;입니다.\n    임대관계: 미상입니다.     기    타: 일련번호 2)지상에 철거가 용이한 농업용 비닐하우스가 소재합니다.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 153039730,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "7",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-12T02:45:10.857Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000520|2025타경31714|4",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-07-27",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 18484300,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 12939000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "신청사 제101호법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 3,
+        "failedCount": 1,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "    본건은 전북특별자치도 무주군 부남면 장안리 소재‘장안마을’인근에 위치하며,     일련번호 1)은 장안마을 내, 일련번호 2~8)은 남측 근거리에 위치하며, 부근은     자연부락과 농경지 및 야산이 혼재하는 지역입니다.\n    일련번호 2~6,8)은 소형차량 접근 가능하며, 버스승강장은 인근 및 근거리에 소재     하여 대중교통사정은 보통입니다.\n    일련번호 1)은 사다리형의 대체로 평지이며, 전으로 이용중이고,     일련번호 2,4,8)은 부정형의 완경사지로 전으로 이용중이며,     일련번호 4,8)의 일부가 묘지로 이용중이며,     일련번호 3,5,6,7)은 부정형의 대체로 평지로, 농경지로 이용중이며,     일련번호 7)의 일부가 하천으로 이용중입니다. \n    일련번호 1,5)는 지적상 맹지로 인접지를 통하여 출입하며,     일련번호 2,4,8)은 지적상 맹지이나 관습상의 도로롤 통하여 출입하고,     일련번호 3,6)은 동측의 도로를 이용하여 출입하며,     일련번호 5,7)은 같이 이용중인 인접지를 통하여 출입합니다.\n    일련번호 1): 생산관리지역, 가축사육제한구역(상대제한지역 모든축종제한지역)     &lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 배출시설설치제한지역&lt;물환경보전법&gt;      일련번호 2,4,8): 보전관리지역, 가축사육제한구역(상대제한지역 모든축종제한지역)     &lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 배출시설설치제한지역&lt;물환경보전법&gt;      일련번호 3,7): 농림지역, 가축사육제한구역(닭 오리 개 돼지 제한지역)&lt;가축분뇨의     관리 및 이용에 관한 법률&gt;, 농업보호구역&lt;농지법&gt;, 배출시설설치제한지역&lt;물환경     보전법&gt;, 하천구역(안창천)&lt;하천법&gt;      일련번호 5,6): 농림지역, 가축사육제한구역(닭 오리 개 돼지 제한지역)&lt;가축분뇨     의 관리 및 이용에 관한 법률&gt;, 농업보호구역&lt;농지법&gt;, 접도구역&lt;도로법&gt;, 배출시     설설치제한지역&lt;물환경보전법&gt;, 하천구역(안창천)&lt;하천법&gt;\n    일련번호 4,8)지상에 별첨 &amp;apos;사진용지&amp;apos;와 같이 연고자 미상의 분묘가 소재합니다.\n    일련번호 4,8)의 공부상 지목이 전이나 현황 일부 &amp;apos;묘지&amp;apos;이며, 일련번호 7)의 공부상     지목이 &amp;apos;답&amp;apos;이나 현황 일부 &amp;apos;하천&amp;apos;입니다.\n    임대관계: 미상입니다.     기    타: 일련번호 2)지상에 철거가 용이한 농업용 비닐하우스가 소재합니다.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 153039730,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "5",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "6",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-12T02:45:31.032Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000520|2025타경31708|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-07-27",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 132000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 92400000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "신청사 제101호법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 3,
+        "failedCount": 1,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "  전북특별자치도 진안군 진안읍 구하리 소재&amp;quot;진안제일고등학교&amp;quot;남서측 인근에 위치하며, 주위는    학교, 공동주택,  단독주택, 농경지등이 혼재하는 지역입니다.  \n  본건까지 제반 차량 출입이 가능하며, 인근에 버스 정류장이 소재하는 등 일반적인 교통조건은    보통 됩니다. \n   철근콘크리트구조 평슬래브지붕 4층 중 501호 연립주택     외벽 :치장벽돌쌓기 및 대리석 붙임등 마감    내벽 :몰탈, 페인팅 및 판넬등 마감.    창호 :샷시 창호\n  공동주택(연립주택)으로 이용 중입니다.\n  위생 및 급배수 시설, 소화전, 도시가스 난방설비등이 되어 있습니다.\n  대체로 사다리형 토지로서 공동주택(연립주택) 건부지로 이용 중입니다.\n  남측 도로에 접합니다. \n  도시지역, 자연녹지역, 가축사육제한구역, 상대보호구역, 배출시설설치제한지역, 하수처리구역, 연농불리지농지.\n  공부상 5층 501호로 등록되었으나, 현황은 4층입니다.\n  임대관계 :미상   기    타 : - -",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 105000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-12T02:45:51.680Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000520|2025타경31689|1",
+      "set": {
+        "status": "expired",
+        "detailCheckedAt": "2026-09-12T02:46:02.620Z",
+        "expiredAt": "2026-09-12T02:46:02.620Z"
+      }
+    },
+    {
+      "id": "B000520|2025타경31683|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-07-27",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 130873600,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 91612000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "신청사 제101호법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 3,
+        "failedCount": 1,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "  본건 기호 1,2)토지는 전북특별자치도 임실군 지사면 영천리 소재 &amp;quot;영천마을&amp;quot; 북서측 인근 에 위치하며,주위환경은 일부 휴경지와 전도 소재하나 대체로 답작위주의 경지정리된 마을주 변 농경지대로 형성되어 있습니다.\n  본건 기호 1,2)토지 남측 인근에 왕복2차선 정도의 13번 국도 충효로가 지나고있고, 이  충효로로 진출입할 수 있는 포장도로가 기호 1,2)토지와 동측으로 접하며, 영천마을 등과  같은 농촌취락마을이 인근에 소재함으로 도로연계계통이나 구조 및 취락과의 거리 등으로  보아 면지역으로서의 일반적인 교통사정은 무난한 편입니다.\n  기호1,2) 지형 세장형의 지세 평탄한 토지로 동측 인접도로보다는 지반 다소 낮으며,            현황은 &amp;quot;전, 제시외 비닐하우스용 토지&amp;quot;으로 이용 중입니다.  \n  기호1,2) 동측으로 노폭 약 3m 정도의 콘크리트 포장도로와 접하나. 현황은 인접도로와 본 건 토지간의 지반의 고저차이로 인접도로에서 본건 기호1)토지까지 노폭 약3m 내지 5m정도의  완경사 콘크리트 구조물을 설치하여 기호 1)토지를 경유하여 기호 2)토지로 출입할 수  있습 니다.\n  기호1,2) 농림지역(농림지역), 가축사육제한구역(2024-12-30)(상대제한구역 350m&lt;가축분            뇨의 관리 및 이용에 관한 법률&gt;, 농업진흥구역&lt;농지법&gt;, (영산강.섬진강)건축             등 허가제한지역(2021.12.01)(가축분뇨배출시설 신축 제한)&lt;영산강.섬진강수계            물관리 및 주민지원 등에 관한 법률&gt;, 역사문화호나경보존지역(영천서원)&lt;전라            북도지정문화재보호조례&gt;.\n  기호1,2) 토지상에는 5연동 비닐하우스 1식이 소재하며, 비닐하우스 내부에는 관수시설  등이 설치되어 있음으로, 이 관수시설의 이용을 위해 비닐하우스 외부에 플라스틱 탱크와 전력설비 등이 소재하나, 지하관정 등의 시설은 확인하지 못하였습니다.\n  기호 1,2)토지의 공부상 지목은 &amp;quot;답&amp;quot;이나 실제 &amp;quot;전&amp;quot;입니다. \n  1) 이해관계인 부재로 임대관계 등은 조사하지 못했습니다.    2) 본건 기호 1,2) 토지상에 소재하는 제시외 5연동 비닐하우스는 그 이동성과 소유자      미확인 등의 사유로 별도로 제시외 물건으로 감정평가하지 않았습니다.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 54408464,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-12T02:46:23.366Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000520|2025타경31660|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-07-27",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 33150200,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 23205000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "신청사 제101호법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 3,
+        "failedCount": 1,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 임실군 임실읍 두곡리 소재 '용은치마을'내에 위치하며 주변은 국도변 인근 농촌마을지대 및 농경지대임.\n동측 인근에 전주-남원간 4차선도로가 통과하고 인근에 군내버스정류장이 위치하여 교통편은 무난함.\n부정형평지의 토지로서 단독주택부지로 이용중임.\n북측에 폭 약3-4미터내외의 포장도로와 접함.\n계획관리지역(계획관리지역), 가축사육제한구역(2024-12-30)(상대제한구역 100m)<가축분뇨의 관리 및 이용에 관한 법률>, (영산강·섬진강)건축 등 허가제한지역(2021-12-01)(가축분뇨배출시설 신축 제한)<영산강·섬진강수계 물관리 및 주민지원 등에 관한 법률>임.\n없음.\n없음.\r\n\n- 기호1)토지와 일단으로 인접토지(258-1번지)중 일부를 점유하여 사용중이며 위지상 일부에\r\n  기호2)건물 일부가 소재함.\r\n- 본 건물 밖에 철재하우스(약5*7) 1동이 소재함.\n시멘트벽돌조 슬래브위 함석지붕 단층으로,\r\n외벽 : 몰탈위페인트 마감\r\n내벽 : 벽지, 몰탈위페인트 등\r\n창호 : 샷시 및 목재창임.\n주택임.\n위생 및 급배수시설 되어 있고, 유류보일러에 의한 개별난방임.\n지적 및 건물개황도와 같이 기호ㄱ~ㅁ)이 소재함.\n공부상 지붕이 \"\"슬래브지붕\"\" 단층이나 지붕위에 철재함석 보강하여 현황은 \"\"슬래브위함석지붕\"\"임.\n-",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 18418219,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-12T02:46:44.793Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000520|2025타경31575|1",
+      "set": {
+        "status": "expired",
+        "detailCheckedAt": "2026-09-12T02:46:54.950Z",
+        "expiredAt": "2026-09-12T02:46:54.950Z"
+      }
+    },
+    {
+      "id": "B000520|2025타경31554|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-07-27",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 27000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 18900000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "신청사 제101호법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 3,
+        "failedCount": 1,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 전북특별자치도 덕진구 인후동1가 소재 &amp;quot;인후휴먼시아아파트&amp;quot; 남동측 인근에 위치하 며, 주위는 다세대주택, 단독주택 등이 혼재하는 기존주택지대임.\n본건까지 차량접근 가능하며 남측 인근으로 버스승강장 소재 간선도로(건산로)가 진행함.\n철근콘크리트조 콘크리트스라브지붕 4층 중 2층 201호로서, 외벽 : 드라이비트 등 마감, 내벽 : 벽지 및 타일 등 마감, 창호 : 새시창으로서 관리현상 다소 미흡함.\n다세대주택임.\n위생 급.배수설비, 도시가스에 의한 난방설비, 소화전설비 등이 되어있음.\n가장형의 토지로서 지반 평탄한 다세대주택 건부지임.\n남측으로 폭 약6미터 포장도로와 접함.\n제2종일반주거지역(2025-02-20), 소로3류(폭 8m 미만)(접합), 가축사육제한구역(2023-01-13) (주거밀집지역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, &lt;추가기재&gt;산림 하천 전원개발 항목 은 관련부서 확인협의임.\n없음.\n- 임대관계 : 미상임. - 기    타 : 본 세대는 도면상 202호가 표시되었으나 실제는 201호이며 2026년 5월 28일 평 면도면 표시변경이 정상적으로 표시되었으므로 이를 기준으로 표시하였음.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 15784200,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-12T02:47:15.342Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000511|2025타경315|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2025-12-08",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(101호)",
+            "amount": 586806100,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-01-19",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(101호)",
+            "amount": 410764000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-03-16",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(101호)",
+            "amount": 328611000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-04-27",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(101호)",
+            "amount": 262889000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-06-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(101호)",
+            "amount": 210311000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-07-27",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(101호)",
+            "amount": 168249000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(101호)",
+            "amount": 134599000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "204호법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 8,
+        "failedCount": 6,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 전라남도 목포시 무안동 소재 \"\"목포시청소년문화센터\"\" 북서측 인근에 위치하며, 주변은 단독주택, 근린생활시설 등이 소재하는 번화한 상가지대로서 주위환경은 보통임. \n본건까지 차량 접근 가능하며, 인근에 버스정류장 등이 소재하여 교통상황은 보통임.\n일련번호 1) : 세장형 평지로서 주상용 건부지임.\n일련번호 1) : 본건 동측으로 왕복 2차선의 아스팔트 포장도로에 접함.\n일련번호 1) : 도시지역 , 일반상업지역 , 제2종일반주거지역 , 방화지구, 가축사육제한구역<가축분뇨의 관리 및 이용에 관한 법률>, 역사문화환경보존지역<문화유산의 보존 및 활용에 관한 법률>임.\r\n\r\n\r\n\r\n\r\n\r\n\r\n\n제시외건물\r\nㄱ) 조적조 슬래브지붕 3층, 창고 및 보일러실 약 108.0㎡,\r\nㄴ) 판넬조 판넬지붕 [일련번호(가) 2층 소재], 현관 약 3.7㎡,\r\nㄷ) 판넬조 판넬지붕 [일련번호(나) 4층 소재], 창고 약 12.0㎡임.\n해당사항 없음.\n해당사항 없음.\n일련번호 2-가) 시멘 벽돌조 슬래브지붕 2층 건물로서,\r\n 외벽 : 모르타르 위 페인팅 마감 등,\r\n 내벽 : 벽지 마감 등,\r\n 바닥 : 장판지 깔기 등,\r\n 창호 : 새시창 등임.\r\n\r\n일련번호 3-나) 철근콘크리트조 슬래브지붕 4층 건물로서,\r\n 외벽 : 모르타르 위 페인팅 마감 등,\r\n 내벽 : 벽지 및 모르타르 위 페인팅 마감 등,\r\n 바닥 : 장판지 및 타일 깔기 등,\r\n 창호 : 새시창 등임.\n일련번호 2-가) : 주택,\r\n일련번호 3-나) : \r\n1층 - 근린생활시설,\r\n2층 ~ 4층 - 다가구주택으로 이용 중임.\n일련번호 2-가), 3-나) : 전기설비, 위생 및 급배수설비, 난방설비 등이 되어 있음.\n해당사항 없음.\n본건 건물 일련번호 3-나)는 등기사항전부증명서상 주용도는 “병원”, 일반건축물대장상 주용도는“근린생활시설, 의료시설”로 등재되어 있으나, 현황 “근린생활시설, 다가구주택”으로 이용 중임.\n해당사항 없음.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 107828032,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-12T02:47:36.853Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000520|2025타경31478|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-06-08",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 20746000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-07-27",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 14522000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 10165000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "신청사 제101호법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 4,
+        "failedCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 전북특별자치도 김제시 죽산면 홍산리 소재 '내촌마을' 내에 위치하고, 주위는\r\n농가주택 및 농경지 등이 혼재하는 농촌지역임.\n본건까지 차량접근이 가능하고 인근에 버스승강장이 소재하는 등 제반 교통여건은 보통임.\n사다리형 평지로 현황 '단독주택부지' 로 이용중임.\n동측으로 노폭 약3미터의 내외의 포장도로에 접하고, 남측으로 폭 약2미터 내외의 포장도로\r\n에 접함.\n기호(1) : 계획관리지역, 자연취락지구, 가축사육제한구역(2023-12-21)(일부제한지역 모든\r\n축종 제한)<가축분뇨의 관리 및 이용에 관한 법률>\n- 본건 토지상에 제시외건물 ㉠~㉦이 소재함.\r\n- 본건 토지상에 철거 및 이동이 용이한 컨테이너 1동이 소재함.\n없음.\n--.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 4400000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-12T02:47:58.422Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000520|2025타경31470|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-06-08",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 544823200,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-07-27",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 381376000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 266963000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "신청사 제101호법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 4,
+        "failedCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "본건은 전북특별자치도 전주시 동완산동 소재 \"\"전주곤지중학교\"\" 남서측 인근에 위치하는 4필 토지이며, 주위는 서측으로 완산공원과 경계하고, 동측으로 단독주택, 종교시설 및 학교 등이 혼재하는 기존 주거지역입니다.\n근거리에 버스정류장이 소재하고 천변로(전주천서로)가 통과하며 대상토지 부근은 공원과 경계하는 고지대로서 차량접근이 어려운 급경사 오솔길을 통하여 일련번호 5의 북부와 연결 출입하는 상황이며, 동부에 마을도로와 접하는 일련번호 3의 토지와 인접한 타토지를 통과하여 접근하는 내부도로가 있어 현장조사일 현재 이를 통해 출입이 가능한 상황입니다.\n<일련번호 1,4>: 각 부정형이나 2필 1단의 사다리형으로서 고지대 완경사 지형에 소재하나 계단식 지반으로 평탄조성하여 사찰용도의 건부지로 이용 중입니다. \r\n<일련번호 3>: 사다리형의 완경사토지로서 사찰 출입안내 석상이 존치되어 있고 사찰로 연결되는 내부도로 용도로 바닥이 콘크리트 포장된 주거나지입니다.\r\n<일련번호 5>: 사다리형 토지로서 동서부 타토지(동측 기존 자연도로를 포함한 부분 및 서측 인접토지 일부)와 일단의 형상으로 평탄조성된 토지로, 동부에는 사찰접근 기존 \r\n자연도로를 포함한 높이 약2미터의 하향식 석축옹벽으로 경계하고, 북측으로는 공원과의 경계언덕으로 경계하며, 잔디조성, 배수통로설치 등을 조성하여 다양한 소규모 석상이 야외에 존치되어있는 잡종지의 일부입니다.\n<일련번호 1,4>: <일련번호 5>의 토지와 연결되는 자연도로 및 <일련번호 3>의 토지와 연결되는 콘크리트포장 폭 약4미터의 내부도로를 이용합니다.\r\n<일련번호 3>: 남측으로 폭 약4미터의 아스콘포장 마을도로와 접합니다.\r\n<일련번호 5>: 마을도로와 연결되는 콘크리트포장 포장자연도로와 1단지 형상으로 조성되어 있으며 비포장 폭1미터의 오솔길로 외부 마을연결도로와 도보 접근합니다.\n<일련번호 1,4,5>: 제1종일반주거지역, 고도지구(2024-12-16), 자연경관지구(자연경관지구(4, 완산)), 가축사육제한구역(2023-01-13)(주거밀집지역)<가축분뇨의 관리 및 이용에 관한 법률>, 상대보호구역(완산초등학교,전주곤지중학교) <교육환경 보호에 관한 법률>,\r\n<일련번호 3>: 제1종일반주거지역, 고도지구(2024-12-16), 가축사육제한구역(2023-01-13)(주거밀집지역)<가축분뇨의 관리 및 이용에 관한 법률>, 상대보호구역(완산초등학교,전주곤지중학교)<교육환경 보호에 관한 법률>,\n<일련번호 1,4>: 소규모 조경수 및 화단, 석상 등이 소재하고,\r\n<일련번호 3>: 사찰안내석상, 바닥콘크리트시설 등이 소재하며,\r\n<일련번호 5>: 이동 가능한 소규모 석상이 다수 소재합니다.\n<일련번호 3,5>: 공부상 지목과 현재 이용상황이 상이하나 현 이용상황은 임시적인 것으로 판단됩니다.\n1) 임대관계는 미상입니다.\r\n2) 본건 일련번호 3으로부터 일련번호 1,4,5의 토지에의 접근을 위해 인접한 타토지(2필지)의 일부를 사용하여 접근하고 있으나, 안정적인 접근통로 확보를 위해서는 인접토지에 대한 지역권의 확보가 필요할 것으로 판단됩니다.\n목조 및 치장벽돌조 기와모형강판지붕 단층으로서, \r\n2017년 4월 중건(증개축)된 것으로 탐문되었으며,\r\n\r\n외벽 : 치장벽돌 쌓기 마감,\r\n내부 : 목재치장, 강화마루, 벽지도배 등 사찰용 인테리어,\r\n창호 : 새시창입니다.\n사찰로 이용 중입니다.\n위생 급.배수설비, 기름보일러에 의한 난방설비 등이 되어있습니다.\n제시외건물 ㉠~㉦이 소재(지적 및 건물개황도 참조)합니다.\n본 건물은 사찰을 중건하면서 증개축하여 건축물 규모가 공부면적보다 증가하였으나 증축부분은 부합물로서 증축허가 등이 불분명한 점을 감안하여  부합물인 제시외 건물로 평가하였습니다.\n- 임대관계는 미상입니다.\r\n- 기    타 : 본 건물은 2017년 4월 전면적으로 증개축 중건한 것으로 탐문되었으며, 이를 기준으로 내용년수와 잔존년수를 조정하여 관찰감가법으로 감가수정하였으며 증축부분은 분리하여 제시외 건물로 별도로 평가하였습니다.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 381403890,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "4",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "5",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "4",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "5",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "4",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "5",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "4",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "5",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-12T02:48:19.007Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000520|2025타경31459|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-06-08",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 279000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-07-27",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 195300000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 136710000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "신청사 제101호법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 4,
+        "failedCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "   본건은 전북특별자치도 김제시 신풍동 소재 '전북 김제경찰서' 남동측 인근에 위치하\r\n   며, 주위는 중·소규모의 아파트단지 및 근린생활시설, 관공서 등이 혼재하는 지역입\r\n   니다.\n   본건까지 차량접근이 가능하며, 인근으로 간선도로가 통과하고 시내버스승강장이 소\r\n   재하는 등 제반 교통상황은 보통시됩니다.\n   1-가) 철근콘크리트구조 (철근)콘크리트지붕 지하2층/지상20층 중 13층 1303호로서,\r\n         외    벽 : 몰탈위페인트 및 돌붙임 등 마감,\r\n         내    벽 : 벽지 및 타일 등 마감,\r\n         창    호 : 샷시창입니다.\n   1-가) '아파트(1세대)'로 이용중입니다.\n   본건에 기본적인 위생 및 급·배수시설, 소방설비(소화전설비, 화재탐지 및 경보설비\r\n   등), 승강기설비, 보일러에 의한 바닥난방설비 등을 갖추고 있습니다.\r\n   \n   본건은 부정형의 평지로서, 조사일 현재 '아파트부지'로 이용중입니다.\n   본건 남서측으로 노폭 25M정도 및 북동측으로 노폭 6~7M정도의 아스팔트 포장도로를 \r\n   통해 출입합니다.\n   일반상업지역, 제2종일반주거지역, 시가지경관지구(일반) (2024-03-04), 소로3류(폭 \r\n   8m 미만)(2024-10-25)(소3-152)(접합), 가축사육제한구역(2023-12-21)(전부제한지역)\r\n   <가축분뇨의 관리 및 이용에 관한 법률>, 침수위험지구(2020-12-10)<자연재해대책법>\r\n   입니다.\n   -.\n   - 임대관계 : 미상입니다.\r\n   - 기    타 : 본건은 등기사항전부증명서상 '민간임대주택'으로 부기등기가 되어있습\r\n                니다.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 185000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-12T02:48:40.329Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000520|2025타경31455|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-06-08",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 282000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-07-27",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 197400000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 138180000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "신청사 제101호법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 4,
+        "failedCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "   본건은 전북특별자치도 김제시 신풍동 소재 \"\"금성여자중학교\"\" 남서측 인근에 위치하며,\r\n   부근은 근린생활시설 및 공공기관, 아파트 단지 등이 혼재하는 지역입니다.\n    본건까지 차량 진·출입 가능하며, 인근에 버스승강장이 소재하여 제반 교통상황은\r\n    보통인 편입니다.\n    철근콘크리트구조 (철근)콘크리트지붕 20층 중 제16층 제1601호로서,\r\n    외벽: 몰탈위 페인팅, 돌붙임 등 마감,\r\n    내벽: 벽지 및 일부 타일붙임 등 마감,\r\n    창호: 샷시창호 등 입니다.\n    아파트로 이용중입니다.\n    위생설비 및 급·배수설비, 도시가스보일러에 의한 난방설비, 승강기설비, 소방설비\r\n    등이 되어 있습니다.\n    부정형의 평지로서, 근린생활시설 및 아파트부지로 이용중입니다.\n    서측으로 개설된 포장도로를 통하여 진·출입합니다.\n    일반상업지역, 제2종일반주거지역, 시가지경관지구(일반)(2024-03-04), 소로3류(폭 8m\r\n    미만)(2024-10-25)(소3-152)(접합), 가축사육제한구역(2023-12-21)(전부제한지역)<가축\r\n    분뇨의 관리 및 이용에 관한 법률>, 상대보호구역<교육환경 보호에 관한 법률>, 절대보\r\n    호구역<교육환경 보호에 관한 법률>, 침수위험지구(2020-12-10)<자연재해대책법>입니다.\n    없습니다.\n    임대관계: 미상입니다.\r\n    기    타: 없습니다.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 185000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-12T02:49:02.096Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    },
+    {
+      "id": "B000520|2025타경31448|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-06-08",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 279000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-07-27",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 195300000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-14",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "신청사 제101호법정",
+            "amount": 136710000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-21",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "신청사 제101호법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 4,
+        "failedCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 0
+        },
+        "appraisalSummary": "대상물건은 전북특별자치도 김제시 신풍동 소재 '금성여자중학교' 남서측 인근에 위치하며, 주위는 근린생활\r\n시설 및 공공기관, 아파트 단지 등이 혼재하는 지역임.\n본건 단지로의 차량 진·출입이 자유로우며, 간선도로와의 연계성 및 대중교통수단과의 접근성·빈도수 등으\r\n로 보아 제반 교통상황은 보통인 편임.\n철근콘크리트구조 (철근)콘크리트지붕 20층 중 6층 1604호로서,\r\n\r\n외벽 : 몰탈위 페인팅, 돌붙임 등,\r\n내벽 : 벽지 및 일부 타일 붙임 등,\r\n창호 : 샷시창호 등임.\n아파트로 이용중임.\n위생설비 및 급·배수설비, 도시가스보일러에 의한 난방설비, 승강기설비, 소방설비 등이 되어 있음.\n부정형의 토지로서, 근린생활시설 및 아파트부지로 이용중임.\n서측으로 개설된 포장도로를 통하여 진·출입함.\n일반상업지역, 제2종일반주거지역, 시가지경관지구(일반)(2024-03-04), 소로3류(폭 8m 미만)(2024-10-25)\r\n(소3-152)(접합), 가축사육제한구역(2023-12-21)(전부제한지역)<가축분뇨의 관리 및 이용에 관한 법률>, \r\n상대보호구역<교육환경 보호에 관한 법률>, 절대보호구역<교육환경 보호에 관한 법률>, 침수위험지구(20\r\n20-12-10)<자연재해대책법>임.\n없 음.\n임대관계 : 미상임.\r\n기타 : --.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 185000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-12T02:49:23.719Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-21"
+      }
+    }
+  ],
+  "statePatch": {
+    "propertyHistoryFailureCount": 1,
+    "propertyHistoryYear": 2019,
+    "propertyHistoryMonth": 12,
+    "propertyHistoryPage": 1,
+    "propertyHistoryLastRun": "2026-09-12T02:41:03.390Z",
+    "propertyHistoryLastError": null,
+    "saleNoticeDeferred": [],
+    "saleNoticeFailures": {
+      "search|2026-08|B000210": 0,
+      "search|2026-08|B000211": 0,
+      "search|2026-08|B000215": 0,
+      "search|2026-08|B000212": 1,
+      "search|2026-08|B000280": 1,
+      "search|2026-08|B000213": 0,
+      "search|2026-08|B000214": 0,
+      "search|2026-08|B214807": 0,
+      "search|2026-08|B214804": 0,
+      "search|2026-08|B000240": 0,
+      "search|2026-08|B000241": 0,
+      "search|2026-08|B000250": 0,
+      "search|2026-08|B000251": 0,
+      "search|2026-08|B000252": 0,
+      "search|2026-08|B000253": 0,
+      "search|2026-08|B250826": 0,
+      "search|2026-08|B000254": 0,
+      "search|2026-08|B000260": 0
+    },
+    "saleNoticeBackfillYear": 2026,
+    "saleNoticeBackfillMonth": 8,
+    "saleNoticeBackfillOffset": 0,
+    "saleNoticeBackfillLastRun": "2026-09-09T08:32:07.978Z",
+    "saleNoticeBackfillLastError": "B000212 2026-08: court gate held by pid 9380 (rslt-probe) since 2026-09-09T08:32:03.243Z",
+    "saleNoticeCourtOffsets": {
+      "2026-08|B000210": -1,
+      "2026-08|B000211": -1,
+      "2026-08|B000215": -1,
+      "2026-08|B000212": -1,
+      "2026-08|B000213": -1,
+      "2026-08|B000214": -1,
+      "2026-08|B214807": -1,
+      "2026-08|B214804": -1,
+      "2026-08|B000240": -1,
+      "2026-08|B000241": -1,
+      "2026-08|B000250": -1,
+      "2026-08|B000251": -1,
+      "2026-08|B000252": -1,
+      "2026-08|B000253": -1,
+      "2026-08|B250826": -1,
+      "2026-08|B000254": -1,
+      "2026-08|B000260": -1
+    },
+    "saleNoticeBackfillCourtIndex": 17,
+    "currentSweepOffsets": {
+      "2026-09|B000210": -1,
+      "2026-09|B000211": -1,
+      "2026-09|B000215": -1,
+      "2026-09|B000212": -1,
+      "2026-09|B000213": -1,
+      "2026-09|B000263": -1,
+      "2026-09|B000264": -1,
+      "2026-09|B000270": -1,
+      "2026-09|B000271": -1,
+      "2026-09|B000272": -1,
+      "2026-09|B000273": -1,
+      "2026-09|B000280": -1,
+      "2026-09|B000281": -1,
+      "2026-09|B000282": -1,
+      "2026-09|B000283": 3,
+      "2026-09|B000315": -1,
+      "2026-09|B000316": -1,
+      "2026-09|B000317": -1,
+      "2026-09|B000320": -1,
+      "2026-09|B000410": -1,
+      "2026-09|B000412": -1,
+      "2026-09|B000414": -1,
+      "2026-09|B000411": -1,
+      "2026-09|B000420": -1,
+      "2026-09|B000431": -1,
+      "2026-09|B000421": -1,
+      "2026-09|B000422": -1,
+      "2026-09|B000423": -1,
+      "2026-09|B000424": -1,
+      "2026-09|B000510": -1,
+      "2026-09|B000511": -1,
+      "2026-09|B000512": -1,
+      "2026-09|B000513": -1,
+      "2026-09|B000514": -1,
+      "2026-09|B000520": -1,
+      "2026-09|B000521": -1,
+      "2026-09|B000522": -1,
+      "2026-09|B000523": -1,
+      "2026-09|B000530": -1,
+      "2026-10|B000210": -1,
+      "2026-10|B000211": -1,
+      "2026-10|B000215": -1,
+      "2026-10|B000212": -1,
+      "2026-10|B000213": -1,
+      "2026-10|B000214": -1,
+      "2026-10|B214807": -1
+    },
+    "currentSweepFailures": {
+      "search|2026-09|B000210": 0,
+      "2026-09|B000210|0": 0,
+      "2026-09|B000210|1": 0,
+      "2026-09|B000210|2": 0,
+      "2026-09|B000210|3": 0,
+      "search|2026-09|B000211": 0,
+      "2026-09|B000211|0": 0,
+      "2026-09|B000211|1": 0,
+      "2026-09|B000211|2": 0,
+      "2026-09|B000211|3": 0,
+      "search|2026-09|B000215": 0,
+      "2026-09|B000215|0": 0,
+      "2026-09|B000215|1": 0,
+      "search|2026-09|B000212": 0,
+      "2026-09|B000212|0": 0,
+      "2026-09|B000212|1": 0,
+      "2026-09|B000212|2": 0,
+      "2026-09|B000212|3": 0,
+      "2026-09|B000212|4": 0,
+      "2026-09|B000212|5": 0,
+      "search|2026-09|B000213": 0,
+      "2026-09|B000213|0": 0,
+      "2026-09|B000213|1": 0,
+      "search|2026-09|B000214": 2,
+      "search|2026-09|B214807": 2,
+      "search|2026-09|B214804": 1,
+      "search|2026-09|B000240": 1,
+      "search|2026-09|B000241": 1,
+      "search|2026-09|B000250": 1,
+      "search|2026-09|B000251": 1,
+      "search|2026-09|B000252": 1,
+      "search|2026-09|B000253": 1,
+      "search|2026-09|B250826": 1,
+      "search|2026-09|B000254": 1,
+      "search|2026-09|B000260": 1,
+      "search|2026-09|B000261": 1,
+      "search|2026-09|B000262": 1,
+      "search|2026-09|B000263": 0,
+      "2026-09|B000263|0": 0,
+      "search|2026-09|B000264": 0,
+      "2026-09|B000264|0": 0,
+      "2026-09|B000264|1": 0,
+      "search|2026-09|B000270": 0,
+      "2026-09|B000270|0": 0,
+      "2026-09|B000270|1": 0,
+      "2026-09|B000270|2": 0,
+      "2026-09|B000270|3": 0,
+      "search|2026-09|B000271": 0,
+      "2026-09|B000271|0": 0,
+      "search|2026-09|B000272": 0,
+      "2026-09|B000272|0": 0,
+      "search|2026-09|B000273": 0,
+      "2026-09|B000273|0": 0,
+      "2026-09|B000273|1": 0,
+      "search|2026-09|B000280": 0,
+      "2026-09|B000280|0": 0,
+      "2026-09|B000280|1": 0,
+      "2026-09|B000280|2": 0,
+      "2026-09|B000280|3": 0,
+      "2026-09|B000280|4": 0,
+      "search|2026-09|B000281": 0,
+      "2026-09|B000281|0": 0,
+      "2026-09|B000281|1": 0,
+      "search|2026-09|B000282": 0,
+      "search|2026-09|B000283": 1,
+      "2026-09|B000283|0": 0,
+      "2026-09|B000283|1": 0,
+      "2026-09|B000283|2": 0,
+      "search|2026-09|B000284": 1,
+      "search|2026-09|B000285": 1,
+      "search|2026-09|B000310": 1,
+      "search|2026-09|B000311": 1,
+      "search|2026-09|B000312": 1,
+      "search|2026-09|B000313": 1,
+      "search|2026-09|B000314": 1,
+      "search|2026-09|B000315": 0,
+      "2026-09|B000315|0": 0,
+      "search|2026-09|B000316": 0,
+      "2026-09|B000316|0": 0,
+      "2026-09|B000316|1": 0,
+      "search|2026-09|B000317": 0,
+      "2026-09|B000317|0": 0,
+      "2026-09|B000317|1": 0,
+      "search|2026-09|B000320": 0,
+      "2026-09|B000320|0": 0,
+      "2026-09|B000320|1": 0,
+      "2026-09|B000320|2": 0,
+      "2026-09|B000320|3": 0,
+      "search|2026-09|B000410": 0,
+      "2026-09|B000410|0": 0,
+      "2026-09|B000410|1": 0,
+      "search|2026-09|B000412": 0,
+      "2026-09|B000412|0": 0,
+      "2026-09|B000412|1": 0,
+      "2026-09|B000412|2": 0,
+      "search|2026-09|B000414": 0,
+      "2026-09|B000414|0": 0,
+      "search|2026-09|B000411": 0,
+      "2026-09|B000411|0": 0,
+      "2026-09|B000411|1": 0,
+      "2026-09|B000411|2": 0,
+      "2026-09|B000411|3": 0,
+      "2026-09|B000411|4": 0,
+      "2026-09|B000411|5": 0,
+      "2026-09|B000411|6": 0,
+      "search|2026-09|B000420": 0,
+      "2026-09|B000420|0": 0,
+      "2026-09|B000420|1": 0,
+      "2026-09|B000420|2": 0,
+      "search|2026-09|B000431": 0,
+      "2026-09|B000431|0": 0,
+      "2026-09|B000431|1": 0,
+      "search|2026-09|B000421": 0,
+      "2026-09|B000421|0": 0,
+      "2026-09|B000421|1": 0,
+      "2026-09|B000421|2": 0,
+      "search|2026-09|B000422": 0,
+      "2026-09|B000422|0": 0,
+      "2026-09|B000422|1": 0,
+      "search|2026-09|B000423": 0,
+      "2026-09|B000423|0": 0,
+      "search|2026-09|B000424": 0,
+      "search|2026-09|B000510": 0,
+      "2026-09|B000510|0": 0,
+      "2026-09|B000510|1": 0,
+      "2026-09|B000510|2": 0,
+      "2026-09|B000510|3": 0,
+      "2026-09|B000510|4": 0,
+      "2026-09|B000510|5": 0,
+      "search|2026-09|B000511": 0,
+      "2026-09|B000511|0": 0,
+      "2026-09|B000511|1": 0,
+      "2026-09|B000511|2": 0,
+      "search|2026-09|B000512": 0,
+      "2026-09|B000512|0": 0,
+      "2026-09|B000512|1": 0,
+      "search|2026-09|B000513": 0,
+      "2026-09|B000513|0": 0,
+      "search|2026-09|B000514": 0,
+      "2026-09|B000514|0": 0,
+      "search|2026-09|B000520": 0,
+      "2026-09|B000520|0": 0,
+      "2026-09|B000520|1": 0,
+      "search|2026-09|B000521": 0,
+      "2026-09|B000521|0": 0,
+      "search|2026-09|B000522": 0,
+      "2026-09|B000522|0": 0,
+      "search|2026-09|B000523": 0,
+      "search|2026-09|B000530": 0,
+      "2026-09|B000530|0": 0,
+      "2026-09|B000530|1": 0,
+      "2026-09|B000530|2": 0,
+      "2026-09|B000530|3": 0,
+      "search|2026-10|B000210": 0,
+      "search|2026-10|B000211": 0,
+      "search|2026-10|B000215": 0,
+      "search|2026-10|B000212": 0,
+      "search|2026-10|B000213": 0,
+      "search|2026-10|B000214": 0,
+      "search|2026-10|B214807": 0
+    },
+    "currentSweepMonthSlot": 1,
+    "currentSweepCourtIndex": 7,
+    "currentSweepLastRun": "2026-09-08T23:44:12.885Z",
+    "currentSweepLastError": null,
+    "saleNoticeBackfillVersion": 2,
+    "currentSweepDeferred": [
+      "2026-09|B214804",
+      "2026-09|B000240",
+      "2026-09|B000241",
+      "2026-09|B000250",
+      "2026-09|B000251",
+      "2026-09|B000252",
+      "2026-09|B000253",
+      "2026-09|B250826",
+      "2026-09|B000254",
+      "2026-09|B000260",
+      "2026-09|B000261",
+      "2026-09|B000262",
+      "2026-09|B000283",
+      "2026-09|B000284",
+      "2026-09|B000285",
+      "2026-09|B000310",
+      "2026-09|B000311",
+      "2026-09|B000312",
+      "2026-09|B000313",
+      "2026-09|B000314",
+      "2026-10|B000412",
+      "2026-10|B000510",
+      "2026-10|B000421",
+      "2026-10|B000511"
+    ]
+  }
+}
