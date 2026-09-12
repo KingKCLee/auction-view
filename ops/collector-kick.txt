@@ -1,2 +1,2 @@
-collector-kick 2026-09-12T00:29:00Z
-reason: canonical unique itemCount remains stagnant at 11973 while current sale-notice, historical sale-notice, and property-search history paths show zero new unique items or transient official-site network failures; execute the existing bounded official fallback chain now, preserve canonical data additively, merge safe worker deltas first, retry deferred work, use case-detail/basic-info enrichment only as a non-destructive fallback, and do not bypass CAPTCHA or access controls
+collector-kick 2026-09-12T04:24:30Z
+reason: canonical unique itemCount remains stagnant at 11973 after a successful duplicate-only official pass; advance the existing bounded official current-sale, historical-sale, and property-search cursors, preserve canonical data additively, retry deferred work, allow macOS rescue when all discovery routes add zero unique items, and do not bypass CAPTCHA or access controls
