@@ -10,6 +10,8 @@ on:
       - '.github/workflows/agent-current-court-sweep.yml'
       - 'cycle-health.js'
       - 'test-cycle-health.js'
+      - 'test-macos-workflow-portability.js'
+      - 'run-bounded.js'
   workflow_dispatch:
 
 permissions:
@@ -45,6 +47,8 @@ jobs:
         run: node test-worker-additions.js
       - name: Verify current-cycle failover guard
         run: node test-cycle-health.js
+      - name: Verify macOS rescue portability guard
+        run: node test-macos-workflow-portability.js
       - name: Install Chromium for official browser fallback
         run: npx playwright install chromium
 
@@ -152,32 +156,33 @@ jobs:
         run: |
           node test-worker-additions.js
           node test-cycle-health.js
+          node test-macos-workflow-portability.js
       - name: Install Chromium for official browser fallback
         run: npx playwright install chromium
       - name: Retry official sale-notice sweep from a separate hosted network
-        run: timeout -k 5s 120s node current-court-sweep.js || true
+        run: node run-bounded.js 120000 node current-court-sweep.js || true
       - name: Advance official historical sale notices if current route is still stagnant
         run: |
           need=$(node cycle-health.js needsBackfill)
           if [ "$need" = "true" ]; then
-            timeout -k 5s 120s node sale-notice-history-worker.js || true
+            node run-bounded.js 120000 node sale-notice-history-worker.js || true
           fi
       - name: Retry official property search if current-cycle notice routes remain stagnant
         run: |
           need=$(node cycle-health.js needsProperty)
           if [ "$need" = "true" ]; then
-            timeout -k 5s 120s node property-history-discovery-v2.js || true
+            node run-bounded.js 120000 node property-history-discovery-v2.js || true
           fi
       - name: Retry official sale-notice discovery if all current-cycle discovery is still empty
         run: |
           need=$(node cycle-health.js needsSaleDiscovery)
           if [ "$need" = "true" ]; then
-            timeout -k 5s 120s node sale-notice-discovery.js || true
+            node run-bounded.js 120000 node sale-notice-discovery.js || true
           fi
       - name: Merge worker deltas and verify basic info
         run: |
           node apply-worker-deltas.js || true
-          timeout -k 5s 120s node basic-info-enrich.js || true
+          node run-bounded.js 120000 node basic-info-enrich.js || true
           node validate-basic-info.js
           node metrics-corrector.js || true
       - name: Reconcile rescued result with latest canonical and publish
