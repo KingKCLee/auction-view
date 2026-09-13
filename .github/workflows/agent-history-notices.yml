@@ -7,6 +7,8 @@ on:
       - '.github/workflows/agent-history-notices.yml'
       - 'sale-notice-history-worker.js'
       - 'test-history-backfill-failover.js'
+  schedule:
+    - cron: '12 * * * *'
   workflow_dispatch:
 
 permissions:
