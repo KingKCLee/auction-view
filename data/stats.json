@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T02:30:59.489Z",
+  "generatedAt": "2026-09-13T02:37:53.369Z",
   "court": "전국 법원",
   "region": "전국",
   "itemCount": 11973,
@@ -358,7 +358,7 @@
     "historicalReturned": 0,
     "historicalNewUnique": 0,
     "historicalStatus": "partial",
-    "finishedAt": "2026-09-13T02:30:58.658Z"
+    "finishedAt": "2026-09-13T02:37:54.121Z"
   },
   "saleNoticeBackfill": {
     "version": 2,
@@ -430,23 +430,36 @@
     "priceCount": 11737,
     "missing": 299,
     "definition": "주소 + (용도/감정가/최저가/매각기일 중 1개 이상)",
-    "updatedAt": "2026-09-12T13:28:49.742Z"
+    "updatedAt": "2026-09-13T02:37:50.989Z"
   },
   "latestBasicInfoRun": {
     "checkedCases": 4,
-    "successfulCases": 4,
-    "itemsImproved": 4,
+    "successfulCases": 0,
+    "itemsImproved": 0,
     "remaining": 299,
     "transport": [
-      "B000240:http",
-      "B000240:http",
-      "B000240:http",
-      "B000240:http"
+      "B000240:failed",
+      "B000240:failed",
+      "B000240:failed",
+      "B000240:failed"
     ],
-    "attempts": [],
-    "lastError": null,
+    "attempts": [
+      "http:NETWORK_ERROR:Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ159M00.xml&pgjId=159M00: fetch failed",
+      "direct:NETWORK_ERROR:Court Auction network error for /pgj/pgj15A/selectAuctnCsSrchRslt.on: fetch failed",
+      "browser:COURT_BUSY:court gate held by pid 2419 (browser-fallback:warmup) since 2026-09-13T02:36:02.434Z",
+      "http:NETWORK_ERROR:Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ159M00.xml&pgjId=159M00: fetch failed",
+      "direct:NETWORK_ERROR:Court Auction network error for /pgj/pgj15A/selectAuctnCsSrchRslt.on: fetch failed",
+      "browser:COURT_BUSY:court gate held by pid 2419 (browser-fallback:warmup) since 2026-09-13T02:36:02.434Z",
+      "http:NETWORK_ERROR:Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ159M00.xml&pgjId=159M00: fetch failed",
+      "direct:NETWORK_ERROR:Court Auction network error for /pgj/pgj15A/selectAuctnCsSrchRslt.on: fetch failed",
+      "browser:NETWORK_ERROR:browser warmup failed: page.goto: Timeout 22000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ159M00.xml&pgjId=159M00\", waiting until \"commit\"\n",
+      "http:NETWORK_ERROR:Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ159M00.xml&pgjId=159M00: fetch failed",
+      "direct:NETWORK_ERROR:Court Auction network error for /pgj/pgj15A/selectAuctnCsSrchRslt.on: fetch failed",
+      "browser:NETWORK_ERROR:browser warmup failed: page.goto: Target page, context or browser has been closed"
+    ],
+    "lastError": "B000240 2026타경500371: browser warmup failed: page.goto: Target page, context or browser has been closed",
     "source": "대한민국 법원경매정보 사건검색",
-    "finishedAt": "2026-09-12T13:28:49.742Z"
+    "finishedAt": "2026-09-13T02:37:50.989Z"
   },
   "coverageSource": "canonical-recount",
   "safeReconcile": {
@@ -456,6 +469,6 @@
     "retainedRemoteIds": 11973,
     "retainedCollectorIds": 11973,
     "addedVsRemote": 0,
-    "finishedAt": "2026-09-12T20:35:03.379Z"
+    "finishedAt": "2026-09-13T02:37:53.369Z"
   }
 }

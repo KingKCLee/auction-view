@@ -42,13 +42,17 @@
   "propertyHistoryLastRun": "2026-09-12T20:32:57.722Z",
   "propertyHistoryLastError": "court gate held by pid 11132 (photo-enrich.js) since 2026-09-12T20:32:47.341Z",
   "lastMetricItemCount": 11973,
-  "saleNoticeDeferred": [],
+  "saleNoticeDeferred": [
+    "2026-08|B000317",
+    "2026-08|B000211",
+    "2026-08|B000280"
+  ],
   "saleNoticeFailures": {
     "search|2026-08|B000210": 0,
-    "search|2026-08|B000211": 0,
+    "search|2026-08|B000211": 1,
     "search|2026-08|B000215": 0,
     "search|2026-08|B000212": 1,
-    "search|2026-08|B000280": 1,
+    "search|2026-08|B000280": 2,
     "search|2026-08|B000213": 0,
     "search|2026-08|B000214": 0,
     "search|2026-08|B214807": 0,
@@ -61,13 +65,14 @@
     "search|2026-08|B000253": 0,
     "search|2026-08|B250826": 0,
     "search|2026-08|B000254": 0,
-    "search|2026-08|B000260": 0
+    "search|2026-08|B000260": 0,
+    "search|2026-08|B000317": 1
   },
   "saleNoticeBackfillYear": 2026,
   "saleNoticeBackfillMonth": 8,
   "saleNoticeBackfillOffset": 0,
-  "saleNoticeBackfillLastRun": "2026-09-09T08:32:07.978Z",
-  "saleNoticeBackfillLastError": "B000212 2026-08: court gate held by pid 9380 (rslt-probe) since 2026-09-09T08:32:03.243Z",
+  "saleNoticeBackfillLastRun": "2026-09-13T02:36:36.751Z",
+  "saleNoticeBackfillLastError": "B000280 2026-08: browser warmup failed: page.goto: Timeout 22000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\", waiting until \"commit\"\n",
   "saleNoticeCourtOffsets": {
     "2026-08|B000210": -1,
     "2026-08|B000211": -1,
@@ -87,7 +92,7 @@
     "2026-08|B000254": -1,
     "2026-08|B000260": -1
   },
-  "saleNoticeBackfillCourtIndex": 17,
+  "saleNoticeBackfillCourtIndex": 20,
   "currentSweepOffsets": {
     "2026-09|B000210": -1,
     "2026-09|B000211": -1,
@@ -302,7 +307,7 @@
   "currentSweepCourtIndex": 7,
   "currentSweepLastRun": "2026-09-08T23:44:12.885Z",
   "currentSweepLastError": null,
-  "saleNoticeBackfillVersion": 2,
+  "saleNoticeBackfillVersion": 3,
   "currentSweepDeferred": [
     "2026-09|B214804",
     "2026-09|B000240",
