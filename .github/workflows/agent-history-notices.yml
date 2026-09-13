@@ -1,6 +1,12 @@
-name: Auction Agent - Historical Notices (manual backup)
+name: Auction Agent - Historical Notices Safe Failover
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/agent-history-notices.yml'
+      - 'sale-notice-history-worker.js'
+      - 'test-history-backfill-failover.js'
   workflow_dispatch:
 
 permissions:
@@ -27,16 +33,31 @@ jobs:
           node-version: '22'
       - name: Install collector
         run: npm install --no-audit --no-fund
+      - name: Verify history failover guard
+        run: |
+          node --check sale-notice-history-worker.js
+          node test-history-backfill-failover.js
       - name: Install Chromium fallback
         run: npx playwright install chromium
-      - name: Run one emergency history backfill
-        run: npm run history:notices
+      - name: Run one safe history backfill
+        run: timeout -k 5s 150s npm run history:notices || true
       - name: Repair basic information
-        run: npm run basic || true
+        run: timeout -k 5s 120s npm run basic || true
       - name: Verify basic information
         run: npm run basic:validate
-      - name: Publish emergency history batch
+      - name: Publish history batch additively
         run: |
+          cp data/auctions.json /tmp/history-auctions.json
+          cp data/stats.json /tmp/history-stats.json
+          if [ -f data/state.json ]; then cp data/state.json /tmp/history-state.json; else echo '{}' > /tmp/history-state.json; fi
+
+          git reset --hard HEAD
+          git clean -fd
+          git pull --rebase origin main
+          node safe-canonical-reconcile.js /tmp/history-auctions.json /tmp/history-stats.json /tmp/history-state.json
+          node validate-basic-info.js
+          node metrics-corrector.js || true
+
           rm -rf docs
           mkdir -p docs/data
           cp index.html progress.html styles.css app.js progress.js docs/
@@ -47,7 +68,6 @@ jobs:
           git config user.email "court-auction-bot@users.noreply.github.com"
           git add data/auctions.json data/stats.json data/state.json docs
           if ! git diff --cached --quiet; then
-            git commit -m "data: manual emergency history backfill $(date -u +'%Y-%m-%dT%H:%MZ')"
-            git pull --rebase origin main
+            git commit -m "data: safe history backfill $(date -u +'%Y-%m-%dT%H:%MZ')"
             git push origin HEAD:main
           fi
