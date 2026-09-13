@@ -70,20 +70,22 @@
     "search|2026-08|B250826": 0,
     "search|2026-08|B000254": 0,
     "search|2026-08|B000260": 0,
-    "search|2026-08|B000317": 2,
+    "search|2026-08|B000317": 0,
     "search|2026-08|B000264": 0,
     "search|2026-08|B000270": 0,
     "search|2026-08|B000271": 0,
     "search|2026-08|B000272": 1,
     "search|2026-08|B000273": 1,
     "search|2026-08|B000422": 1,
-    "search|2026-08|B000522": 1
+    "search|2026-08|B000522": 1,
+    "search|2026-08|B000283": 0,
+    "search|2026-08|B000284": 0
   },
   "saleNoticeBackfillYear": 2026,
   "saleNoticeBackfillMonth": 8,
   "saleNoticeBackfillOffset": 0,
-  "saleNoticeBackfillLastRun": "2026-09-13T18:14:50.149Z",
-  "saleNoticeBackfillLastError": "B000522 2026-08: browser warmup failed: page.goto: Timeout 22000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\", waiting until \"commit\"\n",
+  "saleNoticeBackfillLastRun": "2026-09-13T20:53:00.444Z",
+  "saleNoticeBackfillLastError": null,
   "saleNoticeCourtOffsets": {
     "2026-08|B000210": -1,
     "2026-08|B000211": -1,
@@ -106,9 +108,11 @@
     "2026-08|B000264": -1,
     "2026-08|B000270": -1,
     "2026-08|B000271": -1,
-    "2026-08|B000272": -1
+    "2026-08|B000272": -1,
+    "2026-08|B000283": -1,
+    "2026-08|B000284": -1
   },
-  "saleNoticeBackfillCourtIndex": 28,
+  "saleNoticeBackfillCourtIndex": 30,
   "currentSweepOffsets": {
     "2026-09|B000210": -1,
     "2026-09|B000211": -1,
