@@ -11,6 +11,10 @@ on:
       - 'cycle-health.js'
       - 'test-cycle-health.js'
       - 'test-macos-workflow-portability.js'
+      - 'test-property-history-cursor.js'
+      - 'property-history-discovery-v2.js'
+      - 'property-history-cursor-lib.js'
+      - 'reconcile-property-history-cursor.js'
       - 'run-bounded.js'
   workflow_dispatch:
 
@@ -47,6 +51,8 @@ jobs:
         run: node test-worker-additions.js
       - name: Verify current-cycle failover guard
         run: node test-cycle-health.js
+      - name: Verify property-history cursor guard
+        run: node test-property-history-cursor.js
       - name: Verify macOS rescue portability guard
         run: node test-macos-workflow-portability.js
       - name: Install Chromium for official browser fallback
@@ -106,12 +112,14 @@ jobs:
           cp data/auctions.json /tmp/collector-auctions.json
           cp data/stats.json /tmp/collector-stats.json
           if [ -f data/state.json ]; then cp data/state.json /tmp/collector-state.json; else echo '{}' > /tmp/collector-state.json; fi
+          if [ -f data/property-history-cursor.json ]; then cp data/property-history-cursor.json /tmp/collector-property-cursor.json; fi
 
           git reset --hard HEAD
           git clean -fd
           test -z "$(git status --porcelain)"
           git pull --rebase origin main
           node safe-canonical-reconcile.js /tmp/collector-auctions.json /tmp/collector-stats.json /tmp/collector-state.json
+          if [ -f /tmp/collector-property-cursor.json ]; then node reconcile-property-history-cursor.js /tmp/collector-property-cursor.json; fi
           node apply-worker-deltas.js || true
           node validate-basic-info.js
           node metrics-corrector.js || true
@@ -125,7 +133,7 @@ jobs:
 
           git config user.name "court-auction-bot"
           git config user.email "court-auction-bot@users.noreply.github.com"
-          git add -A data/auctions.json data/stats.json data/state.json docs data/worker-deltas 2>/dev/null || true
+          git add -A data/auctions.json data/stats.json data/state.json data/property-history-cursor.json docs data/worker-deltas 2>/dev/null || true
           if ! git diff --cached --quiet; then
             git commit -m "data: reconciled hourly discovery $(date -u +'%Y-%m-%dT%H:%MZ')"
             git push origin HEAD:main
@@ -156,6 +164,7 @@ jobs:
         run: |
           node test-worker-additions.js
           node test-cycle-health.js
+          node test-property-history-cursor.js
           node test-macos-workflow-portability.js
       - name: Install Chromium for official browser fallback
         run: npx playwright install chromium
@@ -190,12 +199,14 @@ jobs:
           cp data/auctions.json /tmp/collector-auctions.json
           cp data/stats.json /tmp/collector-stats.json
           if [ -f data/state.json ]; then cp data/state.json /tmp/collector-state.json; else echo '{}' > /tmp/collector-state.json; fi
+          if [ -f data/property-history-cursor.json ]; then cp data/property-history-cursor.json /tmp/collector-property-cursor.json; fi
 
           git reset --hard HEAD
           git clean -fd
           test -z "$(git status --porcelain)"
           git pull --rebase origin main
           node safe-canonical-reconcile.js /tmp/collector-auctions.json /tmp/collector-stats.json /tmp/collector-state.json
+          if [ -f /tmp/collector-property-cursor.json ]; then node reconcile-property-history-cursor.js /tmp/collector-property-cursor.json; fi
           node apply-worker-deltas.js || true
           node validate-basic-info.js
           node metrics-corrector.js || true
@@ -209,7 +220,7 @@ jobs:
 
           git config user.name "court-auction-bot"
           git config user.email "court-auction-bot@users.noreply.github.com"
-          git add -A data/auctions.json data/stats.json data/state.json docs data/worker-deltas 2>/dev/null || true
+          git add -A data/auctions.json data/stats.json data/state.json data/property-history-cursor.json docs data/worker-deltas 2>/dev/null || true
           if ! git diff --cached --quiet; then
             git commit -m "data: reconciled macOS rescue $(date -u +'%Y-%m-%dT%H:%MZ')"
             git push origin HEAD:main
