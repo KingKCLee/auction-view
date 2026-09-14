@@ -25,6 +25,11 @@ const ROOT = process.env.EXPORT_ROOT || __dirname;
 const DATA = path.join(ROOT, 'data', 'auctions.json');
 const STATS = path.join(ROOT, 'data', 'stats.json');
 const ALERT = path.join(ROOT, 'data', 'collection-alert.json');
+/* 노트북 수집기의 실제 상태. stats.latestDetailRun 은 **호스티드(Actions) 상세 실행**이
+   쓰는 자리라 노트북 상태가 아니다 - 그것을 노트북 것으로 내보내던 탓에 진도율 화면이
+   09-10 에 멈춘 값을 보여 주고 있었다(2026-09-14 실측: 라이브 표시 "노트북 마지막 성공
+   09-10 14:12 · 성공 0 · fetch failed", 같은 시각 실제 노트북은 checked 24 / success 24). */
+const LAPTOP = path.join(ROOT, 'data', 'laptop-status.json');
 const OUT = process.env.EXPORT_OUT || path.join(ROOT, 'data', 'export');
 
 // The cap the order asks for: nothing the web reads may exceed this.
@@ -101,7 +106,7 @@ function writeChecked(file, buf, name, cap = MAX_OBJECT_BYTES) {
   return buf.length;
 }
 
-function buildStats(rows, stats, alert) {
+function buildStats(rows, stats, alert, laptop) {
   const today = kstDay(Date.now());
   const cov = stats?.coverage || {};
   const total = rows.length;
@@ -127,8 +132,11 @@ function buildStats(rows, stats, alert) {
     atRiskToday: atRisk,
     permanentlyLost: lost,
     lastCloudMergeAt: stats?.generatedAt || null,
-    lastLaptopRunAt: stats?.latestDetailRun?.finishedAt || null,
-    lastLaptopRun: stats?.latestDetailRun || null,
+    /* 노트북은 델타로 발행하므로 stats 에 자기 회차를 남기지 않는다 - 자기 상태 파일을 읽는다.
+       없으면 옛 자리로 떨어지되, 그 값이 호스티드 실행 것임을 아는 채로 쓴다. */
+    lastLaptopRunAt: laptop?.lastRun?.finishedAt || laptop?.updatedAt || stats?.latestDetailRun?.finishedAt || null,
+    lastLaptopRun: laptop?.lastRun || stats?.latestDetailRun || null,
+    lastLaptopPhase: laptop?.phase || null,
     alert: alert ? { at: alert.at, newlyLostSinceLastRun: alert.newlyLostSinceLastRun ?? null } : null
   };
 }
@@ -138,6 +146,7 @@ function main() {
   if (!Array.isArray(rows)) throw new Error('canonical data/auctions.json missing or not an array');
   const stats = readJson(STATS, {});
   const alert = readJson(ALERT, null);
+  const laptop = readJson(LAPTOP, null);
 
   // laptop-worker truncates canonical to its candidate subset for the duration of
   // a cycle. Exporting then would publish a shrunken database to the live site.
@@ -191,7 +200,7 @@ function main() {
   }
 
   // --- stats ---------------------------------------------------------------
-  const statsPayload = buildStats(rows, stats, alert);
+  const statsPayload = buildStats(rows, stats, alert, laptop);
   const statsBytes = writeChecked(
     path.join(OUT, 'stats.json'),
     Buffer.from(JSON.stringify(statsPayload), 'utf8'), 'stats.json');

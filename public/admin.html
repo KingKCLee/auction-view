@@ -79,7 +79,7 @@ async function load() {
 
     let html = '<div class="tiles">' +
       tile('전체 사건 수', num(d.itemCount)) +
-      tile('오늘 낙찰가 확보', num(captured), captured > 0 ? 'ok' : 'warn') +
+      tile('낙찰가 확보(누적)', num(captured), captured > 0 ? 'ok' : 'warn') +
       tile('오늘 위험 물건', num(atRisk), atRisk > 0 ? 'warn' : 'ok') +
       tile('영구 손실 누적', num(lost), lost > 0 ? 'bad' : 'ok') +
       tile('종국 표시', num(d.expiredMarked)) +
@@ -92,7 +92,8 @@ async function load() {
     const run = d.lastLaptopRun || {};
     html += '<div class="panel"><h2>파이프라인</h2><table>' +
       '<tr><td>최근 클라우드 병합</td><td>' + when(d.lastCloudMergeAt) + '</td></tr>' +
-      '<tr><td>노트북 마지막 성공</td><td>' + when(d.lastLaptopRunAt) + '</td></tr>' +
+      '<tr><td>노트북 마지막 회차</td><td>' + when(d.lastLaptopRunAt) +
+        (d.lastLaptopPhase ? ' · ' + esc(d.lastLaptopPhase) : '') + '</td></tr>' +
       '<tr><td>마지막 회차 결과</td><td>조회 ' + num(run.checked) + ' · 성공 ' + num(run.success) +
         ' · 문서 ' + num(run.docsAdded) + '</td></tr>' +
       '<tr><td>마지막 회차 오류</td><td>' + (run.error ? esc(run.error) : '없음') + '</td></tr>' +
@@ -100,8 +101,11 @@ async function load() {
 
     $('#body').innerHTML = html;
 
+    // 자정에 사라지는 것은 **사건 상세**이지 낙찰가가 아니다. 낙찰가는 매각결과검색에서
+    // 며칠을 거슬러 받아 오므로 당일 경주가 아니다 - 전에 이 배너가 "자정이 지나면 사라진다"고
+    // 적어 없는 긴급을 만들었다(2026-09-14 교정).
     const riskMsg = atRisk > 0
-      ? '오늘 기일인 ' + num(atRisk) + '건이 아직 낙찰가 미확보입니다. 자정(KST)이 지나면 원천에서 사라집니다.'
+      ? '오늘 기일인 ' + num(atRisk) + '건은 아직 낙찰가가 없습니다. 낙찰가는 매각결과검색에서 며칠 뒤까지 받아옵니다 — 사라지는 것은 사건 상세 쪽입니다.'
       : '오늘 기일 물건의 낙찰가를 모두 확보했습니다.';
     $('#gateBox').innerHTML = '<div class="gate ' + (atRisk > 0 ? 'bad' : 'ok') + '">' + riskMsg + '</div>';
   } catch (e) {
