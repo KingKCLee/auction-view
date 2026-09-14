@@ -1,0 +1,13 @@
+"use strict";
+const fs=require('fs');
+const path=require('path');
+const {furthest}=require('./property-history-cursor-lib');
+const target=path.join(__dirname,'data','property-history-cursor.json');
+const localPath=process.argv[2];
+const read=(p,f)=>{try{return JSON.parse(fs.readFileSync(p,'utf8'))}catch{return f}};
+const remote=read(target,null),local=localPath?read(localPath,null):null;
+if(!remote&&!local)process.exit(0);
+const chosen=remote&&local?furthest(remote,local):(local||remote);
+fs.mkdirSync(path.dirname(target),{recursive:true});
+fs.writeFileSync(target,JSON.stringify({...chosen,updatedAt:new Date().toISOString()},null,2));
+console.log(JSON.stringify({propertyHistoryCursor:chosen},null,2));
