@@ -95,6 +95,25 @@ const toDetail = r => ({
   photoCount: int(r.photoCount) || 0,
   photos: Array.isArray(r.photoUrls) ? r.photoUrls.slice(0, 20) : [],
   coverage: r.coverage || {},
+  /* [2026-09-15] 상세 화면 2·3·4·5·6 섹션이 쓰는 축. 여기 없으면 canonical 에
+     들어와 있어도 화면까지 못 간다 - 실제로 그랬다(재수집으로 356건을 채워 놓고도
+     상세가 빈 채였다). 값이 없는 사건은 null/빈배열로 나가고 화면이 자리를 정한다. */
+  caseReceivedDate: r.caseReceivedDate || null,
+  caseStartDate: r.caseStartDate || null,
+  distributionDeadline: r.distributionDeadline || null,
+  courtDept: r.courtDept || null, courtDeptTel: r.courtDeptTel || null,
+  caseSuspendCode: r.caseSuspendCode || null, caseSuspendReason: r.caseSuspendReason || null,
+  rights: r.rights || null,
+  appraisalPoints: Array.isArray(r.appraisalPoints) ? r.appraisalPoints : [],
+  minimumPriceRounds: Array.isArray(r.minimumPriceRounds) ? r.minimumPriceRounds : [],
+  bidPeriodFrom: r.bidPeriodFrom || null, bidPeriodTo: r.bidPeriodTo || null,
+  salePlace: r.salePlace || null, decisionPlace: r.decisionPlace || null,
+  decisionDate: r.decisionDate || null, depositRate: r.depositRate ?? null,
+  occupancy: r.occupancy || null,
+  /* 임차인은 이름을 가린 채로만 나간다(detail-enrich 가 가려서 저장한다).
+     주민등록번호 계열(enrrno)은 애초에 저장하지 않으므로 여기 올 수 없다. */
+  lessees: Array.isArray(r.lessees) ? r.lessees : [],
+  lesseeCount: r.lesseeCount ?? null,
   detailCheckedAt: r.detailCheckedAt || null,
   source: r.source || null
 });
