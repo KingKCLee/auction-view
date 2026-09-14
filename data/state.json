@@ -4,14 +4,14 @@
   "historyMonth": 4,
   "historyPage": 1,
   "runCount": 10,
-  "lastRun": "2026-09-14T21:31:33.953Z",
+  "lastRun": "2026-09-14T23:31:20.195Z",
   "lastError": null,
   "historyNoticeIndex": 0,
   "priorityIndex": {
     "2026-09": 2
   },
   "noticeHistoryYear": 2024,
-  "noticeHistoryMonth": 11,
+  "noticeHistoryMonth": 10,
   "noticeHistoryOffset": 0,
   "recentNoticeKeys": [
     "B000210_1001_20260908||B000210|B000210|2026-09-08|20260908|1001|1001||||",
@@ -38,10 +38,10 @@
   "deferredHistoryMonths": [],
   "propertyHistoryFailureCount": 1,
   "propertyHistoryYear": 2014,
-  "propertyHistoryMonth": 3,
+  "propertyHistoryMonth": 2,
   "propertyHistoryPage": 1,
-  "propertyHistoryLastRun": "2026-09-14T21:26:56.513Z",
-  "propertyHistoryLastError": "court gate held by pid 7776 (detail-enrich:warmup) since 2026-09-14T21:26:48.145Z",
+  "propertyHistoryLastRun": "2026-09-14T23:31:06.672Z",
+  "propertyHistoryLastError": null,
   "lastMetricItemCount": 12231,
   "saleNoticeDeferred": [],
   "saleNoticeFailures": {
@@ -62,13 +62,14 @@
     "search|2026-08|B000253": 0,
     "search|2026-08|B250826": 0,
     "search|2026-08|B000254": 0,
-    "search|2026-08|B000260": 0
+    "search|2026-08|B000260": 0,
+    "search|2026-08|B000261": 0
   },
   "saleNoticeBackfillYear": 2026,
   "saleNoticeBackfillMonth": 8,
   "saleNoticeBackfillOffset": 0,
-  "saleNoticeBackfillLastRun": "2026-09-09T08:32:07.978Z",
-  "saleNoticeBackfillLastError": "B000212 2026-08: court gate held by pid 9380 (rslt-probe) since 2026-09-09T08:32:03.243Z",
+  "saleNoticeBackfillLastRun": "2026-09-14T23:31:04.609Z",
+  "saleNoticeBackfillLastError": null,
   "saleNoticeCourtOffsets": {
     "2026-08|B000210": -1,
     "2026-08|B000211": -1,
@@ -86,9 +87,10 @@
     "2026-08|B000253": -1,
     "2026-08|B250826": -1,
     "2026-08|B000254": -1,
-    "2026-08|B000260": -1
+    "2026-08|B000260": -1,
+    "2026-08|B000261": -1
   },
-  "saleNoticeBackfillCourtIndex": 17,
+  "saleNoticeBackfillCourtIndex": 18,
   "currentSweepOffsets": {
     "2026-09|B000210": -1,
     "2026-09|B000211": -1,
@@ -135,7 +137,8 @@
     "2026-10|B000212": -1,
     "2026-10|B000213": -1,
     "2026-10|B000214": -1,
-    "2026-10|B214807": -1
+    "2026-10|B214807": -1,
+    "2026-09|B214804": -1
   },
   "currentSweepFailures": {
     "search|2026-09|B000210": 0,
@@ -163,7 +166,7 @@
     "2026-09|B000213|1": 0,
     "search|2026-09|B000214": 2,
     "search|2026-09|B214807": 2,
-    "search|2026-09|B214804": 1,
+    "search|2026-09|B214804": 0,
     "search|2026-09|B000240": 1,
     "search|2026-09|B000241": 1,
     "search|2026-09|B000250": 1,
@@ -299,11 +302,11 @@
     "search|2026-10|B000214": 0,
     "search|2026-10|B214807": 0
   },
-  "currentSweepMonthSlot": 1,
-  "currentSweepCourtIndex": 7,
-  "currentSweepLastRun": "2026-09-08T23:44:12.885Z",
+  "currentSweepMonthSlot": 0,
+  "currentSweepCourtIndex": 8,
+  "currentSweepLastRun": "2026-09-14T23:31:00.649Z",
   "currentSweepLastError": null,
-  "saleNoticeBackfillVersion": 2,
+  "saleNoticeBackfillVersion": 3,
   "currentSweepDeferred": [
     "2026-09|B214804",
     "2026-09|B000240",
