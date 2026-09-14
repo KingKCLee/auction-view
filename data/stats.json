@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T23:31:36.663Z",
+  "generatedAt": "2026-09-14T23:33:35.387Z",
   "court": "전국 법원",
   "region": "전국",
   "itemCount": 12231,
@@ -50,8 +50,8 @@
   },
   "latestRun": {
     "run_type": "sale-notice-discovery",
-    "started_at": "2026-09-14T23:31:20.195Z",
-    "finished_at": "2026-09-14T23:31:20.205Z",
+    "started_at": "2026-09-14T23:33:15.003Z",
+    "finished_at": "2026-09-14T23:33:15.039Z",
     "status": "done",
     "items_found": 168,
     "items_saved": 0,
@@ -66,8 +66,8 @@
   "runs": [
     {
       "run_type": "sale-notice-discovery",
-      "started_at": "2026-09-14T23:31:20.195Z",
-      "finished_at": "2026-09-14T23:31:20.205Z",
+      "started_at": "2026-09-14T23:33:15.003Z",
+      "finished_at": "2026-09-14T23:33:15.039Z",
       "status": "done",
       "items_found": 168,
       "items_saved": 0,
@@ -357,7 +357,7 @@
     "httpStatus": null,
     "pageSize": 20,
     "source": "대한민국 법원경매정보 물건검색",
-    "finishedAt": "2026-09-14T23:31:06.886Z"
+    "finishedAt": "2026-09-14T23:33:02.134Z"
   },
   "lastCollectorCycle": {
     "itemCount": 12231,
@@ -366,7 +366,7 @@
     "historicalReturned": 0,
     "historicalNewUnique": 0,
     "historicalStatus": "done",
-    "finishedAt": "2026-09-14T23:31:37.817Z"
+    "finishedAt": "2026-09-14T23:33:36.900Z"
   },
   "saleNoticeBackfill": {
     "version": 3,
@@ -391,7 +391,7 @@
     "attempts": [],
     "courtSource": "official-court-codes",
     "source": "대한민국 법원경매정보 매각공고(법원별)",
-    "finishedAt": "2026-09-14T23:31:04.614Z"
+    "finishedAt": "2026-09-14T23:33:00.561Z"
   },
   "currentCourtSweep": {
     "months": [
@@ -416,7 +416,7 @@
     "attempts": [],
     "courtSource": "official-court-codes",
     "source": "대한민국 법원경매정보 매각공고(전국 최신 법원별)",
-    "finishedAt": "2026-09-14T23:31:00.655Z"
+    "finishedAt": "2026-09-14T23:32:57.147Z"
   },
   "photoCourtCount": 1,
   "basicInfoQuality": {
@@ -425,7 +425,7 @@
     "priceCount": 11995,
     "missing": 263,
     "definition": "주소 + (용도/감정가/최저가/매각기일 중 1개 이상)",
-    "updatedAt": "2026-09-14T23:31:33.178Z"
+    "updatedAt": "2026-09-14T23:33:28.942Z"
   },
   "latestBasicInfoRun": {
     "checkedCases": 4,
@@ -441,7 +441,7 @@
     "attempts": [],
     "lastError": null,
     "source": "대한민국 법원경매정보 사건검색",
-    "finishedAt": "2026-09-14T23:31:33.178Z"
+    "finishedAt": "2026-09-14T23:33:28.942Z"
   },
   "coverageSource": "canonical-recount",
   "safeReconcile": {
@@ -451,6 +451,6 @@
     "retainedRemoteIds": 12231,
     "retainedCollectorIds": 12231,
     "addedVsRemote": 0,
-    "finishedAt": "2026-09-14T23:31:36.663Z"
+    "finishedAt": "2026-09-14T23:33:35.389Z"
   }
 }
