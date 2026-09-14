@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T04:13:27.046Z",
+  "generatedAt": "2026-09-14T04:31:06.960Z",
   "court": "전국 법원",
   "region": "전국",
   "itemCount": 12111,
@@ -54,14 +54,14 @@
     "finished_at": "2026-09-12T17:35:06.028Z",
     "status": "partial",
     "items_found": 0,
-    "items_saved": 138,
+    "items_saved": 0,
     "priority_items": 0,
     "history_items": 0,
     "notices_checked": 0,
     "transport": "official-sale-notice-http",
     "error_text": "history notice 2025-03 offset 0: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
     "processedItems": 0,
-    "newUniqueItems": 138
+    "newUniqueItems": 0
   },
   "runs": [
     {
@@ -70,14 +70,14 @@
       "finished_at": "2026-09-12T17:35:06.028Z",
       "status": "partial",
       "items_found": 0,
-      "items_saved": 138,
+      "items_saved": 0,
       "priority_items": 0,
       "history_items": 0,
       "notices_checked": 0,
       "transport": "official-sale-notice-http",
       "error_text": "history notice 2025-03 offset 0: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
       "processedItems": 0,
-      "newUniqueItems": 138
+      "newUniqueItems": 0
     },
     {
       "run_type": "sale-notice-discovery",
@@ -353,12 +353,12 @@
   },
   "lastCollectorCycle": {
     "itemCount": 12111,
-    "newUniqueItems": 138,
+    "newUniqueItems": 0,
     "currentNoticeProcessed": 0,
     "historicalReturned": 0,
     "historicalNewUnique": 0,
     "historicalStatus": "done",
-    "finishedAt": "2026-09-14T04:13:28.488Z"
+    "finishedAt": "2026-09-14T04:31:05.927Z"
   },
   "saleNoticeBackfill": {
     "version": 3,
