@@ -1,14 +1,10 @@
 name: Auction Agent - Historical Notices Safe Failover
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/agent-history-notices.yml'
-      - 'sale-notice-history-worker.js'
-      - 'test-history-backfill-failover.js'
-  schedule:
-    - cron: '12 * * * *'
+  # Manual only. No cron, no push trigger - see CLAUDE.md 'No cron'.
+  # A cron was added here on 2026-09-13 (ffc7464), three days after the same rule
+  # was enforced on three other workflows. identity-watch.js now watches this file
+  # by name.
   workflow_dispatch:
 
 permissions:
