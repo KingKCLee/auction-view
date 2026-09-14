@@ -4,14 +4,14 @@
   "historyMonth": 4,
   "historyPage": 1,
   "runCount": 10,
-  "lastRun": "2026-09-12T17:35:06.016Z",
-  "lastError": "history notice 2025-03 offset 0: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
+  "lastRun": "2026-09-14T14:33:07.737Z",
+  "lastError": null,
   "historyNoticeIndex": 0,
   "priorityIndex": {
     "2026-09": 2
   },
   "noticeHistoryYear": 2025,
-  "noticeHistoryMonth": 3,
+  "noticeHistoryMonth": 2,
   "noticeHistoryOffset": 0,
   "recentNoticeKeys": [
     "B000210_1001_20260908||B000210|B000210|2026-09-08|20260908|1001|1001||||",
@@ -37,9 +37,9 @@
   "deferredHistoryMonths": [],
   "propertyHistoryFailureCount": 1,
   "propertyHistoryYear": 2017,
-  "propertyHistoryMonth": 5,
+  "propertyHistoryMonth": 3,
   "propertyHistoryPage": 1,
-  "propertyHistoryLastRun": "2026-09-14T11:05:05.777Z",
+  "propertyHistoryLastRun": "2026-09-14T14:32:54.080Z",
   "propertyHistoryLastError": null,
   "lastMetricItemCount": 12111,
   "saleNoticeDeferred": [],
@@ -61,13 +61,14 @@
     "search|2026-08|B000253": 0,
     "search|2026-08|B250826": 0,
     "search|2026-08|B000254": 0,
-    "search|2026-08|B000260": 0
+    "search|2026-08|B000260": 0,
+    "search|2026-08|B000261": 0
   },
   "saleNoticeBackfillYear": 2026,
   "saleNoticeBackfillMonth": 8,
   "saleNoticeBackfillOffset": 0,
-  "saleNoticeBackfillLastRun": "2026-09-09T08:32:07.978Z",
-  "saleNoticeBackfillLastError": "B000212 2026-08: court gate held by pid 9380 (rslt-probe) since 2026-09-09T08:32:03.243Z",
+  "saleNoticeBackfillLastRun": "2026-09-14T14:32:52.817Z",
+  "saleNoticeBackfillLastError": null,
   "saleNoticeCourtOffsets": {
     "2026-08|B000210": -1,
     "2026-08|B000211": -1,
@@ -85,9 +86,10 @@
     "2026-08|B000253": -1,
     "2026-08|B250826": -1,
     "2026-08|B000254": -1,
-    "2026-08|B000260": -1
+    "2026-08|B000260": -1,
+    "2026-08|B000261": -1
   },
-  "saleNoticeBackfillCourtIndex": 17,
+  "saleNoticeBackfillCourtIndex": 18,
   "currentSweepOffsets": {
     "2026-09|B000210": -1,
     "2026-09|B000211": -1,
@@ -134,7 +136,8 @@
     "2026-10|B000212": -1,
     "2026-10|B000213": -1,
     "2026-10|B000214": -1,
-    "2026-10|B214807": -1
+    "2026-10|B214807": -1,
+    "2026-10|B214804": -1
   },
   "currentSweepFailures": {
     "search|2026-09|B000210": 0,
@@ -296,13 +299,14 @@
     "search|2026-10|B000212": 0,
     "search|2026-10|B000213": 0,
     "search|2026-10|B000214": 0,
-    "search|2026-10|B214807": 0
+    "search|2026-10|B214807": 0,
+    "search|2026-10|B214804": 0
   },
   "currentSweepMonthSlot": 1,
-  "currentSweepCourtIndex": 7,
-  "currentSweepLastRun": "2026-09-08T23:44:12.885Z",
+  "currentSweepCourtIndex": 8,
+  "currentSweepLastRun": "2026-09-14T14:32:47.665Z",
   "currentSweepLastError": null,
-  "saleNoticeBackfillVersion": 2,
+  "saleNoticeBackfillVersion": 3,
   "currentSweepDeferred": [
     "2026-09|B214804",
     "2026-09|B000240",
