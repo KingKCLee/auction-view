@@ -1,9 +1,11 @@
 const fs=require('fs');
 const path=require('path');
 const lib=require('court-auction-notice-search');
+const {furthest}=require('./property-history-cursor-lib');
 const DATA=path.join(__dirname,'data','auctions.json');
 const STATS=path.join(__dirname,'data','stats.json');
 const STATE=path.join(__dirname,'data','state.json');
+const CURSOR=path.join(__dirname,'data','property-history-cursor.json');
 // The library accepts only 10/20/50/100. Use 20 as the conservative official property-search page size.
 const PAGE_SIZE=20, FROM_YEAR=1990;
 const HISTORY_COURT_CODE=process.env.HISTORY_COURT_CODE||'B000240';
@@ -29,10 +31,13 @@ function norm(i){
 function merge(a,b){const o={...a,...b,firstSeenAt:a.firstSeenAt||b.firstSeenAt,lastSeenAt:new Date().toISOString()};for(const k of ['usage','address','buildingName','propertyDescription','appraisedPrice','minimumPrice','winningPrice','winningDate','saleDate','regionSido','regionSigungu','latitude','longitude'])if((b[k]===null||b[k]==='')&&a[k]!=null)o[k]=a[k];for(const k of ['photoUrls','events','components','documents','buildingList','areaList','landCategoryList'])if((!Array.isArray(b[k])||!b[k].length)&&Array.isArray(a[k]))o[k]=a[k];o.photoCount=Math.max(Number(a.photoCount||0),Number(b.photoCount||0));o.documentCount=Math.max(Number(a.documentCount||0),Number(b.documentCount||0));o.eventCount=Math.max(Number(a.eventCount||0),Number(b.eventCount||0));o.failedCount=Math.max(Number(a.failedCount||0),Number(b.failedCount||0));o.coverage={...(a.coverage||{})};for(const[k,v]of Object.entries(b.coverage||{}))o.coverage[k]=Math.max(Number(o.coverage[k]||0),Number(v||0));o.coverage.base_info=usable(o)?1:0;return o}
 async function main(){
  const rows=read(DATA,[]), map=new Map(rows.map(x=>[x.id,x])), stats=read(STATS,{}), state=read(STATE,{});const now=new Date();const[startY,startM]=prev(now.getUTCFullYear(),now.getUTCMonth()+1);
- let y=Number(state.propertyHistoryYear||startY),m=Number(state.propertyHistoryMonth||startM),page=Number(state.propertyHistoryPage||1);if(y<FROM_YEAR)return;
+ const stateCursor={year:Number(state.propertyHistoryYear||startY),month:Number(state.propertyHistoryMonth||startM),page:Number(state.propertyHistoryPage||1)};
+ const persisted=read(CURSOR,null);const chosen=persisted?furthest(stateCursor,persisted):stateCursor;
+ let y=Number(chosen.year),m=Number(chosen.month),page=Number(chosen.page);if(y<FROM_YEAR)return;
  const from=iso(y,m,1),to=iso(y,m,lastDay(y,m)),before=map.size;let res=null,err=null,code=null,statusCode=null;
  try{const client=new lib.CourtAuctionHttpClient({timeoutMs:35000,minDelayMs:3000,jitterMs:1200,maxCallsPerSession:7});res=await lib.searchProperties({saleDate:{from,to},bidType:'date',courtCode:HISTORY_COURT_CODE,page,pageSize:PAGE_SIZE,includeRaw:true,client,fallback:true});for(const i of res?.items||[]){const n=norm(i);if(n)map.set(n.id,map.has(n.id)?merge(map.get(n.id),n):n)}const total=Number(res?.page?.totalCount||0),cnt=Number(res?.items?.length||0);if(!cnt||page*PAGE_SIZE>=total){[y,m]=prev(y,m);page=1}else page++}catch(e){err=String(e.message||e);code=e?.code||null;statusCode=e?.statusCode||null;console.error('[property-history-v2]',code,statusCode,err)}
- state.propertyHistoryYear=y;state.propertyHistoryMonth=m;state.propertyHistoryPage=page;state.propertyHistoryLastRun=new Date().toISOString();state.propertyHistoryLastError=err;write(STATE,state);
+ const nextCursor={year:y,month:m,page,updatedAt:new Date().toISOString(),courtCode:HISTORY_COURT_CODE};
+ state.propertyHistoryYear=y;state.propertyHistoryMonth=m;state.propertyHistoryPage=page;state.propertyHistoryLastRun=nextCursor.updatedAt;state.propertyHistoryLastError=err;write(STATE,state);write(CURSOR,nextCursor);
  const out=[...map.values()].sort((a,b)=>String(b.saleDate||'').localeCompare(String(a.saleDate||''))||String(b.caseNumber||'').localeCompare(String(a.caseNumber||'')));for(const r of out)r.coverage={...(r.coverage||{}),base_info:usable(r)?1:0};write(DATA,out);const added=map.size-before;
  stats.generatedAt=new Date().toISOString();stats.itemCount=out.length;stats.coverage={...(stats.coverage||{}),base_info:out.filter(usable).length};stats.latestHistoryPropertyRun={courtCode:HISTORY_COURT_CODE,from,to,returned:Number(res?.items?.length||0),totalCount:Number(res?.page?.totalCount||0),newUniqueItems:added,nextCursor:{year:y,month:m,page},transport:res?'property-search-http-or-browser':'failed',status:err?'partial':'done',error:err,errorCode:code,httpStatus:statusCode,pageSize:PAGE_SIZE,source:'대한민국 법원경매정보 물건검색',finishedAt:new Date().toISOString()};write(STATS,stats);console.log(JSON.stringify(stats.latestHistoryPropertyRun,null,2));
 }
