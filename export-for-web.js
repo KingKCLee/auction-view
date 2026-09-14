@@ -114,6 +114,10 @@ function buildStats(rows, stats, alert, laptop) {
   const captured = rows.filter(r => Number(r.winningPrice || 0) > 0).length;
   const atRisk = rows.filter(r => r.saleDate === today && !Number(r.winningPrice || 0)).length;
   const lost = rows.filter(r => r.saleDate && r.saleDate < today && !Number(r.winningPrice || 0)).length;
+  /* 상위 stats.coverage 를 쓰지 않고 여기서 센다 - 마스터가 그 키를 아직 안 낼 수도 있고,
+     "몇 건에 실제로 들어 있나"는 canonical 이 답이다. */
+  const rights = rows.filter(r => r.rights).length;
+  const occupancy = rows.filter(r => r.occupancy).length;
   return {
     generatedAt: new Date().toISOString(),
     today,
@@ -125,7 +129,11 @@ function buildStats(rows, stats, alert, laptop) {
       status_report: { count: cov.status_report || 0, percent: pct(cov.status_report) },
       appraisal_summary: { count: cov.appraisal_summary || 0, percent: pct(cov.appraisal_summary) },
       photos: { count: cov.photos || 0, percent: pct(cov.photos) },
-      winning_price: { count: captured, percent: pct(captured) }
+      winning_price: { count: captured, percent: pct(captured) },
+      /* [2026-09-15] 재수집으로 새로 채우는 축. 소급 재추출이 불가능해 재수집만이
+         방법이므로, 얼마나 찼는지 화면에서 보여야 진도를 볼 수 있다. */
+      rights: { count: rights, percent: pct(rights) },
+      occupancy: { count: occupancy, percent: pct(occupancy) }
     },
     documentCount: Number(stats?.documentCount || 0),
     winningPriceCaptured: captured,
