@@ -28,6 +28,23 @@ const OUT = path.join(ROOT, 'data', 'identity-alert.json');
 const BRANCH = process.env.REPO_BRANCH || 'main';
 const WINDOW_HOURS = Number(process.env.IDENTITY_WINDOW || 24);
 
+// Files that have already been changed back on us once. Any cron reappearing in
+// one of these is reported on its own, and any change to the file at all is
+// reported as a content change, so the next reversion is visible the hour it
+// lands rather than three days later.
+//
+// agent-history-notices.yml is here because on 2026-09-13 13:27 KST it gained
+// `cron: '12 * * * *'` in commit ffc7464 - three days after the same rule was
+// enforced on three other workflows, and on a file that had not carried a cron
+// before. The writer moved to a file nobody was looking at.
+const WATCHED_FILES = [
+  '.github/workflows/agent-history-notices.yml',
+  '.github/workflows/agent-current-court-sweep.yml',
+  '.github/workflows/agent-discovery-rescue.yml',
+  '.github/workflows/agent-enrichment-safe.yml',
+  'scripts/recovery-watch.ps1'
+];
+
 // Machines we run. Anything else is either the unattributed writer below or new.
 const APPROVED = new Set([
   'court-auction-bot@users.noreply.github.com',      // this laptop + GitHub Actions
@@ -56,9 +73,48 @@ function showFromOrigin(file) {
   return content.status === 0 ? content.out : null;
 }
 
-// The two settings that were put back after being removed once already.
-function policyChecks() {
+// Blob sha of a path on origin, so a content change is detectable without
+// diffing. Returns null when the path is not in the tree.
+function blobSha(file) {
+  const r = git(['rev-parse', `origin/${BRANCH}:${file}`]);
+  return r.status === 0 ? r.out : null;
+}
+
+// The settings that were put back after being removed once already, plus the
+// files that carried them.
+function policyChecks(previous) {
   const findings = [];
+  const lastSeen = (previous && previous.watchedFiles) || {};
+  const watchedFiles = {};
+
+  for (const file of WATCHED_FILES) {
+    const sha = blobSha(file);
+    const body = sha ? showFromOrigin(file) : null;
+    const hasCron = !!(body && /^\s*schedule:\s*$/m.test(body) && /^\s*-\s*cron:/m.test(body));
+    watchedFiles[file] = { sha, hasCron };
+
+    if (hasCron) {
+      const cron = (body.match(/^\s*-\s*cron:\s*(.+)$/m) || [])[1] || '(unparsed)';
+      findings.push({
+        policy: 'watched-file-cron',
+        severity: 'high',
+        file,
+        detail: `${file} carries a cron again: ${cron.trim()}`,
+        fix: 'remove the schedule block; CLAUDE.md says workflow_dispatch only'
+      });
+    }
+
+    const before = lastSeen[file];
+    if (before && before.sha && sha && before.sha !== sha) {
+      findings.push({
+        policy: 'watched-file-changed',
+        severity: hasCron ? 'high' : 'medium',
+        file,
+        detail: `${file} changed since the last check`,
+        fix: 'read the diff before trusting it; this file has been reverted on us before'
+      });
+    }
+  }
 
   const listing = git(['ls-tree', '--name-only', `origin/${BRANCH}`, '.github/workflows/']);
   const workflows = listing.status === 0 ? listing.out.split('\n').filter(Boolean) : [];
@@ -88,7 +144,7 @@ function policyChecks() {
     });
   }
 
-  return findings;
+  return { findings, watchedFiles };
 }
 
 function main() {
@@ -115,9 +171,9 @@ function main() {
 
   const unknown = commits.filter(c => !APPROVED.has(c.email) && !UNATTRIBUTED.has(c.email));
   const unattributed = commits.filter(c => UNATTRIBUTED.has(c.email));
-  const policies = policyChecks();
 
   const previous = readJson(OUT, { history: [] });
+  const { findings: policies, watchedFiles } = policyChecks(previous);
   const entry = {
     at: new Date().toISOString(),
     windowHours: WINDOW_HOURS,
@@ -127,7 +183,8 @@ function main() {
     unknownIdentityCommits: unknown.map(c => ({ sha: c.sha, at: c.at, who: `${c.name} <${c.email}>`, subject: c.subject })),
     unattributedCommits: unattributed.length,
     unattributedSample: unattributed.slice(0, 5).map(c => ({ sha: c.sha, at: c.at, subject: c.subject })),
-    policyFindings: policies
+    policyFindings: policies,
+    watchedFiles
   };
 
   const needsAttention = unknown.length > 0 || policies.length > 0;
