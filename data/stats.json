@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-14T21:31:53.835Z",
+  "generatedAt": "2026-09-14T22:10:16.036Z",
   "court": "전국 법원",
   "region": "전국",
-  "itemCount": 12166,
+  "itemCount": 12231,
   "winningCount": 2112,
-  "photoCount": 5501,
-  "documentCount": 7365,
-  "eventCount": 13349,
+  "photoCount": 6238,
+  "documentCount": 7891,
+  "eventCount": 15307,
   "queuedJobs": 0,
   "errorJobs": 0,
   "collectionOrder": "latest-first",
@@ -15,18 +15,18 @@
     "to": "2026-10"
   },
   "coverage": {
-    "base_info": 11899,
-    "schedule": 3722,
+    "base_info": 11964,
+    "schedule": 4068,
     "winning_price": 2112,
-    "photos": 361,
-    "status_report": 3854,
-    "sale_statement": 3465,
-    "appraisal_summary": 3491,
+    "photos": 410,
+    "status_report": 3965,
+    "sale_statement": 3880,
+    "appraisal_summary": 3905,
     "appraisal_pdf": 0,
     "transactions": 0,
     "building_registry": 0,
     "land_use": 0,
-    "rights": 0
+    "rights": 921
   },
   "history": {
     "fromYear": 1990,
@@ -35,8 +35,8 @@
     "completedMonths": 0,
     "percent": 0,
     "cursor": {
-      "year": 2016,
-      "month": 12,
+      "year": 2014,
+      "month": 3,
       "page": 1
     },
     "saleNoticeCursor": {
@@ -54,14 +54,14 @@
     "finished_at": "2026-09-14T21:31:33.987Z",
     "status": "done",
     "items_found": 168,
-    "items_saved": 0,
+    "items_saved": 65,
     "priority_items": 168,
     "history_items": 0,
     "notices_checked": 2,
     "transport": "official-sale-notice-http",
     "error_text": null,
     "processedItems": 168,
-    "newUniqueItems": 0
+    "newUniqueItems": 65
   },
   "runs": [
     {
@@ -70,14 +70,14 @@
       "finished_at": "2026-09-14T21:31:33.987Z",
       "status": "done",
       "items_found": 168,
-      "items_saved": 0,
+      "items_saved": 65,
       "priority_items": 168,
       "history_items": 0,
       "notices_checked": 2,
       "transport": "official-sale-notice-http",
       "error_text": null,
       "processedItems": 168,
-      "newUniqueItems": 0
+      "newUniqueItems": 65
     },
     {
       "run_type": "sale-notice-discovery",
@@ -358,13 +358,13 @@
     "finishedAt": "2026-09-14T21:31:19.999Z"
   },
   "lastCollectorCycle": {
-    "itemCount": 12166,
-    "newUniqueItems": 0,
+    "itemCount": 12231,
+    "newUniqueItems": 65,
     "currentNoticeProcessed": 168,
     "historicalReturned": 0,
     "historicalNewUnique": 0,
     "historicalStatus": "done",
-    "finishedAt": "2026-09-14T21:31:55.212Z"
+    "finishedAt": "2026-09-14T22:10:18.438Z"
   },
   "saleNoticeBackfill": {
     "version": 3,
@@ -445,11 +445,11 @@
   "coverageSource": "canonical-recount",
   "safeReconcile": {
     "remoteItems": 12166,
-    "collectorItems": 12166,
-    "mergedItems": 12166,
+    "collectorItems": 12231,
+    "mergedItems": 12231,
     "retainedRemoteIds": 12166,
-    "retainedCollectorIds": 12166,
-    "addedVsRemote": 0,
-    "finishedAt": "2026-09-14T21:31:53.836Z"
+    "retainedCollectorIds": 12231,
+    "addedVsRemote": 65,
+    "finishedAt": "2026-09-14T22:10:16.036Z"
   }
 }
