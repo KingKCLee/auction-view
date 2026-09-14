@@ -3,8 +3,10 @@ const path=require('path');
 
 const gate=require('./court-gate');
 const BASE='https://www.courtauction.go.kr';
-const DATA=path.join(__dirname,'data','auctions.json');
-const STATS=path.join(__dirname,'data','stats.json');
+/* AUCTIONS_FILE / STATS_FILE 은 스크래치 사본에 대고 돌리기 위한 것이다 - 수집기가
+   canonical 을 쥐고 있는 동안에도 추출 로직을 시험할 수 있어야 한다(photo-enrich 와 같은 규약). */
+const DATA=process.env.AUCTIONS_FILE||path.join(__dirname,'data','auctions.json');
+const STATS=process.env.STATS_FILE||path.join(__dirname,'data','stats.json');
 const STATUS=path.join(__dirname,'data','laptop-status.json');
 const MAX_ITEMS=Number(process.env.BATCH_SIZE||4);
 const SHARD_COUNT=Math.max(1,Number(process.env.SHARD_COUNT||1));
@@ -102,6 +104,41 @@ async function main(){
 row.goodsStatusCode=txt(dx.auctnGdsStatCd||'');row.decisionDate=normDate(dx.dspslDcsnDxdyYmd);row.caseProgressCode=txt(base.csProgStatCd||'');row.caseClosedDivision=txt(base.ultmtDvsCd||'');row.caseClosedDate=normDate(base.csUltmtYmd);if(row.caseClosedDate&&!row.status)row.status='종국';}
    const appraisal=Array.isArray(r.aeeWevlMnpntLst)?r.aeeWevlMnpntLst:[];const summary=appraisal.map(x=>txt(first(x,['aeeWevlMnpntCtt','mnpntCtt','ctt','note','printCtt'])||'')).filter(Boolean).join('\n');if(summary){row.appraisalSummary=summary;row.coverage={...(row.coverage||{}),appraisal_summary:1}}
    if(!row.appraisedPrice)row.appraisedPrice=asInt(dx.aeeEvlAmt);if(dx.dspslDxdyYmd)row.saleDate=normDate(dx.dspslDxdyYmd)||row.saleDate;row.appraisalDate=normDate(first(base,['aeeWevlYmd','gamevalYmd','pricePointYmd'])||first(dx,['aeeWevlYmd','gamevalYmd']));row.appraisalAgency=txt(first(base,['aeeWevlInstNm','gamevalInstNm','aeeWevlCorpNm'])||'');row.claimAmount=asInt(first(base,['clmAmt','claimAmt','chungAmt','reqAmt']));row.components=components(r);if(!row.address){const c=row.components.find(x=>x.address);if(c)row.address=c.address}row.landArea=row.components.filter(x=>x.type==='LAND').reduce((n,x)=>n+(Number(x.area)||0),0)||null;row.buildingArea=row.components.filter(x=>x.type==='BUILDING').reduce((n,x)=>n+(Number(x.area)||0),0)||null;
+   /* [2026-09-14] 여기까지 오는 응답에 이미 들어 있는데 버리고 있던 것들을 꺼낸다.
+      법원 요청은 한 건도 늘지 않는다 - 같은 d 에서 읽을 뿐이다.
+      ★값의 뜻을 모르는 코드는 글자로 바꾸지 않는다(감정요항 항목코드 등) - 코드 그대로 남긴다. */
+   row.caseReceivedDate=normDate(base.csRcptYmd)||row.caseReceivedDate||null;
+   row.caseStartDate=normDate(base.csCmdcYmd)||row.caseStartDate||null;
+   row.courtDept=txt(base.cortAuctnJdbnNm||'')||row.courtDept||'';
+   row.courtDeptTel=txt(base.jdbnTelno||'')||row.courtDeptTel||'';
+   row.caseSuspendCode=txt(base.auctnSuspStatCd||'');
+   row.caseSuspendReason=txt(base.csProgSuspRsn||'');
+   /* 배당요구종기 - 별도 배열로 온다. 여러 건이면 가장 늦은 날짜를 쓴다. */
+   {const dd=(Array.isArray(r.dstrtDemnInfo)?r.dstrtDemnInfo:[]).map(x=>normDate(x&&x.dstrtDemnLstprdYmd)).filter(Boolean).sort();
+    if(dd.length)row.distributionDeadline=dd[dd.length-1];}
+   /* 매각물건명세서 본문. 법원 규정상 매각기일 1주일 전부터 채워지므로, 비어 오는 것은
+      결함이 아니라 아직 공개 전이다 - 그 구분이 화면에 드러나도록 작성일도 함께 둔다. */
+   {const rg={assumedRights:txt(dx.ndstrcRghCtt||''),surfaceRight:txt(dx.sprfcExstcDts||''),
+              seniorMortgage:txt(dx.tprtyRnkHypthcStngDts||''),statementNote:txt(dx.gdsSpcfcRmk||''),
+              goodsNote:txt(dx.dspslGdsRmk||''),writtenAt:normDate(dx.gdsSpcfcWrtYmd)};
+    const any=Object.values(rg).some(Boolean);
+    if(any){row.rights=rg;row.coverage={...(row.coverage||{}),rights:1}}}
+   /* 회차별 최저가·입찰기간·장소·보증금비율 */
+   {const rounds=[dx.fstPbancLwsDspslPrc,dx.scndPbancLwsDspslPrc,dx.thrdPbancLwsDspslPrc,dx.fothPbancLwsDspslPrc]
+      .map(asInt).filter(x=>x&&x>0);
+    if(rounds.length)row.minimumPriceRounds=rounds;}
+   row.bidPeriodFrom=normDate(dx.bidBgngYmd)||null;
+   row.bidPeriodTo=normDate(dx.bidEndYmd)||null;
+   row.salePlace=txt(dx.dspslPlcNm||'');
+   row.decisionPlace=txt(dx.dspslDcsnPlcNm||'');
+   {const dr=Number(dx.prchDposRate);if(Number.isFinite(dr)&&dr>0)row.depositRate=dr;}
+   /* 감정 요항 - 지금까지는 본문을 줄바꿈으로 이어 붙인 요약 한 덩어리만 남겼다.
+      항목이 10개면 10개로 남긴다(순번·항목코드·본문). 코드의 뜻은 모르므로 붙이지 않는다. */
+   {const pts=(Array.isArray(r.aeeWevlMnpntLst)?r.aeeWevlMnpntLst:[])
+      .map(x=>({seq:Number(x&&x.aeeWevlMnpntDtlSeq)||null,itemCode:txt((x&&x.aeeWevlMnpntItmCd)||''),
+                content:txt(first(x,['aeeWevlMnpntCtt','mnpntCtt','ctt'])||'')}))
+      .filter(x=>x.content);
+    if(pts.length)row.appraisalPoints=pts;}
    const saleAvailable=!!(dx.dspslGdsSpcfcEcdocId&&dx.orvParam);if(saleAvailable){row.coverage={...(row.coverage||{}),sale_statement:1};row.saleStatementAvailable=true;docsAdded++}
    // Every request spent on the 현황조사서 is one not spent re-polling a 기일 that
    // is about to expire. Skipping only when the answer was "yes" barely helped:
@@ -112,7 +149,40 @@ row.goodsStatusCode=txt(dx.auctnGdsStatCd||'');row.decisionDate=normDate(dx.dsps
    const askStatusReport=!(isRecheck&&expiringUncaptured(row,today))
      &&(row.statusReportAvailable===undefined||Number(row.coverage?.status_report||0)!==1);
    if(askStatusReport){
-    try{const sr=await statusReport(row);if(sr?.data){row.coverage={...(row.coverage||{}),status_report:1};row.statusReportAvailable=true;docsAdded++}}catch(e){if(/BLOCKED/.test(String(e.message||e)))throw e}
+    /* [2026-09-14] 전에는 이 응답을 받아 놓고 있다/없다만 보고 버렸다. 그 안에 점유관계
+       문장과 임차인 목록이 들어 있다 - 같은 요청에서 꺼내 쓴다(요청 수는 그대로). */
+    try{const sr=await statusReport(row);if(sr?.data){row.coverage={...(row.coverage||{}),status_report:1};row.statusReportAvailable=true;docsAdded++;
+     const sd=sr.data||{};
+     const mng=sd.dma_curstExmnMngInf||{};
+     const rlet=Array.isArray(sd.dlt_ordTsRlet)?sd.dlt_ordTsRlet:[];
+     const occ={investigatedAt:txt(mng.exmnDtDts||''),sentAt:normDate(mng.exmndcSndngYmd),receivedAt:normDate(mng.exmndcRcptnYmd),
+                note:[mng.lstPossRltnDts,mng.fstmLstPossRltnDts,mng.scntmLstPossRltnDts].map(x=>txt(x||'')).filter(Boolean).join(' '),
+                items:rlet.map(x=>({address:txt(x.rprsLtnoAddr||x.printSt||''),buildingName:txt(x.bldNm||''),
+                                    possessionCode:txt(x.auctnPossRltnCd||''),possession:txt((x.gdsPossCtt||'').replace(/<br\s*\/?>/gi,' ')),
+                                    lesseeCount:Number(x.lesCnt)||0}))};
+     if(occ.note||occ.items.length){row.occupancy=occ}
+     const les=Array.isArray(sd.dlt_ordTsLserLtn)?sd.dlt_ordTsLserLtn:[];
+     /* 임차인이 0건인 것과 조사를 못 한 것은 다르다 - 조사가 됐으면 0건도 사실로 남긴다. */
+     /* 키 이름은 2026-09-14 실측으로 확정했다(2026타경10032, 임차인 1건):
+          intrpsNm 이름 · mvinDtlCtt 전입일 · rgstryCrtcpCfmtnCtt 확정일자 ·
+          lesDposDts 보증금(문자열, 콤마 포함) · mmrntAmtDts 월세 ·
+          gdsPossCtt 점유기간 · lesPartCtt 점유부분 · lesDtsRmk 비고
+        ★enrrno 는 **암호화된 주민등록번호**다. 저장하지 않는다 - 원문을 통째로 담으면
+          그것이 따라 들어온다(그래서 raw 를 담던 코드를 걷어냈다).
+        ★이름은 가운데를 가려 저장한다. 권리분석에 필요한 것은 동일인 여부이지 실명이 아니다.
+        ★배당요구 여부는 이 목록에서 확인되지 않았다 - 없는 칸을 만들지 않는다(미확인). */
+     const mask=v=>{const t=txt(v||'');return t.length<=1?t:(t.length===2?t[0]+'*':t[0]+'*'.repeat(t.length-2)+t[t.length-1])};
+     const amt=v=>asInt(String(v==null?'':v).replace(/[^0-9]/g,''));
+     row.lessees=les.map(x=>({name:mask(x.intrpsNm),
+                              moveInDate:normDate(String(x.mvinDtlCtt||'').replace(/[.\s]+$/,'').replace(/\./g,'-')),
+                              fixedDate:normDate(String(x.rgstryCrtcpCfmtnCtt||'').replace(/\./g,'-')),
+                              deposit:amt(x.lesDposDts),
+                              rent:amt(x.mmrntAmtDts),
+                              period:txt(x.gdsPossCtt||''),
+                              part:txt(x.lesPartCtt||''),
+                              note:txt(x.lesDtsRmk||'')}));
+     row.lesseeCount=row.lessees.length;
+    }}catch(e){if(/BLOCKED/.test(String(e.message||e)))throw e}
    }
    row.documents=[...(row.saleStatementAvailable?[{type:'매각물건명세서',source:'대한민국 법원경매정보',available:true}]:[]),...(row.statusReportAvailable?[{type:'현황조사서',source:'대한민국 법원경매정보',available:true}]:[])];row.documentCount=row.documents.length;row.detailCheckedAt=new Date().toISOString();done++;
    addRecent({at:new Date().toISOString(),ok:true,caseNumber:row.caseNumber,courtName:row.courtName||row.courtCode||'',address:row.address||'',documents:row.documentCount||0});

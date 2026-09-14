@@ -36,6 +36,19 @@ export async function onRequestGet({ request, env }) {
     return badRequest('minPrice and maxPrice must be numbers (won)');
   }
 
+  // [2026-09-14] 카드에 이미 실려 있는데 거를 수 없던 축들. 새 필드를 싣지 않으므로
+  // index 블롭 크기는 그대로다(409KB / 500KB 상한 - 여유가 많지 않다).
+  const minAppraised = q.get('minAppraised') ? Number(q.get('minAppraised')) : null;
+  const maxAppraised = q.get('maxAppraised') ? Number(q.get('maxAppraised')) : null;
+  if ((minAppraised !== null && !Number.isFinite(minAppraised)) || (maxAppraised !== null && !Number.isFinite(maxAppraised))) {
+    return badRequest('minAppraised and maxAppraised must be numbers (won)');
+  }
+  const minFailed = q.get('minFailed') ? Number(q.get('minFailed')) : null;
+  const maxFailed = q.get('maxFailed') ? Number(q.get('maxFailed')) : null;
+  if ((minFailed !== null && !Number.isFinite(minFailed)) || (maxFailed !== null && !Number.isFinite(maxFailed))) {
+    return badRequest('minFailed and maxFailed must be numbers');
+  }
+
   let index;
   try {
     index = await loadIndex(env, q.get('sido'));
@@ -45,7 +58,10 @@ export async function onRequestGet({ request, env }) {
 
   const sido = q.get('sido');
   const sigungu = q.get('sigungu');
-  const usage = q.get('usage');
+  // 물건종류는 여러 개를 한 번에 고를 수 있다(체크박스). 쉼표로 온다.
+  // 한 개만 오면 전과 같이 동작하므로 기존 링크는 그대로 산다.
+  const usageList = (q.get('usage') || '').split(',').map((x) => x.trim()).filter(Boolean);
+  const courtList = (q.get('court') || '').split(',').map((x) => x.trim()).filter(Boolean);
   const from = q.get('saleDateFrom');
   const to = q.get('saleDateTo');
   const hasWinning = q.get('hasWinning');
@@ -55,11 +71,17 @@ export async function onRequestGet({ request, env }) {
   const iSido = F.indexOf('sido'), iSigungu = F.indexOf('sigungu'), iUsage = F.indexOf('usage');
   const iMin = F.indexOf('minimumPrice'), iSale = F.indexOf('saleDate');
   const iWin = F.indexOf('hasWinning'), iCase = F.indexOf('caseNumber'), iAddr = F.indexOf('address');
+  const iApr = F.indexOf('appraisedPrice'), iFail = F.indexOf('failedCount'), iCourt = F.indexOf('courtName');
 
   const matched = index.rows.filter(r => {
     if (sido && r[iSido] !== sido) return false;
     if (sigungu && r[iSigungu] !== sigungu) return false;
-    if (usage && r[iUsage] !== usage) return false;
+    if (usageList.length && usageList.indexOf(r[iUsage]) < 0) return false;
+    if (courtList.length && courtList.indexOf(r[iCourt]) < 0) return false;
+    if (minAppraised !== null && !(Number(r[iApr] || 0) >= minAppraised)) return false;
+    if (maxAppraised !== null && !(Number(r[iApr] || 0) <= maxAppraised)) return false;
+    if (minFailed !== null && !(Number(r[iFail] || 0) >= minFailed)) return false;
+    if (maxFailed !== null && !(Number(r[iFail] || 0) <= maxFailed)) return false;
     if (minPrice !== null && !(Number(r[iMin] || 0) >= minPrice)) return false;
     if (maxPrice !== null && !(Number(r[iMin] || 0) <= maxPrice)) return false;
     if (from && String(r[iSale] || '') < from) return false;

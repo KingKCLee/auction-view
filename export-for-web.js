@@ -165,6 +165,9 @@ function main() {
   const cards = rows.map(toCard);
   const sidos = [...new Set(rows.map(r => str(r.regionSido)).filter(Boolean))].sort();
   const usages = [...new Set(rows.map(r => str(r.usage)).filter(Boolean))].sort();
+  /* [2026-09-14] 법원 선택지. 카드에 courtName 이 이미 실려 있어 거를 수는 있었는데
+     화면이 고를 목록을 받을 곳이 없었다 - 값 목록만 더한다(행 크기는 그대로다). */
+  const courts = [...new Set(rows.map(r => str(r.courtName)).filter(Boolean))].sort();
   const sigungu = {};
   for (const r of rows) {
     const s = str(r.regionSido), g = str(r.regionSigungu);
@@ -179,7 +182,8 @@ function main() {
     facets: {
       sido: sidos,
       sigungu: Object.fromEntries(Object.entries(sigungu).map(([k, v]) => [k, [...v].sort()])),
-      usage: usages
+      usage: usages,
+      court: courts
     },
     rows: cards
   };
