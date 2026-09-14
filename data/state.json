@@ -4,14 +4,14 @@
   "historyMonth": 4,
   "historyPage": 1,
   "runCount": 10,
-  "lastRun": "2026-09-14T19:34:31.857Z",
-  "lastError": "history notice 2025-01 offset 0: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
+  "lastRun": "2026-09-14T19:40:23.849Z",
+  "lastError": null,
   "historyNoticeIndex": 0,
   "priorityIndex": {
     "2026-09": 2
   },
-  "noticeHistoryYear": 2025,
-  "noticeHistoryMonth": 1,
+  "noticeHistoryYear": 2024,
+  "noticeHistoryMonth": 12,
   "noticeHistoryOffset": 0,
   "recentNoticeKeys": [
     "B000210_1001_20260908||B000210|B000210|2026-09-08|20260908|1001|1001||||",
@@ -38,10 +38,10 @@
   "deferredHistoryMonths": [],
   "propertyHistoryFailureCount": 1,
   "propertyHistoryYear": 2017,
-  "propertyHistoryMonth": 2,
+  "propertyHistoryMonth": 1,
   "propertyHistoryPage": 1,
-  "propertyHistoryLastRun": "2026-09-14T19:33:59.614Z",
-  "propertyHistoryLastError": "Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml&pgjId=151F00: fetch failed",
+  "propertyHistoryLastRun": "2026-09-14T19:40:09.714Z",
+  "propertyHistoryLastError": null,
   "lastMetricItemCount": 12166,
   "saleNoticeDeferred": [
     "2026-08|B000280"
@@ -51,7 +51,7 @@
     "search|2026-08|B000211": 0,
     "search|2026-08|B000215": 0,
     "search|2026-08|B000212": 1,
-    "search|2026-08|B000280": 2,
+    "search|2026-08|B000280": 1,
     "search|2026-08|B000213": 0,
     "search|2026-08|B000214": 0,
     "search|2026-08|B214807": 0,
@@ -66,13 +66,14 @@
     "search|2026-08|B000254": 0,
     "search|2026-08|B000260": 0,
     "search|2026-08|B000261": 0,
-    "search|2026-08|B000262": 0
+    "search|2026-08|B000262": 0,
+    "search|2026-08|B000263": 0
   },
   "saleNoticeBackfillYear": 2026,
   "saleNoticeBackfillMonth": 8,
   "saleNoticeBackfillOffset": 0,
-  "saleNoticeBackfillLastRun": "2026-09-14T19:33:48.718Z",
-  "saleNoticeBackfillLastError": "B000280 2026-08: browser warmup failed: page.goto: Timeout 22000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\", waiting until \"commit\"\n",
+  "saleNoticeBackfillLastRun": "2026-09-14T19:40:08.231Z",
+  "saleNoticeBackfillLastError": null,
   "saleNoticeCourtOffsets": {
     "2026-08|B000210": -1,
     "2026-08|B000211": -1,
@@ -92,7 +93,8 @@
     "2026-08|B000254": -1,
     "2026-08|B000260": -1,
     "2026-08|B000261": -1,
-    "2026-08|B000262": -1
+    "2026-08|B000262": -1,
+    "2026-08|B000263": -1
   },
   "saleNoticeBackfillCourtIndex": 20,
   "currentSweepOffsets": {
@@ -143,7 +145,8 @@
     "2026-10|B000214": -1,
     "2026-10|B214807": -1,
     "2026-10|B214804": -1,
-    "2026-10|B000240": -1
+    "2026-10|B000240": -1,
+    "2026-10|B000241": -1
   },
   "currentSweepFailures": {
     "search|2026-09|B000210": 0,
@@ -308,12 +311,12 @@
     "search|2026-10|B214807": 0,
     "search|2026-10|B214804": 0,
     "search|2026-10|B000240": 0,
-    "search|2026-10|B000530": 1
+    "search|2026-10|B000241": 0
   },
   "currentSweepMonthSlot": 1,
   "currentSweepCourtIndex": 10,
-  "currentSweepLastRun": "2026-09-14T19:31:56.558Z",
-  "currentSweepLastError": "B000530 2026-10: browser warmup failed: page.goto: Timeout 22000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\", waiting until \"commit\"\n",
+  "currentSweepLastRun": "2026-09-14T19:40:04.392Z",
+  "currentSweepLastError": null,
   "saleNoticeBackfillVersion": 3,
   "currentSweepDeferred": [
     "2026-09|B214804",
