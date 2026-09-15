@@ -19,6 +19,7 @@
 const fs = require('fs');
 const path = require('path');
 const { gradeRights } = require('./rights-grade');
+const { coordsOf } = require('./katec');
 const zlib = require('zlib');
 const crypto = require('crypto');
 
@@ -187,6 +188,10 @@ const toDetail = (r, ctx) => ({
   landTotalArea: r.landTotalArea ?? null,
   bidMethod: r.bidMethod || null,
   bidMethodCode: r.bidMethodCode || null,
+  /* [2026-09-16] 법원 좌표(KATEC)를 위경도로 바꿔 싣는다. 좌표계는 집톡 위경도와
+     대조해 확정했다(중앙값 676m · 차순위 후보 71km). ★동네 단위로만 쓴다 -
+     단지 한 채를 특정하는 용도가 아니다. 그 한계를 값에 함께 적어 보낸다. */
+  coords: coordsOf(r),
   /* 당사자내역 - 법원이 이미 가려서 준 이름만 싣는다(case-parties.js 가 가리지 않은
      값을 통째로 뺀다). 관련사건은 API 판이 사건번호 문자열 파싱보다 정확하다. */
   parties: Array.isArray(r.parties) ? r.parties : [],
