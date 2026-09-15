@@ -72,7 +72,16 @@ function materialize(dir, rel) {
   /* ② 자격이 없으면 여기서 끝낸다. 없는 것을 있는 척 넘기지 않는다. */
   const token = process.env.CF_API_TOKEN || process.env.CLOUDFLARE_API_TOKEN;
   const account = process.env.CF_ACCOUNT_ID || process.env.CLOUDFLARE_ACCOUNT_ID;
-  const ns = process.env.CF_KV_NAMESPACE_ID || process.env.CLOUDFLARE_KV_NAMESPACE_ID;
+  /* 네임스페이스 id 는 비밀이 아니다 - wrangler.toml 에 이미 적혀 있다. 대표님이
+     붙여 넣어야 할 값을 둘로 줄이려고 거기서 읽어 쓴다. */
+  const ns = process.env.CF_KV_NAMESPACE_ID || process.env.CLOUDFLARE_KV_NAMESPACE_ID || (() => {
+    try {
+      const toml = fs.readFileSync(path.join(ROOT, 'wrangler.toml'), 'utf8');
+      const m = toml.match(/binding\s*=\s*"AUCTION_KV"[\s\S]{0,200}?id\s*=\s*"([0-9a-f]{32})"/)
+        || toml.match(/id\s*=\s*"([0-9a-f]{32})"/);
+      return m ? m[1] : null;
+    } catch { return null; }
+  })();
   if (!token || !account || !ns) {
     writeStatus({
       at, phase: 'blocked',
