@@ -31,6 +31,9 @@ const NEW_KEYS = [
   'caseSuspendCode', 'caseSuspendReason', 'rights', 'appraisalPoints', 'minimumPriceRounds',
   'bidPeriodFrom', 'bidPeriodTo', 'salePlace', 'decisionPlace', 'depositRate',
   'occupancy', 'lessees', 'lesseeCount',
+  /* [2026-09-16] 목록내역(전유부분·대지권)·면적·좌표·입찰구분. 이미 한 번 훑은 사건도
+     이 값들은 없으므로 **다시 훑어야 한다** - 그래서 목록에 넣는다. */
+  'listing', 'landTotalArea', 'rawCoords', 'bidMethodCode',
 ];
 
 const readJson = (p, f) => { try { return JSON.parse(fs.readFileSync(p, 'utf8')); } catch { return f; } };
@@ -110,6 +113,7 @@ function main() {
 
   /* dual-collector-lib 의 키 목록은 상세 수집용이라 이번 필드들을 모른다 - 여기서 명시한다. */
   const CARRY = NEW_KEYS.concat(['coverage', 'events', 'eventCount', 'documents', 'documentCount',
+    'landArea', 'buildingArea', 'bidMethod',
     'appraisalSummary', 'appraisalDate', 'appraisalAgency', 'claimAmount', 'components',
     'landArea', 'buildingArea', 'minimumPrice', 'failedCount', 'status', 'caseType',
     'winningPrice', 'winningDate', 'winningRatio', 'bidderCount', 'saleResult',

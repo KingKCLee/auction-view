@@ -181,6 +181,12 @@ const toDetail = (r, ctx) => ({
   appraisalSummary: r.appraisalSummary || null,
   appraisalDate: r.appraisalDate || null, appraisalAgency: r.appraisalAgency || null,
   landArea: r.landArea ?? null, buildingArea: r.buildingArea ?? null,
+  /* [2026-09-16] 원본 화면의 「목록내역」 그대로 - 전유부분의 건물의 표시 · 대지권의
+     목적인 토지의 표시. 면적이 여기서 나온다(종전 components 는 키 이름이 틀려 빈 껍데기였다). */
+  listing: r.listing || null,
+  landTotalArea: r.landTotalArea ?? null,
+  bidMethod: r.bidMethod || null,
+  bidMethodCode: r.bidMethodCode || null,
   events: Array.isArray(r.events) ? r.events : [],
   components: Array.isArray(r.components) ? r.components.slice(0, 40) : [],
   documents: Array.isArray(r.documents) ? r.documents : [],

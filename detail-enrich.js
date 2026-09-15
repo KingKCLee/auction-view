@@ -2,6 +2,7 @@ const fs=require('fs');
 const path=require('path');
 
 const gate=require('./court-gate');
+const { listingDetail, rawCoords } = require('./listing-detail');
 const BASE='https://www.courtauction.go.kr';
 /* AUCTIONS_FILE / STATS_FILE 은 스크래치 사본에 대고 돌리기 위한 것이다 - 수집기가
    canonical 을 쥐고 있는 동안에도 추출 로직을 시험할 수 있어야 한다(photo-enrich 와 같은 규약). */
@@ -103,7 +104,24 @@ async function main(){
 // reaches the 기일 event, so both are recorded rather than waited on.
 row.goodsStatusCode=txt(dx.auctnGdsStatCd||'');row.decisionDate=normDate(dx.dspslDcsnDxdyYmd);row.caseProgressCode=txt(base.csProgStatCd||'');row.caseClosedDivision=txt(base.ultmtDvsCd||'');row.caseClosedDate=normDate(base.csUltmtYmd);if(row.caseClosedDate&&!row.status)row.status='종국';}
    const appraisal=Array.isArray(r.aeeWevlMnpntLst)?r.aeeWevlMnpntLst:[];const summary=appraisal.map(x=>txt(first(x,['aeeWevlMnpntCtt','mnpntCtt','ctt','note','printCtt'])||'')).filter(Boolean).join('\n');if(summary){row.appraisalSummary=summary;row.coverage={...(row.coverage||{}),appraisal_summary:1}}
-   if(!row.appraisedPrice)row.appraisedPrice=asInt(dx.aeeEvlAmt);if(dx.dspslDxdyYmd)row.saleDate=normDate(dx.dspslDxdyYmd)||row.saleDate;row.appraisalDate=normDate(first(base,['aeeWevlYmd','gamevalYmd','pricePointYmd'])||first(dx,['aeeWevlYmd','gamevalYmd']));row.appraisalAgency=txt(first(base,['aeeWevlInstNm','gamevalInstNm','aeeWevlCorpNm'])||'');row.claimAmount=asInt(first(base,['clmAmt','claimAmt','chungAmt','reqAmt']));row.components=components(r);if(!row.address){const c=row.components.find(x=>x.address);if(c)row.address=c.address}row.landArea=row.components.filter(x=>x.type==='LAND').reduce((n,x)=>n+(Number(x.area)||0),0)||null;row.buildingArea=row.components.filter(x=>x.type==='BUILDING').reduce((n,x)=>n+(Number(x.area)||0),0)||null;
+   if(!row.appraisedPrice)row.appraisedPrice=asInt(dx.aeeEvlAmt);if(dx.dspslDxdyYmd)row.saleDate=normDate(dx.dspslDxdyYmd)||row.saleDate;row.appraisalDate=normDate(first(base,['aeeWevlYmd','gamevalYmd','pricePointYmd'])||first(dx,['aeeWevlYmd','gamevalYmd']));row.appraisalAgency=txt(first(base,['aeeWevlInstNm','gamevalInstNm','aeeWevlCorpNm'])||'');row.claimAmount=asInt(first(base,['clmAmt','claimAmt','chungAmt','reqAmt']));row.components=components(r);if(!row.address){const c=row.components.find(x=>x.address);if(c)row.address=c.address}
+   /* [2026-09-16] 면적은 components 로 못 구한다 - 그 함수가 ['area','bldArea',...] 라는
+      **없는 키 이름**으로 찾고 있어 24,521개 항목이 전부 area:null 이었다. 실제 키는
+      objctArDts·landArDts 이고 값은 숫자가 아니라 "철근콘크리트구조 59.79㎡" 문자열이다.
+      listing-detail.js 가 원본 화면의 「목록내역」 그대로 읽어 온다. */
+   {const L=listingDetail(r);
+    if(L){row.listing=L;
+      row.buildingArea=L.exclusiveArea??row.buildingArea??null;
+      row.landArea=L.landShareArea??row.landArea??null;
+      row.landTotalArea=L.totalLandArea??null;
+      row.coverage={...(row.coverage||{}),listing:1};}}
+   {const c=rawCoords(r);if(c)row.rawCoords=c;}
+   /* 입찰방법 - 코드(bidDvsCd)의 뜻은 확인되지 않았다. 코드는 그대로 남기고,
+      **입찰기간이 실제로 있을 때만** 기간입찰로 적는다(그건 값으로 확인된다).
+      기간이 없다고 곧바로 기일입찰이라 단정하지 않는다 - 그건 아직 미확인이다. */
+   row.bidMethodCode=txt(dx.bidDvsCd||'')||null;
+   row.bidMethod=(row.bidPeriodFrom||row.bidPeriodTo)?'기간입찰':null;
+
    /* [2026-09-14] 여기까지 오는 응답에 이미 들어 있는데 버리고 있던 것들을 꺼낸다.
       법원 요청은 한 건도 늘지 않는다 - 같은 d 에서 읽을 뿐이다.
       ★값의 뜻을 모르는 코드는 글자로 바꾸지 않는다(감정요항 항목코드 등) - 코드 그대로 남긴다. */
