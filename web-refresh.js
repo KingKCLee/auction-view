@@ -77,8 +77,8 @@ function materialize(dir, rel) {
   const ns = process.env.CF_KV_NAMESPACE_ID || process.env.CLOUDFLARE_KV_NAMESPACE_ID || (() => {
     try {
       const toml = fs.readFileSync(path.join(ROOT, 'wrangler.toml'), 'utf8');
-      const m = toml.match(/binding\s*=\s*"AUCTION_KV"[\s\S]{0,200}?id\s*=\s*"([0-9a-f]{32})"/)
-        || toml.match(/id\s*=\s*"([0-9a-f]{32})"/);
+      const m = toml.match(/binding\s*=\s*"AUCTION_KV"[\s\S]{0,200}?id\s*=\s*"([0-9a-f]{32})"/)
+        || toml.match(/id\s*=\s*"([0-9a-f]{32})"/);
       return m ? m[1] : null;
     } catch { return null; }
   })();
