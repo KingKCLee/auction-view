@@ -168,26 +168,26 @@ row.goodsStatusCode=txt(dx.auctnGdsStatCd||'');row.decisionDate=normDate(dx.dsps
    // ~88% of cases have no 현황조사서, so the check stayed true and they were asked
    // again on every pass. A case we have already visited and that is expiring today
    // needs only the result, so its re-check costs one request instead of two.
+   /* 당사자내역·관련사건·입찰기간 - 이미 있으면 건너뛴다(요청을 아낀다). */
+   if(!Array.isArray(row.parties)||!row.parties.length){
+     try{const cb=await caseBasic(row);const ex=extractCaseExtras(cb);
+       if(ex){row.parties=ex.parties;
+         if(ex.relatedCasesApi.length)row.relatedCasesApi=ex.relatedCasesApi;
+         if(ex.bid){row.bidMethodCode=ex.bid.code||row.bidMethodCode||null;
+           if(ex.bid.method)row.bidMethod=ex.bid.method;
+           if(ex.bid.periodFrom)row.bidPeriodFrom=ex.bid.periodFrom;
+           if(ex.bid.periodTo)row.bidPeriodTo=ex.bid.periodTo;
+           if(ex.bid.noticeFrom)row.noticeFrom=ex.bid.noticeFrom;
+           if(ex.bid.noticeTo)row.noticeTo=ex.bid.noticeTo;}
+         row.coverage={...(row.coverage||{}),parties:ex.parties.length?1:0};}
+     }catch(e){if(e&&e.code==='COURT_BLOCKED')throw e;}
+   }
    const isRecheck=Boolean(row.detailCheckedAt);
    const askStatusReport=!(isRecheck&&expiringUncaptured(row,today))
      &&(row.statusReportAvailable===undefined||Number(row.coverage?.status_report||0)!==1);
    if(askStatusReport){
     /* [2026-09-14] 전에는 이 응답을 받아 놓고 있다/없다만 보고 버렸다. 그 안에 점유관계
        문장과 임차인 목록이 들어 있다 - 같은 요청에서 꺼내 쓴다(요청 수는 그대로). */
-    /* 당사자내역·관련사건·입찰기간 - 이미 있으면 건너뛴다(요청을 아낀다). */
-    if(!Array.isArray(row.parties)||!row.parties.length){
-      try{const cb=await caseBasic(row);const ex=extractCaseExtras(cb);
-        if(ex){row.parties=ex.parties;
-          if(ex.relatedCasesApi.length)row.relatedCasesApi=ex.relatedCasesApi;
-          if(ex.bid){row.bidMethodCode=ex.bid.code||row.bidMethodCode||null;
-            if(ex.bid.method)row.bidMethod=ex.bid.method;
-            if(ex.bid.periodFrom)row.bidPeriodFrom=ex.bid.periodFrom;
-            if(ex.bid.periodTo)row.bidPeriodTo=ex.bid.periodTo;
-            if(ex.bid.noticeFrom)row.noticeFrom=ex.bid.noticeFrom;
-            if(ex.bid.noticeTo)row.noticeTo=ex.bid.noticeTo;}
-          row.coverage={...(row.coverage||{}),parties:ex.parties.length?1:0};}
-      }catch(e){if(e&&e.code==='COURT_BLOCKED')throw e;}
-    }
     try{const sr=await statusReport(row);if(sr?.data){row.coverage={...(row.coverage||{}),status_report:1};row.statusReportAvailable=true;docsAdded++;
      const sd=sr.data||{};
      const mng=sd.dma_curstExmnMngInf||{};
