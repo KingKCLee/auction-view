@@ -121,6 +121,38 @@ function relatedCases(caseNumber) {
  *   66%"는 다른 말이고, 범위를 감추면 화면이 과장하게 된다.
  * 표본 3건 미만인 칸은 아예 만들지 않는다(실측: 3단계까지 가면 99.98% 가 잡힌다).
  */
+/**
+ * I — 유사 물건 유찰 이력 통계.
+ *
+ * ★"다음 회차 예측"이 아니다. 예측하지 않는다 - 같은 지역·같은 용도 사건들이 **과거에
+ *   몇 번 유찰됐는지**를 세어 줄 뿐이다. 문구도 그렇게 적는다.
+ * 인근 낙찰통계와 같은 3단계 폴백(시군구→시도→전국)을 쓴다.
+ */
+function failureStats(idx, r) {
+  const u = str(r.usage) || '?';
+  const tries = [];
+  if (r.regionSido && r.regionSigungu) tries.push(['시군구', `${r.regionSido} ${r.regionSigungu}`]);
+  if (r.regionSido) tries.push(['시도', str(r.regionSido)]);
+  tries.push(['전국', '전국']);
+  for (const [level, scope] of tries) {
+    const g = idx.get(`${level}|${scope}|${u}`) || [];
+    if (g.length < MIN_SAMPLES) continue;
+    const counts = g.map((x) => Number(x.failedCount) || 0).sort((a, b) => a - b);
+    const median = counts[Math.floor(counts.length / 2)];
+    const avg = counts.reduce((a, b) => a + b, 0) / counts.length;
+    const dist = {};
+    for (const c of counts) { const k = c >= 5 ? '5+' : String(c); dist[k] = (dist[k] || 0) + 1; }
+    return {
+      level, scope, usage: u, count: g.length,
+      medianFailed: median,
+      averageFailed: Math.round(avg * 10) / 10,
+      distribution: dist,
+      mine: Number(r.failedCount) || 0,
+    };
+  }
+  return null;
+}
+
 const MIN_SAMPLES = 3;
 function buildSaleIndex(rows) {
   const idx = new Map();
@@ -231,6 +263,8 @@ const toDetail = (r, ctx) => ({
        그리고 문서로 가릴 수 없는 항목(유치권 진위·점유·명도)을 함께 내보낸다. */
   rightsGrade: gradeRights(r),
   neighborhoodStats: ctx && ctx.saleIndex ? neighborhoodStats(ctx.saleIndex, r) : null,
+  /* I — 같은 지역·용도 사건들의 과거 유찰 횟수. ★예측이 아니다. */
+  failureStats: ctx && ctx.failIndex ? failureStats(ctx.failIndex, r) : null,
   detailCheckedAt: r.detailCheckedAt || null,
   source: r.source || null
 });
@@ -361,8 +395,19 @@ function main() {
   let detailBytes = 0, biggest = { name: null, bytes: 0 };
   /* 낙찰 비교군 색인은 한 번만 만든다 - 사건마다 12,000건을 다시 훑을 일이 아니다. */
   const saleIndex = buildSaleIndex(rows);
+  /* 유찰 통계 색인 - 낙찰 여부와 무관하게 **모든** 사건을 센다(낙찰만 보면 유찰이 적어 보인다). */
+  const failIndex = new Map();
+  {
+    const put = (k, x) => { if (!failIndex.has(k)) failIndex.set(k, []); failIndex.get(k).push(x); };
+    for (const r of rows) {
+      const u = str(r.usage) || '?';
+      if (r.regionSido && r.regionSigungu) put(`시군구|${r.regionSido} ${r.regionSigungu}|${u}`, r);
+      if (r.regionSido) put(`시도|${r.regionSido}|${u}`, r);
+      put(`전국|전국|${u}`, r);
+    }
+  }
   for (const r of rows) {
-    const detail = toDetail(r, { saleIndex });
+    const detail = toDetail(r, { saleIndex, failIndex });
     const buf = Buffer.from(JSON.stringify(detail), 'utf8');
     const file = `${crypto.createHash('sha1').update(String(r.id)).digest('hex')}.json`;
     detailBytes += writeChecked(path.join(OUT, 'detail', file), buf, `detail/${file}`);
