@@ -18,6 +18,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { gradeRights } = require('./rights-grade');
 const zlib = require('zlib');
 const crypto = require('crypto');
 
@@ -209,6 +210,10 @@ const toDetail = (r, ctx) => ({
   /* [2026-09-15] 우리가 이미 가진 것인데 화면에 못 내던 두 가지.
      둘 다 canonical 만으로 만든다 - 새 원천을 붙이지 않았다. */
   relatedCases: relatedCases(r.caseNumber),
+  /* [2026-09-16] 권리관계 3등급 자동 판정. 명세서가 없으면 null - 등급을 만들지 않는다.
+     ★판단을 대신하지 않는다: 등급과 함께 **근거 문장 원문**과 「법률자문 아님」 고지,
+       그리고 문서로 가릴 수 없는 항목(유치권 진위·점유·명도)을 함께 내보낸다. */
+  rightsGrade: gradeRights(r),
   neighborhoodStats: ctx && ctx.saleIndex ? neighborhoodStats(ctx.saleIndex, r) : null,
   detailCheckedAt: r.detailCheckedAt || null,
   source: r.source || null
