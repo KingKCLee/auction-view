@@ -74,7 +74,78 @@ const toCard = r => [
 ];
 
 // Detail keeps everything a case page shows, minus the bulk we never render.
-const toDetail = r => ({
+/**
+ * 관련사건 - 같은 물건에 걸린 다른 사건번호.
+ *
+ * 법원은 중복·병합 사건을 **사건번호 칸 안에** 나열해서 준다:
+ *   "2026타경140 2026타경133 2026타경138 (병합)"
+ * 별도 필드가 없으므로 그 표기에서 꺼낸다(실측 968건 = 중복 753 · 병합 325).
+ * 회생·파산 같은 다른 계열 연계는 우리 원천에 오지 않는다 - 만들지 않는다.
+ */
+const RELATED_RE = /\(\s*(중복|병합)\s*\)/;
+function relatedCases(caseNumber) {
+  const raw = str(caseNumber);
+  const kind = raw.match(RELATED_RE);
+  if (!kind) return [];
+  const nums = raw.replace(/\([^)]*\)/g, ' ').split(/\s+/).filter((x) => /타경/.test(x));
+  if (nums.length < 2) return [];
+  const self = nums[0];
+  return nums.slice(1).filter((n) => n !== self).map((n) => ({ caseNumber: n, relation: kind[1] }));
+}
+
+/**
+ * 인근 낙찰 통계 - 우리 canonical 만으로 계산한다(외부 원천 없음).
+ *
+ * 시군구×용도로 3건이 안 모이면 시도×용도, 그것도 안 되면 전국×용도로 넓힌다.
+ * ★어느 범위로 잰 값인지 반드시 함께 낸다 - "강서구 다세대 66%"와 "전국 다세대
+ *   66%"는 다른 말이고, 범위를 감추면 화면이 과장하게 된다.
+ * 표본 3건 미만인 칸은 아예 만들지 않는다(실측: 3단계까지 가면 99.98% 가 잡힌다).
+ */
+const MIN_SAMPLES = 3;
+function buildSaleIndex(rows) {
+  const idx = new Map();
+  const put = (k, r) => { if (!idx.has(k)) idx.set(k, []); idx.get(k).push(r); };
+  for (const r of rows) {
+    const w = Number(r.winningPrice || 0), a = Number(r.appraisedPrice || 0);
+    if (!(w > 0 && a > 0)) continue;
+    const u = str(r.usage) || '?';
+    if (r.regionSido && r.regionSigungu) put(`시군구|${r.regionSido} ${r.regionSigungu}|${u}`, r);
+    if (r.regionSido) put(`시도|${r.regionSido}|${u}`, r);
+    put(`전국|전국|${u}`, r);
+  }
+  return idx;
+}
+function neighborhoodStats(idx, r) {
+  const u = str(r.usage) || '?';
+  const tries = [];
+  if (r.regionSido && r.regionSigungu) tries.push(['시군구', `${r.regionSido} ${r.regionSigungu}`]);
+  if (r.regionSido) tries.push(['시도', str(r.regionSido)]);
+  tries.push(['전국', '전국']);
+  for (const [level, scope] of tries) {
+    const g = idx.get(`${level}|${scope}|${u}`) || [];
+    if (g.length < MIN_SAMPLES) continue;
+    const ratios = g.map((x) => x.winningPrice / x.appraisedPrice).sort((a, b) => a - b);
+    const median = ratios[Math.floor(ratios.length / 2)];
+    const avg = ratios.reduce((a, b) => a + b, 0) / ratios.length;
+    /* 표본은 최근 낙찰 3건만. 사건 파일 하나가 커지면 KV 상한에 닿는다. */
+    const samples = g.slice().sort((a, b) => str(b.winningDate).localeCompare(str(a.winningDate))).slice(0, 3)
+      .map((x) => ({
+        caseNumber: str(x.caseNumber), address: str(x.address).split('[상세내역]')[0].trim().slice(0, 60),
+        usage: str(x.usage), appraisedPrice: int(x.appraisedPrice), winningPrice: int(x.winningPrice),
+        winningDate: x.winningDate || null,
+        ratio: Math.round((x.winningPrice / x.appraisedPrice) * 1000) / 10,
+      }));
+    return {
+      level, scope, usage: u, count: g.length,
+      medianRatio: Math.round(median * 1000) / 10,
+      averageRatio: Math.round(avg * 1000) / 10,
+      samples,
+    };
+  }
+  return null;
+}
+
+const toDetail = (r, ctx) => ({
   id: r.id, caseNumber: r.caseNumber, itemNumber: r.itemNumber,
   courtCode: r.courtCode, courtName: r.courtName,
   address: r.address, regionSido: r.regionSido, regionSigungu: r.regionSigungu,
@@ -117,6 +188,10 @@ const toDetail = r => ({
      주민등록번호 계열(enrrno)은 애초에 저장하지 않으므로 여기 올 수 없다. */
   lessees: Array.isArray(r.lessees) ? r.lessees : [],
   lesseeCount: r.lesseeCount ?? null,
+  /* [2026-09-15] 우리가 이미 가진 것인데 화면에 못 내던 두 가지.
+     둘 다 canonical 만으로 만든다 - 새 원천을 붙이지 않았다. */
+  relatedCases: relatedCases(r.caseNumber),
+  neighborhoodStats: ctx && ctx.saleIndex ? neighborhoodStats(ctx.saleIndex, r) : null,
   detailCheckedAt: r.detailCheckedAt || null,
   source: r.source || null
 });
@@ -245,8 +320,10 @@ function main() {
   // past the Windows path limit. The real id travels inside the file, and the
   // uploader reads it back to build the KV key - KV keys have no such limit.
   let detailBytes = 0, biggest = { name: null, bytes: 0 };
+  /* 낙찰 비교군 색인은 한 번만 만든다 - 사건마다 12,000건을 다시 훑을 일이 아니다. */
+  const saleIndex = buildSaleIndex(rows);
   for (const r of rows) {
-    const detail = toDetail(r);
+    const detail = toDetail(r, { saleIndex });
     const buf = Buffer.from(JSON.stringify(detail), 'utf8');
     const file = `${crypto.createHash('sha1').update(String(r.id)).digest('hex')}.json`;
     detailBytes += writeChecked(path.join(OUT, 'detail', file), buf, `detail/${file}`);
