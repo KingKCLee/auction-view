@@ -20,6 +20,7 @@ const fs = require('fs');
 const path = require('path');
 const { gradeRights } = require('./rights-grade');
 const { coordsOf } = require('./katec');
+const { withLabels } = require('./appraisal-labels');
 const zlib = require('zlib');
 const crypto = require('crypto');
 
@@ -245,7 +246,10 @@ const toDetail = (r, ctx) => ({
   courtDept: r.courtDept || null, courtDeptTel: r.courtDeptTel || null,
   caseSuspendCode: r.caseSuspendCode || null, caseSuspendReason: r.caseSuspendReason || null,
   rights: r.rights || null,
-  appraisalPoints: Array.isArray(r.appraisalPoints) ? r.appraisalPoints : [],
+  /* 항목코드에 이름을 붙여 보낸다. ★공식 코드표가 아니라 **내용 전수 대조**로
+     확정한 것이라 근거(labelBasis)를 함께 싣는다. 확정 못 한 코드는 이름 없이
+     코드 그대로 간다 - 화면이 코드를 보여 준다. */
+  appraisalPoints: withLabels(r.appraisalPoints),
   minimumPriceRounds: Array.isArray(r.minimumPriceRounds) ? r.minimumPriceRounds : [],
   bidPeriodFrom: r.bidPeriodFrom || null, bidPeriodTo: r.bidPeriodTo || null,
   salePlace: r.salePlace || null, decisionPlace: r.decisionPlace || null,
