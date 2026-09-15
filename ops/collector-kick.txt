@@ -1,2 +1,2 @@
-collector-kick 2026-09-15T10:25:00Z
-reason: canonical data remains at 12,231 rows and the latest discovery cycle added 0 unique rows after a prior cycle added 65. Start one bounded additive recovery cycle using the repository's existing safe failover workflow. Preserve canonical rows and richer fields. Keep failed work in deferred retry state. Use only the existing official-source routes and existing health-guarded rescue behavior.
+collector-kick 2026-09-15T19:28:00Z
+reason: canonical stats are stale for about 9 hours and the latest discovery cycle added 0 unique rows. Start one bounded additive recovery cycle using the repository's existing safe failover workflow and official-source routes. Preserve canonical rows and richer fields. Keep failed work in deferred retry state.
