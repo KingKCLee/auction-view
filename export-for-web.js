@@ -56,7 +56,11 @@ class PayloadTooLarge extends Error {
 const CARD_FIELDS = [
   'id', 'caseNumber', 'courtName', 'address', 'sido', 'sigungu', 'usage',
   'appraisedPrice', 'minimumPrice', 'saleDate', 'failedCount',
-  'hasWinning', 'photoCount', 'documentCount'
+  'hasWinning', 'photoCount', 'documentCount',
+  /* [2026-09-15] 목록 카드의 썸네일 한 장. 사진 URL 을 통째로 싣지 않고 **뒤 두 조각**만
+     싣는다(`<물건번호>/<파일명>`) - 앞부분은 사건번호라 카드가 이미 들고 있다.
+     실측: gzip 433.1KB → 439.0KB (상한 500KB). 사진 있는 사건은 434건뿐이라 나머지는 빈 칸. */
+  'thumb'
 ];
 
 // Card addresses drop the "[상세내역] ..." building schedule the source appends.
@@ -65,12 +69,26 @@ const CARD_FIELDS = [
 const CARD_ADDRESS_MAX = 120;
 const cardAddress = v => str(v).split('[상세내역]')[0].trim().slice(0, CARD_ADDRESS_MAX);
 
+/**
+ * 목록 썸네일 - 첫 사진의 경로에서 `photos/` 접두어만 뗀 것.
+ *
+ * 사건번호 조각을 빼고 화면이 합쳐 복원하는 방법도 재 봤다(gzip 438.0KB vs 440.0KB).
+ * 2KB 를 아끼자고 복원 로직을 두지 않는다 - 사건번호가 "…(중복)" 처럼 공백을 품는 경우가
+ * 실제로 있고(전체 968건), 그때 복원이 조용히 어긋난다. 지금은 그런 사건에 사진이 0건이라
+ * 안 드러날 뿐이다. 상한(500KB)까지 60KB 가 남아 있으므로 안전한 쪽을 고른다.
+ */
+const cardThumb = (r) => {
+  const u = (Array.isArray(r.photoUrls) ? r.photoUrls : [])[0];
+  return u ? String(u).replace(/^photos\//, '') : '';
+};
+
 const toCard = r => [
   str(r.id), str(r.caseNumber), str(r.courtName), cardAddress(r.address),
   str(r.regionSido), str(r.regionSigungu), str(r.usage),
   int(r.appraisedPrice), int(r.minimumPrice), str(r.saleDate), int(r.failedCount) || 0,
   Number(r.winningPrice || 0) > 0 ? 1 : 0,
-  int(r.photoCount) || 0, int(r.documentCount) || 0
+  int(r.photoCount) || 0, int(r.documentCount) || 0,
+  cardThumb(r)
 ];
 
 // Detail keeps everything a case page shows, minus the bulk we never render.
