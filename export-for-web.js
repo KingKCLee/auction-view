@@ -187,6 +187,11 @@ const toDetail = (r, ctx) => ({
   landTotalArea: r.landTotalArea ?? null,
   bidMethod: r.bidMethod || null,
   bidMethodCode: r.bidMethodCode || null,
+  /* 당사자내역 - 법원이 이미 가려서 준 이름만 싣는다(case-parties.js 가 가리지 않은
+     값을 통째로 뺀다). 관련사건은 API 판이 사건번호 문자열 파싱보다 정확하다. */
+  parties: Array.isArray(r.parties) ? r.parties : [],
+  relatedCasesApi: Array.isArray(r.relatedCasesApi) ? r.relatedCasesApi : [],
+  noticeFrom: r.noticeFrom || null, noticeTo: r.noticeTo || null,
   events: Array.isArray(r.events) ? r.events : [],
   components: Array.isArray(r.components) ? r.components.slice(0, 40) : [],
   documents: Array.isArray(r.documents) ? r.documents : [],

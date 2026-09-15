@@ -3,6 +3,7 @@ const path=require('path');
 
 const gate=require('./court-gate');
 const { listingDetail, rawCoords } = require('./listing-detail');
+const { extractCaseExtras } = require('./case-parties');
 const BASE='https://www.courtauction.go.kr';
 /* AUCTIONS_FILE / STATS_FILE 은 스크래치 사본에 대고 돌리기 위한 것이다 - 수집기가
    canonical 을 쥐고 있는 동안에도 추출 로직을 시험할 수 있어야 한다(photo-enrich 와 같은 규약). */
@@ -31,6 +32,10 @@ async function timedFetch(url,opts={},ms=18000){const c=new AbortController();co
 async function warmup(){return gate.acquire('detail-enrich:warmup',async()=>{const r=await timedFetch(BASE+'/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml&pgjId=151F00',{headers:{'user-agent':'Mozilla/5.0','accept':'text/html,application/xhtml+xml,*/*','accept-language':'ko-KR,ko;q=0.9'}},18000);const sc=r.headers.getSetCookie?r.headers.getSetCookie():[r.headers.get('set-cookie')].filter(Boolean);if(sc.length)cookie=sc.map(x=>x.split(';')[0]).join('; ');if(!r.ok)throw new Error('warmup HTTP '+r.status)})}
 async function post(url,body,user='SYSTEM',pgmid='PGJ151F01'){if(!cookie)await warmup();return gate.acquire('detail-enrich:'+url,async()=>{const r=await timedFetch(BASE+url,{method:'POST',headers:{'content-type':'application/json;charset=UTF-8','accept':'application/json,text/plain,*/*','user-agent':'Mozilla/5.0','accept-language':'ko-KR,ko;q=0.9','referer':BASE+'/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ151F00.xml','cookie':cookie,'sc-userid':user,'sc-pgmid':pgmid},body:JSON.stringify(body)},18000);const raw=await r.text();gate.inspect(raw,url);let j;try{j=JSON.parse(raw)}catch{throw new Error('non-json '+r.status)}if(j?.data?.ipcheck===false)throw new Error('BLOCKED by court site');if(!r.ok)throw new Error('HTTP '+r.status);return j})}
 async function detail(row){return post('/pgj/pgj15B/selectAuctnCsSrchRslt.on',{dma_srchGdsDtlSrch:{csNo:String(row.caseNumber),cortOfcCd:String(row.courtCode||''),dspslGdsSeq:Number(row.itemNumber||1),pgmId:'PGJ151F01'}})}
+/* 사건 기본조회(pgj15A). 당사자내역·관련사건·입찰기간이 **여기에만** 있다
+   (2026-09-16 실측 - 상세 화면 정의의 엔드포인트 3개엔 당사자 단어가 한 번도 없었다).
+   ★사건당 요청이 1건 늘어난다. 그래서 이미 받아 둔 사건은 부르지 않는다. */
+async function caseBasic(row){return post('/pgj/pgj15A/selectAuctnCsSrchRslt.on',{dma_srchCsDtlInf:{cortOfcCd:String(row.courtCode||''),csNo:String(row.caseNumber),pgmId:'PGJ15AF01'}},'NONUSER','PGJ15AF01')}
 async function statusReport(row){return post('/pgj/pgj15B/selectCurstExmndc.on',{dma_srchCurstExmn:{cortOfcCd:String(row.courtCode||''),csNo:String(row.caseNumber),auctnInfOriginDvsCd:'2'}},'NONUSER','PGJ15BP01')}
 function eventsOf(d){return d?.data?.dma_result?.gdsDspslDxdyLst||d?.data?.dma_result?.dspslDxdyLst||[]}
 // Field names measured from a live response on 2026-09-09. The names this file
@@ -169,6 +174,20 @@ row.goodsStatusCode=txt(dx.auctnGdsStatCd||'');row.decisionDate=normDate(dx.dsps
    if(askStatusReport){
     /* [2026-09-14] 전에는 이 응답을 받아 놓고 있다/없다만 보고 버렸다. 그 안에 점유관계
        문장과 임차인 목록이 들어 있다 - 같은 요청에서 꺼내 쓴다(요청 수는 그대로). */
+    /* 당사자내역·관련사건·입찰기간 - 이미 있으면 건너뛴다(요청을 아낀다). */
+    if(!Array.isArray(row.parties)||!row.parties.length){
+      try{const cb=await caseBasic(row);const ex=extractCaseExtras(cb);
+        if(ex){row.parties=ex.parties;
+          if(ex.relatedCasesApi.length)row.relatedCasesApi=ex.relatedCasesApi;
+          if(ex.bid){row.bidMethodCode=ex.bid.code||row.bidMethodCode||null;
+            if(ex.bid.method)row.bidMethod=ex.bid.method;
+            if(ex.bid.periodFrom)row.bidPeriodFrom=ex.bid.periodFrom;
+            if(ex.bid.periodTo)row.bidPeriodTo=ex.bid.periodTo;
+            if(ex.bid.noticeFrom)row.noticeFrom=ex.bid.noticeFrom;
+            if(ex.bid.noticeTo)row.noticeTo=ex.bid.noticeTo;}
+          row.coverage={...(row.coverage||{}),parties:ex.parties.length?1:0};}
+      }catch(e){if(e&&e.code==='COURT_BLOCKED')throw e;}
+    }
     try{const sr=await statusReport(row);if(sr?.data){row.coverage={...(row.coverage||{}),status_report:1};row.statusReportAvailable=true;docsAdded++;
      const sd=sr.data||{};
      const mng=sd.dma_curstExmnMngInf||{};
