@@ -6,6 +6,7 @@
 # code. Fixing it is a person's job; noticing it is not.
 $ErrorActionPreference = "Continue"
 Set-Location $PSScriptRoot\..
+. "$PSScriptRoot\_load-cf-env.ps1"
 
 node deploy-watch.js
 $code = $LASTEXITCODE

@@ -22,8 +22,11 @@ const zlib = require('zlib');
 const crypto = require('crypto');
 
 const ROOT = process.env.EXPORT_ROOT || __dirname;
-const DATA = path.join(ROOT, 'data', 'auctions.json');
-const STATS = path.join(ROOT, 'data', 'stats.json');
+/* 입력 자리를 바꿀 수 있게 둔다(detail-enrich·photo-enrich 와 같은 규약).
+   노트북에서 창고 판 canonical 로 웹 내보내기를 돌릴 때 쓴다 - 작업본 canonical 은
+   수집기가 쥐고 쓰는 중이라 중간 상태일 수 있어 그것으로 화면을 만들면 안 된다. */
+const DATA = process.env.AUCTIONS_FILE || path.join(ROOT, 'data', 'auctions.json');
+const STATS = process.env.STATS_FILE || path.join(ROOT, 'data', 'stats.json');
 const ALERT = path.join(ROOT, 'data', 'collection-alert.json');
 /* 노트북 수집기의 실제 상태. stats.latestDetailRun 은 **호스티드(Actions) 상세 실행**이
    쓰는 자리라 노트북 상태가 아니다 - 그것을 노트북 것으로 내보내던 탓에 진도율 화면이
