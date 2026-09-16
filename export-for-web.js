@@ -198,10 +198,32 @@ function neighborhoodStats(idx, r) {
   return null;
 }
 
+/**
+ * 소재지와 건물 개요를 가른다.
+ *
+ * ★법원은 주소 칸 하나에 **주소 + 그 동 전체의 층별 면적 나열**을 이어 붙여 준다.
+ *   "[상세내역]" 이 그 경계다. 그대로 두면 소재지 한 줄이 1,855자까지 가고(실측 최대),
+ *   화면에서는 주소 자리에 32개 층 면적이 쏟아진다(2026-09-16 대표님 신고).
+ *   실측: 12,421건 중 [상세내역] 포함 10,653건(85.8%) · 층별 면적 나열 6,064건(48.8%).
+ *
+ * ★뒷부분을 버리지 않는다. 건물 구조·층수·층별 면적이라 쓸모가 있다 - 「건물 개요」로
+ *   옮겨 제자리에서 보여 준다. 목록 카드는 이미 앞부분만 쓰고 있었다(cardAddress).
+ */
+function splitAddress(raw) {
+  const s = str(raw);
+  const i = s.indexOf('[상세내역]');
+  if (i < 0) return { address: s.trim(), outline: null };
+  const outline = s.slice(i + '[상세내역]'.length).replace(/\s+/g, ' ').trim();
+  return { address: s.slice(0, i).trim(), outline: outline || null };
+}
+
 const toDetail = (r, ctx) => ({
   id: r.id, caseNumber: r.caseNumber, itemNumber: r.itemNumber,
   courtCode: r.courtCode, courtName: r.courtName,
-  address: r.address, regionSido: r.regionSido, regionSigungu: r.regionSigungu,
+  /* 소재지는 순수 주소만. 뒤에 붙어 오던 층별 면적 나열은 buildingOutline 으로 옮긴다. */
+  address: splitAddress(r.address).address,
+  buildingOutline: splitAddress(r.address).outline,
+  regionSido: r.regionSido, regionSigungu: r.regionSigungu,
   usage: r.usage, caseType: r.caseType || null, buildingName: r.buildingName || null,
   propertyDescription: r.propertyDescription || null,
   appraisedPrice: int(r.appraisedPrice), minimumPrice: int(r.minimumPrice),
