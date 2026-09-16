@@ -104,10 +104,29 @@ export async function onRequestGet({ request, env }) {
   const total = matched.length;
   const items = matched.slice((page - 1) * size, page * size).map(r => cardToObject(F, r));
 
+  /*
+   * [2026-09-16] 상태별 건수 - **이 페이지가 아니라 걸러진 전체**를 센다.
+   * 화면 상단 요약 배너가 쓴다. 한 페이지(20건)만 세면 "검색결과 387건"과 배지 숫자가
+   * 어긋나 사람이 둘 중 어느 쪽을 믿어야 할지 모르게 된다.
+   * ★우리 canonical 에 실제로 있는 축만 센다(실측: status 는 76%가 빈값이고
+   *   변경·취하·기각·정지 같은 값은 **존재하지 않는다**). 가를 수 있는 것은 셋뿐이다:
+   *     낙찰   = 낙찰가가 있다
+   *     유찰   = 낙찰가가 없고 유찰 횟수가 1 이상
+   *     진행중 = 둘 다 아니다
+   * 이미 필터를 통과한 행들만 도므로 비용은 한 번의 순회다.
+   */
+  let won = 0, failed = 0, ongoing = 0;
+  for (const r of matched) {
+    if (Number(r[iWin]) === 1) won++;
+    else if (Number(r[iFail] || 0) > 0) failed++;
+    else ongoing++;
+  }
+
   const body = {
     generatedAt: index.generatedAt,
     page, size, total,
     totalPages: Math.max(1, Math.ceil(total / size)),
+    statusCounts: { won, failed, ongoing },
     facets: index.facets || undefined,
     items
   };
