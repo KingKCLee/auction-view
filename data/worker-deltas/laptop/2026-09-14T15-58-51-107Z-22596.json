@@ -1,0 +1,3088 @@
+{
+  "version": 2,
+  "worker": "laptop",
+  "createdAt": "2026-09-14T15:58:51.107Z",
+  "batchSize": 24,
+  "exitCode": 0,
+  "discoveryStatus": "current:completed|history:completed|property:completed",
+  "additions": [],
+  "patches": [
+    {
+      "id": "B000210|2025타경103843|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-08-11",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 227000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 181600000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-22",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 3,
+        "failedCount": 1,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 0,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "본건은 서울특별시 관악구 신림동 소재‘신림고등학교’북서측 인근에 위치하며, 주위는 아파트단지, 다세대주택, 근린생활시설 등이 소재하는 지역으로 주위환경은 보통임.\n본건까지 차량출입이 가능하며, 인근에 버스 정류장 및 지하철2호선 &amp;quot;신대방역&amp;quot;등이 소재하는 등 대중교통 이용상황은 보통임.\n철근콘크리트구조 (철근)콘크리트지붕 14층건 중 제12층 제1205호로서, 외벽 : 석재 붙임 및 강화유리 마감 등, 창호 : 알루미늄샷시 창호 마감 등임.\n현황 오피스텔(복층구조)으로 이용 중임.(후첨 &amp;apos;건물개황도&amp;apos; 참조)\n기본적인 위생 및 급배수설비, 난방설비, 기계식주차장설비 등이 구비되어 있음.\n본건은 2필 일단의 가장형 토지로서, 업무시설 및 오피스텔 건부지로 이용 중임.\n본건 서측으로 노폭 약 26미터의 포장도로와 접함.\n1) 도시지역 , 일반상업지역 , 지구단위계획구역(난곡사거리지구중심(서울특별시 고시 제2023-315호(2023.07.27.))) , 도로(접합), 가축사육제한구역&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 대공방어협조구역(위탁고도:194m)&lt;군사기지 및 군사시설 보호법&gt;, 과밀억제권역&lt;수도권정비계획법&gt;, 중점경관관리구역(주요산 주변),토지거래계약에관한허가구역(대상자: 외국인 등. 용도: 단독 다가구 아파트 연립 다세대. 지정기간: 2025.8.26.~2026.8.25.)임.  2) 도시지역 , 일반상업지역 , 지구단위계획구역(난곡사거리지구중심(서울특별시 고시 제2023-315호(2023.07.27.))) , 도로(접합), 가축사육제한구역&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역&lt;교육환경 보호에 관한 법률&gt;, 대공방어협조구역(위탁고도:194m)&lt;군사기지 및 군사시설 보호법&gt;, 과밀억제권역&lt;수도권정비계획법&gt;, 중점경관관리구역(주요산 주변),토지거래계약에관한허가구역(대상자: 외국인 등. 용도: 단독 다가구 아파트 연립 다세대. 지정기간: 2025.8.26.~2026.8.25.)임.\n-\n본건은 소유자 및 이해관계인의 부재 및 폐문 등으로 인하여 내부 상태를 확인하지 못한 바, 외형조사와 귀 제시목록 및 건축물현황도에 따라 통상적인 내부 상태를 기준하여 감정평가 하였으며, 경매 진행시 반드시 재확인 하시기 바람.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 245000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 1,
+        "detailCheckedAt": "2026-09-14T15:54:48.486Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-22"
+      }
+    },
+    {
+      "id": "B000210|2025타경103791|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-08-11",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 304000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 243200000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-22",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 3,
+        "failedCount": 1,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 0,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "본건은 서울특별시 관악구 남현동 소재 '사당초등학교' 남측 인근에 위치하며, 주위는 아파트, 다세대주택, 단독주택 및 근린생활시설 등이 소재하는 일반 주택지대로서, 제반 주위환경은 보통임.\n본건까지 차량의 진출입이 가능하며, 인근에 노선버스정류장이 소재하는 등 제반 교통편의는 보통임.\n철근콘크리트구조 (철근)콘크리트지붕 6층 건 내 제5층 제501호로서,\r\n\r\n외벽: 석재붙임 마감 등,\r\n내벽: 미상,\r\n바닥: 미상,\r\n창호: 샷시 창호 등임.\n※건축물대장상 건축물현황도 기준\r\n집합건축물대장상 다세대주택(방2, 주방 등)으로 기재되어 있음.\r\n(후첨 '건물내부구조도' 참조.)\n기본적인 위생 및 급배수설비, 도시가스에 의한 난방설비, 승강기설비 등이 되어 있음.\n본건은 완만한 경사지 내 평탄하게 조성된 가장형 토지로서, 공동주택 건부지로 이용중임.\n본건은 북동측으로 노폭 약 6미터 내외, 북서측으로 노폭 약 4미터 내외의 포장도로와 각각 접함.\n남현동 1072-100 :도시지역, 제2종일반주거지역(7층이하), 가축사육제한구역<가축분뇨의 관리 및 이용에 관한 법률>, 교육환경보호구역(상대/절대정화구역 최종확인은 동작교육청에 반드시 확인이 필요한 사항임)<교육환경 보호에 관한 법률>, 상대보호구역<교육환경 보호에 관한 법률>, 대공방어협조구역(위탁고도:150m)<군사기지 및 군사시설 보호법>, 과밀억제권역<수도권정비계획법>, 중점경관관리구역(주요산 주변),\r\n토지거래계약에관한허가구역(대상자: 외국인 등. 용도: 단독 다가구 아파트 연립 다세대. 지정기간: 2025.8.26.~2026.8.25.)\n-.\n-임대 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 320000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 1,
+        "detailCheckedAt": "2026-09-14T15:54:58.582Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-22"
+      }
+    },
+    {
+      "id": "B000210|2025타경103745|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-09-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 364000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-22",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 0,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "본건은 서울특별시 동작구 상도동 소재 \"\"상도3동주민센터\"\" 남서측 인근에 위치하며, 주변은 단독 및 다세대주택, 소규모아파트, 근린생활시설, 학교 등이 혼재하는 지역으로 제반 주위환경은 보통임.\n본건까지 차량 진출입이 가능하고, 인근에 노선버스 정류장 및 지하철 7호선 \"\"신대방삼거리역\"\"이 소재하는 등 제반 교통상황은 보통임.\n본건은 철근콘크리트구조 철근콘크리트지붕 6층 건물 내\r\n제4층 제404호로서,\r\n(사용승인일 2021.05.27)\r\n\r\n외벽 : 석재붙임 마감 등,\r\n창호 : 샷시 창호 등임.\n본건은 집합건축물대장상 \"\"다세대주택\"\"으로 이용중임.\n기본적인 위생 및 급배수설비, 난방설비, 승강기설비, 주차장 등이 구비되어 있음.\n본건 토지는 인접지 및 인접도로 대비 완경사 사다리형 토지로서, \"\"도시형생활주택(단지형다세대)\"\" 부지로 이용중임.\n본건 서측으로 약 6미터 포장도로에 접함.\n도시지역, 제2종일반주거지역(7층),\r\n가축사육제한구역<가축분뇨의 관리 및 이용에 관한 법률>, 대공방어협조구역(위탁고도:77-257m)<군사기지 및 군사시설 보호법>, 과밀억제권역<수도권정비계획법>,\r\n토지거래계약에관한허가구역(2025-08-21)((대상자: 외국인 등. 용도: 단독 다가구 아파트 연립 다세대. 지정기간: 2025.8.26.~2026.8.25.))\r\n<추가기재>건축법 제2조제1항제11호나목에 따른 도로(도로일부포함)임.\n-.\n임대미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 385000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 1,
+        "detailCheckedAt": "2026-09-14T15:55:09.496Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-22"
+      }
+    },
+    {
+      "id": "B000210|2025타경103729|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-08-11",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 202000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 161600000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-22",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 3,
+        "failedCount": 1,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 0,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "본건은 서울특별시 관악구 봉천동에 소재하며 \"\"서울은천초등학교\"\" 북서측 인근에 위치함.\r\n주위는 다세대주택, 단독주택, 다가구주택, 각종 근린생활시설 등이 혼재하는 지대로서\r\n제반 주위환경은 보통임.\n본건 소재 건물까지 차량의 진출입이 가능하며 인근에 노선버스정류장이 소재하는 등 제반\r\n교통상황은 보통임.\n철근콘크리트구조 (철근)콘크리트지붕 5층 건물내 2층 201호로서\r\n(사용승인일: 2014.11.25)\r\n외벽: 석재 붙임 마감 등\r\n창호: 샷시 창호 등\n다세대주택으로 이용 중임.\n기본적인 위생 및 급배수설비, 난방설비, 필로티주차장 등이 되어 있음.\n본건은 다소 급한 경사지의 세장형 토지로서, 다세대주택 건부지로 이용 중임.\n본건 토지 북동측으로 노폭 약 3m 내외의 포장도로에 접함.\n도시지역, 제1종일반주거지역, 가축사육제한구역<가축분뇨의 관리 및 이용에 관한 법률>, \r\n대공방어협조구역(위탁고도:194m)<군사기지 및 군사시설 보호법>, 과밀억제권역<수도권정비\r\n계획법>, 토지거래계약에관한허가구역(2024-09-10)(토지거래허가구역(모아타운 내 지목 \r\n도로 토지)지정기간: 2024. 9. 10.~2029. 9. 9.),토지거래계약에관한허가구역(대상자: 외국\r\n인 등. 용도: 단독 다가구 아파트 연립 다세대. 지정기간: 2025.8.26.~2026.8.25.)\r\n<추가기재>건축법 제2조제1항제11호나목에 따른 도로(도로일부포함)\n해당사항 없음.\n임대관계 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 225000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 1,
+        "detailCheckedAt": "2026-09-14T15:55:19.542Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-22"
+      }
+    },
+    {
+      "id": "B000210|2025타경103682|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-08-11",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 271000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 216800000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-22",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 3,
+        "failedCount": 1,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 0,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "본건은 서울특별시 관악구 봉천동 소재 \"\"신봉초등학교\"\" 남동측 인근에 위치하며 주위는 단독주택, 다세대주택, 근린생활시설 등이 위치하는 등 주위환경은 보통임.\n본건 소재 건물까지 차량접근이 가능하고 인근에 노선버스정류장이 소재하는 등 대중교통편의도는 보통임.\n철근콘크리트구조 (철근)콘크리트지붕 지하 2층/지상 4층 건내 제2층 제201호로서,\r\n외벽 : 석재붙임 마감 등\r\n내벽 : 벽지도배 및 타일 붙임 마감 등(탐문조사)\r\n창호 : 샷시 창호임.\n본건은 기준시점 현재 다세대주택으로 이용 중임.\n기본적인 위생설비, 급배수설비, 난방설비, 승강기설비 등이 구비되어 있음.\n2필지 일단의 사다리형 토지로서 공동주택 등의 건부지로 이용 중임.\n본건 북측으로 포장도로에 접함.\n봉천동 1513-5,1513-6번지 공히\r\n도시지역 , 제2종일반주거지역((7층 이하)), 가축사육제한구역<가축분뇨의 관리 및 이용에 관한 법률> , 교육환경보호구역(상대/절대정화구역 최종확인은 동작교육청에 반드시 확인이 필요한 사항임)<교육환경 보호에 관한 법률> , 상대보호구역<교육환경 보호에 관한 법률> , 대공방어협조구역(위탁고도:194m)<군사기지 및 군사시설 보호법> , 과밀억제권역<수도권정비계획법>, 토지거래계약에관한허가구역(대상자: 외국인 등. 용도: 단독 다가구 아파트 연립 다세대. 지정기간: 2025.8.26.~2026.8.25.)임.\n없음.\n-임대관계 미상임.\r\n-기타 참고사항 없음.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 290000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 1,
+        "detailCheckedAt": "2026-09-14T15:55:29.958Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-22"
+      }
+    },
+    {
+      "id": "B000210|2025타경103654|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-07-07",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 344000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-11",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 275200000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 220160000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-22",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 4,
+        "failedCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 0,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "본건은 서울특별시 관악구 신림동 소재 \"\"난곡초등학교\"\" 북동측 인근에 위치하며 주위는 단독\r\n주택, 다세대주택, 오피스텔, 점포, 음식점, 근린생활시설 등이 혼재하는 지역임.\n본건은 차량 접근이 가능하고, 인근에 노선 버스 정류장이 소재하여 대중교통 이용의 편의도\r\n는 무난함.\n철근콘크리트구조 (철근)콘크리트지붕 7층 건내 4층 403호로서,\r\n 외벽 : 석재 및 벽돌 치장쌓기 등 마감, \r\n 창호 : 샷시 창호임.\n다세대주택(별첨 '내부구조도' 참조) 임.\n급ㆍ배수설비, 위생설비, 난방설비, 승강기설비 등이 되어 있음.\n2필 일단지 부정형의 평탄한 토지로서 공동주택 및 2종근린생활시설 건부지로 이용중임.\n본건은 북측, 동측으로 세로와 접함.\n*기호1 : 도시지역, 준주거지역, 제1종지구단위계획구역(난곡생활권중심(서울특별시 고시 제\r\n 2023-567호(2023.12.21.))), 도로(접합) 가축사육제한구역<가축분뇨의 관리 및 이용에 관한\r\n 법률>, 교육환경보호구역(상대/절대정화구역 최종확인은 동작교육청에 반드시 확인이 필요\r\n 한 사항임)<교육환경 보호에 관한 법률>, 대공방어협조구역(위탁고도:194m)<군사기지 및 군\r\n 사시설 보호법>, 과밀억제권역<수도권정비계획법> 중점경관관리구역(주요산 주변), 토지거\r\n 래계약에관한허가구역(대상자: 외국인 등. 용도: 단독 다가구 아파트 연립 다세대. 지정기\r\n 간: 2025.8.26.~2026.8.25.).\r\n\r\n*기호2 : 도시지역, 준주거지역, 제1종지구단위계획구역(난곡생활권중심(서울특별시 고시 제\r\n 2023-567호(2023.12.21.))), 도로(접합) 가축사육제한구역<가축분뇨의 관리 및 이용에 관한\r\n 법률>, 교육환경보호구역(상대/절대정화구역 최종확인은 동작교육청에 반드시 확인이 필요\r\n 한 사항임)<교육환경 보호에 관한 법률>, 대공방어협조구역(위탁고도:194m)<군사기지 및 군\r\n 사시설 보호법>, 과밀억제권역<수도권정비계획법> 중점경관관리구역(주요산 주변), 토지거\r\n 래계약에관한허가구역(대상자: 외국인 등. 용도: 단독 다가구 아파트 연립 다세대. 지정기\r\n 간: 2025.8.26.~2026.8.25.).\n-.\n등기사항전부증명서상 2024.07.02일 서울중앙지방법원의 임차권등기명령(2024카임31851)으로\r\n2024.07.05일자로 주택임차권 등재, 2024.09.30일자로 임차권경정등기 되어 있음.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 277000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 1,
+        "detailCheckedAt": "2026-09-14T15:55:40.551Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-22"
+      }
+    },
+    {
+      "id": "B000210|2025타경103592|1",
+      "set": {
+        "status": "expired",
+        "detailCheckedAt": "2026-09-14T15:55:51.096Z",
+        "expiredAt": "2026-09-14T15:55:51.096Z"
+      }
+    },
+    {
+      "id": "B000210|2025타경103587|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-07-07",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 422000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-11",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 337600000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 270080000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-22",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 4,
+        "failedCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 0,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "본건은 서울특별시 관악구 봉천동 소재 \"\"당곡고등학교\"\" 남동측 인근에 위치하는 \"\"한성파크빌\r\n리지\"\" 제105동 제2층 제201호로서, 인근은 다세대주택 및 단독주택, 근린생활시설 등이 혼재\r\n하는 지역으로 제반 주위환경은 보통임.\n본건까지 제반 차량의 진출입이 가능하며, 인근에 노선버스정류장 및  \"\"지하철 신림선 당곡\r\n역\"\"이 소재하는 등 제반 교통상황은 보통임.\n철근콘크리트구조 (철근)콘크리트지붕 6층 건물 중 제2층 제201호로서,\r\n외  벽 : 조적조 치장벽돌 마감 등\r\n내  벽 : 벽지마감 및 타일마감 등\r\n창  호 : 샷시 창호임.\n다세대주택(도시형생활주택단지형) 1개호로 이용중임.\n위생 및 급배수설비, 난방설비, 엘리베이터 설비, 소방설비 등이 되어있음.\r\n\r\n\n인접지 대비 다소 완경사인 부정형의 토지로서, 다세대주택 건부지로 이용중임\n본건 북측으로 노폭 약 6미터의 포장도로에 접함.\n도시지역, 제2종일반주거지역((7층이하)), 도로(접합), 가축사육제한구역<가축분뇨의 관리 \r\n및 이용에 관한 법률>, 대공방어협조구역(위탁고도:194m)<군사기지 및 군사시설보호법>, 과\r\n밀억제권역<수도권정비계획법>임.\n없  음.\n1. 임대관계 : 미상임.\r\n2. 기    타 : 없  음.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 318000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 1,
+        "detailCheckedAt": "2026-09-14T15:56:02.253Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-22"
+      }
+    },
+    {
+      "id": "B000210|2025타경103557|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-07-07",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 260000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-11",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 208000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 166400000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-22",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 4,
+        "failedCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 0,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "지하철2호선 및 신분당선 [강남역] 5번출구의 서측 인근에 위치하고 있음\r\n강남역 후면으로 아파트단지와 주거용오피스텔, 근린생활시설, 업무시설 등이 혼재하는 도심 내 주거지대임\n본건 소재 건물로 차량 접근 및 출입이 가능하며 인근에 지하철역(강남역) 및 다수의 노선/광역버스가 정차하는 정류장이 있어 전반적인 교통상황은 양호함\n철근콘크리트구조 (철근)콘크리트지붕 지하4층 지상15층 오피스텔 건물 중\r\n3층 311호이며(사용승인일: 2003.12.09)\r\n외벽 : 인조석타일 및 복합판넬타일\r\n내벽 : 벽지 및 타일붙임 등임\n오피스텔(원룸형) 1개호로 이용 중임\n중앙공급형 난방임\r\n급배수 및 위생설비, 승강기설비, 입구보안설비, 화재탐지설비, 소화전설비 등 되어 있음\n인접 대지 및 도로와 등고 평탄하게 조성된 장방형의 토지로 오피스텔 건부지로 이용 중임\n남서측으로 '서초대로74길' / 북동측으로 '강남대로55길'에 접하고 있으며 자동차 등의 출입은 남서측 출입구를 통하고 있음\n일반상업지역, 지구단위계획구역, 도로(접함), 가로구역별최고높이 제한지역, 상대보호구역, 대공방어협조구역(위탁고도:77-257m), 과밀억제권역, (한강)폐기물매립시설 설치제한지역, 토지거래계약에관한허가구역임 #근거법령 등은 별첨 확인서 사본 참고\n별무함\n등기사항전부증명서에 '주택임차권등기' 되어 있으며 현장 조사시 폐문부재 계속되어 관리사무실 등 방문/탐문하였으나 공실 여부 등은 미상",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 246750000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 1,
+        "detailCheckedAt": "2026-09-14T15:56:12.433Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-22"
+      }
+    },
+    {
+      "id": "B000210|2025타경103542|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-09-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 1660000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-22",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 0,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "본건은 서울특별시 강남구 대치동 소재 \"\"도곡초등학교\"\" 북동측 인근에 위치하며, 본건 주위는 아파트, 단독,다세대주택, 학교, 업무시설 및 근린생활시설, 공원 등이 소재하는 지역임.\n본건까지 차량접근이 가능하며, 인근에 지하철3호선 \"\"한티역\"\" 및 노선버스정류장이 소재하여 대중교통 사정은 양호함.\n철근콘크리트구조 철근콘크리트(평스라브)지붕 제6층 건물 내 제3층 제302호로서, \r\n외벽 : 석재 붙임 등 마감, 창호 : 새시 창호 등 마감.\n아파트 이용 중임.\n승강기설비, 위생설비 및 급·배수설비, 옥내소화전설비, 화재탐지설비 등이 되어 있음.\n세로장방형의 토지로서 아파트 부지로 이용중 임.\n본건 남동측으로 약6미터 내외의 도로와 접함.\n도시지역, 제2종일반주거지역 대공방어협조구역(위탁고도:77-257m)<군사기지 및 군사시설 보호법>, 과밀억제권역<수도권정비계획법> 토지거래계약에관한허가구역(2025-03-24)(건축물의 용도(아파트)로 사용되는 부지)임.\n없 음.\n본건 현장조사시 폐문부재 등으로 건축물현황도, 외부관찰 및 탐문조사 등을 종합 고려하여 평가하였으므로 경매진행시 참고하기바람.\r\n임대내역은 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 14839596,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 1,
+        "detailCheckedAt": "2026-09-14T15:56:23.695Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-22"
+      }
+    },
+    {
+      "id": "B000210|2025타경103509|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-09-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 135000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-22",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 0,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "서울특별시 종로구 경운동 소재 \"\"안국역 사거리\"\" 남서측 인근에 위치하며 주변은 대로변으로 업무용빌딩 근린생활시설 등이 밀집된 도심 상업지대임.\n본건까지 차량출입 가능하며 인근에 버스정류장 및 지하철 안국역이 소재하여 대중교통 편의성 양호함.\n철골알시조 철근콘크리트지붕 지하4층/지상15층 건물 내 제지하1층으로서,\r\n외벽(지상): 법랑판넬 등 마감,\r\n내벽: 몰탈위 페인팅 및 인테리어 마감,\r\n창호: 샷시 등임.\n근린생활시설임.\r\n(전유부분 464.84㎡인 호명칭 \"\"지하1층\"\" 근린생활시설인 바, 조사일 현재 현황은  칸막이에 의거 수개의 영업점으로 구분하여 이용중임. 별지 건물개황도 \"\"서원빌딩 지하1층 이용 현황도\"\" 참조)\n급배수 및 위생설비, 도시가스설비, 승강기설비, 소방설비 등 되어있음.,\n부정형 평지로서 업무시설 및 근린생활시설 건부지로 이용중임. \n본건 동측으로 포장된 대로(삼일대로)에 접함.\n도시지역 , 일반상업지역 , 제1종지구단위계획구역(인사동 지구단위계획), 도로(접합), 가축사육제한구역 <가축분뇨의 관리 및 이용에 관한 법률>, 상대보호구역(2020-06-26) <교육환경 보호에 관한 법률>, 대공방어협조구역 (위탁고도:54-236m) <군사기지 및 군사시설 보호법>, 역사문화환경보존지역 (서울 운현궁) <문화유산의 보존 및 활용에 관한 법률>, 과밀억제권역 <수도권정비계획법>, 문화지구<지역문화진흥법>, 중점경관관리구역(2016-11-24)(역사도심),서울도심((4대문안)), 건축선(2022-03-18) 있음.\n본건 평가대상물건은 평가명령서 및 등기사항증명서상 지하1층 근린생활시설 464.84㎡이나 집합건축물대장(전유부)에는 근린생활시설 456.1㎡ 및 소매점 8.74㎡로 되어 있음.\n1)임대관계 기타 미상임.\r\n2)매각대상은 1개호 내 일부지분으로서 동 위치를 확인하기가 불가능한 실정이므로 \"\"호 전체면적\"\"을 기준으로 산정한 평가액을 기초로 본건 지분면적 평가액을 산정하였음",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 136877344,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 1,
+        "detailCheckedAt": "2026-09-14T15:56:33.881Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-22"
+      }
+    },
+    {
+      "id": "B000210|2025타경103472|1",
+      "set": {
+        "caseType": "자동차강제경매",
+        "events": [
+          {
+            "event_date": "2025-09-23",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 4000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2025-10-28",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 2800000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2025-12-02",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 1960000,
+            "winning_amount": null,
+            "result_code": "001"
+          },
+          {
+            "event_date": "2025-12-09",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": null,
+            "result_code": "003"
+          },
+          {
+            "event_date": "2025-12-31",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": null,
+            "result_code": "017"
+          },
+          {
+            "event_date": "2026-03-17",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 1960000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-04-21",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 1568000,
+            "winning_amount": null,
+            "result_code": "001"
+          },
+          {
+            "event_date": "2026-04-28",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": null,
+            "result_code": "003"
+          },
+          {
+            "event_date": "2026-06-05",
+            "event_time": "1500",
+            "event_kind_code": "03",
+            "place": "4별관 민사집행과 21계",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": "010"
+          },
+          {
+            "event_date": "2026-07-07",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 1568000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-11",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 1097000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 767000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-22",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 13,
+        "failedCount": 5,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 0,
+          "sale_statement": 1,
+          "appraisal_summary": 0,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 5650000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 1,
+        "detailCheckedAt": "2026-09-14T15:56:43.783Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-22"
+      }
+    },
+    {
+      "id": "B000210|2025타경103461|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-07-07",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 309000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-11",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 247200000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 197760000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-22",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 4,
+        "failedCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 0,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "감정서 PDF 참고.\n감정서 PDF 참고.\n감정서 PDF 참고.\n감정서 PDF 참고.\n감정서 PDF 참고.\n감정서 PDF 참고.\n감정서 PDF 참고.\n감정서 PDF 참고.\n감정서 PDF 참고.\n감정서 PDF 참조.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 320000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 1,
+        "detailCheckedAt": "2026-09-14T15:56:54.130Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-22"
+      }
+    },
+    {
+      "id": "B000210|2025타경103333|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-06-02",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 430000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-11",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 430000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 344000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-22",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 4,
+        "failedCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 0,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "본건은 서울특별시 관악구 남현동 소재 '사당초등학교' 북서측 인근에 위치하며, 인근은 다세대주택, 연립주택, 아파트 및 근린생활시설 등이 소재하는 정비된 주택지대임.\n본건까지 차량의 진출입이 가능하며, 인근에 노선버스정류장이 소재하는 바, 교통여건은 보통시 됨.\n철근콘크리트구조 (철근)콘크리트지붕 4층 건 중 제1층 제101호로서,\r\n외벽 : 석재 붙임 마감 등,\r\n내벽 : 미상,\r\n바닥 : 미상,\r\n창호 : 샷시 창호 마감 등임.\n※ 건축물대장상 건축물현황도 기준\r\n집합건축물대장상 다세대주택(방3, 주방/식당, 거실, 화장실2, 현관, 발코니 등)으로 기재되어 있음.\r\n(후첨 '건물내부구조도' 참조.)\n기본적인 위생 및 급배수설비, 승강기 설비, 도시가스에 의한 난방설비 등이 되어 있음.\n인접지 및 인접도로 대비 등고 평탄한 사다리형 토지로서, \"\"다세대주택\"\" 건부지로 이용 중임.\n본건 북서측으로 노폭 약 4미터 내외의 포장도로와 접함.\n남현동 1054-41 :도시지역, 제2종일반주거지역(7층이하), 가축사육제한구역<가축분뇨의 관리 및 이용에 관한 법률>, 교육환경보호구역(상대/절대정화구역 최종확인은 동작교육청에 반드시 확인이 필요한 사항임)<교육환경 보호에 관한 법률>, 상대보호구역<교육환경 보호에 관한 법률>, 대공방어협조구역(위탁고도:150m)<군사기지 및 군사시설 보호법>, 과밀억제권역<수도권정비계획법>, 중점경관관리구역(주요산 주변)임.\n-.\n-임대 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 430500000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 1,
+        "detailCheckedAt": "2026-09-14T15:57:04.630Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-22"
+      }
+    },
+    {
+      "id": "B000210|2025타경103306|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-09-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 537000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-22",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 0,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "본건은 서울특별시 동작구 상도동 소재 \"\"상도초등학교\"\" 서측 인근에 위치하며 주위는 단독주택, 다세대주택, 초등학교 및 근린생활시설 등이 소재하는 주거지대로 주위환경은 보통시됨.\n본건까지 차량접근이 가능하고 인근에 버스정류장 및 근거리에 지하철7호선 장승배기역이 소재하는 등 전반적 교통상황은 보통시됨.\n본건은 철근콘크리트조 평슬래브지붕 지하1층/지상3층 건중 지하층 비01호로서\r\n외벽:적벽돌쌓기 마감 등,\r\n내벽:벽지 및 일부 타일 마감,\r\n창호:샤시창호 등임.\n본건은 다세대주택 1개호로 이용중임.\n위생설비 및 급배수설비, 난방설비 등이 되어있음.\r\n\r\n\r\n\r\n\n본건은 인접지 대비 완경사지를 조성한 사다리형의 토지로 다세대주택 건부지로 이용중임.\n본건 북동측으로 노폭 약4미터 내외의 도로 소재함.\n도시지역, 제2종일반주거지역(7층), 가축사육제한구역, 교육환경보호구역(학교환경위생정화구역에 대한 최종확인은 관할교육청에 반드시 확인이 필요한 사항임), 상대보호구역(자세한 사항은 동작교육지원청으로 문의), 대공방어협조구역(위탁고도:77-257m), 정비구역(2025-04-03), 과밀억제권역, 토지거래계약에관한허가구역(지정기간:2022년1월2일~2026년1월28일)임.\n-.\n1.임대관계미상임.\r\n2.집합건축물대장상 주소는 서울시 동작구 상도동 244-174 한주빌라 B동 B01호임.\r\n3.본건은 상도14구역 민간재개발사업지역내에 소재하며 관련사항의 확인을 요함(단계:정비구역지정).",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 203000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 1,
+        "detailCheckedAt": "2026-09-14T15:57:15.289Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-22"
+      }
+    },
+    {
+      "id": "B000210|2025타경103152|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-09-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 210000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-22",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 0,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "본건 대상물건은 서울특별시 동작구 신대방동 소재 \"\"신대방역\"\" 북측 인근에 위치하며, 주위\r\n는 다세대주택, 단독주택, 도시형생활주택, 임야 등이 혼재된 지대임.\n본건 대상물건까지 차량의 접근이 가능하며, 인근에 버스정류장, 지하철역이 소재하는 등 교\r\n통상황은 양호함.\n철근콘크리트구조 철근콘크리트지붕 4층 내 4층 402호로서,\r\n\r\n외벽 : 치장석, 치장벽돌 마감,\r\n내벽 : 벽지 및 일부 타일 마감,\r\n창호 : 샷시창호임.\n도시형생활주택으로 이용중임.\n위생설비, 급·배수설비, 도시가스에 의한 개별난방설비 등을 갖추고 있음.\r\n\r\n\n남측 하향 급경사지에 위치한 사다리형 토지로서, 주거용 건부지로 이용중임.\n대상토지 북동측의 약 4~5미터 포장도로(보도블럭)와 접함.\n도시지역, 제1종일반주거지역, 가축사육제한구역, 교육환경보호구역(2017-12-22), 교육환경\r\n보호구역(학교환경위생정화구역에 대한 최종확인은 관할교육청에 반드시 확인이 필요한 사항\r\n임), 상대보호구역(2017-12-22), 대공방어협조구역(위탁고도:77-257m), 과밀억제권역임.\n없음.\n미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 27646890,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 1,
+        "detailCheckedAt": "2026-09-14T15:57:25.512Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-22"
+      }
+    },
+    {
+      "id": "B000210|2025타경103127|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-06-02",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 250000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-07-07",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 200000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-11",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 160000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 128000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-22",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 5,
+        "failedCount": 3,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 0,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "본건은 서울특별시 중구 오장동 소재 \"\"중부시장\"\" 남동측 인근에 위치하며, 주위는 업무\r\n시설, 도시형생활주택, 근린생활시설 등이 혼재된 지대임.\n본건까지 차량의 출입이 가능하며, 인근에 버스정류장, 지하철역이 소재하는 등 전반적인\r\n교통상황은 양호함.\n철근콘크리트구조 평스라브지붕 15층 내 13층 1305호로서,\r\n외벽 : 석재마감 등, \r\n창호 : 샷시 창호 임.\n관련공부 기준으로 도시형생활주택으로 이용되고 있음.\n위생설비 및 급배수설비, 도시가스설비, 승강기설비, 주차설비, 화재탐지 및 경보설비,\r\n옥내소화전, 스프링클러 설비 등을 갖추고 있음.\n인접지 및 도로 대비 등고평탄한 가장형 토지로서, 주상용 건부지로 이용중임.\n대상토지 북측, 동측, 남측으로 노폭 약6~8 미터 내외의 포장도로에 각각 접함.\n일반상업지역, 가축사육제한구역<가축분뇨의 관리 및 이용에 관한 법률>, 가로구역별 최고\r\n높이 제한지역(2015-08-27)<건축법>, 대공방어협조구역(위탁고도:77-257m)<군사기지 및 군사\r\n시설 보호법>, 과밀억제권역<수도권정 비계획법>, 중점경관관리구역(2016-11-24), 서울도심\r\n(4대문안)임.\n해당사항 없음.\n① 임대관계는 미상임.\r\n② 이해관계인의 폐문부재로 관련공부, 외부관찰 및 표준적, 일반적 상황을 기준으로 본건\r\n   내용표시 하였으니 경매진행 및 참여시 유의바람.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 220000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 1,
+        "detailCheckedAt": "2026-09-14T15:57:35.697Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-22"
+      }
+    },
+    {
+      "id": "B000210|2025타경103111|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-09-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 1128542520,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-22",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 0,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "본건은 서울특별시 종로구 종로2가 소재 \"\"탑골공원\"\" 북서측 인근에 위치하며 부근은 인사동 거리 내 근린생활시설 및 업무시설, 갤러리, 공원 등이 혼재한 지역임.\n본건까지 차량으로 접근이 가능하며, 인근에 버스정류장 및 지하철1호선 '종각역' 및 지하철1,3,5호선 '종로3가역'이 소재하는 등 제반 대중교통 이용편의 정도는 양호함.\n인접필지와 등고평탄한 부정형 토지로서 상업용 건부지로 이용중임.\n본건 토지 북동측으로 노폭 약 17미터 내외의 포장도로에 접함.\n일반상업지역, 도로(접합) 가축사육제한구역<가축분뇨의 관리 및 이용에 관한 법률>, 대공방\r\n어협조구역(위탁고도:54-236m)<군사기지 및 군사시설 보호법>, 정비구역(공평 도시정비형 재\r\n개발구역)<도시 및 주거환경정비법>, 역사문화환경보존지역(서울 탑골공원)<문화유산의 보존\r\n 및 활용에 관한 법률>, 역사문화환경보존지역(2020-12-24)<서울특별시 문화재보호 조례>, \r\n과밀억제권역<수도권정비계획법>, 문화지구<지역문화진흥법> 중점경관관리구역(2016-11-24)\r\n(역사도심), 서울도심((4대문안))\r\n\r\n\n후첨 <건물 감정평가요항표> 참조 바람.\n없 음.\n임대관계는 미상임.\n공부상 목조 기와지붕(현황 벽돌조 및 블록조 기타지붕) 지상2층 건으로서\r\n(사용승인일: 미상)\r\n\r\n 외벽: 자체 인테리어 마감 등\r\n 내벽: 몰탈 위 페인팅 마감 및 인테리어 마감 등\r\n 창호: 알루미늄 샷시 창호 등임.\n상업용(근린생활시설) 건물로 이용중이며\r\n\r\n 1층: 근린생활시설(상호명: 관성필방)\r\n 2층: 근린생활시설(상호명: 카페 트루어스)으로 이용중임.\n기본적인 위생설비 및 급배수설비, 전기설비 등이 있음.\n후첨 <건물개황도> 참조 바람.\n공부상 구조가 목조 기와지붕으로 등재되어 있으나, 현황 벽돌조 및 블록조 기타지붕으로서 상이한 바 이점 참고하시기 바람.\n- 임대관계는 미상임.\r\n\r\n- 일련번호2 건물에 제시외건물이 소재하는 바 감정평가목적을 고려하여, (본 제시외건물의\r\n  설치 및 건축의 적법 여부에 구애됨 없이) 제시외건물의 감정평가액을 별도로 표기하였으\r\n  니 경매 진행 시 참고하시기 바라며, 일반건축물대장 상 위반건축물이 등재(2008.8.13.\r\n  주택과-17627(2008.8.13.)호에 의거 위법건축물 표기 (내역-무단증축))되어 있으므로 이와\r\n  관련한 이행강제금 부과 여부 및 원상회복 의무 발생 여부 등 행정적 사항은 해당 기관에\r\n  반드시 재확인하시기 바람.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 910674799,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 1,
+        "detailCheckedAt": "2026-09-14T15:57:46.567Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-22"
+      }
+    },
+    {
+      "id": "B000210|2025타경103077|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-08-11",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 14025000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 11220000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-22",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 3,
+        "failedCount": 1,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 0,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "본건은 서울특별시 종로구 구기동 소재 「하비에르국제학교」 남동측 인근에 위치하며 주변은 자연림지와 단독주택,다세대주택 등으로 이용되고 있습니다\n본건은 자연림지 및 주택지등으로 위요된 맹지으로의 차량 출입은 불가능하며 급경사지로 출입이 불편하고 제반 대중교통 사정은 불편시 됩니다.\n본건은 급경사지에 위치한 부정형의 토지로 자연림지로 이용되고 있습니다..\n본건은 지적도 및 현황 맹지로 출입이 매우 불편한 상태입니다.\n도시지역,제1종전용주거지역,자연경관지구\r\n가축사육제한구역<가축분뇨의관리및이용에관한법률>,상대보호구역(2004-10-26)<교육환경보호에관한법률>,대공방어협조구역(위탁고도:54-236m)<군사기지및군사시설보호법>,과밀억제권역<수도권정비계획법>,비오톱1등급(2022-04-21)(저촉)\n해당 사항 없음.\n해당사항 없음.\n임대관계 : 미상",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 12547736,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 1,
+        "detailCheckedAt": "2026-09-14T15:57:57.030Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-22"
+      }
+    },
+    {
+      "id": "B000210|2025타경103067|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-09-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 324181150,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-22",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 0,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "본건은 서울특별시 종로구 숭인동 소재 &amp;quot;지하철6호선 창신역&amp;quot; 북동측 인근에 위치하며 주위는 단독주택, 다세대주택 등이 혼재하는 지역으로 제반 주위환경 보통시됨.\n본건 인근에 노선버스 정류장 및 지하철역(지하철6호선 창신역)이 소재하고 있어 제반 대중교통상황은 보통시됨.\n기호(1): 부정형 토지로서 주거용 건부지로 이용중이며 일부 도로로 이용중임. 기호(2): 사다리형 토지로서 주거용 건부지로 이용중임.\n기호(1): 본건 북동측으로 노폭 약15미터 내외, 남동측으로 노폭 약1.6미터 내외의 도로와 접함. 기호(2): 본건 동측으로 노폭 약1.6미터 내외의 도로와 접함.\n기호(1): 도시지역, 제2종일반주거지역(7층이하), 도로(접합), 가축사육제한구역&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역(동신초등학교)&lt;교육환경 보호에 관한 법률&gt;, 대공방어협조구역(위탁고도:54-236m)&lt;군사기지 및 군사시설 보호법&gt;, 역사문화환경보존지역(2020-12-24)&lt;서울특별시 문화재보호 조례&gt;, 과밀억제권역&lt;수도권정비계획법&gt;, 중점경관관리구역(2016-11-24)(주요산 주변). 기호(2): 도시지역, 제2종일반주거지역(7층이하), 가축사육제한구역&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역&lt;교육환경 보호에 관한 법률&gt;, 상대보호구역(동신초등학교)&lt;교육환경 보호에 관한 법률&gt;, 대공방어협조구역(위탁고도:54-236m)&lt;군사기지 및 군사시설 보호법&gt;, 역사문화환경보존지역(2020-12-24)&lt;서울특별시 문화재보호 조례&gt;, 과밀억제권역&lt;수도권정비계획법&gt;, 중점경관관리구역(2016-11-24)(주요산 주변).\n후첨 지적개황도 참고. \n기호(1)토지는 공부상 지목이 대지이나 일부 진입도로 등으로 이용중인 것으로 조사됨.\n1)임대미상임.  2)기호1 토지는 수인이 공유하고 있는 공유지분 토지로서 각각 다른 소유자 5개의 건물이 소재하고 있으며, 건물은 각각 개별등기가 되어 있는 있는 상태로서 구분소유적 공유관계에 있는 토지라고 볼 수도 있으나, 의뢰 대상인 양용호氏 소유의 건물이 해당 토지에 등기되어 있는 것이 아니고, 의뢰인이 위치확정하여 지분평가를 의뢰한 것이 아니므로 집행법원의 요청에 따라 일반 공유토지와 마찬가지로 해당 필지 전체를 기준으로 지분비율에 의거 면적사정하여 감정평가하였음.  3)본건 기호2 토지는 기호1 토지(서울특별시 종로구 숭인동 20-107)를 통한 진입 외에도 남동측 폭 약 1.6미터 내외의 포장도로를 통하여 진출입이 가능한 것으로 확인됨.(후첨 지적개황도 참고)\n세멘부록조 평옥개지붕 1층 건물로서, (사용승인일: 1965-07-10) 외벽: 석재붙임 마감 등 창호: 샷시창호 등임.\n주택으로 이용중인 것으로 조사됨.\n기본적인 급배수설비, 위생설비, 난방설비 등이 갖추어져 있음.\n후첨 건물개황도 참고.\n-\n1)임대미상임. 2)본건 기호3의 현황 면적은 약60㎡로서 공부상 면적 16.89㎡과 차이가 있으나 현장조사시 기존 건물과 제시외 건물의 구분이 모호하여 현황 면적와 공부상 면적의 차이를 제시외 건물로 추정하였으며, 제시외 건물은 구조, 현상, 사용자재, 관리상태 등을 종합적으로 고려하여 원가법으로 감정평가하되 현상 등을 고려하여 관찰감가를 병용하였음. 해당 현황 면적은 현장조사 등을 통해 개략적으로 산출하였음.  ",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 148070100,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 1,
+        "detailCheckedAt": "2026-09-14T15:58:08.116Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-22"
+      }
+    },
+    {
+      "id": "B000210|2025타경103036|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-04-21",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 247000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-06-02",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 197600000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-11",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 247000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 197600000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-22",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 5,
+        "failedCount": 3,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 0,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "본건은 서울특별시 금천구 독산동 소재 \"\"금천문화예술정보학교\"\" 북서측 인근에 위치하며,\r\n주위는 단독주택, 다세대주택 및 근린생활시설 등이 혼재하는 지역임.\n본건까지 차량진입이 가능하며, 남측 인근에 노선버스정류장, 북서측 근거리에 \"\"구로디지\r\n털단지역(2호선)\"\"이 소재하는 바 정류장, 역까지의 거리 및 운행상태 등으로 보아 제반 대\r\n중교통사정은 보통인 편임.\n철근콘크리트구조 (철근)콘크리트지붕 6층 건물 내 제4층 제403호로서,\r\n외 벽 : 석재붙임 등 마감,\r\n창 호 : 하이샷시창호임.\n본건은 다세대주택(방, 거실겸주방, 욕실 등)으로 이용 중임.\n도시가스에 의한 개별난방설비, 승강기설비, 위생설비 및 급배수시설 등이 되어 있음.\r\n\r\n\r\n\n인접지대비 등고평탄한 2필일단의 부정형 토지로서 주상용 건부지로 이용 중임.\n본건 북서측으로 왕복 4차선 포장도로에 접함.\n도시지역, 제2종일반주거지역(7층이하), 가축사육제한구역, 대공방어협조구역(위탁고도:19\r\n4m), 과밀억제권역임.\n없 음.\n임대관계는 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 270000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 1,
+        "detailCheckedAt": "2026-09-14T15:58:18.260Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-22"
+      }
+    },
+    {
+      "id": "B000210|2025타경102929|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-04-21",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 262000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-06-02",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 209600000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-07-07",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 262000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-11",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 209600000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 167680000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-22",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 6,
+        "failedCount": 4,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 0,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "본건은 서울특별시 관악구 신림동 소재 \"\"신림고등학교\"\" 북서측 인근에 위치하며, 주위는 오피스텔, 아파트, 업무용빌딩, 근린생활시설, 학교 등이 소재하는 지역으로서, 주거용으로의 제반 주위 환경은 보통 임.\n본건까지 차량의 진·출입이 가능하며, 인근에 버스정류장, 근거리에 신대방역(지하철 2호선) 등이 소재하는 등 제반 대중교통 상황은 보통임.\n철근콘크리트구조 (철근)콘크리트지붕 지하1층 지상14층 건 중 제 14층 제1401호로서, \r\n외벽 : 석재붙임 마감 등,\r\n내벽 : 미상,\r\n바닥 : 미상,\r\n창호 : 샤시 창호 등 마감 임.\n※ 건축물대장상 건축물현황도 기준\r\n집합건축물대장상 오피스텔(복층형 구조)으로 기재되어 있음.\r\n(후첨'건물내부구조도'참조.)\n기본적인 위생 및 급배수 설비, 도시가스에 의한 개별 난방설비, 승강기설비, 화재설비 및 기계식주차장설비 등을 갖추고 있음.\n본건 토지는 2필지 일단으로 인접토지 대비 등고평탄한 가장형 토지로서, 업무용 건부지로 이용중임.\n본건 토지 서측으로 노폭 약 25미터 내외의 포장도로와 접함.\n신림동 1568-5 :도시지역, 일반상업지역, 지구단위계획구역(난곡사거리지구중심(서울특별시 고시 제2023-315호(2023.07.27.))), 도로(접합), 가축사육제한구역<가축분뇨의 관리 및 이용에 관한 법률>, 대공방어협조구역(위탁고도:194m)<군사기지 및 군사시설 보호법>, 과밀억제권역<수도권정비계획법>, 중점경관관리구역(주요산 주변)\r\n신림동 1568-6 :도시지역, 일반상업지역, 지구단위계획구역(난곡사거리지구중심(서울특별시 고시 제2023-315호(2023.07.27.))), 도로(접합), 가축사육제한구역<가축분뇨의 관리 및 이용에 관한 법률>, 상대보호구역<교육환경 보호에 관한 법률>, 대공방어협조구역(위탁고도:194m)<군사기지 및 군사시설 보호법>, 과밀억제권역<수도권정비계획법>, 중점경관관리구역(주요산 주변)\n-.\n임대 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 275000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 1,
+        "detailCheckedAt": "2026-09-14T15:58:28.991Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-22"
+      }
+    },
+    {
+      "id": "B000210|2025타경102913|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-04-21",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 379000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-06-02",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 303200000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-11",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 379000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 303200000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-22",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 5,
+        "failedCount": 3,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 0,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "대상물건은 서울특별시 관악구 남현동 소재 '사당초등학교' 북서측 인근에 위치하는 부동산으로서, 주위는 다세대주택, 연립주택, 아파트단지, 교육시설 및 근린생활시설 등이 혼재하는 지대이며, 제반 입지여건은 무난함.\n대상까지 차량 진출입이 가능하며, 인근에 버스정류장 및 서울지하철 2,4호선 '사당역'이 근거리에 소재하는 등 대중교통 상황은 보통임.\n철근콘크리트구조 (철근)콘크리트지붕 4층 건물 내 제4층 제403호로서\r\n(사용승인일: 2020.09.07),\r\n-외벽: 석재 붙임 마감 등\r\n-창호: 새시 창호 등임.\n다세대주택으로 이용 중임. (후첨 '건물내부구조도' 참조)\n기본적인 위생설비 및 급배수설비, 난방설비, 소화설비, 화재탐지설비, 승강기설비 등이 구비되어 있음.\r\n\n완경사의 사다리형 토지로서, '공동주택' 건부지로 이용중임.\n북측으로 노폭 약 4m의 포장도로와 접함.\n도시지역, 제2종일반주거지역(7층이하), 가축사육제한구역<가축분뇨의 관리 및 이용에 관한 법률>, 교육환경보호구역(상대/절대정화구역 최종확인은 동작교육청에 반드시 확인이 필요한 사항임)<교육환경 보호에 관한 법률>, 상대보호구역<교육환경 보호에 관한 법률>, 대공방어협조구역(위탁고도:150m)<군사기지 및 군사시설 보호법>, 과밀억제권역<수도권정비계획법>, 중점경관관리구역(주요산 주변) 임.\n-\n-",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 363213416,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 1,
+        "detailCheckedAt": "2026-09-14T15:58:39.476Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-22"
+      }
+    },
+    {
+      "id": "B000210|2025타경102896|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-06-02",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 314000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-07-07",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 251200000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-11",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 200960000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-15",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "경매법정(4별관 211호)",
+            "amount": 314000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-22",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "4별관 3층 7호 법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 5,
+        "failedCount": 3,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 0,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "본건은 서울특별시 관악구 봉천동 소재‘서울대입구역(지하철 2호선)’북측 인근에 위치하며\r\n, 주위는 다세대주택, 아파트, 각종 근린생활시설 및 학교 등이 소재한 주거지대임.\n본건까지 차량의 접근이 가능하며, 인근에 버스정류장 및 지하철역(2호선) 서울대입구역이 \r\n소재하여 대중교통 상황은 무난함.\n철근콘크리트 및 벽돌조 슬래브지붕 3층 건물 내 제3층 제302호로,\r\n(사용승인일 1991.10.28)\r\n\r\n외벽 : 벽돌붙임 등 마감,\r\n\r\n창호 : 알루미늄샷시 창호임.\n다세대주택으로 이용중임.\r\n상세내역은 후첨 '내부구조도' 참고.\n위생설비, 급배수설비, 도시가스 및 난방설비 등이 구비되어 있음.\r\n\n세장형의 토지로 다세대주택 건부지로 이용중임.\n본건 북측 및 남측으로 폭 약 4미터 내외의 포장도로에 각각 접함.\n제2종일반주거지역((7층 이하)), 가축사육제한구역<가축분뇨의 관리 및 이용에 관한 법률>, \r\n대공방어협조구역(위탁고도:194m)<군사기지 및 군사시설 보호법>, 과밀억제권역<수도권정비\r\n계획법>임.\n없음.\n임대관계 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 300511294,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 1,
+        "detailCheckedAt": "2026-09-14T15:58:49.923Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-22"
+      }
+    }
+  ],
+  "statePatch": {
+    "propertyHistoryFailureCount": 1,
+    "propertyHistoryYear": 2015,
+    "propertyHistoryMonth": 8,
+    "propertyHistoryPage": 1,
+    "propertyHistoryLastRun": "2026-09-14T15:53:39.536Z",
+    "propertyHistoryLastError": "court gate held by pid 21412 (detail-enrich:/pgj/pgj15B/selectAuctnCsSrchRslt.on) since 2026-09-14T15:53:37.164Z",
+    "saleNoticeDeferred": [],
+    "saleNoticeFailures": {
+      "search|2026-08|B000210": 0,
+      "search|2026-08|B000211": 0,
+      "search|2026-08|B000215": 0,
+      "search|2026-08|B000212": 1,
+      "search|2026-08|B000280": 1,
+      "search|2026-08|B000213": 0,
+      "search|2026-08|B000214": 0,
+      "search|2026-08|B214807": 0,
+      "search|2026-08|B214804": 0,
+      "search|2026-08|B000240": 0,
+      "search|2026-08|B000241": 0,
+      "search|2026-08|B000250": 0,
+      "search|2026-08|B000251": 0,
+      "search|2026-08|B000252": 0,
+      "search|2026-08|B000253": 0,
+      "search|2026-08|B250826": 0,
+      "search|2026-08|B000254": 0,
+      "search|2026-08|B000260": 0
+    },
+    "saleNoticeBackfillYear": 2026,
+    "saleNoticeBackfillMonth": 8,
+    "saleNoticeBackfillOffset": 0,
+    "saleNoticeBackfillLastRun": "2026-09-09T08:32:07.978Z",
+    "saleNoticeBackfillLastError": "B000212 2026-08: court gate held by pid 9380 (rslt-probe) since 2026-09-09T08:32:03.243Z",
+    "saleNoticeCourtOffsets": {
+      "2026-08|B000210": -1,
+      "2026-08|B000211": -1,
+      "2026-08|B000215": -1,
+      "2026-08|B000212": -1,
+      "2026-08|B000213": -1,
+      "2026-08|B000214": -1,
+      "2026-08|B214807": -1,
+      "2026-08|B214804": -1,
+      "2026-08|B000240": -1,
+      "2026-08|B000241": -1,
+      "2026-08|B000250": -1,
+      "2026-08|B000251": -1,
+      "2026-08|B000252": -1,
+      "2026-08|B000253": -1,
+      "2026-08|B250826": -1,
+      "2026-08|B000254": -1,
+      "2026-08|B000260": -1
+    },
+    "saleNoticeBackfillCourtIndex": 17,
+    "currentSweepOffsets": {
+      "2026-09|B000210": -1,
+      "2026-09|B000211": -1,
+      "2026-09|B000215": -1,
+      "2026-09|B000212": -1,
+      "2026-09|B000213": -1,
+      "2026-09|B000263": -1,
+      "2026-09|B000264": -1,
+      "2026-09|B000270": -1,
+      "2026-09|B000271": -1,
+      "2026-09|B000272": -1,
+      "2026-09|B000273": -1,
+      "2026-09|B000280": -1,
+      "2026-09|B000281": -1,
+      "2026-09|B000282": -1,
+      "2026-09|B000283": 3,
+      "2026-09|B000315": -1,
+      "2026-09|B000316": -1,
+      "2026-09|B000317": -1,
+      "2026-09|B000320": -1,
+      "2026-09|B000410": -1,
+      "2026-09|B000412": -1,
+      "2026-09|B000414": -1,
+      "2026-09|B000411": -1,
+      "2026-09|B000420": -1,
+      "2026-09|B000431": -1,
+      "2026-09|B000421": -1,
+      "2026-09|B000422": -1,
+      "2026-09|B000423": -1,
+      "2026-09|B000424": -1,
+      "2026-09|B000510": -1,
+      "2026-09|B000511": -1,
+      "2026-09|B000512": -1,
+      "2026-09|B000513": -1,
+      "2026-09|B000514": -1,
+      "2026-09|B000520": -1,
+      "2026-09|B000521": -1,
+      "2026-09|B000522": -1,
+      "2026-09|B000523": -1,
+      "2026-09|B000530": -1,
+      "2026-10|B000210": -1,
+      "2026-10|B000211": -1,
+      "2026-10|B000215": -1,
+      "2026-10|B000212": -1,
+      "2026-10|B000213": -1,
+      "2026-10|B000214": -1,
+      "2026-10|B214807": -1
+    },
+    "currentSweepFailures": {
+      "search|2026-09|B000210": 0,
+      "2026-09|B000210|0": 0,
+      "2026-09|B000210|1": 0,
+      "2026-09|B000210|2": 0,
+      "2026-09|B000210|3": 0,
+      "search|2026-09|B000211": 0,
+      "2026-09|B000211|0": 0,
+      "2026-09|B000211|1": 0,
+      "2026-09|B000211|2": 0,
+      "2026-09|B000211|3": 0,
+      "search|2026-09|B000215": 0,
+      "2026-09|B000215|0": 0,
+      "2026-09|B000215|1": 0,
+      "search|2026-09|B000212": 0,
+      "2026-09|B000212|0": 0,
+      "2026-09|B000212|1": 0,
+      "2026-09|B000212|2": 0,
+      "2026-09|B000212|3": 0,
+      "2026-09|B000212|4": 0,
+      "2026-09|B000212|5": 0,
+      "search|2026-09|B000213": 0,
+      "2026-09|B000213|0": 0,
+      "2026-09|B000213|1": 0,
+      "search|2026-09|B000214": 2,
+      "search|2026-09|B214807": 2,
+      "search|2026-09|B214804": 1,
+      "search|2026-09|B000240": 1,
+      "search|2026-09|B000241": 1,
+      "search|2026-09|B000250": 1,
+      "search|2026-09|B000251": 1,
+      "search|2026-09|B000252": 1,
+      "search|2026-09|B000253": 1,
+      "search|2026-09|B250826": 1,
+      "search|2026-09|B000254": 1,
+      "search|2026-09|B000260": 1,
+      "search|2026-09|B000261": 1,
+      "search|2026-09|B000262": 1,
+      "search|2026-09|B000263": 0,
+      "2026-09|B000263|0": 0,
+      "search|2026-09|B000264": 0,
+      "2026-09|B000264|0": 0,
+      "2026-09|B000264|1": 0,
+      "search|2026-09|B000270": 0,
+      "2026-09|B000270|0": 0,
+      "2026-09|B000270|1": 0,
+      "2026-09|B000270|2": 0,
+      "2026-09|B000270|3": 0,
+      "search|2026-09|B000271": 0,
+      "2026-09|B000271|0": 0,
+      "search|2026-09|B000272": 0,
+      "2026-09|B000272|0": 0,
+      "search|2026-09|B000273": 0,
+      "2026-09|B000273|0": 0,
+      "2026-09|B000273|1": 0,
+      "search|2026-09|B000280": 0,
+      "2026-09|B000280|0": 0,
+      "2026-09|B000280|1": 0,
+      "2026-09|B000280|2": 0,
+      "2026-09|B000280|3": 0,
+      "2026-09|B000280|4": 0,
+      "search|2026-09|B000281": 0,
+      "2026-09|B000281|0": 0,
+      "2026-09|B000281|1": 0,
+      "search|2026-09|B000282": 0,
+      "search|2026-09|B000283": 1,
+      "2026-09|B000283|0": 0,
+      "2026-09|B000283|1": 0,
+      "2026-09|B000283|2": 0,
+      "search|2026-09|B000284": 1,
+      "search|2026-09|B000285": 1,
+      "search|2026-09|B000310": 1,
+      "search|2026-09|B000311": 1,
+      "search|2026-09|B000312": 1,
+      "search|2026-09|B000313": 1,
+      "search|2026-09|B000314": 1,
+      "search|2026-09|B000315": 0,
+      "2026-09|B000315|0": 0,
+      "search|2026-09|B000316": 0,
+      "2026-09|B000316|0": 0,
+      "2026-09|B000316|1": 0,
+      "search|2026-09|B000317": 0,
+      "2026-09|B000317|0": 0,
+      "2026-09|B000317|1": 0,
+      "search|2026-09|B000320": 0,
+      "2026-09|B000320|0": 0,
+      "2026-09|B000320|1": 0,
+      "2026-09|B000320|2": 0,
+      "2026-09|B000320|3": 0,
+      "search|2026-09|B000410": 0,
+      "2026-09|B000410|0": 0,
+      "2026-09|B000410|1": 0,
+      "search|2026-09|B000412": 0,
+      "2026-09|B000412|0": 0,
+      "2026-09|B000412|1": 0,
+      "2026-09|B000412|2": 0,
+      "search|2026-09|B000414": 0,
+      "2026-09|B000414|0": 0,
+      "search|2026-09|B000411": 0,
+      "2026-09|B000411|0": 0,
+      "2026-09|B000411|1": 0,
+      "2026-09|B000411|2": 0,
+      "2026-09|B000411|3": 0,
+      "2026-09|B000411|4": 0,
+      "2026-09|B000411|5": 0,
+      "2026-09|B000411|6": 0,
+      "search|2026-09|B000420": 0,
+      "2026-09|B000420|0": 0,
+      "2026-09|B000420|1": 0,
+      "2026-09|B000420|2": 0,
+      "search|2026-09|B000431": 0,
+      "2026-09|B000431|0": 0,
+      "2026-09|B000431|1": 0,
+      "search|2026-09|B000421": 0,
+      "2026-09|B000421|0": 0,
+      "2026-09|B000421|1": 0,
+      "2026-09|B000421|2": 0,
+      "search|2026-09|B000422": 0,
+      "2026-09|B000422|0": 0,
+      "2026-09|B000422|1": 0,
+      "search|2026-09|B000423": 0,
+      "2026-09|B000423|0": 0,
+      "search|2026-09|B000424": 0,
+      "search|2026-09|B000510": 0,
+      "2026-09|B000510|0": 0,
+      "2026-09|B000510|1": 0,
+      "2026-09|B000510|2": 0,
+      "2026-09|B000510|3": 0,
+      "2026-09|B000510|4": 0,
+      "2026-09|B000510|5": 0,
+      "search|2026-09|B000511": 0,
+      "2026-09|B000511|0": 0,
+      "2026-09|B000511|1": 0,
+      "2026-09|B000511|2": 0,
+      "search|2026-09|B000512": 0,
+      "2026-09|B000512|0": 0,
+      "2026-09|B000512|1": 0,
+      "search|2026-09|B000513": 0,
+      "2026-09|B000513|0": 0,
+      "search|2026-09|B000514": 0,
+      "2026-09|B000514|0": 0,
+      "search|2026-09|B000520": 0,
+      "2026-09|B000520|0": 0,
+      "2026-09|B000520|1": 0,
+      "search|2026-09|B000521": 0,
+      "2026-09|B000521|0": 0,
+      "search|2026-09|B000522": 0,
+      "2026-09|B000522|0": 0,
+      "search|2026-09|B000523": 0,
+      "search|2026-09|B000530": 0,
+      "2026-09|B000530|0": 0,
+      "2026-09|B000530|1": 0,
+      "2026-09|B000530|2": 0,
+      "2026-09|B000530|3": 0,
+      "search|2026-10|B000210": 0,
+      "search|2026-10|B000211": 0,
+      "search|2026-10|B000215": 0,
+      "search|2026-10|B000212": 0,
+      "search|2026-10|B000213": 0,
+      "search|2026-10|B000214": 0,
+      "search|2026-10|B214807": 0
+    },
+    "currentSweepMonthSlot": 1,
+    "currentSweepCourtIndex": 7,
+    "currentSweepLastRun": "2026-09-08T23:44:12.885Z",
+    "currentSweepLastError": null,
+    "saleNoticeBackfillVersion": 2,
+    "currentSweepDeferred": [
+      "2026-09|B214804",
+      "2026-09|B000240",
+      "2026-09|B000241",
+      "2026-09|B000250",
+      "2026-09|B000251",
+      "2026-09|B000252",
+      "2026-09|B000253",
+      "2026-09|B250826",
+      "2026-09|B000254",
+      "2026-09|B000260",
+      "2026-09|B000261",
+      "2026-09|B000262",
+      "2026-09|B000283",
+      "2026-09|B000284",
+      "2026-09|B000285",
+      "2026-09|B000310",
+      "2026-09|B000311",
+      "2026-09|B000312",
+      "2026-09|B000313",
+      "2026-09|B000314",
+      "2026-10|B000412",
+      "2026-10|B000510",
+      "2026-10|B000421",
+      "2026-10|B000511"
+    ]
+  }
+}
