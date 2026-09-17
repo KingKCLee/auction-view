@@ -51,9 +51,7 @@ const when = t => (t ? new Date(t).toLocaleString('ko-KR', { timeZone: 'Asia/Seo
 
 const COVERAGE_LABELS = {
   base_info: '기본정보', sale_statement: '매각물건명세서', status_report: '현황조사서',
-  appraisal_summary: '감정평가요항', photos: '물건사진', winning_price: '낙찰가',
-  // 2026-09-15 재수집으로 새로 채우는 축. 소급 재추출이 안 되므로 진도를 여기서 본다.
-  rights: '권리관계(명세서)', occupancy: '점유·임차인현황'
+  appraisal_summary: '감정평가요항', photos: '물건사진', winning_price: '낙찰가'
 };
 
 function tile(label, value, cls) {

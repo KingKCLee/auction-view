@@ -12,7 +12,6 @@ on:
       - 'test-cycle-health.js'
       - 'test-macos-workflow-portability.js'
       - 'test-property-history-cursor.js'
-      - 'test-publish-staging.js'
       - 'property-history-discovery-v2.js'
       - 'property-history-cursor-lib.js'
       - 'reconcile-property-history-cursor.js'
@@ -56,8 +55,6 @@ jobs:
         run: node test-property-history-cursor.js
       - name: Verify macOS rescue portability guard
         run: node test-macos-workflow-portability.js
-      - name: Verify publish staging guard
-        run: node test-publish-staging.js
       - name: Install Chromium for official browser fallback
         run: npx playwright install chromium
 
@@ -136,7 +133,7 @@ jobs:
 
           git config user.name "court-auction-bot"
           git config user.email "court-auction-bot@users.noreply.github.com"
-          git add -A -- data docs
+          git add -A data/auctions.json data/stats.json data/state.json data/property-history-cursor.json docs data/worker-deltas 2>/dev/null || true
           if ! git diff --cached --quiet; then
             git commit -m "data: reconciled hourly discovery $(date -u +'%Y-%m-%dT%H:%MZ')"
             git push origin HEAD:main
@@ -169,7 +166,6 @@ jobs:
           node test-cycle-health.js
           node test-property-history-cursor.js
           node test-macos-workflow-portability.js
-          node test-publish-staging.js
       - name: Install Chromium for official browser fallback
         run: npx playwright install chromium
       - name: Retry official sale-notice sweep from a separate hosted network
@@ -224,7 +220,7 @@ jobs:
 
           git config user.name "court-auction-bot"
           git config user.email "court-auction-bot@users.noreply.github.com"
-          git add -A -- data docs
+          git add -A data/auctions.json data/stats.json data/state.json data/property-history-cursor.json docs data/worker-deltas 2>/dev/null || true
           if ! git diff --cached --quiet; then
             git commit -m "data: reconciled macOS rescue $(date -u +'%Y-%m-%dT%H:%MZ')"
             git push origin HEAD:main

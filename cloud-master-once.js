@@ -113,30 +113,6 @@ function unsyncMergeScripts() {
   }
 }
 
-/**
- * 화면이 읽는 것(KV)을 checkout 의 canonical 로 맞춘다.
- *
- * 병합 여부와 무관하게 부른다 - 신선도는 canonical 을 따라야 하고, 병합을 누가
- * 했는지는 상관이 없다. 실패해도 던지지 않는다: 좋은 병합을 되돌릴 이유가 없다.
- */
-function refreshWeb(reason) {
-  try {
-    node('export-for-web.js');
-    const canUpload = process.env.CLOUDFLARE_ACCOUNT_ID && process.env.CLOUDFLARE_API_TOKEN
-      && process.env.CLOUDFLARE_KV_NAMESPACE_ID;
-    if (!canUpload) return `exported; upload skipped (no Cloudflare credentials in env) [${reason}]`;
-    node('upload-web-export.js');
-    return `exported and uploaded [${reason}]`;
-  } catch (e) {
-    const msg = `failed: ${e.message || e} [${reason}]`;
-    console.error(`[cloud-master] web export ${msg}`);
-    return msg;
-  } finally {
-    /* 내보내기가 작업본에 남긴 것을 치운다 - 다음 pull --rebase 가 더러운 트리에서 멈춘다. */
-    restoreData('after web export');
-  }
-}
-
 function restoreData(reason) {
   log(`[cloud-master] restoring canonical data/ (${reason})`);
   git(['checkout', '--', 'data'], { check: false });
@@ -239,17 +215,7 @@ function main() {
   const staged = git(['diff', '--cached', '--quiet'], { check: false });
   if (staged.status === 0) {
     log('[cloud-master] nothing staged; exiting without commit');
-    /*
-     * ★병합할 게 없다고 화면까지 옛것으로 두지 않는다.
-     *
-     * 2026-09-15 실측: 델타 병합을 GitHub Actions(worker-delta-merge)가 먼저
-     * 가져가면서, 30분 뒤 도는 이 작업은 매번 "nothing staged" 로 여기서 끝났다.
-     * 그런데 KV 갱신이 이 아래에만 있어서 **12시간 동안 화면 데이터가 멈췄다**
-     * (라이브 12,111 vs 창고 12,231). KV 의 신선도는 "이번에 병합했는가"가 아니라
-     * "canonical 이 움직였는가"를 따라야 한다.
-     */
-    const web = refreshWeb('no merge this run');
-    console.log(JSON.stringify({ mode: 'cloud-master-once', ok: true, committed: false, webExport: web, before, after }, null, 2));
+    console.log(JSON.stringify({ mode: 'cloud-master-once', ok: true, committed: false, before, after }, null, 2));
     return;
   }
 
@@ -313,7 +279,17 @@ function main() {
 
   // Refresh what the screens read. A failure here must not undo a good merge, so
   // it is reported rather than thrown.
-  const webExport = refreshWeb('after merge');
+  let webExport = null;
+  try {
+    node('export-for-web.js');
+    const canUpload = process.env.CLOUDFLARE_ACCOUNT_ID && process.env.CLOUDFLARE_API_TOKEN
+      && process.env.CLOUDFLARE_KV_NAMESPACE_ID;
+    if (canUpload) { node('upload-web-export.js'); webExport = 'exported and uploaded'; }
+    else { webExport = 'exported; upload skipped (no Cloudflare credentials in env)'; }
+  } catch (e) {
+    webExport = `failed: ${e.message || e}`;
+    console.error(`[cloud-master] web export ${webExport}`);
+  }
 
   console.log(JSON.stringify({
     mode: 'cloud-master-once',

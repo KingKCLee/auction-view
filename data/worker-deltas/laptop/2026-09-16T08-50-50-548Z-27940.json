@@ -1,0 +1,1338 @@
+{
+  "version": 2,
+  "worker": "laptop",
+  "createdAt": "2026-09-16T08:50:50.548Z",
+  "batchSize": 24,
+  "exitCode": 0,
+  "discoveryStatus": "current:completed|history:completed|property:completed",
+  "additions": [],
+  "patches": [
+    {
+      "id": "B000431|2025타경20773|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-03-26",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 153335000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-04-30",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 107335000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-06-04",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 75135000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-07-09",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 52595000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-13",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 36817000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-17",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 25772000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-10-01",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "마산지원 법정 제122호",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 7,
+        "failedCount": 5,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1,
+          "listing": 1,
+          "parties": 1
+        },
+        "appraisalSummary": "본건은 경상남도 창원시 마산합포구 진북면 신촌리 소재 \"\"신촌경로당\"\" 북측에 위치하며,\r\n주위는 도시근교 자연림, 공장, 단독주택 등으로 형성된 지대임.\n대상 물건까지 차량의 진출입은 불가하며, 대중교통사정은 보통시 됨.\n남동향의 하향 경사지대 내 부정형 산림으로서 임야, 묘지, 종교용지로 이용중임.\n지적도상은 도로에 접하는 상태이나 현황은 도로의 기능을 상실한 맹지임.\n계획관리지역 , 농림지역, 가축사육제한구역(그외지역 300m제한 조례참조)<가축분뇨의 관리 및 이용에 관한 법률>, 가축사육제한구역(그외지역 400m제한 조례참조)<가축분뇨의 관리 및 이용에 관한 법률>, 가축사육제한구역(그외지역 500m제한 조례참조)<가축분뇨의 관리 및 이용에 관한 법률>, 보전산지<산지관리법>, 임업용산지<산지관리법>, 준보전산지<산지관리법>임.\n별첨사진용지와 같이 제시외 불상 등이 소재함.\n공부상 임야이나 현황, 임야, 묘지, 종교용지임.\n실지조사일 현재 이해관계인 부재로 임대관계 및 기타는 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 78124663,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": 19041,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-16T08:48:08.776Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-10-01"
+      }
+    },
+    {
+      "id": "B000431|2025타경20724|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-03-26",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 100000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-04-30",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 70000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-06-04",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 49000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-07-09",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 34300000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-13",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 24010000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-17",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 16807000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-10-01",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "마산지원 법정 제122호",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 7,
+        "failedCount": 5,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1,
+          "listing": 1,
+          "parties": 1
+        },
+        "appraisalSummary": "대상물건은 경상남도 함안군 칠원읍 오곡리 소재 '호암초등학교' 북측 인근에 위치하는 구분건물 제지하층 제1호 \r\n외 3개호로서, 주위는 학교, 아파트단지 및 근린생활시설 등이 혼재하는 지역으로 제반 주위환경은 보통임.\r\n\n대상물건까지 차량접근 가능하며, 관내 제반교통사정은 보통임.\n1)~4) : 철근콘크리트구조 (철근)콘크리트지붕 지하1층~지상5층건중 제지하층 제1호외 3개호로서,\r\n        외 벽 : 모르타르위 페인팅, 치장타일 및 치장벽돌 마감\r\n        내 벽 : 인테리어 및 석고보드위 페인팅 및 타일 마감\r\n        바 닥 : 타일마감\r\n        창 호 : 새시창호.\n1)~4) : 공히 근린생활시설로 이용중임.\n공동 위생설비, 급.배수설비, 승강기설비, 소화전설비, 화재탐지설비, 경보설비 및 스프링클러 설비 등을 갖추고 있음.\n대지권의 목적인 토지는 세장형의 토지로서 '주상용건부지'로 이용중임. \n대상물건 남측으로 노폭 약 12미터 내외, 서측으로 노폭 약 8미터 내외의 포장도로와 접함.\n계획관리지역, 주거개발진흥지구, 상업용지, 지구단위계획구역, 소로2류(폭 8m~10m)(접합), 중로3류(폭 12m\r\n~15m)(접합), 가축사육제한구역(2022-12-16)(전부제한)<가축분뇨의 관리 및 이용에 관한 법률>, 상대보호구역\r\n<교육환경 보호에 관한 법률>, 상대보호구역(2022-02-15)<교육환경 보호에 관한 법률>,절대보호구역<교육환경 \r\n보호에 관한 법률>, 절대보호구역(2022-02-15)<교육환경 보호에 관한 법률>\r\n\r\n\n없음.\n┌임대관계 : 미상임.\r\n└기    타 : ---- ",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 450000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": 29.4272,
+        "buildingArea": 44.67,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-16T08:48:40.482Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-10-01"
+      }
+    },
+    {
+      "id": "B000431|2025타경20724|2",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-03-26",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 115000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-04-30",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 80500000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-06-04",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 56350000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-07-09",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 39445000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-13",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 27612000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-17",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 19328000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-10-01",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "마산지원 법정 제122호",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 7,
+        "failedCount": 5,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1,
+          "listing": 1,
+          "parties": 1
+        },
+        "appraisalSummary": "대상물건은 경상남도 함안군 칠원읍 오곡리 소재 '호암초등학교' 북측 인근에 위치하는 구분건물 제지하층 제1호 \r\n외 3개호로서, 주위는 학교, 아파트단지 및 근린생활시설 등이 혼재하는 지역으로 제반 주위환경은 보통임.\r\n\n대상물건까지 차량접근 가능하며, 관내 제반교통사정은 보통임.\n1)~4) : 철근콘크리트구조 (철근)콘크리트지붕 지하1층~지상5층건중 제지하층 제1호외 3개호로서,\r\n        외 벽 : 모르타르위 페인팅, 치장타일 및 치장벽돌 마감\r\n        내 벽 : 인테리어 및 석고보드위 페인팅 및 타일 마감\r\n        바 닥 : 타일마감\r\n        창 호 : 새시창호.\n1)~4) : 공히 근린생활시설로 이용중임.\n공동 위생설비, 급.배수설비, 승강기설비, 소화전설비, 화재탐지설비, 경보설비 및 스프링클러 설비 등을 갖추고 있음.\n대지권의 목적인 토지는 세장형의 토지로서 '주상용건부지'로 이용중임. \n대상물건 남측으로 노폭 약 12미터 내외, 서측으로 노폭 약 8미터 내외의 포장도로와 접함.\n계획관리지역, 주거개발진흥지구, 상업용지, 지구단위계획구역, 소로2류(폭 8m~10m)(접합), 중로3류(폭 12m\r\n~15m)(접합), 가축사육제한구역(2022-12-16)(전부제한)<가축분뇨의 관리 및 이용에 관한 법률>, 상대보호구역\r\n<교육환경 보호에 관한 법률>, 상대보호구역(2022-02-15)<교육환경 보호에 관한 법률>,절대보호구역<교육환경 \r\n보호에 관한 법률>, 절대보호구역(2022-02-15)<교육환경 보호에 관한 법률>\r\n\r\n\n없음.\n┌임대관계 : 미상임.\r\n└기    타 : ---- ",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 450000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": 33.839,
+        "buildingArea": 51.3675,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-16T08:49:12.820Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-10-01"
+      }
+    },
+    {
+      "id": "B000431|2025타경20724|3",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-03-26",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 172000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-04-30",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 120400000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-06-04",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 84280000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-07-09",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 58996000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-13",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 41297000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-17",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 28908000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-10-01",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "마산지원 법정 제122호",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 7,
+        "failedCount": 5,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1,
+          "listing": 1,
+          "parties": 1
+        },
+        "appraisalSummary": "대상물건은 경상남도 함안군 칠원읍 오곡리 소재 '호암초등학교' 북측 인근에 위치하는 구분건물 제지하층 제1호 \r\n외 3개호로서, 주위는 학교, 아파트단지 및 근린생활시설 등이 혼재하는 지역으로 제반 주위환경은 보통임.\r\n\n대상물건까지 차량접근 가능하며, 관내 제반교통사정은 보통임.\n1)~4) : 철근콘크리트구조 (철근)콘크리트지붕 지하1층~지상5층건중 제지하층 제1호외 3개호로서,\r\n        외 벽 : 모르타르위 페인팅, 치장타일 및 치장벽돌 마감\r\n        내 벽 : 인테리어 및 석고보드위 페인팅 및 타일 마감\r\n        바 닥 : 타일마감\r\n        창 호 : 새시창호.\n1)~4) : 공히 근린생활시설로 이용중임.\n공동 위생설비, 급.배수설비, 승강기설비, 소화전설비, 화재탐지설비, 경보설비 및 스프링클러 설비 등을 갖추고 있음.\n대지권의 목적인 토지는 세장형의 토지로서 '주상용건부지'로 이용중임. \n대상물건 남측으로 노폭 약 12미터 내외, 서측으로 노폭 약 8미터 내외의 포장도로와 접함.\n계획관리지역, 주거개발진흥지구, 상업용지, 지구단위계획구역, 소로2류(폭 8m~10m)(접합), 중로3류(폭 12m\r\n~15m)(접합), 가축사육제한구역(2022-12-16)(전부제한)<가축분뇨의 관리 및 이용에 관한 법률>, 상대보호구역\r\n<교육환경 보호에 관한 법률>, 상대보호구역(2022-02-15)<교육환경 보호에 관한 법률>,절대보호구역<교육환경 \r\n보호에 관한 법률>, 절대보호구역(2022-02-15)<교육환경 보호에 관한 법률>\r\n\r\n\n없음.\n┌임대관계 : 미상임.\r\n└기    타 : ---- ",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 450000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "3",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": 14.5852,
+        "buildingArea": 22.14,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-16T08:49:45.221Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-10-01"
+      }
+    },
+    {
+      "id": "B000431|2025타경20724|4",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-03-26",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 172000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-04-30",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 120400000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-06-04",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 84280000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-07-09",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 58996000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-13",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 41297000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-17",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 28908000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-10-01",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "마산지원 법정 제122호",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 7,
+        "failedCount": 5,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1,
+          "listing": 1,
+          "parties": 1
+        },
+        "appraisalSummary": "대상물건은 경상남도 함안군 칠원읍 오곡리 소재 '호암초등학교' 북측 인근에 위치하는 구분건물 제지하층 제1호 \r\n외 3개호로서, 주위는 학교, 아파트단지 및 근린생활시설 등이 혼재하는 지역으로 제반 주위환경은 보통임.\r\n\n대상물건까지 차량접근 가능하며, 관내 제반교통사정은 보통임.\n1)~4) : 철근콘크리트구조 (철근)콘크리트지붕 지하1층~지상5층건중 제지하층 제1호외 3개호로서,\r\n        외 벽 : 모르타르위 페인팅, 치장타일 및 치장벽돌 마감\r\n        내 벽 : 인테리어 및 석고보드위 페인팅 및 타일 마감\r\n        바 닥 : 타일마감\r\n        창 호 : 새시창호.\n1)~4) : 공히 근린생활시설로 이용중임.\n공동 위생설비, 급.배수설비, 승강기설비, 소화전설비, 화재탐지설비, 경보설비 및 스프링클러 설비 등을 갖추고 있음.\n대지권의 목적인 토지는 세장형의 토지로서 '주상용건부지'로 이용중임. \n대상물건 남측으로 노폭 약 12미터 내외, 서측으로 노폭 약 8미터 내외의 포장도로와 접함.\n계획관리지역, 주거개발진흥지구, 상업용지, 지구단위계획구역, 소로2류(폭 8m~10m)(접합), 중로3류(폭 12m\r\n~15m)(접합), 가축사육제한구역(2022-12-16)(전부제한)<가축분뇨의 관리 및 이용에 관한 법률>, 상대보호구역\r\n<교육환경 보호에 관한 법률>, 상대보호구역(2022-02-15)<교육환경 보호에 관한 법률>,절대보호구역<교육환경 \r\n보호에 관한 법률>, 절대보호구역(2022-02-15)<교육환경 보호에 관한 법률>\r\n\r\n\n없음.\n┌임대관계 : 미상임.\r\n└기    타 : ---- ",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 450000000,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "4",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": 14.5852,
+        "buildingArea": 22.14,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-16T08:50:16.626Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-10-01"
+      }
+    },
+    {
+      "id": "B000431|2025타경20720|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-03-26",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 14241600,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-04-30",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 9969000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-06-04",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 6978000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-07-09",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 4885000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-13",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 3420000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-17",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "마산지원 법정 제122호",
+            "amount": 2394000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-10-01",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "마산지원 법정 제122호",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 7,
+        "failedCount": 5,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1,
+          "listing": 1,
+          "parties": 1
+        },
+        "appraisalSummary": "본건은 경상남도 함안군 군북면 유현리 소재 '함안휴게소' 남동측에 위치하며 주위는 중소규모의 공장, 농경지, 임야 등이 혼재하며, 제반 주위환경은 보통임.\n평가대상 토지까지 차량진입은 불가능하며, 제반 대중교통사정은 다소 불편한 편임.\n평가대상 토지는 남동 하향경사지대에 부정형의 토지로서 '묵전'으로 이용중임.\n평가대상 토지는 지적도상 맹지임.\n생산관리지역, 가축사육제한구역(2022-12-16)(일부제한700m)<가축분뇨의 관리 및 이용에 관한 법률>, 영농여건불리농지임.\n해당사항 없음.\r\n\r\n\n해당사항 없음.\n임대관계 : 미상임.\r\n기    타 : 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 34698173,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": 387,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-16T08:50:49.152Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-10-01"
+      }
+    },
+    {
+      "id": "B000411|2025타경1511|4",
+      "set": {
+        "detailCheckedAt": "2026-09-16T08:44:05.535Z"
+      }
+    },
+    {
+      "id": "B000411|2025타경1468|1",
+      "set": {
+        "detailCheckedAt": "2026-09-16T08:44:16.240Z"
+      }
+    },
+    {
+      "id": "B000411|2025타경1450|1",
+      "set": {
+        "detailCheckedAt": "2026-09-16T08:44:26.947Z"
+      }
+    },
+    {
+      "id": "B000212|2025타경13848|1",
+      "set": {
+        "detailCheckedAt": "2026-09-16T08:44:48.048Z"
+      }
+    },
+    {
+      "id": "B000212|2025타경13585|1",
+      "set": {
+        "detailCheckedAt": "2026-09-16T08:45:08.878Z"
+      }
+    },
+    {
+      "id": "B000411|2025타경1345|1",
+      "set": {
+        "detailCheckedAt": "2026-09-16T08:45:19.676Z"
+      }
+    },
+    {
+      "id": "B000212|2025타경13420|1",
+      "set": {
+        "detailCheckedAt": "2026-09-16T08:45:29.848Z"
+      }
+    },
+    {
+      "id": "B000212|2025타경13363|1",
+      "set": {
+        "detailCheckedAt": "2026-09-16T08:45:40.912Z"
+      }
+    },
+    {
+      "id": "B000212|2025타경13337|1",
+      "set": {
+        "detailCheckedAt": "2026-09-16T08:45:50.646Z"
+      }
+    },
+    {
+      "id": "B000212|2025타경13300|1",
+      "set": {
+        "detailCheckedAt": "2026-09-16T08:46:02.041Z"
+      }
+    },
+    {
+      "id": "B000212|2025타경13290|1",
+      "set": {
+        "detailCheckedAt": "2026-09-16T08:46:12.254Z"
+      }
+    },
+    {
+      "id": "B000411|2025타경1329|1",
+      "set": {
+        "detailCheckedAt": "2026-09-16T08:46:22.354Z"
+      }
+    },
+    {
+      "id": "B000411|2025타경1326|1",
+      "set": {
+        "detailCheckedAt": "2026-09-16T08:46:33.174Z"
+      }
+    },
+    {
+      "id": "B000212|2025타경13182|1",
+      "set": {
+        "detailCheckedAt": "2026-09-16T08:46:44.044Z"
+      }
+    },
+    {
+      "id": "B000411|2025타경13125|1",
+      "set": {
+        "detailCheckedAt": "2026-09-16T08:46:54.855Z"
+      }
+    },
+    {
+      "id": "B000411|2025타경1312|1",
+      "set": {
+        "detailCheckedAt": "2026-09-16T08:47:06.392Z"
+      }
+    },
+    {
+      "id": "B000411|2025타경13093|1",
+      "set": {
+        "detailCheckedAt": "2026-09-16T08:47:16.703Z"
+      }
+    },
+    {
+      "id": "B000411|2025타경1308|1",
+      "set": {
+        "detailCheckedAt": "2026-09-16T08:47:37.598Z"
+      }
+    }
+  ],
+  "statePatch": {
+    "propertyHistoryFailureCount": 1,
+    "propertyHistoryYear": 2007,
+    "propertyHistoryMonth": 11,
+    "propertyHistoryPage": 1,
+    "propertyHistoryLastRun": "2026-09-16T08:43:43.501Z",
+    "propertyHistoryLastError": null,
+    "saleNoticeDeferred": [],
+    "saleNoticeFailures": {
+      "search|2026-08|B000210": 0,
+      "search|2026-08|B000211": 0,
+      "search|2026-08|B000215": 0,
+      "search|2026-08|B000212": 1,
+      "search|2026-08|B000280": 1,
+      "search|2026-08|B000213": 0,
+      "search|2026-08|B000214": 0,
+      "search|2026-08|B214807": 0,
+      "search|2026-08|B214804": 0,
+      "search|2026-08|B000240": 0,
+      "search|2026-08|B000241": 0,
+      "search|2026-08|B000250": 0,
+      "search|2026-08|B000251": 0,
+      "search|2026-08|B000252": 0,
+      "search|2026-08|B000253": 0,
+      "search|2026-08|B250826": 0,
+      "search|2026-08|B000254": 0,
+      "search|2026-08|B000260": 0
+    },
+    "saleNoticeBackfillYear": 2026,
+    "saleNoticeBackfillMonth": 8,
+    "saleNoticeBackfillOffset": 0,
+    "saleNoticeBackfillLastRun": "2026-09-09T08:32:07.978Z",
+    "saleNoticeBackfillLastError": "B000212 2026-08: court gate held by pid 9380 (rslt-probe) since 2026-09-09T08:32:03.243Z",
+    "saleNoticeCourtOffsets": {
+      "2026-08|B000210": -1,
+      "2026-08|B000211": -1,
+      "2026-08|B000215": -1,
+      "2026-08|B000212": -1,
+      "2026-08|B000213": -1,
+      "2026-08|B000214": -1,
+      "2026-08|B214807": -1,
+      "2026-08|B214804": -1,
+      "2026-08|B000240": -1,
+      "2026-08|B000241": -1,
+      "2026-08|B000250": -1,
+      "2026-08|B000251": -1,
+      "2026-08|B000252": -1,
+      "2026-08|B000253": -1,
+      "2026-08|B250826": -1,
+      "2026-08|B000254": -1,
+      "2026-08|B000260": -1
+    },
+    "saleNoticeBackfillCourtIndex": 17,
+    "currentSweepOffsets": {
+      "2026-09|B000210": -1,
+      "2026-09|B000211": -1,
+      "2026-09|B000215": -1,
+      "2026-09|B000212": -1,
+      "2026-09|B000213": -1,
+      "2026-09|B000263": -1,
+      "2026-09|B000264": -1,
+      "2026-09|B000270": -1,
+      "2026-09|B000271": -1,
+      "2026-09|B000272": -1,
+      "2026-09|B000273": -1,
+      "2026-09|B000280": -1,
+      "2026-09|B000281": -1,
+      "2026-09|B000282": -1,
+      "2026-09|B000283": 3,
+      "2026-09|B000315": -1,
+      "2026-09|B000316": -1,
+      "2026-09|B000317": -1,
+      "2026-09|B000320": -1,
+      "2026-09|B000410": -1,
+      "2026-09|B000412": -1,
+      "2026-09|B000414": -1,
+      "2026-09|B000411": -1,
+      "2026-09|B000420": -1,
+      "2026-09|B000431": -1,
+      "2026-09|B000421": -1,
+      "2026-09|B000422": -1,
+      "2026-09|B000423": -1,
+      "2026-09|B000424": -1,
+      "2026-09|B000510": -1,
+      "2026-09|B000511": -1,
+      "2026-09|B000512": -1,
+      "2026-09|B000513": -1,
+      "2026-09|B000514": -1,
+      "2026-09|B000520": -1,
+      "2026-09|B000521": -1,
+      "2026-09|B000522": -1,
+      "2026-09|B000523": -1,
+      "2026-09|B000530": -1,
+      "2026-10|B000210": -1,
+      "2026-10|B000211": -1,
+      "2026-10|B000215": -1,
+      "2026-10|B000212": -1,
+      "2026-10|B000213": -1,
+      "2026-10|B000214": -1,
+      "2026-10|B214807": -1
+    },
+    "currentSweepFailures": {
+      "search|2026-09|B000210": 0,
+      "2026-09|B000210|0": 0,
+      "2026-09|B000210|1": 0,
+      "2026-09|B000210|2": 0,
+      "2026-09|B000210|3": 0,
+      "search|2026-09|B000211": 0,
+      "2026-09|B000211|0": 0,
+      "2026-09|B000211|1": 0,
+      "2026-09|B000211|2": 0,
+      "2026-09|B000211|3": 0,
+      "search|2026-09|B000215": 0,
+      "2026-09|B000215|0": 0,
+      "2026-09|B000215|1": 0,
+      "search|2026-09|B000212": 0,
+      "2026-09|B000212|0": 0,
+      "2026-09|B000212|1": 0,
+      "2026-09|B000212|2": 0,
+      "2026-09|B000212|3": 0,
+      "2026-09|B000212|4": 0,
+      "2026-09|B000212|5": 0,
+      "search|2026-09|B000213": 0,
+      "2026-09|B000213|0": 0,
+      "2026-09|B000213|1": 0,
+      "search|2026-09|B000214": 2,
+      "search|2026-09|B214807": 2,
+      "search|2026-09|B214804": 1,
+      "search|2026-09|B000240": 1,
+      "search|2026-09|B000241": 1,
+      "search|2026-09|B000250": 1,
+      "search|2026-09|B000251": 1,
+      "search|2026-09|B000252": 1,
+      "search|2026-09|B000253": 1,
+      "search|2026-09|B250826": 1,
+      "search|2026-09|B000254": 1,
+      "search|2026-09|B000260": 1,
+      "search|2026-09|B000261": 1,
+      "search|2026-09|B000262": 1,
+      "search|2026-09|B000263": 0,
+      "2026-09|B000263|0": 0,
+      "search|2026-09|B000264": 0,
+      "2026-09|B000264|0": 0,
+      "2026-09|B000264|1": 0,
+      "search|2026-09|B000270": 0,
+      "2026-09|B000270|0": 0,
+      "2026-09|B000270|1": 0,
+      "2026-09|B000270|2": 0,
+      "2026-09|B000270|3": 0,
+      "search|2026-09|B000271": 0,
+      "2026-09|B000271|0": 0,
+      "search|2026-09|B000272": 0,
+      "2026-09|B000272|0": 0,
+      "search|2026-09|B000273": 0,
+      "2026-09|B000273|0": 0,
+      "2026-09|B000273|1": 0,
+      "search|2026-09|B000280": 0,
+      "2026-09|B000280|0": 0,
+      "2026-09|B000280|1": 0,
+      "2026-09|B000280|2": 0,
+      "2026-09|B000280|3": 0,
+      "2026-09|B000280|4": 0,
+      "search|2026-09|B000281": 0,
+      "2026-09|B000281|0": 0,
+      "2026-09|B000281|1": 0,
+      "search|2026-09|B000282": 0,
+      "search|2026-09|B000283": 1,
+      "2026-09|B000283|0": 0,
+      "2026-09|B000283|1": 0,
+      "2026-09|B000283|2": 0,
+      "search|2026-09|B000284": 1,
+      "search|2026-09|B000285": 1,
+      "search|2026-09|B000310": 1,
+      "search|2026-09|B000311": 1,
+      "search|2026-09|B000312": 1,
+      "search|2026-09|B000313": 1,
+      "search|2026-09|B000314": 1,
+      "search|2026-09|B000315": 0,
+      "2026-09|B000315|0": 0,
+      "search|2026-09|B000316": 0,
+      "2026-09|B000316|0": 0,
+      "2026-09|B000316|1": 0,
+      "search|2026-09|B000317": 0,
+      "2026-09|B000317|0": 0,
+      "2026-09|B000317|1": 0,
+      "search|2026-09|B000320": 0,
+      "2026-09|B000320|0": 0,
+      "2026-09|B000320|1": 0,
+      "2026-09|B000320|2": 0,
+      "2026-09|B000320|3": 0,
+      "search|2026-09|B000410": 0,
+      "2026-09|B000410|0": 0,
+      "2026-09|B000410|1": 0,
+      "search|2026-09|B000412": 0,
+      "2026-09|B000412|0": 0,
+      "2026-09|B000412|1": 0,
+      "2026-09|B000412|2": 0,
+      "search|2026-09|B000414": 0,
+      "2026-09|B000414|0": 0,
+      "search|2026-09|B000411": 0,
+      "2026-09|B000411|0": 0,
+      "2026-09|B000411|1": 0,
+      "2026-09|B000411|2": 0,
+      "2026-09|B000411|3": 0,
+      "2026-09|B000411|4": 0,
+      "2026-09|B000411|5": 0,
+      "2026-09|B000411|6": 0,
+      "search|2026-09|B000420": 0,
+      "2026-09|B000420|0": 0,
+      "2026-09|B000420|1": 0,
+      "2026-09|B000420|2": 0,
+      "search|2026-09|B000431": 0,
+      "2026-09|B000431|0": 0,
+      "2026-09|B000431|1": 0,
+      "search|2026-09|B000421": 0,
+      "2026-09|B000421|0": 0,
+      "2026-09|B000421|1": 0,
+      "2026-09|B000421|2": 0,
+      "search|2026-09|B000422": 0,
+      "2026-09|B000422|0": 0,
+      "2026-09|B000422|1": 0,
+      "search|2026-09|B000423": 0,
+      "2026-09|B000423|0": 0,
+      "search|2026-09|B000424": 0,
+      "search|2026-09|B000510": 0,
+      "2026-09|B000510|0": 0,
+      "2026-09|B000510|1": 0,
+      "2026-09|B000510|2": 0,
+      "2026-09|B000510|3": 0,
+      "2026-09|B000510|4": 0,
+      "2026-09|B000510|5": 0,
+      "search|2026-09|B000511": 0,
+      "2026-09|B000511|0": 0,
+      "2026-09|B000511|1": 0,
+      "2026-09|B000511|2": 0,
+      "search|2026-09|B000512": 0,
+      "2026-09|B000512|0": 0,
+      "2026-09|B000512|1": 0,
+      "search|2026-09|B000513": 0,
+      "2026-09|B000513|0": 0,
+      "search|2026-09|B000514": 0,
+      "2026-09|B000514|0": 0,
+      "search|2026-09|B000520": 0,
+      "2026-09|B000520|0": 0,
+      "2026-09|B000520|1": 0,
+      "search|2026-09|B000521": 0,
+      "2026-09|B000521|0": 0,
+      "search|2026-09|B000522": 0,
+      "2026-09|B000522|0": 0,
+      "search|2026-09|B000523": 0,
+      "search|2026-09|B000530": 0,
+      "2026-09|B000530|0": 0,
+      "2026-09|B000530|1": 0,
+      "2026-09|B000530|2": 0,
+      "2026-09|B000530|3": 0,
+      "search|2026-10|B000210": 0,
+      "search|2026-10|B000211": 0,
+      "search|2026-10|B000215": 0,
+      "search|2026-10|B000212": 0,
+      "search|2026-10|B000213": 0,
+      "search|2026-10|B000214": 0,
+      "search|2026-10|B214807": 0
+    },
+    "currentSweepMonthSlot": 1,
+    "currentSweepCourtIndex": 7,
+    "currentSweepLastRun": "2026-09-08T23:44:12.885Z",
+    "currentSweepLastError": null,
+    "saleNoticeBackfillVersion": 2,
+    "currentSweepDeferred": [
+      "2026-09|B214804",
+      "2026-09|B000240",
+      "2026-09|B000241",
+      "2026-09|B000250",
+      "2026-09|B000251",
+      "2026-09|B000252",
+      "2026-09|B000253",
+      "2026-09|B250826",
+      "2026-09|B000254",
+      "2026-09|B000260",
+      "2026-09|B000261",
+      "2026-09|B000262",
+      "2026-09|B000283",
+      "2026-09|B000284",
+      "2026-09|B000285",
+      "2026-09|B000310",
+      "2026-09|B000311",
+      "2026-09|B000312",
+      "2026-09|B000313",
+      "2026-09|B000314",
+      "2026-10|B000412",
+      "2026-10|B000510",
+      "2026-10|B000421",
+      "2026-10|B000511"
+    ]
+  }
+}
