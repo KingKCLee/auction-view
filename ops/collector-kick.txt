@@ -1,2 +1,2 @@
-collector-kick 2026-09-16T21:26:00Z
-reason: canonical stats are stale and the latest discovery cycle added 0 unique rows. Run one bounded additive recovery cycle using the repository's existing official-source fallback chain and safety guards. Preserve existing canonical data and deferred retry state.
+collector-kick 2026-09-17T05:29:00Z
+reason: canonical stats are stale by about 8 hours and the latest recorded sale-notice discovery added 0 unique rows. Run one bounded additive recovery cycle using the repository's existing official-source fallback chain: current sale notices -> historical sale notices -> property search -> sale-notice discovery -> case-detail basic-info enrichment. Preserve all canonical data and deferred retry state; do not bypass CAPTCHA or blocking controls.
