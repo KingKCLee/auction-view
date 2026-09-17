@@ -59,7 +59,12 @@ class PayloadTooLarge extends Error {
 const CARD_FIELDS = [
   'id', 'caseNumber', 'courtName', 'address', 'sido', 'sigungu', 'usage',
   'appraisedPrice', 'minimumPrice', 'saleDate', 'failedCount',
-  'hasWinning', 'photoCount', 'documentCount',
+  'hasWinning',
+  /* [2026-09-17] 낙찰가 - 목록에서 낙찰가율(낙찰가/감정가)을 적기 위해 싣는다.
+     hasWinning(0/1)만으로는 비율을 만들 수 없었다. 낙찰된 사건에만 값이 있고
+     나머지는 0 이라 gzip 이 잘 먹는다. 상한 500KB 를 넘기면 즉시 되돌릴 것. */
+  'winningPrice',
+  'photoCount', 'documentCount',
   /* [2026-09-15] 목록 카드의 썸네일 한 장. 사진 URL 을 통째로 싣지 않고 **뒤 두 조각**만
      싣는다(`<물건번호>/<파일명>`) - 앞부분은 사건번호라 카드가 이미 들고 있다.
      실측: gzip 433.1KB → 439.0KB (상한 500KB). 사진 있는 사건은 434건뿐이라 나머지는 빈 칸. */
@@ -90,6 +95,7 @@ const toCard = r => [
   str(r.regionSido), str(r.regionSigungu), str(r.usage),
   int(r.appraisedPrice), int(r.minimumPrice), str(r.saleDate), int(r.failedCount) || 0,
   Number(r.winningPrice || 0) > 0 ? 1 : 0,
+  int(r.winningPrice) || 0,
   int(r.photoCount) || 0, int(r.documentCount) || 0,
   cardThumb(r)
 ];
