@@ -60,7 +60,27 @@ export async function onRequestGet({ request, env }) {
   const sigungu = q.get('sigungu');
   // 물건종류는 여러 개를 한 번에 고를 수 있다(체크박스). 쉼표로 온다.
   // 한 개만 오면 전과 같이 동작하므로 기존 링크는 그대로 산다.
-  const usageList = (q.get('usage') || '').split(',').map((x) => x.trim()).filter(Boolean);
+  /*
+   * 용도 목록. 구분자가 두 가지다 - 섞이지 않게 규칙을 하나로 못 박는다.
+   *
+   * ★[2026-09-18] 결함 수리: 원본 물건종류 값 자체에 **쉼표가 든 것**이 4종 있다
+   *   ("연립주택,다세대,빌라" · "상가,오피스텔,근린시설" · "대지,임야,전답" · "자동차,중기").
+   *   옛 코드는 무조건 쉼표로 쪼개서 이 4종을 **어떤 방법으로도 고를 수 없었다.**
+   *   실측: usage="대지,임야,전답" -> 2,661건 = 대지 371 + 임야 702 + 전답 1,588.
+   *   즉 합쳐진 원본값 행은 하나도 안 잡히고 낱개 셋이 잡히고 있었다.
+   *
+   * 규칙: 파이프(|)가 있으면 **파이프로만** 쪼갠다 - 각 조각은 원본값 그대로다(쉼표 포함).
+   *       파이프가 없으면 옛 링크로 보고 쉼표로 쪼갠다(빠른 탭 기존 동작 보존).
+   * 같은 이름이 여러 번 와도(체크박스 제출) 전부 받는다.
+   */
+  const usageList = [];
+  for (const raw of q.getAll('usage')) {
+    const v = String(raw);
+    for (const seg of (v.includes('|') ? v.split('|') : v.split(','))) {
+      const t = seg.trim();
+      if (t) usageList.push(t);
+    }
+  }
   const courtList = (q.get('court') || '').split(',').map((x) => x.trim()).filter(Boolean);
   const from = q.get('saleDateFrom');
   const to = q.get('saleDateTo');
