@@ -1,32 +1,32 @@
 {
-  "generatedAt": "2026-09-14T11:01:05.031Z",
+  "generatedAt": "2026-09-19T01:08:55.494Z",
   "court": "전국 법원",
   "region": "전국",
-  "itemCount": 12111,
-  "winningCount": 1997,
-  "photoCount": 4117,
-  "documentCount": 7275,
-  "eventCount": 13161,
+  "itemCount": 12683,
+  "winningCount": 2112,
+  "photoCount": 11073,
+  "documentCount": 12811,
+  "eventCount": 26695,
   "queuedJobs": 0,
-  "errorJobs": 1,
+  "errorJobs": 0,
   "collectionOrder": "latest-first",
   "latestWindow": {
     "from": "2026-09",
     "to": "2026-10"
   },
   "coverage": {
-    "base_info": 11828,
-    "schedule": 3722,
-    "winning_price": 1997,
-    "photos": 266,
-    "status_report": 3809,
-    "sale_statement": 3420,
-    "appraisal_summary": 3446,
+    "base_info": 12404,
+    "schedule": 6471,
+    "winning_price": 2112,
+    "photos": 671,
+    "status_report": 6393,
+    "sale_statement": 6344,
+    "appraisal_summary": 6371,
     "appraisal_pdf": 0,
     "transactions": 0,
     "building_registry": 0,
     "land_use": 0,
-    "rights": 0
+    "rights": 3814
   },
   "history": {
     "fromYear": 1990,
@@ -35,13 +35,13 @@
     "completedMonths": 0,
     "percent": 0,
     "cursor": {
-      "year": 2017,
-      "month": 4,
+      "year": 1993,
+      "month": 11,
       "page": 1
     },
     "saleNoticeCursor": {
-      "year": 2017,
-      "month": 4,
+      "year": 1993,
+      "month": 10,
       "page": 1
     },
     "blocked": false,
@@ -50,20 +50,35 @@
   },
   "latestRun": {
     "run_type": "sale-notice-discovery",
-    "started_at": "2026-09-12T17:35:06.016Z",
-    "finished_at": "2026-09-12T17:35:06.028Z",
-    "status": "partial",
-    "items_found": 0,
+    "started_at": "2026-09-19T01:08:38.603Z",
+    "finished_at": "2026-09-19T01:08:38.614Z",
+    "status": "done",
+    "items_found": 317,
     "items_saved": 0,
-    "priority_items": 0,
+    "priority_items": 317,
     "history_items": 0,
-    "notices_checked": 0,
+    "notices_checked": 3,
     "transport": "official-sale-notice-http",
-    "error_text": "history notice 2025-03 offset 0: Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
-    "processedItems": 0,
+    "error_text": null,
+    "processedItems": 317,
     "newUniqueItems": 0
   },
   "runs": [
+    {
+      "run_type": "sale-notice-discovery",
+      "started_at": "2026-09-19T01:08:38.603Z",
+      "finished_at": "2026-09-19T01:08:38.614Z",
+      "status": "done",
+      "items_found": 317,
+      "items_saved": 0,
+      "priority_items": 317,
+      "history_items": 0,
+      "notices_checked": 3,
+      "transport": "official-sale-notice-http",
+      "error_text": null,
+      "processedItems": 317,
+      "newUniqueItems": 0
+    },
     {
       "run_type": "sale-notice-discovery",
       "started_at": "2026-09-12T17:35:06.016Z",
@@ -282,19 +297,6 @@
       "error_text": null,
       "processedItems": 242,
       "newUniqueItems": 0
-    },
-    {
-      "run_type": "sale-notice-discovery",
-      "started_at": "2026-09-07T06:16:15.261Z",
-      "finished_at": "2026-09-07T06:16:15.262Z",
-      "status": "done",
-      "items_found": 242,
-      "items_saved": 242,
-      "priority_items": 242,
-      "history_items": 0,
-      "notices_checked": 2,
-      "transport": "official-sale-notice-http",
-      "error_text": null
     }
   ],
   "latestDetailRun": {
@@ -332,14 +334,14 @@
   },
   "latestHistoryPropertyRun": {
     "courtCode": "B000240",
-    "from": "2017-05-01",
-    "to": "2017-05-31",
+    "from": "1993-11-01",
+    "to": "1993-11-30",
     "returned": 0,
     "totalCount": 0,
     "newUniqueItems": 0,
     "nextCursor": {
-      "year": 2017,
-      "month": 4,
+      "year": 1993,
+      "month": 10,
       "page": 1
     },
     "transport": "property-search-http-or-browser",
@@ -349,104 +351,81 @@
     "httpStatus": null,
     "pageSize": 20,
     "source": "대한민국 법원경매정보 물건검색",
-    "finishedAt": "2026-09-14T06:37:57.196Z"
+    "finishedAt": "2026-09-19T01:08:20.200Z"
   },
   "lastCollectorCycle": {
-    "itemCount": 12111,
+    "itemCount": 12683,
     "newUniqueItems": 0,
-    "currentNoticeProcessed": 0,
+    "currentNoticeProcessed": 317,
     "historicalReturned": 0,
     "historicalNewUnique": 0,
     "historicalStatus": "done",
-    "finishedAt": "2026-09-14T11:01:04.006Z"
+    "finishedAt": "2026-09-19T01:09:02.521Z"
   },
   "saleNoticeBackfill": {
     "version": 3,
     "cursor": {
       "year": 2026,
       "month": 8,
-      "courtIndex": 34
+      "courtIndex": 18
     },
-    "courtCount": 48,
-    "courtsScanned": 3,
-    "lastCourt": "B000214",
+    "courtCount": 60,
+    "courtsScanned": 1,
+    "lastCourt": "B000261",
     "processedNotices": 0,
     "successfulNotices": 0,
     "newUniqueItems": 0,
-    "deferredCount": 9,
-    "deferredRetried": 1,
+    "deferredCount": 0,
+    "deferredRetried": 0,
     "blocked": false,
-    "lastError": "B000214 2026-08: browser warmup failed: page.goto: Timeout 22000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\", waiting until \"commit\"\n",
+    "lastError": null,
     "transport": [
-      "B000317:failed",
-      "B000263:failed",
-      "B000214:failed"
+      "B000261:http"
     ],
-    "attempts": [
-      "normal-court-codes:NETWORK_ERROR:Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
-      "direct-court-codes:NETWORK_ERROR:Court Auction network error for /pgj/pgjComm/selectCortOfcCdLst.on: fetch failed",
-      "browser-court-codes:NETWORK_ERROR:browser warmup failed: page.goto: Timeout 22000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\", waiting until \"commit\"\n",
-      "normal-http:NETWORK_ERROR:Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
-      "direct-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed",
-      "browser-commit:NETWORK_ERROR:browser warmup failed: page.goto: Timeout 22000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\", waiting until \"commit\"\n",
-      "normal-http:NETWORK_ERROR:Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
-      "direct-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed",
-      "browser-commit:NETWORK_ERROR:browser warmup failed: page.goto: net::ERR_ABORTED at https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\", waiting until \"commit\"\n",
-      "normal-http:NETWORK_ERROR:Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
-      "direct-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed",
-      "browser-commit:NETWORK_ERROR:browser warmup failed: page.goto: Timeout 22000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\", waiting until \"commit\"\n"
-    ],
-    "courtSource": "existing-db-court-codes",
+    "attempts": [],
+    "courtSource": "official-court-codes",
     "source": "대한민국 법원경매정보 매각공고(법원별)",
-    "finishedAt": "2026-09-14T01:07:05.798Z"
+    "finishedAt": "2026-09-19T01:08:16.435Z"
   },
   "currentCourtSweep": {
     "months": [
-      "2026-09",
-      "2026-10"
+      "2026-09"
     ],
     "cursor": {
-      "month": "2026-10",
+      "month": "2026-09",
       "courtIndex": 8
     },
-    "courtCount": 48,
+    "courtCount": 60,
     "courtsScanned": 1,
-    "lastCourt": "B000411",
-    "processedNotices": 0,
-    "successfulNotices": 0,
+    "lastCourt": "B214804",
+    "processedNotices": 1,
+    "successfulNotices": 1,
     "newUniqueItems": 0,
-    "deferredCount": 25,
+    "deferredCount": 23,
     "cycle": 0,
-    "lastError": "B000411 2026-10: browser warmup failed: page.goto: Timeout 22000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\", waiting until \"commit\"\n",
+    "lastError": null,
     "transport": [
-      "B000411:failed"
+      "B214804:http"
     ],
-    "attempts": [
-      "normal-court-codes:NETWORK_ERROR:Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
-      "direct-court-codes:NETWORK_ERROR:Court Auction network error for /pgj/pgjComm/selectCortOfcCdLst.on: fetch failed",
-      "browser-court-codes:NETWORK_ERROR:browser warmup failed: page.goto: Timeout 22000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\", waiting until \"commit\"\n",
-      "normal-http:NETWORK_ERROR:Court Auction network error for /pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01: fetch failed",
-      "direct-http:NETWORK_ERROR:Court Auction network error for /pgj/pgj143/selectRletDspslPbanc.on: fetch failed",
-      "browser-commit:NETWORK_ERROR:browser warmup failed: page.goto: Timeout 22000ms exceeded.\nCall log:\n  - navigating to \"https://www.courtauction.go.kr/pgj/index.on?w2xPath=/pgj/ui/pgj100/PGJ143M01.xml&pgjId=143M01\", waiting until \"commit\"\n"
-    ],
-    "courtSource": "existing-db-court-codes",
+    "attempts": [],
+    "courtSource": "official-court-codes",
     "source": "대한민국 법원경매정보 매각공고(전국 최신 법원별)",
-    "finishedAt": "2026-09-12T17:32:30.826Z"
+    "finishedAt": "2026-09-19T01:08:08.818Z"
   },
   "photoCourtCount": 1,
   "basicInfoQuality": {
-    "ready": 11690,
-    "addressCount": 11690,
-    "priceCount": 11737,
-    "missing": 283,
+    "ready": 12404,
+    "addressCount": 12404,
+    "priceCount": 12477,
+    "missing": 279,
     "definition": "주소 + (용도/감정가/최저가/매각기일 중 1개 이상)",
-    "updatedAt": "2026-09-13T23:08:52.079Z"
+    "updatedAt": "2026-09-19T01:08:52.206Z"
   },
   "latestBasicInfoRun": {
     "checkedCases": 4,
     "successfulCases": 4,
     "itemsImproved": 4,
-    "remaining": 283,
+    "remaining": 279,
     "transport": [
       "B000240:http",
       "B000240:http",
@@ -456,16 +435,16 @@
     "attempts": [],
     "lastError": null,
     "source": "대한민국 법원경매정보 사건검색",
-    "finishedAt": "2026-09-13T23:08:52.079Z"
+    "finishedAt": "2026-09-19T01:08:52.206Z"
   },
   "coverageSource": "canonical-recount",
   "safeReconcile": {
     "remoteItems": 12111,
-    "collectorItems": 12111,
-    "mergedItems": 12111,
+    "collectorItems": 12683,
+    "mergedItems": 12683,
     "retainedRemoteIds": 12111,
-    "retainedCollectorIds": 12111,
-    "addedVsRemote": 0,
-    "finishedAt": "2026-09-14T06:38:01.906Z"
+    "retainedCollectorIds": 12683,
+    "addedVsRemote": 572,
+    "finishedAt": "2026-09-19T01:08:55.495Z"
   }
 }
