@@ -1,0 +1,2420 @@
+{
+  "version": 1,
+  "worker": "laptop:refresh",
+  "createdAt": "2026-09-16T00:19:57.034Z",
+  "source": "대한민국 법원경매정보",
+  "patches": [
+    {
+      "id": "B000510|2026타경30922|1",
+      "set": {
+        "caseReceivedDate": "2026-03-27",
+        "caseStartDate": "2026-03-30",
+        "distributionDeadline": "2026-05-26",
+        "courtDept": "경매2계",
+        "courtDeptTel": "062-239-1600(2층 민사집행과 지법253호)",
+        "caseSuspendCode": "00",
+        "caseSuspendReason": "",
+        "rights": {
+          "assumedRights": "",
+          "surfaceRight": "",
+          "seniorMortgage": "2024.12.23. 저당권",
+          "statementNote": "-사용연료 가솔린\n-유효검사기간 2026.02.28.~2028.02.27.\n-'중고차 사고이력정보 보고서' 사고이력이 확인 되는 바, 참조 바람",
+          "goodsNote": "",
+          "writtenAt": "2026-06-09"
+        },
+        "appraisalPoints": [
+          {
+            "seq": 1,
+            "itemCode": "00083021",
+            "content": "2015년식, 계기판상 112,456km임. "
+          },
+          {
+            "seq": 2,
+            "itemCode": "00083022",
+            "content": "흰색임."
+          },
+          {
+            "seq": 3,
+            "itemCode": "00083023",
+            "content": "관리상태 보통임."
+          },
+          {
+            "seq": 4,
+            "itemCode": "00083024",
+            "content": "가솔린임. "
+          },
+          {
+            "seq": 5,
+            "itemCode": "00083025",
+            "content": "자동차등록원부상 2026-02-28 ~ 2028-02-27임."
+          },
+          {
+            "seq": 6,
+            "itemCode": "00083028",
+            "content": "별지 &amp;quot;사진용지&amp;quot;를 참고 바람. "
+          }
+        ],
+        "minimumPriceRounds": [
+          25200000
+        ],
+        "salePlace": "입찰법정",
+        "decisionPlace": "광주지방법원 사법보좌관실",
+        "depositRate": 10,
+        "lessees": [],
+        "lesseeCount": 0,
+        "listing": {
+          "exclusive": [
+            {
+              "no": "연 식 : 2015 차 대 번 호 : WDDXJ7JB4FA010477 보 관 장 소 : 광주 동구 소태동 493-1 (영빈2주차장, 010-5743-8200)",
+              "structure": "",
+              "area": null,
+              "buildingName": "S63 AMG 4Matic Coupe",
+              "address": "105동 303호 (금호동, 중흥아파트)",
+              "usageCode": "30100"
+            }
+          ],
+          "land": [],
+          "buildingDetail": [],
+          "exclusiveArea": null,
+          "landShareArea": null,
+          "totalLandArea": null
+        },
+        "rawCoords": {
+          "x": 304082,
+          "y": 280352,
+          "srs": "unverified"
+        },
+        "bidMethodCode": "000331",
+        "parties": [
+          {
+            "role": "채권자",
+            "name": "우OOOOOO OOOO",
+            "seq": 1271
+          },
+          {
+            "role": "채무자겸소유자",
+            "name": "최OO",
+            "seq": 1581
+          },
+          {
+            "role": "근저당권자",
+            "name": "웰OOOOO OOOO",
+            "seq": 1637
+          },
+          {
+            "role": "압류권자",
+            "name": "광OOOO OO",
+            "seq": 1674
+          },
+          {
+            "role": "압류권자",
+            "name": "광OOOO OO",
+            "seq": 1675
+          },
+          {
+            "role": "압류권자",
+            "name": "국OOOOOOO OOOOOO",
+            "seq": 1676
+          },
+          {
+            "role": "교부권자",
+            "name": "광OOOO OO",
+            "seq": 1718
+          },
+          {
+            "role": "교부권자",
+            "name": "광OOOO OO",
+            "seq": 1719
+          },
+          {
+            "role": "교부권자",
+            "name": "국OOOOOOO OOOOOO",
+            "seq": 17110
+          },
+          {
+            "role": "교부권자",
+            "name": "서OOOOO",
+            "seq": 17111
+          }
+        ],
+        "noticeFrom": "2025-04-25",
+        "noticeTo": "2026-10-29",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1,
+          "listing": 1,
+          "parties": 1
+        },
+        "events": [
+          {
+            "event_date": "2026-06-25",
+            "event_time": "0955",
+            "event_kind_code": "01",
+            "place": "입찰법정",
+            "amount": 45000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-08-06",
+            "event_time": "0955",
+            "event_kind_code": "01",
+            "place": "입찰법정",
+            "amount": 31500000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-17",
+            "event_time": "0955",
+            "event_kind_code": "01",
+            "place": "입찰법정",
+            "amount": 25200000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-23",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "광주지방법원 사법보좌관실",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 4,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "appraisalSummary": "2015년식, 계기판상 112,456km임. \n흰색임.\n관리상태 보통임.\n가솔린임. \n자동차등록원부상 2026-02-28 ~ 2028-02-27임.\n별지 &amp;quot;사진용지&amp;quot;를 참고 바람. ",
+        "appraisalAgency": "",
+        "claimAmount": 55377299,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "failedCount": 2,
+        "caseType": "자동차임의경매",
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-23",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "detailCheckedAt": "2026-09-16T00:16:04.445Z"
+      }
+    },
+    {
+      "id": "B000510|2026타경30899|1",
+      "set": {
+        "status": "expired",
+        "detailCheckedAt": "2026-09-16T00:16:15.116Z",
+        "expiredAt": "2026-09-16T00:16:15.116Z"
+      }
+    },
+    {
+      "id": "B000320|2026타경3086|1",
+      "set": {
+        "caseReceivedDate": "2026-01-21",
+        "caseStartDate": "2026-01-22",
+        "distributionDeadline": "2026-04-27",
+        "courtDept": "경매2계",
+        "courtDeptTel": "053) 570 - 2302",
+        "caseSuspendCode": "00",
+        "caseSuspendReason": "",
+        "rights": {
+          "assumedRights": "",
+          "surfaceRight": "",
+          "seniorMortgage": "2024.9.26. 근저당",
+          "statementNote": "일괄매각. 제시외 건물 포함",
+          "goodsNote": "일괄매각. 제시외 건물 포함",
+          "writtenAt": "2026-08-19"
+        },
+        "appraisalPoints": [
+          {
+            "seq": 1,
+            "itemCode": "00083001",
+            "content": "본건은 대구광역시 달성군 하빈면 하산리 소재 &amp;quot;동곡교차로&amp;quot; 남서측 인근에 위치하며,  부근은 소규모 공장 및 창고시설, 농경지, 주택 등이 혼재함."
+          },
+          {
+            "seq": 2,
+            "itemCode": "00083003",
+            "content": "본건까지 차량에 의한 출입 가능하며, 인근에 간선도로 등이 소재하여 교통상황 무난시됨."
+          },
+          {
+            "seq": 3,
+            "itemCode": "00083008",
+            "content": "인접지와 등고평탄한 사다리형 토지로, 음식점부지로 이용중임."
+          },
+          {
+            "seq": 4,
+            "itemCode": "00083004",
+            "content": "본건 서측으로 폭 약 4미터 복개 도로 및 구거를 경유하여 왕복 2차선 도로와 접함."
+          },
+          {
+            "seq": 5,
+            "itemCode": "00083011",
+            "content": "자연녹지지역, 가축사육제한구역&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 배출시설설치제한 지역&lt;물환경보전법&gt;, 공장설립제한지역(공장설립제한지역)&lt;수도법&gt;임."
+          },
+          {
+            "seq": 6,
+            "itemCode": "00083013",
+            "content": "본건 지상에 식재된 감나무, 대추나무 등은 본건 부동산의 거래시에 별도로 가격을 가산하 여 거래하지 않을 것으로 판단하여 별도로 가격을 평가하지 않았습니다.  "
+          },
+          {
+            "seq": 7,
+            "itemCode": "00083014",
+            "content": "--"
+          },
+          {
+            "seq": 8,
+            "itemCode": "00083026",
+            "content": "1. 기준시점 현재 음식점 휴업중이며, 이해관계인의 부재 등으로 본건 임대관계는 미상입니    다.  2. 본건 지상에 식재된 감나무, 대추나무 등은 본건 부동산의 거래시에 별도로 가격을 가산    산하여 거래하지 않을 것으로 판단하여 별도로 가격을 평가하지 않았습니다.  3.  본건 지상에 별첨 &amp;quot;지적 및 건물개황&amp;quot;과 같이 제시외건물이 소재하나, 구조, 규모 등     에 비추어 별도로 가격을 가산하여 거래하지 않을 것으로 판단하여 별도로 가격을 평가     하지 않았습니다."
+          },
+          {
+            "seq": 1,
+            "itemCode": "00083015",
+            "content": "경량철골구조 샌드위치판넬 지붕 단층건으로,  - 사용승인일:  2005.6.4 (2021.2.5. 창고에서 음식점으로 용도변경) - 외벽: 징크판넬 마감 등 - 내벽: 벽지마감, 시트지 마감, 타일마감 등 - 바닥: 타일마감, 데코타일 마감 등 - 천장: 텍스마감 등                       "
+          },
+          {
+            "seq": 2,
+            "itemCode": "00083006",
+            "content": "음식점(기준시점 현재 휴업)임."
+          },
+          {
+            "seq": 3,
+            "itemCode": "00083017",
+            "content": "급배수 및 위생설비 구비됨."
+          },
+          {
+            "seq": 4,
+            "itemCode": "00083018",
+            "content": "본건 지상에 별첨 &amp;quot;지적 및 건물개황&amp;quot;과 같이 제시외건물㉠~㉣이 소재하는 바, 구조, 자재 등을 종합 고려하여 원가법으로 감정평가하였습니다."
+          },
+          {
+            "seq": 5,
+            "itemCode": "00083014",
+            "content": "--"
+          },
+          {
+            "seq": 6,
+            "itemCode": "00083026",
+            "content": " 1. 기준시점 현재 음식점 휴업 중이며, 이해관계인의 부재 등으로 본건 임대 관계는 미상입     니다.   2. 본건 지상에 별첨 &amp;quot;지적 및 건물개황&amp;quot;과 같이 제시외건물이 소재하는 바, 구조, 자재     등을 종합 고려하여 원가법으로 감정평가하였습니다.  3. 이동 용이한 계사,견사의 경우 별도로 평가하지 않았습니다. "
+          }
+        ],
+        "minimumPriceRounds": [
+          511620900
+        ],
+        "salePlace": "1층 입찰법정",
+        "decisionPlace": "1층 입찰법정",
+        "depositRate": 10,
+        "listing": {
+          "exclusive": [
+            {
+              "no": null,
+              "structure": "",
+              "area": 542,
+              "buildingName": null,
+              "address": "905-2",
+              "usageCode": "10100"
+            },
+            {
+              "no": null,
+              "structure": "경량철골구조 샌드위치판넬지붕 1층 제2종근린생활시설",
+              "area": 104,
+              "buildingName": null,
+              "address": "905-2",
+              "usageCode": "21100"
+            }
+          ],
+          "land": [],
+          "buildingDetail": [
+            "경량철골구조 샌드위치판넬지붕 1층 제2종근린생활시설 104㎡",
+            "경량철골구조 샌드위치판넬지붕 1층 제2종근린생활시설 104㎡"
+          ],
+          "exclusiveArea": 646,
+          "landShareArea": null,
+          "totalLandArea": null
+        },
+        "rawCoords": {
+          "x": 436404,
+          "y": 364226,
+          "srs": "unverified"
+        },
+        "bidMethodCode": "000331",
+        "parties": [
+          {
+            "role": "채권자",
+            "name": "다OOOOOOO",
+            "seq": 1271
+          },
+          {
+            "role": "채무자겸소유자",
+            "name": "신OO",
+            "seq": 1583
+          },
+          {
+            "role": "임차인",
+            "name": "최OO",
+            "seq": 16213
+          },
+          {
+            "role": "근저당권자",
+            "name": "다OOOOOOO",
+            "seq": 1631
+          },
+          {
+            "role": "근저당권자",
+            "name": "이OO",
+            "seq": 1632
+          },
+          {
+            "role": "가압류권자",
+            "name": "현OOO OOOO",
+            "seq": 1644
+          },
+          {
+            "role": "가압류권자",
+            "name": "대OOOOOOO",
+            "seq": 1645
+          },
+          {
+            "role": "가압류권자",
+            "name": "신OOO OOOO",
+            "seq": 1646
+          },
+          {
+            "role": "가압류권자",
+            "name": "삼OOO OOOO",
+            "seq": 1647
+          },
+          {
+            "role": "교부권자",
+            "name": "서OOOOO",
+            "seq": 17110
+          },
+          {
+            "role": "교부권자",
+            "name": "남OOOOO",
+            "seq": 17111
+          },
+          {
+            "role": "교부권자",
+            "name": "대OOOO OOO",
+            "seq": 17115
+          },
+          {
+            "role": "교부권자",
+            "name": "대OOOO OOO",
+            "seq": 17116
+          },
+          {
+            "role": "배당요구권자",
+            "name": "신OOO OOOO",
+            "seq": 1748
+          },
+          {
+            "role": "배당요구권자",
+            "name": "삼OOO OOOO",
+            "seq": 1749
+          },
+          {
+            "role": "배당요구권자",
+            "name": "대OOOOOOO",
+            "seq": 17412
+          },
+          {
+            "role": "배당요구권자",
+            "name": "현OOO OOOO",
+            "seq": 17414
+          },
+          {
+            "role": "배당요구권자",
+            "name": "주OOO OOOO",
+            "seq": 17417
+          }
+        ],
+        "noticeFrom": "2025-07-17",
+        "noticeTo": "2026-12-17",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1,
+          "listing": 1,
+          "parties": 1
+        },
+        "buildingArea": 646,
+        "detailCheckedAt": "2026-09-16T00:17:06.580Z"
+      }
+    },
+    {
+      "id": "B000510|2026타경30851|1",
+      "set": {
+        "caseReceivedDate": "2026-03-20",
+        "caseStartDate": "2026-03-24",
+        "distributionDeadline": "2026-06-18",
+        "courtDept": "경매2계",
+        "courtDeptTel": "062-239-1600(2층 민사집행과 지법253호)",
+        "caseSuspendCode": "00",
+        "caseSuspendReason": "",
+        "rights": {
+          "assumedRights": "",
+          "surfaceRight": "",
+          "seniorMortgage": "2022.02.28. 근저당권",
+          "statementNote": "",
+          "goodsNote": "",
+          "writtenAt": "2026-08-31"
+        },
+        "appraisalPoints": [
+          {
+            "seq": 1,
+            "itemCode": "00083001",
+            "content": "     본건은 광주광역시 광산구 우산동 소재 수랑어린이공원 북서측 인근에 위치하며,     주변은 각종 근린생활시설 및 아파트단지 등이 혼재하는 지역임. "
+          },
+          {
+            "seq": 2,
+            "itemCode": "00083003",
+            "content": "     일반적인 교통이용상황은 보통시 됨. "
+          },
+          {
+            "seq": 3,
+            "itemCode": "00083015",
+            "content": "     철근콘크리트구조 (철근)콘크리트지붕 지하1층 지상12층 건물 내     제2층 제201호외 3개호로서,      외벽 : 몰탈위페인트 및 화강석,      창호 : 샷시창호 등의 마감임. "
+          },
+          {
+            "seq": 4,
+            "itemCode": "00083006",
+            "content": "     기호(가~라) : 근린생활시설임. "
+          },
+          {
+            "seq": 5,
+            "itemCode": "00083017",
+            "content": "     기본적인 급·배수설비 및 위생설비, 승강기, 화재경보 및 스프링클러 등이      구비되어 있음. "
+          },
+          {
+            "seq": 6,
+            "itemCode": "00083009",
+            "content": "     세로장방형의 평지로서, 주상용 건부지로 이용중임. "
+          },
+          {
+            "seq": 7,
+            "itemCode": "00083005",
+            "content": "     본건 남측으로 폭 약 15m, 서측으로 폭 약 8m의 포장도로와 각각 접함. "
+          },
+          {
+            "seq": 8,
+            "itemCode": "00083011",
+            "content": "     ―     "
+          },
+          {
+            "seq": 9,
+            "itemCode": "00083014",
+            "content": "     해당사항 없음. "
+          },
+          {
+            "seq": 10,
+            "itemCode": "00083026",
+            "content": "     1) 임대관계       임대관계는 미상임.      2) 기타       호별배치도의 각 호별 위치는 집합건축물대장의 현황 도면을 기준으로 개략       적으로 표시하였으니 정확한 위치는 재확인을 요함. "
+          }
+        ],
+        "minimumPriceRounds": [
+          439000000
+        ],
+        "salePlace": "입찰법정",
+        "decisionPlace": "광주지방법원 사법보좌관실",
+        "depositRate": 10,
+        "listing": {
+          "exclusive": [
+            {
+              "no": "2층201호",
+              "structure": "철근콘크리트구조",
+              "area": 102.8363,
+              "buildingName": "우산동한국아델리움더스위트",
+              "address": "1609-16",
+              "usageCode": "21100"
+            }
+          ],
+          "land": [
+            {
+              "address": "1609-16",
+              "category": "대",
+              "area": 551.3,
+              "ratioNumerator": 26.36974,
+              "ratioDenominator": 551.3
+            }
+          ],
+          "buildingDetail": [
+            "철근콘크리트구조 (철근)콘크리트지붕 12층 공동주택 지1충 451.8044㎡ 1층 222.3496㎡ 2층 341.082㎡ 3층 341.082㎡ 4층 205.4589㎡ 5층 205.4589㎡ 6층 205.4589㎡ 7층 205.4589㎡ 8층 205.4589㎡ 9층 205.4589㎡ 10층 205.4589㎡ 11층 205.4589㎡ 12층 205.4589㎡",
+            "철근콘크리트구조 102.8363㎡"
+          ],
+          "exclusiveArea": 102.8363,
+          "landShareArea": 26.36974,
+          "totalLandArea": 551.3
+        },
+        "landTotalArea": 551.3,
+        "rawCoords": {
+          "x": 291155,
+          "y": 285257,
+          "srs": "unverified"
+        },
+        "bidMethodCode": "000331",
+        "parties": [
+          {
+            "role": "채권자",
+            "name": "광OOOOOOOOO",
+            "seq": 1271
+          },
+          {
+            "role": "채무자겸소유자",
+            "name": "주OOO OOOOOOO",
+            "seq": 15828
+          },
+          {
+            "role": "가압류권자",
+            "name": "이OO",
+            "seq": 1643
+          },
+          {
+            "role": "가압류권자",
+            "name": "박OO",
+            "seq": 1644
+          },
+          {
+            "role": "가압류권자",
+            "name": "신OOOOO",
+            "seq": 1645
+          },
+          {
+            "role": "가압류권자",
+            "name": "주OOO OOOO",
+            "seq": 1647
+          },
+          {
+            "role": "압류권자",
+            "name": "나OOOO",
+            "seq": 1676
+          },
+          {
+            "role": "압류권자",
+            "name": "국OOOOOOO OOOO",
+            "seq": 1678
+          },
+          {
+            "role": "압류권자",
+            "name": "광OOOO OOO",
+            "seq": 1679
+          },
+          {
+            "role": "압류권자",
+            "name": "진OO",
+            "seq": 16710
+          },
+          {
+            "role": "압류권자",
+            "name": "광OOOO OO",
+            "seq": 16727
+          },
+          {
+            "role": "교부권자",
+            "name": "나OOOO",
+            "seq": 17129
+          },
+          {
+            "role": "교부권자",
+            "name": "광OOOO OOO",
+            "seq": 17131
+          },
+          {
+            "role": "교부권자",
+            "name": "광OOOO OO",
+            "seq": 17132
+          },
+          {
+            "role": "교부권자",
+            "name": "진OO",
+            "seq": 17134
+          },
+          {
+            "role": "교부권자",
+            "name": "국OOOOOOO OOOO",
+            "seq": 17135
+          },
+          {
+            "role": "교부권자",
+            "name": "순OO",
+            "seq": 17137
+          },
+          {
+            "role": "배당요구권자",
+            "name": "주OOO OOOO",
+            "seq": 17430
+          },
+          {
+            "role": "배당요구권자",
+            "name": "신OOOOO",
+            "seq": 17433
+          },
+          {
+            "role": "배당요구권자",
+            "name": "근OOOOO OOOOOO",
+            "seq": 17436
+          }
+        ],
+        "noticeFrom": "2025-07-17",
+        "noticeTo": "2027-01-21",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1,
+          "listing": 1,
+          "parties": 1
+        },
+        "landArea": 26.36974,
+        "buildingArea": 102.8363,
+        "detailCheckedAt": "2026-09-16T00:17:27.724Z"
+      }
+    },
+    {
+      "id": "B000510|2026타경30851|2",
+      "set": {
+        "caseReceivedDate": "2026-03-20",
+        "caseStartDate": "2026-03-24",
+        "distributionDeadline": "2026-06-18",
+        "courtDept": "경매2계",
+        "courtDeptTel": "062-239-1600(2층 민사집행과 지법253호)",
+        "caseSuspendCode": "00",
+        "caseSuspendReason": "",
+        "rights": {
+          "assumedRights": "",
+          "surfaceRight": "",
+          "seniorMortgage": "2022.02.28. 근저당권",
+          "statementNote": "",
+          "goodsNote": "",
+          "writtenAt": "2026-08-31"
+        },
+        "appraisalPoints": [
+          {
+            "seq": 1,
+            "itemCode": "00083001",
+            "content": "     본건은 광주광역시 광산구 우산동 소재 수랑어린이공원 북서측 인근에 위치하며,     주변은 각종 근린생활시설 및 아파트단지 등이 혼재하는 지역임. "
+          },
+          {
+            "seq": 2,
+            "itemCode": "00083003",
+            "content": "     일반적인 교통이용상황은 보통시 됨. "
+          },
+          {
+            "seq": 3,
+            "itemCode": "00083015",
+            "content": "     철근콘크리트구조 (철근)콘크리트지붕 지하1층 지상12층 건물 내     제2층 제201호외 3개호로서,      외벽 : 몰탈위페인트 및 화강석,      창호 : 샷시창호 등의 마감임. "
+          },
+          {
+            "seq": 4,
+            "itemCode": "00083006",
+            "content": "     기호(가~라) : 근린생활시설임. "
+          },
+          {
+            "seq": 5,
+            "itemCode": "00083017",
+            "content": "     기본적인 급·배수설비 및 위생설비, 승강기, 화재경보 및 스프링클러 등이      구비되어 있음. "
+          },
+          {
+            "seq": 6,
+            "itemCode": "00083009",
+            "content": "     세로장방형의 평지로서, 주상용 건부지로 이용중임. "
+          },
+          {
+            "seq": 7,
+            "itemCode": "00083005",
+            "content": "     본건 남측으로 폭 약 15m, 서측으로 폭 약 8m의 포장도로와 각각 접함. "
+          },
+          {
+            "seq": 8,
+            "itemCode": "00083011",
+            "content": "     ―     "
+          },
+          {
+            "seq": 9,
+            "itemCode": "00083014",
+            "content": "     해당사항 없음. "
+          },
+          {
+            "seq": 10,
+            "itemCode": "00083026",
+            "content": "     1) 임대관계       임대관계는 미상임.      2) 기타       호별배치도의 각 호별 위치는 집합건축물대장의 현황 도면을 기준으로 개략       적으로 표시하였으니 정확한 위치는 재확인을 요함. "
+          }
+        ],
+        "minimumPriceRounds": [
+          382000000
+        ],
+        "salePlace": "입찰법정",
+        "decisionPlace": "광주지방법원 사법보좌관실",
+        "depositRate": 10,
+        "listing": {
+          "exclusive": [
+            {
+              "no": "3층301호",
+              "structure": "철근콘크리트구조",
+              "area": 102.8363,
+              "buildingName": "우산동한국아델리움더스위트",
+              "address": "1609-16",
+              "usageCode": "21100"
+            }
+          ],
+          "land": [
+            {
+              "address": "1609-16",
+              "category": "대",
+              "area": 551.3,
+              "ratioNumerator": 26.36974,
+              "ratioDenominator": 551.3
+            }
+          ],
+          "buildingDetail": [
+            "철근콘크리트구조 (철근)콘크리트지붕 12층 공동주택 지1충 451.8044㎡ 1층 222.3496㎡ 2층 341.082㎡ 3층 341.082㎡ 4층 205.4589㎡ 5층 205.4589㎡ 6층 205.4589㎡ 7층 205.4589㎡ 8층 205.4589㎡ 9층 205.4589㎡ 10층 205.4589㎡ 11층 205.4589㎡ 12층 205.4589㎡",
+            "철근콘크리트구조 102.8363㎡"
+          ],
+          "exclusiveArea": 102.8363,
+          "landShareArea": 26.36974,
+          "totalLandArea": 551.3
+        },
+        "landTotalArea": 551.3,
+        "rawCoords": {
+          "x": 291155,
+          "y": 285257,
+          "srs": "unverified"
+        },
+        "bidMethodCode": "000331",
+        "parties": [
+          {
+            "role": "채권자",
+            "name": "광OOOOOOOOO",
+            "seq": 1271
+          },
+          {
+            "role": "채무자겸소유자",
+            "name": "주OOO OOOOOOO",
+            "seq": 15828
+          },
+          {
+            "role": "가압류권자",
+            "name": "이OO",
+            "seq": 1643
+          },
+          {
+            "role": "가압류권자",
+            "name": "박OO",
+            "seq": 1644
+          },
+          {
+            "role": "가압류권자",
+            "name": "신OOOOO",
+            "seq": 1645
+          },
+          {
+            "role": "가압류권자",
+            "name": "주OOO OOOO",
+            "seq": 1647
+          },
+          {
+            "role": "압류권자",
+            "name": "나OOOO",
+            "seq": 1676
+          },
+          {
+            "role": "압류권자",
+            "name": "국OOOOOOO OOOO",
+            "seq": 1678
+          },
+          {
+            "role": "압류권자",
+            "name": "광OOOO OOO",
+            "seq": 1679
+          },
+          {
+            "role": "압류권자",
+            "name": "진OO",
+            "seq": 16710
+          },
+          {
+            "role": "압류권자",
+            "name": "광OOOO OO",
+            "seq": 16727
+          },
+          {
+            "role": "교부권자",
+            "name": "나OOOO",
+            "seq": 17129
+          },
+          {
+            "role": "교부권자",
+            "name": "광OOOO OOO",
+            "seq": 17131
+          },
+          {
+            "role": "교부권자",
+            "name": "광OOOO OO",
+            "seq": 17132
+          },
+          {
+            "role": "교부권자",
+            "name": "진OO",
+            "seq": 17134
+          },
+          {
+            "role": "교부권자",
+            "name": "국OOOOOOO OOOO",
+            "seq": 17135
+          },
+          {
+            "role": "교부권자",
+            "name": "순OO",
+            "seq": 17137
+          },
+          {
+            "role": "배당요구권자",
+            "name": "주OOO OOOO",
+            "seq": 17430
+          },
+          {
+            "role": "배당요구권자",
+            "name": "신OOOOO",
+            "seq": 17433
+          },
+          {
+            "role": "배당요구권자",
+            "name": "근OOOOO OOOOOO",
+            "seq": 17436
+          }
+        ],
+        "noticeFrom": "2025-07-17",
+        "noticeTo": "2027-01-21",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1,
+          "listing": 1,
+          "parties": 1
+        },
+        "landArea": 26.36974,
+        "buildingArea": 102.8363,
+        "detailCheckedAt": "2026-09-16T00:17:49.483Z"
+      }
+    },
+    {
+      "id": "B000510|2026타경30851|3",
+      "set": {
+        "caseReceivedDate": "2026-03-20",
+        "caseStartDate": "2026-03-24",
+        "distributionDeadline": "2026-06-18",
+        "courtDept": "경매2계",
+        "courtDeptTel": "062-239-1600(2층 민사집행과 지법253호)",
+        "caseSuspendCode": "00",
+        "caseSuspendReason": "",
+        "rights": {
+          "assumedRights": "",
+          "surfaceRight": "",
+          "seniorMortgage": "2022.02.28. 근저당권",
+          "statementNote": "- 일괄매각\n- 302호와 303호가 경계구분없이 하나의 호실로 사용중임",
+          "goodsNote": "- 일괄매각\n- 302호와 303호가 경계구분없이 하나의 호실로 사용중임",
+          "writtenAt": "2026-08-31"
+        },
+        "appraisalPoints": [
+          {
+            "seq": 1,
+            "itemCode": "00083001",
+            "content": "     본건은 광주광역시 광산구 우산동 소재 수랑어린이공원 북서측 인근에 위치하며,     주변은 각종 근린생활시설 및 아파트단지 등이 혼재하는 지역임. "
+          },
+          {
+            "seq": 2,
+            "itemCode": "00083003",
+            "content": "     일반적인 교통이용상황은 보통시 됨. "
+          },
+          {
+            "seq": 3,
+            "itemCode": "00083015",
+            "content": "     철근콘크리트구조 (철근)콘크리트지붕 지하1층 지상12층 건물 내     제2층 제201호외 3개호로서,      외벽 : 몰탈위페인트 및 화강석,      창호 : 샷시창호 등의 마감임. "
+          },
+          {
+            "seq": 4,
+            "itemCode": "00083006",
+            "content": "     기호(가~라) : 근린생활시설임. "
+          },
+          {
+            "seq": 5,
+            "itemCode": "00083017",
+            "content": "     기본적인 급·배수설비 및 위생설비, 승강기, 화재경보 및 스프링클러 등이      구비되어 있음. "
+          },
+          {
+            "seq": 6,
+            "itemCode": "00083009",
+            "content": "     세로장방형의 평지로서, 주상용 건부지로 이용중임. "
+          },
+          {
+            "seq": 7,
+            "itemCode": "00083005",
+            "content": "     본건 남측으로 폭 약 15m, 서측으로 폭 약 8m의 포장도로와 각각 접함. "
+          },
+          {
+            "seq": 8,
+            "itemCode": "00083011",
+            "content": "     ―     "
+          },
+          {
+            "seq": 9,
+            "itemCode": "00083014",
+            "content": "     해당사항 없음. "
+          },
+          {
+            "seq": 10,
+            "itemCode": "00083026",
+            "content": "     1) 임대관계       임대관계는 미상임.      2) 기타       호별배치도의 각 호별 위치는 집합건축물대장의 현황 도면을 기준으로 개략       적으로 표시하였으니 정확한 위치는 재확인을 요함. "
+          }
+        ],
+        "minimumPriceRounds": [
+          585000000
+        ],
+        "salePlace": "입찰법정",
+        "decisionPlace": "광주지방법원 사법보좌관실",
+        "depositRate": 10,
+        "listing": {
+          "exclusive": [
+            {
+              "no": "3층302호",
+              "structure": "철근콘크리트구조",
+              "area": 105.28,
+              "buildingName": "우산동한국아델리움더스위트",
+              "address": "1609-16",
+              "usageCode": "21100"
+            },
+            {
+              "no": "3층303호",
+              "structure": "철근콘리트구조",
+              "area": 67.6782,
+              "buildingName": "우산동한국아델리움더스위트",
+              "address": "1609-16",
+              "usageCode": "21100"
+            }
+          ],
+          "land": [
+            {
+              "address": "1609-16",
+              "category": "대",
+              "area": 551.3,
+              "ratioNumerator": 26.99636,
+              "ratioDenominator": 551.3
+            },
+            {
+              "address": "1609-16",
+              "category": "대",
+              "area": 551.3,
+              "ratioNumerator": 17.35434,
+              "ratioDenominator": 551.3
+            },
+            {
+              "address": "1609-16",
+              "category": "대",
+              "area": 551.3,
+              "ratioNumerator": 26.99636,
+              "ratioDenominator": 551.3
+            },
+            {
+              "address": "1609-16",
+              "category": "대",
+              "area": 551.3,
+              "ratioNumerator": 17.35434,
+              "ratioDenominator": 551.3
+            }
+          ],
+          "buildingDetail": [
+            "철근콘크리트구조 (철근)콘크리트지붕 12층 공동주택 지1충 451.8044㎡ 1층 222.3496㎡ 2층 341.082㎡ 3층 341.082㎡ 4층 205.4589㎡ 5층 205.4589㎡ 6층 205.4589㎡ 7층 205.4589㎡ 8층 205.4589㎡ 9층 205.4589㎡ 10층 205.4589㎡ 11층 205.4589㎡ 12층 205.4589㎡",
+            "철근콘크리트구조 105.2800㎡",
+            "철근콘크리트구조 (철근)콘크리트지붕 12층 공동주택 지1충 451.8044㎡ 1층 222.3496㎡ 2층 341.082㎡ 3층 341.082㎡ 4층 205.4589㎡ 5층 205.4589㎡ 6층 205.4589㎡ 7층 205.4589㎡ 8층 205.4589㎡ 9층 205.4589㎡ 10층 205.4589㎡ 11층 205.4589㎡ 12층 205.4589㎡",
+            "철근콘리트구조 67.6782㎡",
+            "철근콘크리트구조 (철근)콘크리트지붕 12층 공동주택 지1충 451.8044㎡ 1층 222.3496㎡ 2층 341.082㎡ 3층 341.082㎡ 4층 205.4589㎡ 5층 205.4589㎡ 6층 205.4589㎡ 7층 205.4589㎡ 8층 205.4589㎡ 9층 205.4589㎡ 10층 205.4589㎡ 11층 205.4589㎡ 12층 205.4589㎡",
+            "철근콘크리트구조 105.2800㎡",
+            "철근콘크리트구조 (철근)콘크리트지붕 12층 공동주택 지1충 451.8044㎡ 1층 222.3496㎡ 2층 341.082㎡ 3층 341.082㎡ 4층 205.4589㎡ 5층 205.4589㎡ 6층 205.4589㎡ 7층 205.4589㎡ 8층 205.4589㎡ 9층 205.4589㎡ 10층 205.4589㎡ 11층 205.4589㎡ 12층 205.4589㎡",
+            "철근콘리트구조 67.6782㎡"
+          ],
+          "exclusiveArea": 172.9582,
+          "landShareArea": null,
+          "totalLandArea": 2205.2
+        },
+        "landTotalArea": 2205.2,
+        "rawCoords": {
+          "x": 291155,
+          "y": 285257,
+          "srs": "unverified"
+        },
+        "bidMethodCode": "000331",
+        "parties": [
+          {
+            "role": "채권자",
+            "name": "광OOOOOOOOO",
+            "seq": 1271
+          },
+          {
+            "role": "채무자겸소유자",
+            "name": "주OOO OOOOOOO",
+            "seq": 15828
+          },
+          {
+            "role": "가압류권자",
+            "name": "이OO",
+            "seq": 1643
+          },
+          {
+            "role": "가압류권자",
+            "name": "박OO",
+            "seq": 1644
+          },
+          {
+            "role": "가압류권자",
+            "name": "신OOOOO",
+            "seq": 1645
+          },
+          {
+            "role": "가압류권자",
+            "name": "주OOO OOOO",
+            "seq": 1647
+          },
+          {
+            "role": "압류권자",
+            "name": "나OOOO",
+            "seq": 1676
+          },
+          {
+            "role": "압류권자",
+            "name": "국OOOOOOO OOOO",
+            "seq": 1678
+          },
+          {
+            "role": "압류권자",
+            "name": "광OOOO OOO",
+            "seq": 1679
+          },
+          {
+            "role": "압류권자",
+            "name": "진OO",
+            "seq": 16710
+          },
+          {
+            "role": "압류권자",
+            "name": "광OOOO OO",
+            "seq": 16727
+          },
+          {
+            "role": "교부권자",
+            "name": "나OOOO",
+            "seq": 17129
+          },
+          {
+            "role": "교부권자",
+            "name": "광OOOO OOO",
+            "seq": 17131
+          },
+          {
+            "role": "교부권자",
+            "name": "광OOOO OO",
+            "seq": 17132
+          },
+          {
+            "role": "교부권자",
+            "name": "진OO",
+            "seq": 17134
+          },
+          {
+            "role": "교부권자",
+            "name": "국OOOOOOO OOOO",
+            "seq": 17135
+          },
+          {
+            "role": "교부권자",
+            "name": "순OO",
+            "seq": 17137
+          },
+          {
+            "role": "배당요구권자",
+            "name": "주OOO OOOO",
+            "seq": 17430
+          },
+          {
+            "role": "배당요구권자",
+            "name": "신OOOOO",
+            "seq": 17433
+          },
+          {
+            "role": "배당요구권자",
+            "name": "근OOOOO OOOOOO",
+            "seq": 17436
+          }
+        ],
+        "noticeFrom": "2025-07-17",
+        "noticeTo": "2027-01-21",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1,
+          "listing": 1,
+          "parties": 1
+        },
+        "buildingArea": 172.9582,
+        "detailCheckedAt": "2026-09-16T00:18:11.807Z"
+      }
+    },
+    {
+      "id": "B000320|2026타경3080|1",
+      "set": {
+        "caseReceivedDate": "2026-01-20",
+        "caseStartDate": "2026-01-21",
+        "distributionDeadline": "2026-04-22",
+        "courtDept": "경매2계",
+        "courtDeptTel": "053) 570 - 2302",
+        "caseSuspendCode": "00",
+        "caseSuspendReason": "",
+        "rights": {
+          "assumedRights": "",
+          "surfaceRight": "대지권의 별도등기는 대구도시철도공사의 구분지상권, 도시철도존속시까지",
+          "seniorMortgage": "2024.2.29. 근저당권",
+          "statementNote": "",
+          "goodsNote": "",
+          "writtenAt": "2026-08-18"
+        },
+        "appraisalPoints": [
+          {
+            "seq": 1,
+            "itemCode": "00083001",
+            "content": "     본건은 대구광역시 달서구 상인동 소재 &amp;apos;경북기계공업고등학교&amp;apos; 동측 인근에 위치하는      &amp;apos;상인화성파크드림&amp;apos; 제1104동 제18층 제1802호로서, 부근 일대는 아파트단지, 주변상가      학교 등으로 형성되어 있습니다."
+          },
+          {
+            "seq": 2,
+            "itemCode": "00083003",
+            "content": "     본건까지 일반 차량의 접근이 가능하며, 인근에 시내버스 승강장 및 도시철도 1호선      &amp;apos;월촌역&amp;apos;이 소재하는 등 제반 교통사정은 대체로 무난한 편입니다."
+          },
+          {
+            "seq": 3,
+            "itemCode": "00083015",
+            "content": "     기호(가) 철근콘크리트구조 철근콘크리트지붕 25층건 중 제18층 제1802호로서,       외벽: 몰탈위 페인팅 등 마감.       내벽: 벽지, 타일 등 마감.       바닥: 모노륨, 타일 깔기 등 마감.       창호: 새시 창호입니다."
+          },
+          {
+            "seq": 4,
+            "itemCode": "00083006",
+            "content": "     기호(가) 아파트로 이용중입니다."
+          },
+          {
+            "seq": 5,
+            "itemCode": "00083017",
+            "content": "     기호(가) 위생 및 급배수설비, 승강기설비, 옥내소화전설비, 화재탐지설비, 지역난방에       의한 난방설비 등 되어 있습니다."
+          },
+          {
+            "seq": 6,
+            "itemCode": "00083009",
+            "content": "     2필 일단지 부정형의 토지로서 북서측 하향 완경사 지대에 자체지반 대체로 평탄하게       정지되어 있으며, 아파트 부지로 이용중입니다."
+          },
+          {
+            "seq": 7,
+            "itemCode": "00083005",
+            "content": "     북서측으로 폭 약 35미터, 북동측, 남측, 남서측, 남동측으로 폭 약 20미터 내외의      포장도로에 각각 접합니다. "
+          },
+          {
+            "seq": 8,
+            "itemCode": "00083011",
+            "content": "     기호(1) 도시지역, 제3종일반주거지역, 시가지경관지구(일반), 제1종지구단위계획구역      (공동주택용지), 제1종지구단위계획구역(공동주택용지, 송현주공1,2단지, 송현주공아파      트 주택재건축 정비사업 완료), 지구단위계획구역, 대로1류(폭 35m~40m)(대(주)1-12)      (접합), 도시철도(월촌정거장)(저촉), 소로3류(폭 8m 미만)(송택3호선)(접합), 중로1류      (폭 20m~25m)(접합), 중로1류(폭 20m~25m)(중(집)1-267)(접합), 가축사육제한구역      &lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역&lt;교육환경 보호에 관한 법률&gt;,       택지개발지구기타(택지개발사업완료)&lt;택지개발촉진법&gt;입니다.      기호(2) 도시지역, 제3종일반주거지역, 제1종지구단위계획구역(공동주택용지), 제1종지      구단위계획구역(공동주택용지, 송현주공1,2단지, 송현주공아파트 주택재건축 정비사업       완료), 지구단위계획구역, 대로1류(폭 35m~40m)(접합), 소로1류(폭 10m~12m)(접합),       중로1류(폭 20m~25m)(접합), 중로1류(폭 20m~25m)(중(집)1-267)(접합), 가축사육제      한구역&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역&lt;교육환경 보호에 관한 법      률&gt;, 절대보호구역&lt;교육환경 보호에 관한 법률&gt;, 택지개발지구기타(택지개발사업완료)      &lt;택지개발촉진법&gt;입니다."
+          },
+          {
+            "seq": 9,
+            "itemCode": "00083014",
+            "content": "     해당사항 없습니다. "
+          },
+          {
+            "seq": 10,
+            "itemCode": "00083026",
+            "content": "     가. 임대관계 : 미상입니다.      나. 기타사항 : 해당사항 없습니다.      "
+          }
+        ],
+        "minimumPriceRounds": [
+          545000000
+        ],
+        "salePlace": "1층 입찰법정",
+        "decisionPlace": "1층 입찰법정",
+        "depositRate": 10,
+        "occupancy": {
+          "investigatedAt": "2026년02월27일 ",
+          "sentAt": "2026-03-03",
+          "receivedAt": "2026-03-06",
+          "note": "1.주민 등록상 소유자만  전입되어 있음",
+          "items": [
+            {
+              "address": "1596",
+              "buildingName": "상인화성파크드림",
+              "possessionCode": "01",
+              "possession": "",
+              "lesseeCount": 0
+            }
+          ]
+        },
+        "lessees": [],
+        "lesseeCount": 0,
+        "listing": {
+          "exclusive": [
+            {
+              "no": "1104동 18층1802호",
+              "structure": "철근콘크리트구조",
+              "area": 119.22,
+              "buildingName": "상인화성파크드림",
+              "address": "1596",
+              "usageCode": "20100"
+            }
+          ],
+          "land": [
+            {
+              "address": "1596",
+              "category": "대",
+              "area": 52662.4,
+              "ratioNumerator": 52.218,
+              "ratioDenominator": 115053.1
+            },
+            {
+              "address": "1597",
+              "category": "대",
+              "area": 62390.7,
+              "ratioNumerator": 52.218,
+              "ratioDenominator": 115053.1
+            }
+          ],
+          "buildingDetail": [
+            "철근콘크리트구조 철근콘크리트지붕 25층 아파트 1층 301.02 ㎡(아파트) 2층 289.02 ㎡(아파트) 3층 289.02 ㎡(아파트) 4층 289.02 ㎡(아파트) 5층 289.02 ㎡(아파트) 6층 289.02 ㎡(아파트) 7층 289.02 ㎡(아파트) 8층 289.02 ㎡(아파트) 9층 289.02 ㎡(아파트) 10층 289.02 ㎡(아파트) 11층 289.02 ㎡(아파트) 12층 289.02 ㎡(아파트) 13층 289.02 ㎡(아파트) 14층 289.02 ㎡(아파트) 15층 289.02 ㎡(아파트) 16층 289.02 ㎡(아파트) 17층 289.02 ㎡(아파트) 18층 289.02 ㎡(아파트) 19층 289.02 ㎡(아파트) 20층 289.02 ㎡(아파트) 21층 289.02 ㎡(아파트) 22층 289.02 ㎡(아파트) 23층 289.02 ㎡(아파트) 24층 289.02 ㎡(아파트) 25층 289.02 ㎡(아파트)",
+            "철근콘크리트구조 119.22㎡"
+          ],
+          "exclusiveArea": 119.22,
+          "landShareArea": 52.218,
+          "totalLandArea": 115053.1
+        },
+        "landTotalArea": 115053.1,
+        "rawCoords": {
+          "x": 449493,
+          "y": 358107,
+          "srs": "unverified"
+        },
+        "bidMethodCode": "000331",
+        "parties": [
+          {
+            "role": "채무자겸소유자",
+            "name": "김OO",
+            "seq": 1583
+          },
+          {
+            "role": "근저당권자",
+            "name": "원OOOOOO",
+            "seq": 1631
+          },
+          {
+            "role": "근저당권자",
+            "name": "아OOOOOOOOOOOOO",
+            "seq": 1632
+          },
+          {
+            "role": "교부권자",
+            "name": "국OOOOOOO OOOOOO",
+            "seq": 1714
+          },
+          {
+            "role": "교부권자",
+            "name": "대OOOO OOO",
+            "seq": 1715
+          }
+        ],
+        "noticeFrom": "2025-07-17",
+        "noticeTo": "2026-12-17",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1,
+          "listing": 1,
+          "parties": 1
+        },
+        "events": [
+          {
+            "event_date": "2026-09-17",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "1층 입찰법정",
+            "amount": 545000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-29",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "1층 입찰법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "landArea": 52.218,
+        "buildingArea": 119.22,
+        "appraisalSummary": "     본건은 대구광역시 달서구 상인동 소재 &amp;apos;경북기계공업고등학교&amp;apos; 동측 인근에 위치하는      &amp;apos;상인화성파크드림&amp;apos; 제1104동 제18층 제1802호로서, 부근 일대는 아파트단지, 주변상가      학교 등으로 형성되어 있습니다.\n     본건까지 일반 차량의 접근이 가능하며, 인근에 시내버스 승강장 및 도시철도 1호선      &amp;apos;월촌역&amp;apos;이 소재하는 등 제반 교통사정은 대체로 무난한 편입니다.\n     기호(가) 철근콘크리트구조 철근콘크리트지붕 25층건 중 제18층 제1802호로서,       외벽: 몰탈위 페인팅 등 마감.       내벽: 벽지, 타일 등 마감.       바닥: 모노륨, 타일 깔기 등 마감.       창호: 새시 창호입니다.\n     기호(가) 아파트로 이용중입니다.\n     기호(가) 위생 및 급배수설비, 승강기설비, 옥내소화전설비, 화재탐지설비, 지역난방에       의한 난방설비 등 되어 있습니다.\n     2필 일단지 부정형의 토지로서 북서측 하향 완경사 지대에 자체지반 대체로 평탄하게       정지되어 있으며, 아파트 부지로 이용중입니다.\n     북서측으로 폭 약 35미터, 북동측, 남측, 남서측, 남동측으로 폭 약 20미터 내외의      포장도로에 각각 접합니다. \n     기호(1) 도시지역, 제3종일반주거지역, 시가지경관지구(일반), 제1종지구단위계획구역      (공동주택용지), 제1종지구단위계획구역(공동주택용지, 송현주공1,2단지, 송현주공아파      트 주택재건축 정비사업 완료), 지구단위계획구역, 대로1류(폭 35m~40m)(대(주)1-12)      (접합), 도시철도(월촌정거장)(저촉), 소로3류(폭 8m 미만)(송택3호선)(접합), 중로1류      (폭 20m~25m)(접합), 중로1류(폭 20m~25m)(중(집)1-267)(접합), 가축사육제한구역      &lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역&lt;교육환경 보호에 관한 법률&gt;,       택지개발지구기타(택지개발사업완료)&lt;택지개발촉진법&gt;입니다.      기호(2) 도시지역, 제3종일반주거지역, 제1종지구단위계획구역(공동주택용지), 제1종지      구단위계획구역(공동주택용지, 송현주공1,2단지, 송현주공아파트 주택재건축 정비사업       완료), 지구단위계획구역, 대로1류(폭 35m~40m)(접합), 소로1류(폭 10m~12m)(접합),       중로1류(폭 20m~25m)(접합), 중로1류(폭 20m~25m)(중(집)1-267)(접합), 가축사육제      한구역&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호구역&lt;교육환경 보호에 관한 법      률&gt;, 절대보호구역&lt;교육환경 보호에 관한 법률&gt;, 택지개발지구기타(택지개발사업완료)      &lt;택지개발촉진법&gt;입니다.\n     해당사항 없습니다. \n     가. 임대관계 : 미상입니다.      나. 기타사항 : 해당사항 없습니다.      ",
+        "appraisalAgency": "",
+        "claimAmount": 394951085,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "caseType": "부동산임의경매",
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-29",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "detailCheckedAt": "2026-09-16T00:16:46.446Z"
+      }
+    },
+    {
+      "id": "B000320|2026타경3074|1",
+      "set": {
+        "caseReceivedDate": "2026-01-19",
+        "caseStartDate": "2026-01-20",
+        "distributionDeadline": "2026-04-21",
+        "courtDept": "경매2계",
+        "courtDeptTel": "053) 570 - 2302",
+        "caseSuspendCode": "00",
+        "caseSuspendReason": "",
+        "rights": {
+          "assumedRights": "",
+          "surfaceRight": "",
+          "seniorMortgage": "2022.5.13. 근저당권",
+          "statementNote": "농지취득자격증명 제출 필요(미제출시 보증금 반환하지 않음), 현황은 전",
+          "goodsNote": "농지취득자격증명 제출 필요(미제출시 보증금 반환하지 않음), 현황은 전",
+          "writtenAt": "2026-08-22"
+        },
+        "appraisalPoints": [
+          {
+            "seq": 1,
+            "itemCode": "00083001",
+            "content": "본건은 대구광역시 달성군 하빈면 묘리 소재 &amp;quot;안곡마을회관&amp;quot; 남서측 인근에 위치하는 부동산 으로 부근은 농경지, 농가주택 등으로 형성되어 있습니다. "
+          },
+          {
+            "seq": 2,
+            "itemCode": "00083003",
+            "content": "본건까지 차량진입 가능하며, 간선도로 등의 위치를 고려할 때, 제반 교통사정 보통입니다."
+          },
+          {
+            "seq": 3,
+            "itemCode": "00083008",
+            "content": "부정형 평지 토지로 전으로 이용 중입니다."
+          },
+          {
+            "seq": 4,
+            "itemCode": "00083004",
+            "content": "북서측으로 구거를 경유하여 폭 약 4미터 내외의 도로와 접하며, 동측 제방도로는 표고차이 로 인하여 직접 통행은 불가능한 상태입니다."
+          },
+          {
+            "seq": 5,
+            "itemCode": "00083011",
+            "content": "자연녹지지역, 가축사육제한구역&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 개발제한구역&lt;개발 제한구역의 지정 및 관리에 관한 특별조치법&gt;, 배출시설설치제한지역&lt;물환경보전법&gt;, 공장설 립승인지역(수도법시행령 제14조의31호)&lt;수도법&gt;입니다."
+          },
+          {
+            "seq": 6,
+            "itemCode": "00083013",
+            "content": "본건 지상에 비닐하우스 소재합니다."
+          },
+          {
+            "seq": 7,
+            "itemCode": "00083014",
+            "content": "토지대장상 지목 &amp;quot;과수원&amp;quot;이나, 현황 &amp;quot;전&amp;quot;으로 이용중입니다."
+          },
+          {
+            "seq": 8,
+            "itemCode": "00083026",
+            "content": "1)임대관계: 미상입니다. 2)기    타: 없습니다."
+          }
+        ],
+        "minimumPriceRounds": [
+          162495000
+        ],
+        "salePlace": "1층 입찰법정",
+        "decisionPlace": "1층 입찰법정",
+        "depositRate": 10,
+        "listing": {
+          "exclusive": [
+            {
+              "no": null,
+              "structure": "",
+              "area": 1035,
+              "buildingName": null,
+              "address": "125",
+              "usageCode": "10100"
+            }
+          ],
+          "land": [],
+          "buildingDetail": [],
+          "exclusiveArea": 1035,
+          "landShareArea": null,
+          "totalLandArea": null
+        },
+        "rawCoords": {
+          "x": 439382,
+          "y": 366918,
+          "srs": "unverified"
+        },
+        "bidMethodCode": "000331",
+        "parties": [
+          {
+            "role": "채권자",
+            "name": "석OOOOOOO",
+            "seq": 1271
+          },
+          {
+            "role": "채무자겸소유자",
+            "name": "농OOOOO OOOOOOOO",
+            "seq": 1585
+          },
+          {
+            "role": "가압류권자",
+            "name": "신OOOOO",
+            "seq": 1644
+          },
+          {
+            "role": "교부권자",
+            "name": "대OOOO OOO",
+            "seq": 1716
+          },
+          {
+            "role": "지상권자",
+            "name": "석OOOOOOO",
+            "seq": 1722
+          }
+        ],
+        "noticeFrom": "2025-07-17",
+        "noticeTo": "2026-12-17",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1,
+          "listing": 1,
+          "parties": 1
+        },
+        "buildingArea": 1035,
+        "detailCheckedAt": "2026-09-16T00:18:31.838Z"
+      }
+    },
+    {
+      "id": "B000320|2026타경3068|1",
+      "set": {
+        "caseReceivedDate": "2026-01-16",
+        "caseStartDate": "2026-01-19",
+        "distributionDeadline": "2026-04-20",
+        "courtDept": "경매2계",
+        "courtDeptTel": "053) 570 - 2302",
+        "caseSuspendCode": "00",
+        "caseSuspendReason": "",
+        "rights": {
+          "assumedRights": "",
+          "surfaceRight": "",
+          "seniorMortgage": "2023.8.18.  근저당권",
+          "statementNote": "",
+          "goodsNote": "",
+          "writtenAt": "2026-08-22"
+        },
+        "appraisalPoints": [
+          {
+            "seq": 1,
+            "itemCode": "00083001",
+            "content": "본건은 대구광역시 달성군 가창면 단산리 소재 &amp;apos;신기마을&amp;apos; 내에 위치하는 &amp;apos;송하포레&amp;apos; 제4층 제403호 단위세대이며, 본건 인근으로 단독주택, 농경지 및 자연림 등이 혼재한 지역으로서 제반 주위환경 보통임."
+          },
+          {
+            "seq": 2,
+            "itemCode": "00083003",
+            "content": "본건까지 차량 진출입 가능하며, 제반 교통상황은 다소 불편시 됨."
+          },
+          {
+            "seq": 3,
+            "itemCode": "00083015",
+            "content": "(가) 철근콘크리트구조 (철근)콘크리트지붕 4층 건물 내 제4층 제403호로서,   -외벽: 적벽돌 및 스톤코트 등 마감,   -내벽: 벽지 및 타일 등 마감,   -바닥: 내부바닥재 및 타일 등 마감,   -창호: 하이샷시 창호임."
+          },
+          {
+            "seq": 4,
+            "itemCode": "00083006",
+            "content": "&amp;apos;공동주택(연립주택)&amp;apos;으로 이용중임."
+          },
+          {
+            "seq": 5,
+            "itemCode": "00083017",
+            "content": "위생설비, 급배수설비 및 개별난방설비 등 되어있음.   "
+          },
+          {
+            "seq": 6,
+            "itemCode": "00083009",
+            "content": "남서측 하향 완경사지대에 자체지반 대체로 평탄하게 조성된 부정형의 토지로서, &amp;apos;공동주택(연립주택) 건부지&amp;apos; 로 이용중임."
+          },
+          {
+            "seq": 7,
+            "itemCode": "00083005",
+            "content": "서측 및 남동측으로 폭 약 6m 내외의 아스팔트 포장도로에 각각 접함."
+          },
+          {
+            "seq": 8,
+            "itemCode": "00083011",
+            "content": "제1종일반주거지역, 제1종지구단위계획구역(세부계획 및 건축한계선은 관련부서 확인요망), 소로2류(폭 8m~10m)(2017-01-20)(접합), 가축사육제한구역&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;임."
+          },
+          {
+            "seq": 9,
+            "itemCode": "00083014",
+            "content": "없음."
+          },
+          {
+            "seq": 10,
+            "itemCode": "00083026",
+            "content": "임대관계 미상이며, 본건은 이해관계인 부재 및 폐문 등으로 집합건축물대장상 건축물현황도 등을 통해 표준적인 내부구조, 사용자재 및 통상적인 이용상황을 상정하여 평가한 바, 경매진행시 참고하시기 바람."
+          }
+        ],
+        "minimumPriceRounds": [
+          331000000
+        ],
+        "salePlace": "1층 입찰법정",
+        "decisionPlace": "1층 입찰법정",
+        "depositRate": 10,
+        "listing": {
+          "exclusive": [
+            {
+              "no": "4층403호",
+              "structure": "철근콘크리트구조",
+              "area": 109.45,
+              "buildingName": "송하포레",
+              "address": "378-1",
+              "usageCode": "20100"
+            }
+          ],
+          "land": [
+            {
+              "address": "378-1",
+              "category": "대",
+              "area": 1130,
+              "ratioNumerator": 94.9059,
+              "ratioDenominator": 1130
+            }
+          ],
+          "buildingDetail": [
+            "철근콘크리트구조 (철근)콘크리트지붕 4층 공동주택 지1층 633.795㎡ 1층 397.61㎡ 2층 383.155㎡ 3층 383.155㎡ 4층 383.155㎡",
+            "철근콘크리트구조 109.45㎡"
+          ],
+          "exclusiveArea": 109.45,
+          "landShareArea": 94.9059,
+          "totalLandArea": 1130
+        },
+        "landTotalArea": 1130,
+        "rawCoords": {
+          "x": 460122,
+          "y": 352471,
+          "srs": "unverified"
+        },
+        "bidMethodCode": "000331",
+        "parties": [
+          {
+            "role": "채권자",
+            "name": "삼OOOOOOO",
+            "seq": 1271
+          },
+          {
+            "role": "채무자겸소유자",
+            "name": "채OO",
+            "seq": 1582
+          },
+          {
+            "role": "임차인",
+            "name": "이OO",
+            "seq": 1626
+          },
+          {
+            "role": "근저당권자",
+            "name": "삼OOOOOOO",
+            "seq": 1631
+          },
+          {
+            "role": "압류권자",
+            "name": "남OOOOO",
+            "seq": 1673
+          },
+          {
+            "role": "교부권자",
+            "name": "남OOOOO",
+            "seq": 1715
+          },
+          {
+            "role": "교부권자",
+            "name": "국OOOOOOO OOOO",
+            "seq": 1717
+          },
+          {
+            "role": "교부권자",
+            "name": "대OOOO OOO",
+            "seq": 1718
+          }
+        ],
+        "noticeFrom": "2025-07-17",
+        "noticeTo": "2026-12-17",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1,
+          "listing": 1,
+          "parties": 1
+        },
+        "landArea": 94.9059,
+        "buildingArea": 109.45,
+        "detailCheckedAt": "2026-09-16T00:18:53.355Z"
+      }
+    },
+    {
+      "id": "B000510|2026타경30665|1",
+      "set": {
+        "caseReceivedDate": "2026-03-04",
+        "caseStartDate": "2026-03-05",
+        "distributionDeadline": "2026-05-29",
+        "courtDept": "경매2계",
+        "courtDeptTel": "062-239-1600(2층 민사집행과 지법253호)",
+        "caseSuspendCode": "00",
+        "caseSuspendReason": "",
+        "rights": {
+          "assumedRights": "",
+          "surfaceRight": "",
+          "seniorMortgage": "2025.10.27. 압류",
+          "statementNote": "-“주택임차권자 승계인인 채권자 서울보증보험 주식회사의 매각시 보증금 전액을 배당받지 못하더라도 매수인에 대해 잔존 임대차보증금 반환청구권 및 대항력을 포기하고 임차권등기를 말소하는 것에 동의한다”는 조건부 임대인의 지위승계에 대한 이의제기 확약서가 제출됨\n-첨단에이엠시티스카이하이2차 관리사무소(2026.06.04.자)에 의하면 2026.5.20.현재 2,397,280원 관리비 미납된 상태임",
+          "goodsNote": "“주택임차권자 승계인인 채권자 서울보증보험 주식회사의 매각시 보증금 전액을 배당받지 못하더라도 매수인에 대해 잔존 임대차보증금 반환청구권 및 대항력을 포기하고 임차권등기를 말소하는 것에 동의한다”는 조건부 임대인의 지위승계에 대한 이의제기 확약서가 제출됨",
+          "writtenAt": "2026-07-20"
+        },
+        "appraisalPoints": [
+          {
+            "seq": 1,
+            "itemCode": "00083001",
+            "content": "본건은 광주광역시 광산구 월계동 소재 &amp;quot;첨단지구대&amp;quot; 남측 인근에 위치한 첨단에이엠-시티스카이하이2차 제9층 제901호로서 주변은 아파트단지, 근린생활시설, 학교 등이 소재한 주거 및 상가 혼용지대로서 주위환경은 보통임."
+          },
+          {
+            "seq": 2,
+            "itemCode": "00083003",
+            "content": "본건까지 제반차량 출입 가능하며, 인근에 시내버스 정류장 등이 소재하는 등 대중교통수단 이용은 양호함."
+          },
+          {
+            "seq": 3,
+            "itemCode": "00083015",
+            "content": "철근콘크리트구조 (철근)콘크리트지붕 14층건 중 9층 901호로서,   외벽 : 석재붙임, 시멘트몰탈위 페인팅마감 등,   내벽 : 벽지 및 타일붙임 등,   창호 : 새시창호임."
+          },
+          {
+            "seq": 4,
+            "itemCode": "00083006",
+            "content": "도시형생활주택임."
+          },
+          {
+            "seq": 5,
+            "itemCode": "00083017",
+            "content": "일반적인 급·배수설비, 위생설비, 소방설비, 승강기, 도시가스에 의한 난방설비 등이 되어있음. "
+          },
+          {
+            "seq": 6,
+            "itemCode": "00083009",
+            "content": "정방형 평지로, 공동주택(아파트) 건부지임."
+          },
+          {
+            "seq": 7,
+            "itemCode": "00083005",
+            "content": "동측으로 왕복2차선의 아스팔트 포장도로와 접함."
+          },
+          {
+            "seq": 8,
+            "itemCode": "00083011",
+            "content": "--"
+          },
+          {
+            "seq": 9,
+            "itemCode": "00083014",
+            "content": "--"
+          },
+          {
+            "seq": 10,
+            "itemCode": "00083026",
+            "content": "임대관계는 미상임."
+          }
+        ],
+        "minimumPriceRounds": [
+          49000000
+        ],
+        "salePlace": "입찰법정",
+        "decisionPlace": "광주지방법원 사법보좌관실",
+        "depositRate": 10,
+        "listing": {
+          "exclusive": [
+            {
+              "no": "9층901호",
+              "structure": "철근콘크리트구조",
+              "area": 19.2584,
+              "buildingName": "첨단에이엠-시티스카이하이2차",
+              "address": "878-4",
+              "usageCode": "20100"
+            }
+          ],
+          "land": [
+            {
+              "address": "878-4",
+              "category": "대",
+              "area": 567.6,
+              "ratioNumerator": 5.4086,
+              "ratioDenominator": 567.6
+            }
+          ],
+          "buildingDetail": [
+            "철근콘크리트구조 (철근)콘크리트지붕 14층 공동주택(아파트) 지1층 200.996㎡ 1층 56.1556㎡ 2층 442.9604㎡ 3층 244.0924㎡ 4층 244.0924㎡ 5층 244.0924㎡ 6층 244.0924㎡ 7층 244.0924㎡ 8층 244.0924㎡ 9층 244.0924㎡ 10층 244.0924㎡ 11층 244.0924㎡ 12층 244.0924㎡ 13층 156.4609㎡ 14층 156.4609㎡",
+            "철근콘크리트구조 19.2584㎡"
+          ],
+          "exclusiveArea": 19.2584,
+          "landShareArea": 5.4086,
+          "totalLandArea": 567.6
+        },
+        "landTotalArea": 567.6,
+        "rawCoords": {
+          "x": 295185,
+          "y": 291374,
+          "srs": "unverified"
+        },
+        "bidMethodCode": "000331",
+        "parties": [
+          {
+            "role": "채권자",
+            "name": "서OOOOO OOOO",
+            "seq": 1271
+          },
+          {
+            "role": "채무자겸소유자",
+            "name": "김OO",
+            "seq": 1582
+          },
+          {
+            "role": "압류권자",
+            "name": "서OOOOO",
+            "seq": 1673
+          },
+          {
+            "role": "압류권자",
+            "name": "정OOOO",
+            "seq": 1674
+          },
+          {
+            "role": "교부권자",
+            "name": "서OOOOO",
+            "seq": 1716
+          },
+          {
+            "role": "교부권자",
+            "name": "정OOOO",
+            "seq": 1717
+          },
+          {
+            "role": "교부권자",
+            "name": "광OOOO OOO",
+            "seq": 1718
+          },
+          {
+            "role": "교부권자",
+            "name": "광OOOO OO",
+            "seq": 1719
+          },
+          {
+            "role": "주택임차권자",
+            "name": "한OOOOOOO",
+            "seq": 1805
+          }
+        ],
+        "relatedCasesApi": [
+          {
+            "caseNumber": "2026차전34675",
+            "relation": "지급명령",
+            "court": "서울중앙지방법원"
+          }
+        ],
+        "noticeFrom": "2025-06-06",
+        "noticeTo": "2026-12-10",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1,
+          "listing": 1,
+          "parties": 1
+        },
+        "landArea": 5.4086,
+        "buildingArea": 19.2584,
+        "detailCheckedAt": "2026-09-16T00:19:14.441Z"
+      }
+    },
+    {
+      "id": "B000320|2026타경3062|1",
+      "set": {
+        "caseReceivedDate": "2026-01-16",
+        "caseStartDate": "2026-01-16",
+        "distributionDeadline": "2026-04-20",
+        "courtDept": "경매2계",
+        "courtDeptTel": "053) 570 - 2302",
+        "caseSuspendCode": "00",
+        "caseSuspendReason": "",
+        "rights": {
+          "assumedRights": "",
+          "surfaceRight": "",
+          "seniorMortgage": "2024.5.31. 압류",
+          "statementNote": "매수인에게 대항할 수 있는 을구 1번 양수인 서울보증보험  대항력포기서 제출",
+          "goodsNote": "매수인에게 대항할 수 있는 을구 1번 양수인 서울보증보험  대항력포기서 제출",
+          "writtenAt": "2026-08-22"
+        },
+        "appraisalPoints": [
+          {
+            "seq": 1,
+            "itemCode": "00083001",
+            "content": "본건은 대구광역시 달서구 두류동 소재 두류네거리 동측 인근에 위치하며, 주변은 아파트 단지, 업무시설, 근린생활시설 등이 형성되어 있습니다."
+          },
+          {
+            "seq": 2,
+            "itemCode": "00083003",
+            "content": "본건 인근에 시내버스정류장 및 지하철2호선(두류역)이 소재하는 등 제반 교통상황은  양호합니다."
+          },
+          {
+            "seq": 3,
+            "itemCode": "00083015",
+            "content": "철근콘크리트구조 평슬라브지붕 26층 내 제3층 제307호 1개 호수로서, 사용승인일 : 2018.2.27  외 벽 : 몰탈위페인트, 화강석 붙임 등 마감. 내 벽 : 벽지 및 타일 등 마감. 창 호 : 새시창호입니다."
+          },
+          {
+            "seq": 4,
+            "itemCode": "00083006",
+            "content": "오피스텔 1개 호수로 이용 중입니다."
+          },
+          {
+            "seq": 5,
+            "itemCode": "00083017",
+            "content": "위생설비, 급배수설비, 난방설비, 승강기설비 등 있습니다.  "
+          },
+          {
+            "seq": 6,
+            "itemCode": "00083009",
+            "content": "3필지 일단의 다각형의 평지로서, 업무시설(오피스텔) 및 근린생활시설 부지로  이용 중입니다. "
+          },
+          {
+            "seq": 7,
+            "itemCode": "00083005",
+            "content": "본건 북측으로 폭 약 50미터, 서측으로 폭 약 6미터, 남동측으로 폭 약4미터의 포장도로와 각각 접합니다."
+          },
+          {
+            "seq": 8,
+            "itemCode": "00083011",
+            "content": "기호(1, 두류동 150-3) : 도시지역, 일반상업지역, 방화지구, 시가지경관지구(중심),  광로2류(폭 50m~70m)(광로2 -1호선)(접합), 가축사육제한구역(세부사항은 녹색환경과  문의요망)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호 구역(세부사항은 남부 교육청 문의요망)&lt;교육환경 보호에 관한 법률&gt;.   기호(2, 두류동 150-4) : 도시지역, 일반상업지역, 방화지구, 시가지경관지구(중심),  광로2류(폭 50m~70m)(광로2 -1호선)(접합), 가축사육제한구역(세부사항은 녹색환경과  문의요망)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;,상대보호 구역(세부사항은 남부교육청 문의요망)&lt;교육환경 보호에 관한 법률&gt;.  기호(3, 두류동 150-29) : 도시지역, 일반상업지역, 방화지구, 가축사육제한구역(세부 사항은 녹색환경과 문의요망)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;,상대보호 구역 (세부사항은 남부교육청 문의요망)&lt;교육환경 보호에 관한 법률&gt;.    "
+          },
+          {
+            "seq": 9,
+            "itemCode": "00083014",
+            "content": "없습니다."
+          },
+          {
+            "seq": 10,
+            "itemCode": "00083026",
+            "content": "임대관계는 미상입니다."
+          }
+        ],
+        "minimumPriceRounds": [
+          81000000
+        ],
+        "salePlace": "1층 입찰법정",
+        "decisionPlace": "1층 입찰법정",
+        "depositRate": 10,
+        "listing": {
+          "exclusive": [
+            {
+              "no": "3층307호",
+              "structure": "철근콘크리트구조",
+              "area": 23.7306,
+              "buildingName": "두류역아이작큐브오피스텔",
+              "address": "150-3",
+              "usageCode": "20100"
+            }
+          ],
+          "land": [
+            {
+              "address": "150-3",
+              "category": "대",
+              "area": 1408,
+              "ratioNumerator": 3.16,
+              "ratioDenominator": 2100.8
+            },
+            {
+              "address": "150-4",
+              "category": "대",
+              "area": 528.5,
+              "ratioNumerator": 3.16,
+              "ratioDenominator": 2100.8
+            },
+            {
+              "address": "150-29",
+              "category": "대",
+              "area": 164.3,
+              "ratioNumerator": 3.16,
+              "ratioDenominator": 2100.8
+            }
+          ],
+          "buildingDetail": [
+            "철근콘크리트구조 평슬라브지붕 26층 업무시설(오피스텔).근린생활시설 지하5층 1308.99㎡ 지하4층 1838.725㎡ 지하3층 1838.725㎡ 지하2층 1718.875㎡ 지하1층 1837.3149㎡ 1층 590.05㎡ 2층 1392.17㎡ 3층 920.4252㎡ 4층 920.4384㎡ 5층 920.4384㎡ 6층 920.4384㎡ 7층 920.4384㎡ 8층 920.4384㎡ 9층 920.4384㎡ 10층 920.4384㎡ 11층 920.4384㎡ 12층 920.4384㎡ 13층 936.4827㎡ 14층 936.4827㎡ 15층 992.9612㎡ 16층 992.9612㎡ 17층 992.9612㎡ 18층 992.9612㎡ 19층 992.9612㎡ 20층 992.9612㎡ 21층 992.9612㎡ 22층 992.9612㎡ 23층 992.9612㎡ 24층 992.9612㎡ 25층 992.9612㎡ 26층 992.9612㎡",
+            "철근콘크리트구조 23.7306㎡"
+          ],
+          "exclusiveArea": 23.7306,
+          "landShareArea": 3.16,
+          "totalLandArea": 2100.8
+        },
+        "landTotalArea": 2100.8,
+        "rawCoords": {
+          "x": 450657,
+          "y": 362149,
+          "srs": "unverified"
+        },
+        "bidMethodCode": "000331",
+        "parties": [
+          {
+            "role": "채권자",
+            "name": "서OOOOO OOOO",
+            "seq": 1271
+          },
+          {
+            "role": "채무자겸소유자",
+            "name": "동OOOOO OOOO",
+            "seq": 1582
+          },
+          {
+            "role": "가압류권자",
+            "name": "주OOO OOOO",
+            "seq": 1644
+          },
+          {
+            "role": "가압류권자",
+            "name": "신OOOOO",
+            "seq": 1645
+          },
+          {
+            "role": "가압류권자",
+            "name": "주OOO OOOOOOOO",
+            "seq": 1647
+          },
+          {
+            "role": "가압류권자",
+            "name": "풍O OOOOOO",
+            "seq": 1648
+          },
+          {
+            "role": "가압류권자",
+            "name": "예OOOOOOO",
+            "seq": 1649
+          },
+          {
+            "role": "압류권자",
+            "name": "서OOOOO",
+            "seq": 1673
+          },
+          {
+            "role": "압류권자",
+            "name": "국OOOOOOO",
+            "seq": 1676
+          },
+          {
+            "role": "교부권자",
+            "name": "서OOOOO",
+            "seq": 17111
+          },
+          {
+            "role": "교부권자",
+            "name": "국OOOOOOO OOOOOO",
+            "seq": 17113
+          },
+          {
+            "role": "교부권자",
+            "name": "수OOOO",
+            "seq": 17116
+          },
+          {
+            "role": "교부권자",
+            "name": "대OOOO OOO",
+            "seq": 17117
+          },
+          {
+            "role": "교부권자",
+            "name": "광OOOO OO",
+            "seq": 17119
+          },
+          {
+            "role": "교부권자",
+            "name": "국OOOOOOO OOOO",
+            "seq": 17120
+          },
+          {
+            "role": "교부권자",
+            "name": "대OOOO OOO",
+            "seq": 17121
+          },
+          {
+            "role": "교부권자",
+            "name": "파OO",
+            "seq": 17122
+          },
+          {
+            "role": "교부권자",
+            "name": "여OO",
+            "seq": 17123
+          },
+          {
+            "role": "배당요구권자",
+            "name": "주OOO OOOOOOOO",
+            "seq": 17412
+          },
+          {
+            "role": "배당요구권자",
+            "name": "예OOOOOOO",
+            "seq": 17414
+          },
+          {
+            "role": "배당요구권자",
+            "name": "신OOOOO",
+            "seq": 17415
+          },
+          {
+            "role": "배당요구권자",
+            "name": "근OOOOO",
+            "seq": 17418
+          },
+          {
+            "role": "주택임차권자",
+            "name": "한OOOOOOO",
+            "seq": 18010
+          }
+        ],
+        "relatedCasesApi": [
+          {
+            "caseNumber": "2025차전136126",
+            "relation": "지급명령",
+            "court": "서울중앙지방법원"
+          }
+        ],
+        "noticeFrom": "2025-07-17",
+        "noticeTo": "2026-12-17",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1,
+          "listing": 1,
+          "parties": 1
+        },
+        "landArea": 3.16,
+        "buildingArea": 23.7306,
+        "detailCheckedAt": "2026-09-16T00:19:36.485Z"
+      }
+    },
+    {
+      "id": "B000510|2026타경30550|1",
+      "set": {
+        "caseReceivedDate": "2026-02-20",
+        "caseStartDate": "2026-02-23",
+        "distributionDeadline": "2026-05-18",
+        "courtDept": "경매2계",
+        "courtDeptTel": "062-239-1600(2층 민사집행과 지법253호)",
+        "caseSuspendCode": "00",
+        "caseSuspendReason": "",
+        "rights": {
+          "assumedRights": "",
+          "surfaceRight": "",
+          "seniorMortgage": "2023.03.15. 근저당",
+          "statementNote": "- 부동산현황조사보고서에 의하면 현재 나대지임",
+          "goodsNote": "- 부동산현황조사보고서에 의하면 현재 나대지임",
+          "writtenAt": "2026-08-03"
+        },
+        "appraisalPoints": [
+          {
+            "seq": 1,
+            "itemCode": "00083001",
+            "content": "본건은 광주광역시 남구 주월동 소재 &amp;apos;삼육초등학교&amp;apos; 북동측 인근에 소재하며, 주위환경은 아파트, 단독주택, 근린상가 등이 혼재하는 상업지대임."
+          },
+          {
+            "seq": 2,
+            "itemCode": "00083003",
+            "content": "본건까지 차량진출입이 가능하고, 인근에 버스정류장이 소재하는 등 제반 교통상황은 보통임."
+          },
+          {
+            "seq": 3,
+            "itemCode": "00083008",
+            "content": "세장형 평지로, 주상나지임."
+          },
+          {
+            "seq": 4,
+            "itemCode": "00083004",
+            "content": "본건 북서측으로 노폭 약 8M 내외 및 남서측으로 노폭 약 6M 내외의 아스팔트 포장도로와 접함."
+          },
+          {
+            "seq": 5,
+            "itemCode": "00083011",
+            "content": "일련번호(1) :일반상업지역, 방화지구, 소로2류(폭 8m~10m)(광송간)(접합), 소로3류(폭 8m 미만)(접합), 가로구역별 최고높이 제한지역(2019-07-01)&lt;건축법&gt;, 상대보호구역&lt;교육환경 보호에 관한 법률&gt;, 중점경관관리구역(2023-07-20), 전통상업보존구역(2011-12-06)(유통산업발전법)임."
+          },
+          {
+            "seq": 6,
+            "itemCode": "00083013",
+            "content": "-."
+          },
+          {
+            "seq": 7,
+            "itemCode": "00083014",
+            "content": "-."
+          },
+          {
+            "seq": 8,
+            "itemCode": "00083026",
+            "content": "본건 지상에 소재하는 건물은 현황 ‘멸실&amp;apos;임."
+          }
+        ],
+        "minimumPriceRounds": [
+          4472340000
+        ],
+        "salePlace": "입찰법정",
+        "decisionPlace": "광주지방법원 사법보좌관실",
+        "depositRate": 10,
+        "listing": {
+          "exclusive": [
+            {
+              "no": null,
+              "structure": "",
+              "area": 786,
+              "buildingName": null,
+              "address": "965-2",
+              "usageCode": "10100"
+            }
+          ],
+          "land": [],
+          "buildingDetail": [],
+          "exclusiveArea": 786,
+          "landShareArea": null,
+          "totalLandArea": null
+        },
+        "rawCoords": {
+          "x": 299737,
+          "y": 282205,
+          "srs": "unverified"
+        },
+        "bidMethodCode": "000331",
+        "parties": [
+          {
+            "role": "승계인",
+            "name": "농OOOOOOOOOOO",
+            "seq": 1152
+          },
+          {
+            "role": "채권자",
+            "name": "완OOOOOOO",
+            "seq": 1271
+          },
+          {
+            "role": "채무자겸소유자",
+            "name": "유OOO OOOO",
+            "seq": 1582
+          },
+          {
+            "role": "압류권자",
+            "name": "광OOOO",
+            "seq": 1675
+          },
+          {
+            "role": "압류권자",
+            "name": "광OOOO OO",
+            "seq": 1676
+          },
+          {
+            "role": "교부권자",
+            "name": "광OOOO",
+            "seq": 1717
+          },
+          {
+            "role": "교부권자",
+            "name": "광OOOO OO",
+            "seq": 1718
+          }
+        ],
+        "noticeFrom": "2025-07-17",
+        "noticeTo": "2027-01-21",
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1,
+          "listing": 1,
+          "parties": 1
+        },
+        "buildingArea": 786,
+        "detailCheckedAt": "2026-09-16T00:19:56.948Z"
+      }
+    }
+  ],
+  "additions": []
+}

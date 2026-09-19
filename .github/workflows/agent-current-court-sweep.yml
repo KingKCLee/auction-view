@@ -1,27 +1,21 @@
 name: Auction Agent - Nationwide Current Court Sweep (safe backup)
 
 on:
-  # [2026-09-17 대표님 지시] push 트리거를 껐다. 수동 실행만 남긴다.
-  #
-  # 왜: 경매 수집은 노트북에서만 돌리는 것이 원칙인데, 이 워크플로가
-  # ops/collector-kick.txt 가 바뀔 때마다 GitHub Actions 에서 깨어나
-  # "data: reconciled hourly discovery" 커밋으로 정본을 쓰고 있었다
-  # (실측: 2026-09-15~17 사이 5회, 전부 push 이벤트).
-  # kick 파일을 쓰는 코드는 이 리포에 없다 - 외부에서 대표님 계정으로
-  # 밀어 넣는 경로였고 발신처는 특정하지 못했다(R3).
-  #
-  # 낙찰가 수집과 무관함을 먼저 확인하고 껐다: 이 워크플로가 전이적으로 부르는
-  # 파일 22개 안에 detail-enrich.js 가 없고, 부르는 스크립트 어디에도 법원 낙찰
-  # 응답 필드(dspslAmt / auctnDxdyRsltCd / gdsDspslDxdyLst)가 나오지 않는다.
-  # 낙찰가를 실제로 수집하는 워크플로는 agent-enrichment-safe.yml 이고
-  # (npm run details:once -> detail-enrich.js) 그 파일은 건드리지 않았다.
-  #
-  # 옛 push 경로(이력): branches [main] / paths =
-  #   ops/collector-kick.txt · 이 워크플로 파일 · cycle-health.js ·
-  #   test-cycle-health.js · test-macos-workflow-portability.js ·
-  #   test-property-history-cursor.js · property-history-discovery-v2.js ·
-  #   property-history-cursor-lib.js · reconcile-property-history-cursor.js ·
-  #   run-bounded.js
+  # No cron. The autonomous monitor may explicitly kick this safe backup by
+  # changing ops/collector-kick.txt. Workflow edits also self-test once.
+  push:
+    branches: [main]
+    paths:
+      - 'ops/collector-kick.txt'
+      - '.github/workflows/agent-current-court-sweep.yml'
+      - 'cycle-health.js'
+      - 'test-cycle-health.js'
+      - 'test-macos-workflow-portability.js'
+      - 'test-property-history-cursor.js'
+      - 'property-history-discovery-v2.js'
+      - 'property-history-cursor-lib.js'
+      - 'reconcile-property-history-cursor.js'
+      - 'run-bounded.js'
   workflow_dispatch:
 
 permissions:

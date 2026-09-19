@@ -1,0 +1,1124 @@
+{
+  "version": 2,
+  "worker": "laptop",
+  "createdAt": "2026-09-15T18:58:12.303Z",
+  "batchSize": 24,
+  "exitCode": 0,
+  "discoveryStatus": "current:completed|history:completed|property:completed",
+  "additions": [],
+  "patches": [
+    {
+      "id": "B000510|2026타경30665|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-08-06",
+            "event_time": "0955",
+            "event_kind_code": "01",
+            "place": "입찰법정",
+            "amount": 70000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-17",
+            "event_time": "0955",
+            "event_kind_code": "01",
+            "place": "입찰법정",
+            "amount": 49000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-23",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "광주지방법원 사법보좌관실",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 3,
+        "failedCount": 1,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "본건은 광주광역시 광산구 월계동 소재 &amp;quot;첨단지구대&amp;quot; 남측 인근에 위치한 첨단에이엠-시티스카이하이2차 제9층 제901호로서 주변은 아파트단지, 근린생활시설, 학교 등이 소재한 주거 및 상가 혼용지대로서 주위환경은 보통임.\n본건까지 제반차량 출입 가능하며, 인근에 시내버스 정류장 등이 소재하는 등 대중교통수단 이용은 양호함.\n철근콘크리트구조 (철근)콘크리트지붕 14층건 중 9층 901호로서,   외벽 : 석재붙임, 시멘트몰탈위 페인팅마감 등,   내벽 : 벽지 및 타일붙임 등,   창호 : 새시창호임.\n도시형생활주택임.\n일반적인 급·배수설비, 위생설비, 소방설비, 승강기, 도시가스에 의한 난방설비 등이 되어있음. \n정방형 평지로, 공동주택(아파트) 건부지임.\n동측으로 왕복2차선의 아스팔트 포장도로와 접함.\n--\n--\n임대관계는 미상임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 78257095,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-15T18:56:23.665Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-23"
+      }
+    },
+    {
+      "id": "B000320|2026타경3062|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-09-17",
+            "event_time": "1000",
+            "event_kind_code": "01",
+            "place": "1층 입찰법정",
+            "amount": 81000000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-29",
+            "event_time": "1400",
+            "event_kind_code": "02",
+            "place": "1층 입찰법정",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "본건은 대구광역시 달서구 두류동 소재 두류네거리 동측 인근에 위치하며, 주변은 아파트 단지, 업무시설, 근린생활시설 등이 형성되어 있습니다.\n본건 인근에 시내버스정류장 및 지하철2호선(두류역)이 소재하는 등 제반 교통상황은  양호합니다.\n철근콘크리트구조 평슬라브지붕 26층 내 제3층 제307호 1개 호수로서, 사용승인일 : 2018.2.27  외 벽 : 몰탈위페인트, 화강석 붙임 등 마감. 내 벽 : 벽지 및 타일 등 마감. 창 호 : 새시창호입니다.\n오피스텔 1개 호수로 이용 중입니다.\n위생설비, 급배수설비, 난방설비, 승강기설비 등 있습니다.  \n3필지 일단의 다각형의 평지로서, 업무시설(오피스텔) 및 근린생활시설 부지로  이용 중입니다. \n본건 북측으로 폭 약 50미터, 서측으로 폭 약 6미터, 남동측으로 폭 약4미터의 포장도로와 각각 접합니다.\n기호(1, 두류동 150-3) : 도시지역, 일반상업지역, 방화지구, 시가지경관지구(중심),  광로2류(폭 50m~70m)(광로2 -1호선)(접합), 가축사육제한구역(세부사항은 녹색환경과  문의요망)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 상대보호 구역(세부사항은 남부 교육청 문의요망)&lt;교육환경 보호에 관한 법률&gt;.   기호(2, 두류동 150-4) : 도시지역, 일반상업지역, 방화지구, 시가지경관지구(중심),  광로2류(폭 50m~70m)(광로2 -1호선)(접합), 가축사육제한구역(세부사항은 녹색환경과  문의요망)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;,상대보호 구역(세부사항은 남부교육청 문의요망)&lt;교육환경 보호에 관한 법률&gt;.  기호(3, 두류동 150-29) : 도시지역, 일반상업지역, 방화지구, 가축사육제한구역(세부 사항은 녹색환경과 문의요망)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;,상대보호 구역 (세부사항은 남부교육청 문의요망)&lt;교육환경 보호에 관한 법률&gt;.    \n없습니다.\n임대관계는 미상입니다.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 109283424,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-15T18:56:44.450Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-29"
+      }
+    },
+    {
+      "id": "B000510|2026타경30550|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-09-17",
+            "event_time": "0955",
+            "event_kind_code": "01",
+            "place": "입찰법정",
+            "amount": 4472340000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-23",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "광주지방법원 사법보좌관실",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "본건은 광주광역시 남구 주월동 소재 &amp;apos;삼육초등학교&amp;apos; 북동측 인근에 소재하며, 주위환경은 아파트, 단독주택, 근린상가 등이 혼재하는 상업지대임.\n본건까지 차량진출입이 가능하고, 인근에 버스정류장이 소재하는 등 제반 교통상황은 보통임.\n세장형 평지로, 주상나지임.\n본건 북서측으로 노폭 약 8M 내외 및 남서측으로 노폭 약 6M 내외의 아스팔트 포장도로와 접함.\n일련번호(1) :일반상업지역, 방화지구, 소로2류(폭 8m~10m)(광송간)(접합), 소로3류(폭 8m 미만)(접합), 가로구역별 최고높이 제한지역(2019-07-01)&lt;건축법&gt;, 상대보호구역&lt;교육환경 보호에 관한 법률&gt;, 중점경관관리구역(2023-07-20), 전통상업보존구역(2011-12-06)(유통산업발전법)임.\n-.\n-.\n본건 지상에 소재하는 건물은 현황 ‘멸실&amp;apos;임.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 3407022703,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-15T18:57:05.933Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-23"
+      }
+    },
+    {
+      "id": "B000510|2026타경30537|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-08-06",
+            "event_time": "0955",
+            "event_kind_code": "01",
+            "place": "입찰법정",
+            "amount": 206000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-17",
+            "event_time": "0955",
+            "event_kind_code": "01",
+            "place": "입찰법정",
+            "amount": 144200000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-23",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "광주지방법원 사법보좌관실",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 3,
+        "failedCount": 1,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "대상물건은 광주광역시 광산구 송정동 소재 &amp;apos;광주소프트웨어마이스터고등학교&amp;apos; 서측 인근에 위치하는 송정크레지움센트럴 제12층 제1204호로서, 주위는 주거용, 상업용, 주상용 부동산 등이 소재하는 주택 및 상가 혼용지대임.\n본건까지 차량 접근 가능하며, 인근에 버스정류장이 소재하는 등 제반 교통사정은 보통시 됨.\n철근콘크리트구조 (철근)콘크리트지붕 지하1층/지상12층 중 제12층 제1204호로서,   외벽 : 몰탈위페인팅, 돌붙임 등 마감   창호 : 새시창호 등임.\n아파트임.\n위생설비, 급ㆍ배수설비, 난방설비, 승강기설비, 화재경보설비, 화재탐지설비, 소화전설비, 도시가스설비 등이 되어 있음.\n사다리형 평지로서, 아파트 건부지로 이용중임.\n북측으로 약 8m 내외의 아스팔트 포장도로가 개설되어 있음.\n일반상업지역, 방화지구, 소로2류(폭 8m~10m)(접합), 가축사육제한구역(2024-11-20)(전부제한구역)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;, 가로구역별 최고높이 제한지역(2019-03-07)&lt;건축법&gt;, 상대보호구역&lt;교육환경 보호에 관한 법률&gt;, 절대보호구역(2022-11-30)&lt;교육환경 보호에 관한 법률&gt;, 비행안전제5구역(전술)&lt;군사기지 및 군사시설 보호법&gt;, 중점경관관리구역(2023-07-20), 전통상업보존구역(유통산업발전법)임.\n--\n임대관계 : 미 상 임. 기　　타 : 현장조사시 폐문부재로 내부확인은 생략하였음.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 201807783,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-15T18:57:27.811Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-23"
+      }
+    },
+    {
+      "id": "B000510|2026타경30528|1",
+      "set": {
+        "caseType": "부동산강제경매",
+        "events": [
+          {
+            "event_date": "2026-08-06",
+            "event_time": "0955",
+            "event_kind_code": "01",
+            "place": "입찰법정",
+            "amount": 206000000,
+            "winning_amount": null,
+            "result_code": "002"
+          },
+          {
+            "event_date": "2026-09-17",
+            "event_time": "0955",
+            "event_kind_code": "01",
+            "place": "입찰법정",
+            "amount": 144200000,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-23",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "광주지방법원 사법보좌관실",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 3,
+        "failedCount": 1,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "본건은 광주광역시 광산구 송정동 소재 송정공원역 남측 인근에 위치하는 &amp;apos;송정크레지움 센트럴 12층 1203호&amp;apos;로, 주위는 단독주택, 근린생활시설 등이 혼재하며, 주거환경 보통 임.\n본건 북측 인근으로 간선도로가 통과하고, 송정공원역(지하철)이 인근에 소재하여 교통여건 비교적 양호함.\n철근콘크리트구조 철근콘크리트지붕 12층 건물(사용승인일: 2018.5.21)내 12층 1203호로  외벽: 콘크리트위페인팅 및 화강석재마감 내벽: 벽지 및 타일마감 창호: 새시창임.\n공동주택(아파트)으로 이용중임.\n기본적인 위생설비 및 급수설비, 개별난방설비, 소방설비, 승강기설비, 지하주차장 등이 시설되어 있음.  \n유사 사다리형의 아파트부지임.\n본건 북측으로 왕복 2차선 도로에 접함.\n일반상업지역, 방화지구, 소로2류(폭 8m~10m)(접함), 가축사육제한구역, 가로구역별 최고높이 제한구역, 상대보호구역, 절대보호구역, 비행안전제5구역(전술),  중점경관관리구역, 전통상업보존구역임.\n없 음.\n본건은 폐문부재로 외부관찰에 의해 조사하였음",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 199827837,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-15T18:57:49.236Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-23"
+      }
+    },
+    {
+      "id": "B000510|2026타경30501|1",
+      "set": {
+        "caseType": "부동산임의경매",
+        "events": [
+          {
+            "event_date": "2026-09-17",
+            "event_time": "0955",
+            "event_kind_code": "01",
+            "place": "입찰법정",
+            "amount": 434428800,
+            "winning_amount": 0,
+            "result_code": ""
+          },
+          {
+            "event_date": "2026-09-23",
+            "event_time": "1600",
+            "event_kind_code": "02",
+            "place": "광주지방법원 사법보좌관실",
+            "amount": null,
+            "winning_amount": 0,
+            "result_code": ""
+          }
+        ],
+        "eventCount": 2,
+        "coverage": {
+          "base_info": 1,
+          "schedule": 1,
+          "winning_price": 0,
+          "photos": 0,
+          "status_report": 1,
+          "sale_statement": 1,
+          "appraisal_summary": 1,
+          "appraisal_pdf": 0,
+          "transactions": 0,
+          "building_registry": 0,
+          "land_use": 0,
+          "rights": 1
+        },
+        "appraisalSummary": "본건은 전라남도 담양군 월산면 중월리 소재「중방마을」서측 인근에 위치하며, 주위는 단독주택, 주거나지 등이 소재하는 전원주택단지로서 제반 주위환경은 보통시 됨.\n본건까지 차량접근이 가능하며, 인근에 버스정류장이 소재하는 등 일반적인 교통상황은 보통시 됨.\n사다리형의 단독주택 건부지임.\n본건 남측 및 서측으로 각각 아스팔트포장도로와 접함.\n토지이용계획확인원상, 계획관리지역, 가축사육제한구역((모든가축)제한지역_300m)&lt;가축분뇨의 관리 및 이용에 관한 법률&gt;임.\n「지적 및 건물개황도」참조.\n--\n㉠ 임대관계는 미상임. ㉡ 본건 지상에 제시외물건(태양광발전설비)가 설치되어 있어 규격 및 관리상태 등을 고려하여 원가법으로 평가하가하였으니 경매 진행시 소유권 및 일괄경매 여부는 재확인하시기 바람.\n본건은 철근콘크리트조 (철근)콘크리트지붕 2층 건으로, 외 벽: 석재, 스타코마감 등, 내 벽: 벽지, 타일마감 등, 창 호: 샷시 등임.\n단독주택임.\n일반적인 급·배수설비, 위생설비, 전기설비, 난방설비, LPG설비 등이 되어 있음.\n「지적 및 건물개황도」참조.\n--\n㉠ 임대관계는 미상임. ㉡ 본건 지상에 소재한 수영장은 건물의 부대시설로 판단하고 건물에 포함평가하였으니 참고하시기 바람. ㉢ 본건 건물 외벽에 일부 보수가 필요한 상태이며, 내부에도 시스템에어컨 설치 및 도배마감 등은 별도 필요하오니 업무진행시 참고하시기 바람.",
+        "appraisalDate": null,
+        "appraisalAgency": "",
+        "claimAmount": 460244810,
+        "components": [
+          {
+            "type": "OBJECT",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "OBJECT",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "LAND",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "1",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          },
+          {
+            "type": "EXTRA_BUILDING",
+            "sequence": "2",
+            "address": "",
+            "structure": "",
+            "area": null,
+            "appraisedPrice": null,
+            "note": ""
+          }
+        ],
+        "landArea": null,
+        "buildingArea": null,
+        "saleStatementAvailable": true,
+        "statusReportAvailable": true,
+        "documents": [
+          {
+            "type": "매각물건명세서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          },
+          {
+            "type": "현황조사서",
+            "source": "대한민국 법원경매정보",
+            "available": true
+          }
+        ],
+        "documentCount": 2,
+        "detailCheckedAt": "2026-09-15T18:58:10.711Z",
+        "caseProgressCode": "0002100001",
+        "caseClosedDivision": "000",
+        "caseClosedDate": null,
+        "goodsStatusCode": "01",
+        "decisionDate": "2026-09-23"
+      }
+    },
+    {
+      "id": "B000510|2025타경33774|1",
+      "set": {
+        "detailCheckedAt": "2026-09-15T18:53:03.308Z"
+      }
+    },
+    {
+      "id": "B000510|2025타경33508|1",
+      "set": {
+        "detailCheckedAt": "2026-09-15T18:53:13.141Z"
+      }
+    },
+    {
+      "id": "B000510|2025타경33175|1",
+      "set": {
+        "appraisalDate": null,
+        "landArea": null,
+        "buildingArea": null,
+        "detailCheckedAt": "2026-09-15T18:53:24.032Z",
+        "caseClosedDate": null
+      }
+    },
+    {
+      "id": "B000510|2025타경33042|1",
+      "set": {
+        "appraisalDate": null,
+        "landArea": null,
+        "buildingArea": null,
+        "detailCheckedAt": "2026-09-15T18:53:35.482Z",
+        "caseClosedDate": null
+      }
+    },
+    {
+      "id": "B000212|2025타경13848|1",
+      "set": {
+        "detailCheckedAt": "2026-09-15T18:53:45.804Z"
+      }
+    },
+    {
+      "id": "B000212|2025타경13585|1",
+      "set": {
+        "detailCheckedAt": "2026-09-15T18:53:56.437Z"
+      }
+    },
+    {
+      "id": "B000411|2025타경1345|1",
+      "set": {
+        "detailCheckedAt": "2026-09-15T18:54:06.365Z"
+      }
+    },
+    {
+      "id": "B000212|2025타경13420|1",
+      "set": {
+        "detailCheckedAt": "2026-09-15T18:54:16.724Z"
+      }
+    },
+    {
+      "id": "B000212|2025타경13363|1",
+      "set": {
+        "detailCheckedAt": "2026-09-15T18:54:27.486Z"
+      }
+    },
+    {
+      "id": "B000212|2025타경13337|1",
+      "set": {
+        "detailCheckedAt": "2026-09-15T18:54:37.530Z"
+      }
+    },
+    {
+      "id": "B000212|2025타경13300|1",
+      "set": {
+        "detailCheckedAt": "2026-09-15T18:54:48.735Z"
+      }
+    },
+    {
+      "id": "B000212|2025타경13290|1",
+      "set": {
+        "detailCheckedAt": "2026-09-15T18:54:58.848Z"
+      }
+    },
+    {
+      "id": "B000411|2025타경1329|1",
+      "set": {
+        "detailCheckedAt": "2026-09-15T18:55:09.768Z"
+      }
+    },
+    {
+      "id": "B000411|2025타경1326|1",
+      "set": {
+        "detailCheckedAt": "2026-09-15T18:55:21.439Z"
+      }
+    },
+    {
+      "id": "B000212|2025타경13182|1",
+      "set": {
+        "detailCheckedAt": "2026-09-15T18:55:31.405Z"
+      }
+    },
+    {
+      "id": "B000411|2025타경13125|1",
+      "set": {
+        "detailCheckedAt": "2026-09-15T18:55:41.887Z"
+      }
+    },
+    {
+      "id": "B000411|2025타경1312|1",
+      "set": {
+        "detailCheckedAt": "2026-09-15T18:55:52.408Z"
+      }
+    },
+    {
+      "id": "B000411|2025타경13093|1",
+      "set": {
+        "detailCheckedAt": "2026-09-15T18:56:02.571Z"
+      }
+    }
+  ],
+  "statePatch": {
+    "propertyHistoryFailureCount": 1,
+    "propertyHistoryYear": 2009,
+    "propertyHistoryMonth": 6,
+    "propertyHistoryPage": 1,
+    "propertyHistoryLastRun": "2026-09-15T18:52:41.492Z",
+    "propertyHistoryLastError": null,
+    "saleNoticeDeferred": [],
+    "saleNoticeFailures": {
+      "search|2026-08|B000210": 0,
+      "search|2026-08|B000211": 0,
+      "search|2026-08|B000215": 0,
+      "search|2026-08|B000212": 1,
+      "search|2026-08|B000280": 1,
+      "search|2026-08|B000213": 0,
+      "search|2026-08|B000214": 0,
+      "search|2026-08|B214807": 0,
+      "search|2026-08|B214804": 0,
+      "search|2026-08|B000240": 0,
+      "search|2026-08|B000241": 0,
+      "search|2026-08|B000250": 0,
+      "search|2026-08|B000251": 0,
+      "search|2026-08|B000252": 0,
+      "search|2026-08|B000253": 0,
+      "search|2026-08|B250826": 0,
+      "search|2026-08|B000254": 0,
+      "search|2026-08|B000260": 0
+    },
+    "saleNoticeBackfillYear": 2026,
+    "saleNoticeBackfillMonth": 8,
+    "saleNoticeBackfillOffset": 0,
+    "saleNoticeBackfillLastRun": "2026-09-09T08:32:07.978Z",
+    "saleNoticeBackfillLastError": "B000212 2026-08: court gate held by pid 9380 (rslt-probe) since 2026-09-09T08:32:03.243Z",
+    "saleNoticeCourtOffsets": {
+      "2026-08|B000210": -1,
+      "2026-08|B000211": -1,
+      "2026-08|B000215": -1,
+      "2026-08|B000212": -1,
+      "2026-08|B000213": -1,
+      "2026-08|B000214": -1,
+      "2026-08|B214807": -1,
+      "2026-08|B214804": -1,
+      "2026-08|B000240": -1,
+      "2026-08|B000241": -1,
+      "2026-08|B000250": -1,
+      "2026-08|B000251": -1,
+      "2026-08|B000252": -1,
+      "2026-08|B000253": -1,
+      "2026-08|B250826": -1,
+      "2026-08|B000254": -1,
+      "2026-08|B000260": -1
+    },
+    "saleNoticeBackfillCourtIndex": 17,
+    "currentSweepOffsets": {
+      "2026-09|B000210": -1,
+      "2026-09|B000211": -1,
+      "2026-09|B000215": -1,
+      "2026-09|B000212": -1,
+      "2026-09|B000213": -1,
+      "2026-09|B000263": -1,
+      "2026-09|B000264": -1,
+      "2026-09|B000270": -1,
+      "2026-09|B000271": -1,
+      "2026-09|B000272": -1,
+      "2026-09|B000273": -1,
+      "2026-09|B000280": -1,
+      "2026-09|B000281": -1,
+      "2026-09|B000282": -1,
+      "2026-09|B000283": 3,
+      "2026-09|B000315": -1,
+      "2026-09|B000316": -1,
+      "2026-09|B000317": -1,
+      "2026-09|B000320": -1,
+      "2026-09|B000410": -1,
+      "2026-09|B000412": -1,
+      "2026-09|B000414": -1,
+      "2026-09|B000411": -1,
+      "2026-09|B000420": -1,
+      "2026-09|B000431": -1,
+      "2026-09|B000421": -1,
+      "2026-09|B000422": -1,
+      "2026-09|B000423": -1,
+      "2026-09|B000424": -1,
+      "2026-09|B000510": -1,
+      "2026-09|B000511": -1,
+      "2026-09|B000512": -1,
+      "2026-09|B000513": -1,
+      "2026-09|B000514": -1,
+      "2026-09|B000520": -1,
+      "2026-09|B000521": -1,
+      "2026-09|B000522": -1,
+      "2026-09|B000523": -1,
+      "2026-09|B000530": -1,
+      "2026-10|B000210": -1,
+      "2026-10|B000211": -1,
+      "2026-10|B000215": -1,
+      "2026-10|B000212": -1,
+      "2026-10|B000213": -1,
+      "2026-10|B000214": -1,
+      "2026-10|B214807": -1
+    },
+    "currentSweepFailures": {
+      "search|2026-09|B000210": 0,
+      "2026-09|B000210|0": 0,
+      "2026-09|B000210|1": 0,
+      "2026-09|B000210|2": 0,
+      "2026-09|B000210|3": 0,
+      "search|2026-09|B000211": 0,
+      "2026-09|B000211|0": 0,
+      "2026-09|B000211|1": 0,
+      "2026-09|B000211|2": 0,
+      "2026-09|B000211|3": 0,
+      "search|2026-09|B000215": 0,
+      "2026-09|B000215|0": 0,
+      "2026-09|B000215|1": 0,
+      "search|2026-09|B000212": 0,
+      "2026-09|B000212|0": 0,
+      "2026-09|B000212|1": 0,
+      "2026-09|B000212|2": 0,
+      "2026-09|B000212|3": 0,
+      "2026-09|B000212|4": 0,
+      "2026-09|B000212|5": 0,
+      "search|2026-09|B000213": 0,
+      "2026-09|B000213|0": 0,
+      "2026-09|B000213|1": 0,
+      "search|2026-09|B000214": 2,
+      "search|2026-09|B214807": 2,
+      "search|2026-09|B214804": 1,
+      "search|2026-09|B000240": 1,
+      "search|2026-09|B000241": 1,
+      "search|2026-09|B000250": 1,
+      "search|2026-09|B000251": 1,
+      "search|2026-09|B000252": 1,
+      "search|2026-09|B000253": 1,
+      "search|2026-09|B250826": 1,
+      "search|2026-09|B000254": 1,
+      "search|2026-09|B000260": 1,
+      "search|2026-09|B000261": 1,
+      "search|2026-09|B000262": 1,
+      "search|2026-09|B000263": 0,
+      "2026-09|B000263|0": 0,
+      "search|2026-09|B000264": 0,
+      "2026-09|B000264|0": 0,
+      "2026-09|B000264|1": 0,
+      "search|2026-09|B000270": 0,
+      "2026-09|B000270|0": 0,
+      "2026-09|B000270|1": 0,
+      "2026-09|B000270|2": 0,
+      "2026-09|B000270|3": 0,
+      "search|2026-09|B000271": 0,
+      "2026-09|B000271|0": 0,
+      "search|2026-09|B000272": 0,
+      "2026-09|B000272|0": 0,
+      "search|2026-09|B000273": 0,
+      "2026-09|B000273|0": 0,
+      "2026-09|B000273|1": 0,
+      "search|2026-09|B000280": 0,
+      "2026-09|B000280|0": 0,
+      "2026-09|B000280|1": 0,
+      "2026-09|B000280|2": 0,
+      "2026-09|B000280|3": 0,
+      "2026-09|B000280|4": 0,
+      "search|2026-09|B000281": 0,
+      "2026-09|B000281|0": 0,
+      "2026-09|B000281|1": 0,
+      "search|2026-09|B000282": 0,
+      "search|2026-09|B000283": 1,
+      "2026-09|B000283|0": 0,
+      "2026-09|B000283|1": 0,
+      "2026-09|B000283|2": 0,
+      "search|2026-09|B000284": 1,
+      "search|2026-09|B000285": 1,
+      "search|2026-09|B000310": 1,
+      "search|2026-09|B000311": 1,
+      "search|2026-09|B000312": 1,
+      "search|2026-09|B000313": 1,
+      "search|2026-09|B000314": 1,
+      "search|2026-09|B000315": 0,
+      "2026-09|B000315|0": 0,
+      "search|2026-09|B000316": 0,
+      "2026-09|B000316|0": 0,
+      "2026-09|B000316|1": 0,
+      "search|2026-09|B000317": 0,
+      "2026-09|B000317|0": 0,
+      "2026-09|B000317|1": 0,
+      "search|2026-09|B000320": 0,
+      "2026-09|B000320|0": 0,
+      "2026-09|B000320|1": 0,
+      "2026-09|B000320|2": 0,
+      "2026-09|B000320|3": 0,
+      "search|2026-09|B000410": 0,
+      "2026-09|B000410|0": 0,
+      "2026-09|B000410|1": 0,
+      "search|2026-09|B000412": 0,
+      "2026-09|B000412|0": 0,
+      "2026-09|B000412|1": 0,
+      "2026-09|B000412|2": 0,
+      "search|2026-09|B000414": 0,
+      "2026-09|B000414|0": 0,
+      "search|2026-09|B000411": 0,
+      "2026-09|B000411|0": 0,
+      "2026-09|B000411|1": 0,
+      "2026-09|B000411|2": 0,
+      "2026-09|B000411|3": 0,
+      "2026-09|B000411|4": 0,
+      "2026-09|B000411|5": 0,
+      "2026-09|B000411|6": 0,
+      "search|2026-09|B000420": 0,
+      "2026-09|B000420|0": 0,
+      "2026-09|B000420|1": 0,
+      "2026-09|B000420|2": 0,
+      "search|2026-09|B000431": 0,
+      "2026-09|B000431|0": 0,
+      "2026-09|B000431|1": 0,
+      "search|2026-09|B000421": 0,
+      "2026-09|B000421|0": 0,
+      "2026-09|B000421|1": 0,
+      "2026-09|B000421|2": 0,
+      "search|2026-09|B000422": 0,
+      "2026-09|B000422|0": 0,
+      "2026-09|B000422|1": 0,
+      "search|2026-09|B000423": 0,
+      "2026-09|B000423|0": 0,
+      "search|2026-09|B000424": 0,
+      "search|2026-09|B000510": 0,
+      "2026-09|B000510|0": 0,
+      "2026-09|B000510|1": 0,
+      "2026-09|B000510|2": 0,
+      "2026-09|B000510|3": 0,
+      "2026-09|B000510|4": 0,
+      "2026-09|B000510|5": 0,
+      "search|2026-09|B000511": 0,
+      "2026-09|B000511|0": 0,
+      "2026-09|B000511|1": 0,
+      "2026-09|B000511|2": 0,
+      "search|2026-09|B000512": 0,
+      "2026-09|B000512|0": 0,
+      "2026-09|B000512|1": 0,
+      "search|2026-09|B000513": 0,
+      "2026-09|B000513|0": 0,
+      "search|2026-09|B000514": 0,
+      "2026-09|B000514|0": 0,
+      "search|2026-09|B000520": 0,
+      "2026-09|B000520|0": 0,
+      "2026-09|B000520|1": 0,
+      "search|2026-09|B000521": 0,
+      "2026-09|B000521|0": 0,
+      "search|2026-09|B000522": 0,
+      "2026-09|B000522|0": 0,
+      "search|2026-09|B000523": 0,
+      "search|2026-09|B000530": 0,
+      "2026-09|B000530|0": 0,
+      "2026-09|B000530|1": 0,
+      "2026-09|B000530|2": 0,
+      "2026-09|B000530|3": 0,
+      "search|2026-10|B000210": 0,
+      "search|2026-10|B000211": 0,
+      "search|2026-10|B000215": 0,
+      "search|2026-10|B000212": 0,
+      "search|2026-10|B000213": 0,
+      "search|2026-10|B000214": 0,
+      "search|2026-10|B214807": 0
+    },
+    "currentSweepMonthSlot": 1,
+    "currentSweepCourtIndex": 7,
+    "currentSweepLastRun": "2026-09-08T23:44:12.885Z",
+    "currentSweepLastError": null,
+    "saleNoticeBackfillVersion": 2,
+    "currentSweepDeferred": [
+      "2026-09|B214804",
+      "2026-09|B000240",
+      "2026-09|B000241",
+      "2026-09|B000250",
+      "2026-09|B000251",
+      "2026-09|B000252",
+      "2026-09|B000253",
+      "2026-09|B250826",
+      "2026-09|B000254",
+      "2026-09|B000260",
+      "2026-09|B000261",
+      "2026-09|B000262",
+      "2026-09|B000283",
+      "2026-09|B000284",
+      "2026-09|B000285",
+      "2026-09|B000310",
+      "2026-09|B000311",
+      "2026-09|B000312",
+      "2026-09|B000313",
+      "2026-09|B000314",
+      "2026-10|B000412",
+      "2026-10|B000510",
+      "2026-10|B000421",
+      "2026-10|B000511"
+    ]
+  }
+}

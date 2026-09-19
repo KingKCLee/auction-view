@@ -22,11 +22,7 @@ $env:COURT_MIN_INTERVAL_MS = "6000"
 $env:COURT_JITTER_MS = "1200"
 $env:LOOP_SLEEP_SECONDS = "0"
 $env:ERROR_BACKOFF_SECONDS = "60"
-# [2026-09-17 대표님 지시] 자동 재기동을 끈다.
-# 관문이 풀렸다고 이 감시기가 수집기를 자기 판단으로 다시 띄우지 않는다 -
-# 재개는 대표님이 명시적으로 지시할 때만 한다. 0 이면 court-recovery-watch.js 가
-# resumeCollector() 를 부르지 않고 {started:false, why:"AUTO_RESUME is off"} 만 기록한다.
-$env:AUTO_RESUME = "0"
+$env:AUTO_RESUME = "1"
 
 node court-recovery-watch.js
 exit $LASTEXITCODE
