@@ -1,12 +1,6 @@
 # Dual Collector setup
 
-> **현재 구성**: 수집은 Windows 노트북, 정본 병합 마스터는 **Google Cloud Run Job**
-> (`auction-cloud-master`, `asia-northeast1`). Oracle Cloud 는 쓰지 않습니다 —
-> `CLAUDE.md` 의 "No Oracle" 과 같은 내용입니다.
-
-~~목표: GitHub Actions 대신 무료 Oracle Cloud VM + Windows 노트북을 동시에 사용한다.~~
-(위 목표는 2026-09-08 최초 계획이며 **2026-09-09 폐기**되었습니다. 아래 "Oracle Cloud master"
-절은 이력 보존용입니다.)
+목표: GitHub Actions 대신 무료 Oracle Cloud VM + Windows 노트북을 동시에 사용한다.
 
 ## 역할
 
@@ -43,11 +37,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\laptop-collector.ps1
 node -e "fetch('https://www.courtauction.go.kr').then(r=>console.log('COURT OK',r.status,r.url)).catch(e=>console.error('COURT FAIL',e.message))"
 ```
 
-## Oracle Cloud master — 폐기됨 (2026-09-09) · 과거 계획(미사용)
-
-**더 이상 사용하지 않습니다.** 실제 마스터는 **Google Cloud Run Job**
-(`auction-cloud-master`, `asia-northeast1`)이며, 트리거는 Google Cloud Scheduler 입니다.
-아래 절차는 지우지 않고 **이력으로만** 남겨 둡니다 — 그대로 따라 하지 마십시오.
+## Oracle Cloud master
 
 Always Free eligible Ampere A1 Ubuntu VM을 사용한다. 무료 범위 초과를 피하려면 콘솔에서 Always Free eligible 표시를 확인하고 1 OCPU / 6 GB RAM 정도로 시작한다.
 
