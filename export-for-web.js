@@ -18,12 +18,18 @@
 
 const fs = require('fs');
 const path = require('path');
+const { gradeRights } = require('./rights-grade');
+const { coordsOf } = require('./katec');
+const { withLabels } = require('./appraisal-labels');
 const zlib = require('zlib');
 const crypto = require('crypto');
 
 const ROOT = process.env.EXPORT_ROOT || __dirname;
-const DATA = path.join(ROOT, 'data', 'auctions.json');
-const STATS = path.join(ROOT, 'data', 'stats.json');
+/* 입력 자리를 바꿀 수 있게 둔다(detail-enrich·photo-enrich 와 같은 규약).
+   노트북에서 창고 판 canonical 로 웹 내보내기를 돌릴 때 쓴다 - 작업본 canonical 은
+   수집기가 쥐고 쓰는 중이라 중간 상태일 수 있어 그것으로 화면을 만들면 안 된다. */
+const DATA = process.env.AUCTIONS_FILE || path.join(ROOT, 'data', 'auctions.json');
+const STATS = process.env.STATS_FILE || path.join(ROOT, 'data', 'stats.json');
 const ALERT = path.join(ROOT, 'data', 'collection-alert.json');
 /* 노트북 수집기의 실제 상태. stats.latestDetailRun 은 **호스티드(Actions) 상세 실행**이
    쓰는 자리라 노트북 상태가 아니다 - 그것을 노트북 것으로 내보내던 탓에 진도율 화면이
@@ -53,7 +59,16 @@ class PayloadTooLarge extends Error {
 const CARD_FIELDS = [
   'id', 'caseNumber', 'courtName', 'address', 'sido', 'sigungu', 'usage',
   'appraisedPrice', 'minimumPrice', 'saleDate', 'failedCount',
-  'hasWinning', 'photoCount', 'documentCount'
+  'hasWinning',
+  /* [2026-09-17] 낙찰가 - 목록에서 낙찰가율(낙찰가/감정가)을 적기 위해 싣는다.
+     hasWinning(0/1)만으로는 비율을 만들 수 없었다. 낙찰된 사건에만 값이 있고
+     나머지는 0 이라 gzip 이 잘 먹는다. 상한 500KB 를 넘기면 즉시 되돌릴 것. */
+  'winningPrice',
+  'photoCount', 'documentCount',
+  /* [2026-09-15] 목록 카드의 썸네일 한 장. 사진 URL 을 통째로 싣지 않고 **뒤 두 조각**만
+     싣는다(`<물건번호>/<파일명>`) - 앞부분은 사건번호라 카드가 이미 들고 있다.
+     실측: gzip 433.1KB → 439.0KB (상한 500KB). 사진 있는 사건은 434건뿐이라 나머지는 빈 칸. */
+  'thumb'
 ];
 
 // Card addresses drop the "[상세내역] ..." building schedule the source appends.
@@ -62,19 +77,184 @@ const CARD_FIELDS = [
 const CARD_ADDRESS_MAX = 120;
 const cardAddress = v => str(v).split('[상세내역]')[0].trim().slice(0, CARD_ADDRESS_MAX);
 
+/**
+ * 목록 썸네일 - 첫 사진의 경로에서 `photos/` 접두어만 뗀 것.
+ *
+ * 사건번호 조각을 빼고 화면이 합쳐 복원하는 방법도 재 봤다(gzip 438.0KB vs 440.0KB).
+ * 2KB 를 아끼자고 복원 로직을 두지 않는다 - 사건번호가 "…(중복)" 처럼 공백을 품는 경우가
+ * 실제로 있고(전체 968건), 그때 복원이 조용히 어긋난다. 지금은 그런 사건에 사진이 0건이라
+ * 안 드러날 뿐이다. 상한(500KB)까지 60KB 가 남아 있으므로 안전한 쪽을 고른다.
+ */
+const cardThumb = (r) => {
+  const u = (Array.isArray(r.photoUrls) ? r.photoUrls : [])[0];
+  return u ? String(u).replace(/^photos\//, '') : '';
+};
+
 const toCard = r => [
   str(r.id), str(r.caseNumber), str(r.courtName), cardAddress(r.address),
   str(r.regionSido), str(r.regionSigungu), str(r.usage),
   int(r.appraisedPrice), int(r.minimumPrice), str(r.saleDate), int(r.failedCount) || 0,
   Number(r.winningPrice || 0) > 0 ? 1 : 0,
-  int(r.photoCount) || 0, int(r.documentCount) || 0
+  int(r.winningPrice) || 0,
+  int(r.photoCount) || 0, int(r.documentCount) || 0,
+  cardThumb(r)
 ];
 
 // Detail keeps everything a case page shows, minus the bulk we never render.
-const toDetail = r => ({
+/**
+ * 관련사건 - 같은 물건에 걸린 다른 사건번호.
+ *
+ * 법원은 중복·병합 사건을 **사건번호 칸 안에** 나열해서 준다:
+ *   "2026타경140 2026타경133 2026타경138 (병합)"
+ * 별도 필드가 없으므로 그 표기에서 꺼낸다(실측 968건 = 중복 753 · 병합 325).
+ * 회생·파산 같은 다른 계열 연계는 우리 원천에 오지 않는다 - 만들지 않는다.
+ */
+const RELATED_RE = /\(\s*(중복|병합)\s*\)/;
+function relatedCases(caseNumber) {
+  const raw = str(caseNumber);
+  const kind = raw.match(RELATED_RE);
+  if (!kind) return [];
+  const nums = raw.replace(/\([^)]*\)/g, ' ').split(/\s+/).filter((x) => /타경/.test(x));
+  if (nums.length < 2) return [];
+  const self = nums[0];
+  return nums.slice(1).filter((n) => n !== self).map((n) => ({ caseNumber: n, relation: kind[1] }));
+}
+
+/**
+ * 인근 낙찰 통계 - 우리 canonical 만으로 계산한다(외부 원천 없음).
+ *
+ * 시군구×용도로 3건이 안 모이면 시도×용도, 그것도 안 되면 전국×용도로 넓힌다.
+ * ★어느 범위로 잰 값인지 반드시 함께 낸다 - "강서구 다세대 66%"와 "전국 다세대
+ *   66%"는 다른 말이고, 범위를 감추면 화면이 과장하게 된다.
+ * 표본 3건 미만인 칸은 아예 만들지 않는다(실측: 3단계까지 가면 99.98% 가 잡힌다).
+ */
+/**
+ * I — 유사 물건 유찰 이력 통계.
+ *
+ * ★"다음 회차 예측"이 아니다. 예측하지 않는다 - 같은 지역·같은 용도 사건들이 **과거에
+ *   몇 번 유찰됐는지**를 세어 줄 뿐이다. 문구도 그렇게 적는다.
+ * 인근 낙찰통계와 같은 3단계 폴백(시군구→시도→전국)을 쓴다.
+ */
+function failureStats(idx, r) {
+  const u = str(r.usage) || '?';
+  const tries = [];
+  if (r.regionSido && r.regionSigungu) tries.push(['시군구', `${r.regionSido} ${r.regionSigungu}`]);
+  if (r.regionSido) tries.push(['시도', str(r.regionSido)]);
+  tries.push(['전국', '전국']);
+  for (const [level, scope] of tries) {
+    const g = idx.get(`${level}|${scope}|${u}`) || [];
+    if (g.length < MIN_SAMPLES) continue;
+    const counts = g.map((x) => Number(x.failedCount) || 0).sort((a, b) => a - b);
+    const median = counts[Math.floor(counts.length / 2)];
+    const avg = counts.reduce((a, b) => a + b, 0) / counts.length;
+    const dist = {};
+    for (const c of counts) { const k = c >= 5 ? '5+' : String(c); dist[k] = (dist[k] || 0) + 1; }
+    return {
+      level, scope, usage: u, count: g.length,
+      medianFailed: median,
+      averageFailed: Math.round(avg * 10) / 10,
+      distribution: dist,
+      mine: Number(r.failedCount) || 0,
+    };
+  }
+  return null;
+}
+
+const MIN_SAMPLES = 3;
+function buildSaleIndex(rows) {
+  const idx = new Map();
+  const put = (k, r) => { if (!idx.has(k)) idx.set(k, []); idx.get(k).push(r); };
+  for (const r of rows) {
+    const w = Number(r.winningPrice || 0), a = Number(r.appraisedPrice || 0);
+    if (!(w > 0 && a > 0)) continue;
+    const u = str(r.usage) || '?';
+    if (r.regionSido && r.regionSigungu) put(`시군구|${r.regionSido} ${r.regionSigungu}|${u}`, r);
+    if (r.regionSido) put(`시도|${r.regionSido}|${u}`, r);
+    put(`전국|전국|${u}`, r);
+  }
+  return idx;
+}
+function neighborhoodStats(idx, r) {
+  const u = str(r.usage) || '?';
+  const tries = [];
+  if (r.regionSido && r.regionSigungu) tries.push(['시군구', `${r.regionSido} ${r.regionSigungu}`]);
+  if (r.regionSido) tries.push(['시도', str(r.regionSido)]);
+  tries.push(['전국', '전국']);
+  for (const [level, scope] of tries) {
+    const g = idx.get(`${level}|${scope}|${u}`) || [];
+    if (g.length < MIN_SAMPLES) continue;
+    const ratios = g.map((x) => x.winningPrice / x.appraisedPrice).sort((a, b) => a - b);
+    const median = ratios[Math.floor(ratios.length / 2)];
+    const avg = ratios.reduce((a, b) => a + b, 0) / ratios.length;
+    /* 표본은 최근 낙찰 3건만. 사건 파일 하나가 커지면 KV 상한에 닿는다. */
+    const samples = g.slice().sort((a, b) => str(b.winningDate).localeCompare(str(a.winningDate))).slice(0, 3)
+      .map((x) => ({
+        caseNumber: str(x.caseNumber), address: str(x.address).split('[상세내역]')[0].trim().slice(0, 60),
+        usage: str(x.usage), appraisedPrice: int(x.appraisedPrice), winningPrice: int(x.winningPrice),
+        winningDate: x.winningDate || null,
+        ratio: Math.round((x.winningPrice / x.appraisedPrice) * 1000) / 10,
+      }));
+    return {
+      level, scope, usage: u, count: g.length,
+      medianRatio: Math.round(median * 1000) / 10,
+      averageRatio: Math.round(avg * 1000) / 10,
+      samples,
+    };
+  }
+  return null;
+}
+
+/**
+ * 소재지와 건물 개요를 가른다.
+ *
+ * ★법원은 주소 칸 하나에 **주소 + 그 동 전체의 층별 면적 나열**을 이어 붙여 준다.
+ *   "[상세내역]" 이 그 경계다. 그대로 두면 소재지 한 줄이 1,855자까지 가고(실측 최대),
+ *   화면에서는 주소 자리에 32개 층 면적이 쏟아진다(2026-09-16 대표님 신고).
+ *   실측: 12,421건 중 [상세내역] 포함 10,653건(85.8%) · 층별 면적 나열 6,064건(48.8%).
+ *
+ * ★뒷부분을 버리지 않는다. 건물 구조·층수·층별 면적이라 쓸모가 있다 - 「건물 개요」로
+ *   옮겨 제자리에서 보여 준다. 목록 카드는 이미 앞부분만 쓰고 있었다(cardAddress).
+ */
+function splitAddress(raw) {
+  const s = str(raw);
+  const i = s.indexOf('[상세내역]');
+  if (i < 0) return { address: s.trim(), outline: null };
+  const outline = s.slice(i + '[상세내역]'.length).replace(/\s+/g, ' ').trim();
+  return { address: s.slice(0, i).trim(), outline: outline || null };
+}
+
+/**
+ * 목록내역을 화면이 감당할 크기로 줄인다.
+ *
+ * ★[2026-09-19] 이 한 칸이 KV 내보내기 전체를 멈춰 세웠다. 2025타경510512(인천지방법원,
+ *   대형 집합건물)의 listing 이 **885,887바이트**였고, buildingDetail 만 4,136줄이었다.
+ *   상세 한 건의 상한은 512,000바이트라 export-for-web 이 통째로 실패했고, 그 뒤로
+ *   KV 가 갱신되지 않아 /admin 진도율이 멈춰 있었다.
+ *   (전 사건 1,465건 중 중앙값은 590바이트다 - 이 한 건만 1,500배 크다.)
+ *
+ * ★자르되 숨기지 않는다. 몇 개 중 몇 개를 실었는지 같이 적어 화면이 "더 있다"고 말할 수 있게 한다.
+ */
+const LISTING_ROWS_MAX = 300;
+function cappedListing(listing) {
+  if (!listing || typeof listing !== 'object') return listing || null;
+  const out = { ...listing };
+  for (const key of ['exclusive', 'land', 'buildingDetail']) {
+    const rows = listing[key];
+    if (!Array.isArray(rows) || rows.length <= LISTING_ROWS_MAX) continue;
+    out[key] = rows.slice(0, LISTING_ROWS_MAX);
+    out[key + 'Total'] = rows.length;
+    out[key + 'Truncated'] = true;
+  }
+  return out;
+}
+
+const toDetail = (r, ctx) => ({
   id: r.id, caseNumber: r.caseNumber, itemNumber: r.itemNumber,
   courtCode: r.courtCode, courtName: r.courtName,
-  address: r.address, regionSido: r.regionSido, regionSigungu: r.regionSigungu,
+  /* 소재지는 순수 주소만. 뒤에 붙어 오던 층별 면적 나열은 buildingOutline 으로 옮긴다. */
+  address: splitAddress(r.address).address,
+  buildingOutline: splitAddress(r.address).outline,
+  regionSido: r.regionSido, regionSigungu: r.regionSigungu,
   usage: r.usage, caseType: r.caseType || null, buildingName: r.buildingName || null,
   propertyDescription: r.propertyDescription || null,
   appraisedPrice: int(r.appraisedPrice), minimumPrice: int(r.minimumPrice),
@@ -88,6 +268,21 @@ const toDetail = r => ({
   appraisalSummary: r.appraisalSummary || null,
   appraisalDate: r.appraisalDate || null, appraisalAgency: r.appraisalAgency || null,
   landArea: r.landArea ?? null, buildingArea: r.buildingArea ?? null,
+  /* [2026-09-16] 원본 화면의 「목록내역」 그대로 - 전유부분의 건물의 표시 · 대지권의
+     목적인 토지의 표시. 면적이 여기서 나온다(종전 components 는 키 이름이 틀려 빈 껍데기였다). */
+  listing: cappedListing(r.listing),
+  landTotalArea: r.landTotalArea ?? null,
+  bidMethod: r.bidMethod || null,
+  bidMethodCode: r.bidMethodCode || null,
+  /* [2026-09-16] 법원 좌표(KATEC)를 위경도로 바꿔 싣는다. 좌표계는 집톡 위경도와
+     대조해 확정했다(중앙값 676m · 차순위 후보 71km). ★동네 단위로만 쓴다 -
+     단지 한 채를 특정하는 용도가 아니다. 그 한계를 값에 함께 적어 보낸다. */
+  coords: coordsOf(r),
+  /* 당사자내역 - 법원이 이미 가려서 준 이름만 싣는다(case-parties.js 가 가리지 않은
+     값을 통째로 뺀다). 관련사건은 API 판이 사건번호 문자열 파싱보다 정확하다. */
+  parties: Array.isArray(r.parties) ? r.parties : [],
+  relatedCasesApi: Array.isArray(r.relatedCasesApi) ? r.relatedCasesApi : [],
+  noticeFrom: r.noticeFrom || null, noticeTo: r.noticeTo || null,
   events: Array.isArray(r.events) ? r.events : [],
   components: Array.isArray(r.components) ? r.components.slice(0, 40) : [],
   documents: Array.isArray(r.documents) ? r.documents : [],
@@ -95,6 +290,38 @@ const toDetail = r => ({
   photoCount: int(r.photoCount) || 0,
   photos: Array.isArray(r.photoUrls) ? r.photoUrls.slice(0, 20) : [],
   coverage: r.coverage || {},
+  /* [2026-09-15] 상세 화면 2·3·4·5·6 섹션이 쓰는 축. 여기 없으면 canonical 에
+     들어와 있어도 화면까지 못 간다 - 실제로 그랬다(재수집으로 356건을 채워 놓고도
+     상세가 빈 채였다). 값이 없는 사건은 null/빈배열로 나가고 화면이 자리를 정한다. */
+  caseReceivedDate: r.caseReceivedDate || null,
+  caseStartDate: r.caseStartDate || null,
+  distributionDeadline: r.distributionDeadline || null,
+  courtDept: r.courtDept || null, courtDeptTel: r.courtDeptTel || null,
+  caseSuspendCode: r.caseSuspendCode || null, caseSuspendReason: r.caseSuspendReason || null,
+  rights: r.rights || null,
+  /* 항목코드에 이름을 붙여 보낸다. ★공식 코드표가 아니라 **내용 전수 대조**로
+     확정한 것이라 근거(labelBasis)를 함께 싣는다. 확정 못 한 코드는 이름 없이
+     코드 그대로 간다 - 화면이 코드를 보여 준다. */
+  appraisalPoints: withLabels(r.appraisalPoints),
+  minimumPriceRounds: Array.isArray(r.minimumPriceRounds) ? r.minimumPriceRounds : [],
+  bidPeriodFrom: r.bidPeriodFrom || null, bidPeriodTo: r.bidPeriodTo || null,
+  salePlace: r.salePlace || null, decisionPlace: r.decisionPlace || null,
+  decisionDate: r.decisionDate || null, depositRate: r.depositRate ?? null,
+  occupancy: r.occupancy || null,
+  /* 임차인은 이름을 가린 채로만 나간다(detail-enrich 가 가려서 저장한다).
+     주민등록번호 계열(enrrno)은 애초에 저장하지 않으므로 여기 올 수 없다. */
+  lessees: Array.isArray(r.lessees) ? r.lessees : [],
+  lesseeCount: r.lesseeCount ?? null,
+  /* [2026-09-15] 우리가 이미 가진 것인데 화면에 못 내던 두 가지.
+     둘 다 canonical 만으로 만든다 - 새 원천을 붙이지 않았다. */
+  relatedCases: relatedCases(r.caseNumber),
+  /* [2026-09-16] 권리관계 3등급 자동 판정. 명세서가 없으면 null - 등급을 만들지 않는다.
+     ★판단을 대신하지 않는다: 등급과 함께 **근거 문장 원문**과 「법률자문 아님」 고지,
+       그리고 문서로 가릴 수 없는 항목(유치권 진위·점유·명도)을 함께 내보낸다. */
+  rightsGrade: gradeRights(r),
+  neighborhoodStats: ctx && ctx.saleIndex ? neighborhoodStats(ctx.saleIndex, r) : null,
+  /* I — 같은 지역·용도 사건들의 과거 유찰 횟수. ★예측이 아니다. */
+  failureStats: ctx && ctx.failIndex ? failureStats(ctx.failIndex, r) : null,
   detailCheckedAt: r.detailCheckedAt || null,
   source: r.source || null
 });
@@ -114,6 +341,10 @@ function buildStats(rows, stats, alert, laptop) {
   const captured = rows.filter(r => Number(r.winningPrice || 0) > 0).length;
   const atRisk = rows.filter(r => r.saleDate === today && !Number(r.winningPrice || 0)).length;
   const lost = rows.filter(r => r.saleDate && r.saleDate < today && !Number(r.winningPrice || 0)).length;
+  /* 상위 stats.coverage 를 쓰지 않고 여기서 센다 - 마스터가 그 키를 아직 안 낼 수도 있고,
+     "몇 건에 실제로 들어 있나"는 canonical 이 답이다. */
+  const rights = rows.filter(r => r.rights).length;
+  const occupancy = rows.filter(r => r.occupancy).length;
   return {
     generatedAt: new Date().toISOString(),
     today,
@@ -125,7 +356,11 @@ function buildStats(rows, stats, alert, laptop) {
       status_report: { count: cov.status_report || 0, percent: pct(cov.status_report) },
       appraisal_summary: { count: cov.appraisal_summary || 0, percent: pct(cov.appraisal_summary) },
       photos: { count: cov.photos || 0, percent: pct(cov.photos) },
-      winning_price: { count: captured, percent: pct(captured) }
+      winning_price: { count: captured, percent: pct(captured) },
+      /* [2026-09-15] 재수집으로 새로 채우는 축. 소급 재추출이 불가능해 재수집만이
+         방법이므로, 얼마나 찼는지 화면에서 보여야 진도를 볼 수 있다. */
+      rights: { count: rights, percent: pct(rights) },
+      occupancy: { count: occupancy, percent: pct(occupancy) }
     },
     documentCount: Number(stats?.documentCount || 0),
     winningPriceCaptured: captured,
@@ -165,6 +400,9 @@ function main() {
   const cards = rows.map(toCard);
   const sidos = [...new Set(rows.map(r => str(r.regionSido)).filter(Boolean))].sort();
   const usages = [...new Set(rows.map(r => str(r.usage)).filter(Boolean))].sort();
+  /* [2026-09-14] 법원 선택지. 카드에 courtName 이 이미 실려 있어 거를 수는 있었는데
+     화면이 고를 목록을 받을 곳이 없었다 - 값 목록만 더한다(행 크기는 그대로다). */
+  const courts = [...new Set(rows.map(r => str(r.courtName)).filter(Boolean))].sort();
   const sigungu = {};
   for (const r of rows) {
     const s = str(r.regionSido), g = str(r.regionSigungu);
@@ -179,7 +417,8 @@ function main() {
     facets: {
       sido: sidos,
       sigungu: Object.fromEntries(Object.entries(sigungu).map(([k, v]) => [k, [...v].sort()])),
-      usage: usages
+      usage: usages,
+      court: courts
     },
     rows: cards
   };
@@ -211,8 +450,21 @@ function main() {
   // past the Windows path limit. The real id travels inside the file, and the
   // uploader reads it back to build the KV key - KV keys have no such limit.
   let detailBytes = 0, biggest = { name: null, bytes: 0 };
+  /* 낙찰 비교군 색인은 한 번만 만든다 - 사건마다 12,000건을 다시 훑을 일이 아니다. */
+  const saleIndex = buildSaleIndex(rows);
+  /* 유찰 통계 색인 - 낙찰 여부와 무관하게 **모든** 사건을 센다(낙찰만 보면 유찰이 적어 보인다). */
+  const failIndex = new Map();
+  {
+    const put = (k, x) => { if (!failIndex.has(k)) failIndex.set(k, []); failIndex.get(k).push(x); };
+    for (const r of rows) {
+      const u = str(r.usage) || '?';
+      if (r.regionSido && r.regionSigungu) put(`시군구|${r.regionSido} ${r.regionSigungu}|${u}`, r);
+      if (r.regionSido) put(`시도|${r.regionSido}|${u}`, r);
+      put(`전국|전국|${u}`, r);
+    }
+  }
   for (const r of rows) {
-    const detail = toDetail(r);
+    const detail = toDetail(r, { saleIndex, failIndex });
     const buf = Buffer.from(JSON.stringify(detail), 'utf8');
     const file = `${crypto.createHash('sha1').update(String(r.id)).digest('hex')}.json`;
     detailBytes += writeChecked(path.join(OUT, 'detail', file), buf, `detail/${file}`);
